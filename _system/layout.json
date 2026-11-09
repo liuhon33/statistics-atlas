@@ -1,0 +1,3793 @@
+{
+  "version": 1,
+  "created": "2026-11-08",
+  "colors": {
+    "probability": "#339cff",
+    "statistics": "#f3883b",
+    "computing": "#5dc977"
+  },
+  "order": [
+    "probability",
+    "math-tools",
+    "calculus",
+    "calc",
+    "calc-limits-and-continuity",
+    "calc-derivatives-and-partial-derivatives",
+    "calc-multiple-integrals",
+    "taylor",
+    "calc-jacobian-matrices",
+    "calc-constrained-extrema",
+    "analysis",
+    "analysis-sets-and-functions",
+    "analysis-quantifiers-and-proof-methods",
+    "analysis-sequences-and-series",
+    "analysis-continuity-and-compactness",
+    "analysis-dominated-convergence-overview",
+    "analysis-interchanging-limits-and-integrals",
+    "linalg",
+    "spaces",
+    "spaces-vector-spaces-and-bases",
+    "spaces-rank-and-null-spaces",
+    "spaces-inner-products-and-norms",
+    "projection",
+    "spaces-least-squares-geometry",
+    "spectral",
+    "spectral-positive-semidefinite-matrices",
+    "eigen",
+    "svd",
+    "spectral-quadratic-forms",
+    "spectral-trace-and-determinant",
+    "convex",
+    "convexity",
+    "convexity-convex-sets-and-functions",
+    "convexity-gradients-and-hessians",
+    "jensen",
+    "convexity-cauchyschwarz-inequality",
+    "convexity-holder-inequality",
+    "prob-language",
+    "prob-models",
+    "events",
+    "events-sample-spaces-and-events",
+    "events-probability-axioms",
+    "events-permutations-and-combinations",
+    "events-inclusionexclusion",
+    "events-union-bound",
+    "cond-events",
+    "cond-events-conditional-probability",
+    "cond-events-total-probability",
+    "bayesrule",
+    "cond-events-event-independence",
+    "cond-events-conditional-independence",
+    "prob-measure",
+    "measure",
+    "measure-sigma-algebras",
+    "measure-probability-measures",
+    "measure-measurable-random-variables",
+    "measure-almost-sure-statements",
+    "measure-lebesgue-expectation-overview",
+    "random-variables",
+    "univariate",
+    "rv",
+    "rv-discrete-and-continuous-laws",
+    "rv-cdf-pmf-and-density",
+    "rv-quantiles-and-inverse-cdf",
+    "rv-support-and-event-regions",
+    "rv-mixed-distributions",
+    "moments",
+    "moments-lotus-expectation-rule",
+    "moments-indicator-expectations",
+    "moments-variance-and-standard-deviation",
+    "moments-moment-existence",
+    "moments-mgfs-and-characteristic-functions",
+    "transforms",
+    "transforms-cdf-transformation-method",
+    "transforms-change-of-variables",
+    "transforms-jacobian-density-factor",
+    "transforms-convolution-of-independent-sums",
+    "distribution-families",
+    "discrete",
+    "discrete-bernoulli-and-binomial",
+    "discrete-geometric-and-negative-binomial",
+    "discrete-hypergeometric",
+    "discrete-poisson",
+    "discrete-multinomial",
+    "continuous",
+    "continuous-uniform",
+    "continuous-normal-and-lognormal",
+    "continuous-exponential-and-gamma",
+    "continuous-beta",
+    "continuous-student-t-chi-square-and-f",
+    "continuous-weibull-and-heavy-tail-examples",
+    "sample-laws",
+    "sample-laws-sample-mean-and-variance",
+    "sample-laws-order-statistics",
+    "sample-laws-sample-quantiles",
+    "sample-laws-normal-sample-pivots",
+    "sample-laws-extreme-order-behavior",
+    "dependence",
+    "joint-laws",
+    "joint",
+    "joint-joint-cdf-and-density",
+    "joint-marginalization",
+    "joint-conditional-density",
+    "independence",
+    "joint-covariance-matrices",
+    "conditional-mean",
+    "ce",
+    "tower",
+    "totalvar",
+    "conditional-mean-l2-conditional-projection",
+    "conditional-mean-best-mean-square-prediction",
+    "multivariate-prob",
+    "gaussian",
+    "gaussian-gaussian-linear-transformations",
+    "gaussian-gaussian-conditioning",
+    "gaussian-gaussian-zero-covariance-independence",
+    "gaussian-chi-square-quadratic-forms",
+    "dependence-models",
+    "dependence-models-exchangeability",
+    "dependence-models-mixture-distributions",
+    "dependence-models-copulas-overview",
+    "dependence-models-tail-dependence",
+    "dependence-models-conditional-independence-graphs",
+    "limits",
+    "limit-theory",
+    "convergence",
+    "convergence-convergence-in-probability",
+    "convergence-convergence-in-distribution",
+    "convergence-almost-sure-convergence",
+    "convergence-l2-convergence",
+    "convergence-relations-and-counterexamples",
+    "lln-clt",
+    "lln",
+    "clt",
+    "lln-clt-multivariate-clt",
+    "lln-clt-finite-variance-conditions",
+    "lln-clt-normal-approximation-limits",
+    "limit-tools",
+    "limit-tools-continuous-mapping-theorem",
+    "slutsky",
+    "delta",
+    "limit-tools-stochastic-order-notation",
+    "limit-tools-second-order-delta-examples",
+    "bounds",
+    "concentration",
+    "concentration-markov-inequality",
+    "concentration-chebyshev-inequality",
+    "concentration-chernoff-bounding-method",
+    "concentration-hoeffding-inequality",
+    "concentration-tail-bounds-versus-asymptotics",
+    "processes",
+    "discrete-process",
+    "markov",
+    "markov-transition-matrices",
+    "markov-chapmankolmogorov-equations",
+    "stationary",
+    "markov-irreducibility-and-aperiodicity",
+    "markov-detailed-balance",
+    "markov-mixing-and-convergence",
+    "martingale",
+    "martingale-random-walks",
+    "martingale-martingale-definition",
+    "martingale-conditional-mean-innovations",
+    "martingale-stopping-times",
+    "martingale-optional-stopping-conditions",
+    "continuous-process",
+    "poisson-process",
+    "poisson-process-poisson-process",
+    "poisson-process-exponential-waiting-times",
+    "poisson-process-renewal-processes",
+    "poisson-process-continuous-time-markov-chains",
+    "poisson-process-queueing-overview",
+    "gaussian-process",
+    "gaussian-process-gaussian-process-definition",
+    "gaussian-process-covariance-kernels",
+    "gaussian-process-brownian-motion-basics",
+    "gaussian-process-stationarity-of-a-process",
+    "gaussian-process-sample-paths-versus-distributions",
+    "statistics",
+    "inference",
+    "stat-thinking",
+    "targets",
+    "targets-target-population-and-sampling-frame",
+    "targets-estimands-and-parameters",
+    "estimator",
+    "targets-prediction-versus-explanation",
+    "targets-association-versus-causation",
+    "targets-measurement-scales",
+    "sampling",
+    "sampling-repeated-sampling",
+    "sampling-bias-and-variance",
+    "mse",
+    "sampling-standard-error",
+    "sampling-consistency",
+    "sampling-identifiability",
+    "decision",
+    "risk",
+    "risk-loss-functions",
+    "risk-frequentist-risk",
+    "risk-bayes-risk",
+    "risk-bayes-actions",
+    "risk-minimax-and-admissibility-overview",
+    "frequentist",
+    "estimation",
+    "likelihood",
+    "likelihood-point",
+    "likelihood-maximum-likelihood-estimation",
+    "likelihood-score-and-observed-information",
+    "likelihood-fisher-information",
+    "likelihood-mle-invariance",
+    "likelihood-boundary-and-nonregular-cases",
+    "estimators",
+    "estimators-method-of-moments",
+    "estimators-sufficient-statistics",
+    "estimators-factorization-criterion",
+    "estimators-raoblackwell-theorem",
+    "estimators-completeness-and-lehmannscheffe",
+    "estimators-cramerrao-bound",
+    "large-sample",
+    "large-sample-mle-consistency-under-conditions",
+    "large-sample-asymptotic-normality",
+    "large-sample-m-estimation",
+    "large-sample-sandwich-covariance",
+    "large-sample-efficiency",
+    "large-sample-misspecified-model-targets",
+    "testing",
+    "test-theory",
+    "test-theory-null-and-alternative",
+    "test-theory-type-i-and-ii-errors",
+    "test-theory-power-and-sample-size",
+    "test-theory-neymanpearson-lemma",
+    "test-theory-likelihood-ratio-tests",
+    "test-theory-p-value-interpretation",
+    "intervals",
+    "intervals-confidence-coverage",
+    "intervals-pivotal-quantities",
+    "test-invert",
+    "intervals-wald-score-and-likelihood-intervals",
+    "intervals-prediction-versus-confidence-intervals",
+    "classic-tests",
+    "classic-tests-one-and-two-sample-t-procedures",
+    "classic-tests-paired-data",
+    "classic-tests-variance-inference",
+    "classic-tests-chi-square-goodness-of-fit",
+    "classic-tests-equivalence-and-noninferiority",
+    "multiplicity",
+    "multiplicity-familywise-error",
+    "multiplicity-bonferroni-and-holm",
+    "fdr",
+    "multiplicity-benjaminihochberg-procedure",
+    "multiplicity-selection-induced-bias",
+    "bayesian",
+    "bayes-foundations",
+    "posterior",
+    "posterior-prior-and-posterior",
+    "posterior-marginal-likelihood-evidence",
+    "posterior-conjugate-updating",
+    "posterior-posterior-summaries",
+    "posterior-credible-intervals",
+    "posterior-posterior-predictive-distribution",
+    "prior-design",
+    "prior-design-weakly-informative-priors",
+    "prior-design-prior-predictive-checks",
+    "prior-design-jeffreys-prior-overview",
+    "prior-design-improper-prior-cautions",
+    "prior-design-prior-sensitivity",
+    "bayes-modeling",
+    "hierarchical",
+    "hierarchical-partial-pooling",
+    "hierarchical-exchangeable-group-effects",
+    "hierarchical-hierarchical-variance-priors",
+    "hierarchical-empirical-bayes",
+    "hierarchical-bayesian-shrinkage",
+    "bayes-checking",
+    "bayes-checking-posterior-predictive-checks",
+    "bayes-checking-predictive-cross-validation",
+    "bayes-checking-waic-and-loo-overview",
+    "bayes-checking-bayes-factors",
+    "bayes-checking-calibration-and-model-criticism",
+    "regression",
+    "linear-models",
+    "ols",
+    "ols-design-matrices",
+    "ols-point",
+    "ols-hat-matrix",
+    "ols-frischwaughlovell-theorem",
+    "ols-simple-slope-and-correlation",
+    "ols-gaussmarkov-theorem",
+    "reg-inference",
+    "reg-inference-coefficient-covariance",
+    "reg-inference-residual-variance-and-degrees-of-freedom",
+    "reg-inference-coefficient-t-tests",
+    "reg-inference-nested-model-f-tests",
+    "ft",
+    "reg-inference-mean-response-and-prediction-intervals",
+    "reg-diagnostics",
+    "reg-diagnostics-residual-plots",
+    "reg-diagnostics-heteroskedasticity",
+    "reg-diagnostics-collinearity-and-vif",
+    "reg-diagnostics-leverage-and-influence",
+    "reg-diagnostics-interactions-and-transformations",
+    "reg-diagnostics-r-squared-and-adjusted-r-squared",
+    "generalized-models",
+    "glm",
+    "glm-exponential-family-form",
+    "glm-link-and-meanvariance-functions",
+    "glm-deviance",
+    "glm-irls-fisher-scoring",
+    "glm-quasi-likelihood",
+    "categorical",
+    "categorical-logistic-regression",
+    "categorical-poisson-regression",
+    "categorical-overdispersion-and-negative-binomial",
+    "categorical-contingency-tables",
+    "categorical-log-linear-models",
+    "categorical-multinomial-and-ordinal-models",
+    "mixed-models",
+    "mixed",
+    "mixed-random-intercepts-and-slopes",
+    "mixed-variance-components",
+    "mixed-reml",
+    "mixed-blup-and-shrinkage",
+    "mixed-within-person-correlation",
+    "mixed-generalized-estimating-equations",
+    "nonlinear-model",
+    "nonlinear-model-nonlinear-least-squares",
+    "nonlinear-model-polynomial-and-spline-bases",
+    "nonlinear-model-generalized-additive-models",
+    "nonlinear-model-quantile-regression",
+    "nonlinear-model-measurement-error-models",
+    "design",
+    "experiments",
+    "design-principles",
+    "design-principles-randomization",
+    "design-principles-replication-and-experimental-units",
+    "design-principles-blocking",
+    "design-principles-confounding",
+    "design-principles-blinding",
+    "design-principles-power-planning",
+    "anova",
+    "anova-one-and-two-factor-anova",
+    "anova-contrasts-and-interactions",
+    "anova-factorial-and-fractional-factorial-designs",
+    "anova-split-plot-designs",
+    "anova-ancova",
+    "anova-response-surface-methods",
+    "survey",
+    "survey-design",
+    "survey-design-simple-random-sampling",
+    "survey-design-stratified-sampling",
+    "survey-design-cluster-and-multistage-samples",
+    "survey-design-inclusion-probabilities",
+    "survey-design-horvitzthompson-estimation",
+    "survey-design-finite-population-correction",
+    "survey-adjust",
+    "survey-adjust-design-effects",
+    "survey-adjust-calibration-and-poststratification",
+    "survey-adjust-nonresponse-adjustment",
+    "survey-adjust-ratio-and-regression-estimators",
+    "survey-adjust-weight-based-variance-estimation",
+    "causal-course",
+    "causal-id",
+    "causal-id-potential-outcomes",
+    "causal-id-average-treatment-effects",
+    "causal-id-exchangeability-consistency-and-positivity",
+    "causal-id-dags-and-backdoor-paths",
+    "causal-id-confounders-colliders-and-mediators",
+    "causal-est",
+    "causal-est-randomized-treatment-comparisons",
+    "causal-est-standardization-g-formula",
+    "causal-est-propensity-scores",
+    "causal-est-inverse-probability-weighting",
+    "causal-est-doubly-robust-estimation",
+    "causal-est-instrumental-variables-overview",
+    "quasi",
+    "quasi-difference-in-differences",
+    "quasi-regression-discontinuity",
+    "quasi-sensitivity-to-unmeasured-confounding",
+    "quasi-target-trial-specification",
+    "quasi-time-varying-treatment-overview",
+    "nonparametric",
+    "nonparam",
+    "rank-tests",
+    "rank-tests-sign-and-signed-rank-tests",
+    "rank-tests-mannwhitney-and-kruskalwallis",
+    "rank-tests-rank-correlations",
+    "rank-tests-permutation-tests",
+    "rank-tests-kolmogorovsmirnov-tests",
+    "rank-tests-exchangeability-requirements",
+    "density",
+    "density-empirical-cdf",
+    "density-histograms",
+    "density-kernel-density-estimation",
+    "density-bandwidth-choice",
+    "density-boundary-bias",
+    "density-nonparametric-regression",
+    "robust",
+    "robustness",
+    "robustness-median-and-trimmed-means",
+    "robustness-median-absolute-deviation",
+    "robustness-influence-functions",
+    "robustness-breakdown-point",
+    "robustness-huber-m-estimators",
+    "robustness-robust-regression",
+    "resampling-inference",
+    "bootstrap",
+    "bootstrap-point",
+    "bootstrap-parametric-bootstrap",
+    "bootstrap-bootstrap-intervals",
+    "bootstrap-jackknife",
+    "bootstrap-dependent-data-resampling",
+    "bootstrap-conditional-versus-unconditional-bootstrap-variation",
+    "multivariate",
+    "multivariate-course",
+    "multi-inference",
+    "multi-inference-sample-covariance-matrix",
+    "multi-inference-hotelling-t-squared",
+    "multi-inference-manova",
+    "multi-inference-wishart-distribution-overview",
+    "multi-inference-canonical-correlation",
+    "dimension",
+    "pca",
+    "dimension-pca-scores-and-loadings",
+    "dimension-factor-analysis",
+    "dimension-rotation-and-identifiability",
+    "dimension-latent-variable-measurement",
+    "multi-class",
+    "multi-class-linear-discriminant-analysis",
+    "multi-class-quadratic-discriminant-analysis",
+    "multi-class-mahalanobis-distance",
+    "multi-class-covariance-regularization",
+    "temporal",
+    "time-series",
+    "ts-foundations",
+    "ts-foundations-trend-and-seasonality",
+    "ts-foundations-weak-stationarity",
+    "ts-foundations-autocorrelation-and-partial-autocorrelation",
+    "ts-foundations-white-noise",
+    "ts-foundations-time-series-decomposition",
+    "ts-foundations-spectral-density-overview",
+    "arima",
+    "arima-ar-and-ma-processes",
+    "arima-arma-arima",
+    "arima-seasonal-arima",
+    "arima-unit-roots-and-differencing",
+    "arima-model-residual-diagnostics",
+    "arima-dynamic-regression",
+    "forecasting",
+    "forecasting-exponential-smoothing",
+    "forecasting-forecast-distributions",
+    "forecasting-rolling-origin-evaluation",
+    "forecasting-forecast-accuracy-metrics",
+    "forecasting-grouped-forecast-reconciliation",
+    "state-space",
+    "states",
+    "states-state-space-representation",
+    "states-kalman-filter",
+    "states-hidden-markov-models",
+    "states-filtering-versus-smoothing",
+    "states-particle-filtering-overview",
+    "states-volatility-models-overview",
+    "event-time",
+    "survival",
+    "time-to-event",
+    "time-to-event-censoring-versus-truncation",
+    "time-to-event-survival-and-hazard-functions",
+    "time-to-event-kaplanmeier-estimator",
+    "time-to-event-nelsonaalen-estimator",
+    "time-to-event-log-rank-test",
+    "survival-models",
+    "survival-models-cox-proportional-hazards",
+    "survival-models-partial-likelihood",
+    "survival-models-proportional-hazards-diagnostics",
+    "survival-models-accelerated-failure-time-models",
+    "survival-models-competing-risks",
+    "survival-models-frailty-models",
+    "spatial-data",
+    "spatial-course",
+    "spatial-structure",
+    "spatial-structure-spatial-data-types",
+    "spatial-structure-covariance-and-variogram",
+    "spatial-structure-stationarity-and-isotropy",
+    "spatial-structure-kriging",
+    "spatial-structure-spatial-gaussian-process-models",
+    "spatial-models",
+    "spatial-models-areal-adjacency",
+    "spatial-models-car-sar-models-overview",
+    "spatial-models-spatial-point-patterns",
+    "spatial-models-poisson-point-process-models",
+    "spatial-models-spatial-confounding",
+    "applied-practice",
+    "missing",
+    "missing-mechanisms",
+    "missing-mechanisms-mcar-mar-and-mnar",
+    "missing-mechanisms-missing-data-likelihood",
+    "missing-mechanisms-complete-case-limitations",
+    "missing-mechanisms-multiple-imputation",
+    "missing-mechanisms-rubin-pooling-rules",
+    "missing-mechanisms-sensitivity-analysis",
+    "biomedical",
+    "epi",
+    "epi-cohort-and-case-control-studies",
+    "epi-risk-ratio-and-odds-ratio",
+    "epi-rates-and-person-time",
+    "epi-intention-to-treat-analysis",
+    "epi-clinical-trial-endpoints",
+    "epi-sequential-monitoring-overview",
+    "meta-analysis",
+    "meta-analysis-fixed-effect-and-random-effects-synthesis",
+    "meta-analysis-between-study-heterogeneity",
+    "meta-analysis-forest-plots",
+    "meta-analysis-publication-bias",
+    "meta-analysis-meta-regression",
+    "specializations",
+    "bio-data",
+    "bio-data-count-normalization",
+    "bio-data-batch-effects",
+    "bio-data-differential-expression",
+    "bio-data-genome-wide-association",
+    "bio-data-multiple-testing-in-genomics",
+    "bio-data-association-versus-causal-mediation",
+    "other-domains",
+    "other-domains-econometric-panel-models",
+    "other-domains-statistical-quality-control",
+    "other-domains-acceptance-sampling",
+    "other-domains-extreme-value-modeling",
+    "other-domains-functional-data-overview",
+    "other-domains-network-data-overview",
+    "professional",
+    "consulting",
+    "consulting-translate-questions-into-estimands",
+    "consulting-analysis-plans",
+    "consulting-assumptions-and-sensitivity-reporting",
+    "consulting-communicate-uncertainty",
+    "consulting-statistical-consulting",
+    "consulting-reproducible-case-study",
+    "ethics",
+    "ethics-data-provenance-and-consent",
+    "ethics-privacy-and-disclosure",
+    "ethics-selective-reporting",
+    "ethics-fairness-and-subgroup-assessment",
+    "ethics-replicability",
+    "ethics-statistical-versus-practical-significance",
+    "computing",
+    "programming",
+    "stat-programming",
+    "program-basics",
+    "program-basics-r-and-python-data-structures",
+    "program-basics-functions-and-scope",
+    "program-basics-iteration-and-vectorization",
+    "program-basics-arrays-and-matrix-operations",
+    "program-basics-debugging",
+    "program-basics-numerical-precision",
+    "reproducibility",
+    "reproducibility-random-seeds-and-rng-streams",
+    "reproducibility-unit-checks-for-analysis-code",
+    "reproducibility-version-control",
+    "reproducibility-environments-and-dependencies",
+    "reproducibility-profiling",
+    "reproducibility-reproducible-reports",
+    "data-work",
+    "data-management",
+    "data-management-tidy-data",
+    "data-management-joins-and-keys",
+    "data-management-group-wise-transformations",
+    "data-management-sql-and-databases",
+    "data-management-dates-strings-and-categories",
+    "data-management-data-validation-and-provenance",
+    "eda",
+    "eda-distribution-summaries",
+    "eda-graphical-comparisons",
+    "eda-missingness-patterns",
+    "eda-outlier-investigation",
+    "eda-simpson-paradox",
+    "eda-exploration-versus-confirmation",
+    "graphics",
+    "graphics-visual-encodings-and-scales",
+    "graphics-distribution-and-uncertainty-graphics",
+    "graphics-multivariate-graphics",
+    "graphics-faceting-and-conditioning",
+    "graphics-accessible-color",
+    "graphics-reporting-analytical-findings",
+    "numerics",
+    "numerical",
+    "stable-linear",
+    "stable-linear-qr-least-squares",
+    "stable-linear-cholesky-factorization",
+    "stable-linear-svd-for-rank-deficiency",
+    "stable-linear-condition-numbers",
+    "stable-linear-sparse-matrix-methods",
+    "stable-linear-solve-systems-without-explicit-inverses",
+    "numeric-methods",
+    "numeric-methods-root-finding",
+    "numeric-methods-numerical-integration",
+    "numeric-methods-finite-differences",
+    "numeric-methods-automatic-differentiation",
+    "numeric-methods-log-sum-exp",
+    "numeric-methods-approximation-error",
+    "optimization",
+    "opt-theory",
+    "opt-theory-convex-objectives",
+    "opt-theory-first-and-second-order-conditions",
+    "opt-theory-lagrange-multipliers",
+    "opt-theory-kkt-conditions",
+    "opt-theory-duality",
+    "opt-theory-constraints-versus-penalties",
+    "opt-algorithms",
+    "opt-algorithms-gradient-descent",
+    "opt-algorithms-newton-and-quasi-newton",
+    "opt-algorithms-coordinate-descent",
+    "opt-algorithms-stochastic-gradient-descent",
+    "opt-algorithms-proximal-gradient",
+    "opt-algorithms-convergence-diagnostics",
+    "simulation",
+    "monte-carlo",
+    "simulation-basics",
+    "simulation-basics-inverse-transform-sampling",
+    "simulation-basics-rejection-sampling",
+    "simulation-basics-monte-carlo-integration",
+    "simulation-basics-monte-carlo-standard-error",
+    "simulation-basics-simulation-study-design",
+    "simulation-basics-coverage-experiments",
+    "variance-reduction",
+    "importance",
+    "variance-reduction-self-normalized-importance-weights",
+    "variance-reduction-control-variates",
+    "variance-reduction-antithetic-variables",
+    "variance-reduction-stratified-simulation",
+    "mcmc",
+    "mcmc-algorithms",
+    "mcmc-algorithms-metropolishastings",
+    "mcmc-algorithms-gibbs-sampling",
+    "mcmc-algorithms-hamiltonian-monte-carlo",
+    "mcmc-algorithms-parameter-transformations",
+    "mcmc-algorithms-posterior-simulation-targets",
+    "mcmc-checks",
+    "mcmc-checks-multiple-chains",
+    "mcmc-checks-r-hat-diagnostics",
+    "mcmc-checks-effective-sample-size",
+    "mcmc-checks-autocorrelation",
+    "mcmc-checks-monte-carlo-error-versus-posterior-uncertainty",
+    "mcmc-checks-divergences-and-geometry",
+    "approx-inference",
+    "laplace-em",
+    "laplace-em-laplace-approximation",
+    "laplace-em-expectationmaximization",
+    "laplace-em-e-and-m-steps",
+    "laplace-em-local-optima",
+    "laplace-em-observed-versus-complete-data-likelihood",
+    "variational",
+    "variational-variational-family",
+    "elbo",
+    "variational-posterior-kl-gap",
+    "variational-mean-field-factorization",
+    "variational-coordinate-ascent-vi",
+    "variational-stochastic-vi",
+    "variational-reparameterization-gradient",
+    "variational-why-do-jensen-and-kl-give-the-same-bound",
+    "stat-learning",
+    "learning-foundations",
+    "prediction-risk",
+    "prediction-risk-population-risk",
+    "prediction-risk-empirical-risk-minimization",
+    "prediction-risk-biasvariance-tradeoff",
+    "prediction-risk-bayes-optimal-prediction",
+    "prediction-risk-overfitting",
+    "prediction-risk-regularization",
+    "validation",
+    "validation-train-validation-test-splits",
+    "validation-cross-validation",
+    "validation-nested-cross-validation",
+    "validation-group-and-temporal-splits",
+    "validation-data-leakage",
+    "validation-hyperparameter-tuning",
+    "validation-learning-curves",
+    "prediction-assessment",
+    "prediction-assessment-regression-metrics",
+    "prediction-assessment-roc-and-precisionrecall",
+    "prediction-assessment-probability-calibration",
+    "prediction-assessment-proper-scoring-rules",
+    "prediction-assessment-class-imbalance",
+    "prediction-assessment-distribution-shift",
+    "supervised",
+    "penalized",
+    "ridge",
+    "penalized-lasso",
+    "penalized-elastic-net",
+    "penalized-shrinkage-paths",
+    "penalized-feature-scaling",
+    "penalized-high-dimensional-identifiability",
+    "neighbors-kernels",
+    "neighbors-kernels-nearest-neighbors",
+    "neighbors-kernels-kernel-regression",
+    "neighbors-kernels-support-vector-machines",
+    "neighbors-kernels-kernel-trick",
+    "neighbors-kernels-gaussian-process-regression",
+    "trees",
+    "trees-regression-and-classification-trees",
+    "trees-pruning",
+    "trees-bagging",
+    "trees-random-forests",
+    "trees-gradient-boosting",
+    "trees-feature-importance-caveats",
+    "unsupervised",
+    "clustering",
+    "clustering-k-means",
+    "clustering-hierarchical-clustering",
+    "clustering-density-based-clustering",
+    "clustering-gaussian-mixture-models",
+    "clustering-cluster-validation",
+    "clustering-label-switching",
+    "embeddings",
+    "embeddings-multidimensional-scaling",
+    "embeddings-spectral-embeddings",
+    "embeddings-nonlinear-manifold-overview",
+    "embeddings-pca-versus-visualization-embeddings",
+    "embeddings-distances-and-scaling",
+    "modern-prediction",
+    "prediction-uncertainty",
+    "prediction-uncertainty-conformal-prediction-overview",
+    "prediction-uncertainty-exchangeability-and-coverage",
+    "prediction-uncertainty-prediction-sets",
+    "prediction-uncertainty-marginal-versus-conditional-coverage",
+    "prediction-uncertainty-calibration-under-shift",
+    "prob-learning",
+    "graphical",
+    "graphs",
+    "graphs-directed-graphical-models",
+    "graphs-undirected-graphical-models",
+    "graphs-graphical-conditional-independence",
+    "graphs-variable-elimination",
+    "graphs-message-passing-overview",
+    "graphs-latent-variable-models",
+    "neural",
+    "neural-basics",
+    "neural-basics-multilayer-networks",
+    "neural-basics-backpropagation",
+    "neural-basics-activation-functions",
+    "neural-basics-minibatch-optimization",
+    "neural-basics-regularization-and-early-stopping",
+    "neural-basics-representation-learning",
+    "neural-models",
+    "neural-models-convolutional-networks-overview",
+    "neural-models-sequence-models-overview",
+    "neural-models-autoencoders",
+    "neural-models-variational-autoencoders",
+    "neural-models-generative-model-evaluation",
+    "neural-models-predictive-versus-generative-tasks",
+    "information",
+    "information-measures",
+    "information-measures-entropy",
+    "information-measures-cross-entropy",
+    "kl",
+    "information-measures-mutual-information",
+    "information-measures-log-loss",
+    "information-measures-likelihood-and-compression"
+  ],
+  "positions": {
+    "probability": {
+      "x": -99.7962579430793,
+      "y": -407.97145353634534
+    },
+    "math-tools": {
+      "x": -567.3838401170452,
+      "y": -475.0532369893244
+    },
+    "calculus": {
+      "x": -854.5086125837187,
+      "y": -592.8026914752058
+    },
+    "calc": {
+      "x": -1119.5202013837509,
+      "y": -718.0351792869802
+    },
+    "calc-limits-and-continuity": {
+      "x": -1384.1657894762168,
+      "y": -829.911825310764
+    },
+    "calc-derivatives-and-partial-derivatives": {
+      "x": -1363.251241171179,
+      "y": -839.911528020658
+    },
+    "calc-multiple-integrals": {
+      "x": -1397.4396973414282,
+      "y": -884.4264754394303
+    },
+    "taylor": {
+      "x": -1332.2748118093216,
+      "y": -865.8861061815187
+    },
+    "calc-jacobian-matrices": {
+      "x": -1357.560055686076,
+      "y": -905.8184105717455
+    },
+    "calc-constrained-extrema": {
+      "x": -1347.6208813489861,
+      "y": -922.8920966338113
+    },
+    "analysis": {
+      "x": -1064.616517664101,
+      "y": -797.1773142261155
+    },
+    "analysis-sets-and-functions": {
+      "x": -1352.7905578848863,
+      "y": -950.6256859373697
+    },
+    "analysis-quantifiers-and-proof-methods": {
+      "x": -1299.875140765203,
+      "y": -937.085992585856
+    },
+    "analysis-sequences-and-series": {
+      "x": -1296.559164016727,
+      "y": -958.6940746242758
+    },
+    "analysis-continuity-and-compactness": {
+      "x": -1313.672652942444,
+      "y": -996.1014319295429
+    },
+    "analysis-dominated-convergence-overview": {
+      "x": -1251.5503481768344,
+      "y": -973.0153878450808
+    },
+    "analysis-interchanging-limits-and-integrals": {
+      "x": -1284.508597411399,
+      "y": -1023.7570122555685
+    },
+    "linalg": {
+      "x": -768.4892562033394,
+      "y": -700.7312345686026
+    },
+    "spaces": {
+      "x": -1009.3752674308688,
+      "y": -866.06095022167
+    },
+    "spaces-vector-spaces-and-bases": {
+      "x": -1281.6506933099372,
+      "y": -1047.0286898327925
+    },
+    "spaces-rank-and-null-spaces": {
+      "x": -1221.4939002595615,
+      "y": -1022.7197009370511
+    },
+    "spaces-inner-products-and-norms": {
+      "x": -1233.0269684478217,
+      "y": -1057.9578699811996
+    },
+    "projection": {
+      "x": -1231.6344329400515,
+      "y": -1082.8510096357559
+    },
+    "spaces-least-squares-geometry": {
+      "x": -1178.2713678601738,
+      "y": -1061.4274748520925
+    },
+    "spectral": {
+      "x": -955.2885576504299,
+      "y": -925.377637303907
+    },
+    "spectral-positive-semidefinite-matrices": {
+      "x": -1182.6193607039231,
+      "y": -1091.494268152978
+    },
+    "eigen": {
+      "x": -1166.4631791094844,
+      "y": -1102.9570166643496
+    },
+    "svd": {
+      "x": -1186.7651256206743,
+      "y": -1149.6064714546724
+    },
+    "spectral-quadratic-forms": {
+      "x": -1126.5061161516962,
+      "y": -1117.9098598826474
+    },
+    "spectral-trace-and-determinant": {
+      "x": -1147.4734508717627,
+      "y": -1166.5483583902035
+    },
+    "convex": {
+      "x": -701.9780057143306,
+      "y": -767.350558410777
+    },
+    "convexity": {
+      "x": -897.7218726923651,
+      "y": -981.3233102753206
+    },
+    "convexity-convex-sets-and-functions": {
+      "x": -1145.901345180335,
+      "y": -1193.4339126251414
+    },
+    "convexity-gradients-and-hessians": {
+      "x": -1093.1385589247868,
+      "y": -1166.3468173816345
+    },
+    "jensen": {
+      "x": -1091.5446360977687,
+      "y": -1193.1960534683344
+    },
+    "convexity-cauchyschwarz-inequality": {
+      "x": -1096.0467697379863,
+      "y": -1227.551946639698
+    },
+    "convexity-holder-inequality": {
+      "x": -1041.2946402956547,
+      "y": -1194.961340771425
+    },
+    "prob-language": {
+      "x": -430.08984615233123,
+      "y": -602.1816372463246
+    },
+    "prob-models": {
+      "x": -629.7152339824177,
+      "y": -827.6827436225
+    },
+    "events": {
+      "x": -836.8849194908859,
+      "y": -1033.6941673090419
+    },
+    "events-sample-spaces-and-events": {
+      "x": -1071.7669966461376,
+      "y": -1260.3330810453479
+    },
+    "events-probability-axioms": {
+      "x": -1015.5557003960702,
+      "y": -1223.8697708178847
+    },
+    "events-permutations-and-combinations": {
+      "x": -1025.2174057846921,
+      "y": -1266.3165841583607
+    },
+    "events-inclusionexclusion": {
+      "x": -1013.9626858043018,
+      "y": -1283.802624221328
+    },
+    "events-union-bound": {
+      "x": -968.6514208763144,
+      "y": -1257.3488063584828
+    },
+    "cond-events": {
+      "x": -772.9993180845953,
+      "y": -1082.2994291048808
+    },
+    "cond-events-conditional-probability": {
+      "x": -964.0662507107934,
+      "y": -1283.146394726363
+    },
+    "cond-events-total-probability": {
+      "x": -951.3348004201714,
+      "y": -1298.5545913413762
+    },
+    "bayesrule": {
+      "x": -959.0800964765929,
+      "y": -1342.8366838078798
+    },
+    "cond-events-event-independence": {
+      "x": -906.0054532371735,
+      "y": -1301.4648705476307
+    },
+    "cond-events-conditional-independence": {
+      "x": -920.8532828527485,
+      "y": -1357.4547869816336
+    },
+    "prob-measure": {
+      "x": -552.2930120743634,
+      "y": -881.2334700939514
+    },
+    "measure": {
+      "x": -706.2977942874071,
+      "y": -1126.9620338701493
+    },
+    "measure-sigma-algebras": {
+      "x": -912.4795881689763,
+      "y": -1380.7016525461836
+    },
+    "measure-probability-measures": {
+      "x": -863.2929389749617,
+      "y": -1341.2012511419061
+    },
+    "measure-measurable-random-variables": {
+      "x": -861.2892296718751,
+      "y": -1374.2648920499064
+    },
+    "measure-almost-sure-statements": {
+      "x": -855.2488175539999,
+      "y": -1401.960996866537
+    },
+    "measure-lebesgue-expectation-overview": {
+      "x": -809.2211688381763,
+      "y": -1363.2618691373305
+    },
+    "random-variables": {
+      "x": -252.74462446363967,
+      "y": -695.4999315634285
+    },
+    "univariate": {
+      "x": -447.8137150116338,
+      "y": -938.6494961632267
+    },
+    "rv": {
+      "x": -637.023331902765,
+      "y": -1167.5192823296325
+    },
+    "rv-discrete-and-continuous-laws": {
+      "x": -826.6660417138288,
+      "y": -1431.7531811629894
+    },
+    "rv-cdf-pmf-and-density": {
+      "x": -777.4305004841941,
+      "y": -1384.8236810900914
+    },
+    "rv-quantiles-and-inverse-cdf": {
+      "x": -782.5060892947114,
+      "y": -1434.1561792769294
+    },
+    "rv-support-and-event-regions": {
+      "x": -764.1341553493648,
+      "y": -1441.6107482188938
+    },
+    "rv-mixed-distributions": {
+      "x": -727.2387536443786,
+      "y": -1412.969182595218
+    },
+    "moments": {
+      "x": -565.4282875695202,
+      "y": -1203.8234304150255
+    },
+    "moments-lotus-expectation-rule": {
+      "x": -715.3634578475088,
+      "y": -1432.1284904976126
+    },
+    "moments-indicator-expectations": {
+      "x": -703.8955651587428,
+      "y": -1452.7839244903278
+    },
+    "moments-variance-and-standard-deviation": {
+      "x": -700.413507394725,
+      "y": -1491.213315140814
+    },
+    "moments-moment-existence": {
+      "x": -656.509390596636,
+      "y": -1442.7522495068454
+    },
+    "moments-mgfs-and-characteristic-functions": {
+      "x": -662.7736091869978,
+      "y": -1504.4381141710599
+    },
+    "transforms": {
+      "x": -499.22405027154593,
+      "y": -1232.7511296407206
+    },
+    "transforms-cdf-transformation-method": {
+      "x": -626.0255675296676,
+      "y": -1468.8367338724204
+    },
+    "transforms-change-of-variables": {
+      "x": -630.3968319966098,
+      "y": -1530.0476865167075
+    },
+    "transforms-jacobian-density-factor": {
+      "x": -588.6342310691351,
+      "y": -1479.1366718173704
+    },
+    "transforms-convolution-of-independent-sums": {
+      "x": -583.1273584261966,
+      "y": -1518.4061664828562
+    },
+    "distribution-families": {
+      "x": -271.43287627083794,
+      "y": -1003.9542786797315
+    },
+    "discrete": {
+      "x": -431.54666237319316,
+      "y": -1258.041127385968
+    },
+    "discrete-bernoulli-and-binomial": {
+      "x": -573.3415167288597,
+      "y": -1548.5306543972952
+    },
+    "discrete-geometric-and-negative-binomial": {
+      "x": -539.9322582972553,
+      "y": -1514.1920200914178
+    },
+    "discrete-hypergeometric": {
+      "x": -521.4441920737144,
+      "y": -1520.1096346285417
+    },
+    "discrete-poisson": {
+      "x": -516.9683981964956,
+      "y": -1568.5102848303018
+    },
+    "discrete-multinomial": {
+      "x": -478.38364504454097,
+      "y": -1512.6285497948197
+    },
+    "continuous": {
+      "x": -347.12088984636006,
+      "y": -1283.9030679269642
+    },
+    "continuous-uniform": {
+      "x": -471.86185512286767,
+      "y": -1557.150244167096
+    },
+    "continuous-normal-and-lognormal": {
+      "x": -443.1596732923745,
+      "y": -1528.6910568841765
+    },
+    "continuous-exponential-and-gamma": {
+      "x": -441.5172518266438,
+      "y": -1594.7759068290404
+    },
+    "continuous-beta": {
+      "x": -407.51747457297625,
+      "y": -1544.2322724333264
+    },
+    "continuous-student-t-chi-square-and-f": {
+      "x": -394.1793193685268,
+      "y": -1570.29131152622
+    },
+    "continuous-weibull-and-heavy-tail-examples": {
+      "x": -381.0680875084412,
+      "y": -1599.597966552686
+    },
+    "sample-laws": {
+      "x": -261.1651576083474,
+      "y": -1304.1061154873123
+    },
+    "sample-laws-sample-mean-and-variance": {
+      "x": -362.3453133499015,
+      "y": -1606.815979057556
+    },
+    "sample-laws-order-statistics": {
+      "x": -336.19813084462106,
+      "y": -1579.4923350933461
+    },
+    "sample-laws-sample-quantiles": {
+      "x": -314.26057004709764,
+      "y": -1569.2335647220743
+    },
+    "sample-laws-normal-sample-pivots": {
+      "x": -305.1918285940038,
+      "y": -1625.6421031954958
+    },
+    "sample-laws-extreme-order-behavior": {
+      "x": -274.38491628239296,
+      "y": -1565.5406379968297
+    },
+    "dependence": {
+      "x": -39.033620883295654,
+      "y": -738.9698075298741
+    },
+    "joint-laws": {
+      "x": -111.17254842075832,
+      "y": -1034.0409394591852
+    },
+    "joint": {
+      "x": -182.01462466930326,
+      "y": -1317.4864995158366
+    },
+    "joint-joint-cdf-and-density": {
+      "x": -265.7008963351027,
+      "y": -1631.5978367132811
+    },
+    "joint-marginalization": {
+      "x": -238.57486952512522,
+      "y": -1585.4514752595414
+    },
+    "joint-conditional-density": {
+      "x": -220.54380598058887,
+      "y": -1596.3743982615802
+    },
+    "independence": {
+      "x": -205.95618709073042,
+      "y": -1636.2695233871218
+    },
+    "joint-covariance-matrices": {
+      "x": -178.989520094238,
+      "y": -1575.2923150664724
+    },
+    "conditional-mean": {
+      "x": -102.20103932505538,
+      "y": -1326.0674747390792
+    },
+    "ce": {
+      "x": -163.68987673752298,
+      "y": -1614.1345667785927
+    },
+    "tower": {
+      "x": -141.72217887707734,
+      "y": -1588.3253142750689
+    },
+    "totalvar": {
+      "x": -127.17451198538848,
+      "y": -1650.1004791474313
+    },
+    "conditional-mean-l2-conditional-projection": {
+      "x": -103.27575159855799,
+      "y": -1590.406175777777
+    },
+    "conditional-mean-best-mean-square-prediction": {
+      "x": -85.64770872127967,
+      "y": -1621.4501600650706
+    },
+    "multivariate-prob": {
+      "x": 7.896211236636517,
+      "y": -1039.9700235334221
+    },
+    "gaussian": {
+      "x": -30.042173990263873,
+      "y": -1329.6606588832876
+    },
+    "gaussian-gaussian-linear-transformations": {
+      "x": -67.13086187109703,
+      "y": -1648.5128916581268
+    },
+    "gaussian-gaussian-conditioning": {
+      "x": -46.09043008721388,
+      "y": -1609.6194042467507
+    },
+    "gaussian-gaussian-zero-covariance-independence": {
+      "x": -26.558167414924213,
+      "y": -1604.237181555428
+    },
+    "gaussian-chi-square-quadratic-forms": {
+      "x": -7.404575769336866,
+      "y": -1652.6268761213662
+    },
+    "dependence-models": {
+      "x": 42.20534221506635,
+      "y": -1329.3301730903836
+    },
+    "dependence-models-exchangeability": {
+      "x": 12.417045650929463,
+      "y": -1635.3862467479917
+    },
+    "dependence-models-mixture-distributions": {
+      "x": 32.04972286342946,
+      "y": -1629.523060110582
+    },
+    "dependence-models-copulas-overview": {
+      "x": 50.45783043061439,
+      "y": -1589.2565476260747
+    },
+    "dependence-models-tail-dependence": {
+      "x": 72.45544147172284,
+      "y": -1652.733386713866
+    },
+    "dependence-models-conditional-independence-graphs": {
+      "x": 89.33146261920163,
+      "y": -1596.8299276978744
+    },
+    "limits": {
+      "x": 134.41196940712842,
+      "y": -727.6904716155744
+    },
+    "limit-theory": {
+      "x": 157.95420228686027,
+      "y": -1027.93505144047
+    },
+    "convergence": {
+      "x": 122.32503917560959,
+      "y": -1324.3627089248193
+    },
+    "convergence-convergence-in-probability": {
+      "x": 111.72356624303958,
+      "y": -1641.4823824234381
+    },
+    "convergence-convergence-in-distribution": {
+      "x": 129.3284222131086,
+      "y": -1612.5308038195728
+    },
+    "convergence-almost-sure-convergence": {
+      "x": 146.98310853079434,
+      "y": -1591.325448100458
+    },
+    "convergence-l2-convergence": {
+      "x": 172.05852897712617,
+      "y": -1645.62010304426
+    },
+    "convergence-relations-and-counterexamples": {
+      "x": 184.5243238033115,
+      "y": -1580.1497302372106
+    },
+    "lln-clt": {
+      "x": 201.9991240783886,
+      "y": -1314.5707869382934
+    },
+    "lln": {
+      "x": 209.46392565305342,
+      "y": -1623.3482489126025
+    },
+    "clt": {
+      "x": 222.05906647221406,
+      "y": -1571.2560373917163
+    },
+    "lln-clt-multivariate-clt": {
+      "x": 250.9123401592774,
+      "y": -1632.8884293959102
+    },
+    "lln-clt-finite-variance-conditions": {
+      "x": 263.04056374656835,
+      "y": -1584.168131890351
+    },
+    "lln-clt-normal-approximation-limits": {
+      "x": 282.66415729398955,
+      "y": -1583.7766230631942
+    },
+    "limit-tools": {
+      "x": 280.9373559951087,
+      "y": -1299.9900776569325
+    },
+    "limit-tools-continuous-mapping-theorem": {
+      "x": 297.48442964495916,
+      "y": -1557.837334806631
+    },
+    "slutsky": {
+      "x": 326.9428580627998,
+      "y": -1606.577496461914
+    },
+    "delta": {
+      "x": 343.302208572187,
+      "y": -1588.5728802449596
+    },
+    "limit-tools-stochastic-order-notation": {
+      "x": 355.2106605720128,
+      "y": -1552.6443620987275
+    },
+    "limit-tools-second-order-delta-examples": {
+      "x": 388.5256400564258,
+      "y": -1608.6778542415666
+    },
+    "bounds": {
+      "x": 280.6062117182809,
+      "y": -1001.4290558722147
+    },
+    "concentration": {
+      "x": 358.85217460126313,
+      "y": -1280.6736964519669
+    },
+    "concentration-markov-inequality": {
+      "x": 404.97611219857674,
+      "y": -1592.3010907384298
+    },
+    "concentration-chebyshev-inequality": {
+      "x": 409.2549030583182,
+      "y": -1531.481580505326
+    },
+    "concentration-chernoff-bounding-method": {
+      "x": 444.73332323605007,
+      "y": -1587.1668316819903
+    },
+    "concentration-hoeffding-inequality": {
+      "x": 453.94166772049044,
+      "y": -1547.8542807698457
+    },
+    "concentration-tail-bounds-versus-asymptotics": {
+      "x": 469.34708165997023,
+      "y": -1531.660501376844
+    },
+    "processes": {
+      "x": 308.5846562849657,
+      "y": -672.5886632299786
+    },
+    "discrete-process": {
+      "x": 375.87045983533534,
+      "y": -969.701705383245
+    },
+    "markov": {
+      "x": 443.0378155824556,
+      "y": -1254.040467434734
+    },
+    "markov-transition-matrices": {
+      "x": 497.11558945657225,
+      "y": -1555.0090923108676
+    },
+    "markov-chapmankolmogorov-equations": {
+      "x": 501.99543088035983,
+      "y": -1507.2868217483197
+    },
+    "stationary": {
+      "x": 541.4268154410815,
+      "y": -1562.5020603156515
+    },
+    "markov-irreducibility-and-aperiodicity": {
+      "x": 542.6480505319167,
+      "y": -1506.967057465114
+    },
+    "markov-detailed-balance": {
+      "x": 564.8841603120844,
+      "y": -1511.2276317736007
+    },
+    "markov-mixing-and-convergence": {
+      "x": 595.6510694225237,
+      "y": -1536.709902888926
+    },
+    "martingale": {
+      "x": 525.2707362630341,
+      "y": -1221.8799669467087
+    },
+    "martingale-random-walks": {
+      "x": 612.3394759006134,
+      "y": -1524.8732880660295
+    },
+    "martingale-martingale-definition": {
+      "x": 622.0024321566267,
+      "y": -1496.434381721685
+    },
+    "martingale-conditional-mean-innovations": {
+      "x": 630.3057393461489,
+      "y": -1466.211427344639
+    },
+    "martingale-stopping-times": {
+      "x": 671.8983344402334,
+      "y": -1512.3755672295936
+    },
+    "martingale-optional-stopping-conditions": {
+      "x": 664.1090382326436,
+      "y": -1447.4867792887144
+    },
+    "continuous-process": {
+      "x": 495.4515617542498,
+      "y": -914.4002132301124
+    },
+    "poisson-process": {
+      "x": 598.0282494016421,
+      "y": -1187.965577328572
+    },
+    "poisson-process-poisson-process": {
+      "x": 678.7533062656752,
+      "y": -1433.4872377935887
+    },
+    "poisson-process-exponential-waiting-times": {
+      "x": 724.4210483267368,
+      "y": -1483.364434938443
+    },
+    "poisson-process-renewal-processes": {
+      "x": 723.258076704984,
+      "y": -1436.73095628855
+    },
+    "poisson-process-continuous-time-markov-chains": {
+      "x": 739.462079240338,
+      "y": -1425.7955886180266
+    },
+    "poisson-process-queueing-overview": {
+      "x": 778.1891998704616,
+      "y": -1457.1496639740249
+    },
+    "gaussian-process": {
+      "x": 668.6072339200019,
+      "y": -1149.723604502336
+    },
+    "gaussian-process-gaussian-process-definition": {
+      "x": 788.5720593704895,
+      "y": -1434.6366485997412
+    },
+    "gaussian-process-covariance-kernels": {
+      "x": 801.3858149392025,
+      "y": -1417.1447783736035
+    },
+    "gaussian-process-brownian-motion-basics": {
+      "x": 799.8460815426727,
+      "y": -1375.3992976216284
+    },
+    "gaussian-process-stationarity-of-a-process": {
+      "x": 849.0137770413259,
+      "y": -1420.2106020647682
+    },
+    "gaussian-process-sample-paths-versus-distributions": {
+      "x": 836.376999186846,
+      "y": -1361.4769355542217
+    },
+    "statistics": {
+      "x": 392.00192067299366,
+      "y": 150.77962126455947
+    },
+    "inference": {
+      "x": 488.43868989604294,
+      "y": -555.9025510038942
+    },
+    "stat-thinking": {
+      "x": 668.1241952313102,
+      "y": -797.0006648344242
+    },
+    "targets": {
+      "x": 825.6909657540523,
+      "y": -1042.6573881540094
+    },
+    "targets-target-population-and-sampling-frame": {
+      "x": 973.4662970862801,
+      "y": -1289.7133054522149
+    },
+    "targets-estimands-and-parameters": {
+      "x": 975.4792955765658,
+      "y": -1267.7120355938755
+    },
+    "estimator": {
+      "x": 1020.9615730455264,
+      "y": -1301.6174886678166
+    },
+    "targets-prediction-versus-explanation": {
+      "x": 992.8197293139135,
+      "y": -1241.805765482663
+    },
+    "targets-association-versus-causation": {
+      "x": 1029.7332417145046,
+      "y": -1263.7232981263892
+    },
+    "targets-measurement-scales": {
+      "x": 1044.6340295811005,
+      "y": -1257.9604586041662
+    },
+    "sampling": {
+      "x": 882.5014026180681,
+      "y": -995.0333031497701
+    },
+    "sampling-repeated-sampling": {
+      "x": 1067.6467639149685,
+      "y": -1261.637200195896
+    },
+    "sampling-bias-and-variance": {
+      "x": 1047.5995876385393,
+      "y": -1214.87557439892
+    },
+    "mse": {
+      "x": 1063.0664621837068,
+      "y": -1209.8987456140812
+    },
+    "sampling-standard-error": {
+      "x": 1100.3655164611039,
+      "y": -1229.128615844644
+    },
+    "sampling-consistency": {
+      "x": 1068.5280496185121,
+      "y": -1171.4796970093757
+    },
+    "sampling-identifiability": {
+      "x": 1117.095598776513,
+      "y": -1202.1025943421773
+    },
+    "decision": {
+      "x": 728.9174667690833,
+      "y": -741.8081467865815
+    },
+    "risk": {
+      "x": 932.1732988489239,
+      "y": -948.6584954097627
+    },
+    "risk-loss-functions": {
+      "x": 1137.8246491874559,
+      "y": -1201.8213777070616
+    },
+    "risk-frequentist-risk": {
+      "x": 1106.8874488772128,
+      "y": -1147.5976925720722
+    },
+    "risk-bayes-risk": {
+      "x": 1137.3385613410003,
+      "y": -1157.452042131622
+    },
+    "risk-bayes-actions": {
+      "x": 1161.3693044194322,
+      "y": -1160.147616865171
+    },
+    "risk-minimax-and-admissibility-overview": {
+      "x": 1132.0543119547506,
+      "y": -1110.0426922333206
+    },
+    "frequentist": {
+      "x": 614.9933457839269,
+      "y": -411.5618843399997
+    },
+    "estimation": {
+      "x": 803.8685542938026,
+      "y": -659.8449419504493
+    },
+    "likelihood": {
+      "x": 979.411647799722,
+      "y": -899.8071038585065
+    },
+    "likelihood-point": {
+      "x": 1190.9581876506247,
+      "y": -1146.29262290999
+    },
+    "likelihood-maximum-likelihood-estimation": {
+      "x": 1154.1531452724664,
+      "y": -1090.3934855971365
+    },
+    "likelihood-score-and-observed-information": {
+      "x": 1198.5234956743684,
+      "y": -1111.4211208938598
+    },
+    "likelihood-fisher-information": {
+      "x": 1206.0217756937216,
+      "y": -1097.7113850856051
+    },
+    "likelihood-mle-invariance": {
+      "x": 1185.4220674235876,
+      "y": -1058.9921884010525
+    },
+    "likelihood-boundary-and-nonregular-cases": {
+      "x": 1243.7505871837686,
+      "y": -1090.4925909613269
+    },
+    "estimators": {
+      "x": 1028.0242088564976,
+      "y": -843.8401661481707
+    },
+    "estimators-method-of-moments": {
+      "x": 1224.3207290077016,
+      "y": -1053.4995255703545
+    },
+    "estimators-sufficient-statistics": {
+      "x": 1258.3382022169021,
+      "y": -1062.58423271888
+    },
+    "estimators-factorization-criterion": {
+      "x": 1220.476030361779,
+      "y": -1011.3377974127985
+    },
+    "estimators-raoblackwell-theorem": {
+      "x": 1276.0163377403105,
+      "y": -1037.5173276408707
+    },
+    "estimators-completeness-and-lehmannscheffe": {
+      "x": 1265.3641277428305,
+      "y": -1009.4733453175908
+    },
+    "estimators-cramerrao-bound": {
+      "x": 1257.8657383359186,
+      "y": -984.5069597450641
+    },
+    "large-sample": {
+      "x": 1073.4429852638887,
+      "y": -785.2516522668074
+    },
+    "large-sample-mle-consistency-under-conditions": {
+      "x": 1262.2891424624222,
+      "y": -969.1930173932656
+    },
+    "large-sample-asymptotic-normality": {
+      "x": 1299.940385144114,
+      "y": -979.0396859093961
+    },
+    "large-sample-m-estimation": {
+      "x": 1317.2560939320301,
+      "y": -973.0332327419824
+    },
+    "large-sample-sandwich-covariance": {
+      "x": 1284.8532234516522,
+      "y": -930.7720121018606
+    },
+    "large-sample-efficiency": {
+      "x": 1346.5013630109981,
+      "y": -956.4827984922803
+    },
+    "large-sample-misspecified-model-targets": {
+      "x": 1318.506397939086,
+      "y": -918.2856344867698
+    },
+    "testing": {
+      "x": 909.6042436417227,
+      "y": -504.2024592849281
+    },
+    "test-theory": {
+      "x": 1115.5268735443376,
+      "y": -724.2235803951676
+    },
+    "test-theory-null-and-alternative": {
+      "x": 1310.0215081373042,
+      "y": -894.4169980554825
+    },
+    "test-theory-type-i-and-ii-errors": {
+      "x": 1361.8585445317963,
+      "y": -911.3742004437215
+    },
+    "test-theory-power-and-sample-size": {
+      "x": 1359.8521594964295,
+      "y": -891.851622978687
+    },
+    "test-theory-neymanpearson-lemma": {
+      "x": 1339.4139687304366,
+      "y": -860.7576158445286
+    },
+    "test-theory-likelihood-ratio-tests": {
+      "x": 1400.4193201083765,
+      "y": -881.6860632786885
+    },
+    "test-theory-p-value-interpretation": {
+      "x": 1358.837570107626,
+      "y": -837.9797595164571
+    },
+    "intervals": {
+      "x": 1151.0623108342738,
+      "y": -666.2998998775713
+    },
+    "intervals-confidence-coverage": {
+      "x": 1407.0379918550054,
+      "y": -849.7625240324977
+    },
+    "intervals-pivotal-quantities": {
+      "x": 1364.424732835294,
+      "y": -806.8224530795788
+    },
+    "test-invert": {
+      "x": 1426.022403481431,
+      "y": -825.4623365907877
+    },
+    "intervals-wald-score-and-likelihood-intervals": {
+      "x": 1404.321544270353,
+      "y": -795.5741342342848
+    },
+    "intervals-prediction-versus-confidence-intervals": {
+      "x": 1400.3680212047816,
+      "y": -776.2375836864804
+    },
+    "classic-tests": {
+      "x": 1180.7619146779837,
+      "y": -612.1285002725997
+    },
+    "classic-tests-one-and-two-sample-t-procedures": {
+      "x": 1396.8602468037395,
+      "y": -757.4139709678905
+    },
+    "classic-tests-paired-data": {
+      "x": 1441.746420424746,
+      "y": -764.5054690177086
+    },
+    "classic-tests-variance-inference": {
+      "x": 1450.1680026547397,
+      "y": -751.7935271908285
+    },
+    "classic-tests-chi-square-goodness-of-fit": {
+      "x": 1416.7672349732468,
+      "y": -717.8568935363172
+    },
+    "classic-tests-equivalence-and-noninferiority": {
+      "x": 1481.7265139382162,
+      "y": -733.5506395539238
+    },
+    "multiplicity": {
+      "x": 1207.9138876815186,
+      "y": -556.6363624001935
+    },
+    "multiplicity-familywise-error": {
+      "x": 1451.5833253725189,
+      "y": -701.9123609269254
+    },
+    "multiplicity-bonferroni-and-holm": {
+      "x": 1490.8764646786265,
+      "y": -703.8981892923954
+    },
+    "fdr": {
+      "x": 1439.7821249632368,
+      "y": -663.4869363300718
+    },
+    "multiplicity-benjaminihochberg-procedure": {
+      "x": 1498.0303186420615,
+      "y": -673.5269755181466
+    },
+    "multiplicity-selection-induced-bias": {
+      "x": 1485.0536695146302,
+      "y": -651.1745385153454
+    },
+    "bayesian": {
+      "x": 704.4921795293079,
+      "y": -226.47465417137818
+    },
+    "bayes-foundations": {
+      "x": 974.2484237975746,
+      "y": -363.92308078485695
+    },
+    "posterior": {
+      "x": 1234.7687920671078,
+      "y": -494.21253539052987
+    },
+    "posterior-prior-and-posterior": {
+      "x": 1493.8222759176542,
+      "y": -638.5387218727224
+    },
+    "posterior-marginal-likelihood-evidence": {
+      "x": 1513.9931307020693,
+      "y": -630.5897025806354
+    },
+    "posterior-conjugate-updating": {
+      "x": 1469.530398708928,
+      "y": -596.1101908598728
+    },
+    "posterior-posterior-summaries": {
+      "x": 1534.9873043607336,
+      "y": -606.1163981856508
+    },
+    "posterior-credible-intervals": {
+      "x": 1502.397004550223,
+      "y": -577.1710786408354
+    },
+    "posterior-posterior-predictive-distribution": {
+      "x": 1503.7521361221643,
+      "y": -561.7151608839484
+    },
+    "prior-design": {
+      "x": 1258.4001882926314,
+      "y": -430.4985088302515
+    },
+    "prior-design-weakly-informative-priors": {
+      "x": 1491.8500622686322,
+      "y": -541.5288091974762
+    },
+    "prior-design-prior-predictive-checks": {
+      "x": 1543.1362182168098,
+      "y": -543.9731583294001
+    },
+    "prior-design-jeffreys-prior-overview": {
+      "x": 1541.305574148543,
+      "y": -527.2803973614822
+    },
+    "prior-design-improper-prior-cautions": {
+      "x": 1509.6096888306367,
+      "y": -500.8194053869542
+    },
+    "prior-design-prior-sensitivity": {
+      "x": 1575.0926490903712,
+      "y": -506.34850656391404
+    },
+    "bayes-modeling": {
+      "x": 1005.0621324622191,
+      "y": -267.30153364785775
+    },
+    "hierarchical": {
+      "x": 1277.0339406524733,
+      "y": -371.596978488274
+    },
+    "hierarchical-partial-pooling": {
+      "x": 1571.3878565779976,
+      "y": -489.0966930875785
+    },
+    "hierarchical-exchangeable-group-effects": {
+      "x": 1517.6988977601889,
+      "y": -456.9633060292775
+    },
+    "hierarchical-hierarchical-variance-priors": {
+      "x": 1580.3273368469838,
+      "y": -459.8506309822273
+    },
+    "hierarchical-empirical-bayes": {
+      "x": 1556.5837335544547,
+      "y": -437.2969228154933
+    },
+    "hierarchical-bayesian-shrinkage": {
+      "x": 1543.1478024672879,
+      "y": -418.09342208496867
+    },
+    "bayes-checking": {
+      "x": 1292.9123441052134,
+      "y": -311.89368454709484
+    },
+    "bayes-checking-posterior-predictive-checks": {
+      "x": 1538.8681080626475,
+      "y": -401.6250651961612
+    },
+    "bayes-checking-predictive-cross-validation": {
+      "x": 1580.1366652250433,
+      "y": -396.75230545034265
+    },
+    "bayes-checking-waic-and-loo-overview": {
+      "x": 1590.4178082473452,
+      "y": -383.6619492769056
+    },
+    "bayes-checking-bayes-factors": {
+      "x": 1546.292702375619,
+      "y": -357.84863161187945
+    },
+    "bayes-checking-calibration-and-model-criticism": {
+      "x": 1613.2374719346835,
+      "y": -357.5835578489424
+    },
+    "regression": {
+      "x": 739.7168078585414,
+      "y": -20.470568423219717
+    },
+    "linear-models": {
+      "x": 1031.242430145288,
+      "y": -134.6812914552007
+    },
+    "ols": {
+      "x": 1307.15545044435,
+      "y": -245.44781191452577
+    },
+    "ols-design-matrices": {
+      "x": 1551.337128917865,
+      "y": -328.77222087849344
+    },
+    "ols-point": {
+      "x": 1607.6738193722224,
+      "y": -325.134242988184
+    },
+    "ols-hat-matrix": {
+      "x": 1595.0738404626816,
+      "y": -307.1887787719194
+    },
+    "ols-frischwaughlovell-theorem": {
+      "x": 1567.2935804051176,
+      "y": -286.7636422193416
+    },
+    "ols-simple-slope-and-correlation": {
+      "x": 1630.6466575775605,
+      "y": -282.72401379701387
+    },
+    "ols-gaussmarkov-theorem": {
+      "x": 1574.1236945072317,
+      "y": -257.8831583915744
+    },
+    "reg-inference": {
+      "x": 1318.8004154742625,
+      "y": -172.2366515725163
+    },
+    "reg-inference-coefficient-covariance": {
+      "x": 1623.1235849653515,
+      "y": -250.448766701849
+    },
+    "reg-inference-residual-variance-and-degrees-of-freedom": {
+      "x": 1568.9656763563887,
+      "y": -227.18900369969273
+    },
+    "reg-inference-coefficient-t-tests": {
+      "x": 1633.9065440745903,
+      "y": -221.11423403690995
+    },
+    "reg-inference-nested-model-f-tests": {
+      "x": 1599.573533201615,
+      "y": -201.35297591251694
+    },
+    "ft": {
+      "x": 1591.949976286204,
+      "y": -185.3854923766562
+    },
+    "reg-inference-mean-response-and-prediction-intervals": {
+      "x": 1643.9137705505032,
+      "y": -175.972554939354
+    },
+    "reg-diagnostics": {
+      "x": 1326.3482352363335,
+      "y": -98.49039996600675
+    },
+    "reg-diagnostics-residual-plots": {
+      "x": 1625.8970418960068,
+      "y": -158.77961540541855
+    },
+    "reg-diagnostics-heteroskedasticity": {
+      "x": 1625.4004551927821,
+      "y": -143.49910790911665
+    },
+    "reg-diagnostics-collinearity-and-vif": {
+      "x": 1584.1532047598437,
+      "y": -125.0364383531182
+    },
+    "reg-diagnostics-leverage-and-influence": {
+      "x": 1649.887835360247,
+      "y": -114.81131894439736
+    },
+    "reg-diagnostics-interactions-and-transformations": {
+      "x": 1598.0588937879522,
+      "y": -96.29464560642438
+    },
+    "reg-diagnostics-r-squared-and-adjusted-r-squared": {
+      "x": 1612.1158596847008,
+      "y": -82.11732473812147
+    },
+    "generalized-models": {
+      "x": 1039.987760422893,
+      "y": 5.0456090390942325
+    },
+    "glm": {
+      "x": 1329.6475870428947,
+      "y": -30.61526206008354
+    },
+    "glm-exponential-family-form": {
+      "x": 1642.44787856195,
+      "y": -68.3698081509757
+    },
+    "glm-link-and-meanvariance-functions": {
+      "x": 1618.842643269505,
+      "y": -52.32608024907091
+    },
+    "glm-deviance": {
+      "x": 1596.1666730528973,
+      "y": -36.75188934518007
+    },
+    "glm-irls-fisher-scoring": {
+      "x": 1654.6811050594397,
+      "y": -22.72046879920103
+    },
+    "glm-quasi-likelihood": {
+      "x": 1592.017292121027,
+      "y": -7.067486141780336
+    },
+    "categorical": {
+      "x": 1329.475738512696,
+      "y": 37.33980056349308
+    },
+    "categorical-logistic-regression": {
+      "x": 1638.4968200005194,
+      "y": 7.949338136595043
+    },
+    "categorical-poisson-regression": {
+      "x": 1586.125726049205,
+      "y": 22.433168798604225
+    },
+    "categorical-overdispersion-and-negative-binomial": {
+      "x": 1650.753966790166,
+      "y": 38.68968706117283
+    },
+    "categorical-contingency-tables": {
+      "x": 1606.8307683254307,
+      "y": 52.60096436599638
+    },
+    "categorical-log-linear-models": {
+      "x": 1605.5269796626324,
+      "y": 67.49597572087958
+    },
+    "categorical-multinomial-and-ordinal-models": {
+      "x": 1649.3884588095875,
+      "y": 84.69767027747761
+    },
+    "mixed-models": {
+      "x": 1034.0465237117742,
+      "y": 111.12059574892169
+    },
+    "mixed": {
+      "x": 1325.3301469751357,
+      "y": 111.35529407650712
+    },
+    "mixed-random-intercepts-and-slopes": {
+      "x": 1624.2072916161492,
+      "y": 98.54233282471077
+    },
+    "mixed-variance-components": {
+      "x": 1587.6736081620586,
+      "y": 111.13973113513167
+    },
+    "mixed-reml": {
+      "x": 1649.566495045196,
+      "y": 130.8837996344074
+    },
+    "mixed-blup-and-shrinkage": {
+      "x": 1590.9447381519026,
+      "y": 141.11820331797273
+    },
+    "mixed-within-person-correlation": {
+      "x": 1611.1576977823015,
+      "y": 158.0108110075121
+    },
+    "mixed-generalized-estimating-equations": {
+      "x": 1635.036012800337,
+      "y": 175.704063257368
+    },
+    "nonlinear-model": {
+      "x": 1317.9124302172684,
+      "y": 178.90451721187415
+    },
+    "nonlinear-model-nonlinear-least-squares": {
+      "x": 1635.9530449086953,
+      "y": 191.19336031604598
+    },
+    "nonlinear-model-polynomial-and-spline-bases": {
+      "x": 1602.268689255837,
+      "y": 202.36330563629392
+    },
+    "nonlinear-model-generalized-additive-models": {
+      "x": 1585.7465217811985,
+      "y": 215.26256934453846
+    },
+    "nonlinear-model-quantile-regression": {
+      "x": 1636.8992604132873,
+      "y": 237.7149386442304
+    },
+    "nonlinear-model-measurement-error-models": {
+      "x": 1570.773145481956,
+      "y": 243.03410763265958
+    },
+    "design": {
+      "x": 697.805439587385,
+      "y": 246.30787336635498
+    },
+    "experiments": {
+      "x": 1016.2997837650178,
+      "y": 220.7594834184438
+    },
+    "design-principles": {
+      "x": 1307.0541491202707,
+      "y": 245.9866892079428
+    },
+    "design-principles-randomization": {
+      "x": 1631.1938055789565,
+      "y": 267.9233387756349
+    },
+    "design-principles-replication-and-experimental-units": {
+      "x": 1579.7254806879907,
+      "y": 274.5661181448936
+    },
+    "design-principles-blocking": {
+      "x": 1584.9846141639234,
+      "y": 290.67588917031117
+    },
+    "design-principles-confounding": {
+      "x": 1619.3595212669993,
+      "y": 312.558285286026
+    },
+    "design-principles-blinding": {
+      "x": 1553.8569376496246,
+      "y": 314.91723610795566
+    },
+    "design-principles-power-planning": {
+      "x": 1605.8988449764552,
+      "y": 341.0272483894276
+    },
+    "anova": {
+      "x": 1291.3183495805279,
+      "y": 318.4288304105353
+    },
+    "anova-one-and-two-factor-anova": {
+      "x": 1556.6245921056916,
+      "y": 345.7083183178134
+    },
+    "anova-contrasts-and-interactions": {
+      "x": 1612.2280768605392,
+      "y": 373.80796797902883
+    },
+    "anova-factorial-and-fractional-factorial-designs": {
+      "x": 1549.237783726835,
+      "y": 374.4038870319287
+    },
+    "anova-split-plot-designs": {
+      "x": 1574.5458929302802,
+      "y": 396.0386640550981
+    },
+    "anova-ancova": {
+      "x": 1587.5175582441273,
+      "y": 415.0210922595617
+    },
+    "anova-response-surface-methods": {
+      "x": 1530.2833785532173,
+      "y": 415.28526698598563
+    },
+    "survey": {
+      "x": 986.9621593785577,
+      "y": 327.8806123497004
+    },
+    "survey-design": {
+      "x": 1271.5707838908947,
+      "y": 389.88170200087046
+    },
+    "survey-design-simple-random-sampling": {
+      "x": 1544.3749234609154,
+      "y": 434.55408208066655
+    },
+    "survey-design-stratified-sampling": {
+      "x": 1586.680061688846,
+      "y": 462.40878432945476
+    },
+    "survey-design-cluster-and-multistage-samples": {
+      "x": 1519.8516404748596,
+      "y": 458.2949483564635
+    },
+    "survey-design-inclusion-probabilities": {
+      "x": 1561.2371572565828,
+      "y": 486.6433670587236
+    },
+    "survey-design-horvitzthompson-estimation": {
+      "x": 1551.5386293076108,
+      "y": 499.48239115647857
+    },
+    "survey-design-finite-population-correction": {
+      "x": 1508.907833804336,
+      "y": 501.27719672509056
+    },
+    "survey-adjust": {
+      "x": 1249.996801710244,
+      "y": 454.32146737102465
+    },
+    "survey-adjust-design-effects": {
+      "x": 1513.1077229485454,
+      "y": 518.3308262603188
+    },
+    "survey-adjust-calibration-and-poststratification": {
+      "x": 1523.8999522822958,
+      "y": 537.8985820054471
+    },
+    "survey-adjust-nonresponse-adjustment": {
+      "x": 1547.3694055477422,
+      "y": 562.4039500994181
+    },
+    "survey-adjust-ratio-and-regression-estimators": {
+      "x": 1484.5740192403118,
+      "y": 555.2488715814693
+    },
+    "survey-adjust-weight-based-variance-estimation": {
+      "x": 1535.5232293863226,
+      "y": 590.6236647318386
+    },
+    "causal-course": {
+      "x": 938.1917316611848,
+      "y": 448.7719628526135
+    },
+    "causal-id": {
+      "x": 1227.5506891590815,
+      "y": 511.8782135870449
+    },
+    "causal-id-potential-outcomes": {
+      "x": 1538.7238445058306,
+      "y": 608.3252323212254
+    },
+    "causal-id-average-treatment-effects": {
+      "x": 1474.0301941107964,
+      "y": 598.643327597256
+    },
+    "causal-id-exchangeability-consistency-and-positivity": {
+      "x": 1502.8042947430004,
+      "y": 626.656629789319
+    },
+    "causal-id-dags-and-backdoor-paths": {
+      "x": 1504.9042773919969,
+      "y": 644.0096703346046
+    },
+    "causal-id-confounders-colliders-and-mediators": {
+      "x": 1452.997217237393,
+      "y": 637.8325754933047
+    },
+    "causal-est": {
+      "x": 1199.802887605169,
+      "y": 573.9102986480539
+    },
+    "causal-est-randomized-treatment-comparisons": {
+      "x": 1464.461185794166,
+      "y": 659.1599438725459
+    },
+    "causal-est-standardization-g-formula": {
+      "x": 1460.7417086765324,
+      "y": 673.8758688069798
+    },
+    "causal-est-propensity-scores": {
+      "x": 1492.4143558603291,
+      "y": 705.3768588491648
+    },
+    "causal-est-inverse-probability-weighting": {
+      "x": 1427.5619877948088,
+      "y": 691.0231503865064
+    },
+    "causal-est-doubly-robust-estimation": {
+      "x": 1468.91756312652,
+      "y": 727.9635432670102
+    },
+    "causal-est-instrumental-variables-overview": {
+      "x": 1449.5695490688297,
+      "y": 735.228577973777
+    },
+    "quasi": {
+      "x": 1168.9228604690154,
+      "y": 634.4441238382892
+    },
+    "quasi-difference-in-differences": {
+      "x": 1468.9115650434724,
+      "y": 762.2790363998513
+    },
+    "quasi-regression-discontinuity": {
+      "x": 1409.5560000682576,
+      "y": 748.1807397040027
+    },
+    "quasi-sensitivity-to-unmeasured-confounding": {
+      "x": 1424.4564247692151,
+      "y": 773.1374232820743
+    },
+    "quasi-target-trial-specification": {
+      "x": 1436.7462500120755,
+      "y": 797.1768873766352
+    },
+    "quasi-time-varying-treatment-overview": {
+      "x": 1378.9310317678835,
+      "y": 781.9410562534146
+    },
+    "nonparametric": {
+      "x": 597.0738183674353,
+      "y": 437.1531258267874
+    },
+    "nonparam": {
+      "x": 872.0581449926855,
+      "y": 566.6697378119961
+    },
+    "rank-tests": {
+      "x": 1134.9912236684318,
+      "y": 693.3216585363793
+    },
+    "rank-tests-sign-and-signed-rank-tests": {
+      "x": 1430.7806305208985,
+      "y": 829.0043689937476
+    },
+    "rank-tests-mannwhitney-and-kruskalwallis": {
+      "x": 1367.082251160957,
+      "y": 809.1547821929091
+    },
+    "rank-tests-rank-correlations": {
+      "x": 1397.2590953298557,
+      "y": 844.6430326120707
+    },
+    "rank-tests-permutation-tests": {
+      "x": 1389.2979462428736,
+      "y": 857.5551174626243
+    },
+    "rank-tests-kolmogorovsmirnov-tests": {
+      "x": 1344.0261836935385,
+      "y": 846.9556004425882
+    },
+    "rank-tests-exchangeability-requirements": {
+      "x": 1390.7559559361373,
+      "y": 894.5622692984817
+    },
+    "density": {
+      "x": 1094.598841600087,
+      "y": 755.4822141968317
+    },
+    "density-empirical-cdf": {
+      "x": 1348.6248311657184,
+      "y": 885.2836018112255
+    },
+    "density-histograms": {
+      "x": 1369.3833206975976,
+      "y": 917.2274941242669
+    },
+    "density-kernel-density-estimation": {
+      "x": 1308.7991339536056,
+      "y": 894.3737426848451
+    },
+    "density-bandwidth-choice": {
+      "x": 1347.9617733112925,
+      "y": 939.6256093174703
+    },
+    "density-boundary-bias": {
+      "x": 1320.8704092450955,
+      "y": 939.0955045772215
+    },
+    "density-nonparametric-regression": {
+      "x": 1291.9979240037478,
+      "y": 936.7601855413272
+    },
+    "robust": {
+      "x": 821.6827668411553,
+      "y": 637.5244549633085
+    },
+    "robustness": {
+      "x": 1050.8058460564773,
+      "y": 815.2956972126926
+    },
+    "robustness-median-and-trimmed-means": {
+      "x": 1307.0157164196035,
+      "y": 966.3019644168489
+    },
+    "robustness-median-absolute-deviation": {
+      "x": 1309.0950235915197,
+      "y": 986.780517976792
+    },
+    "robustness-influence-functions": {
+      "x": 1257.594482536575,
+      "y": 966.4128056794073
+    },
+    "robustness-breakdown-point": {
+      "x": 1299.506197961228,
+      "y": 1017.9623493257753
+    },
+    "robustness-huber-m-estimators": {
+      "x": 1257.0751683254477,
+      "y": 1003.7090050024669
+    },
+    "robustness-robust-regression": {
+      "x": 1245.6851925298124,
+      "y": 1013.708710746173
+    },
+    "resampling-inference": {
+      "x": 784.8858806420311,
+      "y": 682.315289561053
+    },
+    "bootstrap": {
+      "x": 1003.7482896672128,
+      "y": 872.5762837655773
+    },
+    "bootstrap-point": {
+      "x": 1260.0295617813752,
+      "y": 1044.9899797992632
+    },
+    "bootstrap-parametric-bootstrap": {
+      "x": 1243.5360321214503,
+      "y": 1050.9633143284996
+    },
+    "bootstrap-bootstrap-intervals": {
+      "x": 1205.555144669333,
+      "y": 1038.2174926050582
+    },
+    "bootstrap-jackknife": {
+      "x": 1243.6812113171684,
+      "y": 1091.338976828623
+    },
+    "bootstrap-dependent-data-resampling": {
+      "x": 1191.2436536458467,
+      "y": 1065.0762566221547
+    },
+    "bootstrap-conditional-versus-unconditional-bootstrap-variation": {
+      "x": 1196.0425241085732,
+      "y": 1089.530278455506
+    },
+    "multivariate": {
+      "x": 511.02615170068054,
+      "y": 535.2123618508759
+    },
+    "multivariate-course": {
+      "x": 718.1989159036592,
+      "y": 752.1903463850149
+    },
+    "multi-inference": {
+      "x": 957.8690566316311,
+      "y": 922.7062752293543
+    },
+    "multi-inference-sample-covariance-matrix": {
+      "x": 1184.4620858378348,
+      "y": 1099.290201622291
+    },
+    "multi-inference-hotelling-t-squared": {
+      "x": 1162.209073010307,
+      "y": 1098.9115337556307
+    },
+    "multi-inference-manova": {
+      "x": 1191.418526738423,
+      "y": 1147.6822885498275
+    },
+    "multi-inference-wishart-distribution-overview": {
+      "x": 1134.794911650179,
+      "y": 1113.6480374722578
+    },
+    "multi-inference-canonical-correlation": {
+      "x": 1152.729624909754,
+      "y": 1152.4668844169041
+    },
+    "dimension": {
+      "x": 913.9874198445864,
+      "y": 966.1920080221299
+    },
+    "pca": {
+      "x": 1112.162768047433,
+      "y": 1132.764793025317
+    },
+    "dimension-pca-scores-and-loadings": {
+      "x": 1146.8631713443133,
+      "y": 1190.0251513333485
+    },
+    "dimension-factor-analysis": {
+      "x": 1102.4799954088676,
+      "y": 1165.4507900660703
+    },
+    "dimension-rotation-and-identifiability": {
+      "x": 1095.8056511902791,
+      "y": 1180.167892725038
+    },
+    "dimension-latent-variable-measurement": {
+      "x": 1111.2783206242375,
+      "y": 1219.3581968445196
+    },
+    "multi-class": {
+      "x": 872.8050704961022,
+      "y": 1003.5493554959288
+    },
+    "multi-class-linear-discriminant-analysis": {
+      "x": 1093.9974963422478,
+      "y": 1223.0296581238226
+    },
+    "multi-class-quadratic-discriminant-analysis": {
+      "x": 1071.1064683582722,
+      "y": 1220.063298914224
+    },
+    "multi-class-mahalanobis-distance": {
+      "x": 1040.3778316404232,
+      "y": 1207.5069006341287
+    },
+    "multi-class-covariance-regularization": {
+      "x": 1068.5743004392552,
+      "y": 1263.7894967382285
+    },
+    "temporal": {
+      "x": 411.9555327360475,
+      "y": 614.7297284564651
+    },
+    "time-series": {
+      "x": 602.8169092737397,
+      "y": 847.4737600030197
+    },
+    "ts-foundations": {
+      "x": 825.2610414771351,
+      "y": 1042.9977053762268
+    },
+    "ts-foundations-trend-and-seasonality": {
+      "x": 1012.3833391612674,
+      "y": 1220.1469263342115
+    },
+    "ts-foundations-weak-stationarity": {
+      "x": 1041.3012507282624,
+      "y": 1278.9963501946324
+    },
+    "ts-foundations-autocorrelation-and-partial-autocorrelation": {
+      "x": 1005.6989815810203,
+      "y": 1258.9787849733484
+    },
+    "ts-foundations-white-noise": {
+      "x": 989.0950034844652,
+      "y": 1262.0621086023232
+    },
+    "ts-foundations-time-series-decomposition": {
+      "x": 1007.5342304337073,
+      "y": 1310.487443327941
+    },
+    "ts-foundations-spectral-density-overview": {
+      "x": 956.0537338902415,
+      "y": 1267.7305610539222
+    },
+    "arima": {
+      "x": 765.8671195527095,
+      "y": 1087.3580620881219
+    },
+    "arima-ar-and-ma-processes": {
+      "x": 969.8520385862487,
+      "y": 1311.192167259659
+    },
+    "arima-arma-arima": {
+      "x": 933.3164343550526,
+      "y": 1286.6309643700988
+    },
+    "arima-seasonal-arima": {
+      "x": 958.7602308717248,
+      "y": 1347.8788091348247
+    },
+    "arima-unit-roots-and-differencing": {
+      "x": 915.3916660825033,
+      "y": 1312.5585079034036
+    },
+    "arima-model-residual-diagnostics": {
+      "x": 911.52689638488,
+      "y": 1333.2479985188863
+    },
+    "arima-dynamic-regression": {
+      "x": 916.9043197615448,
+      "y": 1368.2261766556267
+    },
+    "forecasting": {
+      "x": 709.327874383812,
+      "y": 1125.0573170386224
+    },
+    "forecasting-exponential-smoothing": {
+      "x": 902.7548071890203,
+      "y": 1374.5570261302473
+    },
+    "forecasting-forecast-distributions": {
+      "x": 876.0492462644245,
+      "y": 1361.2920361182175
+    },
+    "forecasting-rolling-origin-evaluation": {
+      "x": 851.8560202783477,
+      "y": 1351.1196772157023
+    },
+    "forecasting-forecast-accuracy-metrics": {
+      "x": 869.4797657369664,
+      "y": 1407.898549204012
+    },
+    "forecasting-grouped-forecast-reconciliation": {
+      "x": 823.6426288745909,
+      "y": 1361.8176791654648
+    },
+    "state-space": {
+      "x": 509.00324795707115,
+      "y": 906.9265094643293
+    },
+    "states": {
+      "x": 650.9368459451006,
+      "y": 1159.8194784495752
+    },
+    "states-state-space-representation": {
+      "x": 808.4112338532533,
+      "y": 1365.1159780102862
+    },
+    "states-kalman-filter": {
+      "x": 828.3245556514296,
+      "y": 1428.8563662092886
+    },
+    "states-hidden-markov-models": {
+      "x": 792.9514349679059,
+      "y": 1397.604941106429
+    },
+    "states-filtering-versus-smoothing": {
+      "x": 780.3557363976979,
+      "y": 1405.6742134744113
+    },
+    "states-particle-filtering-overview": {
+      "x": 787.9844415261138,
+      "y": 1451.0220662298964
+    },
+    "states-volatility-models-overview": {
+      "x": 744.0237507600643,
+      "y": 1400.9530644599392
+    },
+    "event-time": {
+      "x": 310.13766232971426,
+      "y": 671.8739691375608
+    },
+    "survival": {
+      "x": 435.8691470579768,
+      "y": 944.2553079771126
+    },
+    "time-to-event": {
+      "x": 590.8464708367355,
+      "y": 1191.5537956381888
+    },
+    "time-to-event-censoring-versus-truncation": {
+      "x": 762.5771841766124,
+      "y": 1468.6671222983816
+    },
+    "time-to-event-survival-and-hazard-functions": {
+      "x": 722.5138602490504,
+      "y": 1423.6967765682728
+    },
+    "time-to-event-kaplanmeier-estimator": {
+      "x": 719.5690551868588,
+      "y": 1451.147262870946
+    },
+    "time-to-event-nelsonaalen-estimator": {
+      "x": 716.5459354269428,
+      "y": 1479.428629930467
+    },
+    "time-to-event-log-rank-test": {
+      "x": 677.6714009731161,
+      "y": 1432.9504217137971
+    },
+    "survival-models": {
+      "x": 529.2136220018523,
+      "y": 1220.1774224626847
+    },
+    "survival-models-cox-proportional-hazards": {
+      "x": 676.4938236393399,
+      "y": 1465.5381967198796
+    },
+    "survival-models-partial-likelihood": {
+      "x": 657.4587760698172,
+      "y": 1459.7925048683942
+    },
+    "survival-models-proportional-hazards-diagnostics": {
+      "x": 665.1207813890236,
+      "y": 1514.2224422729532
+    },
+    "survival-models-accelerated-failure-time-models": {
+      "x": 625.5112479738852,
+      "y": 1460.7569643665872
+    },
+    "survival-models-competing-risks": {
+      "x": 628.3701970190106,
+      "y": 1505.9471625475837
+    },
+    "survival-models-frailty-models": {
+      "x": 615.023127342296,
+      "y": 1513.3722830631084
+    },
+    "spatial-data": {
+      "x": 243.22294046903306,
+      "y": 698.8866869740739
+    },
+    "spatial-course": {
+      "x": 341.8268352537762,
+      "y": 982.219127639239
+    },
+    "spatial-structure": {
+      "x": 466.1991991914196,
+      "y": 1245.6156336018264
+    },
+    "spatial-structure-spatial-data-types": {
+      "x": 593.0981507957551,
+      "y": 1499.2081719839205
+    },
+    "spatial-structure-covariance-and-variogram": {
+      "x": 592.2547804464407,
+      "y": 1538.7169384964925
+    },
+    "spatial-structure-stationarity-and-isotropy": {
+      "x": 555.695378518137,
+      "y": 1484.7362505191013
+    },
+    "spatial-structure-kriging": {
+      "x": 561.3821619732535,
+      "y": 1543.4621060732663
+    },
+    "spatial-structure-spatial-gaussian-process-models": {
+      "x": 540.1184624857344,
+      "y": 1529.0783933881773
+    },
+    "spatial-models": {
+      "x": 407.8528389037899,
+      "y": 1265.921033002501
+    },
+    "spatial-models-areal-adjacency": {
+      "x": 536.6888870347636,
+      "y": 1565.534328396536
+    },
+    "spatial-models-car-sar-models-overview": {
+      "x": 502.6540467496513,
+      "y": 1511.9003185794193
+    },
+    "spatial-models-spatial-point-patterns": {
+      "x": 498.1482559944883,
+      "y": 1546.1860128567
+    },
+    "spatial-models-poisson-point-process-models": {
+      "x": 488.44151397482767,
+      "y": 1565.7495217486983
+    },
+    "spatial-models-spatial-confounding": {
+      "x": 458.16796876094827,
+      "y": 1518.1783951643483
+    },
+    "applied-practice": {
+      "x": 72.39526049607926,
+      "y": 736.4502198096656
+    },
+    "missing": {
+      "x": 267.9449425276204,
+      "y": 1004.890793954184
+    },
+    "missing-mechanisms": {
+      "x": 342.6603591939761,
+      "y": 1285.100726883716
+    },
+    "missing-mechanisms-mcar-mar-and-mnar": {
+      "x": 462.6807450913112,
+      "y": 1586.267017709361
+    },
+    "missing-mechanisms-missing-data-likelihood": {
+      "x": 430.24059877589855,
+      "y": 1527.7093764620815
+    },
+    "missing-mechanisms-complete-case-limitations": {
+      "x": 428.8628575374219,
+      "y": 1578.891384169913
+    },
+    "missing-mechanisms-multiple-imputation": {
+      "x": 412.4084779860949,
+      "y": 1576.0556483254863
+    },
+    "missing-mechanisms-rubin-pooling-rules": {
+      "x": 388.3068185887094,
+      "y": 1542.3197983166226
+    },
+    "missing-mechanisms-sensitivity-analysis": {
+      "x": 389.0111125643742,
+      "y": 1608.075213907312
+    },
+    "biomedical": {
+      "x": 187.8337164575922,
+      "y": 1022.8971086877355
+    },
+    "epi": {
+      "x": 270.52700074461615,
+      "y": 1302.1962762456826
+    },
+    "epi-cohort-and-case-control-studies": {
+      "x": 372.1025302686201,
+      "y": 1603.211503828372
+    },
+    "epi-risk-ratio-and-odds-ratio": {
+      "x": 343.9902124567902,
+      "y": 1547.2219516652387
+    },
+    "epi-rates-and-person-time": {
+      "x": 342.24186944589707,
+      "y": 1609.8124466363263
+    },
+    "epi-intention-to-treat-analysis": {
+      "x": 321.53873040814574,
+      "y": 1584.6728645834166
+    },
+    "epi-clinical-trial-endpoints": {
+      "x": 303.33386322146737,
+      "y": 1569.6449908215184
+    },
+    "epi-sequential-monitoring-overview": {
+      "x": 298.8125297342282,
+      "y": 1627.2609543655499
+    },
+    "meta-analysis": {
+      "x": 203.66092416910533,
+      "y": 1314.314356600652
+    },
+    "meta-analysis-fixed-effect-and-random-effects-synthesis": {
+      "x": 279.325724684548,
+      "y": 1604.941409282404
+    },
+    "meta-analysis-between-study-heterogeneity": {
+      "x": 265.55184311080257,
+      "y": 1614.4543004347643
+    },
+    "meta-analysis-forest-plots": {
+      "x": 243.03300524109943,
+      "y": 1568.3998745432075
+    },
+    "meta-analysis-publication-bias": {
+      "x": 237.8399256828801,
+      "y": 1635.1390361139759
+    },
+    "meta-analysis-meta-regression": {
+      "x": 216.28264701229426,
+      "y": 1590.5407822275388
+    },
+    "specializations": {
+      "x": 77.67903732742784,
+      "y": 1037.0949653526836
+    },
+    "bio-data": {
+      "x": 136.263166962238,
+      "y": 1323.0012658079436
+    },
+    "bio-data-count-normalization": {
+      "x": 199.06580145683867,
+      "y": 1573.2747891693018
+    },
+    "bio-data-batch-effects": {
+      "x": 190.75613150731627,
+      "y": 1628.991041353569
+    },
+    "bio-data-differential-expression": {
+      "x": 173.94132720050868,
+      "y": 1615.1668083474992
+    },
+    "bio-data-genome-wide-association": {
+      "x": 155.86825811674646,
+      "y": 1585.5901638428984
+    },
+    "bio-data-multiple-testing-in-genomics": {
+      "x": 146.59896587515547,
+      "y": 1648.4641515233575
+    },
+    "bio-data-association-versus-causal-mediation": {
+      "x": 126.53559483762244,
+      "y": 1590.1674408604204
+    },
+    "other-domains": {
+      "x": 62.33873922867114,
+      "y": 1328.5382499542043
+    },
+    "other-domains-econometric-panel-models": {
+      "x": 115.06531138558253,
+      "y": 1638.3905011156132
+    },
+    "other-domains-statistical-quality-control": {
+      "x": 96.36672554381076,
+      "y": 1582.3808787868993
+    },
+    "other-domains-acceptance-sampling": {
+      "x": 84.92782080358405,
+      "y": 1646.5417544420393
+    },
+    "other-domains-extreme-value-modeling": {
+      "x": 68.08877663829053,
+      "y": 1610.877648366484
+    },
+    "other-domains-functional-data-overview": {
+      "x": 52.79955855287829,
+      "y": 1601.731693930576
+    },
+    "other-domains-network-data-overview": {
+      "x": 39.116507324802654,
+      "y": 1652.8799993985663
+    },
+    "professional": {
+      "x": -38.189955939711055,
+      "y": 1039.29857464798
+    },
+    "consulting": {
+      "x": -11.779357590404848,
+      "y": 1329.9478360953701
+    },
+    "consulting-translate-questions-into-estimands": {
+      "x": 23.449329961144056,
+      "y": 1631.6692065299633
+    },
+    "consulting-analysis-plans": {
+      "x": 8.071441173676318,
+      "y": 1589.0024906491994
+    },
+    "consulting-assumptions-and-sensitivity-reporting": {
+      "x": -6.964896204041469,
+      "y": 1653.8321414805325
+    },
+    "consulting-communicate-uncertainty": {
+      "x": -21.617190330821796,
+      "y": 1600.914221693409
+    },
+    "consulting-statistical-consulting": {
+      "x": -36.786780513017106,
+      "y": 1613.666165045895
+    },
+    "consulting-reproducible-case-study": {
+      "x": -52.85443324546951,
+      "y": 1646.814615060069
+    },
+    "ethics": {
+      "x": -85.86085922900966,
+      "y": 1327.2256450402306
+    },
+    "ethics-data-provenance-and-consent": {
+      "x": -67.99169863028413,
+      "y": 1642.3739587094888
+    },
+    "ethics-privacy-and-disclosure": {
+      "x": -82.03366137886978,
+      "y": 1617.7317331088454
+    },
+    "ethics-selective-reporting": {
+      "x": -95.66320230825006,
+      "y": 1593.6303263477057
+    },
+    "ethics-fairness-and-subgroup-assessment": {
+      "x": -114.50239678199662,
+      "y": 1650.8825714292464
+    },
+    "ethics-replicability": {
+      "x": -124.91277650452315,
+      "y": 1587.1989033480718
+    },
+    "ethics-statistical-versus-practical-significance": {
+      "x": -142.65189419047437,
+      "y": 1620.0195949946994
+    },
+    "computing": {
+      "x": -374.0535375260271,
+      "y": 191.00772514289838
+    },
+    "programming": {
+      "x": -250.24101781452111,
+      "y": 696.4046474594727
+    },
+    "stat-programming": {
+      "x": -251.72445657615668,
+      "y": 1009.0762101850577
+    },
+    "program-basics": {
+      "x": -278.5166779931142,
+      "y": 1300.5108458139364
+    },
+    "program-basics-r-and-python-data-structures": {
+      "x": -292.50267107719,
+      "y": 1579.9843532294367
+    },
+    "program-basics-functions-and-scope": {
+      "x": -318.76944341008084,
+      "y": 1620.5603674300921
+    },
+    "program-basics-iteration-and-vectorization": {
+      "x": -323.5733607741553,
+      "y": 1553.1972079532736
+    },
+    "program-basics-arrays-and-matrix-operations": {
+      "x": -351.89330662243236,
+      "y": 1599.4745954492653
+    },
+    "program-basics-debugging": {
+      "x": -367.3799371034751,
+      "y": 1585.3015696263114
+    },
+    "program-basics-numerical-precision": {
+      "x": -376.58102304291,
+      "y": 1546.2923577858246
+    },
+    "reproducibility": {
+      "x": -364.9558329853496,
+      "y": 1278.9477080670536
+    },
+    "reproducibility-random-seeds-and-rng-streams": {
+      "x": -395.25741946042916,
+      "y": 1547.6070848899265
+    },
+    "reproducibility-unit-checks-for-analysis-code": {
+      "x": -418.0607634280617,
+      "y": 1563.849807376441
+    },
+    "reproducibility-version-control": {
+      "x": -442.42966731492936,
+      "y": 1583.9058823416551
+    },
+    "reproducibility-environments-and-dependencies": {
+      "x": -443.4445413855548,
+      "y": 1521.7535269820166
+    },
+    "reproducibility-profiling": {
+      "x": -478.4065641883086,
+      "y": 1575.9977470526067
+    },
+    "reproducibility-reproducible-reports": {
+      "x": -486.37023224331045,
+      "y": 1540.146331948626
+    },
+    "data-work": {
+      "x": -416.4231987269759,
+      "y": 952.990933620039
+    },
+    "data-management": {
+      "x": -449.75750499096364,
+      "y": 1251.6461907041873
+    },
+    "data-management-tidy-data": {
+      "x": -495.5572730902306,
+      "y": 1510.300404804003
+    },
+    "data-management-joins-and-keys": {
+      "x": -525.7115513537105,
+      "y": 1543.7925342444664
+    },
+    "data-management-group-wise-transformations": {
+      "x": -544.1242286910084,
+      "y": 1541.247433595484
+    },
+    "data-management-sql-and-databases": {
+      "x": -545.2703652388748,
+      "y": 1491.238219415893
+    },
+    "data-management-dates-strings-and-categories": {
+      "x": -584.9633625943511,
+      "y": 1546.0466880185218
+    },
+    "data-management-data-validation-and-provenance": {
+      "x": -584.1591822954372,
+      "y": 1493.3260421583939
+    },
+    "eda": {
+      "x": -532.5412060643057,
+      "y": 1218.728790110242
+    },
+    "eda-distribution-summaries": {
+      "x": -617.956390397277,
+      "y": 1529.172557111878
+    },
+    "eda-graphical-comparisons": {
+      "x": -610.410827969447,
+      "y": 1463.2516285548231
+    },
+    "eda-missingness-patterns": {
+      "x": -648.9049152971111,
+      "y": 1507.9183888370953
+    },
+    "eda-outlier-investigation": {
+      "x": -658.014338724397,
+      "y": 1483.2508628035396
+    },
+    "eda-simpson-paradox": {
+      "x": -662.8167141604735,
+      "y": 1450.1728350794565
+    },
+    "eda-exploration-versus-confirmation": {
+      "x": -704.7430030950114,
+      "y": 1497.449323519146
+    },
+    "graphics": {
+      "x": -612.9355024870312,
+      "y": 1180.3432000020039
+    },
+    "graphics-visual-encodings-and-scales": {
+      "x": -707.6751403286311,
+      "y": 1461.1099946080185
+    },
+    "graphics-distribution-and-uncertainty-graphics": {
+      "x": -731.7494268814597,
+      "y": 1468.781430484321
+    },
+    "graphics-multivariate-graphics": {
+      "x": -722.8662429918729,
+      "y": 1411.24795716959
+    },
+    "graphics-faceting-and-conditioning": {
+      "x": -768.4562898060054,
+      "y": 1459.8471679288216
+    },
+    "graphics-accessible-color": {
+      "x": -766.0455789215237,
+      "y": 1416.6616647630992
+    },
+    "graphics-reporting-analytical-findings": {
+      "x": -778.7693633241784,
+      "y": 1402.5330488791103
+    },
+    "numerics": {
+      "x": -445.7421555573535,
+      "y": 590.6893690926594
+    },
+    "numerical": {
+      "x": -569.467314347057,
+      "y": 870.2338639069098
+    },
+    "stable-linear": {
+      "x": -690.5796813160508,
+      "y": 1136.661648756314
+    },
+    "stable-linear-qr-least-squares": {
+      "x": -807.1736987472176,
+      "y": 1416.1946257995555
+    },
+    "stable-linear-cholesky-factorization": {
+      "x": -802.6712227012544,
+      "y": 1372.4434672675534
+    },
+    "stable-linear-svd-for-rank-deficiency": {
+      "x": -851.0458186191302,
+      "y": 1418.5686868578591
+    },
+    "stable-linear-condition-numbers": {
+      "x": -838.1446631859985,
+      "y": 1362.3479992370117
+    },
+    "stable-linear-sparse-matrix-methods": {
+      "x": -862.0533269940864,
+      "y": 1366.7763415615489
+    },
+    "stable-linear-solve-systems-without-explicit-inverses": {
+      "x": -893.8514627959515,
+      "y": 1382.7304509021765
+    },
+    "numeric-methods": {
+      "x": -765.1253688295296,
+      "y": 1087.8801266561848
+    },
+    "numeric-methods-root-finding": {
+      "x": -908.4757371827967,
+      "y": 1371.5174347496916
+    },
+    "numeric-methods-numerical-integration": {
+      "x": -908.4840542467446,
+      "y": 1338.8157590462706
+    },
+    "numeric-methods-finite-differences": {
+      "x": -911.937244702147,
+      "y": 1312.1293553179114
+    },
+    "numeric-methods-automatic-differentiation": {
+      "x": -959.4186965354663,
+      "y": 1348.074932445263
+    },
+    "numeric-methods-log-sum-exp": {
+      "x": -936.9552104981467,
+      "y": 1285.8737759195355
+    },
+    "numeric-methods-approximation-error": {
+      "x": -973.4262294231268,
+      "y": 1305.0569391717188
+    },
+    "optimization": {
+      "x": -680.6188079403719,
+      "y": 786.3574494323984
+    },
+    "opt-theory": {
+      "x": -836.2380936092945,
+      "y": 1034.2175065220529
+    },
+    "opt-theory-convex-objectives": {
+      "x": -1002.4084415721286,
+      "y": 1313.0620687750359
+    },
+    "opt-theory-first-and-second-order-conditions": {
+      "x": -988.7660461066098,
+      "y": 1265.638204665554
+    },
+    "opt-theory-lagrange-multipliers": {
+      "x": -1004.3910535246473,
+      "y": 1256.4639735174121
+    },
+    "opt-theory-kkt-conditions": {
+      "x": -1045.0744042330086,
+      "y": 1277.8378186583598
+    },
+    "opt-theory-duality": {
+      "x": -1017.7427437234181,
+      "y": 1216.4453638378804
+    },
+    "opt-theory-constraints-versus-penalties": {
+      "x": -1065.8908428121274,
+      "y": 1245.4687978792285
+    },
+    "opt-algorithms": {
+      "x": -903.5987872464187,
+      "y": 975.914561673716
+    },
+    "opt-algorithms-gradient-descent": {
+      "x": -1048.9733265990858,
+      "y": 1198.3519089107165
+    },
+    "opt-algorithms-newton-and-quasi-newton": {
+      "x": -1103.8495711932196,
+      "y": 1232.9878885535638
+    },
+    "opt-algorithms-coordinate-descent": {
+      "x": -1077.6976379905273,
+      "y": 1177.061087982923
+    },
+    "opt-algorithms-stochastic-gradient-descent": {
+      "x": -1107.669812857418,
+      "y": 1183.0000187755852
+    },
+    "opt-algorithms-proximal-gradient": {
+      "x": -1136.4078289979939,
+      "y": 1186.8485481187129
+    },
+    "opt-algorithms-convergence-diagnostics": {
+      "x": -1109.023306891399,
+      "y": 1132.655488232703
+    },
+    "simulation": {
+      "x": -612.8499313424006,
+      "y": 414.74686454946806
+    },
+    "monte-carlo": {
+      "x": -775.71342527205,
+      "y": 692.7255458352201
+    },
+    "simulation-basics": {
+      "x": -966.9052159366206,
+      "y": 913.2328856291571
+    },
+    "simulation-basics-inverse-transform-sampling": {
+      "x": -1170.023074263415,
+      "y": 1168.5632681226384
+    },
+    "simulation-basics-rejection-sampling": {
+      "x": -1136.5132623775448,
+      "y": 1110.0248094935278
+    },
+    "simulation-basics-monte-carlo-integration": {
+      "x": -1180.6172427708202,
+      "y": 1127.6194591807534
+    },
+    "simulation-basics-monte-carlo-standard-error": {
+      "x": -1193.254973982885,
+      "y": 1114.4792634251312
+    },
+    "simulation-basics-simulation-study-design": {
+      "x": -1172.9945374403485,
+      "y": 1071.2853981103146
+    },
+    "simulation-basics-coverage-experiments": {
+      "x": -1233.3702654109593,
+      "y": 1101.421043504686
+    },
+    "variance-reduction": {
+      "x": -1021.1316153335468,
+      "y": 852.1679553739987
+    },
+    "importance": {
+      "x": -1215.1072056637886,
+      "y": 1060.9635648753967
+    },
+    "variance-reduction-self-normalized-importance-weights": {
+      "x": -1253.6092550777364,
+      "y": 1070.1491020987999
+    },
+    "variance-reduction-control-variates": {
+      "x": -1217.0763548605053,
+      "y": 1015.6902923006012
+    },
+    "variance-reduction-antithetic-variables": {
+      "x": -1273.1533135188538,
+      "y": 1038.5932829357826
+    },
+    "variance-reduction-stratified-simulation": {
+      "x": -1267.2785965436578,
+      "y": 1010.4454893026208
+    },
+    "mcmc": {
+      "x": -854.7405178859999,
+      "y": 592.4682667316222
+    },
+    "mcmc-algorithms": {
+      "x": -1067.0924862448035,
+      "y": 793.859953518178
+    },
+    "mcmc-algorithms-metropolishastings": {
+      "x": -1256.328878331078,
+      "y": 978.9699415190522
+    },
+    "mcmc-algorithms-gibbs-sampling": {
+      "x": -1293.114679221267,
+      "y": 984.6275231127645
+    },
+    "mcmc-algorithms-hamiltonian-monte-carlo": {
+      "x": -1315.3727081826453,
+      "y": 978.5672099066744
+    },
+    "mcmc-algorithms-parameter-transformations": {
+      "x": -1282.9808823718506,
+      "y": 932.3973652059552
+    },
+    "mcmc-algorithms-posterior-simulation-targets": {
+      "x": -1346.0595106270296,
+      "y": 955.454900503059
+    },
+    "mcmc-checks": {
+      "x": -1113.8035610005197,
+      "y": 726.8711216595151
+    },
+    "mcmc-checks-multiple-chains": {
+      "x": -1319.850396807927,
+      "y": 914.8618330108583
+    },
+    "mcmc-checks-r-hat-diagnostics": {
+      "x": -1368.1681047551785,
+      "y": 925.9092684906674
+    },
+    "mcmc-checks-effective-sample-size": {
+      "x": -1324.037545108111,
+      "y": 874.6493642696585
+    },
+    "mcmc-checks-autocorrelation": {
+      "x": -1375.759879873157,
+      "y": 886.9120591324363
+    },
+    "mcmc-checks-monte-carlo-error-versus-posterior-uncertainty": {
+      "x": -1378.3090143941774,
+      "y": 866.9238260938796
+    },
+    "mcmc-checks-divergences-and-geometry": {
+      "x": -1356.0631716020707,
+      "y": 831.9461312076176
+    },
+    "approx-inference": {
+      "x": -926.2278072073055,
+      "y": 472.97150987765275
+    },
+    "laplace-em": {
+      "x": -1156.3151712494337,
+      "y": 657.1417082626797
+    },
+    "laplace-em-laplace-approximation": {
+      "x": -1388.3106022735049,
+      "y": 830.5377008168167
+    },
+    "laplace-em-expectationmaximization": {
+      "x": -1421.216419205361,
+      "y": 828.8165149843269
+    },
+    "laplace-em-e-and-m-steps": {
+      "x": -1378.023478392177,
+      "y": 783.1400340775884
+    },
+    "laplace-em-local-optima": {
+      "x": -1440.3634006355446,
+      "y": 797.4240028541458
+    },
+    "laplace-em-observed-versus-complete-data-likelihood": {
+      "x": -1422.5344026641303,
+      "y": 766.9274931350858
+    },
+    "variational": {
+      "x": -1200.9238229395082,
+      "y": 571.5609954294964
+    },
+    "variational-variational-family": {
+      "x": -1464.8399785078939,
+      "y": 768.750490947318
+    },
+    "elbo": {
+      "x": -1416.079840756157,
+      "y": 723.1108968852634
+    },
+    "variational-posterior-kl-gap": {
+      "x": -1459.7836252427953,
+      "y": 724.9933026056242
+    },
+    "variational-mean-field-factorization": {
+      "x": -1472.7135921636634,
+      "y": 711.0266820791734
+    },
+    "variational-coordinate-ascent-vi": {
+      "x": -1437.1524880710415,
+      "y": 674.1752335440875
+    },
+    "variational-stochastic-vi": {
+      "x": -1503.962455276721,
+      "y": 685.1332497605435
+    },
+    "variational-reparameterization-gradient": {
+      "x": -1467.3702961086362,
+      "y": 648.7779776146423
+    },
+    "variational-why-do-jensen-and-kl-give-the-same-bound": {
+      "x": -1479.9888694991914,
+      "y": 634.6972752963615
+    },
+    "stat-learning": {
+      "x": -735.5898450612133,
+      "y": 80.66957197618108
+    },
+    "learning-foundations": {
+      "x": -995.5359094706828,
+      "y": 300.84589569143293
+    },
+    "prediction-risk": {
+      "x": -1241.8862164589582,
+      "y": 476.04477244189286
+    },
+    "prediction-risk-population-risk": {
+      "x": -1499.264260006298,
+      "y": 623.237531375094
+    },
+    "prediction-risk-empirical-risk-minimization": {
+      "x": -1478.446645067036,
+      "y": 595.3113471908636
+    },
+    "prediction-risk-biasvariance-tradeoff": {
+      "x": -1542.0188352003981,
+      "y": 600.9881846598475
+    },
+    "prediction-risk-bayes-optimal-prediction": {
+      "x": -1492.1093100174865,
+      "y": 562.4270782665343
+    },
+    "prediction-risk-overfitting": {
+      "x": -1524.503378089617,
+      "y": 555.2769993314354
+    },
+    "prediction-risk-regularization": {
+      "x": -1548.7892641164597,
+      "y": 544.6131768088729
+    },
+    "validation": {
+      "x": -1273.1372688423155,
+      "y": 384.7356166053902
+    },
+    "validation-train-validation-test-splits": {
+      "x": -1561.8431916403695,
+      "y": 529.6833115920941
+    },
+    "validation-cross-validation": {
+      "x": -1531.7805771799942,
+      "y": 500.487936895843
+    },
+    "validation-nested-cross-validation": {
+      "x": -1529.5359191560435,
+      "y": 480.92036113006833
+    },
+    "validation-group-and-temporal-splits": {
+      "x": -1582.3933640649614,
+      "y": 478.1912379247246
+    },
+    "validation-data-leakage": {
+      "x": -1525.016865126833,
+      "y": 442.33065782470044
+    },
+    "validation-hyperparameter-tuning": {
+      "x": -1574.6090244398042,
+      "y": 437.71432477012047
+    },
+    "validation-learning-curves": {
+      "x": -1576.2105747523076,
+      "y": 419.25739281376394
+    },
+    "prediction-assessment": {
+      "x": -1297.684726865396,
+      "y": 291.40066859958074
+    },
+    "prediction-assessment-regression-metrics": {
+      "x": -1603.1245690288213,
+      "y": 407.3052383854508
+    },
+    "prediction-assessment-roc-and-precisionrecall": {
+      "x": -1555.360759310294,
+      "y": 376.7331861088458
+    },
+    "prediction-assessment-probability-calibration": {
+      "x": -1573.7043757984304,
+      "y": 362.6227795676466
+    },
+    "prediction-assessment-proper-scoring-rules": {
+      "x": -1609.0914654941585,
+      "y": 351.9035415368755
+    },
+    "prediction-assessment-class-imbalance": {
+      "x": -1552.1446149180974,
+      "y": 321.3327241010488
+    },
+    "prediction-assessment-distribution-shift": {
+      "x": -1613.8868982836352,
+      "y": 315.36444428933567
+    },
+    "supervised": {
+      "x": -1035.555747463389,
+      "y": 96.04318765816699
+    },
+    "penalized": {
+      "x": -1314.2816071077723,
+      "y": 203.8721590070888
+    },
+    "ridge": {
+      "x": -1627.4838963757104,
+      "y": 299.19527874641375
+    },
+    "penalized-lasso": {
+      "x": -1568.4741570417386,
+      "y": 270.2778072226801
+    },
+    "penalized-elastic-net": {
+      "x": -1606.492590299735,
+      "y": 258.3930382301002
+    },
+    "penalized-shrinkage-paths": {
+      "x": -1619.8983059317607,
+      "y": 242.0260016038301
+    },
+    "penalized-feature-scaling": {
+      "x": -1571.5956431042173,
+      "y": 216.8981351976253
+    },
+    "penalized-high-dimensional-identifiability": {
+      "x": -1638.4497388927684,
+      "y": 207.5092553712357
+    },
+    "neighbors-kernels": {
+      "x": -1324.316484736834,
+      "y": 122.82446113977068
+    },
+    "neighbors-kernels-nearest-neighbors": {
+      "x": -1597.0558892355439,
+      "y": 184.17277987626764
+    },
+    "neighbors-kernels-kernel-regression": {
+      "x": -1642.3706573827824,
+      "y": 170.8389963756137
+    },
+    "neighbors-kernels-support-vector-machines": {
+      "x": -1579.5203416198297,
+      "y": 146.4934832834262
+    },
+    "neighbors-kernels-kernel-trick": {
+      "x": -1633.0556906790398,
+      "y": 133.08533735244475
+    },
+    "neighbors-kernels-gaussian-process-regression": {
+      "x": -1622.4620075627872,
+      "y": 114.0010781394485
+    },
+    "trees": {
+      "x": -1329.3581837945958,
+      "y": 41.31366817814322
+    },
+    "trees-regression-and-classification-trees": {
+      "x": -1651.9540276141015,
+      "y": 97.55026392767637
+    },
+    "trees-pruning": {
+      "x": -1594.8055132147615,
+      "y": 76.3168759170394
+    },
+    "trees-bagging": {
+      "x": -1618.5456146926226,
+      "y": 59.347751714463
+    },
+    "trees-random-forests": {
+      "x": -1643.3764933090704,
+      "y": 41.89035232268257
+    },
+    "trees-gradient-boosting": {
+      "x": -1584.9415728442748,
+      "y": 22.696144267385428
+    },
+    "trees-feature-importance-caveats": {
+      "x": -1647.5455861873147,
+      "y": 5.194510680416586
+    },
+    "unsupervised": {
+      "x": -1037.8812220556788,
+      "y": -66.3518568256439
+    },
+    "clustering": {
+      "x": -1329.1416873750802,
+      "y": -47.774207285148414
+    },
+    "clustering-k-means": {
+      "x": -1653.8383410234576,
+      "y": -13.252734154127658
+    },
+    "clustering-hierarchical-clustering": {
+      "x": -1588.8135248855328,
+      "y": -30.475849997486947
+    },
+    "clustering-density-based-clustering": {
+      "x": -1630.919773365958,
+      "y": -49.50574725224753
+    },
+    "clustering-gaussian-mixture-models": {
+      "x": -1632.2746670716983,
+      "y": -67.7966156108696
+    },
+    "clustering-cluster-validation": {
+      "x": -1585.9479938759448,
+      "y": -83.62067360365587
+    },
+    "clustering-label-switching": {
+      "x": -1649.9203202579672,
+      "y": -105.47958141746372
+    },
+    "embeddings": {
+      "x": -1323.703884178321,
+      "y": -129.25953354095748
+    },
+    "embeddings-multidimensional-scaling": {
+      "x": -1607.6102544480188,
+      "y": -120.81228592202508
+    },
+    "embeddings-spectral-embeddings": {
+      "x": -1642.7128293704193,
+      "y": -141.91265946193377
+    },
+    "embeddings-nonlinear-manifold-overview": {
+      "x": -1577.8317089855987,
+      "y": -154.07508669222605
+    },
+    "embeddings-pca-versus-visualization-embeddings": {
+      "x": -1632.6313579591808,
+      "y": -177.8509401748612
+    },
+    "embeddings-distances-and-scaling": {
+      "x": -1610.1910266366758,
+      "y": -193.6220904001575
+    },
+    "modern-prediction": {
+      "x": -1027.8238738983703,
+      "y": -158.67603550803543
+    },
+    "prediction-uncertainty": {
+      "x": -1314.428607966185,
+      "y": -202.92223771700685
+    },
+    "prediction-uncertainty-conformal-prediction-overview": {
+      "x": -1579.7285436408065,
+      "y": -207.87817448435044
+    },
+    "prediction-uncertainty-exchangeability-and-coverage": {
+      "x": -1607.9800700574058,
+      "y": -229.8891005515527
+    },
+    "prediction-uncertainty-prediction-sets": {
+      "x": -1621.0625066291311,
+      "y": -250.2605537727212
+    },
+    "prediction-uncertainty-marginal-versus-conditional-coverage": {
+      "x": -1564.4157531243661,
+      "y": -259.43164285634015
+    },
+    "prediction-uncertainty-calibration-under-shift": {
+      "x": -1624.8502021768281,
+      "y": -288.1310731311463
+    },
+    "prob-learning": {
+      "x": -703.5713054597508,
+      "y": -229.31946741099418
+    },
+    "graphical": {
+      "x": -1016.1475694192063,
+      "y": -221.45906430633914
+    },
+    "graphs": {
+      "x": -1299.4964108918696,
+      "y": -283.2120726225299
+    },
+    "graphs-directed-graphical-models": {
+      "x": -1559.60616977752,
+      "y": -294.5600703976063
+    },
+    "graphs-undirected-graphical-models": {
+      "x": -1604.0796880935463,
+      "y": -321.54977452550224
+    },
+    "graphs-graphical-conditional-independence": {
+      "x": -1593.7834945220718,
+      "y": -338.0394449535216
+    },
+    "graphs-variable-elimination": {
+      "x": -1551.9946253821272,
+      "y": -347.32900774472455
+    },
+    "graphs-message-passing-overview": {
+      "x": -1610.3659916185325,
+      "y": -379.3222884669462
+    },
+    "graphs-latent-variable-models": {
+      "x": -1552.0462795540068,
+      "y": -383.9257798516333
+    },
+    "neural": {
+      "x": -988.8029157812713,
+      "y": -322.28681906410037
+    },
+    "neural-basics": {
+      "x": -1277.6212111108205,
+      "y": -369.572781627273
+    },
+    "neural-basics-multilayer-networks": {
+      "x": -1534.2788189480468,
+      "y": -397.7618880207298
+    },
+    "neural-basics-backpropagation": {
+      "x": -1588.3325519942562,
+      "y": -430.7584117139854
+    },
+    "neural-basics-activation-functions": {
+      "x": -1555.886106372361,
+      "y": -440.6671543207255
+    },
+    "neural-basics-minibatch-optimization": {
+      "x": -1533.12870296293,
+      "y": -452.7732764297399
+    },
+    "neural-basics-regularization-and-early-stopping": {
+      "x": -1581.4090570925744,
+      "y": -486.29418720720315
+    },
+    "neural-basics-representation-learning": {
+      "x": -1514.9745982243023,
+      "y": -484.44553996284225
+    },
+    "neural-models": {
+      "x": -1250.0135834372602,
+      "y": -454.2752923309162
+    },
+    "neural-models-convolutional-networks-overview": {
+      "x": -1552.8516720928376,
+      "y": -515.7389907265491
+    },
+    "neural-models-sequence-models-overview": {
+      "x": -1500.4989044811755,
+      "y": -517.0241443168468
+    },
+    "neural-models-autoencoders": {
+      "x": -1556.0562379282446,
+      "y": -555.6811484028744
+    },
+    "neural-models-variational-autoencoders": {
+      "x": -1505.662323984308,
+      "y": -556.7179873903171
+    },
+    "neural-models-generative-model-evaluation": {
+      "x": -1503.1877880402703,
+      "y": -574.9622488562298
+    },
+    "neural-models-predictive-versus-generative-tasks": {
+      "x": -1534.759362901412,
+      "y": -606.7676673086476
+    },
+    "information": {
+      "x": -951.4806718944153,
+      "y": -419.86251441555476
+    },
+    "information-measures": {
+      "x": -1216.7973977111274,
+      "y": -536.9395617045075
+    },
+    "information-measures-entropy": {
+      "x": -1504.074959578201,
+      "y": -614.143039253395
+    },
+    "information-measures-cross-entropy": {
+      "x": -1468.1210704954826,
+      "y": -618.6769629485709
+    },
+    "kl": {
+      "x": -1517.8092926262004,
+      "y": -659.6686903405296
+    },
+    "information-measures-mutual-information": {
+      "x": -1455.8800749353263,
+      "y": -652.1752463788155
+    },
+    "information-measures-log-loss": {
+      "x": -1472.307025740626,
+      "y": -679.3726506787353
+    },
+    "information-measures-likelihood-and-compression": {
+      "x": -1483.6234101206605,
+      "y": -704.7927775850919
+    }
+  }
+}

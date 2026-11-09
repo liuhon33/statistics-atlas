@@ -1,0 +1,3 @@
+# Preserve exact file bytes, including immutable source material.
+# This disables newline conversion; text diffs remain available.
+* -text

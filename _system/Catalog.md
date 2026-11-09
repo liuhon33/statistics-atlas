@@ -1,0 +1,796 @@
+---
+id: system-catalog
+title: Topic catalog
+layer: auxiliary
+---
+
+# Topic catalog
+
+All 757 reference nodes. Paths and links are organizational; they are not study completion records.
+
+## Probability & mathematical foundations
+
+- L1 · [[Backbone/Probability & mathematical foundations/Probability & mathematical foundations|Probability & mathematical foundations]] · U–M
+- L2 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Mathematical tools|Mathematical tools]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Calculus & analysis for statistics|Calculus & analysis for statistics]] · Foundation
+- L4 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Differentiation & integration/Differentiation & integration|Differentiation & integration]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Differentiation & integration/Limits and continuity|Limits and continuity]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Differentiation & integration/Derivatives and partial derivatives|Derivatives and partial derivatives]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Differentiation & integration/Multiple integrals|Multiple integrals]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Differentiation & integration/Taylor approximation|Taylor approximation]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Differentiation & integration/Jacobian matrices|Jacobian matrices]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Differentiation & integration/Constrained extrema|Constrained extrema]] · Foundation
+- L4 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Proof & convergence tools/Proof & convergence tools|Proof & convergence tools]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Proof & convergence tools/Sets and functions|Sets and functions]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Proof & convergence tools/Quantifiers and proof methods|Quantifiers and proof methods]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Proof & convergence tools/Sequences and series|Sequences and series]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Proof & convergence tools/Continuity and compactness|Continuity and compactness]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Proof & convergence tools/Dominated convergence overview|Dominated convergence overview]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Calculus & analysis for statistics/Proof & convergence tools/Interchanging limits and integrals|Interchanging limits and integrals]] · Foundation
+- L3 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Linear algebra for statistics|Linear algebra for statistics]] · Foundation
+- L4 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Vectors, spaces & projections|Vectors, spaces & projections]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Vector spaces and bases|Vector spaces and bases]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Rank and null spaces|Rank and null spaces]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Inner products and norms|Inner products and norms]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Orthogonal projection|Orthogonal projection]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Least squares geometry|Least squares geometry]] · Foundation
+- L4 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Matrices & decompositions|Matrices & decompositions]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Positive semidefinite matrices|Positive semidefinite matrices]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Eigenvalues and eigenvectors|Eigenvalues and eigenvectors]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Singular value decomposition|Singular value decomposition]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Quadratic forms|Quadratic forms]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Trace and determinant|Trace and determinant]] · Foundation
+- L3 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convexity & inequalities|Convexity & inequalities]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Convex functions & bounds|Convex functions & bounds]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Convex sets and functions|Convex sets and functions]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Gradients and Hessians|Gradients and Hessians]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Jensen inequality|Jensen inequality]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Cauchy–Schwarz inequality|Cauchy–Schwarz inequality]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Holder inequality|Holder inequality]] · U–M
+- L2 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability foundations|Probability foundations]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Probability models|Probability models]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Events & counting/Events & counting|Events & counting]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Events & counting/Sample spaces and events|Sample spaces and events]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Events & counting/Probability axioms|Probability axioms]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Events & counting/Permutations and combinations|Permutations and combinations]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Events & counting/Inclusion–exclusion|Inclusion–exclusion]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Events & counting/Union bound|Union bound]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Conditional probability/Conditional probability (L4)|Conditional probability]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Conditional probability/Conditional probability (L5)|Conditional probability]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Conditional probability/Total probability|Total probability]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Conditional probability/Bayes rule|Bayes rule]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Conditional probability/Event independence|Event independence]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Conditional probability/Conditional independence|Conditional independence]] · U
+- L3 · [[Backbone/Probability & mathematical foundations/Probability foundations/Graduate probability language/Graduate probability language|Graduate probability language]] · M elective
+- L4 · [[Backbone/Probability & mathematical foundations/Probability foundations/Graduate probability language/Measure-based overview/Measure-based overview|Measure-based overview]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Graduate probability language/Measure-based overview/Sigma-algebras|Sigma-algebras]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Graduate probability language/Measure-based overview/Probability measures|Probability measures]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Graduate probability language/Measure-based overview/Measurable random variables|Measurable random variables]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Graduate probability language/Measure-based overview/Almost sure statements|Almost sure statements]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Probability foundations/Graduate probability language/Measure-based overview/Lebesgue expectation overview|Lebesgue expectation overview]] · M elective
+- L2 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Random variables & distributions|Random variables & distributions]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Univariate distribution theory|Univariate distribution theory]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Random variables & distribution functions/Random variables & distribution functions|Random variables & distribution functions]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Random variables & distribution functions/Discrete and continuous laws|Discrete and continuous laws]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Random variables & distribution functions/CDF, PMF and density|CDF, PMF and density]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Random variables & distribution functions/Quantiles and inverse CDF|Quantiles and inverse CDF]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Random variables & distribution functions/Support and event regions|Support and event regions]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Random variables & distribution functions/Mixed distributions|Mixed distributions]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Expectation & moments/Expectation & moments|Expectation & moments]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Expectation & moments/LOTUS expectation rule|LOTUS expectation rule]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Expectation & moments/Indicator expectations|Indicator expectations]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Expectation & moments/Variance and standard deviation|Variance and standard deviation]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Expectation & moments/Moment existence|Moment existence]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Expectation & moments/MGFs and characteristic functions|MGFs and characteristic functions]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Transforming random variables/Transforming random variables|Transforming random variables]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Transforming random variables/CDF transformation method|CDF transformation method]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Transforming random variables/Change of variables|Change of variables]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Transforming random variables/Jacobian density factor|Jacobian density factor]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Transforming random variables/Convolution of independent sums|Convolution of independent sums]] · U
+- L3 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Useful distribution families|Useful distribution families]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Discrete families/Discrete families|Discrete families]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Discrete families/Bernoulli and binomial|Bernoulli and binomial]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Discrete families/Geometric and negative binomial|Geometric and negative binomial]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Discrete families/Hypergeometric|Hypergeometric]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Discrete families/Poisson|Poisson]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Discrete families/Multinomial|Multinomial]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Continuous families|Continuous families]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Uniform|Uniform]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Normal and lognormal|Normal and lognormal]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Exponential and gamma|Exponential and gamma]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Beta|Beta]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Student t, chi-square and F|Student t, chi-square and F]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Weibull and heavy-tail examples|Weibull and heavy-tail examples]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Sample statistics & order|Sample statistics & order]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Sample mean and variance|Sample mean and variance]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Order statistics|Order statistics]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Sample quantiles|Sample quantiles]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Normal-sample pivots|Normal-sample pivots]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Extreme order behavior|Extreme order behavior]] · U
+- L2 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint variation & conditioning|Joint variation & conditioning]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Joint distributions|Joint distributions]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Marginal & conditional laws|Marginal & conditional laws]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Joint CDF and density|Joint CDF and density]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Marginalization|Marginalization]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Conditional density|Conditional density]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Independence versus zero covariance|Independence versus zero covariance]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Covariance matrices|Covariance matrices]] · U
+- L4 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Conditional expectation (L4)|Conditional expectation]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Conditional expectation (L5)|Conditional expectation]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Tower property|Tower property]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Law of total expectation|Law of total expectation]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Total variance|Total variance]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/L2 conditional projection|L2 conditional projection]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Best mean-square prediction|Best mean-square prediction]] · U
+- L3 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate probability|Multivariate probability]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate normal laws/Multivariate normal laws|Multivariate normal laws]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate normal laws/Gaussian linear transformations|Gaussian linear transformations]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate normal laws/Gaussian conditioning|Gaussian conditioning]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate normal laws/Gaussian zero-covariance independence|Gaussian zero-covariance independence]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate normal laws/Chi-square quadratic forms|Chi-square quadratic forms]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Beyond Gaussian dependence/Beyond Gaussian dependence|Beyond Gaussian dependence]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Beyond Gaussian dependence/Exchangeability|Exchangeability]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Beyond Gaussian dependence/Mixture distributions|Mixture distributions]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Beyond Gaussian dependence/Copulas overview|Copulas overview]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Beyond Gaussian dependence/Tail dependence|Tail dependence]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Beyond Gaussian dependence/Conditional-independence graphs|Conditional-independence graphs]] · U–M
+- L2 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Limits & concentration|Limits & concentration]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Probability limit theory|Probability limit theory]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Modes of convergence/Modes of convergence|Modes of convergence]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Modes of convergence/Convergence in probability|Convergence in probability]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Modes of convergence/Convergence in distribution|Convergence in distribution]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Modes of convergence/Almost sure convergence|Almost sure convergence]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Modes of convergence/L2 convergence|L2 convergence]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Modes of convergence/Relations and counterexamples|Relations and counterexamples]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Laws of large numbers & CLT/Laws of large numbers & CLT|Laws of large numbers & CLT]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Laws of large numbers & CLT/Weak and strong LLN|Weak and strong LLN]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Laws of large numbers & CLT/Classical iid CLT|Classical iid CLT]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Laws of large numbers & CLT/Multivariate CLT|Multivariate CLT]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Laws of large numbers & CLT/Finite-variance conditions|Finite-variance conditions]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Laws of large numbers & CLT/Normal-approximation limits|Normal-approximation limits]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Transforming limits/Transforming limits|Transforming limits]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Transforming limits/Continuous mapping theorem|Continuous mapping theorem]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Transforming limits/Slutsky theorem|Slutsky theorem]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Transforming limits/Delta method|Delta method]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Transforming limits/Stochastic order notation|Stochastic order notation]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability limit theory/Transforming limits/Second-order delta examples|Second-order delta examples]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability bounds/Probability bounds|Probability bounds]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability bounds/Inequalities & finite-sample control/Inequalities & finite-sample control|Inequalities & finite-sample control]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability bounds/Inequalities & finite-sample control/Markov inequality|Markov inequality]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability bounds/Inequalities & finite-sample control/Chebyshev inequality|Chebyshev inequality]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability bounds/Inequalities & finite-sample control/Chernoff bounding method|Chernoff bounding method]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability bounds/Inequalities & finite-sample control/Hoeffding inequality|Hoeffding inequality]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Limits & concentration/Probability bounds/Inequalities & finite-sample control/Tail bounds versus asymptotics|Tail bounds versus asymptotics]] · U–M
+- L2 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Stochastic processes|Stochastic processes]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Discrete-time stochastic models|Discrete-time stochastic models]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Markov chains/Markov chains|Markov chains]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Markov chains/Transition matrices|Transition matrices]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Markov chains/Chapman–Kolmogorov equations|Chapman–Kolmogorov equations]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Markov chains/Stationary distributions|Stationary distributions]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Markov chains/Irreducibility and aperiodicity|Irreducibility and aperiodicity]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Markov chains/Detailed balance|Detailed balance]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Markov chains/Mixing and convergence|Mixing and convergence]] · U–M
+- L4 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Random walks & martingales/Random walks & martingales|Random walks & martingales]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Random walks & martingales/Random walks|Random walks]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Random walks & martingales/Martingale definition|Martingale definition]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Random walks & martingales/Conditional-mean innovations|Conditional-mean innovations]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Random walks & martingales/Stopping times|Stopping times]] · U–M
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Discrete-time stochastic models/Random walks & martingales/Optional-stopping conditions|Optional-stopping conditions]] · U–M
+- L3 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Continuous-time models|Continuous-time models]] · M elective
+- L4 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Counts, arrivals & renewal/Counts, arrivals & renewal|Counts, arrivals & renewal]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Counts, arrivals & renewal/Poisson process|Poisson process]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Counts, arrivals & renewal/Exponential waiting times|Exponential waiting times]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Counts, arrivals & renewal/Renewal processes|Renewal processes]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Counts, arrivals & renewal/Continuous-time Markov chains|Continuous-time Markov chains]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Counts, arrivals & renewal/Queueing overview|Queueing overview]] · M elective
+- L4 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Gaussian processes & Brownian motion/Gaussian processes & Brownian motion|Gaussian processes & Brownian motion]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Gaussian processes & Brownian motion/Gaussian process definition|Gaussian process definition]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Gaussian processes & Brownian motion/Covariance kernels|Covariance kernels]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Gaussian processes & Brownian motion/Brownian motion basics|Brownian motion basics]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Gaussian processes & Brownian motion/Stationarity of a process|Stationarity of a process]] · M elective
+- L5 · [[Backbone/Probability & mathematical foundations/Stochastic processes/Continuous-time models/Gaussian processes & Brownian motion/Sample paths versus distributions|Sample paths versus distributions]] · M elective
+
+## Statistical inference & modeling
+
+- L1 · [[Backbone/Statistical inference & modeling/Statistical inference & modeling|Statistical inference & modeling]] · U–M
+- L2 · [[Backbone/Statistical inference & modeling/Inference foundations/Inference foundations|Inference foundations]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Statistical reasoning|Statistical reasoning]] · U
+- L4 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Questions, populations & data/Questions, populations & data|Questions, populations & data]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Questions, populations & data/Target population and sampling frame|Target population and sampling frame]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Questions, populations & data/Estimands and parameters|Estimands and parameters]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Questions, populations & data/Estimator versus estimate|Estimator versus estimate]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Questions, populations & data/Prediction versus explanation|Prediction versus explanation]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Questions, populations & data/Association versus causation|Association versus causation]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Questions, populations & data/Measurement scales|Measurement scales]] · U
+- L4 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Sampling distributions|Sampling distributions]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Repeated sampling|Repeated sampling]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Bias and variance|Bias and variance]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Mean squared error|Mean squared error]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Standard error|Standard error]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Consistency|Consistency]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Identifiability|Identifiability]] · U
+- L3 · [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Decision theory|Decision theory]] · M
+- L4 · [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Loss, risk & actions|Loss, risk & actions]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Loss functions|Loss functions]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Frequentist risk|Frequentist risk]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Bayes risk|Bayes risk]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Bayes actions|Bayes actions]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Minimax and admissibility overview|Minimax and admissibility overview]] · M
+- L2 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Frequentist & likelihood inference|Frequentist & likelihood inference]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Point estimation|Point estimation]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/Likelihood methods|Likelihood methods]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/Likelihood function|Likelihood function]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/Maximum likelihood estimation|Maximum likelihood estimation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/Score and observed information|Score and observed information]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/Fisher information|Fisher information]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/MLE invariance|MLE invariance]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/Boundary and nonregular cases|Boundary and nonregular cases]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Constructing & improving estimators|Constructing & improving estimators]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Method of moments|Method of moments]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Sufficient statistics|Sufficient statistics]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Factorization criterion|Factorization criterion]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Rao–Blackwell theorem|Rao–Blackwell theorem]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Completeness and Lehmann–Scheffe|Completeness and Lehmann–Scheffe]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Cramer–Rao bound|Cramer–Rao bound]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Large-sample inference|Large-sample inference]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/MLE consistency under conditions|MLE consistency under conditions]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Asymptotic normality|Asymptotic normality]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/M-estimation|M-estimation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Sandwich covariance|Sandwich covariance]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Efficiency|Efficiency]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Misspecified-model targets|Misspecified-model targets]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Tests & confidence sets|Tests & confidence sets]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Testing principles|Testing principles]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Null and alternative|Null and alternative]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Type I and II errors|Type I and II errors]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Power and sample size|Power and sample size]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Neyman–Pearson lemma|Neyman–Pearson lemma]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Likelihood-ratio tests|Likelihood-ratio tests]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/p-value interpretation|p-value interpretation]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Intervals & test inversion/Intervals & test inversion|Intervals & test inversion]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Intervals & test inversion/Confidence coverage|Confidence coverage]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Intervals & test inversion/Pivotal quantities|Pivotal quantities]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Intervals & test inversion/Inverting a test|Inverting a test]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Intervals & test inversion/Wald, score and likelihood intervals|Wald, score and likelihood intervals]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Intervals & test inversion/Prediction versus confidence intervals|Prediction versus confidence intervals]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Classical comparisons/Classical comparisons|Classical comparisons]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Classical comparisons/One- and two-sample t procedures|One- and two-sample t procedures]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Classical comparisons/Paired data|Paired data]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Classical comparisons/Variance inference|Variance inference]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Classical comparisons/Chi-square goodness of fit|Chi-square goodness of fit]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Classical comparisons/Equivalence and noninferiority|Equivalence and noninferiority]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Multiple comparisons/Multiple comparisons|Multiple comparisons]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Multiple comparisons/Familywise error|Familywise error]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Multiple comparisons/Bonferroni and Holm|Bonferroni and Holm]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Multiple comparisons/False discovery rate|False discovery rate]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Multiple comparisons/Benjamini–Hochberg procedure|Benjamini–Hochberg procedure]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Multiple comparisons/Selection-induced bias|Selection-induced bias]] · U–M
+- L2 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference|Bayesian inference]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Bayesian inference foundations|Bayesian inference foundations]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Prior, likelihood & posterior|Prior, likelihood & posterior]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Prior and posterior|Prior and posterior]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Marginal likelihood - evidence|Marginal likelihood / evidence]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Conjugate updating|Conjugate updating]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Posterior summaries|Posterior summaries]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Credible intervals|Credible intervals]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Posterior predictive distribution|Posterior predictive distribution]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Choosing and examining priors/Choosing and examining priors|Choosing and examining priors]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Choosing and examining priors/Weakly informative priors|Weakly informative priors]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Choosing and examining priors/Prior predictive checks|Prior predictive checks]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Choosing and examining priors/Jeffreys prior overview|Jeffreys prior overview]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Choosing and examining priors/Improper-prior cautions|Improper-prior cautions]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Choosing and examining priors/Prior sensitivity|Prior sensitivity]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Hierarchical Bayesian modeling|Hierarchical Bayesian modeling]] · M
+- L4 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Hierarchies & pooling/Hierarchies & pooling|Hierarchies & pooling]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Hierarchies & pooling/Partial pooling|Partial pooling]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Hierarchies & pooling/Exchangeable group effects|Exchangeable group effects]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Hierarchies & pooling/Hierarchical variance priors|Hierarchical variance priors]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Hierarchies & pooling/Empirical Bayes|Empirical Bayes]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Hierarchies & pooling/Bayesian shrinkage|Bayesian shrinkage]] · M
+- L4 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Bayesian model assessment/Bayesian model assessment|Bayesian model assessment]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Bayesian model assessment/Posterior predictive checks|Posterior predictive checks]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Bayesian model assessment/Predictive cross-validation|Predictive cross-validation]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Bayesian model assessment/WAIC and LOO overview|WAIC and LOO overview]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Bayesian model assessment/Bayes factors|Bayes factors]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Bayesian inference/Hierarchical Bayesian modeling/Bayesian model assessment/Calibration and model criticism|Calibration and model criticism]] · M
+- L2 · [[Backbone/Statistical inference & modeling/Regression & linear models/Regression & linear models|Regression & linear models]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Linear regression|Linear regression]] · U
+- L4 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/OLS estimation & geometry|OLS estimation & geometry]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Design matrices|Design matrices]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Normal equations and OLS|Normal equations and OLS]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Hat matrix|Hat matrix]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Frisch–Waugh–Lovell theorem|Frisch–Waugh–Lovell theorem]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Simple slope and correlation|Simple slope and correlation]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Gauss–Markov theorem|Gauss–Markov theorem]] · U
+- L4 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/Regression uncertainty|Regression uncertainty]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/Coefficient covariance|Coefficient covariance]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/Residual variance and degrees of freedom|Residual variance and degrees of freedom]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/Coefficient t tests|Coefficient t tests]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/Nested-model F tests|Nested-model F tests]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/One-restriction F equals t squared|One-restriction F equals t squared]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/Mean-response and prediction intervals|Mean-response and prediction intervals]] · U
+- L4 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Diagnostics & model building/Diagnostics & model building|Diagnostics & model building]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Diagnostics & model building/Residual plots|Residual plots]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Diagnostics & model building/Heteroskedasticity|Heteroskedasticity]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Diagnostics & model building/Collinearity and VIF|Collinearity and VIF]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Diagnostics & model building/Leverage and influence|Leverage and influence]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Diagnostics & model building/Interactions and transformations|Interactions and transformations]] · U
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Diagnostics & model building/R squared and adjusted R squared|R squared and adjusted R squared]] · U
+- L3 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Generalized linear models|Generalized linear models]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Exponential families & GLMs/Exponential families & GLMs|Exponential families & GLMs]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Exponential families & GLMs/Exponential-family form|Exponential-family form]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Exponential families & GLMs/Link and mean–variance functions|Link and mean–variance functions]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Exponential families & GLMs/Deviance|Deviance]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Exponential families & GLMs/IRLS - Fisher scoring|IRLS / Fisher scoring]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Exponential families & GLMs/Quasi-likelihood|Quasi-likelihood]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Binary, count & categorical responses/Binary, count & categorical responses|Binary, count & categorical responses]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Binary, count & categorical responses/Logistic regression|Logistic regression]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Binary, count & categorical responses/Poisson regression|Poisson regression]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Binary, count & categorical responses/Overdispersion and negative binomial|Overdispersion and negative binomial]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Binary, count & categorical responses/Contingency tables|Contingency tables]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Binary, count & categorical responses/Log-linear models|Log-linear models]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Generalized linear models/Binary, count & categorical responses/Multinomial and ordinal models|Multinomial and ordinal models]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Multilevel & longitudinal models|Multilevel & longitudinal models]] · M
+- L4 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Random effects & repeated measures/Random effects & repeated measures|Random effects & repeated measures]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Random effects & repeated measures/Random intercepts and slopes|Random intercepts and slopes]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Random effects & repeated measures/Variance components|Variance components]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Random effects & repeated measures/REML|REML]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Random effects & repeated measures/BLUP and shrinkage|BLUP and shrinkage]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Random effects & repeated measures/Within-person correlation|Within-person correlation]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Random effects & repeated measures/Generalized estimating equations|Generalized estimating equations]] · M
+- L4 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Flexible regression/Flexible regression|Flexible regression]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Flexible regression/Nonlinear least squares|Nonlinear least squares]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Flexible regression/Polynomial and spline bases|Polynomial and spline bases]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Flexible regression/Generalized additive models|Generalized additive models]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Flexible regression/Quantile regression|Quantile regression]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Regression & linear models/Multilevel & longitudinal models/Flexible regression/Measurement error models|Measurement error models]] · M
+- L2 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design, sampling & causality|Design, sampling & causality]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Design of experiments|Design of experiments]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Randomization & comparison/Randomization & comparison|Randomization & comparison]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Randomization & comparison/Randomization|Randomization]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Randomization & comparison/Replication and experimental units|Replication and experimental units]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Randomization & comparison/Blocking|Blocking]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Randomization & comparison/Confounding|Confounding]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Randomization & comparison/Blinding|Blinding]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/Randomization & comparison/Power planning|Power planning]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/ANOVA & factorial design/ANOVA & factorial design|ANOVA & factorial design]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/ANOVA & factorial design/One- and two-factor ANOVA|One- and two-factor ANOVA]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/ANOVA & factorial design/Contrasts and interactions|Contrasts and interactions]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/ANOVA & factorial design/Factorial and fractional factorial designs|Factorial and fractional factorial designs]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/ANOVA & factorial design/Split-plot designs|Split-plot designs]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/ANOVA & factorial design/ANCOVA|ANCOVA]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design of experiments/ANOVA & factorial design/Response surface methods|Response surface methods]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Survey sampling|Survey sampling]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Finite-population sampling/Finite-population sampling|Finite-population sampling]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Finite-population sampling/Simple random sampling|Simple random sampling]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Finite-population sampling/Stratified sampling|Stratified sampling]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Finite-population sampling/Cluster and multistage samples|Cluster and multistage samples]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Finite-population sampling/Inclusion probabilities|Inclusion probabilities]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Finite-population sampling/Horvitz–Thompson estimation|Horvitz–Thompson estimation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Finite-population sampling/Finite-population correction|Finite-population correction]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Survey weights & errors/Survey weights & errors|Survey weights & errors]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Survey weights & errors/Design effects|Design effects]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Survey weights & errors/Calibration and poststratification|Calibration and poststratification]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Survey weights & errors/Nonresponse adjustment|Nonresponse adjustment]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Survey weights & errors/Ratio and regression estimators|Ratio and regression estimators]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Survey sampling/Survey weights & errors/Weight-based variance estimation|Weight-based variance estimation]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Causal inference|Causal inference]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Effects & identification/Effects & identification|Effects & identification]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Effects & identification/Potential outcomes|Potential outcomes]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Effects & identification/Average treatment effects|Average treatment effects]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Effects & identification/Exchangeability, consistency and positivity|Exchangeability, consistency and positivity]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Effects & identification/DAGs and backdoor paths|DAGs and backdoor paths]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Effects & identification/Confounders, colliders and mediators|Confounders, colliders and mediators]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Estimating causal effects/Estimating causal effects|Estimating causal effects]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Estimating causal effects/Randomized treatment comparisons|Randomized treatment comparisons]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Estimating causal effects/Standardization - g-formula|Standardization / g-formula]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Estimating causal effects/Propensity scores|Propensity scores]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Estimating causal effects/Inverse-probability weighting|Inverse-probability weighting]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Estimating causal effects/Doubly robust estimation|Doubly robust estimation]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Estimating causal effects/Instrumental variables overview|Instrumental variables overview]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Quasi-experiments & sensitivity/Quasi-experiments & sensitivity|Quasi-experiments & sensitivity]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Quasi-experiments & sensitivity/Difference in differences|Difference in differences]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Quasi-experiments & sensitivity/Regression discontinuity|Regression discontinuity]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Quasi-experiments & sensitivity/Sensitivity to unmeasured confounding|Sensitivity to unmeasured confounding]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Quasi-experiments & sensitivity/Target trial specification|Target trial specification]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Design, sampling & causality/Causal inference/Quasi-experiments & sensitivity/Time-varying treatment overview|Time-varying treatment overview]] · M elective
+- L2 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric & robust inference|Nonparametric & robust inference]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Nonparametric inference|Nonparametric inference]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Ranks & distribution-free procedures|Ranks & distribution-free procedures]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Sign and signed-rank tests|Sign and signed-rank tests]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Mann–Whitney and Kruskal–Wallis|Mann–Whitney and Kruskal–Wallis]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Rank correlations|Rank correlations]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Permutation tests|Permutation tests]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Kolmogorov–Smirnov tests|Kolmogorov–Smirnov tests]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Exchangeability requirements|Exchangeability requirements]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Distribution & density estimation/Distribution & density estimation|Distribution & density estimation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Distribution & density estimation/Empirical CDF|Empirical CDF]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Distribution & density estimation/Histograms|Histograms]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Distribution & density estimation/Kernel density estimation|Kernel density estimation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Distribution & density estimation/Bandwidth choice|Bandwidth choice]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Distribution & density estimation/Boundary bias|Boundary bias]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Distribution & density estimation/Nonparametric regression|Nonparametric regression]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Robust statistics|Robust statistics]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Sensitivity & resistant estimation/Sensitivity & resistant estimation|Sensitivity & resistant estimation]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Sensitivity & resistant estimation/Median and trimmed means|Median and trimmed means]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Sensitivity & resistant estimation/Median absolute deviation|Median absolute deviation]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Sensitivity & resistant estimation/Influence functions|Influence functions]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Sensitivity & resistant estimation/Breakdown point|Breakdown point]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Sensitivity & resistant estimation/Huber M-estimators|Huber M-estimators]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Robust statistics/Sensitivity & resistant estimation/Robust regression|Robust regression]] · M elective
+- L3 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Resampling inference|Resampling inference]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Bootstrap & jackknife|Bootstrap & jackknife]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Nonparametric bootstrap|Nonparametric bootstrap]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Parametric bootstrap|Parametric bootstrap]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Bootstrap intervals|Bootstrap intervals]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Jackknife|Jackknife]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Dependent-data resampling|Dependent-data resampling]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Conditional versus unconditional bootstrap variation|Conditional versus unconditional bootstrap variation]] · U–M
+- L2 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate analysis|Multivariate analysis]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Multivariate statistical analysis|Multivariate statistical analysis]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Vector means & covariance/Vector means & covariance|Vector means & covariance]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Vector means & covariance/Sample covariance matrix|Sample covariance matrix]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Vector means & covariance/Hotelling T squared|Hotelling T squared]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Vector means & covariance/MANOVA|MANOVA]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Vector means & covariance/Wishart distribution overview|Wishart distribution overview]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Vector means & covariance/Canonical correlation|Canonical correlation]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Linear dimension reduction/Linear dimension reduction|Linear dimension reduction]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Linear dimension reduction/Principal component analysis|Principal component analysis]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Linear dimension reduction/PCA scores and loadings|PCA scores and loadings]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Linear dimension reduction/Factor analysis|Factor analysis]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Linear dimension reduction/Rotation and identifiability|Rotation and identifiability]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Linear dimension reduction/Latent-variable measurement|Latent-variable measurement]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Discrimination & association/Discrimination & association|Discrimination & association]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Discrimination & association/Linear discriminant analysis|Linear discriminant analysis]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Discrimination & association/Quadratic discriminant analysis|Quadratic discriminant analysis]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Discrimination & association/Mahalanobis distance|Mahalanobis distance]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Multivariate analysis/Multivariate statistical analysis/Discrimination & association/Covariance regularization|Covariance regularization]] · U–M
+- L2 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series & forecasting|Time series & forecasting]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series analysis|Time series analysis]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Temporal structure/Temporal structure|Temporal structure]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Temporal structure/Trend and seasonality|Trend and seasonality]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Temporal structure/Weak stationarity|Weak stationarity]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Temporal structure/Autocorrelation and partial autocorrelation|Autocorrelation and partial autocorrelation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Temporal structure/White noise|White noise]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Temporal structure/Time-series decomposition|Time-series decomposition]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Temporal structure/Spectral density overview|Spectral density overview]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series models/Time series models|Time series models]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series models/AR and MA processes|AR and MA processes]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series models/ARMA - ARIMA|ARMA / ARIMA]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series models/Seasonal ARIMA|Seasonal ARIMA]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series models/Unit roots and differencing|Unit roots and differencing]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series models/Model residual diagnostics|Model residual diagnostics]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Time series models/Dynamic regression|Dynamic regression]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Forecasts & evaluation/Forecasts & evaluation|Forecasts & evaluation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Forecasts & evaluation/Exponential smoothing|Exponential smoothing]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Forecasts & evaluation/Forecast distributions|Forecast distributions]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Forecasts & evaluation/Rolling-origin evaluation|Rolling-origin evaluation]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Forecasts & evaluation/Forecast accuracy metrics|Forecast accuracy metrics]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/Time series analysis/Forecasts & evaluation/Grouped forecast reconciliation|Grouped forecast reconciliation]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/State-space & dynamic models|State-space & dynamic models]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/Latent dynamic states/Latent dynamic states|Latent dynamic states]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/Latent dynamic states/State-space representation|State-space representation]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/Latent dynamic states/Kalman filter|Kalman filter]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/Latent dynamic states/Hidden Markov models|Hidden Markov models]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/Latent dynamic states/Filtering versus smoothing|Filtering versus smoothing]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/Latent dynamic states/Particle filtering overview|Particle filtering overview]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Time series & forecasting/State-space & dynamic models/Latent dynamic states/Volatility models overview|Volatility models overview]] · M elective
+- L2 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Event-time & reliability|Event-time & reliability]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Survival & reliability|Survival & reliability]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Censoring & nonparametric survival/Censoring & nonparametric survival|Censoring & nonparametric survival]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Censoring & nonparametric survival/Censoring versus truncation|Censoring versus truncation]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Censoring & nonparametric survival/Survival and hazard functions|Survival and hazard functions]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Censoring & nonparametric survival/Kaplan–Meier estimator|Kaplan–Meier estimator]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Censoring & nonparametric survival/Nelson–Aalen estimator|Nelson–Aalen estimator]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Censoring & nonparametric survival/Log-rank test|Log-rank test]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Event-time regression/Event-time regression|Event-time regression]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Event-time regression/Cox proportional hazards|Cox proportional hazards]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Event-time regression/Partial likelihood|Partial likelihood]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Event-time regression/Proportional-hazards diagnostics|Proportional-hazards diagnostics]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Event-time regression/Accelerated failure time models|Accelerated failure time models]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Event-time regression/Competing risks|Competing risks]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Event-time & reliability/Survival & reliability/Event-time regression/Frailty models|Frailty models]] · M elective
+- L2 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics (L2)|Spatial statistics]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Spatial statistics (L3)|Spatial statistics]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Random fields & spatial prediction/Random fields & spatial prediction|Random fields & spatial prediction]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Random fields & spatial prediction/Spatial data types|Spatial data types]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Random fields & spatial prediction/Covariance and variogram|Covariance and variogram]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Random fields & spatial prediction/Stationarity and isotropy|Stationarity and isotropy]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Random fields & spatial prediction/Kriging|Kriging]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Random fields & spatial prediction/Spatial Gaussian process models|Spatial Gaussian process models]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Area & point data/Area & point data|Area & point data]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Area & point data/Areal adjacency|Areal adjacency]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Area & point data/CAR - SAR models overview|CAR / SAR models overview]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Area & point data/Spatial point patterns|Spatial point patterns]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Area & point data/Poisson point-process models|Poisson point-process models]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Spatial statistics/Spatial statistics/Area & point data/Spatial confounding|Spatial confounding]] · M elective
+- L2 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Applied statistics & evidence|Applied statistics & evidence]] · U–M
+- L3 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missing data & measurement|Missing data & measurement]] · M
+- L4 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missingness & incomplete likelihoods/Missingness & incomplete likelihoods|Missingness & incomplete likelihoods]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missingness & incomplete likelihoods/MCAR, MAR and MNAR|MCAR, MAR and MNAR]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missingness & incomplete likelihoods/Missing-data likelihood|Missing-data likelihood]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missingness & incomplete likelihoods/Complete-case limitations|Complete-case limitations]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missingness & incomplete likelihoods/Multiple imputation|Multiple imputation]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missingness & incomplete likelihoods/Rubin pooling rules|Rubin pooling rules]] · M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Missing data & measurement/Missingness & incomplete likelihoods/Sensitivity analysis|Sensitivity analysis]] · M
+- L3 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Biostatistics & evidence synthesis|Biostatistics & evidence synthesis]] · U–M elective
+- L4 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Epidemiology & trials/Epidemiology & trials|Epidemiology & trials]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Epidemiology & trials/Cohort and case-control studies|Cohort and case-control studies]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Epidemiology & trials/Risk ratio and odds ratio|Risk ratio and odds ratio]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Epidemiology & trials/Rates and person-time|Rates and person-time]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Epidemiology & trials/Intention-to-treat analysis|Intention-to-treat analysis]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Epidemiology & trials/Clinical-trial endpoints|Clinical-trial endpoints]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Epidemiology & trials/Sequential monitoring overview|Sequential monitoring overview]] · U–M elective
+- L4 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Combining studies/Combining studies|Combining studies]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Combining studies/Fixed-effect and random-effects synthesis|Fixed-effect and random-effects synthesis]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Combining studies/Between-study heterogeneity|Between-study heterogeneity]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Combining studies/Forest plots|Forest plots]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Combining studies/Publication bias|Publication bias]] · U–M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Biostatistics & evidence synthesis/Combining studies/Meta-regression|Meta-regression]] · U–M elective
+- L3 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Selected application pathways|Selected application pathways]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Genomics & high-dimensional biology/Genomics & high-dimensional biology|Genomics & high-dimensional biology]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Genomics & high-dimensional biology/Count normalization|Count normalization]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Genomics & high-dimensional biology/Batch effects|Batch effects]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Genomics & high-dimensional biology/Differential expression|Differential expression]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Genomics & high-dimensional biology/Genome-wide association|Genome-wide association]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Genomics & high-dimensional biology/Multiple-testing in genomics|Multiple-testing in genomics]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Genomics & high-dimensional biology/Association versus causal mediation|Association versus causal mediation]] · M elective
+- L4 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Additional statistical domains/Additional statistical domains|Additional statistical domains]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Additional statistical domains/Econometric panel models|Econometric panel models]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Additional statistical domains/Statistical quality control|Statistical quality control]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Additional statistical domains/Acceptance sampling|Acceptance sampling]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Additional statistical domains/Extreme-value modeling|Extreme-value modeling]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Additional statistical domains/Functional data overview|Functional data overview]] · M elective
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Selected application pathways/Additional statistical domains/Network data overview|Network data overview]] · M elective
+- L3 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Statistical practice|Statistical practice]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Consulting & scientific communication/Consulting & scientific communication|Consulting & scientific communication]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Consulting & scientific communication/Translate questions into estimands|Translate questions into estimands]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Consulting & scientific communication/Analysis plans|Analysis plans]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Consulting & scientific communication/Assumptions and sensitivity reporting|Assumptions and sensitivity reporting]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Consulting & scientific communication/Communicate uncertainty|Communicate uncertainty]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Consulting & scientific communication/Statistical consulting|Statistical consulting]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Consulting & scientific communication/Reproducible case study|Reproducible case study]] · U–M
+- L4 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Ethics & responsible evidence/Ethics & responsible evidence|Ethics & responsible evidence]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Ethics & responsible evidence/Data provenance and consent|Data provenance and consent]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Ethics & responsible evidence/Privacy and disclosure|Privacy and disclosure]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Ethics & responsible evidence/Selective reporting|Selective reporting]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Ethics & responsible evidence/Fairness and subgroup assessment|Fairness and subgroup assessment]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Ethics & responsible evidence/Replicability|Replicability]] · U–M
+- L5 · [[Backbone/Statistical inference & modeling/Applied statistics & evidence/Statistical practice/Ethics & responsible evidence/Statistical versus practical significance|Statistical versus practical significance]] · U–M
+
+## Statistical computing & learning
+
+- L1 · [[Backbone/Statistical computing & learning/Statistical computing & learning|Statistical computing & learning]] · U–M
+- L2 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Programming, data & visualization|Programming, data & visualization]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Statistical programming|Statistical programming]] · U
+- L4 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Programming foundations/Programming foundations|Programming foundations]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Programming foundations/R and Python data structures|R and Python data structures]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Programming foundations/Functions and scope|Functions and scope]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Programming foundations/Iteration and vectorization|Iteration and vectorization]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Programming foundations/Arrays and matrix operations|Arrays and matrix operations]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Programming foundations/Debugging|Debugging]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Programming foundations/Numerical precision|Numerical precision]] · U
+- L4 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Reliable computation|Reliable computation]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Random seeds and RNG streams|Random seeds and RNG streams]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Unit checks for analysis code|Unit checks for analysis code]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Version control|Version control]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Environments and dependencies|Environments and dependencies]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Profiling|Profiling]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Reproducible reports|Reproducible reports]] · U
+- L3 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data management & exploration|Data management & exploration]] · U
+- L4 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data wrangling/Data wrangling|Data wrangling]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data wrangling/Tidy data|Tidy data]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data wrangling/Joins and keys|Joins and keys]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data wrangling/Group-wise transformations|Group-wise transformations]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data wrangling/SQL and databases|SQL and databases]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data wrangling/Dates, strings and categories|Dates, strings and categories]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Data wrangling/Data validation and provenance|Data validation and provenance]] · U
+- L4 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Exploratory data analysis/Exploratory data analysis|Exploratory data analysis]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Exploratory data analysis/Distribution summaries|Distribution summaries]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Exploratory data analysis/Graphical comparisons|Graphical comparisons]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Exploratory data analysis/Missingness patterns|Missingness patterns]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Exploratory data analysis/Outlier investigation|Outlier investigation]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Exploratory data analysis/Simpson paradox|Simpson paradox]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Exploratory data analysis/Exploration versus confirmation|Exploration versus confirmation]] · U
+- L4 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Statistical visualization/Statistical visualization|Statistical visualization]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Statistical visualization/Visual encodings and scales|Visual encodings and scales]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Statistical visualization/Distribution and uncertainty graphics|Distribution and uncertainty graphics]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Statistical visualization/Multivariate graphics|Multivariate graphics]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Statistical visualization/Faceting and conditioning|Faceting and conditioning]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Statistical visualization/Accessible color|Accessible color]] · U
+- L5 · [[Backbone/Statistical computing & learning/Programming, data & visualization/Data management & exploration/Statistical visualization/Reporting analytical findings|Reporting analytical findings]] · U
+- L2 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical methods & optimization|Numerical methods & optimization]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical analysis for statistics|Numerical analysis for statistics]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/Numerical linear algebra|Numerical linear algebra]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/QR least squares|QR least squares]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/Cholesky factorization|Cholesky factorization]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/SVD for rank deficiency|SVD for rank deficiency]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/Condition numbers|Condition numbers]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/Sparse matrix methods|Sparse matrix methods]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/Solve systems without explicit inverses|Solve systems without explicit inverses]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Approximation & differentiation/Approximation & differentiation|Approximation & differentiation]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Approximation & differentiation/Root finding|Root finding]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Approximation & differentiation/Numerical integration|Numerical integration]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Approximation & differentiation/Finite differences|Finite differences]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Approximation & differentiation/Automatic differentiation|Automatic differentiation]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Approximation & differentiation/Log-sum-exp|Log-sum-exp]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Approximation & differentiation/Approximation error|Approximation error]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization for statistics|Optimization for statistics]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization structure/Optimization structure|Optimization structure]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization structure/Convex objectives|Convex objectives]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization structure/First- and second-order conditions|First- and second-order conditions]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization structure/Lagrange multipliers|Lagrange multipliers]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization structure/KKT conditions|KKT conditions]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization structure/Duality|Duality]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization structure/Constraints versus penalties|Constraints versus penalties]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization algorithms/Optimization algorithms|Optimization algorithms]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization algorithms/Gradient descent|Gradient descent]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization algorithms/Newton and quasi-Newton|Newton and quasi-Newton]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization algorithms/Coordinate descent|Coordinate descent]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization algorithms/Stochastic gradient descent|Stochastic gradient descent]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization algorithms/Proximal gradient|Proximal gradient]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Numerical methods & optimization/Optimization for statistics/Optimization algorithms/Convergence diagnostics|Convergence diagnostics]] · U–M
+- L2 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Simulation & approximate inference|Simulation & approximate inference]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Monte Carlo methods|Monte Carlo methods]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Random generation & Monte Carlo/Random generation & Monte Carlo|Random generation & Monte Carlo]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Random generation & Monte Carlo/Inverse-transform sampling|Inverse-transform sampling]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Random generation & Monte Carlo/Rejection sampling|Rejection sampling]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Random generation & Monte Carlo/Monte Carlo integration|Monte Carlo integration]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Random generation & Monte Carlo/Monte Carlo standard error|Monte Carlo standard error]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Random generation & Monte Carlo/Simulation study design|Simulation study design]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Random generation & Monte Carlo/Coverage experiments|Coverage experiments]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Efficient integration|Efficient integration]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Importance sampling|Importance sampling]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Self-normalized importance weights|Self-normalized importance weights]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Control variates|Control variates]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Antithetic variables|Antithetic variables]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Stratified simulation|Stratified simulation]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Markov chain Monte Carlo|Markov chain Monte Carlo]] · M
+- L4 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Posterior simulation/Posterior simulation|Posterior simulation]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Posterior simulation/Metropolis–Hastings|Metropolis–Hastings]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Posterior simulation/Gibbs sampling|Gibbs sampling]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Posterior simulation/Hamiltonian Monte Carlo|Hamiltonian Monte Carlo]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Posterior simulation/Parameter transformations|Parameter transformations]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Posterior simulation/Posterior simulation targets|Posterior simulation targets]] · M
+- L4 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Assessing simulation quality/Assessing simulation quality|Assessing simulation quality]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Assessing simulation quality/Multiple chains|Multiple chains]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Assessing simulation quality/R-hat diagnostics|R-hat diagnostics]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Assessing simulation quality/Effective sample size|Effective sample size]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Assessing simulation quality/Autocorrelation|Autocorrelation]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Assessing simulation quality/Monte Carlo error versus posterior uncertainty|Monte Carlo error versus posterior uncertainty]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Markov chain Monte Carlo/Assessing simulation quality/Divergences and geometry|Divergences and geometry]] · M
+- L3 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Approximate & latent-variable inference|Approximate & latent-variable inference]] · M
+- L4 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Modes, curvature & latent variables/Modes, curvature & latent variables|Modes, curvature & latent variables]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Modes, curvature & latent variables/Laplace approximation|Laplace approximation]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Modes, curvature & latent variables/Expectation–maximization|Expectation–maximization]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Modes, curvature & latent variables/E and M steps|E and M steps]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Modes, curvature & latent variables/Local optima|Local optima]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Modes, curvature & latent variables/Observed versus complete-data likelihood|Observed versus complete-data likelihood]] · M
+- L4 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Variational inference|Variational inference]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Variational family|Variational family]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/ELBO|ELBO]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Posterior KL gap|Posterior KL gap]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Mean-field factorization|Mean-field factorization]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Coordinate-ascent VI|Coordinate-ascent VI]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Stochastic VI|Stochastic VI]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Reparameterization gradient|Reparameterization gradient]] · M
+- L5 · [[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/Why do Jensen and KL give the same bound|Why do Jensen and KL give the same bound?]] · M
+- L2 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Statistical learning & prediction|Statistical learning & prediction]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Learning objectives & evaluation|Learning objectives & evaluation]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Risk, fit & generalization|Risk, fit & generalization]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Population risk|Population risk]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Empirical risk minimization|Empirical risk minimization]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Bias–variance tradeoff|Bias–variance tradeoff]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Bayes optimal prediction|Bayes optimal prediction]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Overfitting|Overfitting]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Regularization|Regularization]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Validation & model selection|Validation & model selection]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Train - validation - test splits|Train / validation / test splits]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Cross-validation|Cross-validation]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Nested cross-validation|Nested cross-validation]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Group and temporal splits|Group and temporal splits]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Data leakage|Data leakage]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Hyperparameter tuning|Hyperparameter tuning]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Learning curves|Learning curves]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Evaluating predictions/Evaluating predictions|Evaluating predictions]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Evaluating predictions/Regression metrics|Regression metrics]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Evaluating predictions/ROC and precision–recall|ROC and precision–recall]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Evaluating predictions/Probability calibration|Probability calibration]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Evaluating predictions/Proper scoring rules|Proper scoring rules]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Evaluating predictions/Class imbalance|Class imbalance]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Evaluating predictions/Distribution shift|Distribution shift]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Supervised learning methods|Supervised learning methods]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Penalized linear models|Penalized linear models]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Ridge regression|Ridge regression]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Lasso|Lasso]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Elastic net|Elastic net]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Shrinkage paths|Shrinkage paths]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Feature scaling|Feature scaling]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/High-dimensional identifiability|High-dimensional identifiability]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Local methods & kernels/Local methods & kernels|Local methods & kernels]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Local methods & kernels/Nearest neighbors|Nearest neighbors]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Local methods & kernels/Kernel regression|Kernel regression]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Local methods & kernels/Support vector machines|Support vector machines]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Local methods & kernels/Kernel trick|Kernel trick]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Local methods & kernels/Gaussian process regression|Gaussian process regression]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Trees & ensembles|Trees & ensembles]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Regression and classification trees|Regression and classification trees]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Pruning|Pruning]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Bagging|Bagging]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Random forests|Random forests]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Gradient boosting|Gradient boosting]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Feature importance caveats|Feature importance caveats]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Unsupervised learning|Unsupervised learning]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Clustering & mixtures/Clustering & mixtures|Clustering & mixtures]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Clustering & mixtures/K-means|K-means]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Clustering & mixtures/Hierarchical clustering|Hierarchical clustering]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Clustering & mixtures/Density-based clustering|Density-based clustering]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Clustering & mixtures/Gaussian mixture models|Gaussian mixture models]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Clustering & mixtures/Cluster validation|Cluster validation]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Clustering & mixtures/Label switching|Label switching]] · U–M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Dimension reduction & embeddings/Dimension reduction & embeddings|Dimension reduction & embeddings]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Dimension reduction & embeddings/Multidimensional scaling|Multidimensional scaling]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Dimension reduction & embeddings/Spectral embeddings|Spectral embeddings]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Dimension reduction & embeddings/Nonlinear manifold overview|Nonlinear manifold overview]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Dimension reduction & embeddings/PCA versus visualization embeddings|PCA versus visualization embeddings]] · U–M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Unsupervised learning/Dimension reduction & embeddings/Distances and scaling|Distances and scaling]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Modern predictive inference|Modern predictive inference]] · M elective
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Prediction uncertainty|Prediction uncertainty]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Conformal prediction overview|Conformal prediction overview]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Exchangeability and coverage|Exchangeability and coverage]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Prediction sets|Prediction sets]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Marginal versus conditional coverage|Marginal versus conditional coverage]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Calibration under shift|Calibration under shift]] · M elective
+- L2 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic models & neural methods|Probabilistic models & neural methods]] · U–M
+- L3 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Probabilistic graphical models|Probabilistic graphical models]] · M elective
+- L4 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Factorization & graphical models|Factorization & graphical models]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Directed graphical models|Directed graphical models]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Undirected graphical models|Undirected graphical models]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Graphical conditional independence|Graphical conditional independence]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Variable elimination|Variable elimination]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Message passing overview|Message passing overview]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Latent-variable models|Latent-variable models]] · M elective
+- L3 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural statistical learning|Neural statistical learning]] · M elective
+- L4 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Neural networks|Neural networks]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Multilayer networks|Multilayer networks]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Backpropagation|Backpropagation]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Activation functions|Activation functions]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Minibatch optimization|Minibatch optimization]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Regularization and early stopping|Regularization and early stopping]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Representation learning|Representation learning]] · M elective
+- L4 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Selected architectures & latent models|Selected architectures & latent models]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Convolutional networks overview|Convolutional networks overview]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Sequence models overview|Sequence models overview]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Autoencoders|Autoencoders]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Variational autoencoders|Variational autoencoders]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Generative-model evaluation|Generative-model evaluation]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Predictive versus generative tasks|Predictive versus generative tasks]] · M elective
+- L3 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information for statistical learning|Information for statistical learning]] · U–M elective
+- L4 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/Information measures|Information measures]] · U–M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/Entropy|Entropy]] · U–M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/Cross-entropy|Cross-entropy]] · U–M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/KL divergence|KL divergence]] · U–M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/Mutual information|Mutual information]] · U–M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/Log loss|Log loss]] · U–M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/Likelihood and compression|Likelihood and compression]] · U–M elective
+
+## Personal learning
+
+- [[Learning/Probability & mathematical foundations/Random variables & distributions/Why divide weights by the square root of fan-in|Why divide weights by the square root of fan-in]] — Approved: short variance-addition observation, attached to Variance and standard deviation; two approved connections.
+- [[Learning/Statistical computing & learning/Simulation & approximate inference/My four approaches to the ELBO|My four approaches to the ELBO]] — Approved migration reference; four perspectives with selected handwriting, attached to ELBO.
+- [[Learning/Statistical inference & modeling/Nonparametric & robust inference/Bootstrap mean - two layers of randomness|Bootstrap mean - two layers of randomness]] — Exercise 5 and handwritten total-variance derivation; conditional versus unconditional bootstrap variation (approved migration).
+- [[Learning/Statistical inference & modeling/Regression & linear models/Three routes from least squares to slope and correlation|Three routes from least squares to slope and correlation]] — Approved: three slope proofs, multiple-predictor extension, and original drawing; home: Simple slope and correlation.
+- [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Density slices, independence, and rotational invariance|Density slices, independence, and rotational invariance]] — Approved: hill/board insight, Gaussian-square-disk comparison, generated illustration, projection screenshot, and normal-sample extension; home: Conditional density.
+- [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Why half the square need not mean half the probability|Why half the square need not mean half the probability]] — Approved: event versus density, geometry, conditioning, and maximum/ranking solutions with the corrected PDF diagram; home: Joint CDF and density.
+
+- [[Learning/Statistical computing & learning/Simulation & approximate inference/Metropolis-Hastings - balance, acceptance, and unnormalized targets|Metropolis-Hastings - balance, acceptance, and unnormalized targets]] — Approved: two MCMC exchanges on balanced flows, acceptance probabilities, and cancellation of normalization; home: Metropolis–Hastings.
+- [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Conditional expectation as orthogonal projection in L2|Conditional expectation as orthogonal projection in L2]] — Approved: handwritten L² geometry, mean and conditional expectation as projections, orthogonality proof, tower and take-out corollaries, the completed “?” (total variance) and (⇐) direction, with the two drawings cropped; home: L2 conditional projection.
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Bias–variance decomposition as Pythagoras in L2|Bias–variance decomposition as Pythagoras in L2]] — Approved: prediction MSE as three orthogonal legs (noise, bias, fluctuation) in L², random variables as vectors, orthogonal versus uncorrelated, and the corrected formal MSE proof; home: Bias–variance tradeoff.
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Random forest seeds across CV folds - the bookmark that never moved|Random forest seeds across CV folds - the bookmark that never moved]] — Approved, from my blog post: integer seed versus RandomState in cross-validation, clone() deep-copying the generator, the direct-fit fix, checked on scikit-learn 1.8.0; home: Random forests.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Common train-test split errors - leakage and test-set selection|Common train-test split errors - leakage and test-set selection]] — Approved from the supplied handwritten page; home: Train / validation / test splits.
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/KNN versus K-means - neighbors predict, centroids cluster|KNN versus K-means - neighbors predict, centroids cluster]] — Approved from the supplied handwritten page; home: Nearest neighbors.
+
+- [[Learning/Statistical computing & learning/Simulation & approximate inference/Reparameterization - moving the parameter out of the sampling distribution|Reparameterization - moving the parameter out of the sampling distribution]] — Approved from three handwritten screenshots: missing density derivative, change of variables, Gaussian chain rule and toy example; home: Reparameterization gradient.
+
+- [[Learning/Statistical computing & learning/Simulation & approximate inference/Model error versus inference error in variational inference|Model error versus inference error in variational inference]] — Approved: model adequacy versus posterior approximation, with the original handwriting, ELBO gap and an exact-inference/wrong-model counterexample; home: Variational inference.

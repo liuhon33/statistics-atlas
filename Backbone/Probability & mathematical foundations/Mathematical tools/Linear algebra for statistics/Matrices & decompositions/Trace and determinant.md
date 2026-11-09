@@ -1,0 +1,30 @@
+---
+id: spectral-trace-and-determinant
+title: Trace and determinant
+layer: backbone
+level: 5
+subject: probability
+study_band: Foundation
+backbone_path: Probability & mathematical foundations → Mathematical tools → Linear algebra for statistics → Matrices & decompositions → Trace and determinant
+created: '2026-11-08'
+updated: '2026-11-08'
+aliases: []
+tags:
+- atlas/backbone
+- subject/probability
+- level/5
+- study/foundation
+node_kind: knowledge point
+parent: '[[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Matrices & decompositions]]'
+sources:
+- '[[_system/Sources/linear]]'
+---
+
+# Trace and determinant
+
+Probability & mathematical foundations → Mathematical tools → Linear algebra for statistics → Matrices & decompositions → Trace and determinant
+
+Parent: [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Matrices & decompositions|Matrices & decompositions]]
+
+```atlas
+```

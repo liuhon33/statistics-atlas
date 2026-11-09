@@ -1,0 +1,9 @@
+{
+  "id": "statistics-atlas",
+  "name": "Statistics atlas",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "A fixed five-level statistics backbone with learning and auxiliary views.",
+  "author": "Local vault project",
+  "isDesktopOnly": false
+}

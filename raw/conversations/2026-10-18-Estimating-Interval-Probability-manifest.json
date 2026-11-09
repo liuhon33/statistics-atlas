@@ -1,0 +1,43 @@
+{
+  "capture_date": "2026-10-18",
+  "capture_timezone": "America/New_York",
+  "pdf_pages": 10,
+  "displayed_chat_date": "Fri, Oct 2; year and timezone not displayed",
+  "files": [
+    {
+      "supplied_path": "C:\\Users\\Hongrui_Liu\\Downloads\\Estimating Interval Probability.pdf",
+      "raw_path": "raw/conversations/2026-10-18-Estimating-Interval-Probability.pdf",
+      "sha256": "22381204833720f9fbe1fde8946242349b2a0e0a22a7068d4b9d6e5256bc4c11",
+      "bytes": 680708,
+      "coverage": "10-page conversation export"
+    },
+    {
+      "supplied_path": "C:\\Users\\HONGRU~1\\AppData\\Local\\Temp\\codex-clipboard-a60d93ff-5a9c-486b-8a84-0cd162a40f79.png",
+      "raw_path": "raw/assets/2026-10-18-interval-probability-01-exercise.png",
+      "sha256": "c8b8579dae224a140dec387b2df013c8a59414826dd2995d7a77a07fef03a258",
+      "bytes": 41852,
+      "coverage": "Exercise 1; thumbnail on PDF p. 1"
+    },
+    {
+      "supplied_path": "C:\\Users\\HONGRU~1\\AppData\\Local\\Temp\\codex-clipboard-df891ca6-cdc4-4d06-8b59-528bc517c930.png",
+      "raw_path": "raw/assets/2026-10-18-interval-probability-02-count-reasoning.png",
+      "sha256": "5290ceb5e7de561fdc79ee0420661403ea878580de1fc11bb9666506640e6840",
+      "bytes": 551648,
+      "coverage": "Interval-count reasoning; thumbnail on PDF p. 1"
+    },
+    {
+      "supplied_path": "C:\\Users\\HONGRU~1\\AppData\\Local\\Temp\\codex-clipboard-3352f61c-3220-4e37-9dd6-7fa04af891a4.png",
+      "raw_path": "raw/assets/2026-10-18-interval-probability-03-bootstrap-exercise.png",
+      "sha256": "0f278d6675b6f7fef94a476340ba894a36b1e1ac48e334f7ba2759c3e4de4763",
+      "bytes": 51388,
+      "coverage": "Exercise 5; thumbnail on PDF p. 8"
+    },
+    {
+      "supplied_path": "C:\\Users\\HONGRU~1\\AppData\\Local\\Temp\\codex-clipboard-464716b3-a7e4-4dee-8e20-93ce3cab647d.png",
+      "raw_path": "raw/assets/2026-10-18-interval-probability-04-bootstrap-moments.png",
+      "sha256": "751f220d52aaf8cb3054b556488972d224ef6c1f17cbdec1fc03f8564eb6b647",
+      "bytes": 1765141,
+      "coverage": "Supplemental handwritten bootstrap variance; not in the exported PDF"
+    }
+  ]
+}

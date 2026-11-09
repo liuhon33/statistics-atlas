@@ -1,0 +1,31 @@
+---
+id: risk-minimax-and-admissibility-overview
+title: Minimax and admissibility overview
+layer: backbone
+level: 5
+subject: statistics
+study_band: M
+backbone_path: Statistical inference & modeling → Inference foundations → Decision theory → Loss, risk & actions → Minimax and admissibility overview
+created: '2026-11-08'
+updated: '2026-11-08'
+aliases: []
+tags:
+- atlas/backbone
+- subject/statistics
+- level/5
+- study/masters
+node_kind: knowledge point
+parent: '[[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Loss, risk & actions]]'
+sources:
+- '[[_system/Sources/bda]]'
+- '[[_system/Sources/theory]]'
+---
+
+# Minimax and admissibility overview
+
+Statistical inference & modeling → Inference foundations → Decision theory → Loss, risk & actions → Minimax and admissibility overview
+
+Parent: [[Backbone/Statistical inference & modeling/Inference foundations/Decision theory/Loss, risk & actions/Loss, risk & actions|Loss, risk & actions]]
+
+```atlas
+```

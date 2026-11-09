@@ -1,0 +1,31 @@
+---
+id: experiments
+title: Design of experiments
+layer: backbone
+level: 3
+subject: statistics
+study_band: U–M
+backbone_path: Statistical inference & modeling → Design, sampling & causality → Design of experiments
+created: '2026-11-08'
+updated: '2026-11-08'
+aliases: []
+tags:
+- atlas/backbone
+- subject/statistics
+- level/3
+- study/undergraduate-masters
+node_kind: group
+parent: '[[Backbone/Statistical inference & modeling/Design, sampling & causality/Design, sampling & causality]]'
+sources:
+- '[[_system/Sources/psu]]'
+- '[[_system/Sources/psumas]]'
+---
+
+# Design of experiments
+
+Statistical inference & modeling → Design, sampling & causality → Design of experiments
+
+Parent: [[Backbone/Statistical inference & modeling/Design, sampling & causality/Design, sampling & causality|Design, sampling & causality]]
+
+```atlas
+```

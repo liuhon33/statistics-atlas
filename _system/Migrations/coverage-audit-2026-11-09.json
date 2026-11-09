@@ -1,0 +1,908 @@
+{
+  "audit_date": "2026-11-09",
+  "timezone": "America/New_York",
+  "old_root": "D:\\obsidian_centre\\stats_ML",
+  "new_root": "D:\\obsidian_centre\\stats_ML_rebuild",
+  "method": "SHA-256 across inventoried paths; content coverage is assessed separately in the accompanying Markdown report.",
+  "source_files": [
+    {
+      "old_path": "raw/articles/2026-10-18-Jensen-Inequality-clipping.md",
+      "bytes": 6192,
+      "sha256": "56f39ce8452bdb205d12109792928f17dfe7fbb352a4c932bf4f9a0d9037fbf1",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/articles/2026-11-08-concept-reference-excerpts.md",
+      "bytes": 6554,
+      "sha256": "4a140034df67eb3906b5e4c411ef7e3da2946f30dee31fabd8b8bf9fd0343fed",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/assets/2026-10-18-interval-probability-01-exercise.png",
+      "bytes": 41852,
+      "sha256": "c8b8579dae224a140dec387b2df013c8a59414826dd2995d7a77a07fef03a258",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/assets/2026-10-18-interval-probability-02-count-reasoning.png",
+      "bytes": 551648,
+      "sha256": "5290ceb5e7de561fdc79ee0420661403ea878580de1fc11bb9666506640e6840",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/assets/2026-10-18-interval-probability-03-bootstrap-exercise.png",
+      "bytes": 51388,
+      "sha256": "0f278d6675b6f7fef94a476340ba894a36b1e1ac48e334f7ba2759c3e4de4763",
+      "identical_new_paths": [
+        "raw/assets/2026-10-18-interval-probability-03-bootstrap-exercise.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-10-18-interval-probability-04-bootstrap-moments.png",
+      "bytes": 1765141,
+      "sha256": "751f220d52aaf8cb3054b556488972d224ef6c1f17cbdec1fc03f8564eb6b647",
+      "identical_new_paths": [
+        "raw/assets/2026-10-18-interval-probability-04-bootstrap-moments.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-10-18-Jensen-convex-concave.png",
+      "bytes": 41952,
+      "sha256": "3da144e58ae1a40439dfa585d858388114b8457872cb30b2e0f50ded22428675",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/assets/2026-10-22-ELBO-I01-posterior-KL-attempt.png",
+      "bytes": 889572,
+      "sha256": "f59bb6f2584a3e9aa3d1aa747fce994757b79c27fdec4d8d7a4dd1eb65f0132e",
+      "identical_new_paths": [
+        "raw/assets/2026-10-22-ELBO-I01-posterior-KL-attempt.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-10-22-ELBO-I02-Jensen-slide-annotations.png",
+      "bytes": 1050910,
+      "sha256": "729b85d4b1a2cc9cd54c9a831fa2461470e843af895241020c63335d61400974",
+      "identical_new_paths": [
+        "raw/assets/2026-10-22-ELBO-I02-Jensen-slide-annotations.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-10-22-ELBO-I03-prior-posterior-comparison.png",
+      "bytes": 1301112,
+      "sha256": "4177b14d0d0ba511f50b54f81aba117a26a825d5324d2433eb3d20f86715ecdf",
+      "identical_new_paths": [
+        "raw/assets/2026-10-22-ELBO-I03-prior-posterior-comparison.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-10-22-ELBO-I04-annotated-summary.png",
+      "bytes": 1588884,
+      "sha256": "159173d7e0f70f2927f35e97248e58f955f0cb8cfa0c66fd462b3b6549d58fea",
+      "identical_new_paths": [
+        "raw/assets/2026-10-22-ELBO-I04-annotated-summary.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-11-02-my-handdrawn-regression-geometry.png",
+      "bytes": 863823,
+      "sha256": "0f10dbaeabb70a2f2566eb770b3cc850b730dfe4d12f0e53b29acbbc60320bc8",
+      "identical_new_paths": [
+        "assets/my_handdrawn_regression_geometry.png",
+        "raw/assets/2026-11-02-my-handdrawn-regression-geometry.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-11-04-conditional-density-denominator.png",
+      "bytes": 16449,
+      "sha256": "20c6fcab74df2112d82f834ab721a0e6474b7cbfe39947337ee5713f48e99b74",
+      "identical_new_paths": [
+        "raw/assets/2026-11-04-conditional-density-denominator.png"
+      ]
+    },
+    {
+      "old_path": "raw/assets/2026-11-08-vault-workflow-redesign-example.png",
+      "bytes": 958931,
+      "sha256": "9d6ab49baec9d15cd7ad7e719d4bac42484b28e16985d322003a0957b1b6c3ed",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Clarify-Probability-Error-manifest.json",
+      "bytes": 976,
+      "sha256": "2c9ca725009796bb07deef02225ceca1b9797d93a68f83b7145373502b3efb89",
+      "identical_new_paths": [
+        "raw/conversations/2026-10-18-Clarify-Probability-Error-manifest.json"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Clarify-Probability-Error-reference.json",
+      "bytes": 665,
+      "sha256": "61435de85c9f4fcd72bf273bf015cab937fb131a0103cb672d067dbdce5738fe",
+      "identical_new_paths": [
+        "raw/conversations/2026-10-18-Clarify-Probability-Error-reference.json"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Clarify-Probability-Error.pdf",
+      "bytes": 201591,
+      "sha256": "f1f23310c8264ab64d4199c5d9178a91b07786d29de985ea35f97f58418509cf",
+      "identical_new_paths": [
+        "raw/conversations/2026-10-18-Clarify-Probability-Error.pdf"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Estimating-Interval-Probability-manifest.json",
+      "bytes": 2171,
+      "sha256": "5486148c83dc36c822f591edc452e21a703b0d6a8bddf280ee3764b5960e2cb6",
+      "identical_new_paths": [
+        "raw/conversations/2026-10-18-Estimating-Interval-Probability-manifest.json"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Estimating-Interval-Probability.pdf",
+      "bytes": 680708,
+      "sha256": "22381204833720f9fbe1fde8946242349b2a0e0a22a7068d4b9d6e5256bc4c11",
+      "identical_new_paths": [
+        "raw/conversations/2026-10-18-Estimating-Interval-Probability.pdf"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Jensen-bundle-manifest.json",
+      "bytes": 2758,
+      "sha256": "76fc00ecb57616187c4788d6687bd103247d628fd56451a23c8d0a1ef4ea4348",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Jensen-Moment-Condition-extracted-messages.json",
+      "bytes": 9766,
+      "sha256": "aa725e1cbe92b8786f6c2b2a35823fcf1c03b6ac7434218538ee36636f504635",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Jensen-Moment-Condition-shared-page.html",
+      "bytes": 532273,
+      "sha256": "9063333c7e8f5f59d80e4fe8319af0007e15cf749f3782cc8a3f5e176b1a67c4",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-MLE-conversation-reference.json",
+      "bytes": 122,
+      "sha256": "663ef063af80c65d1d68e69889b0add32c56066fe193bbde259b5770b5352513",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-MLE-conversation.pdf",
+      "bytes": 867971,
+      "sha256": "15a67489aa6bc5fa6255f612a00399e04ed568c66384faee93454b006ec0b973",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-MLE-source-manifest.json",
+      "bytes": 2091,
+      "sha256": "1ad581ab005a5de22757bb600d1d3915cc85d8f96a2d07efdebb97d7eb36f149",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Regression-Coefficient-Uncertainty-manifest.json",
+      "bytes": 773,
+      "sha256": "c23be0c6b0199d7a6e8bb559fa0648df56dfa2e988b40e090fc54f520d4ab5e4",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-18-Regression-Coefficient-Uncertainty.pdf",
+      "bytes": 284557,
+      "sha256": "53860e66eec594b2550e0d92d4129c9198c9d20ac1bfc04663b9a2594a1a2905",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-10-22-ELBO-conversation-excerpt.md",
+      "bytes": 21344,
+      "sha256": "aa897182021e5d12496e27726e651b9ed5cfb7f1a6c84727e69088cb1bae570d",
+      "identical_new_paths": [
+        "raw/conversations/2026-10-22-ELBO-conversation-excerpt.md"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-10-22-ELBO-manifest.json",
+      "bytes": 6326,
+      "sha256": "dd1ba6e51489cede21f5a420c4e12b110fc921101125e609cb634f33af42aa3f",
+      "identical_new_paths": [
+        "raw/conversations/2026-10-22-ELBO-manifest.json"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-10-27-total-expectation-and-variance-group-intuition-excerpt.md",
+      "bytes": 4570,
+      "sha256": "dd35608d13e04f4276409a553f0f72a3de1cc8ad2788e57467e4bd740ca8920b",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-11-02-F-and-t-statistics-conversation-excerpt.md",
+      "bytes": 10745,
+      "sha256": "3e3d952d36699bf8d7726749a380d4ef1a5e943349b5c60ccc02f960b3eca350",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-11-02-F-and-t-statistics-conversation-manifest.json",
+      "bytes": 4611,
+      "sha256": "ea2abfa458832efe109e6c8a979ab84c6c097e423fd72ef67c7277036a730d76",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-11-02-F-and-t-statistics-conversation-messages.json",
+      "bytes": 11312,
+      "sha256": "18820e8133980ffbf9f239d0dc12b51238f5fea8413c9890f4c90d76400a10a3",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-11-02-R-squared-and-adjusted-R-squared-conversation-excerpt.md",
+      "bytes": 3450,
+      "sha256": "32fa7a209430e4bb43482be192fbcc7072f2645963ef398b49ee8dbc0135c0b1",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-11-02-R-squared-and-adjusted-R-squared-conversation-manifest.json",
+      "bytes": 3845,
+      "sha256": "2535672066b21b8ef79da5010602edd3848ea61f039ea2c8d9cddabb3b89a8d5",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-11-02-R-squared-and-adjusted-R-squared-conversation-messages.json",
+      "bytes": 6250,
+      "sha256": "5e738c9e005882f4f4ab8507273b4549ef056bef083e538e7a8fef2192d6a4ad",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/conversations/2026-11-04-density-slices-rotation-side-chat-excerpts.md",
+      "bytes": 8797,
+      "sha256": "c2a2626363200ae068071ed26a2ca2e788f20761c51951018adbd18e26b0439e",
+      "identical_new_paths": [
+        "raw/conversations/2026-11-04-density-slices-rotation-side-chat-excerpts.md"
+      ]
+    },
+    {
+      "old_path": "raw/conversations/2026-11-04-density-slices-rotation-side-chat-manifest.json",
+      "bytes": 2357,
+      "sha256": "25e526bf527ee26322dc7b547fab53d399a6b4d89ca76b7be9530f00f24ba3d6",
+      "identical_new_paths": [
+        "raw/conversations/2026-11-04-density-slices-rotation-side-chat-manifest.json"
+      ]
+    },
+    {
+      "old_path": "raw/notes/2026-10-18-core-question-capture-preference.md",
+      "bytes": 338,
+      "sha256": "887c8aae49666046b03991f34536ff53d9c0d204a81a49a0c9d833f21b92080b",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-10-18-digest-workflow-preferences.md",
+      "bytes": 1078,
+      "sha256": "c345f08ea887c626e373837bfd2855788b42f75fcdc6c43bb8c0232ad0c95bd3",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-10-18-Jensen-note-statement-excerpt.md",
+      "bytes": 593,
+      "sha256": "f38454b44a6fca1749f8f99c6970dcfe364bd7aa8d0b72156beb27477d91220b",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-10-18-vault-setup-request.md",
+      "bytes": 1293,
+      "sha256": "4fa7a4f42e194b07085dc64a62802f9930c024c6efcdca1e4fd869a98b0a0d26",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-11-01-Bias-variance-tradeoff-geometric-view.pdf",
+      "bytes": 1278734,
+      "sha256": "9d98c55a0edc9ae3197b748fd407e879512e13612609c2fe5e4a5390c61d2657",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-11-01-regression-and-bias-variance-manifest.json",
+      "bytes": 3892,
+      "sha256": "49eb9b081d527807edf36e84fb65576ead9f125df96877ccc1976631eebbaa51",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-11-01-Regression-CI-p-values-and-F-statistics.pdf",
+      "bytes": 5078008,
+      "sha256": "b63991eed963c94a1a83f977af32ea0c7f81a0f8efa569b1b31eea431c813498",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-11-02-Regression-Geometry-OLS-Correlation-t-and-F.md",
+      "bytes": 15364,
+      "sha256": "641dc10abebee018455f8b58d8358fa5f32978463ec8369f8fe444a7285427c6",
+      "identical_new_paths": [
+        "raw/notes/2026-11-02-Regression-Geometry-OLS-Correlation-t-and-F.md"
+      ]
+    },
+    {
+      "old_path": "raw/notes/2026-11-02-regression-slope-derivations-manifest.json",
+      "bytes": 3580,
+      "sha256": "bc22e804916f5e9b3c6181b1a586ff0a1fa9b8a396ef8cec2d6a6567ec012e5a",
+      "identical_new_paths": [
+        "raw/notes/2026-11-02-regression-slope-derivations-manifest.json"
+      ]
+    },
+    {
+      "old_path": "raw/notes/2026-11-08-concept-definition-and-diagram-preference.md",
+      "bytes": 1352,
+      "sha256": "47438c06dd391faffb2f02e35ec4a350a249b40ea84005ac900d42b7a3ea1b7f",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-11-08-insightful-question-preferences.md",
+      "bytes": 2260,
+      "sha256": "4831571d8ee37bdb6dca2de1fb08ac818b7ace7dccac1079dff35ffff74f6d0d",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-11-08-review-note-editorial-preferences.md",
+      "bytes": 1463,
+      "sha256": "08a8f968612cbba99e5c9d22b25dedc1a9c86c0c4ce2da3ff26e04d19a68f7f9",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/2026-11-08-vault-workflow-redesign-request.md",
+      "bytes": 4479,
+      "sha256": "7298352d5b53c1c32df6c60fb8af7203800d72517fdadf7206e33f92b006ecab",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/notes/Untitled.base",
+      "bytes": 38,
+      "sha256": "fc1d1bab190c39498bf9c35376a8477a9f980eb8baa43e78217176e0d41f012a",
+      "identical_new_paths": [
+        "Untitled.base"
+      ]
+    },
+    {
+      "old_path": "raw/assets/mle-2026-10-18/01-problem.png",
+      "bytes": 240276,
+      "sha256": "c02839eda7704d613c349a53f03e78dbdebf8bb359544b6362559416d5199558",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/assets/mle-2026-10-18/02-first-attempt.png",
+      "bytes": 1105721,
+      "sha256": "ae206e7d14f8a1527b1863dd26449df627d379b4e33f4e7b004253715329593b",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "raw/assets/mle-2026-10-18/03-revised-attempt.png",
+      "bytes": 1859070,
+      "sha256": "c89fe85a924586d544465515bcdf874691241a253e29876f65f73d770173fe47",
+      "identical_new_paths": []
+    }
+  ],
+  "source_counts": {
+    "nonempty_originals": 55,
+    "identical_copy_found": 20,
+    "no_identical_copy": 35
+  },
+  "generated_figure_files": [
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/build_figures.py",
+      "sha256": "1adfab8e72bb18c9ae71a695abdc1716533bd545e4e3e5b25b5bb8c1d4e70000",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/clt-and-distribution.png",
+      "sha256": "c94ebc1edd55b75fc387e5c9d700394181262529a0a079a281afd8cfa6e059b6",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/clt-and-distribution.svg",
+      "sha256": "7402abdc8bd8d248fcf330ac99165bf4559bca9d47cfefda12c499355dff8297",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/conditioning.png",
+      "sha256": "40e5da253ec97258748cd85b50cb3cbe90ab7c4d4eedc39b26bc22fa2262ca36",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/conditioning.svg",
+      "sha256": "6802162b33ae549fed98e1bf24dbb9286bd022f1aa22d90bdcc000c771f197cb",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/consistency.png",
+      "sha256": "b18e0317c2e8642e334c233271e26f2e998d84825367962320c795d16ff1efe0",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/consistency.svg",
+      "sha256": "e4a57167a0868538c4fab296a6c3399dedf0a6262e25d7b5cc15b6ad73a86a6f",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/delta-method.png",
+      "sha256": "90ac9cef752dcc590be3c7f6286b3d4343c8b79b4b415ee658650973a7df6237",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/delta-method.svg",
+      "sha256": "1fd2eed7e5ed66bbf040a88d492eb605c1822fd095bb7016948a3227e7201691",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/empirical-bootstrap.png",
+      "sha256": "262bae2f63f5b4e52d1860e276067d869497a6573198eea532933ebee3502123",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/empirical-bootstrap.svg",
+      "sha256": "6d3ade1d90654b47b0e053e4c659cd4ece93abe42c3a79e3335d4127111ca8f2",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/event-regions.png",
+      "sha256": "bb64acaf88566c8dda5151db2f97c5bd6113504e1cbd880451e2b8810a325072",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/event-regions.svg",
+      "sha256": "b6e69137357c263133562f3cfb7ae1ee9f58e3c6726ab9ec76106b2446cbee5f",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/evidence-variational.png",
+      "sha256": "43daf6bf2eb6a66302bf6b20b9add34f237342932194727d06ad908f6d6e8132",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/evidence-variational.svg",
+      "sha256": "68505eca8d076180c60b8dd33c11c7559dc4f3bf55f33045aad8ca6af04acfc8",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/figure-checks.json",
+      "sha256": "8d9bbe11d1dbcecc0bcdcd4841e0da94f96852efc836ebbcd9c9beecd71d96de",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/indicators.png",
+      "sha256": "11dacb044d120bfae3468e5b640aeb0b69364668e3d8d7b767a00d7bd20e0b1f",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/indicators.svg",
+      "sha256": "c988d25669a14e00d8eedce200c6ac3c2af94a15b01467536201c15aba5bf0da",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/l2-geometry.png",
+      "sha256": "e58ff11efaed74a7b494705beb04d66260be4039192efffbe86613f483531c87",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/l2-geometry.svg",
+      "sha256": "004393be1e3cf24f706dea8b0be601a6c574a77e360145995648c19a6647ea28",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/likelihood.png",
+      "sha256": "b458b9634666be1d29e96d3321a75b1356e8cc70516ef730be0f5db6349bfa10",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/likelihood.svg",
+      "sha256": "aa626e58de57335efe1db7a8b1cb781580176e84fa42a7fb09fa99cdbdcca85d",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/misspecification.png",
+      "sha256": "19237ca5bf71b3ad63709c78a842def95bfac8bfbeef53fccc82e5146655af4d",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/misspecification.svg",
+      "sha256": "5c6c97886af25f73e844f5f2f9444aed413ca4d9af779d01dd88a9069b45ecd8",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/mle-invariance.png",
+      "sha256": "0627d0f40f6accf800b4807041142cbd2aa20874fc0d35b50e498fd4c58a6c5a",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/mle-invariance.svg",
+      "sha256": "2809fdfe7fcfdec0c78027cdac928dd4f41fedbe4f9b17b0a0a4a14b803ecaa4",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/multicollinearity.png",
+      "sha256": "07793737981533d28277ed1e283f0a48bb085f651d89d3cc935d7b56d101979b",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/multicollinearity.svg",
+      "sha256": "b1ce629d0ea1a695f74f74ae1de24b7e5d03cbbdb07aea206399d5e0feaf97a8",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/parameters-estimators.png",
+      "sha256": "28926ec1e83383e69493159a7cafc69684252c6455ac37c41faa2877d86463ec",
+      "identical_new_paths": []
+    },
+    {
+      "old_path": "assets/figures/2026-11-08-concept-definitions/parameters-estimators.svg",
+      "sha256": "f1aa7d6466149ef587aee49d2e0e1ccb4afceda1a5506b4ee737f2fb15afd62c",
+      "identical_new_paths": []
+    }
+  ],
+  "excluded_from_source_counts": [
+    "raw/README.md",
+    ".gitkeep placeholders",
+    "empty raw/notes/2026-11-08.md"
+  ],
+  "old_wiki_markdown": [
+    {
+      "path": "wiki/index.md",
+      "sha256": "c0e5b7340c72608a07db95a8f74c797ee11c6efd44d7e5b51a0ae5116edbbffb"
+    },
+    {
+      "path": "wiki/log.md",
+      "sha256": "068443963db3495f23e33d22c36e45a2cd6d3adac9b860eb8ce9192d4bf8e277"
+    },
+    {
+      "path": "wiki/concepts/CLT and convergence in distribution.md",
+      "sha256": "be794f400920e1afd1c00bfe1e8c53aaafd3f223021ccd3d045e34ddc90327d8"
+    },
+    {
+      "path": "wiki/concepts/Conditional and unconditional randomness.md",
+      "sha256": "c00ca6a78f28c1e06604d03f0fd053fd7e549d5dfa6ceb7e3acfbeb676b1f409"
+    },
+    {
+      "path": "wiki/concepts/Consistency and the law of large numbers.md",
+      "sha256": "1e353d8e2d05392b7bb091f8217852d39cca5d859abd47d2972441837145003a"
+    },
+    {
+      "path": "wiki/concepts/Convexity and averaging.md",
+      "sha256": "fab5bd0252f425143b794d17a8eaeb1b60f3f9daeccf81f932d00cff108abb9b"
+    },
+    {
+      "path": "wiki/concepts/Delta method.md",
+      "sha256": "751d56a5c27497c2b62761d76044a9b3ce1beba215987bdab09e7617ea23bfb0"
+    },
+    {
+      "path": "wiki/concepts/Empirical distributions and bootstrap resampling.md",
+      "sha256": "8969abe782eea2564417322e144ae667e3848346bf19b403f1c63e5634d62074"
+    },
+    {
+      "path": "wiki/concepts/Event regions and probability mass.md",
+      "sha256": "9125916477e88110c0f0a2a13800a39d6c69d14b0b1fd3909b2c37193b750168"
+    },
+    {
+      "path": "wiki/concepts/Evidence and variational posterior approximations.md",
+      "sha256": "69f1f4cf0c608eb1cd3c9c85e5a054895a57c869a45419eddc13bbeaaf500438"
+    },
+    {
+      "path": "wiki/concepts/Indicators and Bernoulli probabilities.md",
+      "sha256": "ed944a5644ac0cfe0b4c4b20cc05ab86d0423a0f170497cf641e63aea45cb275"
+    },
+    {
+      "path": "wiki/concepts/Likelihood and observed data.md",
+      "sha256": "37df87bfe2d5581118122f8bba360d0c10254f61a3de65d390a9e7f1e1c24061"
+    },
+    {
+      "path": "wiki/concepts/MLE invariance and data coarsening.md",
+      "sha256": "41e5959b4678d2ca43495a7713a92ea01d7437c7c259f0fdbb63163862982086"
+    },
+    {
+      "path": "wiki/concepts/Model misspecification.md",
+      "sha256": "25948dc8334e2b6705018548c42a1580789cc4c5b68fc80853c5bac5e69c28e6"
+    },
+    {
+      "path": "wiki/concepts/Multicollinearity and unique predictor variation.md",
+      "sha256": "6cd1be710abb0ed1fe30872b3fafd41cde001622e7fa486434a42e74ad609bc6"
+    },
+    {
+      "path": "wiki/concepts/Parameters estimators and sampling distributions.md",
+      "sha256": "346a63e6e9f0583920498e4f1205527bbb7a50f9afcd5f1721a809710b26d15f"
+    },
+    {
+      "path": "wiki/concepts/Random variables as vectors in L2.md",
+      "sha256": "10176a0f9c7aa12b10b917f153e81b462e7f4641b10cbe46d29f351b650e910d"
+    },
+    {
+      "path": "wiki/derivations/Checked Bernoulli derivation from your photos.md",
+      "sha256": "f5ad918bf49477e6fdc6edf5f088d7e1909b599362b93d88ddb31414bf28b407"
+    },
+    {
+      "path": "wiki/derivations/Delta method for the squared sample mean.md",
+      "sha256": "92e7cc5face863851dff0ea98de4bb701ac6e461150293afbf93a522d2c5440e"
+    },
+    {
+      "path": "wiki/derivations/ELBO from Bayes rule and Jensen inequality.md",
+      "sha256": "9dd1a4981d442e8dc5cbce9bb87c01ca3dad2a076d6360f57e7afd326640a0f3"
+    },
+    {
+      "path": "wiki/derivations/Normal threshold MLE from full observations.md",
+      "sha256": "f257ec7ae5da8f4486d77eed7c6be0dc810acb652421a24c3a5f40e920b0c9a8"
+    },
+    {
+      "path": "wiki/derivations/Probability that a uniform variable is below a product.md",
+      "sha256": "bc02fdc7bb1ce9e1910d00ffade67aa120449aecc8573b2035179192b8561273"
+    },
+    {
+      "path": "wiki/derivations/Slope confidence intervals by inverting an F test.md",
+      "sha256": "0a31236a90e56c301f018adc032ae750724b5b1e28df50bc6426485af8fd0620"
+    },
+    {
+      "path": "wiki/derivations/Three derivations of the OLS slope correlation identity.md",
+      "sha256": "037f3634ad21ebc45bfbd9c5fb630c5f7f436d1de7bca775a924f262434ebcee"
+    },
+    {
+      "path": "wiki/derivations/Your density volume argument for two thirds.md",
+      "sha256": "e64b496d2ab824a550258d26b0914155b1c76dc34efb641a499b3f1dbd1d886b"
+    },
+    {
+      "path": "wiki/equations/Asymptotic variance ratio for full data and signs.md",
+      "sha256": "c6589f2b2218157de1eb371bdb1f3323b4685f58077230e2ba72c47aeb5e1762"
+    },
+    {
+      "path": "wiki/equations/Bernoulli likelihood and sample proportion.md",
+      "sha256": "2ef781f959d724a88d7a47a9196c0dd9ebd5c16d53f400195c338ba3ea61c893"
+    },
+    {
+      "path": "wiki/equations/Bias variance decomposition for estimation and prediction.md",
+      "sha256": "36f26a6fc139b6ed812053b36592c48ecd9f26aebff911f123377daec07e71f1"
+    },
+    {
+      "path": "wiki/equations/Classical regression t inference.md",
+      "sha256": "b42cd145be17daffb8ca3998314c7074e089e88d5d5082393b361e1ed75b93e0"
+    },
+    {
+      "path": "wiki/equations/Comparison with an independent uniform variable.md",
+      "sha256": "6e116158e62440b64f8714fbc805bf322414cab61d7cdad4fd2fc2eb46a43b41"
+    },
+    {
+      "path": "wiki/equations/Conditional and unconditional moments of the bootstrap mean.md",
+      "sha256": "8f784dea406a7eb13593391ba5f81b51efce138c0a013069fdaeb3524dd57a94"
+    },
+    {
+      "path": "wiki/equations/Conditional density as a normalized slice.md",
+      "sha256": "cfebe6affd652505213869b7980fff34ea7006d60bcbff62e17cbc5789c4bfd9"
+    },
+    {
+      "path": "wiki/equations/Confidence intervals for a normal threshold probability.md",
+      "sha256": "38fe91807e610f75fabf82f3a2fe3349ce3a863e66b8fd0ea55d44436eed8b5c"
+    },
+    {
+      "path": "wiki/equations/ELBO identities and the two KL divergences.md",
+      "sha256": "26d875d93f63533553baa302c904d5cfacf7c70e25472c7897f15a8a14f6075a"
+    },
+    {
+      "path": "wiki/equations/Empirical interval probability and its standard error.md",
+      "sha256": "6be7d51884820241b328f847aaa027d9b4fa24f469d6a0a40b9a0782a965065c"
+    },
+    {
+      "path": "wiki/equations/First-order delta method.md",
+      "sha256": "f1b73af14b8318eed19b25675d13a059a38e89cc0346a7b081166bc7253547cc"
+    },
+    {
+      "path": "wiki/equations/Full-data MLE of a normal threshold probability.md",
+      "sha256": "79608e8a28d9c4e9dd259d58ab92952d639a701eb7454f4e3aa075b4872e8a5f"
+    },
+    {
+      "path": "wiki/equations/Gaussian negative log likelihood and squared error.md",
+      "sha256": "d4b0c0462e17cc05a81cd8ba27c3fc0e3c1bff03d27ae0e388352888e0e1cabd"
+    },
+    {
+      "path": "wiki/equations/Higher finite moments imply lower finite moments.md",
+      "sha256": "1999d62ee8ac0a21e7ba3bde9e58ba316cd2dff8f7342de74133bf90d44d694c"
+    },
+    {
+      "path": "wiki/equations/Jensen inequality.md",
+      "sha256": "5158abdddf83e47ed59dc96c1b811567efbdf62840293a4e0ed793257914e72e"
+    },
+    {
+      "path": "wiki/equations/Nested regression F test.md",
+      "sha256": "f7b73b2a94e71c21fd21277e389b7ca1a4a366faa348ddc6ce6a117da74329e8"
+    },
+    {
+      "path": "wiki/equations/Normal threshold probability.md",
+      "sha256": "64b7aa02bac28f1c0d5670ae64d9ef2bd04d043690a8c421f04d4863cd6dfaff"
+    },
+    {
+      "path": "wiki/equations/OLS coefficient covariance and standard errors.md",
+      "sha256": "ab2de281e4d0a37ee02216429e7fc2a45b3e7cc4aa63b31833d472071d069ede"
+    },
+    {
+      "path": "wiki/equations/R squared and adjusted R squared.md",
+      "sha256": "29c8503fce9398a9a9d4bff39ae87a5ad2ea3cbc9b09abd4e1dd26e2013d8a72"
+    },
+    {
+      "path": "wiki/maps/Digest Checkpoints.md",
+      "sha256": "a77ef74f474b39537726d14821bffacd76f3b174d94961c113dac8a33299d15f"
+    },
+    {
+      "path": "wiki/maps/Learning Map.md",
+      "sha256": "512c85e70c2f206f0014ececb3dc2228980eb45c399de4ac09274e239db34561"
+    },
+    {
+      "path": "wiki/maps/Notation and Conventions.md",
+      "sha256": "edcb8192a2bca2f32fc4792c186c37205ff505f0782a8582ad62ff5627d59ff8"
+    },
+    {
+      "path": "wiki/maps/Review Queue.md",
+      "sha256": "d3922854392070558bfc62bced2d61796838ae93b99b29b45eee0f81fbf3b86e"
+    },
+    {
+      "path": "wiki/maps/Vault Workflow Development.md",
+      "sha256": "63bce9ca0ce1c9c1f29f95fb20a1b75be3f01f3d1a19bb2925c7a6240e0d67f0"
+    },
+    {
+      "path": "wiki/questions/Are my handwritten MLE derivations correct.md",
+      "sha256": "3f4b4d2876e60622d185104e97495e5b447bbf693e1972f26515a88fa4b6af84"
+    },
+    {
+      "path": "wiki/questions/Can density volumes replace a double integral.md",
+      "sha256": "e225c18829362af1d9646fc3c3cbf4351d2881416bccd0d49401f9364d8cb5af"
+    },
+    {
+      "path": "wiki/questions/Does a probability parameter have a distribution.md",
+      "sha256": "98d67a9a2f8e974bd5c09e367ced9cf24ab992d581109d1efcf07ecc2996e2e3"
+    },
+    {
+      "path": "wiki/questions/How are bootstrap samples drawn from the empirical distribution.md",
+      "sha256": "b9ecc1be8b22fb44517f601a18f65ab299e077c0bfee7297d5ac4f0c2f7ae921"
+    },
+    {
+      "path": "wiki/questions/How are F and t statistics related in regression.md",
+      "sha256": "bab39a9c7ec09b296432ad1c5235dbaf079eb404afac8c9b490b0a8e1639d7cb"
+    },
+    {
+      "path": "wiki/questions/How are regression tests p values and confidence intervals connected.md",
+      "sha256": "78ba67ca90ce1278d3423a962de5cf600571d931e4d382dcdadc0272b62dee91"
+    },
+    {
+      "path": "wiki/questions/How can I derive an MLE without numerical data.md",
+      "sha256": "f0487a8235d3b43f58106c7ad4e3023b37606e0cab27137dac2c0c56b795ed58"
+    },
+    {
+      "path": "wiki/questions/How do density slices distinguish independence from rotational invariance.md",
+      "sha256": "35e9f69027bab0ba81af9167da8538579c195327ddd7aae0c1fa0ae5478cf656"
+    },
+    {
+      "path": "wiki/questions/How do unconditional bootstrap moments differ from conditional moments.md",
+      "sha256": "4eecb4136bf7aa176b0338c0649614d234be42748c4a59331696911ab1260242"
+    },
+    {
+      "path": "wiki/questions/What does convergence in distribution with square root n mean.md",
+      "sha256": "e1f383f1579fbd7411b4e51bb06905ea2966fecf08b979e5f9c3c661c13ec9a8"
+    },
+    {
+      "path": "wiki/questions/What is the delta method and a simple example.md",
+      "sha256": "6d3cc5e488800f6ce81add600615e39fe3173ef6f881ba30759c6bc62ea063b9"
+    },
+    {
+      "path": "wiki/questions/What is the difference between R squared and adjusted R squared.md",
+      "sha256": "7956d938a88d32a54c717dfe6dc9bd4060fd4cca29140d900ff22d7e7a221053"
+    },
+    {
+      "path": "wiki/questions/Where does uncertainty in regression coefficients come from.md",
+      "sha256": "49759de960c09460dbf80ad18fc6baffdf904f58ce1bee43aa114ec39dca7619"
+    },
+    {
+      "path": "wiki/questions/Which KL term acts as regularization in the ELBO.md",
+      "sha256": "b7be7bf88d0d268f838f13413646519edad975ab69fdd75746deee21eaf9c06b"
+    },
+    {
+      "path": "wiki/questions/Why are the indicator probabilities not always one half.md",
+      "sha256": "0d11da9ee06dd342bf09530f19b6739737fa5c2e9c5014cec5d1ca777ac83648"
+    },
+    {
+      "path": "wiki/questions/Why do Jensen and KL give the same ELBO.md",
+      "sha256": "cb28e257f7c7bef185f473c06fb8cd49e906d4eaf679cfc54ddaf3832ffa42a6"
+    },
+    {
+      "path": "wiki/questions/Why does expected log likelihood measure data fit.md",
+      "sha256": "7f58c5fdf5f7278b9587b0d66288c75e5d9d06eb7d03ce7490e90b6c07014a67"
+    },
+    {
+      "path": "wiki/questions/Why does the density comparison not give the event probability.md",
+      "sha256": "a845d3deacf8a1d3d59034223bb39c4eca2ed89d8819ac9824724915ccf72b20"
+    },
+    {
+      "path": "wiki/questions/Why is the ELBO a lower bound when we maximize it.md",
+      "sha256": "50d40610f9674a4eb9ba0cc63f87006d2e357028fd079422c7f25a58b896c2c9"
+    },
+    {
+      "path": "wiki/sources/Bias variance geometry notes - 2026-11-01.md",
+      "sha256": "525a22af616f49b123874c28111d144454bcad988900b890fa7be39fb1ca01bc"
+    },
+    {
+      "path": "wiki/sources/Clarify Probability Error - 2026-10-18.md",
+      "sha256": "ff762091853c06a6464cbd01ab3d0eeb14a53493304ca0db6d186d2327400669"
+    },
+    {
+      "path": "wiki/sources/Concept definitions and visual references - 2026-11-08.md",
+      "sha256": "d2ac2819718eb44645305c4f8ae9dec729df5ee4c9c11dfd3aa89c816ae91bec"
+    },
+    {
+      "path": "wiki/sources/Density slices and rotational invariance side conversation - 2026-11-04.md",
+      "sha256": "644d207c229e80b82ead42f5a89ee2845ebdb19e631bc979896eb7b39bb41c5f"
+    },
+    {
+      "path": "wiki/sources/ELBO conversation and annotated summary - 2026-10-22.md",
+      "sha256": "ad0c75a0141f75f1e42707fa4fecde35658cf14899d3545854ea680b33afc201"
+    },
+    {
+      "path": "wiki/sources/Estimating Interval Probability - 2026-10-18.md",
+      "sha256": "59b169ebd256b232c100673cd663305e42fc9e603413742836333889c113e1ff"
+    },
+    {
+      "path": "wiki/sources/F and t statistics conversation - 2026-11-02.md",
+      "sha256": "c3be4d4cb1bb0f711d8a3b85ed709ba53e71e3db02b8d7c842c89bfc339800cb"
+    },
+    {
+      "path": "wiki/sources/Jensen inequality clipping - 2026-10-18.md",
+      "sha256": "196fb3c7f493bfad55abc82c9430157416817a97951f7248455a9105eb1c1539"
+    },
+    {
+      "path": "wiki/sources/Jensen moment condition conversation - 2026-10-18.md",
+      "sha256": "24905e62c154d7e3d50ec7ae2a313e6dd4ac51c761d30cb3796b008c309067a9"
+    },
+    {
+      "path": "wiki/sources/MLE conversation - 2026-10-18.md",
+      "sha256": "91cd916b46e5e942c4b8c35b9ea2ac2b3ecb8e5a028dc32d2b8c7899151ad3ba"
+    },
+    {
+      "path": "wiki/sources/R squared and adjusted R squared conversation - 2026-11-02.md",
+      "sha256": "6bcf44984143a2f20cb59e897b7dfd4a61d7bc31303d4be482cfbaf9254a03c3"
+    },
+    {
+      "path": "wiki/sources/Regression CI p values and F statistics notes - 2026-11-01.md",
+      "sha256": "4818c733a1172f5ca2a568d2e76982d80755406058379b7704a5be409e40c7bd"
+    },
+    {
+      "path": "wiki/sources/Regression Coefficient Uncertainty - 2026-10-18.md",
+      "sha256": "78de5f5c283d336e599ceb0e864f49adb408ce291052efcae1ee920720baae50"
+    },
+    {
+      "path": "wiki/sources/Regression slope derivations and geometry - 2026-11-02.md",
+      "sha256": "a924970a0cc9de0239928a449022cb7ee631ed19e642c3d6bf2fa5dd33052801"
+    },
+    {
+      "path": "wiki/sources/Total expectation and variance group intuition - 2026-10-27.md",
+      "sha256": "3ac012f0543bdbe8574a4224bb06c248acc98752fb84e911578a26b02edb79c7"
+    },
+    {
+      "path": "wiki/sources/Vault setup brief.md",
+      "sha256": "066913ef80089b0d1a8b544f025884e3aa8ca50a80767f8b4d565be9c00eba2b"
+    },
+    {
+      "path": "wiki/synthesis/Bias variance decomposition as Pythagoras.md",
+      "sha256": "57b12cd4b52797761d856db1f10882d6fe98fe6b56b1b2ef60472b3384a1977e"
+    },
+    {
+      "path": "wiki/synthesis/ELBO - evidence Jensen and regularization.md",
+      "sha256": "8e342c77c5e82aac58017c80b431bcce4bc5f018105b97776cdb6188c56b8f80"
+    },
+    {
+      "path": "wiki/synthesis/Estimating an interval probability.md",
+      "sha256": "97e1a87ce5284df416a86d87988e789a3e7bed1d9e185f71d91f4a80d1206f59"
+    },
+    {
+      "path": "wiki/synthesis/Jensen inequality and finite moments.md",
+      "sha256": "dc53d0cb009b25a8e5249dd4447ef50edd35d9d83de37d84c7837345672e01c6"
+    },
+    {
+      "path": "wiki/synthesis/Learning Synthesis.md",
+      "sha256": "fc60c1d9ee6cbe02184a92c5816024b62fd4e4e415e4fc33af27cf6ac24a7aba"
+    },
+    {
+      "path": "wiki/synthesis/Normal threshold estimation - the complete picture.md",
+      "sha256": "2eacea4cd3f6dee1654b559059fffbe5443785e7ec73f34070f20ba533fe66cc"
+    },
+    {
+      "path": "wiki/synthesis/Regression inference through projection geometry.md",
+      "sha256": "72cb0a511770ec6c6449fe76b84570449b9243456181ab1fa1322f40ff59549a"
+    }
+  ]
+}

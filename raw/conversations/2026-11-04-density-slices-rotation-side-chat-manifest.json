@@ -1,0 +1,60 @@
+{
+  "capture_date": "2026-11-04",
+  "timezone": "America/New_York",
+  "chat_id": "01a1a961-b9cb-77b2-acc6-e5057f3cb989",
+  "identity_evidence": "active CODEX_THREAD_ID",
+  "source": "Visible side-chat public messages after explicit side-conversation boundary",
+  "message_ids": null,
+  "exact_timestamps": null,
+  "reader_limit": "ephemeral threads do not support thread/turns/list; no matching session file found in searched sessions directory",
+  "read_coverage": "U01-U06/A01-A06 in full; U07 authorization; I01 image inspected separately",
+  "raw_capture_scope": "All six user learning-request texts plus U07; explicitly selected exact assistant passages with omissions marked. Not a complete transcript.",
+  "start": {
+    "locator": "U01",
+    "text": "I don't understand why you draw a vertical line?"
+  },
+  "end": {
+    "locator": "U07",
+    "text": "digest this",
+    "preceding_answer": "A06 square/disk distinction and conditional sample-variance calculation"
+  },
+  "excluded": [
+    "Inherited parent-chat turns, attachments and visualization",
+    "setup, tools, internal reasoning, progress commentary",
+    "digest response"
+  ],
+  "assets": [
+    {
+      "locator": "I01 at U03",
+      "original": "D:\\CODEXS~1\\temp\\codex-clipboard-606066b0-f0aa-4f60-aa40-54bbfc8720e6.png",
+      "archived": "raw/assets/2026-11-04-conditional-density-denominator.png",
+      "dimensions": [
+        675,
+        230
+      ],
+      "sha256": "20c6fcab74df2112d82f834ab721a0e6474b7cbfe39947337ee5713f48e99b74",
+      "copy_verified": true
+    }
+  ],
+  "files": [
+    {
+      "path": "raw/conversations/2026-11-04-density-slices-rotation-side-chat-excerpts.md",
+      "sha256": "c2a2626363200ae068071ed26a2ca2e788f20761c51951018adbd18e26b0439e"
+    }
+  ],
+  "symbolic_checks": [
+    "Q Q^T = I and determinant 1",
+    "preserved squared length",
+    "uniform-slice normalization and second moment a^2/3",
+    "standard normal density integrates to 1",
+    "disk marginal integrates to 1",
+    "diamond marginal integrates to 1",
+    "n=2 sample-variance identity"
+  ],
+  "pending_content_gaps": [],
+  "limits": [
+    "Message IDs and exact timestamps unavailable; local chronological labels used",
+    "Live Obsidian rendering not inspected",
+    "No general-n proof or user mastery claim"
+  ]
+}

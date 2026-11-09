@@ -1,0 +1,34 @@
+# Local Obsidian window/tab state and transient files
+.obsidian/workspace*.json
+.obsidian/cache/
+.trash/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Generated development files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+
+/.claudian/claudian-settings.json
+/.obsidian/community-plugins.json
+/.obsidian/graph.json
+/.claudian/claudian-settings.json
+/.claudian/sessions/
+
+# Claude Code reads the shared skills in .agents/skills through this local folder link (AGENTS §14)
+/.claude/skills
+# Private machine state and optional third-party plugin installations
+/.claudian/
+/.claude/
+/.obsidian/plugins/*
+!/.obsidian/plugins/statistics-atlas/
+/.obsidian/plugins/*/data.json
+/.obsidian/plugins/*/load-error.txt
+/.obsidian/plugins/*/*.log
+.env
+.env.*
+!.env.example
+*.log

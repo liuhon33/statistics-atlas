@@ -1,0 +1,13 @@
+{
+  "capture_date": "2026-10-18",
+  "capture_timezone": "America/New_York",
+  "capture_type": "conversation-reference-only",
+  "supplied_reference": {
+    "conversationId": "6ac831b5-d958-83e9-8b3d-5c721aa5a84b",
+    "title": "Clarify Probability Error",
+    "priorConversation": null
+  },
+  "supplied_url": "chatgpt-conversation://6ac831b5-d958-83e9-8b3d-5c721aa5a84b",
+  "user_request": "digest this [Clarify Probability Error](chatgpt-conversation://6ac831b5-d958-83e9-8b3d-5c721aa5a84b)",
+  "coverage": "User-supplied reference and request only. No conversation turns or attachments were available or read. This file is not a transcript or a source summary."
+}

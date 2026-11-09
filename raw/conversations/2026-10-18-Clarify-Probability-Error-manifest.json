@@ -1,0 +1,15 @@
+{
+  "title": "Clarify Probability Error",
+  "conversation_id_from_user_reference": "6ac831b5-d958-83e9-8b3d-5c721aa5a84b",
+  "capture_date": "2026-10-18",
+  "capture_timezone": "America/New_York",
+  "original_path": "C:\\Users\\Hongrui_Liu\\Downloads\\Clarify Probability Error.pdf",
+  "archive_path": "raw/conversations/2026-10-18-Clarify-Probability-Error.pdf",
+  "sha256": "f1f23310c8264ab64d4199c5d9178a91b07786d29de985ea35f97f58418509cf",
+  "bytes": 201591,
+  "pages": 11,
+  "displayed_conversation_date": "Thu, Oct 8; year and timezone not specified in displayed chat heading",
+  "displayed_message_times": ["8:14 PM", "8:29 PM", "8:34 PM", "8:37 PM"],
+  "coverage": "All 11 supplied PDF pages read as text and rendered images, including embedded diagrams. No separate image attachments supplied. No unseen chat turns claimed.",
+  "identity_limit": "Conversation ID comes from the user's reference; no server transcript was available for independent ID verification."
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="A quick story about 5 folds, a random forest, and a bookmark that never moved. Make your guess before the reveal.">
+  <meta property="og:title" content="When the docs get randomness wrong">
+  <meta property="og:description" content="A quick story about 5 folds, a random forest, and a bookmark that never moved.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://liuhon33.github.io/blog/random-state/">
+  <meta property="og:image" content="https://liuhon33.github.io/blog/random-state/random-state-quiz.png">
+  <meta property="og:image:width" content="1440">
+  <meta property="og:image:height" content="620">
+  <meta property="og:image:alt" content="Python quiz: a random forest receives RandomState(0), then cross_val_score runs five-fold cross-validation.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://liuhon33.github.io/blog/random-state/">
+  <title>When the docs get randomness wrong · Random notes</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23245e4d'/%3E%3Cpath d='M12 9h17v23H12zM16 9v23' fill='none' stroke='%23f7f5ef' stroke-width='2'/%3E%3Cpath d='M23 9v10l3-3 3 3V9' fill='%23d98960'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="app.js?v=2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to article</a>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="../" aria-label="Random notes — all blog posts"><span class="book-icon" aria-hidden="true"></span>Random notes</a>
+      <a href="../../" aria-label="Hongrui Liu — portfolio">Hongrui Liu</a>
+    </header>
+    <main id="article">
+      <article>
+        <header class="hero">
+          <p class="eyebrow">Machine learning · scikit-learn</p>
+          <h1>When the docs get <em>randomness wrong.</em></h1>
+          <p class="hook">Be honest: how many times have you written <code>random_state=42</code> everywhere in your code and called it a day?</p>
+          <p>I went down a rabbit hole checking how scikit-learn actually handles randomness in cross-validation—and discovered that even the official scikit-learn docs get this wrong.</p>
+          <p>A quick story about 5 folds, a random forest, and a bookmark that never moved 🧵👇</p>
+        </header>
+        <section aria-labelledby="habit-title">
+          <h2 id="habit-title">What we all do—and the hidden flaw</h2>
+          <p>When we run 5-fold cross-validation, we usually lock two seeds:</p>
+          <pre aria-label="Python: fixed seeds"><code>cv = StratifiedKFold(5, shuffle=True, random_state=42)
+forest = RandomForestClassifier(random_state=42)
+scores = cross_val_score(forest, X, y, cv=cv)</code></pre>
+          <p>Wait—spot the issue?</p>
+          <ul>
+            <li>Locking the <strong>CV seed</strong> is great: every experiment uses the exact same 5 test splits.</li>
+            <li>Locking the <strong>forest seed</strong> to <code>42</code> means every single fold builds its trees using the <em>exact same sequence of random choices</em>.</li>
+          </ul>
+          <p>You aren't testing if your model is robust to random initialization—you're replaying the exact same lucky (or unlucky) streak 5 times.</p>
+        </section>
+        <section aria-labelledby="book-title">
+          <h2 id="book-title">The "Official" Fix &amp; The Book Analogy</h2>
+          <p><a href="https://scikit-learn.org/stable/common_pitfalls.html#id2" target="_blank" rel="noopener noreferrer">Scikit-learn’s official docs</a> actually warn you about this!</p>
+          <details class="documentation">
+            <summary>View the official docs</summary>
+            <a href="documentation-screenshot.png" target="_blank" rel="noopener noreferrer"><img src="documentation-screenshot.png" width="2255" height="1348" alt="The scikit-learn guide's Estimators section recommends a RandomState instance to vary the RNG across cross-validation folds." loading="lazy"></a>
+          </details>
+          <p>Their solution? Instead of passing an integer (<code>42</code>), pass a generator object (<code>RandomState</code>):</p>
+          <pre aria-label="Python: the documentation's approach"><code>rng = np.random.RandomState(0)
+forest = RandomForestClassifier(random_state=rng)
+scores = cross_val_score(forest, X, y, cv=cv)</code></pre>
+          <p>Here, <code>42</code> fixes the CV splits; <code>0</code> seeds the forest’s random-number generator, matching the docs’ <code>RandomState(0)</code> example.</p>
+          <p>Think of <code>rng</code> as a huge book of random numbers, and <code>0</code> as opening to Page 0.</p>
+          <ul class="analogy">
+            <li>Passing integer <code>42</code> = buying a brand-new book and reading from Page 42, Line 1 every time.</li>
+            <li>Passing <code>rng</code> = handing over ONE book, opened to Page 0, with a bookmark inside. Each fold should read a few lines and move the bookmark forward for the next fold.</li>
+          </ul>
+          <p class="suspense">At least, that’s what the docs say happens... 👀</p>
+        </section>
+        <section id="guess" aria-labelledby="guess-title">
+          <h2 id="guess-title">The Plot Twist — Interactive Reveal</h2>
+          <p>Let’s check if the bookmark actually moved!</p>
+          <p>If we peek inside the 5 trained forests from <code>cross_validate</code> and print the random seed of the very first tree in each fold:</p>
+          <pre aria-label="Python: inspect the first tree's seed"><code>result = cross_validate(forest, X, y, cv=cv, return_estimator=True)
+print([m.estimators_[0].random_state for m in result["estimator"]])</code></pre>
+          <div class="quiz">
+            <h3 id="question">What do you think prints out?</h3>
+            <div class="choices" role="group" aria-labelledby="question">
+              <button type="button" class="choice" data-answer="A" aria-controls="continuation" aria-expanded="false" aria-pressed="false"><span class="letter">A)</span><span>5 different seeds (the bookmark moved!)</span></button>
+              <button type="button" class="choice" data-answer="B" aria-controls="continuation" aria-expanded="false" aria-pressed="false"><span class="letter">B)</span><span>The exact same seed 5 times</span></button>
+            </div>
+            <p class="quiz-hint" id="quiz-hint">Choose A or B to reveal the output.</p>
+            <noscript><p>Enable JavaScript to choose an answer and reveal the rest of the story.</p></noscript>
+          </div>
+        </section>
+        <div id="continuation" hidden>
+          <section class="reveal" aria-labelledby="reveal-title">
+            <h2 id="reveal-title" tabindex="-1">The Reveal — Why the docs are wrong</h2>
+            <p>The answer is <strong>B</strong>. You get the exact same seed 5 times in a row:</p>
+            <pre class="output" aria-label="Output"><code>[209652396, 209652396, 209652396, 209652396, 209652396]</code></pre>
+            <p>Why? Because before training each fold, <code>cross_val_score</code> calls <a href="https://github.com/scikit-learn/scikit-learn/blob/1.8.0/sklearn/model_selection/_validation.py#L365-L388" target="_blank" rel="noopener noreferrer"><code>clone()</code></a> on your model—which secretly runs <a href="https://github.com/scikit-learn/scikit-learn/blob/1.8.0/sklearn/base.py#L98-L130" target="_blank" rel="noopener noreferrer"><code>deepcopy()</code></a> on your random generator!</p>
+            <p>Instead of sharing one book with a moving bookmark, scikit-learn <strong>photocopies your book at Page 0, Line 1</strong> and hands an identical photocopy to all 5 folds. The original bookmark never moves an inch.</p>
+          </section>
+          <section class="fix" aria-labelledby="fix-title">
+            <h2 id="fix-title">How to actually move the bookmark</h2>
+            <p>If you want fixed data splits <em>and</em> a forest that genuinely explores new random choices in every fold, skip <code>cross_val_score</code>'s cloning trap and fit the model directly in 3 lines:</p>
+            <pre aria-label="Python: the bookmark fix"><code>cv = StratifiedKFold(5, shuffle=True, random_state=42)
+forest = RandomForestClassifier(random_state=np.random.RandomState(0))
+
+scores = [forest.fit(X[tr], y[tr]).score(X[te], y[te]) for tr, te in cv.split(X, y)]</code></pre>
+            <p>Now:</p>
+            <ul class="checks">
+              <li>✅ Your 5 data splits stay locked to <code>42</code> across every run</li>
+              <li>✅ Calling <code>.fit()</code> directly actually moves the bookmark forward on every fold</li>
+              <li>✅ Re-running the cell tomorrow gives the exact same reproducible result</li>
+            </ul>
+            <p class="closing">Have you ever been burned by <code>random_state</code> in your ML pipelines?</p>
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer><span>Random notes · Hongrui Liu</span><a href="#">Back to the beginning ↑</a></footer>
+  </div>
+</body>
+</html>

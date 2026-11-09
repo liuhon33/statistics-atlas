@@ -1,0 +1,31 @@
+---
+id: stable-linear-qr-least-squares
+title: QR least squares
+layer: backbone
+level: 5
+subject: computing
+study_band: U–M
+backbone_path: Statistical computing & learning → Numerical methods & optimization → Numerical analysis for statistics → Numerical linear algebra → QR least squares
+created: '2026-11-08'
+updated: '2026-11-08'
+aliases: []
+tags:
+- atlas/backbone
+- subject/computing
+- level/5
+- study/undergraduate-masters
+node_kind: knowledge point
+parent: '[[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/Numerical linear algebra]]'
+sources:
+- '[[_system/Sources/ms]]'
+- '[[_system/Sources/optim]]'
+---
+
+# QR least squares
+
+Statistical computing & learning → Numerical methods & optimization → Numerical analysis for statistics → Numerical linear algebra → QR least squares
+
+Parent: [[Backbone/Statistical computing & learning/Numerical methods & optimization/Numerical analysis for statistics/Numerical linear algebra/Numerical linear algebra|Numerical linear algebra]]
+
+```atlas
+```

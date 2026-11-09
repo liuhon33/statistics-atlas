@@ -1,0 +1,32 @@
+---
+id: rank-tests-sign-and-signed-rank-tests
+title: Sign and signed-rank tests
+layer: backbone
+level: 5
+subject: statistics
+study_band: U–M
+backbone_path: Statistical inference & modeling → Nonparametric & robust inference → Nonparametric inference → Ranks & distribution-free procedures → Sign and signed-rank tests
+created: '2026-11-08'
+updated: '2026-11-08'
+aliases: []
+tags:
+- atlas/backbone
+- subject/statistics
+- level/5
+- study/undergraduate-masters
+node_kind: knowledge point
+parent: '[[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Ranks & distribution-free procedures]]'
+sources:
+- '[[_system/Sources/psumas]]'
+- '[[_system/Sources/isl]]'
+- '[[_system/Sources/asym]]'
+---
+
+# Sign and signed-rank tests
+
+Statistical inference & modeling → Nonparametric & robust inference → Nonparametric inference → Ranks & distribution-free procedures → Sign and signed-rank tests
+
+Parent: [[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Nonparametric inference/Ranks & distribution-free procedures/Ranks & distribution-free procedures|Ranks & distribution-free procedures]]
+
+```atlas
+```

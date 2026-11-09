@@ -1,0 +1,269 @@
+<div id="statistics-atlas">
+  <style>
+    #statistics-atlas { color:var(--foreground); --atlas-gap:calc(var(--font-size-base) * .75); }
+    #statistics-atlas .atlas-heading { display:flex; flex-wrap:wrap; align-items:baseline; gap:var(--atlas-gap); margin-bottom:var(--atlas-gap); padding-right:90px; }
+    #statistics-atlas .atlas-legend { display:flex; flex-wrap:wrap; gap:var(--atlas-gap); margin:var(--atlas-gap) 0; }
+    #statistics-atlas .atlas-key { display:inline-flex; align-items:center; gap:calc(var(--font-size-base) * .35); }
+    #statistics-atlas .atlas-swatch { width:10px; height:10px; border-radius:50%; display:inline-block; }
+    #statistics-atlas .atlas-stage { position:relative; width:100%; height:550px; overflow:hidden; touch-action:none; }
+    #statistics-atlas canvas { display:block; width:100%; height:100%; }
+    #statistics-atlas .atlas-path { display:flex; align-items:center; flex-wrap:wrap; gap:calc(var(--font-size-base) * .3); margin-top:var(--atlas-gap); }
+    #statistics-atlas .atlas-selected { margin:var(--atlas-gap) 0; overflow-wrap:anywhere; }
+    #statistics-atlas .atlas-children { display:flex; flex-wrap:wrap; gap:calc(var(--font-size-base) * .35); margin-bottom:var(--atlas-gap); }
+    #statistics-atlas .atlas-bottom { display:flex; flex-wrap:wrap; align-items:center; gap:var(--atlas-gap); margin:var(--atlas-gap) 0; }
+    #statistics-atlas .atlas-details { margin-top:var(--atlas-gap); }
+    #statistics-atlas .atlas-details ul { padding-left:calc(var(--font-size-base) * 1.3); margin:var(--atlas-gap) 0; }
+    #statistics-atlas .atlas-details li { margin-bottom:calc(var(--font-size-base) * .5); overflow-wrap:anywhere; }
+    #statistics-atlas .atlas-outline details { margin-left:calc(var(--font-size-base) * .6); margin-top:calc(var(--font-size-base) * .35); }
+    #statistics-atlas .atlas-outline .atlas-leaf { margin-left:calc(var(--font-size-base) * .6); display:flex; flex-wrap:wrap; }
+    #statistics-atlas .atlas-colors { position:absolute; width:0; height:0; overflow:hidden; }
+    #statistics-atlas .atlas-caption { margin-top:calc(var(--font-size-base) * .5); }
+    @media(max-width:480px) { #statistics-atlas .atlas-stage { height:440px; } }
+  </style>
+  <div class="atlas-heading"><h2>Statistics backbone</h2><span class="text-small text-muted" id="atlas-count"></span></div>
+  <div class="viz-controls">
+    <label class="form-label">Explore a branch<select class="form-select" id="atlas-branch" aria-label="Explore a statistics branch"><option value="">Whole web</option></select></label>
+    <label class="form-label">Visible levels<select class="form-select" id="atlas-depth" aria-label="Visible hierarchy levels"><option value="1">1 · Core subjects</option><option value="2">2 · Areas</option><option value="3">3 · Course / book-sized units</option><option value="4">4 · Chapters</option><option value="5" selected>5 · Knowledge points</option></select></label>
+  </div>
+  <div class="atlas-legend text-small" aria-label="Subject colors">
+    <span class="atlas-key"><i class="atlas-swatch" style="background:var(--viz-series-1)"></i>Probability & foundations</span>
+    <span class="atlas-key"><i class="atlas-swatch" style="background:var(--viz-series-2)"></i>Inference & modeling</span>
+    <span class="atlas-key"><i class="atlas-swatch" style="background:var(--viz-series-3)"></i>Computing & learning</span>
+  </div>
+  <div class="atlas-path" id="atlas-path" aria-label="Current hierarchy path"></div>
+  <div class="atlas-stage cursor-interaction" id="atlas-stage"><canvas id="atlas-canvas" role="img" aria-label="Interactive statistics network with three central subjects and five levels. Equivalent keyboard navigation is available in the branch selector and topic outline.">Statistics topic network. Use the branch selector or topic outline to navigate.</canvas></div>
+  <div class="atlas-bottom">
+    <div class="viz-row"><button class="btn" type="button" id="atlas-out" aria-label="Zoom out">−</button><button class="btn" type="button" id="atlas-in" aria-label="Zoom in">+</button><button class="btn" type="button" id="atlas-home">Whole web</button></div>
+    <span class="text-small text-muted" id="atlas-visible" aria-live="polite"></span>
+  </div>
+  <div class="text-small text-muted">Solid links: contains · Dashed arrows: prerequisite or application · Dotted links: conceptual connection · Hollow dots: another branch</div>
+  <div class="atlas-selected" id="atlas-selected" aria-live="polite"></div>
+  <div class="atlas-children" id="atlas-children" aria-label="Topics in selected branch"></div>
+  <details class="atlas-details" id="atlas-connections"><summary>Connections across the web <span id="atlas-link-count"></span></summary><ul id="atlas-links"></ul></details>
+  <details class="atlas-details"><summary>Sources for this view</summary><ul id="atlas-sources"></ul></details>
+  <details class="atlas-details atlas-outline" id="atlas-outline"><summary>Browse all five levels</summary><div id="atlas-tree"></div></details>
+  <div class="text-small text-muted atlas-caption">Proposed organization · Foundation / U / M = approximate study band · Electives are optional pathways</div>
+  <div class="atlas-colors" aria-hidden="true"><span style="color:var(--viz-series-1)"></span><span style="color:var(--viz-series-2)"></span><span style="color:var(--viz-series-3)"></span><span style="color:var(--foreground)"></span><span style="color:var(--muted-foreground)"></span><span style="color:var(--border)"></span><span style="color:var(--background)"></span></div>
+  <script type="application/json" id="atlas-data">/*ATLAS_DATA*/</script>
+  <script>
+  (() => {
+    const root=document.getElementById('statistics-atlas');
+    const data=JSON.parse(root.querySelector('#atlas-data').textContent);
+    const nodes=data.nodes, edges=data.edges, byId=new Map(nodes.map(n=>[n.id,n]));
+    const children=new Map(nodes.map(n=>[n.id,[]]));
+    nodes.forEach(n=>{if(n.parent)children.get(n.parent).push(n);});
+    const cores=nodes.filter(n=>n.level===1);
+    const cross=edges.filter(e=>e.type!=='contains');
+    const dom=id=>root.querySelector('#atlas-'+id);
+    const canvas=dom('canvas'),stage=dom('stage'),ctx=canvas.getContext('2d');
+    const levelNames=['','Core subject','Area','Course / book-sized unit','Chapter / theme','Knowledge point'];
+    let focus=null,selected=null,depth=5,view={x:0,y:0,k:1},width=736,height=550,positions=new Map(),visible=[],shownEdges=[],external=new Set(),hover=null,drag=null,frame=0,colors=[],fontSize=14;
+    let previous=new Map(),transitionStart=0,transitionDuration=0;
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const colorIndex={probability:0,statistics:1,computing:2};
+    const shortCore={probability:['Probability','& foundations'],statistics:['Inference','& modeling'],computing:['Computing','& learning']};
+    const subtree=id=>{const result=[];const visit=i=>{result.push(byId.get(i));children.get(i).forEach(n=>visit(n.id));};visit(id);return result;};
+    const lineage=id=>{const out=[];while(id){out.unshift(byId.get(id));id=byId.get(id).parent;}return out;};
+    const labelButton=(label,fn)=>{const b=document.createElement('button');b.type='button';b.className='btn btn-ghost';b.textContent=label;b.addEventListener('click',fn);return b;};
+    function persist(){
+      if(!window.openai?.setWidgetState)return;
+      window.openai.setWidgetState({modelContent:{selectedTopic:selected?byId.get(selected).label:null,selectedId:selected,branch:focus?byId.get(focus).label:null,depth},privateContent:{focus,selected,depth}}).catch(()=>{});
+    }
+    function restore(snapshot){
+      const s=snapshot?.privateContent;
+      if(!s)return;
+      focus=byId.has(s.focus)?s.focus:null;
+      selected=byId.has(s.selected)?s.selected:null;
+      depth=Number.isInteger(s.depth)&&s.depth>=1&&s.depth<=5?s.depth:5;
+      if(focus)depth=Math.max(depth,Math.min(5,byId.get(focus).level+1));
+    }
+    restore(window.openai?.widgetState);
+    window.addEventListener('openai:set_globals',e=>{if(e.detail?.globals?.widgetState){restore(e.detail.globals.widgetState);layout(false);updateDetails();}});
+
+    dom('count').textContent=nodes.length+' topics · '+cross.length+' cross-links';
+    for(const core of cores){
+      const group=document.createElement('optgroup');group.label=core.label;
+      for(const n of subtree(core.id).filter(n=>n.level<=4)){
+        const o=document.createElement('option');o.value=n.id;o.textContent='· '.repeat(n.level-1)+n.label;group.append(o);
+      }
+      dom('branch').append(group);
+    }
+    dom('branch').addEventListener('change',e=>navigate(e.target.value||null));
+    dom('depth').addEventListener('change',e=>{
+      depth=+e.target.value;
+      if(focus&&byId.get(focus).level>=depth)focus=depth===1?null:lineage(focus).find(n=>n.level===depth-1)?.id||null;
+      selected=focus;layout(true);updateDetails();persist();
+    });
+    dom('home').addEventListener('click',()=>{depth=5;navigate(null);});
+    dom('in').addEventListener('click',()=>zoom(1.45,width/2,height/2));
+    dom('out').addEventListener('click',()=>zoom(1/1.45,width/2,height/2));
+
+    function navigate(id){
+      if(id&&byId.get(id).level===5){selected=id;focus=byId.get(id).parent;depth=5;}
+      else {focus=id;selected=id;if(id)depth=Math.max(depth,Math.min(5,byId.get(id).level+1));}
+      hover=null;layout(true);updateDetails();persist();
+    }
+    function palette(){
+      colors=[...root.querySelectorAll('.atlas-colors span')].map(e=>getComputedStyle(e).color);
+      fontSize=parseFloat(getComputedStyle(root).getPropertyValue('--font-size-base'))||14;
+    }
+    function radius(n){return [0,15,9,6,4,2.7][n.level];}
+    function allLayout(){
+      const pos=new Map();
+      let angle=-Math.PI*.83;
+      const weights=cores.map(c=>Math.pow(subtree(c.id).filter(n=>n.level===5).length,.65));
+      const total=weights.reduce((a,b)=>a+b,0),gap=.085;
+      const weight=n=>Math.max(1,subtree(n.id).filter(q=>q.level===Math.min(5,depth)).length);
+      function place(n,a,b){
+        const mid=(a+b)/2,r=[0,420,740,1040,1330,1620][n.level];
+        const j=n.level===5?35*Math.sin(nodes.indexOf(n)*2.4):0;
+        pos.set(n.id,{x:Math.cos(mid)*(r+j),y:Math.sin(mid)*(r+j)});
+        const kids=children.get(n.id).filter(c=>c.level<=depth),sum=kids.reduce((s,c)=>s+weight(c),0);let t=a;
+        kids.forEach(c=>{const w=(b-a)*weight(c)/sum;place(c,t,t+w);t+=w;});
+      }
+      cores.forEach((c,i)=>{const span=(Math.PI*2-gap*3)*weights[i]/total;place(c,angle,angle+span);angle+=span+gap;});
+      return pos;
+    }
+    function branchLayout(){
+      const pos=new Map(),f=byId.get(focus);
+      const members=subtree(focus).filter(n=>n.level<=depth),memberIds=new Set(members.map(n=>n.id));
+      pos.set(focus,{x:0,y:0});
+      const kids=children.get(focus).filter(n=>n.level<=depth);
+      const count=n=>Math.max(1,subtree(n.id).filter(q=>q.level===Math.min(depth,5)).length);
+      const total=kids.reduce((s,n)=>s+Math.pow(count(n),.8),0);let t=-Math.PI*.86;
+      const step=240;
+      function place(n,a,b){
+        const mid=(a+b)/2,dist=n.level-f.level,r=step*dist;
+        pos.set(n.id,{x:Math.cos(mid)*r,y:Math.sin(mid)*r});
+        const cs=children.get(n.id).filter(c=>c.level<=depth),sum=cs.reduce((s,c)=>s+count(c),0);let z=a;
+        cs.forEach(c=>{const span=(b-a)*count(c)/sum;place(c,z,z+span);z+=span;});
+      }
+      kids.forEach(n=>{const span=Math.PI*2*Math.pow(count(n),.8)/total;place(n,t+.035,t+span-.035);t+=span;});
+      const candidates=new Map();
+      cross.forEach(e=>{const a=memberIds.has(e.source),b=memberIds.has(e.target);if(a!==b){const other=a?e.target:e.source;const own=a?e.source:e.target;candidates.set(other,(candidates.get(other)||0)+(own===focus||own===selected?10:1));}});
+      const outside=[...candidates].sort((a,b)=>b[1]-a[1]).slice(0,Math.min(12,width<480?6:12)).map(([id])=>id);
+      const outer=step*(Math.min(depth,5)-f.level+1.05);
+      outside.forEach((id,i)=>{const a=-Math.PI/2+Math.PI*2*i/outside.length;pos.set(id,{x:Math.cos(a)*outer,y:Math.sin(a)*outer});external.add(id);});
+      return pos;
+    }
+    function layout(animate){
+      palette();previous=new Map([...positions].map(([id,p])=>[id,{x:p.x*view.k+view.x,y:p.y*view.k+view.y}]));external=new Set();positions=focus?branchLayout():allLayout();
+      visible=nodes.filter(n=>positions.has(n.id));
+      const activeIds=new Set(visible.map(n=>n.id));
+      shownEdges=edges.filter(e=>activeIds.has(e.source)&&activeIds.has(e.target)&&(e.type==='contains'||!external.has(e.source)||!external.has(e.target)));
+      let xmin=Infinity,ymin=Infinity,xmax=-Infinity,ymax=-Infinity;
+      positions.forEach(p=>{xmin=Math.min(xmin,p.x);xmax=Math.max(xmax,p.x);ymin=Math.min(ymin,p.y);ymax=Math.max(ymax,p.y);});
+      if(focus){const mx=Math.max(Math.abs(xmin),Math.abs(xmax)),my=Math.max(Math.abs(ymin),Math.abs(ymax));xmin=-mx;xmax=mx;ymin=-my;ymax=my;}
+      const pad=focus?65:28;
+      view.k=Math.min((width-pad*2)/Math.max(200,xmax-xmin),(height-pad*2)/Math.max(200,ymax-ymin));
+      view.x=width/2-(xmin+xmax)*view.k/2;view.y=height/2-(ymin+ymax)*view.k/2;
+      transitionStart=performance.now();transitionDuration=animate&&!reduced?220:0;
+      dom('branch').value=focus||'';dom('branch').setAttribute('data-tooltip',focus?byId.get(focus).label:'Whole web');dom('depth').value=String(depth);
+      dom('visible').textContent=(visible.length-external.size)+' topics'+(external.size?' + '+external.size+' neighbors':'')+' · L1–'+depth;
+      draw();
+    }
+    function point(n,progress){
+      const p=positions.get(n.id),old=previous.get(n.id),target={x:p.x*view.k+view.x,y:p.y*view.k+view.y};
+      return old&&progress<1?{x:old.x+(target.x-old.x)*progress,y:old.y+(target.y-old.y)*progress}:target;
+    }
+    function draw(){
+      cancelAnimationFrame(frame);
+      const progress=transitionDuration?Math.min(1,(performance.now()-transitionStart)/transitionDuration):1;
+      const eased=1-Math.pow(1-progress,3);
+      ctx.clearRect(0,0,width,height);ctx.lineCap='round';
+      const active=hover||(selected!==focus?selected:null);
+      const neighborhood=new Set(active?[active]:[]);
+      if(active)edges.forEach(e=>{if(e.source===active)neighborhood.add(e.target);if(e.target===active)neighborhood.add(e.source);});
+      const coords=new Map(visible.map(n=>[n.id,point(n,eased)]));
+      shownEdges.forEach(e=>{
+        const a=coords.get(e.source),b=coords.get(e.target),struct=e.type==='contains';
+        const hit=active&&(e.source===active||e.target===active);
+        ctx.globalAlpha=hit?.85:(struct?.35:(focus?.24:.11));
+        ctx.strokeStyle=hit?colors[colorIndex[byId.get(e.source).core]]:colors[4];
+        ctx.lineWidth=hit?1.6:1;ctx.setLineDash(struct?[]:e.type==='connection'?[1.5,5]:[5,5]);
+        ctx.beginPath();ctx.moveTo(a.x,a.y);
+        if(struct){ctx.lineTo(b.x,b.y);}else{const mx=(a.x+b.x)/2,my=(a.y+b.y)/2;const bend=focus?.12:.22;ctx.quadraticCurveTo(mx-(b.y-a.y)*bend,my+(b.x-a.x)*bend,b.x,b.y);}
+        ctx.stroke();
+        if(!struct&&e.type!=='connection'&&(focus||hit)){
+          const bend=focus?.12:.22,cx=(a.x+b.x)/2-(b.y-a.y)*bend,cy=(a.y+b.y)/2+(b.x-a.x)*bend;
+          const angle=Math.atan2(b.y-cy,b.x-cx),r=Math.max(4,radius(byId.get(e.target))*Math.min(1,view.k*2));
+          const x=b.x-Math.cos(angle)*(r+3),y=b.y-Math.sin(angle)*(r+3);
+          ctx.setLineDash([]);ctx.beginPath();ctx.moveTo(x-Math.cos(angle-.5)*5,y-Math.sin(angle-.5)*5);ctx.lineTo(x,y);ctx.lineTo(x-Math.cos(angle+.5)*5,y-Math.sin(angle+.5)*5);ctx.stroke();
+        }
+      });
+      ctx.setLineDash([]);
+      visible.slice().sort((a,b)=>b.level-a.level).forEach(n=>{
+        const p=coords.get(n.id),hit=n.id===active,r=n.level===1&&!focus?12:Math.max(n.level===5?1.8:3,radius(n)*Math.min(1,view.k*2));
+        if(p.x<-30||p.x>width+30||p.y<-30||p.y>height+30)return;
+        ctx.globalAlpha=active&&!neighborhood.has(n.id)?.22:(external.has(n.id)?.65:1);
+        ctx.fillStyle=colors[colorIndex[n.core]];ctx.strokeStyle=colors[colorIndex[n.core]];ctx.lineWidth=hit?2:1.2;
+        ctx.beginPath();ctx.arc(p.x,p.y,r+(hit?2:0),0,Math.PI*2);
+        if(external.has(n.id))ctx.stroke();else ctx.fill();
+        if(hit){ctx.beginPath();ctx.arc(p.x,p.y,r+6,0,Math.PI*2);ctx.stroke();}
+      });
+      ctx.globalAlpha=1;ctx.textAlign='left';ctx.textBaseline='middle';
+      const boxes=[];
+      const priority=n=>n.id===active?-100:neighborhood.has(n.id)?-50:0;
+      const labelNodes=visible.filter(n=>n.level<=2||focus||view.k>.32||n.id===active).sort((a,b)=>priority(a)-priority(b)||a.level-b.level);
+      function addLabel(n){
+        const p=coords.get(n.id);if(p.x<0||p.x>width||p.y<0||p.y>height)return;
+        const major=n.level===1&&!focus,hit=n.id===active;
+        if(!major&&!hit&&active&&!neighborhood.has(n.id))return;
+        const size=Math.max(11,fontSize*(major?1:.86));ctx.font=(major||hit?'500 ':'400 ')+size+'px '+getComputedStyle(root).fontFamily;
+        const lines=major?shortCore[n.id]:wrap(n.label,width<480?125:focus?170:145,ctx);
+        const w=Math.max(...lines.map(l=>ctx.measureText(l).width)),h=lines.length*size*1.2;
+        const offset=Math.max(7,radius(n)*Math.min(1,view.k*2))+4;
+        const candidates=major?[{x:p.x-w/2,y:p.y+18}]:[{x:p.x+offset,y:p.y-h/2},{x:p.x-w-offset,y:p.y-h/2},{x:p.x-w/2,y:p.y+offset},{x:p.x-w/2,y:p.y-h-offset}];
+        const intersects=box=>boxes.some(b=>box.x<b.x+b.w&&box.x+box.w>b.x&&box.y<b.y+b.h&&box.y+box.h>b.y);
+        let choice=candidates.find(c=>c.x>=3&&c.y>=3&&c.x+w<=width-3&&c.y+h<=height-3&&!intersects({x:c.x-3,y:c.y-2,w:w+6,h:h+4}));
+        if(!choice){if(!major&&!hit)return;choice={x:Math.max(3,Math.min(width-w-3,candidates[0].x)),y:Math.max(3,Math.min(height-h-3,candidates[0].y))};}
+        const {x,y}=choice,box={x:x-3,y:y-2,w:w+6,h:h+4};
+        boxes.push(box);ctx.fillStyle=colors[6];ctx.globalAlpha=.9;ctx.fillRect(box.x,box.y,box.w,box.h);ctx.globalAlpha=1;ctx.fillStyle=colors[3];
+        lines.forEach((line,i)=>ctx.fillText(line,x,y+size*.6+i*size*1.2));
+      }
+      labelNodes.forEach(addLabel);
+      if(progress<1)frame=requestAnimationFrame(draw);
+    }
+    function wrap(text,max,context){
+      const words=text.split(' '),lines=[];let line='';
+      words.forEach(w=>{const test=line?line+' '+w:w;if(context.measureText(test).width>max&&line){lines.push(line);line=w;}else line=test;});
+      if(line)lines.push(line);return lines;
+    }
+    function updateDetails(){
+      const path=dom('path');path.replaceChildren(labelButton('Statistics',()=>navigate(null)));
+      if(selected)lineage(selected).forEach(n=>{const sep=document.createElement('span');sep.textContent='›';sep.className='text-muted';path.append(sep,labelButton(n.label,()=>navigate(n.id)));});
+      const n=selected?byId.get(selected):null;
+      dom('selected').textContent=n?'L'+n.level+' · '+levelNames[n.level]+' · '+n.stage+' — '+n.label:[['core subjects',1],['areas',2],['course-sized units',3],['chapters',4],['knowledge points',5]].map(([label,l])=>nodes.filter(v=>v.level===l).length+' '+label).join(' → ');
+      const childbox=dom('children');childbox.replaceChildren();
+      (n?children.get(n.id):cores).forEach(c=>childbox.append(labelButton(c.label,()=>navigate(c.id))));
+      const ids=new Set(focus?subtree(focus).map(v=>v.id):[]);
+      const connections=n&&n.level===5?cross.filter(e=>e.source===n.id||e.target===n.id):focus?cross.filter(e=>ids.has(e.source)||ids.has(e.target)):cross;
+      dom('link-count').textContent='('+connections.length+')';dom('links').replaceChildren();
+      connections.forEach(e=>{const li=document.createElement('li');li.append(labelButton(byId.get(e.source).label,()=>navigate(e.source)));const link=document.createElement('span');link.className='text-small';link.textContent=e.type==='connection'?' ↔ ':' → ';li.append(link,labelButton(byId.get(e.target).label,()=>navigate(e.target)));const why=document.createElement('div');why.className='text-small text-muted';why.textContent=e.type+': '+e.reason;li.append(why);dom('links').append(li);});
+      const refIds=new Set((focus?subtree(focus):nodes).flatMap(q=>q.sources));
+      dom('sources').replaceChildren();refIds.forEach(id=>{const s=data.sources[id],li=document.createElement('li'),a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=s.title;li.append(a);dom('sources').append(li);});
+    }
+    function buildTree(n){
+      if(n.level===5){const d=document.createElement('div');d.className='atlas-leaf';d.append(labelButton(n.label,()=>navigate(n.id)));return d;}
+      const d=document.createElement('details'),s=document.createElement('summary');s.textContent='L'+n.level+' · '+n.label;d.append(s,labelButton('View '+n.label,()=>navigate(n.id)));children.get(n.id).forEach(c=>d.append(buildTree(c)));return d;
+    }
+    let treeBuilt=false;dom('outline').addEventListener('toggle',()=>{if(dom('outline').open&&!treeBuilt){cores.forEach(c=>dom('tree').append(buildTree(c)));treeBuilt=true;}});
+    function resize(){
+      width=stage.clientWidth;height=stage.clientHeight;const dpr=window.devicePixelRatio||1;
+      canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);layout(false);
+    }
+    function zoom(factor,x,y){const old=view.k;view.k=Math.max(.055,Math.min(5,view.k*factor));view.x=x-(x-view.x)*view.k/old;view.y=y-(y-view.y)*view.k/old;transitionDuration=0;draw();}
+    function hitTest(x,y){let best=null,bestScore=Infinity;visible.forEach(n=>{const p=positions.get(n.id);const dx=p.x*view.k+view.x-x,dy=p.y*view.k+view.y-y;const dist=Math.hypot(dx,dy),reach=Math.max(7,radius(n)*Math.min(1,view.k*2)+4);if(dist<reach&&dist<bestScore){bestScore=dist;best=n.id;}});return best;}
+    const local=e=>{const b=canvas.getBoundingClientRect();return {x:e.clientX-b.left,y:e.clientY-b.top};};
+    canvas.addEventListener('pointerdown',e=>{const p=local(e);drag={x:p.x,y:p.y,vx:view.x,vy:view.y,moved:false};canvas.setPointerCapture(e.pointerId);});
+    canvas.addEventListener('pointermove',e=>{const p=local(e);if(drag){const dx=p.x-drag.x,dy=p.y-drag.y;if(Math.hypot(dx,dy)>5)drag.moved=true;if(drag.moved){view.x=drag.vx+dx;view.y=drag.vy+dy;transitionDuration=0;draw();}}else{const hit=hitTest(p.x,p.y);if(hit!==hover){hover=hit;draw();}}});
+    canvas.addEventListener('pointerup',e=>{const p=local(e);const moved=drag?.moved;drag=null;if(!moved){const id=hitTest(p.x,p.y);if(id)navigate(id);}});
+    canvas.addEventListener('pointercancel',()=>{drag=null;});
+    canvas.addEventListener('pointerleave',()=>{if(!drag){hover=null;draw();}});
+    canvas.addEventListener('wheel',e=>{e.preventDefault();const p=local(e);zoom(Math.exp(-e.deltaY*.0015),p.x,p.y);},{passive:false});
+    new ResizeObserver(resize).observe(stage);
+    new MutationObserver(()=>{palette();draw();}).observe(document.documentElement,{attributes:true,attributeFilter:['class','style','data-theme']});
+    updateDetails();resize();
+  })();
+  </script>
+</div>
