@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="604.8pt" viewBox="0 0 864 604.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-09T01:28:55.224792</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 604.8 
+L 864 604.8 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 33.12 106.56 
+L 186.48 106.56 
+Q 192.24 106.56 192.24 112.32 
+L 192.24 182.88 
+Q 192.24 188.64 186.48 188.64 
+L 33.12 188.64 
+Q 27.36 188.64 27.36 182.88 
+L 27.36 112.32 
+Q 27.36 106.56 33.12 106.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #e7f4f1; stroke: #167e78; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 256.32 106.56 
+L 406.08 106.56 
+Q 411.84 106.56 411.84 112.32 
+L 411.84 182.88 
+Q 411.84 188.64 406.08 188.64 
+L 256.32 188.64 
+Q 250.56 188.64 250.56 182.88 
+L 250.56 112.32 
+Q 250.56 106.56 256.32 106.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 475.92 106.56 
+L 593.28 106.56 
+Q 599.04 106.56 599.04 112.32 
+L 599.04 182.88 
+Q 599.04 188.64 593.28 188.64 
+L 475.92 188.64 
+Q 470.16 188.64 470.16 182.88 
+L 470.16 112.32 
+Q 470.16 106.56 475.92 106.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 659.52 106.56 
+L 830.88 106.56 
+Q 836.64 106.56 836.64 112.32 
+L 836.64 182.88 
+Q 836.64 188.64 830.88 188.64 
+L 659.52 188.64 
+Q 653.76 188.64 653.76 182.88 
+L 653.76 112.32 
+Q 653.76 106.56 659.52 106.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 33.12 322.56 
+L 186.48 322.56 
+Q 192.24 322.56 192.24 328.32 
+L 192.24 402.48 
+Q 192.24 408.24 186.48 408.24 
+L 33.12 408.24 
+Q 27.36 408.24 27.36 402.48 
+L 27.36 328.32 
+Q 27.36 322.56 33.12 322.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #e7f4f1; stroke: #167e78; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 256.32 322.56 
+L 406.08 322.56 
+Q 411.84 322.56 411.84 328.32 
+L 411.84 402.48 
+Q 411.84 408.24 406.08 408.24 
+L 256.32 408.24 
+Q 250.56 408.24 250.56 402.48 
+L 250.56 328.32 
+Q 250.56 322.56 256.32 322.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 475.92 322.56 
+L 593.28 322.56 
+Q 599.04 322.56 599.04 328.32 
+L 599.04 402.48 
+Q 599.04 408.24 593.28 408.24 
+L 475.92 408.24 
+Q 470.16 408.24 470.16 402.48 
+L 470.16 328.32 
+Q 470.16 322.56 475.92 322.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 659.52 322.56 
+L 830.88 322.56 
+Q 836.64 322.56 836.64 328.32 
+L 836.64 402.48 
+Q 836.64 408.24 830.88 408.24 
+L 659.52 408.24 
+Q 653.76 408.24 653.76 402.48 
+L 653.76 328.32 
+Q 653.76 322.56 659.52 322.56 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 33.12 470.16 
+L 359.28 470.16 
+Q 365.04 470.16 365.04 475.92 
+L 365.04 542.88 
+Q 365.04 548.64 359.28 548.64 
+L 33.12 548.64 
+Q 27.36 548.64 27.36 542.88 
+L 27.36 475.92 
+Q 27.36 470.16 33.12 470.16 
+z
+" clip-path="url(#p6d8cb620c3)" style="fill: #fff4df; stroke: #b86b18; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 28.8 248.4 
+L 835.2 248.4 
+" clip-path="url(#p6d8cb620c3)" style="fill: none; stroke: #d8dfe6; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #243447; font: 700 16px 'DejaVu Sans'; text-anchor: start" x="25.2" y="33.215" transform="rotate(-0 25.2 33.215)">FROM FULL KEY / VALUE CACHES TO A SHARED LATENT CACHE</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #3568aa; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="28.8" y="74.147188" transform="rotate(-0 28.8 74.147188)">STANDARD ATTENTION</text>
+   </g>
+   <g id="text_3">
+    <!-- $K_i,\ V_i$ -->
+    <g style="fill: #167e78" transform="translate(91.39 139.583125)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0 24.009818" y="-0.796875">KV</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="9.180664 33.586966" y="1.5">ii</tspan>
+      <tspan style="font: 14px 'DejaVu Sans'" x="12.28623" y="-0.796875">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <text style="fill: #243447; font: 10px 'DejaVu Sans'; text-anchor: middle" x="109.8" y="170.159375" transform="rotate(-0 109.8 170.159375)">cache for every head</text>
+   </g>
+   <g id="text_5">
+    <!-- $q_{t,i}K_i^\mathsf{T}$ -->
+    <g style="fill: #3568aa" transform="translate(312.44 140.06)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0 20.85918" y="-0.4875000000000007">qK</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="8.886719 17.753613 30.039844" y="1.8093749999999993 1.8093749999999993 3.3406249999999993">tii</tspan>
+      <tspan style="font: 9.8px 'DejaVu Sans'" x="12.729199 31.021667" y="1.8093749999999993 -5.8578125000000005">,T</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_6">
+    <text style="fill: #243447; font: 10px 'DejaVu Sans'; text-anchor: middle" x="331.2" y="170.159375" transform="rotate(-0 331.2 170.159375)">scores over past tokens</text>
+   </g>
+   <g id="text_7">
+    <!-- $a_{t,i}$ -->
+    <g style="fill: #3568aa" transform="translate(524.31 138.994688)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0" y="-0.15625">a</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="8.579102 17.445996" y="2.140625">ti</tspan>
+      <tspan style="font: 9.8px 'DejaVu Sans'" x="12.421582" y="2.140625">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="fill: #243447; font: 10px 'DejaVu Sans'; text-anchor: middle" x="534.6" y="170.159375" transform="rotate(-0 534.6 170.159375)">scale + softmax</text>
+   </g>
+   <g id="text_9">
+    <!-- $(a_{t,i}V_i)W_i^O$ -->
+    <g style="fill: #3568aa" transform="translate(711.6 140.2)">
+     <text>
+      <tspan style="font: 14px 'DejaVu Sans'" x="0 38.696191" y="-0.2140625000000007">()</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="5.461914 26.013477 44.158105" y="-0.2140625000000007">aVW</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="14.041016 22.90791 35.590625 58.000879 58.982702" y="2.0828124999999993 2.0828124999999993 2.0828124999999993 3.6140624999999993 -5.726562500000001">tiiiO</tspan>
+      <tspan style="font: 9.8px 'DejaVu Sans'" x="17.883496" y="2.0828124999999993">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_10">
+    <text style="fill: #243447; font: 10px 'DejaVu Sans'; text-anchor: middle" x="745.2" y="170.159375" transform="rotate(-0 745.2 170.159375)">sum outputs over heads</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 194.800562 147.6 
+Q 221.401582 147.6 246.549159 147.6 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 241.749159 145.2 
+L 246.549159 147.6 
+L 241.749159 150 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 414.400562 147.6 
+Q 441.001582 147.6 466.149159 147.6 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 461.349159 145.2 
+L 466.149159 147.6 
+L 461.349159 150 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 601.597266 147.6 
+Q 626.398018 147.6 649.745326 147.6 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 644.945326 145.2 
+L 649.745326 147.6 
+L 644.945326 150 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <!-- Per token, per layer: $H(d_k+d_v)$ cached scalars. -->
+    <g style="fill: #167e78" transform="translate(28.8 222.18)">
+     <text>
+      <tspan style="font: 12px 'DejaVu Sans'" x="0 7.236328 14.619141 19.552734 23.367188 28.072266 35.414062 42.363281 49.746094 57.351562 61.166016 64.980469 72.597656 79.980469 84.914062 88.728516 92.0625 99.416016 106.517578 113.900391 118.833984 122.876953 135.714844 155.544141 180.853125 185.534766 189.349219 195.946875 203.300391 209.898047 217.503516 224.886328 232.503516 236.317969 242.569922 249.167578 256.521094 259.855078 267.208594 272.142187 278.394141" y="-0.875">Per token, per layer: (+) cached scalars.</tspan>
+      <tspan style="font: oblique 12px 'DejaVu Sans'" x="126.691406 140.396484 167.936719" y="-0.875">Hdd</tspan>
+      <tspan style="font: oblique 8.4px 'DejaVu Sans'" x="148.013672 175.553906" y="1.09375">kv</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="fill: #3568aa; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="28.8" y="285.827188" transform="rotate(-0 28.8 285.827188)">MLA: CONTENT PATH</text>
+   </g>
+   <g id="text_13">
+    <!-- $C=EW^{DKV}$ -->
+    <g style="fill: #167e78" transform="translate(73.89 356.843125)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0 26.960938 35.806641" y="-0.4984375000000014">CEW</tspan>
+      <tspan style="font: 14px 'DejaVu Sans'" x="12.50293" y="-0.4984375000000014">=</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="50.631237 58.177428 64.603893" y="-5.857812500000001">DKV</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- one shared $n\times r$ cache -->
+    <g style="fill: #243447" transform="translate(52.4 388.859375)">
+     <text>
+      <tspan style="font: 10px 'DejaVu Sans'" x="0 6.118164 12.456055 18.608398 21.787109 26.99707 33.334961 39.462891 43.574219 49.726562 56.074219 67.539062 81.977539 85.15625 90.654297 96.782227 102.280273 108.618164" y="-0.40625">one shared × cache</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="59.25293 77.866211" y="-0.40625">nr</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- $\widehat q_{t,i}C^\mathsf{T}$ -->
+    <g style="fill: #3568aa" transform="translate(312.09 357.53)">
+     <text>
+      <tspan style="font: 13.776892px 'STIXSizeOneSym'" x="10.835938" y="-2.4375">̂</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0 20.993164" y="-0.46875">qC</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="9.020703 17.887598" y="1.828125">ti</tspan>
+      <tspan style="font: 9.8px 'DejaVu Sans'" x="12.863184 31.776628" y="1.828125 -5.828125">,T</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- $\widehat q_{t,i}=q_{t,i}U_{K,i}^\mathsf{T}$ -->
+    <g style="fill: #243447" transform="translate(301.25 388.8)">
+     <text>
+      <tspan style="font: 9.805014px 'STIXSizeOneSym'" x="7.4375" y="-1.4828125000000014">̂</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 27.270508 42.169922" y="-0.06093750000000142">qqU</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="6.443359 12.776855 33.618164 39.95166 49.489258 57.668457" y="1.5796874999999986 1.5796874999999986 1.5796874999999986 1.5796874999999986 2.6734374999999986 2.6734374999999986">titiKi</tspan>
+      <tspan style="font: 7px 'DejaVu Sans'" x="9.187988 36.362793 50.19181 54.07959" y="1.5796874999999986 1.5796874999999986 -3.8921875000000004 2.6734374999999986">,,T,</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="16.943359" y="-0.06093750000000142">=</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- $a_{t,i}$ -->
+    <g style="fill: #3568aa" transform="translate(524.31 356.254688)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0" y="-0.15625">a</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="8.579102 17.445996" y="2.140625">ti</tspan>
+      <tspan style="font: 9.8px 'DejaVu Sans'" x="12.421582" y="2.140625">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_18">
+    <text style="fill: #243447; font: 10px 'DejaVu Sans'; text-anchor: middle" x="534.6" y="388.859375" transform="rotate(-0 534.6 388.859375)">scale + softmax</text>
+   </g>
+   <g id="text_19">
+    <!-- $(a_{t,i}C)T_i$ -->
+    <g style="fill: #3568aa" transform="translate(718.74 356.55)">
+     <text>
+      <tspan style="font: 14px 'DejaVu Sans'" x="0 35.788867" y="-0.375">()</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="5.461914 26.013477 41.250781" y="-0.375">aCT</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="14.041016 22.90791 49.802539" y="1.921875">tii</tspan>
+      <tspan style="font: 9.8px 'DejaVu Sans'" x="17.883496" y="1.921875">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_20">
+    <!-- $T_i=U_{V,i}W_i^O$ -->
+    <g style="fill: #243447" transform="translate(717.75 389.3)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 20.602051 38.51709" y="-0.875">TUW</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="6.108398 27.921387 36.298828 48.404785 49.107337" y="0.765625 0.765625 0.765625 1.859375 -4.8046875">iViiO</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="10.274902" y="-0.875">=</tspan>
+      <tspan style="font: 7px 'DejaVu Sans'" x="32.709961" y="0.765625">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="patch_14">
+    <path d="M 194.800562 365.4 
+Q 221.401582 365.4 246.549159 365.4 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 241.749159 363 
+L 246.549159 365.4 
+L 241.749159 367.8 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 414.400562 365.4 
+Q 441.001582 365.4 466.149159 365.4 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 461.349159 363 
+L 466.149159 365.4 
+L 461.349159 367.8 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 601.597266 365.4 
+Q 626.398018 365.4 649.745326 365.4 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 644.945326 363 
+L 649.745326 365.4 
+L 644.945326 367.8 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_21">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: start" x="28.8" y="436.75125" transform="rotate(-0 28.8 436.75125)">Keys are absorbed into the query; values are projected after averaging.</text>
+   </g>
+   <g id="text_22">
+    <!-- Full MLA also caches $K^R$ -->
+    <g style="fill: #b86b18" transform="translate(112.97 501.923125)">
+     <text>
+      <tspan style="font: 14px 'DejaVu Sans'" x="0 8.052734 16.925781 20.81543 24.705078 29.155273 41.234375 49.03418 58.611328 63.061523 71.640625 75.530273 82.824219 91.389648 95.839844 103.537109 112.116211 119.813477 128.686523 137.299805 144.59375" y="-0.4984375000000014">Full MLA also caches </tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="149.043945" y="-0.4984375000000014">K</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="159.206432" y="-5.857812500000001">R</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_23">
+    <!-- add the positional score $q^R_{t,i}(K^R)^{\mathsf{T}}$ -->
+    <g style="fill: #243447" transform="translate(114.55 531)">
+     <text>
+      <tspan style="font: 10px 'DejaVu Sans'" x="0 6.12793 12.475586 18.823242 22.001953 25.922852 32.260742 38.413086 41.591797 47.939453 54.057617 59.267578 62.045898 65.966797 68.745117 74.863281 81.201172 87.329102 90.107422 93.286133 98.496094 103.994141 110.112305 114.223633 120.375977 138.454102 154.752845" y="-0.06093750000000142">add the positional score ()</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="123.554688 142.355469" y="-0.06093750000000142">qK</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="129.902344 130.366458 136.23584 149.615638" y="2.6734374999999986 -3.8921875000000004 2.6734374999999986 -3.8890625000000014">tRiR</tspan>
+      <tspan style="font: 7px 'DejaVu Sans'" x="132.646973 158.749915" y="2.6734374999999986 -3.8890625000000014">,T</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_24">
+    <!-- Per token, per layer: $r+d_R$ scalars. -->
+    <g style="fill: #167e78" transform="translate(396 496.5)">
+     <text>
+      <tspan style="font: 12px 'DejaVu Sans'" x="0 7.236328 14.619141 19.552734 23.367188 28.072266 35.414062 42.363281 49.746094 57.351562 61.166016 64.980469 72.597656 79.980469 84.914062 88.728516 92.0625 99.416016 106.517578 113.900391 118.833984 122.876953 133.962891 160.137305 163.951758 170.203711 176.801367 184.154883 187.488867 194.842383 199.775977 206.02793" y="-0.875">Per token, per layer: + scalars.</tspan>
+      <tspan style="font: oblique 12px 'DejaVu Sans'" x="126.691406 146.355469" y="-0.875">rd</tspan>
+      <tspan style="font: oblique 8.4px 'DejaVu Sans'" x="153.972656" y="1.09375">R</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_25">
+    <!-- Content scale $\sqrt{d_h}$; full MLA scale $\sqrt{d_h+d_R}$. -->
+    <g style="fill: #243447" transform="translate(396 531.957344)">
+     <text>
+      <tspan style="font: 11px 'DejaVu Sans'" x="0 7.680664 14.410645 21.382324 25.695312 32.462891 39.43457 43.747559 47.244141 52.975098 59.022949 65.763672 68.819824 75.587402 101.776233 105.482288 108.97887 112.851428 119.823108 122.87926 125.935413 129.431995 138.922717 145.051135 152.576038 156.07262 161.803577 167.851428 174.592151 177.648303 184.415881 211.372778 236.740991" y="-0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.5509374999999999 -0.953125 -0.5509374999999999">Content scale ; full MLA scale +.</tspan>
+      <tspan style="font: 7.360108px 'STIXSizeOneSym'" x="79.083984 187.912463" y="-0.9181249999999999">√√</tspan>
+      <tspan style="font: oblique 11px 'DejaVu Sans'" x="88.237854 197.066333 222.732642" y="-0.953125">ddd</tspan>
+      <tspan style="font: oblique 7.7px 'DejaVu Sans'" x="95.220276 204.048755 229.715063" y="0.8515625">hhR</tspan>
+     </text>
+     <rect x="86.862854" y="-12.625" width="14.913379" height="0.6875"/>
+     <rect x="195.691333" y="-12.625" width="41.049658" height="0.6875"/>
+    </g>
+   </g>
+   <g id="text_26">
+    <text style="fill: #243447; font: 10px 'DejaVu Sans'; text-anchor: start" x="28.8" y="580.919375" transform="rotate(-0 28.8 580.919375)">Original diagram. Bias-free algebra; one query shown. The causal mask is applied before softmax.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6d8cb620c3">
+   <rect x="0" y="0" width="864" height="604.8"/>
+  </clipPath>
+ </defs>
+</svg>

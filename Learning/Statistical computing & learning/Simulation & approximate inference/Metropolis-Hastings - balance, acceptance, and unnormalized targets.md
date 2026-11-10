@@ -166,6 +166,7 @@ Accepting some moves toward lower density lets the chain represent less likely r
 
 ## Origin
 
-The first two MCMC exchanges in chat `01a1af44-f303-7950-bae5-59d4a7728853`, beginning “here were some of the original notes I took from Markov Chain Monte Carlo Sampling” and “I see so in this case p(x) will be actually calculatable”, plus the original handwritten image above. The handwriting and normalization-cancellation intuition are mine. The distinctions between flows and transitions, probability and ratio, symmetry and general proposals, and normalized and unnormalized targets are assistant clarifications. The stationarity proof and explicit bound on the acceptance pair are added synthesis.
-
-Verification: checked the balance algebra, rejection/stay probability, positive-factor ratio conditions, shared-constant cancellation, symmetric-proposal specialization, and the two-state example. Exact scope and image hash are recorded in [[_system/Digest Checkpoints]].
+> [!info]- Source details
+> The first two MCMC exchanges in chat `01a1af44-f303-7950-bae5-59d4a7728853`, beginning “here were some of the original notes I took from Markov Chain Monte Carlo Sampling” and “I see so in this case p(x) will be actually calculatable”, plus the original handwritten image above. The handwriting and normalization-cancellation intuition are mine. The distinctions between flows and transitions, probability and ratio, symmetry and general proposals, and normalized and unnormalized targets are assistant clarifications. The stationarity proof and explicit bound on the acceptance pair are added synthesis.
+>
+> Verification: checked the balance algebra, rejection/stay probability, positive-factor ratio conditions, shared-constant cancellation, symmetric-proposal specialization, and the two-state example. Exact scope and image hash are recorded in [[_system/Digest Checkpoints]].

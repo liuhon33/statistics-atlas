@@ -1,0 +1,83 @@
+{
+  "source": "raw/notes/2026-11-09-attention.pdf",
+  "source_sha256": "d486694425adf5de094acaf30558ad0348622a7fc6184da82b26fa5ddd57013e",
+  "scope": "Detailed vector reconstruction of the supplied two-page algebra, including equivalent orientations and user annotations. This is an explanatory reconstruction, not a verbatim facsimile.",
+  "format": "Token rows and transposed-token columns, square matrix brackets, curly dimension braces, explicit first/second/last rows, and complete ten-token score/weight staircases.",
+  "coverage": [
+    {
+      "source_locator": "p. 1, input and Q/K/V projections",
+      "steps": ["E rows and token/feature dimensions", "three learned projection branches", "per-token q, k, and v equations"],
+      "figures": ["detail-01-token-projections.svg"]
+    },
+    {
+      "source_locator": "p. 1, query-key products and causal scores",
+      "steps": ["Q times transposed K", "each query-key dot product", "causal negative-infinity mask", "score scaling", "first and last score rows"],
+      "figures": ["detail-02-causal-scores.svg"]
+    },
+    {
+      "source_locator": "p. 1, attention weights and weighted values",
+      "steps": ["row softmax", "lower-triangular weight matrix", "A times V", "first, second, and last weighted-value rows"],
+      "figures": ["detail-03-weights-and-values.svg"]
+    },
+    {
+      "source_locator": "p. 1, right-hand head separation and output blocks",
+      "steps": ["packed projections", "reshape and axis permutation", "raw packed-score block identity", "separate head softmax", "concatenate head outputs", "vertical output blocks", "sum of head outputs", "value/output regrouping and rank", "residual addition"],
+      "figures": ["detail-04-heads-and-output.svg"]
+    },
+    {
+      "source_locator": "p. 1, left-hand column-token drawing",
+      "steps": ["transpose token and projection matrices", "transpose scores and mask", "normalize columns", "value multiplication on the left", "column-convention output map"],
+      "figures": ["detail-05-column-convention.svg"]
+    },
+    {
+      "source_locator": "p. 2, shared latent representation and head expansions",
+      "steps": ["E times KV down-projection", "shared C token rows", "head-specific key/value expansion", "separate query branch", "joint head-block factorization"],
+      "figures": ["detail-06-mla-projections.svg"]
+    },
+    {
+      "source_locator": "p. 2, key absorption and B_i grouping",
+      "steps": ["transpose C U_K", "move U_K transpose beside Q by associativity", "form B_i", "form the absorbed query", "multiply absorbed queries by C transpose", "current-query dimensions", "cache width versus arithmetic width"],
+      "figures": ["detail-07-mla-key-absorption.svg", "detail-07b-mla-score-staircase.svg"]
+    },
+    {
+      "source_locator": "p. 2, averaging latent vectors first and the blue KV question",
+      "steps": ["expose A C U_V W_O", "group A C and U_V W_O", "first, second, and last latent averages", "distribute the token weighted sum", "apply the output map", "sum head contributions", "retain the key and value computational roles"],
+      "figures": ["detail-08-mla-value-absorption.svg"]
+    },
+    {
+      "source_locator": "p. 2, identity down-projection proposal and computation comparison",
+      "steps": ["set down-projection to identity", "cache E", "absorb the full-dimensional key map", "regroup the output", "compare full and latent widths", "distinguish exact regrouping from learned compression"],
+      "figures": ["detail-09-identity-and-cache.svg"]
+    },
+    {
+      "source_locator": "p. 1 bottom cache transition; p. 2 cache arrays, layer stacks, and memory estimates",
+      "steps": ["historical token rows", "separate head KV blocks", "layer stacks", "MHA/GQA/MQA storage widths", "MLA latent storage", "bytes per token", "history total", "no historical query cache"],
+      "figures": ["detail-09-identity-and-cache.svg", "detail-09b-cache-layout.svg"]
+    },
+    {
+      "source_locator": "p. 1 bottom-left and p. 2 upper-left, three multiplication sketches",
+      "steps": ["row times column gives one scalar", "matrix times each column gives output columns", "linear combinations of columns", "row analogue", "column times row gives a full outer-product matrix", "sum outer products", "common index sum"],
+      "figures": ["detail-10-matrix-products.svg"],
+      "preserved_existing_examples": ["matrix-detail-1-dot.svg", "matrix-detail-2-columns.svg", "matrix-detail-3-outer.svg"]
+    }
+  ],
+  "notation_and_corrections": [
+    "W_i^Q denotes the learned query projection; Q_i = E W_i^Q denotes the projected queries.",
+    "S_i denotes masked scores and A_i denotes normalized attention weights. Future scores are negative infinity; future weights are zero.",
+    "The score pictures display Q_i K_i^T + M (or its absorbed latent equivalent) before dividing by sqrt(128). M has only zero and negative infinity, so this agrees with masking after scaling.",
+    "Tokens are rows except in the explicitly labelled column-convention figure; its mask and softmax axis are transposed.",
+    "Packed head score sums are valid block identities but are not a replacement for separate head softmax.",
+    "MLA content absorption preserves the original score scale sqrt(d_h), even when the absorbed coordinate width is r.",
+    "The algebraic absorption and identity-cache proposal omit biases and positional transformations; full MLA's positional branch is a separately sourced addition.",
+    "The 96-head projection example and the 128-head, 61-layer cache example are separate illustrative settings.",
+    "The cache estimates assume two bytes per scalar. One additional token adds about four MB across the example's layers; about 400 GB is the total for 100,000 tokens.",
+    "The full-MLA 64-coordinate positional key, rank explanations, explicit index proofs, and masking expansions are checked explanatory additions."
+  ],
+  "verification": {
+    "algebra_and_cache_checks": "checks.json",
+    "ten_token_mask_and_value_checks": "detail-checks.json",
+    "source_crop_provenance": "extraction-manifest.json",
+    "generator": "generate_details.py",
+    "rendering": "All detailed PNG previews were visually inspected; SVG mathematical glyphs are vector paths. The generator also checks every text bounding box against its canvas."
+  }
+}

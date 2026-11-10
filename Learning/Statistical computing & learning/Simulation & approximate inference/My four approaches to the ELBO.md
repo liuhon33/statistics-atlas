@@ -4,18 +4,30 @@ title: My four approaches to the ELBO
 layer: learning
 primary_home: "[[Backbone/Statistical computing & learning/Simulation & approximate inference/Approximate & latent-variable inference/Variational inference/ELBO]]"
 subject: computing
-backbone_path: "Statistical computing & learning → Simulation & approximate inference → Approximate & latent-variable inference → Variational inference → ELBO"
+backbone_path: Statistical computing & learning → Simulation & approximate inference → Approximate & latent-variable inference → Variational inference → ELBO
 study_band: M
-note_types: [derivation, question, insight]
-question_roles: [reconcile-approaches, concept-distinction, mechanism]
+note_types:
+  - derivation
+  - question
+  - insight
+question_roles:
+  - reconcile-approaches
+  - concept-distinction
+  - mechanism
 source_format: handwriting
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 status: active
 verification: checked
 learning_state: practicing
-aliases: [ELBO learning summary, Orange and red ELBO forms]
-tags: [atlas/learning, subject/computing, topic/elbo, study/masters]
+aliases:
+  - ELBO learning summary
+  - Orange and red ELBO forms
+tags:
+  - atlas/learning
+  - subject/computing
+  - topic/elbo
+  - study/masters
 connections:
   - "[[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Jensen inequality]]"
   - "[[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/KL divergence]]"
@@ -115,6 +127,8 @@ $$
 
 Jensen establishes nonnegativity; Bayes' rule identifies the gap as posterior KL. Equality holds when $q(z)=p(z\mid x)$ almost everywhere: then $W(z)=p(x)$ is constant under $q$.
 
+A zero gap can still mean [[Learning/Statistical computing & learning/Simulation & approximate inference/Model error versus inference error in variational inference#A small counterexample: perfect inference, wrong model|perfect inference in a wrong model]].
+
 **Why a lower bound if we maximize it?** The ordering is $\mathcal L(q)\leq\log p(x)$. If log evidence is $-10$, moving ELBO from $-15$ to $-11$ tightens the bound. A restricted variational family may leave a positive gap; an upper bound alone does not guarantee an attained maximum.
 
 Maximizing ELBO over $q$ minimizes posterior KL **with the model fixed**. If $\theta$ also changes, log evidence changes too. The decomposition remains valid, but the constant-in-$q$ argument does not extend to joint optimization over $\theta$ and $q$. The standard identities are given in [Blei et al., §2.2, equations 12–14](https://arxiv.org/html/1601.00670v9#S2.SS2).
@@ -173,6 +187,8 @@ $$
 $$
 
 is unbiased for the expected loss and converges to it by the law of large numbers. The observation $x$ stays fixed.
+
+Optimizing the encoder also requires [[Learning/Statistical computing & learning/Simulation & approximate inference/Reparameterization - moving the parameter out of the sampling distribution#2. Change variables so the noise distribution is fixed|differentiating through its changing sampling law]].
 
 A useful clarification from the earlier digest: averaging losses differs from computing the loss of an average prediction. For finite second moments and $M=\mu_\theta(Z)$,
 
@@ -329,10 +345,11 @@ Moving $q$ from the prior to the posterior raises the reconstruction term by $6.
 
 ## Origin
 
-My questions and handwriting come from the [[raw/conversations/2026-10-22-ELBO-conversation-excerpt|2026-10-22 conversation]], U01–U09 and A01–A07, with images I01–I04. I04 and I02 are displayed here; all four originals remain source evidence. Their identities and hashes are recorded in the original [[raw/conversations/2026-10-22-ELBO-manifest.json|source manifest]].
-
-The handwritten Bayes/Jensen routes, orange/red distinction, and green Gaussian reasoning are mine. The clean notation, explicit assumptions, gap/equality proof, MAP/ridge extension, and prediction-variance clarification include the earlier assistant's contributions. The explicit importance-sampling interpretation and finite-estimate comparison are added synthesis for this consolidated note.
-
-The notebook extension was requested on 2026-11-08 and summarizes its opening three Markdown cells, preserved in the [[raw/notebooks/2026-11-08-VAE-opening-excerpt.json|opening excerpt]]. The comparison, qualifications, and 100-state example are assistant-added synthesis, not additional handwritten work. Later notebook examples and code are outside this addition.
-
-The handwritten derivation was added on 2026-11-08 from [[raw/assets/2026-11-08-ELBO-I01-importance-sampling-derivation.png|one page]] supplied in a Claudian chat. The prior Monte Carlo line, the importance-sampling rewrite, the Jensen split, the orange sign and ratio correction, and the red and blue labels are mine. The notation fixes, the reconstruction-loss sign, the KL-target qualification, the trade-off table and the importance-weighted-bound remark were added by the assistant.
+> [!info]- Source details
+> My questions and handwriting come from the [[raw/conversations/2026-10-22-ELBO-conversation-excerpt|2026-10-22 conversation]], U01–U09 and A01–A07, with images I01–I04. I04 and I02 are displayed here; all four originals remain source evidence. Their identities and hashes are recorded in the original [[raw/conversations/2026-10-22-ELBO-manifest.json|source manifest]].
+>
+> The handwritten Bayes/Jensen routes, orange/red distinction, and green Gaussian reasoning are mine. The clean notation, explicit assumptions, gap/equality proof, MAP/ridge extension, and prediction-variance clarification include the earlier assistant's contributions. The explicit importance-sampling interpretation and finite-estimate comparison are added synthesis for this consolidated note.
+>
+> The notebook extension was requested on 2026-11-08 and summarizes its opening three Markdown cells, preserved in the [[raw/notebooks/2026-11-08-VAE-opening-excerpt.json|opening excerpt]]. The comparison, qualifications, and 100-state example are assistant-added synthesis, not additional handwritten work. Later notebook examples and code are outside this addition.
+>
+> The handwritten derivation was added on 2026-11-08 from [[raw/assets/2026-11-08-ELBO-I01-importance-sampling-derivation.png|one page]] supplied in a Claudian chat. The prior Monte Carlo line, the importance-sampling rewrite, the Jensen split, the orange sign and ratio correction, and the red and blue labels are mine. The notation fixes, the reconstruction-loss sign, the KL-target qualification, the trade-off table and the importance-weighted-bound remark were added by the assistant.

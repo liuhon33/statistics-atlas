@@ -221,8 +221,9 @@ My volume approach identifies an excluded tetrahedron of volume $1/3$. This alte
 
 ## Origin
 
-The 2026-11-09 follow-up added the assistant's maximum-and-ranking solution in section 5 and clarified the existing conditioning shortcut in section 4, at my request. These are assistant explanations, not additional original work attributed to me. Verification checked the maximum's CDF and density, independence from $X$, equality of the joint laws, and the equal-probability, zero-tie ranking argument.
-
-Migrated from the already-digested [[raw/conversations/2026-10-18-Clarify-Probability-Error.pdf|Clarify Probability Error export]], pp. 1–11. My contributions are the unit-square proposal, the corrected diagonal on p. 5, and the box/volume argument on p. 6. The CDF derivation, exact tetrahedron coordinates, general CDF identity, and independence counterexample are checked additions from the earlier digest. Routine requests remain in the PDF without becoming questions here.
-
-Verification checked the CDF and normalization, endpoint limits, both integration orders, the tetrahedron volume, and the conditional-expectation proof. The PDF preserves the original erroneous p. 3 diagram; the displayed extraction uses its corrected p. 5 version. The [[raw/conversations/2026-10-18-Clarify-Probability-Error-manifest.json|source manifest]] records the export's identity and coverage; [[assets/figures/2026-11-08-probability-regions/extract_diagram.py|the extraction script]] reproduces the displayed figure.
+> [!info]- Source details
+> The 2026-11-09 follow-up added the assistant's maximum-and-ranking solution in section 5 and clarified the existing conditioning shortcut in section 4, at my request. These are assistant explanations, not additional original work attributed to me. Verification checked the maximum's CDF and density, independence from $X$, equality of the joint laws, and the equal-probability, zero-tie ranking argument.
+>
+> Migrated from the already-digested [[raw/conversations/2026-10-18-Clarify-Probability-Error.pdf|Clarify Probability Error export]], pp. 1–11. My contributions are the unit-square proposal, the corrected diagonal on p. 5, and the box/volume argument on p. 6. The CDF derivation, exact tetrahedron coordinates, general CDF identity, and independence counterexample are checked additions from the earlier digest. Routine requests remain in the PDF without becoming questions here.
+>
+> Verification checked the CDF and normalization, endpoint limits, both integration orders, the tetrahedron volume, and the conditional-expectation proof. The PDF preserves the original erroneous p. 3 diagram; the displayed extraction uses its corrected p. 5 version. The [[raw/conversations/2026-10-18-Clarify-Probability-Error-manifest.json|source manifest]] records the export's identity and coverage; [[assets/figures/2026-11-08-probability-regions/extract_diagram.py|the extraction script]] reproduces the displayed figure.

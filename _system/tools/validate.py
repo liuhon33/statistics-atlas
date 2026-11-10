@@ -49,7 +49,7 @@ NOTE_TYPES = {'question', 'practice', 'derivation', 'insight', 'topic-note', 'co
 QUESTION_ROLES = {'concept-distinction', 'cross-topic-connection', 'reconcile-approaches', 'assumption-boundary',
                   'surprising-result', 'special-to-general', 'mechanism', 'modeling-consequence'}
 SYSTEM_FILES = {'AGENTS.md', 'CLAUDE.md', 'Start Here.md', 'Welcome.md'}
-SKIP_LINK_CHECK = ('Welcome.md', '_system/SOP draft.md', '_system/Templates/')   # historical text and placeholders
+SKIP_LINK_CHECK = ('Welcome.md', '_system/SOP/history/', '_system/Templates/')   # historical text and placeholders
 MAX_PATH = 240                      # Windows' limit is 260; keep headroom for longer titles
 ILLEGAL = re.compile(r'[<>:"/\\|?*]')
 LINK_RE = re.compile(r'!?\[\[([^\]]+)\]\]')

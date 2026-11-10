@@ -39,7 +39,18 @@ Use this sequence as an adaptable scaffold:
 2. **Selected original work.** Embed the most useful supplied handwriting or exercise screenshot beside the explanation it supports. Preserve other originals as sources; ask about uncertain selections.
 3. **Setup and reasoning.** Define the needed symbols and assumptions, then develop the meaningful approaches, questions, or insights together. Use as many sections as the topic needs. Keep the user's reasoning distinct from corrections and added explanation.
 4. **Connections.** Store only the agreed extra targets in `connections`, and give each the exact body form `- [[full/path|Title]] — reason`. The primary home remains separate. Incidental prerequisites and citations do not automatically become conceptual edges.
-5. **Origin.** Cite actual originals and precise source coverage concisely. Put the full migration mapping, hashes, verification inventory, checkpoint boundaries, and review status in `_system/`.
+5. **Origin.** Cite actual originals and precise source coverage concisely. Keep the `## Origin` heading, then place the provenance text inside an initially collapsed `> [!info]- Source details` callout, prefixing every content line (including blank lines) with `>`. Put the full migration mapping, hashes, verification inventory, checkpoint boundaries, and review status in `_system/`.
+
+Properties start collapsed through the local plugin's vault-wide display default (SOP A14). Keep the real YAML frontmatter outside any callout or code fence. Main learning content and Connections stay outside the provenance callout. Extend the existing callout when adding new origin details; do not append unfolded provenance below it. Example:
+
+```markdown
+## Origin
+
+> [!info]- Source details
+> Concise attribution and source coverage.
+>
+> Distinguish original work from added explanation.
+```
 
 For a source image use `![[raw/assets/actual-file.png]]`. Source and evidence links belong in `sources`; use full existing vault-relative targets. Reuse supported definitions and cite references near claims when needed, without duplicating a complete backbone reference page.
 

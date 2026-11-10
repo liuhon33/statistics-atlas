@@ -1,0 +1,41 @@
+{
+  "alpha": 0.05,
+  "n": 100,
+  "alternative": 0.2,
+  "threshold_comparison": [
+    {
+      "rule": "Liberal cutoff",
+      "cutoff": 1.2815515655446004,
+      "size": 0.10000000000000009,
+      "power": 0.7637595841058832
+    },
+    {
+      "rule": "Level .05",
+      "cutoff": 1.6448536269514722,
+      "size": 0.050000000000000044,
+      "power": 0.6387600313123353
+    },
+    {
+      "rule": "Conservative cutoff",
+      "cutoff": 1.959963984540054,
+      "size": 0.025,
+      "power": 0.5159677934423318
+    }
+  ],
+  "two_flip_tests": 16,
+  "two_flip_valid_tests": 5,
+  "two_flip_maximum": 0.64,
+  "first_observation_power": 0.07424950211491328,
+  "binomial_gamma": 0.8933333333333325,
+  "binomial_tail_gt8": 0.0107421875,
+  "binomial_tail_ge8": 0.0546875,
+  "binomial_randomized_power_at_p07": 0.35787884607999987,
+  "required_n_unrounded": 154.56393080049412,
+  "required_n": 155,
+  "two_sided_observed_p": 0.04550026389635839,
+  "ci": [
+    0.004003601545994606,
+    0.3959963984540054
+  ],
+  "checks": "PASS: tail areas, binomial calibration, null grid, sample-size boundary, CI inversion"
+}

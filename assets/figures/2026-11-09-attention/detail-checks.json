@@ -1,0 +1,105 @@
+{
+  "detail-01-token-projections": {
+    "canvas_inches": [
+      16.0,
+      16.0
+    ],
+    "text_within_canvas": true
+  },
+  "detail-02-causal-scores": {
+    "canvas_inches": [
+      16.0,
+      15.6
+    ],
+    "text_within_canvas": true
+  },
+  "detail-03-weights-and-values": {
+    "canvas_inches": [
+      16.0,
+      17.3
+    ],
+    "text_within_canvas": true
+  },
+  "detail-04-heads-and-output": {
+    "canvas_inches": [
+      16.0,
+      17.4
+    ],
+    "text_within_canvas": true
+  },
+  "detail-05-column-convention": {
+    "canvas_inches": [
+      16.0,
+      14.0
+    ],
+    "text_within_canvas": true
+  },
+  "detail-06-mla-projections": {
+    "canvas_inches": [
+      16.0,
+      16.3
+    ],
+    "text_within_canvas": true
+  },
+  "detail-07-mla-key-absorption": {
+    "canvas_inches": [
+      16.0,
+      17.1
+    ],
+    "text_within_canvas": true
+  },
+  "detail-08-mla-value-absorption": {
+    "canvas_inches": [
+      16.0,
+      18.0
+    ],
+    "text_within_canvas": true
+  },
+  "detail-09-identity-and-cache": {
+    "canvas_inches": [
+      16.0,
+      18.0
+    ],
+    "text_within_canvas": true
+  },
+  "detail-07b-mla-score-staircase": {
+    "canvas_inches": [
+      16.0,
+      16.9
+    ],
+    "text_within_canvas": true
+  },
+  "detail-09b-cache-layout": {
+    "canvas_inches": [
+      16.0,
+      17.7
+    ],
+    "text_within_canvas": true
+  },
+  "detail-10-matrix-products": {
+    "canvas_inches": [
+      16.0,
+      18.1
+    ],
+    "text_within_canvas": true
+  },
+  "checks": {
+    "masked_future_entries": 45,
+    "allowed_score_entries": 55,
+    "first_weight_row": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_row_sum_error": 2.220446049250313e-16,
+    "last_value_row_error": 2.220446049250313e-16,
+    "source": "raw/notes/2026-11-09-attention.pdf"
+  }
+}

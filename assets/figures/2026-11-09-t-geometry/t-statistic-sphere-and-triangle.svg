@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" role="img" aria-labelledby="title desc">
+<title id="title">The t-statistic: a signed projection divided by residual length</title>
+<desc id="desc">Left: a three-dimensional sphere schematic with the mean axis u, its perpendicular residual plane, and z = A u + r. Right: the exact plane triangle has signed horizontal coordinate A, vertical length square root Q, and angle theta from positive u. T equals square root nu times cotangent theta, with nu = n minus 1. Normality supplies independent normal and chi-square components; orthogonality alone does not imply independence.</desc>
+<defs>
+<radialGradient id="sphere" cx="32%" cy="24%" r="80%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#dce9f6"/></radialGradient>
+<marker id="axis" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L10 5L0 10Z" fill="#566b80"/></marker>
+
+<marker id="blue" markerWidth="17" markerHeight="17" refX="14" refY="8.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L17 8.5L0 17Z" fill="#2563eb"/></marker>
+<marker id="orange" markerWidth="17" markerHeight="17" refX="14" refY="8.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L17 8.5L0 17Z" fill="#c77708"/></marker>
+<marker id="red" markerWidth="17" markerHeight="17" refX="14" refY="8.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L17 8.5L0 17Z" fill="#cf4655"/></marker>
+</defs><rect width="1800" height="1180" fill="#f5f8fc"/>
+<text x="48" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#172c44" text-anchor="start" >The geometry of the t-statistic</text>
+<text x="50" y="112" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="400" fill="#566b80" text-anchor="start" >z = (X − μ1) / σ     ·     u = 1 / √n     ·     ν = n − 1     ·     iid N(μ, σ²) observations, σ &gt; 0, n ≥ 2</text>
+<rect x="48" y="155" width="770" height="670" rx="20" fill="#fff" stroke="#d6e0ec"/>
+<rect x="842" y="155" width="910" height="670" rx="20" fill="#fff" stroke="#d6e0ec"/>
+<text x="80" y="202" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="650" fill="#172c44" text-anchor="start" >01   A direction in the Gaussian sphere</text>
+<text x="80" y="238" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#566b80" text-anchor="start" >3D illustration of an n-dimensional decomposition</text>
+<text x="874" y="202" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="650" fill="#172c44" text-anchor="start" >02   The exact triangle in span(u, r)</text>
+<text x="874" y="238" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#566b80" text-anchor="start" >Same vectors, enlarged in their own plane</text>
+<circle cx="354" cy="480" r="214" fill="url(#sphere)" stroke="#a7bdd5" stroke-width="2"/>
+<ellipse cx="354" cy="480" rx="62.059999999999995" ry="214" fill="#fff0d4" fill-opacity=".7" stroke="#d4a254" stroke-width="2"/>
+<ellipse cx="354" cy="480" rx="214" ry="44" fill="none" stroke="#b3c7dc" stroke-width="1.5" stroke-dasharray="7 7"/>
+<line x1="95" y1="480" x2="680" y2="480" stroke="#899daf" stroke-width="2" stroke-linecap="round" marker-end="url(#axis)"/>
+<text x="681" y="488" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#172c44" text-anchor="start" >+u</text>
+<line x1="354" y1="480" x2="354" y2="308.79999999999995" stroke="#c77708" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 7"/>
+<line x1="354" y1="308.79999999999995" x2="476.88222126898586" y2="308.79999999999995" stroke="#c77708" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 7"/>
+<line x1="354" y1="480" x2="476.88222126898586" y2="480" stroke="#2563eb" stroke-width="6" stroke-linecap="round" marker-end="url(#blue)"/>
+<line x1="476.88222126898586" y1="480" x2="476.88222126898586" y2="308.79999999999995" stroke="#c77708" stroke-width="6" stroke-linecap="round" marker-end="url(#orange)"/>
+<line x1="354" y1="480" x2="476.88222126898586" y2="308.79999999999995" stroke="#cf4655" stroke-width="6" stroke-linecap="round" marker-end="url(#red)"/>
+<path d="M 457.88222126898586 480 L 457.88222126898586 461 L 476.88222126898586 461" fill="none" stroke="#566b80" stroke-width="2" />
+<circle cx="354" cy="480" r="5" fill="#172c44" stroke="none" stroke-width="1"/>
+<circle cx="476.88222126898586" cy="308.79999999999995" r="6" fill="#cf4655" stroke="none" stroke-width="1"/>
+<text x="330" y="511" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#172c44" text-anchor="start" >0</text>
+<text x="495.88222126898586" y="296.79999999999995" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="650" fill="#cf4655" text-anchor="start" >z = Au + r</text>
+<text x="497.88222126898586" y="401.4" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="650" fill="#c77708" text-anchor="start" >r</text>
+<text x="415.44111063449293" y="525" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="650" fill="#2563eb" text-anchor="middle" >Au</text>
+<text x="332" y="294.79999999999995" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#c77708" text-anchor="start" >r</text>
+<text x="81" y="728" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="650" fill="#c77708" text-anchor="start" >Residual space u⊥</text>
+<text x="81" y="761" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#566b80" text-anchor="start" >Dimension n − 1; a residual plane is shown for n = 3.</text>
+<line x1="268" y1="714" x2="322" y2="653" stroke="#c77708" stroke-width="1.6" stroke-linecap="round"/>
+<text x="81" y="797" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#566b80" text-anchor="start" >Sphere: fixed radius R = ‖z‖, not necessarily 1.</text>
+<path d="M403.765,480.000 L403.752,478.795 L403.712,477.590 L403.645,476.386 L403.552,475.185 L403.431,473.986 L403.285,472.790 L403.112,471.599 L402.912,470.411 L402.686,469.229 L402.434,468.053 L402.156,466.883 L401.852,465.720 L401.522,464.565 L401.167,463.418 L400.787,462.280 L400.381,461.151 L399.950,460.033 L399.495,458.926 L399.015,457.829 L398.512,456.745 L397.984,455.673 L397.432,454.614 L396.857,453.569 L396.259,452.538 L395.639,451.522 L394.996,450.521 L394.331,449.536 L393.644,448.567 L392.936,447.616 L392.207,446.681 L391.458,445.765 L390.688,444.867 L389.899,443.987 L389.091,443.128 L388.263,442.288 L387.417,441.468 L386.554,440.669 L385.672,439.891 L384.774,439.134 L383.859,438.400" fill="none" stroke="#172c44" stroke-width="2" />
+<text x="422" y="455" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#172c44" text-anchor="start" >θ</text>
+<path d="M980,690 L1280,690 L1280,290 Z" fill="#f4f8ff" stroke="none" stroke-width="0" />
+<line x1="924" y1="690" x2="1450" y2="690" stroke="#91a3b5" stroke-width="2" stroke-linecap="round" marker-end="url(#axis)"/>
+<line x1="980" y1="690" x2="1280" y2="690" stroke="#2563eb" stroke-width="7" stroke-linecap="round" marker-end="url(#blue)"/>
+<line x1="1280" y1="690" x2="1280" y2="290" stroke="#c77708" stroke-width="7" stroke-linecap="round" marker-end="url(#orange)"/>
+<line x1="980" y1="690" x2="1280" y2="290" stroke="#cf4655" stroke-width="7" stroke-linecap="round" marker-end="url(#red)"/>
+<path d="M1253,690 L1253,663 L1280,663" fill="none" stroke="#566b80" stroke-width="2.5" />
+<circle cx="980" cy="690" r="6" fill="#172c44" stroke="none" stroke-width="1"/>
+<circle cx="1280" cy="290" r="6" fill="#cf4655" stroke="none" stroke-width="1"/>
+<text x="953" y="725" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#172c44" text-anchor="start" >0</text>
+<text x="1455" y="699" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="600" fill="#172c44" text-anchor="start" >+u</text>
+<text x="1301" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="650" fill="#cf4655" text-anchor="start" >z</text>
+<text x="1130.0" y="737" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="650" fill="#2563eb" text-anchor="middle" >A = uᵀz</text>
+<text x="1130.0" y="769" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#2563eb" text-anchor="middle" >signed mean coordinate</text>
+<text x="1330" y="469" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="650" fill="#c77708" text-anchor="start" >‖r‖ = √Q</text>
+<text x="1330" y="503" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#c77708" text-anchor="start" >residual length</text>
+<text x="1330" y="538" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#c77708" text-anchor="start" >Q = ‖r‖²</text>
+<text x="1090" y="459" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600" fill="#cf4655" text-anchor="middle" transform="rotate(-53.1301 1090 459)">R = ‖z‖</text>
+<path d="M1060,690 A80,80 0 0 0 1028.0,626.0" fill="none" stroke="#172c44" stroke-width="2.5" />
+<text x="1085" y="647" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="600" fill="#172c44" text-anchor="start" >θ</text>
+<text x="1500" y="601" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#566b80" text-anchor="middle" >uᵀr = 0</text>
+<text x="1500" y="638" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#566b80" text-anchor="middle" >A &gt; 0 shown</text>
+<rect x="48" y="853" width="1704" height="279" rx="20" fill="#eaf1fb" stroke="none"/>
+<text x="80" y="899" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="650" fill="#566b80" text-anchor="start" >THE RADIUS CANCELS — ONLY THE ANGLE REMAINS</text>
+<text x="99" y="972" font-family="Segoe UI, Arial, sans-serif" font-size="43" font-weight="650" fill="#172c44" text-anchor="start" >T =</text>
+<text x="290" y="942" font-family="Segoe UI, Arial, sans-serif" font-size="35" font-weight="500" fill="#172c44" text-anchor="middle" >A</text>
+<line x1="203.0" y1="958" x2="377.0" y2="958" stroke="#172c44" stroke-width="2" stroke-linecap="round"/>
+<text x="290" y="1000" font-family="Segoe UI, Arial, sans-serif" font-size="35" font-weight="500" fill="#172c44" text-anchor="middle" >√(Q/ν)</text>
+<text x="405" y="972" font-family="Segoe UI, Arial, sans-serif" font-size="42" font-weight="400" fill="#172c44" text-anchor="start" >= √ν</text>
+<text x="605" y="942" font-family="Segoe UI, Arial, sans-serif" font-size="35" font-weight="500" fill="#172c44" text-anchor="middle" >A</text>
+<line x1="549.0" y1="958" x2="661.0" y2="958" stroke="#172c44" stroke-width="2" stroke-linecap="round"/>
+<text x="605" y="1000" font-family="Segoe UI, Arial, sans-serif" font-size="35" font-weight="500" fill="#172c44" text-anchor="middle" >‖r‖</text>
+<text x="705" y="972" font-family="Segoe UI, Arial, sans-serif" font-size="45" font-weight="650" fill="#172c44" text-anchor="start" >= √ν cot θ</text>
+<text x="1180" y="949" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="600" fill="#2563eb" text-anchor="start" >A = R cos θ</text>
+<text x="1180" y="991" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="600" fill="#c77708" text-anchor="start" >‖r‖ = R sin θ</text>
+<text x="80" y="1053" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#172c44" text-anchor="start" >A ~ N(0,1) and Q ~ χ² with ν degrees of freedom are independent  ⇒  T ~ Student t with ν degrees of freedom.</text>
+<text x="80" y="1096" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#566b80" text-anchor="start" >θ &lt; π/2: positive T     ·     θ = π/2: T = 0     ·     θ &gt; π/2: negative T     ·     0 &lt; θ &lt; π</text>
+<text x="49" y="1162" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" fill="#566b80" text-anchor="start" >Orthogonality gives the triangle. Gaussianity gives independence. Left: schematic perspective; right: exact planar geometry.</text>
+</svg>

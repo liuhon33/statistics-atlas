@@ -6,7 +6,7 @@ layer: auxiliary
 
 # Topic catalog
 
-All 757 reference nodes. Paths and links are organizational; they are not study completion records.
+All 760 reference nodes. Paths and links are organizational; they are not study completion records.
 
 ## Probability & mathematical foundations
 
@@ -34,6 +34,7 @@ All 757 reference nodes. Paths and links are organizational; they are not study 
 - L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Inner products and norms|Inner products and norms]] · Foundation
 - L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Orthogonal projection|Orthogonal projection]] · Foundation
 - L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Least squares geometry|Least squares geometry]] · Foundation
+- L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Hilbert spaces|Hilbert spaces]] · U–M
 - L4 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Matrices & decompositions|Matrices & decompositions]] · Foundation
 - L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Positive semidefinite matrices|Positive semidefinite matrices]] · Foundation
 - L5 · [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Eigenvalues and eigenvectors|Eigenvalues and eigenvectors]] · Foundation
@@ -101,6 +102,7 @@ All 757 reference nodes. Paths and links are organizational; they are not study 
 - L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Beta|Beta]] · U
 - L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Student t, chi-square and F|Student t, chi-square and F]] · U
 - L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Weibull and heavy-tail examples|Weibull and heavy-tail examples]] · U
+- L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Cauchy distribution|Cauchy distribution]] · U
 - L4 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Sample statistics & order|Sample statistics & order]] · U
 - L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Sample mean and variance|Sample mean and variance]] · U
 - L5 · [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Order statistics|Order statistics]] · U
@@ -758,6 +760,7 @@ All 757 reference nodes. Paths and links are organizational; they are not study 
 - L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Minibatch optimization|Minibatch optimization]] · M elective
 - L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Regularization and early stopping|Regularization and early stopping]] · M elective
 - L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Representation learning|Representation learning]] · M elective
+- L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Attention mechanisms|Attention mechanisms]] · M elective
 - L4 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Selected architectures & latent models|Selected architectures & latent models]] · M elective
 - L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Convolutional networks overview|Convolutional networks overview]] · M elective
 - L5 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Sequence models overview|Sequence models overview]] · M elective
@@ -776,11 +779,13 @@ All 757 reference nodes. Paths and links are organizational; they are not study 
 
 ## Personal learning
 
+- [[Learning/Probability & mathematical foundations/Random variables & distributions/Standardization geometry - means, lengths, and correlation|Standardization geometry - means, lengths, and correlation]] — Approved: observation-space coordinates, colored 3D projections, centering animation, SD versus unit length, Pearson cosine, and four earlier-note connections; home: Variance and standard deviation.
+
 - [[Learning/Probability & mathematical foundations/Random variables & distributions/Why divide weights by the square root of fan-in|Why divide weights by the square root of fan-in]] — Approved: short variance-addition observation, attached to Variance and standard deviation; two approved connections.
 - [[Learning/Statistical computing & learning/Simulation & approximate inference/My four approaches to the ELBO|My four approaches to the ELBO]] — Approved migration reference; four perspectives with selected handwriting, attached to ELBO.
 - [[Learning/Statistical inference & modeling/Nonparametric & robust inference/Bootstrap mean - two layers of randomness|Bootstrap mean - two layers of randomness]] — Exercise 5 and handwritten total-variance derivation; conditional versus unconditional bootstrap variation (approved migration).
 - [[Learning/Statistical inference & modeling/Regression & linear models/Three routes from least squares to slope and correlation|Three routes from least squares to slope and correlation]] — Approved: three slope proofs, multiple-predictor extension, and original drawing; home: Simple slope and correlation.
-- [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Density slices, independence, and rotational invariance|Density slices, independence, and rotational invariance]] — Approved: hill/board insight, Gaussian-square-disk comparison, generated illustration, projection screenshot, and normal-sample extension; home: Conditional density.
+- [[Proof of Gaussian's sample mean and variance are independent + rotational invariance|Proof of Gaussian's sample mean and variance are independent + rotational invariance]] — Approved: hill/board insight, Gaussian-square-disk comparison, generated illustration, projection screenshot, and normal-sample extension; home: Conditional density.
 - [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Why half the square need not mean half the probability|Why half the square need not mean half the probability]] — Approved: event versus density, geometry, conditioning, and maximum/ranking solutions with the corrected PDF diagram; home: Joint CDF and density.
 
 - [[Learning/Statistical computing & learning/Simulation & approximate inference/Metropolis-Hastings - balance, acceptance, and unnormalized targets|Metropolis-Hastings - balance, acceptance, and unnormalized targets]] — Approved: two MCMC exchanges on balanced flows, acceptance probabilities, and cancellation of normalization; home: Metropolis–Hastings.
@@ -794,3 +799,21 @@ All 757 reference nodes. Paths and links are organizational; they are not study 
 - [[Learning/Statistical computing & learning/Simulation & approximate inference/Reparameterization - moving the parameter out of the sampling distribution|Reparameterization - moving the parameter out of the sampling distribution]] — Approved from three handwritten screenshots: missing density derivative, change of variables, Gaussian chain rule and toy example; home: Reparameterization gradient.
 
 - [[Learning/Statistical computing & learning/Simulation & approximate inference/Model error versus inference error in variational inference|Model error versus inference error in variational inference]] — Approved: model adequacy versus posterior approximation, with the original handwriting, ELBO gap and an exact-inference/wrong-model counterexample; home: Variational inference.
+
+- [[Learning/Statistical inference & modeling/Regression & linear models/R squared versus adjusted R squared|R squared versus adjusted R squared]] — Approved: training fit versus degrees-of-freedom adjustment, with a numerical example; home: R squared and adjusted R squared.
+
+- [[Learning/Probability & mathematical foundations/Mathematical tools/Three views of matrix multiplication|Three views of matrix multiplication]] — Approved: dot products, output columns and outer-product sums; connects the attention calculations to linear algebra. Home: Matrices & decompositions.
+- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Standard attention - scores, heads, and matrix shapes|Standard attention - scores, heads, and matrix shapes]] — Approved: per-head scores, shapes, masking, row/column conventions and output blocks. Home: Attention mechanisms.
+- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/DeepSeek MLA - a shared latent KV cache|DeepSeek MLA - a shared latent KV cache]] — Approved: shared latent cache, key/value absorption, identity-map proposal, positional correction and checked memory units. Home: Attention mechanisms.
+
+- [[Learning/Probability & mathematical foundations/Random variables & distributions/Geometric interpretation of the t-statistic|Geometric interpretation of the t-statistic]] — Approved: original handwriting, signed cotangent derivation, Gaussian independence, Cauchy and regression connections. Home: Student t, chi-square and F.
+
+- [[Learning/Statistical inference & modeling/Regression & linear models/OLS coefficients through algebra, projection, and likelihood|OLS coefficients through algebra, projection, and likelihood]] — Approved: expanded matrix and projection derivations, vector/component calculus, Gaussian likelihood, covariance, completed square, QR, FWL, SVD and iterative methods; home: Normal equations and OLS.
+
+- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Geometric interpretation of z, t, and F tests|Geometric interpretation of z, t, and F tests]] — Approved: parallel z planes, t cones and increasing-spread intuition, nested-fit F geometry, degrees of freedom and tail probabilities; six checked analytic diagrams across this paired digest. Home: Testing principles.
+
+- [[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared|Why one restriction gives F equals t squared]] — Approved: handwritten and earlier-chat F/t reasoning, constrained-fit proof for one linear restriction, slope SE, matching p-values and confidence intervals. Home: One-restriction F equals t squared.
+
+- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Hypothesis testing - maximizing power under an error budget|Hypothesis testing - maximizing power under an error budget]] — Approved: two-flip constrained optimization, randomization, power planning, ROC/error rates, precision/Bayes population areas, AUC, p-values, CI inversion and Wald qualifications; four preserved source images and five reproducible diagrams. Home: Testing principles.
+
+- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Confidence intervals and p-values - the same test viewed two ways|Confidence intervals and p-values - the same test viewed two ways]] — Approved: old CI/p-value question and handwritten pp. 2–3, test inversion, endpoint/coverage interpretation and unequal horizontal/vertical slice lengths; three embedded static diagrams and a null-value sweep animation. Home: Inverting a test.

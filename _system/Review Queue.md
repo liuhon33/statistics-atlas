@@ -21,7 +21,7 @@ The old review queue records no original-turn coverage for conversation `6ae77b4
 
 ### Density-slices video — full narration not verified
 
-The user supplied a projection screenshot and https://www.youtube.com/watch?v=KgqwRQowFLo&t=7s for [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Density slices, independence, and rotational invariance|the density-slices note]]. The screenshot is preserved and explained, and the normal-sample theorem was independently checked. Video/oEmbed retrieval failed; no claim of full-video viewing, exact narration, creator identity, or screenshot timestamp is made. This does not block the screenshot-based explanation. If precise video attribution or further video digestion is requested, obtain its transcript or accessible content first.
+The user supplied a projection screenshot and https://www.youtube.com/watch?v=KgqwRQowFLo&t=7s for [[Proof of Gaussian's sample mean and variance are independent + rotational invariance|the density-slices note]]. The screenshot is preserved and explained, and the normal-sample theorem was independently checked. Video/oEmbed retrieval failed; no claim of full-video viewing, exact narration, creator identity, or screenshot timestamp is made. This does not block the screenshot-based explanation. If precise video attribution or further video digestion is requested, obtain its transcript or accessible content first.
 
 ## [2026-11-08] Validator regression fixtures assume no backbone additions
 
@@ -31,3 +31,20 @@ After the approved [[Backbone/Probability & mathematical foundations/Joint varia
 ## [2026-11-09] Resolved — validation fixtures and source-record export
 
 Publication checks repaired the regression fixtures to compare warning/change findings against the starting vault, preserving checks for new findings with the same rule. All 15 cases pass. The validator export now includes the non-Markdown source records used by the plugin; both the model and refresh tests pass on that export. Migration-evidence JSON under `_system/Migrations/` is included by the plugin so the coverage-audit source resolves. No backbone identity, layout, learning content, or original source bytes changed.
+
+## [2026-11-09] Validation environment — PyYAML unavailable
+
+During Conditional probability enrichment, both `C:\Python314\python.exe` and the bundled Codex Python used validate.py's fallback YAML parser, which rejects existing indented block lists (including Hilbert spaces and Cauchy distribution). Both validate.py and test_validate.py then crash at level-count sorting with `TypeError: '<' not supported between instances of 'NoneType' and 'int'`. This is independent of the enriched page, whose metadata and links parse and resolve. Re-run using an environment with PyYAML before claiming full-vault or regression success; no parser or existing-note changes were authorized or made here.
+
+**Resolved during approval (2026-11-09):** the existing `D:\anaconda\python.exe` imports PyYAML correctly. Live-vault validation passes with existing W1/W2 warnings only, and test_validate.py passes 15/15 cases. No package installation, validator edits or content workaround was needed. The default/bundled runtime limitation remains, but no longer blocks this approval.
+
+## [2026-11-09] Gaussian video-caption access and broad editorial approval
+
+The later proof-summary extension retrieved and read the complete available automatic captions (0:00–19:10); the included proof covers 3:36–13:41, as recorded in [[_system/Digest Checkpoints]]. This supersedes the earlier inability to retrieve a transcript, but does not establish exact narration or viewing of every frame. Other source gaps, including R-004 and the fan-in video, remain open. The user approved all pending work, including both new test-geometry drafts; editorial approval changes neither mathematical verification nor learning state.
+
+
+## [2026-11-10] Bayes-rule screenshot — original attachment unavailable for archiving
+
+For [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Hypothesis testing - maximizing power under an error budget|the testing note]], the user supplied a screenshot headed “This is Bayes’ rule”, identified by them as 3Blue1Brown, and requested the Bayesian interpretation beneath the area graphic. Its visible content informed the checked H/E mapping, but D:/CODEXS~1/temp/claudian-codex-images-kvBa6I/1-image.png had expired before preservation. No original copy/hash or independently verified video attribution is claimed. User asked to reattach the image; on receipt, preserve bytes and add its source link/hash without redigesting the already completed explanation. This archival gap does not block the mathematics or note text.
+
+**Resolved (2026-11-10):** the user supplied `C:/Users/Hongrui_Liu/Downloads/Screenshot 2026-11-10 031958.png`. Visually inspected and preserved unchanged as [[raw/assets/2026-11-10-Hypothesis-testing-I04-Bayes-area-reference.png]], now linked in the note's sources and Origin. Source and archived copy are 82,429 bytes with matching SHA-256 `bb661e85e6a7c51f73e2125d0d2aa74d12f6df9af1585214595ccc04b86d9365`. This resolves file preservation, not independent video attribution or byte identity with the expired temporary attachment. No explanation or diagram was redigested or regenerated.

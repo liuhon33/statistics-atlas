@@ -1,0 +1,505 @@
+YouTube transcript
+Video ID: AvUtMSI_4pM
+Language: en
+Captions: auto-generated
+
+[0:00] Today we'll talk about hypothesis test
+[0:02] in statistics. A typical introduction to
+[0:04] hypothesis test looks something like
+[0:06] this.
+[0:07] You are asked to memorize a bunch of
+[0:10] formulas called test statistics
+[0:12] and then you calculate the test
+[0:14] statistics given a bunch of numbers
+[0:17] and then you calculate the P values a
+[0:19] concept which is usually not very well
+[0:21] explained and then compare the P value
+[0:24] with most often the 5% threshold. And
+[0:27] then you reach a conclusion. Either you
+[0:29] reject the null hypothesis. Typically
+[0:31] that means there is some kind of
+[0:33] underlying pattern in the data
+[0:36] or accept the null hypothesis which
+[0:38] typically means the opposite. There's
+[0:40] nothing really going on. It's just pure
+[0:42] randomness.
+[0:43] So overall this procedure feels rather
+[0:46] black boxy.
+[0:47] It is great for computers to follow but
+[0:50] it's not so great for human
+[0:52] understanding.
+[0:54] So today we're going to see a geometric
+[0:57] view of the hypothesis test.
+[1:00] We will see why that the famous Z test
+[1:03] is actually a region defined by two
+[1:05] planes.
+[1:07] And the T test is actually a region
+[1:09] defined by a double cone.
+[1:12] And finally the F test also known as the
+[1:14] analysis of variance
+[1:16] is actually a wedge for lack of better
+[1:19] term.
+[1:20] Basically a region whose boundaries are
+[1:22] two intersecting planes.
+[1:25] And you can even think of this as a
+[1:27] higher dimensional cone so to say where
+[1:29] the apex is no longer just a single
+[1:31] point but but is rather allowed to move
+[1:34] along a certain given line so to say.
+[1:38] So this might seem like a rather unusual
+[1:40] approach but I will explain why this is
+[1:44] perhaps the most intuitive way to think
+[1:46] about hypothesis test
+[1:48] because the shape of these region really
+[1:50] tells us what information are available
+[1:53] from our data
+[1:54] as far as testing the hypothesis is
+[1:57] concerned.
+[1:59] So what is hypothesis test fundamentally
+[2:02] speaking?
+[2:04] It's just a decision rule. That is given
+[2:07] an observed sample we either reject the
+[2:10] null hypothesis
+[2:11] or we don't.
+[2:13] So if we consider all the possible
+[2:15] values of the sample
+[2:16] we can define the sample space. For
+[2:19] example if you just toss a coin and the
+[2:21] sample space consists of two elements
+[2:24] head or tail. And if we consider the
+[2:26] value of a particular stock so to say
+[2:28] and the sample space for that would be a
+[2:31] continuum. But anyway this is the set of
+[2:34] all possible values of the sample.
+[2:37] To design a hypothesis test is to create
+[2:40] a partition of the sample space. That is
+[2:42] to say we split the sample space into
+[2:45] two disjoint subsets.
+[2:47] One is called an acceptance region the
+[2:49] other is called a rejection region.
+[2:52] If the observed sample falls into the
+[2:54] acceptance region we accept H0.
+[2:58] Otherwise we reject H0. That is it. And
+[3:01] therefore for each hypothesis test it
+[3:03] really boils down to how we define this
+[3:04] boundary between the acceptance region
+[3:07] and the rejection region. We're not
+[3:09] going to discuss how these boundaries
+[3:11] are constructed or derived
+[3:14] but instead we'll just take some of the
+[3:15] most common test and look at the shape
+[3:18] of the rejection or acceptance region
+[3:20] and to see how the shape of these region
+[3:22] really captures the given information
+[3:25] and what the data tells us.
+[3:27] Let's look at a basic setup.
+[3:29] Suppose we have random variables X1, X2
+[3:32] and X3 each follows normal distribution
+[3:35] with mean mu and variance sigma squared.
+[3:38] So that's our random sample.
+[3:40] We wish to test the hypothesis H0 which
+[3:44] is mu equals to mu0 where mu0 is a given
+[3:47] hypothesized value say for example one
+[3:51] or zero doesn't matter
+[3:53] versus [snorts]
+[3:53] HA that's the alternative hypothesis
+[3:56] which says mu is not equal to mu0 given
+[3:59] the observed values X1, X2 and X3. Here
+[4:03] we choose n equals to three for the ease
+[4:04] of visualization but the idea
+[4:06] generalizes to arbitrary sample sizes or
+[4:09] arbitrary dimensions. And now let's
+[4:11] review the procedure of the Z test. The
+[4:14] Z test is applicable
+[4:16] when the variance sigma squared is
+[4:18] known. It goes like this. We calculate
+[4:21] the so called Z score.
+[4:23] Z is defined as the square root of
+[4:25] three.
+[4:26] In general we should have a square root
+[4:27] of n of course.
+[4:29] times X bar minus mu0 divided by sigma
+[4:33] where X bar is the sample mean. That is
+[4:36] X1 plus X2 plus X3 divided by three. And
+[4:39] based on the Z score
+[4:41] we reject H0 in favor of HA
+[4:44] if the absolute value is greater than
+[4:47] 1.96. So this is called a critical value
+[4:50] at significance level alpha equals to
+[4:52] 5%. The significance level and the so
+[4:56] called critical value 1.96 their exact
+[4:59] values don't really matter that much to
+[5:01] us.
+[5:02] And this decision rule is equivalent of
+[5:04] saying the P value is less than 5%.
+[5:07] But we prefer not to talk about the P
+[5:09] values here.
+[5:10] But the key here is that we can easily
+[5:12] show that the rejection region for the Z
+[5:14] test is the exterior of a slab defined
+[5:18] by two parallel planes. It's just a
+[5:20] simple matter of manipulating
+[5:21] inequalities.
+[5:23] Since the rejection rule is rejecting H0
+[5:27] if the absolute value is greater than
+[5:28] 1.96.
+[5:30] And after some simple algebra
+[5:31] manipulation we get the rejection region
+[5:35] is the same as the absolute value
+[5:38] of X1 plus X2 plus X3
+[5:41] minus 3 mu0 greater than 1.96 times the
+[5:45] square root of three times sigma.
+[5:47] And the boundary for this region is X1
+[5:50] plus X2 plus X3 equals to 3 mu0 plus or
+[5:54] minus 1.96 times the square root of
+[5:56] three times sigma.
+[5:59] Remember we assume that sigma is known
+[6:01] and mu0 is always given in the null
+[6:03] hypothesis.
+[6:04] So the right hand side are two fixed
+[6:06] values here.
+[6:08] This is exactly an equation of a plane
+[6:10] in the X1, X2, X3 space.
+[6:13] And here is the picture. And the two
+[6:15] planes are parallel because they have
+[6:16] the same normal vector 111.
+[6:20] So the Z test can be reformulated as
+[6:22] such.
+[6:23] Reject H0 mu equals to mu0 if the vector
+[6:27] or the point X1, X2, X3 is outside the
+[6:30] slab.
+[6:32] And here is a Desmos visualization.
+[6:34] So here I took mu0 equals to zero.
+[6:37] So the hypothesized mean is zero and the
+[6:39] standard deviation sigma is known which
+[6:42] I fixed to be one.
+[6:43] So the separation between the two planes
+[6:46] is completely determined. Let's suppose
+[6:48] now we observe a data vector that is the
+[6:51] blue vector here. So the blue vector is
+[6:53] not between the two planes. Therefore
+[6:56] given this observation we reject the
+[6:58] null hypothesis and say and conclude
+[7:00] that the true mean is not zero. From our
+[7:03] previous video called statistics is just
+[7:07] geometry we discovered something quite
+[7:09] remarkable. That is taking the sample
+[7:11] mean is just an orthogonal projection
+[7:14] onto the line spanned by the vector 111.
+[7:18] Now let me change the perspective. That
+[7:20] is to say
+[7:22] the red vector has coordinates X bar, X
+[7:25] bar and X bar.
+[7:27] And the yellow vector which is the
+[7:29] perpendicular component of the data
+[7:31] vector the blue vector
+[7:33] relative to the direction 111.
+[7:36] This vector is the residual vector. It
+[7:39] is always perpendicular to the mean
+[7:41] vector.
+[7:42] The length or the size of the residual
+[7:44] vector
+[7:45] controls the standard deviation the
+[7:47] sample standard deviation in fact. In
+[7:50] the Z test we do not care about this
+[7:52] yellow component at all.
+[7:54] Why? Because in the Z test we assume the
+[7:57] sigma is given.
+[7:58] The idea of the Z test is that if the
+[8:01] sample mean deviates from the true mean
+[8:03] too much that counts as evidence against
+[8:06] the null hypothesis. But what do we mean
+[8:08] by too much? Since the spread of the
+[8:11] distribution is known precisely we don't
+[8:13] need the sample standard deviation to
+[8:15] help us gauge the spread of the
+[8:17] distribution. The separation between the
+[8:20] planes is known a priori.
+[8:22] So therefore we conclude this is the
+[8:24] geometry of the Z test. The acceptance
+[8:27] region is between two parallel planes
+[8:30] that is orthogonal to the line 111. The
+[8:33] hypothesized true mean mu0 is sandwiched
+[8:36] between these two planes and the
+[8:37] separation between the two planes is
+[8:39] determined by the exact standard
+[8:41] deviation sigma.
+[8:43] The sample standard deviation plays no
+[8:45] role whatsoever.
+[8:47] And now going back to our formula
+[8:49] the spread of these two planes is
+[8:51] controlled by this quantity.
+[8:53] 1.96
+[8:55] times the square root of three times
+[8:56] sigma.
+[8:57] In general we would have a square root
+[8:59] of n instead of square root of three.
+[9:01] This 1.96 is determined by the
+[9:04] significance level alpha equals to 5%
+[9:07] the most commonly used one.
+[9:09] Let's say if we want to be more rigorous
+[9:12] about our test that is we can only
+[9:14] tolerate a smaller type one error
+[9:17] probability and this quantity the
+[9:19] critical value would be greater than
+[9:21] 1.96. So the bottom line is the smaller
+[9:24] the significance level the more spread
+[9:26] out these two planes.
+[9:28] But now let's look at a more practical
+[9:31] and common situation that is when sigma
+[9:33] is unknown. We still want to test
+[9:35] whether a hypothesized mean is the true
+[9:38] mean.
+[9:39] And the overall philosophy is the same.
+[9:42] We wish to reject the null hypothesis
+[9:45] if the sample mean deviates from the
+[9:47] true mean too much.
+[9:49] But what does too much mean in this
+[9:51] case?
+[9:52] We don't know the exact standard
+[9:53] deviation. So we have to estimate it
+[9:56] using the residual vector or using the
+[9:59] sample standard deviation.
+[10:01] But, notice that here we have a
+[10:02] so-called scale invariance phenomena.
+[10:05] That is to say, if we scale the blue
+[10:07] vector, the mean vector
+[10:09] and the residual vector scales by the
+[10:12] same amount
+[10:13] by similar triangle.
+[10:15] So, for the unknown variance case, we
+[10:17] cannot make our decision based on just
+[10:20] how far the deviation from the true mean
+[10:22] is.
+[10:23] We would have to consider the relative
+[10:26] lengths of the deviation versus the
+[10:28] residual.
+[10:29] That is to say, this angle between the
+[10:32] blue vector and the red vector in this
+[10:34] right triangle.
+[10:36] And of course, this angle can be
+[10:37] determined by its cotangent, that is the
+[10:40] ratio between the red vector and the
+[10:43] yellow vector.
+[10:44] And that's basically the T statistic.
+[10:46] The T statistic is a scaled cotangent of
+[10:50] an angle.
+[10:51] If the angle is too small, like in this
+[10:54] situation, we would like to reject the
+[10:56] null hypothesis,
+[10:58] which is equivalent of saying that the
+[10:59] cotangent of this angle is too large.
+[11:03] So, that means the rejection region for
+[11:05] the T test is a pair of cones.
+[11:08] Inside these two cones, we reject H0.
+[11:12] Once again, this line spanned by 111 is
+[11:15] crucial. This is the axis of the two
+[11:17] cones.
+[11:19] And the half apex angle of the cone is
+[11:21] controlled by the significance level.
+[11:24] A narrow cone corresponds to a smaller
+[11:28] significance level alpha.
+[11:30] That is to say, a more stringent test.
+[11:33] And here's the usual two-sided T test
+[11:36] and its geometric meaning.
+[11:39] Still, we suppose X1, X2, X3 follows IID
+[11:42] normal distribution
+[11:44] with now both the mu and sigma unknown.
+[11:47] We still wish to test the same
+[11:48] hypothesis.
+[11:50] The two-sided T test calculates the T
+[11:52] statistic.
+[11:54] The square root of 3
+[11:55] times X bar minus mu naught divided by S
+[11:58] where S is the sample standard
+[12:00] deviation. So, here n equals to 3. So, I
+[12:03] should write 1 over 2 in this formula.
+[12:07] The critical value given by the T table
+[12:08] is 4.3. Geometrically speaking, the T
+[12:12] test reject H0
+[12:14] if the data vector falls inside the
+[12:17] double cone.
+[12:18] And here we can actually calculate the
+[12:20] half apex angle based on the critical
+[12:22] value 4.3.
+[12:24] It turns out to be 18.19 degree. It is
+[12:28] just the inverse cotangent of 4.3
+[12:30] divided by square root of 2. But, the
+[12:33] number here is not essential. What
+[12:34] matters is the shape of the rejection
+[12:37] region, a double cone.
+[12:39] And the axis is once again the line
+[12:41] spanned by the vector 1. And here is an
+[12:44] informal justification for the shape of
+[12:46] the rejection region.
+[12:48] The mean vector always lies on the line.
+[12:50] Error vector will have zero mean and
+[12:52] constant variance.
+[12:54] This is a spherical rotationally
+[12:57] invariant distribution. That is to say,
+[13:00] the direction of the error vector is
+[13:01] uniformly random and thus should not
+[13:04] concentrate along any particular
+[13:06] direction.
+[13:07] And in fact, as we explained in the
+[13:09] video on T distribution, in high
+[13:12] dimension, this error vector should
+[13:14] concentrate along the equator, which is
+[13:17] totally orthogonal to the straight line.
+[13:20] And in the last part of this video, we
+[13:22] will discuss the F test or analysis of
+[13:24] variance.
+[13:26] We will demonstrate that the rejection
+[13:27] region of the F test is a wedge-shaped
+[13:30] region defined by two planes
+[13:33] here visualized by the two green planes
+[13:36] on the screen.
+[13:37] So, to understand what follows, a
+[13:40] prerequisite is the linear regression
+[13:42] video called linear regression done
+[13:44] right on this channel. But, we'll do a
+[13:47] brief recap of what this diagram is
+[13:49] about. Once again, we only consider
+[13:52] three data points for the ease of
+[13:53] visualization. Here we have paired data
+[13:56] X1, Y1, X2, Y2, and X3, Y3. X1, X2, X3
+[14:01] are considered as deterministic. We
+[14:04] assume there is a linear relationship
+[14:06] between Y and X, that is Yi equals to
+[14:10] beta naught plus beta 1 Xi plus some
+[14:13] noise epsilon.
+[14:15] The epsilons are IID normal 0 sigma
+[14:18] squared.
+[14:19] The coefficients beta naught and beta 1
+[14:21] as well as the standard deviation sigma
+[14:24] are all unknown. And it is often needed
+[14:27] to test a linear hypothesis regarding
+[14:30] this model. And by that, we mean a
+[14:32] linear equation satisfied by the
+[14:35] coefficients beta naught and beta 1.
+[14:37] For example, if we wish to test X and Y
+[14:41] has no relation,
+[14:43] then the hypothesis would just be beta 1
+[14:45] equals to 0. This is the most common one
+[14:47] and it's implemented in most softwares.
+[14:50] We Sometimes, we also wish to test if
+[14:52] the intercept beta naught is 0.
+[14:54] And that's another example of a linear
+[14:57] hypothesis.
+[14:58] For example, in physics, there is the
+[15:00] famous Hooke's law. We measure the
+[15:02] extension of a material when a certain
+[15:05] amount of force is being applied to it.
+[15:07] We wish to see if the force is
+[15:09] proportional to the size of deformation,
+[15:12] basically beta naught equals to 0.
+[15:15] And sometimes, albeit much rarer, we can
+[15:17] hypothesize that the slope
+[15:20] and the intercept are proportional. A
+[15:22] famous example for that would be the
+[15:24] discovery of absolute zero in physics.
+[15:28] So, in a nutshell, scientists measured
+[15:30] the relationship between temperature and
+[15:32] pressure for a gas of fixed volume. And
+[15:35] it turns out that this is a linear
+[15:36] relationship. If we change the type of
+[15:39] gas, the relationship is still linear.
+[15:42] It seems that all the straight lines
+[15:44] converges to a point on the negative T
+[15:47] axis.
+[15:48] So, that is to say, if we use degree
+[15:50] Celsius for temperature and we extend
+[15:53] all the line charts to the left, they
+[15:56] seem to intersect on a point on the
+[15:58] negative T axis.
+[16:00] So, to confirm this observation, we can
+[16:02] do a hypothesis test for linear model.
+[16:05] The slope as well as the intercept
+[16:08] follows a linear constraint. So, beta 1
+[16:11] is a constant multiple of beta naught.
+[16:13] In our video on linear regression, the
+[16:15] null hypothesis is taken as beta 1
+[16:18] equals to 0, that is, there is no
+[16:20] relationship between Y and X. The
+[16:23] variation in Y is purely random.
+[16:26] So, in that case, the null hypothesis
+[16:29] says that the mean vector lies on the
+[16:31] line spanned by the vector 1. But, in
+[16:33] general, a linear hypothesis says that
+[16:36] the mean vector mu lies in some subspace
+[16:39] of the vector space M. And just a brief
+[16:42] recap of what's going on. And here's a
+[16:44] And here's a brief recap of what's going
+[16:46] on. The vector space M is spanned by the
+[16:49] vector 1 and the vector X. We may call
+[16:52] this the regression space.
+[16:54] M stands for the alternative hypothesis.
+[16:57] In general, a linear null hypothesis can
+[16:59] be any subspace of M.
+[17:02] And because the null hypothesis
+[17:04] subspace, I don't want to call it the
+[17:06] null space because null space already
+[17:08] has a meaning in linear algebra. Let's
+[17:09] just call it the null hypothesis space,
+[17:11] okay? Because the null hypothesis space
+[17:14] is a subspace of M, as we showed in the
+[17:17] linear regression video, the goodness of
+[17:20] fit for the null hypothesis and the
+[17:22] alternative hypothesis can be visualized
+[17:24] in this right triangle ACD.
+[17:27] So, the goodness of fit for the null
+[17:28] hypothesis
+[17:30] is the side length AD squared where
+[17:33] where AD is perpendicular to the null
+[17:35] hypothesis space.
+[17:37] The goodness of fit to the alternative
+[17:40] hypothesis is AC squared, where AC is
+[17:43] perpendicular to the regression space M.
+[17:47] The difference in the goodness of fit is
+[17:49] CD squared. Because AD, being the
+[17:51] hypotenuse, is always greater than AC.
+[17:55] We can only reject the null hypothesis
+[17:57] if CD is much larger than AC.
+[18:01] That is to say, we reject the null
+[18:03] hypothesis if the angle ADC is too
+[18:07] small.
+[18:09] In that case, the ratio between CD and
+[18:12] AC would be very large.
+[18:15] Once again, that ratio is a cotangent.
+[18:18] So, the F test can be seen as a higher
+[18:21] dimensional generalization of the T
+[18:23] test.
+[18:24] And what's the corresponding rejection
+[18:26] region for that?
+[18:27] Or more specifically, what's the
+[18:29] boundary for the rejection region? The
+[18:31] boundary, as we argued, is controlled by
+[18:33] this angle ADC.
+[18:36] A fixed angle ADC gives us a plane, a
+[18:38] plane that intersects M
+[18:41] along the null hypothesis space and
+[18:43] therefore this is the rejection region.
+[18:46] Here, the red plane stands for the
+[18:48] alternative hypothesis.
+[18:51] The null hypothesis says the mean vector
+[18:53] actually lies in this lower dimensional
+[18:56] subspace of the full regression space.
+[18:59] So, to test that, we construct these two
+[19:01] green planes.
+[19:02] The two green planes intersect the red
+[19:05] plane along the blue line.
+[19:08] And the dihedral angle between the green
+[19:10] plane and the red plane is fixed in
+[19:13] advance.
+[19:14] Once again, this is controlled by the
+[19:16] significance level, much like the cone
+[19:18] opening in the T test.
+[19:20] If the response vector falls between any
+[19:24] of the four regions bounded by one of
+[19:27] the green planes and the red plane,
+[19:30] then the null hypothesis is rejected.
+[19:32] Otherwise, we accept the null
+[19:34] hypothesis. [snorts]
+[19:36] That's it for today's video. I hope you
+[19:38] find this video interesting and I'll see
+[19:39] you next time. Bye.

@@ -1,0 +1,42 @@
+{
+  "outcomes": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "old_rule": [
+    "0",
+    "0",
+    "1",
+    "1"
+  ],
+  "new_rule": [
+    "0",
+    "1/2",
+    "1/2",
+    "1"
+  ],
+  "exact_checks": [
+    "P squared equals P",
+    "P is self-adjoint in probability-weighted inner product",
+    "Residual is orthogonal to each T-group indicator",
+    "Bias preserved",
+    "MSE Pythagoras for unbiased U and biased 2U",
+    "Two-toss MSE is halved"
+  ],
+  "probability_grid": "k/20 for k=1,...,19; exact Fraction arithmetic",
+  "scope": "Checks the finite example, not a proof of the general theorem"
+}

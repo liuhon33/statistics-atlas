@@ -5196,6 +5196,13 @@
       "order": 740
     },
     {
+      "id": "neural-basics-attention-mechanisms",
+      "title": "Attention mechanisms",
+      "path": "Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Neural networks/Attention mechanisms.md",
+      "level": 5,
+      "status": "active"
+    },
+    {
       "id": "neural-models",
       "title": "Selected architectures & latent models",
       "path": "Backbone/Statistical computing & learning/Probabilistic models & neural methods/Neural statistical learning/Selected architectures & latent models/Selected architectures & latent models.md",
@@ -5335,7 +5342,7 @@
     {
       "id": "learning-density-slices-rotational-invariance",
       "title": "Density slices, independence, and rotational invariance",
-      "path": "Learning/Probability & mathematical foundations/Joint variation & conditioning/Density slices, independence, and rotational invariance.md",
+      "path": "Learning/Probability & mathematical foundations/Joint variation & conditioning/Proof of Gaussian's sample mean and variance are independent + rotational invariance.md",
       "layer": "learning",
       "primary_home": "joint-conditional-density",
       "status": "active"
@@ -5410,6 +5417,106 @@
       "path": "Learning/Statistical computing & learning/Simulation & approximate inference/Model error versus inference error in variational inference.md",
       "layer": "learning",
       "primary_home": "variational",
+      "status": "active"
+    },
+    {
+      "id": "learning-r-squared-versus-adjusted-r-squared",
+      "title": "R squared versus adjusted R squared",
+      "path": "Learning/Statistical inference & modeling/Regression & linear models/R squared versus adjusted R squared.md",
+      "layer": "learning",
+      "primary_home": "reg-diagnostics-r-squared-and-adjusted-r-squared",
+      "status": "active"
+    },
+    {
+      "id": "learning-three-matrix-product-views",
+      "title": "Three views of matrix multiplication",
+      "path": "Learning/Probability & mathematical foundations/Mathematical tools/Three views of matrix multiplication.md",
+      "layer": "learning",
+      "primary_home": "spectral",
+      "status": "active"
+    },
+    {
+      "id": "learning-standard-attention-shapes",
+      "title": "Standard attention - scores, heads, and matrix shapes",
+      "path": "Learning/Statistical computing & learning/Probabilistic models & neural methods/Standard attention - scores, heads, and matrix shapes.md",
+      "layer": "learning",
+      "primary_home": "neural-basics-attention-mechanisms",
+      "status": "active"
+    },
+    {
+      "id": "learning-deepseek-mla-latent-cache",
+      "title": "DeepSeek MLA - a shared latent KV cache",
+      "path": "Learning/Statistical computing & learning/Probabilistic models & neural methods/DeepSeek MLA - a shared latent KV cache.md",
+      "layer": "learning",
+      "primary_home": "neural-basics-attention-mechanisms",
+      "status": "active"
+    },
+    {
+      "id": "continuous-cauchy-distribution",
+      "title": "Cauchy distribution",
+      "path": "Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Continuous families/Cauchy distribution.md",
+      "level": 5
+    },
+    {
+      "id": "spaces-hilbert-spaces",
+      "title": "Hilbert spaces",
+      "path": "Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Hilbert spaces.md",
+      "level": 5
+    },
+    {
+      "id": "learning-geometric-interpretation-t-statistic",
+      "title": "Geometric interpretation of the t-statistic",
+      "path": "Learning/Probability & mathematical foundations/Random variables & distributions/Geometric interpretation of the t-statistic.md",
+      "layer": "learning",
+      "primary_home": "continuous-student-t-chi-square-and-f",
+      "status": "active"
+    },
+    {
+      "id": "learning-ols-coefficients-many-routes",
+      "title": "OLS coefficients through algebra, projection, and likelihood",
+      "path": "Learning/Statistical inference & modeling/Regression & linear models/OLS coefficients through algebra, projection, and likelihood.md",
+      "layer": "learning",
+      "primary_home": "ols-point",
+      "status": "active"
+    },
+    {
+      "id": "learning-standardization-geometry",
+      "title": "Standardization geometry - means, lengths, and correlation",
+      "path": "Learning/Probability & mathematical foundations/Random variables & distributions/Standardization geometry - means, lengths, and correlation.md",
+      "layer": "learning",
+      "primary_home": "moments-variance-and-standard-deviation",
+      "status": "active"
+    },
+    {
+      "id": "learning-z-t-f-test-geometry",
+      "title": "Geometric interpretation of z, t, and F tests",
+      "path": "Learning/Statistical inference & modeling/Frequentist & likelihood inference/Geometric interpretation of z, t, and F tests.md",
+      "layer": "learning",
+      "primary_home": "test-theory",
+      "status": "active"
+    },
+    {
+      "id": "learning-one-restriction-f-equals-t-squared",
+      "title": "Why one restriction gives F equals t squared",
+      "path": "Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared.md",
+      "layer": "learning",
+      "primary_home": "ft",
+      "status": "active"
+    },
+    {
+      "id": "learning-testing-power-optimization",
+      "title": "Hypothesis testing - maximizing power under an error budget",
+      "path": "Learning/Statistical inference & modeling/Frequentist & likelihood inference/Hypothesis testing - maximizing power under an error budget.md",
+      "layer": "learning",
+      "primary_home": "test-theory",
+      "status": "active"
+    },
+    {
+      "id": "learning-ci-pvalue-test-duality",
+      "title": "Confidence intervals and p-values - the same test viewed two ways",
+      "path": "Learning/Statistical inference & modeling/Frequentist & likelihood inference/Confidence intervals and p-values - the same test viewed two ways.md",
+      "layer": "learning",
+      "primary_home": "test-invert",
       "status": "active"
     }
   ]

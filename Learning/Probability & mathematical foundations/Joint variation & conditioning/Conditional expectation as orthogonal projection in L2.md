@@ -4,18 +4,28 @@ title: Conditional expectation as orthogonal projection in L2
 layer: learning
 primary_home: "[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/L2 conditional projection]]"
 subject: probability
-backbone_path: "Probability & mathematical foundations → Joint variation & conditioning → Joint distributions → Conditional expectation → L2 conditional projection"
+backbone_path: Probability & mathematical foundations → Joint variation & conditioning → Joint distributions → Conditional expectation → L2 conditional projection
 study_band: U
-note_types: [derivation, insight, question]
-question_roles: [cross-topic-connection]
+note_types:
+  - derivation
+  - insight
+  - question
+question_roles:
+  - cross-topic-connection
 source_format: handwriting
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 status: active
 verification: checked
 learning_state: unknown
-aliases: [Geometry in L2, Geometry of conditional expectations, Hilbert-space view of conditional expectation]
-tags: [atlas/learning, subject/probability, topic/conditional-expectation]
+aliases:
+  - Geometry in L2
+  - Geometry of conditional expectations
+  - Hilbert-space view of conditional expectation
+tags:
+  - atlas/learning
+  - subject/probability
+  - topic/conditional-expectation
 connections:
   - "[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Law of total expectation]]"
   - "[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Tower property]]"
@@ -23,6 +33,7 @@ connections:
   - "[[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Mean squared error]]"
   - "[[Learning/Statistical inference & modeling/Regression & linear models/Three routes from least squares to slope and correlation]]"
 sources:
+  - "[[raw/conversations/2026-10-27-total-expectation-and-variance-group-intuition-excerpt]]"
   - "[[raw/assets/2026-11-08-L2-geometry-I01-conditional-expectation-projection-notes.png]]"
   - "[[assets/figures/2026-11-08-L2-geometry/I01-excerpt-geometry-in-L2.png]]"
   - "[[assets/figures/2026-11-08-L2-geometry/I01-excerpt-geometry-of-conditional-expectation.png]]"
@@ -92,6 +103,8 @@ $$
 \quad\Longrightarrow\quad
 \operatorname{MSE}(\hat\theta)=\operatorname{Bias}(\hat\theta)^2+\operatorname{Var}(\hat\theta).
 $$
+
+Adding the orthogonal noise leg gives the [[Learning/Statistical computing & learning/Statistical learning & prediction/Bias–variance decomposition as Pythagoras in L2#2. Three orthogonal pieces of the prediction error|prediction bias–variance decomposition]].
 
 Strictly, elements of $L^2$ are classes of random variables that agree almost surely; otherwise $\|X\|=0$ would not force $X=0$.
 
@@ -168,6 +181,8 @@ $\Rightarrow$ $g(Y)$ is the conditional expectation of $X$ given $Y$. $\blacksqu
 
 Equality $\phi(1)=\phi(0)$ forces $\mathbb E[h^2(Y)]=0$, i.e. $k(Y)=g(Y)$ almost surely, so the minimizer is also unique. Geometrically, $\phi(1)=\phi(0)+\mathbb E[h^2(Y)]$ is Pythagoras: $\|X-k(Y)\|^2=\|X-g(Y)\|^2+\|g(Y)-k(Y)\|^2$.
 
+The finite-sample counterpart is the [[Learning/Statistical inference & modeling/Regression & linear models/Three routes from least squares to slope and correlation#2. The cosine route finds the nearest point geometrically|OLS nearest-point argument]].
+
 **Added: notation.** On the page, $\mathbb E[\cdot]^2$ means $\mathbb E[(\cdot)^2]$, and "for any $h(Y)$" means any $h(Y)\in\mathcal H_Y$. Corollary 1 uses ($\Rightarrow$); Corollary 2 and the tower argument use ($\Leftarrow$).
 
 ## Geometry of conditional expectations
@@ -225,6 +240,25 @@ $$
 $$
 
 In words, the $?$ side is the spread of $X$ left over after conditioning on $Y$, averaged over $Y$. The orange side is how much the group means themselves vary.
+
+### Group intuition and a small example
+
+Let $Y$ label nonoverlapping groups and $X$ be a uniformly chosen person's score. **Total expectation** averages the group means, weighted by each group's population share. **Total variance** adds the weighted average of within-group variances to the weighted variance of the group means.
+
+| Group | Population share | Mean score | Within-group variance |
+| --- | ---: | ---: | ---: |
+| A | 20% | 60 | 25 |
+| B | 80% | 80 | 25 |
+
+Using population variances,
+$$
+\begin{aligned}
+\mu=\mathbb E[X]&=0.2(60)+0.8(80)=76,\\
+\text{within}&=0.2(25)+0.8(25)=25,\\
+\text{between}&=0.2(60-76)^2+0.8(80-76)^2=64.
+\end{aligned}
+$$
+Thus $\operatorname{Var}(X)=25+64=89$. To picture the between-group term, replace every score with its group's mean: 20% of people now score 60 and 80% score 80. Their variance is 64. In the triangle above, 64 is the orange side squared and 25 is the residual side squared.
 
 ## Corollary 1: $\mathbb E[\mathbb E[X\mid Y]]=\mathbb E[X]$
 
@@ -285,4 +319,7 @@ This expectation is the inner product of ① and ②.
 
 ## Origin
 
-All definitions, propositions, proofs, both drawings, the colour-coded Pythagoras equation and its $?$ are from my handwritten page, supplied 2026-11-08. Only the two drawings are shown as images. They are cropped from the [[raw/assets/2026-11-08-L2-geometry-I01-conditional-expectation-projection-notes.png|full original page]], which stays unchanged in `raw/` and can be reproduced with [[assets/figures/2026-11-08-L2-geometry/crop_diagrams.ps1|the crop script]]. Everything else is transcribed. The bracketed *[read $\phi$]* marks a slip on the page ("minimizes $g$" where $\phi$ is meant). Two parts were completed by the assistant at my request: the ($\Leftarrow$) direction of the orthogonality proof, and the value of the $?$ in the boxed Pythagoras equation, with its derivation. The "Added" passages are also assistant contributions: the projection reading of the first drawing, the closed-subspace remark, the notation note, the nested-projection tower argument, and the boundedness condition for Corollary 2. There is no separate backbone page for the takes-out-what's-given rule, so it has no connection.
+> [!info]- Source details
+> All definitions, propositions, proofs, both drawings, the colour-coded Pythagoras equation and its $?$ are from my handwritten page, supplied 2026-11-08. Only the two drawings are shown as images. They are cropped from the [[raw/assets/2026-11-08-L2-geometry-I01-conditional-expectation-projection-notes.png|full original page]], which stays unchanged in `raw/` and can be reproduced with [[assets/figures/2026-11-08-L2-geometry/crop_diagrams.ps1|the crop script]]. Everything else is transcribed. The bracketed *[read $\phi$]* marks a slip on the page ("minimizes $g$" where $\phi$ is meant). Two parts were completed by the assistant at my request: the ($\Leftarrow$) direction of the orthogonality proof, and the value of the $?$ in the boxed Pythagoras equation, with its derivation. The "Added" passages are also assistant contributions: the projection reading of the first drawing, the closed-subspace remark, the notation note, the nested-projection tower argument, and the boundedness condition for Corollary 2. There is no separate backbone page for the takes-out-what's-given rule, so it has no connection.
+>
+> Group intuition and numerical example added 2026-11-09 from [[raw/conversations/2026-10-27-total-expectation-and-variance-group-intuition-excerpt]]: the subgroup-averaging intuition is the user's (U01); the weighting clarification and 20%/80% example are the assistant's (A01).

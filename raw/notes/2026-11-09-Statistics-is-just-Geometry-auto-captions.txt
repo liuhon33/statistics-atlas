@@ -1,0 +1,482 @@
+YouTube transcript
+Video ID: KgqwRQowFLo
+Language: en
+Captions: auto-generated
+
+[0:00] Do you have the impression that
+[0:01] statistics is a collection of
+[0:03] unmotivated formulas? A plug and chug
+[0:06] exercise. But what if I tell you that
+[0:09] behind this seemingly endless drudgery
+[0:11] lies some of the most beautiful
+[0:13] geometry? And what does calculating mean
+[0:16] and variance has to do with this
+[0:18] diagram?
+[0:19] Well, continue watching this video and
+[0:21] find out.
+[0:22] This is a classic result in statistics.
+[0:26] Suppose X1, X2 all the way to Xn each
+[0:29] follows a normal distribution, normal mu
+[0:31] sigma squared.
+[0:33] Then we can define the sample mean and
+[0:35] the sample variance.
+[0:36] The sample mean X bar is the simple
+[0:39] arithmetic mean of the sample.
+[0:41] And the sample variance is 1 over n
+[0:44] minus 1 times the sum k ranges from 1 to
+[0:48] n xk minus xn bar quantity squared.
+[0:53] Now, this classic theorem on IID normal
+[0:55] sampling says
+[0:56] xn bar follows the normal distribution
+[0:59] with mean mu and a variance of sigma
+[1:02] squared over n.
+[1:04] And s squared follows a scaled chi
+[1:07] squared distribution.
+[1:08] That is sigma squared over n minus 1
+[1:11] times the chi squared distribution with
+[1:14] n minus 1 degrees of freedom.
+[1:16] But the most surprising conclusion of
+[1:18] the theorem
+[1:20] is that the sample mean and the sample
+[1:22] variance are independent random
+[1:24] variables.
+[1:25] This is highly unusual and perhaps the
+[1:28] most unexpected part of this theorem.
+[1:31] Because the two distributions are not
+[1:33] that surprising.
+[1:35] We know that xn bar is a linear
+[1:38] combination of normal distribution, so
+[1:40] itself follows a normal distribution.
+[1:42] Not a big deal.
+[1:45] S squared has to do with normal
+[1:46] distribution squared. So it's natural
+[1:49] that the sample variance follows a
+[1:50] scaled chi squared distribution.
+[1:54] But the denominator n minus 1 is a bit
+[1:56] mysterious.
+[1:58] And it is not clear at all
+[2:00] why the sample mean and the sample
+[2:02] variance are independent.
+[2:04] Especially when considering the fact
+[2:06] that in the definition of the sample
+[2:08] variance, the sample mean appears. But
+[2:10] it turns out that these are independent
+[2:12] random variables.
+[2:15] And just to appreciate the
+[2:16] non-triviality of this independence
+[2:18] result let's consider if xk's are
+[2:22] instead IID Bernoulli random variables.
+[2:26] In this case if we evaluate s squared
+[2:30] it will turn out to be a deterministic
+[2:32] function of the sample mean. If we know
+[2:35] the sample mean, we immediately know the
+[2:37] sample variance.
+[2:38] So everything reduces to xn bar.
+[2:41] So in the light of the Bernoulli example
+[2:44] we can see that the independence result
+[2:46] in the normal sampling theorem is highly
+[2:48] non-trivial.
+[2:50] So what is going on here?
+[2:52] The reason for independence as well as
+[2:55] the mysterious n minus 1 factor
+[2:59] are fundamentally geometric
+[3:02] or equivalently linearly algebraic.
+[3:06] Um it has to do with orthogonal
+[3:08] projections in Euclidean spaces.
+[3:12] And a very special property of the
+[3:14] normal distribution called rotational
+[3:17] invariance.
+[3:19] We about which we already have two
+[3:21] videos on this channel. The physics of
+[3:23] Gaussian distribution and what the t
+[3:25] distribution really is about.
+[3:27] But this video is self-contained. It
+[3:29] does not require prior knowledge from
+[3:32] those two videos. But if you're
+[3:33] interested the links are in the
+[3:35] description.
+[3:36] Let's first take a look at a simple
+[3:38] case. That is n equals 2.
+[3:41] So we have X1 and X2 IID each normal mu
+[3:45] sigma squared.
+[3:46] We can write xk in the so-called
+[3:48] standardized form. xk equals to mu plus
+[3:52] sigma zk where zk are each IID normal 0
+[3:56] 1.
+[3:57] And then we can express the sample mean
+[4:00] xn bar and the sample variance s squared
+[4:03] in terms of Z1 and Z2. And the
+[4:05] calculations are straightforward. And it
+[4:08] turns out that xn bar is a function of
+[4:11] Z1 plus Z2. And s squared is a function
+[4:14] of Z1 minus Z2.
+[4:17] So here xn bar turns out to be mu plus
+[4:20] sigma times Z1 plus Z2 over 2.
+[4:24] And s squared after some simplification
+[4:26] turns out to be half sigma squared Z1
+[4:29] minus Z2 squared.
+[4:31] So it makes us wonder, is there anything
+[4:33] special about Z1 plus Z2 and Z1 minus
+[4:37] Z2?
+[4:38] To proceed further, we will need a
+[4:40] notion from linear algebra. That is the
+[4:42] scalar product, aka dot product, between
+[4:45] two vectors.
+[4:46] So for this video, I'm going to assume
+[4:48] the knowledge about dot product. But a
+[4:50] more in-depth walk-through of basics of
+[4:53] dot product will be given in the
+[4:54] appendix of this video.
+[4:56] In a nutshell, with the notion of dot
+[4:58] product, we can recover all the usual
+[5:00] Euclidean geometric notions.
+[5:03] Such as length, orthogonality, aka
+[5:06] perpendicularity
+[5:07] angles between vectors
+[5:09] vector projections and perpendiculars
+[5:12] orthonormal sets and orthonormal
+[5:14] expansions.
+[5:16] And last but not least, scalar
+[5:17] projection. So if you're already
+[5:19] familiar with these notions, you can
+[5:21] follow the rest of our discussion
+[5:23] without difficulty. But if you're not,
+[5:25] you can go check out the appendix first
+[5:27] and then come back.
+[5:29] So this is our crucial calculation.
+[5:33] Let's denote E1 to be the vector 1 over
+[5:35] square root of 2, 1 1. And E2 as a
+[5:38] vector 1 over square root of 2, minus 1
+[5:41] 1.
+[5:42] Then E1 and E2 forms an orthonormal
+[5:45] basis for R2.
+[5:47] If we write Z equals to Z1 and Z2 prime,
+[5:50] a general vector in R2
+[5:53] then we can expand Z with respect to the
+[5:55] orthonormal basis E1 and E2.
+[5:59] So Z is equal to Z1 plus Z2 over the
+[6:02] square root of 2 times E1 plus Z2 minus
+[6:06] Z1 over the square root of 2 times E2.
+[6:09] And here's a visualization of this
+[6:11] calculation.
+[6:12] The dark blue axes represents the usual
+[6:15] horizontal and vertical axes.
+[6:18] And the coordinates of Z with respect to
+[6:20] the old axes are Z1 and Z2 respectively.
+[6:24] And now let's introduce the new axes
+[6:27] specified by the directions of E1 and E2
+[6:29] respectively.
+[6:32] So the black axes are the new coordinate
+[6:34] axes. So basically the old axes rotated
+[6:37] counterclockwise by 45 degrees.
+[6:40] And we just calculated that the
+[6:42] coordinates of Z with respect to the new
+[6:44] axes are these two numbers. One is a
+[6:47] function of Z1 plus Z2. Another is a
+[6:49] function of Z1 minus Z2.
+[6:52] But now let's use the fact that Z1 and
+[6:55] Z2 follows IID normal 0 1 distributions.
+[6:59] The joint distribution of Z1 and Z2, aka
+[7:03] the distribution of the vector Z
+[7:05] is rotationally invariant.
+[7:08] Because the joint density is a function
+[7:10] of the length only.
+[7:12] Because of independence, we have the
+[7:14] joint density equals to the product of
+[7:16] the marginal densities.
+[7:18] Which turns out to be 1 over 2 pi times
+[7:22] e to the minus Z length squared over 2.
+[7:25] So it only depends on Z length.
+[7:28] And this is where the magic comes from.
+[7:30] Since Z follows a rotationally invariant
+[7:33] Gaussian distribution
+[7:36] its components with respect to any
+[7:38] orthogonal axes are IID normal.
+[7:42] That is to say Z1 plus Z2 over square
+[7:45] root of 2 and Z1 minus Z2 over the
+[7:47] square root of 2 are IID normal 0 1.
+[7:51] So immediately, we have the independence
+[7:53] of the sample mean and the sample
+[7:55] variance.
+[7:56] And also their distributions. And that's
+[7:58] basically it. The same argument
+[8:00] generalizes beautifully into arbitrary
+[8:03] dimensions. Then this picture we had in
+[8:05] the beginning tells the n-dimensional
+[8:07] story.
+[8:09] So we denote the one vector as the
+[8:11] vector in Rn whose components are all
+[8:14] one.
+[8:15] And then we define the unit vector along
+[8:18] that direction called one hat.
+[8:21] So one hat is 1 over the length of 1.
+[8:25] And the length of 1 is the square root
+[8:27] of n in n dimensions.
+[8:30] So one hat is 1 over the square root of
+[8:32] n all the way to 1 over square root of
+[8:34] n.
+[8:36] For any x in Rn
+[8:39] so here we're not using any distribution
+[8:41] whatsoever. This is purely algebraic.
+[8:43] The projection of x onto the direction
+[8:46] one hat
+[8:47] is the dot product between x and one hat
+[8:50] times one hat.
+[8:52] And this simplifies to x bar times 1.
+[8:56] The sample average of x times 1.
+[9:00] So that tells us the geometry of taking
+[9:02] sample mean. That is projecting an
+[9:05] n-dimensional vector onto the vector 1.
+[9:09] And the perpendicular component is
+[9:11] simply the original vector minus the
+[9:13] projection.
+[9:14] And it turns out to be x1 minus x bar
+[9:17] goes all the way to xn minus x bar.
+[9:21] And from that, we get the squared length
+[9:23] of the perpendicular. Namely, the sum of
+[9:26] xi minus x bar squared, i goes from 1 to
+[9:29] n.
+[9:31] And this is exactly the sum of squares
+[9:33] that shows up in the sample variance.
+[9:36] The sample variance is the squared
+[9:38] length of the perpendicular divided by n
+[9:40] minus 1.
+[9:42] But why n minus 1?
+[9:44] Well, because the perpendicular vector
+[9:48] lies in a space with dimension n minus
+[9:50] 1.
+[9:52] The total dimension is n.
+[9:55] Taking the mean is the same as
+[9:56] projecting onto a line. A line is a
+[9:59] one-dimensional subspace.
+[10:01] It's orthogonal complement, this blue
+[10:04] plane, has dimension n minus 1. And
+[10:08] that's why n minus 1 is called the
+[10:10] degrees of freedom.
+[10:12] Because even though it appears that
+[10:14] there are n components in the
+[10:16] perpendicular vector, it actually lies
+[10:18] in a lower dimensional subspace. And
+[10:21] that's why this diagram explains the
+[10:23] essence of the sample mean and the
+[10:25] sample variance.
+[10:27] But now we need to connect this to
+[10:29] probability distributions.
+[10:31] For x1, x2, all the way to xn, each IID
+[10:35] normal mu sigma squared, we have the
+[10:37] following representation. That is, for
+[10:40] each i, xi is equal to mu plus sigma zi.
+[10:44] And zi's are IID normal 0 1.
+[10:48] Or we can write this in a vector form.
+[10:50] That is, the vector x is equal to mu
+[10:53] times the vector 1 plus sigma times the
+[10:56] vector z.
+[10:59] So, now it's time to put everything
+[11:00] together. So, on one hand, we have the
+[11:03] projection and perpendicular vector of x
+[11:06] in terms of the sample mean and the
+[11:08] sample variance.
+[11:10] On the other hand, we can express the
+[11:12] same quantities in terms of projections
+[11:14] and perpendiculars of z.
+[11:17] The projection of x onto the direction
+[11:19] one hat
+[11:21] is the projection of mu 1 plus sigma z
+[11:25] onto the direction one hat.
+[11:28] And this turns out to be mu 1 plus sigma
+[11:31] times projection of z onto one hat.
+[11:34] And here's the diagram. X is the data
+[11:37] vector.
+[11:38] Its projection onto the line is mu 1,
+[11:42] the black vector, plus sigma projection
+[11:45] of z onto one, the blue vector.
+[11:49] And the perpendicular of x onto one
+[11:52] is the same as sigma times perpendicular
+[11:55] of z onto one hat.
+[11:57] And this is clear from the diagram as
+[11:59] well. The perpendicular component of x
+[12:02] is the same as the perpendicular
+[12:04] component of the red vector sigma z.
+[12:07] That is, the vertical blue vector in the
+[12:09] diagram.
+[12:11] So, so far everything is purely
+[12:13] geometric and linearly algebraic. And
+[12:15] now it's time to introduce probability
+[12:17] distributions. Since zi are each IID
+[12:20] normal 0 1, the vector z follows a
+[12:23] multivariate normal distribution with
+[12:26] zero mean vector
+[12:28] and a variance-covariance matrix of
+[12:30] identity matrix.
+[12:33] So, the vector z follows a rotationally
+[12:35] invariant distribution.
+[12:37] So, therefore, we have the same results
+[12:39] earlier.
+[12:41] The coordinates of a spherical Gaussian
+[12:43] distribution
+[12:45] relative to any orthonormal basis are
+[12:49] IID normal. So, immediately, we have the
+[12:52] projection of z onto one
+[12:55] is independent to the perpendicular of z
+[12:59] onto one.
+[13:00] So, here, this perpendicular symbol
+[13:02] stands for both orthogonality and
+[13:04] statistical independence.
+[13:06] And because, as we mentioned, the
+[13:08] perpendicular lives in a subspace of
+[13:11] dimension n minus 1.
+[13:14] So, it has n minus 1 components that are
+[13:17] independent normal 0 1.
+[13:19] So, that is to say, the scalar
+[13:22] projection of z onto one hat, which is
+[13:24] equal to z bar times the square root of
+[13:26] n,
+[13:27] is normal 0 1.
+[13:30] And the squared length of the
+[13:31] perpendicular of z relative to one hat
+[13:34] follows a chi-squared distribution with
+[13:37] n minus 1 degrees of freedom.
+[13:39] So, this completely proves the theorem
+[13:41] given in the beginning.
+[13:44] And actually, we can summarize
+[13:45] everything using an ANOVA table.
+[13:48] That is, analysis of variance.
+[13:51] So, every important information we just
+[13:53] analyzed boils down to this right
+[13:55] triangle,
+[13:56] whose hypotenuse is sigma z.
+[13:59] Isn't that beautiful?
+[14:01] And in fact, the story doesn't even end
+[14:03] here.
+[14:04] We just proved that, under the
+[14:07] assumption of normal distribution, the
+[14:09] sample mean and the sample variance are
+[14:11] independent.
+[14:13] The converse
+[14:15] is also true. If we know that the sample
+[14:18] mean and the sample variance are
+[14:19] independent,
+[14:21] that actually forces the underlying
+[14:23] distribution of the sample is normal.
+[14:26] And this is called Geary's theorem. It
+[14:28] is a sister result to the
+[14:30] Maxwell-Herschel theorem we discussed a
+[14:32] few videos ago.
+[14:34] An immediate application of this is the
+[14:36] famous t statistic.
+[14:38] So, the t statistic is defined as the
+[14:40] square root of n times x bar minus mu
+[14:43] over s.
+[14:44] And this t statistic can be used to
+[14:47] construct confidence intervals and
+[14:48] hypothesis tests.
+[14:51] But we already seen that this ratio is
+[14:53] nothing but
+[14:55] the square root of n minus 1
+[14:57] times the ratio between the scalar
+[14:59] projection and the length of the
+[15:01] perpendicular.
+[15:02] So, basically, a square root of n minus
+[15:05] 1 times the cotangent of this angle
+[15:08] here, called theta.
+[15:10] And that's why we have this result
+[15:12] explained in the t distribution video.
+[15:14] If we take a new dimensional sphere
+[15:18] and then pick an arbitrary reference
+[15:20] direction,
+[15:22] choose a uniformly random point on the
+[15:25] sphere,
+[15:26] then the radius vector
+[15:28] would make a random angle with the
+[15:30] reference direction, called theta.
+[15:33] And the square root of new, that is, the
+[15:35] square root of dimension of the sphere,
+[15:37] times the cotangent of theta, follows
+[15:40] the t distribution with new degrees of
+[15:42] freedom.
+[15:43] So, this concludes our exposition on the
+[15:45] hidden geometry of mean and variance.
+[15:49] I hope you find this video interesting.
+[15:51] In a follow-up video, very similar to
+[15:53] the spirit of this one,
+[15:55] we will reconstruct the theory of linear
+[15:57] regression. And we will see that why
+[16:00] most of the complicated formulas in
+[16:02] linear regression can also be avoided.
+[16:04] And as promised, in the appendix,
+[16:06] we walk through the definition of the
+[16:08] scalar product
+[16:09] as well as quantities and notions
+[16:11] derived from it.
+[16:13] The dot product, aka scalar product, of
+[16:15] two vectors a and b in Rn is defined as
+[16:19] a1 times b1
+[16:21] plus all the way to an times bn.
+[16:25] But immediately, we can define three
+[16:27] things:
+[16:28] length, orthogonality, and angle.
+[16:31] The length of vector a
+[16:33] is the square root of a1 squared plus
+[16:35] all the way to an squared. So,
+[16:37] basically, that's the square root of an
+[16:40] taking dot product with itself.
+[16:44] We can also define orthogonality.
+[16:47] A and B are perpendicular or orthogonal
+[16:49] if and only if their dot product is
+[16:51] zero.
+[16:54] And this is a special case of angle
+[16:56] between vectors. Let theta be the angle
+[16:58] between a and b, then cosine theta is
+[17:01] a.b divided by a length b length.
+[17:05] Uh and theta is taken to be between zero
+[17:08] and pi.
+[17:10] So, with the cosine at our disposal, we
+[17:12] can immediately define projection and
+[17:14] perpendicular.
+[17:16] The projection of a vector a onto a
+[17:18] vector b
+[17:20] is a vector along the direction of b,
+[17:23] whose length is a times the cosine of
+[17:26] theta.
+[17:27] So, we just have a length times the
+[17:29] cosine of theta times the unit vector
+[17:32] along b, which is b over b length.
+[17:34] And using the formula for the cosine of
+[17:37] theta, we end up getting a.b over b
+[17:40] length squared times b, which is the
+[17:42] same as a.b over b.b times b.
+[17:47] And the perpendicular of a relative to b
+[17:49] is simply a minus the projection of a
+[17:52] onto b.
+[17:53] Next, orthonormal sets.
+[17:56] E j is said to be an orthonormal set
+[17:59] if the dot product between ei and ej is
+[18:02] the Kronecker delta,
+[18:05] delta ij.
+[18:06] Delta ij equals to 1 if i equals to j,
+[18:09] and is equal to 0 if i does not equal to
+[18:11] j.
+[18:13] And last but not least, we can expand
+[18:15] vectors in orthonormal bases, and the
+[18:17] coefficients are very easy to obtain.
+[18:20] For any arbitrary x, we can write x
+[18:23] equals to
+[18:24] x transpose e1 times e1 plus all the way
+[18:27] to x transpose en times en.
+[18:31] So, the expansion coefficients are x'e1
+[18:35] all the way to x'en.
+[18:38] And to see this, we can let x equals to
+[18:41] c1 times e1 plus all the way to cn plus
+[18:44] en.
+[18:45] To calculate the coefficient, we simply
+[18:47] take the dot product between x and any
+[18:49] of the basis vector.
+[18:52] The basis is orthonormal, only one term
+[18:54] survives.
+[18:56] That is, the ith term. So, you just get
+[18:57] ci.
+[18:59] And that's why ci is equal to x'ei.
+[19:02] And for this reason, x'ei is called the
+[19:05] scalar projection of x onto ei.
+[19:09] Thanks very much for watching, and I'll
+[19:10] see you next time. Bye.

@@ -1,0 +1,63 @@
+---
+type: source
+created: 2026-11-01
+updated: 2026-11-01
+status: active
+verification: checked
+tags: [source, handwritten-notes, regression, inference, geometry]
+aliases: [Regression CI p values and F statistics digest]
+sources:
+  - "[[raw/notes/2026-11-01-Regression-CI-p-values-and-F-statistics.pdf]]"
+  - "[[raw/notes/2026-11-01-regression-and-bias-variance-manifest.json]]"
+---
+
+# Regression CI, p values, and F statistics notes
+
+## Provenance and coverage
+
+The user supplied `Regression CI and p value, F statistics.pdf` from the Downloads folder in continuation of the request to digest the referenced regression conversation. The supplied file is **handwritten notes, not a conversation transcript**. All four PDF pages were read visually, including the small continuation at the top of p. 4; dense regions were enlarged. The PDF text layer is unreliable handwriting recognition and was not treated as an exact transcription.
+
+The [[raw/notes/2026-11-01-Regression-CI-p-values-and-F-statistics.pdf|original PDF]] is preserved byte-for-byte. The [[raw/notes/2026-11-01-regression-and-bias-variance-manifest.json|manifest]] records the original path, page count, metadata, and SHA-256 `b63991eed963c94a1a83f977af32ea0c7f81a0f8efa569b1b31eea431c813498`. Capture date: 2026-11-01, America/New_York. The notes have no explicit writing date or named outside author; the PDF creation timestamp is export metadata, not proof of when the material was learned.
+
+The earlier reference identifies conversation `6ae77b4b-48ec-83ea-9efb-c5eb7516b4a1`, titled “Regression p Values and Confidence Intervals.” Its original turns remain inaccessible. No content or chronology is reconstructed from that title. This digest covers the supplied notes only, separately from the older [[wiki/sources/Regression Coefficient Uncertainty - 2026-10-18|coefficient-uncertainty export]].
+
+## Digest scope and main node
+
+First successful digest in current chat `01a19956-9844-76b0-9efe-6e174bc0ae08`, covering this four-page document supplied alongside the [[wiki/sources/Bias variance geometry notes - 2026-11-01|two-page geometry notes]]. The earlier inaccessible-link attempts and unrelated Acrobat welcome guide contribute no learning content. The current file-supply message is the included boundary; its message ID is unavailable. [[wiki/maps/Digest Checkpoints|The checkpoint ledger]] keeps the completed document scope separate from the unread source conversation.
+
+Main node: [[wiki/synthesis/Regression inference through projection geometry]]. These are explanatory handwritten diagrams and calculations, not a supplied exercise-statement screenshot. The PDF preserves the originals; the wiki presents selected checked reasoning without a handwriting gallery or invented problem image.
+
+## Coverage and contributions
+
+| Location | Material retained | Curated destination |
+| --- | --- | --- |
+| p. 1, upper left and center | OLS normal equations, simple-slope formula, Gaussian response model, and the plane spanned by the intercept and predictor | Existing [[wiki/equations/OLS coefficient covariance and standard errors\|OLS covariance]] and the [[wiki/synthesis/Regression inference through projection geometry\|main synthesis]] |
+| p. 1, lower half | Full and reduced fits, orthogonal residual components, Pythagorean RSS reduction, and the three-observation F ratio | [[wiki/equations/Nested regression F test\|Canonical F test]] |
+| p. 2, upper left | Squared Cauchy CDF and the unusually large F(1,1) critical value | Same F-test page |
+| p. 2, blue question pair and left derivation | Testing a candidate slope versus collecting acceptable candidates; centered predictor and direct calculation of the distance between fits | [[wiki/questions/How are regression tests p values and confidence intervals connected\|Core question]] and [[wiki/derivations/Slope confidence intervals by inverting an F test\|checked user derivation]] |
+| p. 2, right and bottom | Projection onto constants, normalized predictor direction, and the equivalent difference-of-residual-squares route | Main synthesis and checked derivation |
+| p. 3, left; p. 4, top continuation | Coefficient sampling law, estimated variance, t pivot, p-value, interval algebra, and slope standard error | Updated [[wiki/equations/Classical regression t inference\|existing t-inference page]] |
+| p. 3, right | Confidence intervals as non-rejected null values, zero exclusion, repeated-sampling coverage, and t versus F | Core question and existing t-inference page |
+
+The key user contribution is the connection between **distance from a constrained model** and **inverting the test to find a confidence interval**, with two compatible geometric calculations of the same added sum of squares. The p-value question and interpretation follow-ups stay in one substantive question node.
+
+## Corrections and qualifications
+
+- The p. 1 ANOVA labels/projectors are not consistently matched to their degrees of freedom. With three observations, a full intercept-plus-slope model has **one residual degree of freedom**, the intercept-only model has **two**, and the reduction has **one**. The checked table identifies each quantity by its projector and rank.
+- A plane in response space has dimension two but lives in $\mathbb R^3$ in the picture. Its residual dimension is the complementary dimension, not the fitted dimension. Coefficient coordinates are also distinct from response-vector directions.
+- Gaussian **scalar coordinates along orthonormal directions** are independent normals. Lengths of projected vectors are nonnegative; their squared lengths, divided by $\sigma^2$, have chi-square laws. The vector components themselves do not all have the same full-dimensional normal distribution.
+- The red p. 2 correction correctly restores $\arctan\sqrt{u}$ in the squared-Cauchy CDF. The notes also already contain $\sqrt{161.45}$ in the interval. These correct steps are retained; the multiplier is approximately $12.706$, while $161.45$ is the F critical value.
+- Exact Gaussian regression uses a t critical value with the residual degrees of freedom. Replacing it by 1.96 is a large-degrees-of-freedom approximation; a larger t critical value does not require nonnormal observation errors.
+- “Single coefficient versus several joint restrictions” determines the t/F distinction. A coefficient t test is valid within a multiple-predictor regression. For one matching restriction, the F statistic equals the squared t statistic.
+- A small p-value is a small tail probability **under the null model**, not a posterior probability that the null is true. The notes' correct repeated-sampling interpretation is retained, and nearby informal probability-of-the-null wording is clarified.
+- For a fixed candidate slope $b$, the null fit is an affine line: its intercept varies while $b$ stays fixed. The derivation now distinguishes these two roles.
+
+These are mathematical checks and agent-added clarifications, not invented additional user questions.
+
+## Verification and limits
+
+Checked normal equations, projector dimensions/ranks, orthogonal RSS decomposition, Gaussian independence, the null chi-square ratio, centered-slope algebra, F/t test equivalence, test inversion, and the squared-Cauchy CDF. Exact rational matrix calculations confirm the three-dimensional decomposition and an arithmetic example with $F=t^2=3$ and two-sided p-value $1/3$. Numerical quantile comparisons agree with $F_{1,1;0.95}=161.4476388$ and $t_{1;0.975}=12.7062047$. These support the analytic proofs on the linked pages.
+
+[Stanford Stats 203, coefficient inference](https://web.stanford.edu/class/stats203/lectures/lecture4/) corroborates the Gaussian coefficient/t result; [NIST's t table](https://www.itl.nist.gov/div898/handbook/eda/section3/eda3672.htm) confirms the one-degree-of-freedom critical value. These are corroborating references, not recovered conversation content.
+
+No supplied PDF page remains unread and no mathematical blocker remains for the stated classical model. The original linked conversation is a separate access gap, recorded as R-004 in [[wiki/maps/Review Queue]]. No mastery or unseen chat coverage is inferred.

@@ -1,0 +1,39 @@
+{
+  "counts": {
+    "A": [
+      8,
+      11,
+      10,
+      9,
+      12,
+      10
+    ],
+    "B": [
+      4,
+      6,
+      8,
+      10,
+      12,
+      20
+    ]
+  },
+  "scores": {
+    "A": 1.0,
+    "B": 16.0
+  },
+  "degrees_of_freedom": 5,
+  "expected_per_face": 10,
+  "right_tail_probabilities": {
+    "A": 0.9625657732472964,
+    "B": 0.006844073922420432
+  },
+  "critical_95_percent": 11.070497693516355,
+  "density_integral_0_to_80": 0.9999999998928102,
+  "right_tail_numeric_16_to_80": 0.006844074019074753,
+  "figure_size": [
+    1500,
+    1080
+  ],
+  "tail_beyond_plot_limit": 0.0005235983161067768,
+  "scope": "Arithmetic and chi-square reference calculations; not an exact multinomial test or real experiment."
+}

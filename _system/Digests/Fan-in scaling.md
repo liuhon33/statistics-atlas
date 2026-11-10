@@ -18,9 +18,10 @@ The user's requested observation is preserved as the three-input example. The ma
 
 ## Sources and access
 
-- User-linked video: https://www.youtube.com/watch?v=P6sfmUTpUmc&t=2438s (40:38). Direct retrieval failed with a cache miss. No video transcript was read or archived.
-- Image #1 was visible in the conversation. Observed code: `x = torch.randn(1000, 10)`, `w = torch.randn(10, 200)`, `y = x @ w`. Printed input mean/SD: -0.0099 / 0.9861; output mean/SD: -0.0003 / 3.0996. The supplied temporary locator `D:\CODEXS~1\temp\claudian-codex-images-Cokp3b\1-image.png` no longer existed at save time. Original bytes could not be copied or hashed; no reconstructed image or broken embed was substituted. Reattachment is needed to preserve and embed the original.
-- Read PyTorch's initialization reference during this conversation: https://docs.pytorch.org/docs/2.15/nn.init.html#torch.nn.init.kaiming_normal_ and the `calculate_gain` table. Checked SD = gain / sqrt(fan-in), linear gain 1, and ReLU gain sqrt(2).
+> [!info]- Source details
+> - User-linked video: https://www.youtube.com/watch?v=P6sfmUTpUmc&t=2438s (40:38). Direct retrieval failed with a cache miss. No video transcript was read or archived.
+> - Image #1 was visible in the conversation. Observed code: `x = torch.randn(1000, 10)`, `w = torch.randn(10, 200)`, `y = x @ w`. Printed input mean/SD: -0.0099 / 0.9861; output mean/SD: -0.0003 / 3.0996. The supplied temporary locator `D:\CODEXS~1\temp\claudian-codex-images-Cokp3b\1-image.png` no longer existed at save time. Original bytes could not be copied or hashed; no reconstructed image or broken embed was substituted. Reattachment is needed to preserve and embed the original.
+> - Read PyTorch's initialization reference during this conversation: https://docs.pytorch.org/docs/2.15/nn.init.html#torch.nn.init.kaiming_normal_ and the `calculate_gain` table. Checked SD = gain / sqrt(fan-in), linear gain 1, and ReLU gain sqrt(2).
 
 ## Mathematical verification
 

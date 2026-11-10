@@ -124,4 +124,5 @@ My “10,000 generated features” observation is the same mechanism at scale: i
 
 ## Origin
 
-My supplied handwritten page, left and middle sections. The examples and $11/16$ result are mine; the explicit independence assumptions, tie-breaking condition, distinction between leakage mechanisms, $m$-model extension and practical summary are assistant-added clarification. The row-3 digit was confirmed by me as 0.9. The probability derivation and both threshold prediction vectors were checked analytically and by exhaustive finite enumeration; reference guidance was checked against the linked official documentation. No original ink was altered.
+> [!info]- Source details
+> My supplied handwritten page, left and middle sections. The examples and $11/16$ result are mine; the explicit independence assumptions, tie-breaking condition, distinction between leakage mechanisms, $m$-model extension and practical summary are assistant-added clarification. The row-3 digit was confirmed by me as 0.9. The probability derivation and both threshold prediction vectors were checked analytically and by exhaustive finite enumeration; reference guidance was checked against the linked official documentation. No original ink was altered.

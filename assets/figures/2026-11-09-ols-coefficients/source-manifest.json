@@ -1,0 +1,33 @@
+{
+  "captures": [
+    {
+      "source": "D:\\CODEXS~1\\temp\\codex-clipboard-330a5a3c-e339-410f-9ee3-aed2fe17e565.png",
+      "archived": "raw/assets/2026-11-09-OLS-I01-normal-equations-and-slope.png",
+      "date": "source date unknown; received 2026-11-09",
+      "coverage": "complete supplied image",
+      "sha256": "30fc51b3269e8bbbb2e3c51ce267f07c547271afc5579f1fbc9b44ea0b327bac"
+    },
+    {
+      "source": "C:\\Users\\Hongrui_Liu\\Downloads\\Note Jun 12, 2025 linear algebra summary.pdf",
+      "archived": "raw/notes/2025-06-12-linear-algebra-summary.pdf",
+      "date": "2025-06-12 from supplied filename; PDF export and receipt 2026-11-09",
+      "coverage": "all five pages visually inspected; pp. 1-4 develop OLS, p. 5 read for symmetry context",
+      "sha256": "6588c6676e58c83cb834333514ee713e5c55da0c4826e33a5e5157abae7b4217"
+    }
+  ],
+  "derived_source_image": {
+    "path": "assets/figures/2026-11-09-ols-coefficients/source-pdf-page-01.png",
+    "source": "raw/notes/2025-06-12-linear-algebra-summary.pdf",
+    "page_1_based": 1,
+    "render_dpi": 150,
+    "crop": null,
+    "sha256": "2084d8bbb2a745e1e41456c57203c16685faf308029ed7d2ed392ab07eac28d0",
+    "command": "pdftoppm -f 1 -l 1 -singlefile -r 150 -png SOURCE OUTPUT_PREFIX"
+  },
+  "original_illustration": {
+    "generator": "assets/figures/2026-11-09-ols-coefficients/verify_and_draw.py",
+    "svg": "assets/figures/2026-11-09-ols-coefficients/ols-data-and-projection.svg",
+    "png": "assets/figures/2026-11-09-ols-coefficients/ols-data-and-projection.png",
+    "description": "Original illustration of the supplied three-point example, with an isometric centered observation-space view."
+  }
+}

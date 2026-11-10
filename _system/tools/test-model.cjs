@@ -74,6 +74,20 @@ assert.deepEqual(elboNotes.map(x=>[x.node.id,x.how]),[['test-learning-2','home']
 assert.deepEqual(core.pageLinks(extended,'jensen').notes.map(x=>[x.node.id,x.how]),[['test-learning','linked']]);
 assert.deepEqual(core.pageLinks(extended,'test-learning').inbound.map(x=>x.node.id),['test-learning-2']);
 assert.equal(core.pageLinks(model,'no-such-id'),null);
+// Attached-notes strip and picker (Claude, 2026-11-09, AGENTS A16): notes homed here, homed anywhere below, or only
+// linking here; each note once, in that priority. Learning notes and unknown ids have no list.
+const att=id=>core.attachedNotes(extended,id),attIds=xs=>xs.map(x=>x.node.id);
+assert(backboneIds.every(id=>{const a=core.attachedNotes(model,id);return !a.here.length&&!a.below.length&&!a.linked.length;}));
+assert.deepEqual([attIds(att('elbo').here),att('elbo').below.length,att('elbo').linked.length],[['test-learning-2','test-learning'],0,0]);
+let elboAncestors=0;
+for(let id=extended.byId.get('elbo').parent;id;id=extended.byId.get(id).parent,elboAncestors++){
+  const a=att(id);assert.deepEqual([a.here.length,attIds(a.below),a.linked.length],[0,['test-learning-2','test-learning'],0]);
+  assert(a.below.every(x=>x.home.id==='elbo'));
+}
+assert.equal(elboAncestors,4);
+assert.deepEqual([att('jensen').here.length,att('jensen').below.length,attIds(att('jensen').linked)],[0,0,['test-learning']]);
+assert.equal(att('jensen').linked[0].reason,'Selected test relationship.');
+assert.equal(att('test-learning'),null);assert.equal(att('no-such-id'),null);
 const malformed=core.compile([...base,{path:'Learning/Bad.md',frontmatter:{id:'bad',layer:'learning',primary_home:'[[does-not-exist-fixture]]'}}],data.layout);
 assert(malformed.issues.some(s=>s.includes('primary_home')));
 // Learning-note halo (Claude, 2026-11-08, AGENTS A7, review item 11): notes sit outside the backbone, inside their
@@ -137,5 +151,26 @@ assert(liveView('notes').every(n=>n.layer==='learning'));
 assert.equal(liveView('notes').length,live.nodes.filter(n=>n.layer==='learning').length);
 assert(core.visible(live,'notes').edges.every(e=>live.byId.get(e.source).layer==='learning'&&live.byId.get(e.target).layer==='learning'));
 for(const n of live.nodes.filter(n=>n.layer==='learning'))assert.deepEqual(live.positions[n.home],core.compile(data.records.filter(r=>r.frontmatter?.layer!=='learning'&&!r.path.startsWith('Learning/')),data.layout).positions[n.home]);
-console.log(JSON.stringify({passed:true,liveBackbone:live.nodes.filter(n=>n.layer==='backbone').length,liveLearning:live.nodes.filter(n=>n.layer==='learning').length,layerFallback:true,baselineNodes:756,baselineEdges:843,coordinateParity:true,syntheticLearningNodes:2,sharedSourceNodes:1,incidentalLinksExcluded:true,viewIsolation:true,notesOnlyView:true,backboneCoordinatesUnchanged:true}));
+// A16 on the live vault: each note is listed at its home and below every ancestor; no page lists a note twice.
+for(const n of live.nodes.filter(n=>n.layer==='learning')){
+  assert(core.attachedNotes(live,n.home).here.some(x=>x.node.id===n.id),`not listed at its home: ${n.path}`);
+  for(let id=live.byId.get(n.home).parent;id;id=live.byId.get(id).parent)assert(core.attachedNotes(live,id).below.some(x=>x.node.id===n.id),`not listed below ${id}: ${n.path}`);
+}
+for(const n of live.nodes.filter(n=>n.layer==='backbone')){const a=core.attachedNotes(live,n.id),all=[...a.here,...a.below,...a.linked].map(x=>x.node.id);assert.equal(new Set(all).size,all.length,`duplicate in attached notes of ${n.id}`);}
+// A17 new-note drafts: a draft for a live home compiles cleanly as a learning note at that home; taken names, empty
+// titles and non-backbone homes are refused.
+{
+  const yaml=require('node:util');const homeNode=live.nodes.find(n=>n.layer==='backbone'&&n.level===5);
+  const d=core.newNoteDraft(live,homeNode.id,'Synthetic draft: a/b?','2026-11-09');
+  assert(!d.error,d.error);assert(d.path.startsWith('Learning/'+homeNode.path.split('/').slice(1,3).join('/')+'/'));
+  assert.equal(d.path.split('/').pop(),'Synthetic draft- a-b-.md');assert(d.content.includes('status: draft'));
+  const fm={};for(const line of d.content.split('\n---')[0].split('\n').slice(1)){const m=line.match(/^(\w+): (.*)$/);if(m)fm[m[1]]=m[2].startsWith('"')?JSON.parse(m[2]):m[2].startsWith('[')?m[2].slice(1,-1).split(',').map(s=>s.trim()).filter(Boolean):m[2];}
+  const withDraft=core.compile([...data.records,{path:d.path,frontmatter:fm,body:''}],data.layout);
+  assert.deepEqual(withDraft.issues.filter(s=>!s.startsWith('Layout preview only')),[]);
+  assert.equal(withDraft.byId.get(d.id).home,homeNode.id);assert.equal(fm.backbone_path,homeNode.fm.backbone_path);
+  const existing=live.nodes.find(n=>n.layer==='learning');
+  assert(core.newNoteDraft(live,homeNode.id,existing.path.split('/').pop().replace(/\.md$/,'').toUpperCase(),'2026-11-09').error);
+  assert(core.newNoteDraft(live,homeNode.id,'   ','2026-11-09').error);assert(core.newNoteDraft(live,existing.id,'x','2026-11-09').error);
+}
+console.log(JSON.stringify({passed:true,attachedNotes:true,newNoteDraft:true,liveBackbone:live.nodes.filter(n=>n.layer==='backbone').length,liveLearning:live.nodes.filter(n=>n.layer==='learning').length,layerFallback:true,baselineNodes:756,baselineEdges:843,coordinateParity:true,syntheticLearningNodes:2,sharedSourceNodes:1,incidentalLinksExcluded:true,viewIsolation:true,notesOnlyView:true,backboneCoordinatesUnchanged:true}));
 if(process.argv[4])fs.writeFileSync(process.argv[4],JSON.stringify({...data,records:[...data.records,...fixture]}));

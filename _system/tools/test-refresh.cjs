@@ -30,7 +30,7 @@ const workspace={getLeavesOfType:()=>[],onLayoutReady:()=>{},trigger:()=>{}};
 const LIFECYCLE=['load','unload','loadCSS','onUserEnable','loadData','saveData','register','addChild','removeChild'];
 class Plugin{constructor(app){this.app=app;}async load(){if(this._loaded)return;this._loaded=true;await this.onload();}unload(){}async loadCSS(){}onUserEnable(){}loadData(){}saveData(){}register(){}addChild(){}removeChild(){}registerView(){}registerMarkdownCodeBlockProcessor(){}addRibbonIcon(){}addCommand(c){(this.commands=this.commands||{})[c.id]=c;}registerEvent(){}}
 const notices=[];
-const obsidian={Plugin,ItemView:class{},Notice:class{constructor(m){notices.push(m);}},TFile,TFolder,MarkdownRenderChild:class{},Keymap:{isModEvent:()=>false},
+const obsidian={Plugin,ItemView:class{},FuzzySuggestModal:class{},Modal:class{},Notice:class{constructor(m){notices.push(m);}},TFile,TFolder,MarkdownRenderChild:class{},Keymap:{isModEvent:()=>false},
   parseYaml:()=>{throw new Error('parseYaml should not be needed: every note is in the metadata cache');}};
 const realRequire=Module.prototype.require;
 Module.prototype.require=function(id){return id==='obsidian'?obsidian:realRequire.apply(this,arguments);};

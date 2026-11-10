@@ -1,0 +1,73 @@
+---
+type: derivation
+created: 2026-11-01
+updated: 2026-11-01
+status: active
+verification: checked
+learning_state: practicing
+tags: [regression, confidence-interval, projection, derivation]
+aliases: [Confidence interval from constrained slope geometry]
+sources:
+  - "[[wiki/sources/Regression CI p values and F statistics notes - 2026-11-01]]"
+prerequisites:
+  - "[[wiki/equations/OLS coefficient covariance and standard errors]]"
+  - "[[wiki/equations/Nested regression F test]]"
+related:
+  - "[[wiki/questions/How are regression tests p values and confidence intervals connected]]"
+  - "[[wiki/synthesis/Regression inference through projection geometry]]"
+---
+
+# Slope confidence intervals by inverting an F test
+
+## Goal and source of the reasoning
+
+The user's p. 2 derivation computes the distance between the unrestricted fit and a fit with slope fixed at a candidate $b$. It then solves the F-test acceptance inequality for $b$. A second route uses Pythagoras to obtain the same distance from two RSS values. Source: [[wiki/sources/Regression CI p values and F statistics notes - 2026-11-01|p. 2, left and bottom]]. This page preserves those steps with explicit assumptions and consistent vector notation; the main bundle is [[wiki/synthesis/Regression inference through projection geometry]].
+
+Assume $Y_i=\beta_0+\beta_1x_i+\varepsilon_i$, $i=1,\ldots,n$, with fixed nonconstant real predictors, $n>2$, and iid $\varepsilon_i\sim N(0,\sigma^2)$, $\sigma>0$. Let $y$ be the observed response vector, $\mathbf1\in\mathbb R^n$ the all-ones vector, $\bar x=n^{-1}\sum_i x_i$, $\bar y=n^{-1}\sum_i y_i$, and
+$$x_c=x-\bar x\mathbf1,\qquad S_{xx}=\|x_c\|^2>0.$$
+Then $\mathbf1^\top x_c=0$. The [[wiki/equations/OLS coefficient covariance and standard errors|OLS slope formula]] gives $\widehat\beta_1$.
+
+## 1. Fit freely, then constrain the slope
+
+The full fitted response is the point
+$$C=\bar y\mathbf1+\widehat\beta_1x_c\in\mathcal M,
+\qquad\mathcal M=\operatorname{span}\{\mathbf1,x\}.$$
+For fixed $b\in\mathbb R$, test $H_0:\beta_1=b$. The candidate mean vectors form the affine line
+$$\mathcal L_b=\{a\mathbf1+bx:a\in\mathbb R\}.$$
+Its intercept is free, while its slope $b$ is fixed. Minimizing over $a$ gives $a=\bar y-b\bar x$, so the constrained fitted point is
+$$D_b=\bar y\mathbf1+bx_c.$$
+For $b=0$, this is the intercept-only fit. For nonzero $b$, the line generally does not pass through the origin; it should not be mistaken for a linear subspace.
+
+## 2. Calculate the extra squared distance in two ways
+
+Directly,
+$$C-D_b=(\widehat\beta_1-b)x_c,\qquad
+\|C-D_b\|^2=(\widehat\beta_1-b)^2S_{xx}.$$
+Alternatively, the full residual $y-C$ is orthogonal to all of $\mathcal M$, while $C-D_b\in\mathcal M$. Therefore
+$$\|y-D_b\|^2=\|y-C\|^2+\|C-D_b\|^2.$$
+This is the user's triangle argument: “directly calculate CD” and subtracting the full residual square from the constrained residual square find the same added sum of squares.
+
+## 3. Standardize the added distance
+
+Let $s^2=\|y-C\|^2/(n-2)$, the full-model residual variance estimate. With one slope restriction,
+$$F(b)=\frac{\|C-D_b\|^2}{s^2}
+=\frac{(\widehat\beta_1-b)^2S_{xx}}{s^2}
+=\left(\frac{\widehat\beta_1-b}{s/\sqrt{S_{xx}}}\right)^2.$$
+Under $H_0:\beta_1=b$, this is $F_{1,n-2}$. The affine-null case follows either from the [[wiki/equations/Classical regression t inference|slope t pivot]] or by subtracting $bx$ from $Y$ before applying the [[wiki/equations/Nested regression F test|nested-space argument]]. Under the continuous Gaussian model $s>0$ almost surely.
+
+## 4. Invert the test
+
+The confidence set contains the candidate values not rejected by their matching tests:
+$$\begin{aligned}
+\mathcal C_{1-\alpha}(y)
+&=\{b:F(b)\le F_{1,n-2;1-\alpha}\}\\
+&=\left[\widehat\beta_1-\sqrt{F_{1,n-2;1-\alpha}}\frac{s}{\sqrt{S_{xx}}},
+\widehat\beta_1+\sqrt{F_{1,n-2;1-\alpha}}\frac{s}{\sqrt{S_{xx}}}\right].
+\end{aligned}$$
+The [[wiki/equations/Nested regression F test#One restriction connects F to t|F/t quantile identity]] makes this exactly the usual two-sided slope t interval. In particular, with $n=3$ and $\alpha=0.05$, the multiplier is $\sqrt{161.447639}=12.706205$. The square root is already present in the original notes and is retained.
+
+For the true fixed slope, $P_{\beta_1}\{\beta_1\in\mathcal C_{1-\alpha}(Y)\}=1-\alpha$, conditional on the predictors. This follows because the matching test rejects its true null with probability $\alpha$. It is a coverage probability for the random interval before sampling; the [[wiki/questions/How are regression tests p values and confidence intervals connected|interpretation question]] explains why it is not a posterior probability after observing $y$.
+
+## Verification and limits
+
+Checked the constrained intercept minimization, centered-predictor orthogonality, both distance calculations, RSS degrees of freedom, the squared t statistic, and solving the non-rejection inequality. Exact rational checks with a three-point design verify the two RSS routes and $F=t^2$; independent numerical quantiles verify the small-sample constant. The source's geometric route is the user's work; the affine-space wording, general-$n$ conditions, and coverage argument are agent clarifications. No simultaneous, post-selection, or misspecified-model interval guarantee is claimed.

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="518.4pt" viewBox="0 0 864 518.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-09T01:28:55.439326</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 518.4 
+L 864 518.4 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 156.24 51.84 
+L 151.2 51.84 
+L 151.2 112.32 
+L 156.24 112.32 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 236.88 51.84 
+L 241.92 51.84 
+L 241.92 112.32 
+L 236.88 112.32 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 307.44 37.44 
+L 302.4 37.44 
+L 302.4 128.16 
+L 307.44 128.16 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 357.84 37.44 
+L 362.88 37.44 
+L 362.88 128.16 
+L 357.84 128.16 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 444.24 51.84 
+L 439.2 51.84 
+L 439.2 112.32 
+L 444.24 112.32 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 494.64 51.84 
+L 499.68 51.84 
+L 499.68 112.32 
+L 494.64 112.32 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 28.8 133.2 
+L 835.2 133.2 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #d8dfe6; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 28.8 234 
+L 835.2 234 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #d8dfe6; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 28.8 334.8 
+L 835.2 334.8 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #d8dfe6; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 314.64 406.8 
+L 309.6 406.8 
+L 309.6 467.28 
+L 314.64 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 365.04 406.8 
+L 370.08 406.8 
+L 370.08 467.28 
+L 365.04 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 426.24 406.8 
+L 421.2 406.8 
+L 421.2 467.28 
+L 426.24 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 476.64 406.8 
+L 481.68 406.8 
+L 481.68 467.28 
+L 476.64 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 537.84 406.8 
+L 532.8 406.8 
+L 532.8 467.28 
+L 537.84 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 588.24 406.8 
+L 593.28 406.8 
+L 593.28 467.28 
+L 588.24 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 649.44 406.8 
+L 644.4 406.8 
+L 644.4 467.28 
+L 649.44 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 699.84 406.8 
+L 704.88 406.8 
+L 704.88 467.28 
+L 699.84 467.28 
+" clip-path="url(#p1e60bc2e7a)" style="fill: none; stroke: #243447; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #243447; font: 700 17px 'DejaVu Sans'; text-anchor: start" x="25.2" y="33.490938" transform="rotate(-0 25.2 33.490938)">THREE VIEWS OF THE SAME MATRIX PRODUCT</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #243447; font: 11px 'DejaVu Sans'; text-anchor: start" x="28.8" y="77.195312" transform="rotate(-0 28.8 77.195312)">Shared example</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="166.32" y="70.27125" transform="rotate(-0 166.32 70.27125)">1</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="196.56" y="70.27125" transform="rotate(-0 196.56 70.27125)">2</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="226.8" y="70.27125" transform="rotate(-0 226.8 70.27125)">0</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="166.32" y="100.51125" transform="rotate(-0 166.32 100.51125)">0</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="196.56" y="100.51125" transform="rotate(-0 196.56 100.51125)">1</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="226.8" y="100.51125" transform="rotate(-0 226.8 100.51125)">3</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #243447; font: 14px 'DejaVu Sans'; text-anchor: start" x="266.4" y="85.223125" transform="rotate(-0 266.4 85.223125)">x</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="317.52" y="55.87125" transform="rotate(-0 317.52 55.87125)">2</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="347.76" y="55.87125" transform="rotate(-0 347.76 55.87125)">1</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="317.52" y="86.11125" transform="rotate(-0 317.52 86.11125)">1</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="347.76" y="86.11125" transform="rotate(-0 347.76 86.11125)">0</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="317.52" y="116.35125" transform="rotate(-0 317.52 116.35125)">0</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="347.76" y="116.35125" transform="rotate(-0 347.76 116.35125)">2</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #243447; font: 17px 'DejaVu Sans'; text-anchor: start" x="396" y="86.050938" transform="rotate(-0 396 86.050938)">=</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="454.32" y="70.27125" transform="rotate(-0 454.32 70.27125)">4</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="484.56" y="70.27125" transform="rotate(-0 484.56 70.27125)">1</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="454.32" y="100.51125" transform="rotate(-0 454.32 100.51125)">1</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="484.56" y="100.51125" transform="rotate(-0 484.56 100.51125)">6</text>
+   </g>
+   <g id="text_21">
+    <!-- $A:2\times3,\ B:3\times2,\ AB:2\times2$ -->
+    <g style="fill: #243447" transform="translate(550.8 83.95125)">
+     <text>
+      <tspan style="font: oblique 12px 'DejaVu Sans'" x="0 56.976524 113.976485 122.185469" y="-0.09375">ABAB</tspan>
+      <tspan style="font: 12px 'DejaVu Sans'" x="10.546875 16.927734 26.900391 39.292969 46.927734 67.546836 73.927695 83.900352 96.29293 103.927695 132.755781 139.136641 149.109297 161.501875" y="-0.09375">:2×3,:3×2,:2×2</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_22">
+    <text style="fill: #3568aa; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="28.8" y="169.187188" transform="rotate(-0 28.8 169.187188)">1  ROW x COLUMN</text>
+   </g>
+   <g id="text_23">
+    <!-- $(AB)_{ij}=\sum_k A_{ik}B_{kj}$ -->
+    <g style="fill: #243447" transform="translate(309.6 165.77)">
+     <text>
+      <tspan style="font: 17px 'DejaVu Sans'" x="0 29.924316 47.108594" y="-0.703125">()=</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="6.632324 18.261719 80.086621 102.378369" y="-0.703125">ABAB</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="36.719336 40.025537 68.664746 91.716016 95.022217 114.040967 120.932275" y="2.0859375 2.0859375 16.1390625 2.0859375 2.0859375 2.0859375 2.0859375">ijkikkj</tspan>
+      <tspan style="font: 17px 'DejaVu Sans Display'" x="64.664746" y="-0.703125">∑</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_24">
+    <text style="fill: #243447; font: 11px 'DejaVu Sans'; text-anchor: start" x="28.8" y="209.675312" transform="rotate(-0 28.8 209.675312)">One scalar at a time</text>
+   </g>
+   <g id="text_25">
+    <!-- $(AB)_{12}=1(1)+2(0)+0(2)=1$ -->
+    <g style="fill: #243447" transform="translate(309.6 210.227188)">
+     <text>
+      <tspan style="font: 13px 'DejaVu Sans'" x="0 22.883301 42.54707 55.972363 64.243359 69.315137 77.586133 85.190625 98.615918 106.886914 111.958691 120.229687 127.83418 141.259473 149.530469 154.602246 162.873242 170.477734 183.903027" y="-0.140625">()=1(1)+2(0)+0(2)=1</tspan>
+      <tspan style="font: oblique 13px 'DejaVu Sans'" x="5.071777 13.964844" y="-0.140625">AB</tspan>
+      <tspan style="font: 9.1px 'DejaVu Sans'" x="28.079492 33.869189" y="1.9921875">12</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_26">
+    <text style="fill: #3568aa; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="28.8" y="269.987188" transform="rotate(-0 28.8 269.987188)">2  MATRIX x EACH COLUMN</text>
+   </g>
+   <g id="text_27">
+    <!-- $AB=[Ab_1\ \ Ab_2]$ -->
+    <g style="fill: #243447" transform="translate(309.6 271.090937)">
+     <text>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="0 11.629395 50.79248 62.421875 92.288806 103.9182" y="-0.078125">ABAbAb</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="26.604004 44.160156 122.745202" y="-0.078125">=[]</tspan>
+      <tspan style="font: 11.9px 'DejaVu Sans'" x="73.212891 114.709216" y="2.7109375">12</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_28">
+    <text style="fill: #243447; font: 11px 'DejaVu Sans'; text-anchor: start" x="28.8" y="310.475312" transform="rotate(-0 28.8 310.475312)">One output vector at a time</text>
+   </g>
+   <g id="text_29">
+    <!-- $Ab_1=2A_{:1}+1A_{:2}+0A_{:3}=(4,1)^\mathsf{T}$ -->
+    <g style="fill: #243447" transform="translate(309.6 311.756406)">
+     <text>
+      <tspan style="font: oblique 13px 'DejaVu Sans'" x="0 8.893066 47.519189 93.398145 139.2771" y="-0.38437500000000036">AbAAA</tspan>
+      <tspan style="font: 9.1px 'DejaVu Sans'" x="17.14502 58.185156 63.023975 104.064111 108.90293 149.943066 154.781885 210.360059" y="1.7484374999999996 1.7484374999999996 1.7484374999999996 1.7484374999999996 1.7484374999999996 1.7484374999999996 1.7484374999999996 -5.3609375">1:1:2:3T</tspan>
+      <tspan style="font: 13px 'DejaVu Sans'" x="25.8229 39.248193 71.701855 85.127148 117.580811 131.006104 163.459766 176.885059 181.956836 190.227832 196.892871 205.163867" y="-0.38437500000000036">=2+1+0=(4,1)</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_30">
+    <text style="fill: #3568aa; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="28.8" y="370.787187" transform="rotate(-0 28.8 370.787187)">3  SUM OF OUTER PRODUCTS</text>
+   </g>
+   <g id="text_31">
+    <!-- $AB=\sum_k A_{:k}B_{k:}$ -->
+    <g style="fill: #243447" transform="translate(309.6 367.37)">
+     <text>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="0 11.629395 59.582031 87.213672" y="-0.703125">ABAB</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="26.604004" y="-0.703125">=</tspan>
+      <tspan style="font: 17px 'DejaVu Sans Display'" x="44.160156" y="-0.703125">∑</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="48.160156 79.85752 98.87627" y="16.1390625 2.0859375 2.0859375">kkk</tspan>
+      <tspan style="font: 11.9px 'DejaVu Sans'" x="73.529834 108.085986" y="2.0859375">::</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_32">
+    <text style="fill: #243447; font: 11px 'DejaVu Sans'; text-anchor: start" x="28.8" y="411.275313" transform="rotate(-0 28.8 411.275313)">One rank-at-most-one matrix at a time</text>
+   </g>
+   <g id="text_33">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="324.72" y="425.23125" transform="rotate(-0 324.72 425.23125)">2</text>
+   </g>
+   <g id="text_34">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="354.96" y="425.23125" transform="rotate(-0 354.96 425.23125)">1</text>
+   </g>
+   <g id="text_35">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="324.72" y="455.47125" transform="rotate(-0 324.72 455.47125)">0</text>
+   </g>
+   <g id="text_36">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="354.96" y="455.47125" transform="rotate(-0 354.96 455.47125)">0</text>
+   </g>
+   <g id="text_37">
+    <text style="fill: #243447; font: 17px 'DejaVu Sans'; text-anchor: start" x="392.4" y="441.010938" transform="rotate(-0 392.4 441.010938)">+</text>
+   </g>
+   <g id="text_38">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="436.32" y="425.23125" transform="rotate(-0 436.32 425.23125)">2</text>
+   </g>
+   <g id="text_39">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="466.56" y="425.23125" transform="rotate(-0 466.56 425.23125)">0</text>
+   </g>
+   <g id="text_40">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="436.32" y="455.47125" transform="rotate(-0 436.32 455.47125)">1</text>
+   </g>
+   <g id="text_41">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="466.56" y="455.47125" transform="rotate(-0 466.56 455.47125)">0</text>
+   </g>
+   <g id="text_42">
+    <text style="fill: #243447; font: 17px 'DejaVu Sans'; text-anchor: start" x="504" y="441.010938" transform="rotate(-0 504 441.010938)">+</text>
+   </g>
+   <g id="text_43">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="547.92" y="425.23125" transform="rotate(-0 547.92 425.23125)">0</text>
+   </g>
+   <g id="text_44">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="578.16" y="425.23125" transform="rotate(-0 578.16 425.23125)">0</text>
+   </g>
+   <g id="text_45">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="547.92" y="455.47125" transform="rotate(-0 547.92 455.47125)">0</text>
+   </g>
+   <g id="text_46">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="578.16" y="455.47125" transform="rotate(-0 578.16 455.47125)">6</text>
+   </g>
+   <g id="text_47">
+    <text style="fill: #243447; font: 17px 'DejaVu Sans'; text-anchor: start" x="615.6" y="441.010938" transform="rotate(-0 615.6 441.010938)">=</text>
+   </g>
+   <g id="text_48">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="659.52" y="425.23125" transform="rotate(-0 659.52 425.23125)">4</text>
+   </g>
+   <g id="text_49">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="689.76" y="425.23125" transform="rotate(-0 689.76 425.23125)">1</text>
+   </g>
+   <g id="text_50">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="659.52" y="455.47125" transform="rotate(-0 659.52 455.47125)">1</text>
+   </g>
+   <g id="text_51">
+    <text style="fill: #243447; font: 12px 'DejaVu Sans'; text-anchor: middle" x="689.76" y="455.47125" transform="rotate(-0 689.76 455.47125)">6</text>
+   </g>
+   <g id="text_52">
+    <text style="fill: #243447; font: 10px 'DejaVu Sans'; text-anchor: start" x="28.8" y="499.559375" transform="rotate(-0 28.8 499.559375)">The same index sum is grouped into scalars, columns, or whole matrices. Original numeric example.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p1e60bc2e7a">
+   <rect x="0" y="0" width="864" height="518.4"/>
+  </clipPath>
+ </defs>
+</svg>

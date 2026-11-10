@@ -1,0 +1,23 @@
+{
+  "prevalence": 0.1,
+  "cutoff": 1.6448536269514722,
+  "alternative_mean": 2.4864748605243863,
+  "population_areas": {
+    "TP": 0.08000000000000002,
+    "FN": 0.019999999999999997,
+    "FP": 0.045000000000000005,
+    "TN": 0.855
+  },
+  "precision": 0.64,
+  "accuracy": 0.935,
+  "NPV": 0.9771428571428571,
+  "AUC_analytic": 0.9606435325062272,
+  "AUC_quadrature": 0.9606435325062527,
+  "AUC_abs_error": 2.5424107263916085e-14,
+  "partial_AUC_0_to_alpha": 0.03290260036233303,
+  "weighted_tail_integrals": [
+    0.0800000000000002,
+    0.04500000000000007
+  ],
+  "checks": "PASS: mosaic areas sum to 1; class weighting; precision; accuracy; NPV; normal-score AUC vs quadrature; SVG XML"
+}

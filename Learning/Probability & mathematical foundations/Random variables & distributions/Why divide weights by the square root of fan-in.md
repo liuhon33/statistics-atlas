@@ -9,12 +9,13 @@ study_band: U
 note_types: [insight, derivation]
 source_format: conversation
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 status: active
 tags: [atlas/learning, subject/probability]
 connections:
 - '[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Independence versus zero covariance]]'
 - '[[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Transforming random variables/Convolution of independent sums]]'
+- '[[Learning/Statistical computing & learning/Probabilistic models & neural methods/Standard attention - scores, heads, and matrix shapes]]'
 sources:
 - '[[_system/Digests/Fan-in scaling]]'
 ---
@@ -47,6 +48,8 @@ $$
 
 Thus replacing each weight by $W_i/\sqrt3$ restores output SD to $1$. Generally, $n$ inputs give SD $\sqrt n$, motivating division by $\sqrt{\text{fan-in}}$.
 
+The same variance-addition argument explains [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Standard attention - scores, heads, and matrix shapes#One head, with every dimension visible|attention's square-root score scaling]].
+
 The underlying rule, for independent variables with finite variances, is
 
 $$
@@ -65,7 +68,9 @@ In the supplied screenshot, `x.shape = (1000, 10)` and `w.shape = (10, 200)`: fa
 
 - [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Independence versus zero covariance|Independence versus zero covariance]] — Independence removes covariance terms; pairwise zero covariance already suffices for variance addition.
 - [[Backbone/Probability & mathematical foundations/Random variables & distributions/Univariate distribution theory/Transforming random variables/Convolution of independent sums|Convolution of independent sums]] — Convolution determines the full distribution of an independent sum, whereas this observation needs only its variance.
+- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Standard attention - scores, heads, and matrix shapes|Standard attention]] — Both use variance addition: for independent, centered, unit-variance query/key coordinates, $\operatorname{Var}(\sum_{j=1}^{d_k}q_jk_j)=d_k$, so dividing by $\sqrt{d_k}$ restores unit variance. Here $d_k$ is the head's query/key width ($d_h$ in that note); fan-in scaling acts on initial weights, while attention scales scores before softmax.
 
 ## Origin
 
-User-selected observation from [Andrej Karpathy's demonstration, linked at 40:38](https://www.youtube.com/watch?v=P6sfmUTpUmc&t=2438s) and the supplied screenshot; derivation and Kaiming qualification supplied by the assistant. Source-access details: [[_system/Digests/Fan-in scaling]].
+> [!info]- Source details
+> User-selected observation from [Andrej Karpathy's demonstration, linked at 40:38](https://www.youtube.com/watch?v=P6sfmUTpUmc&t=2438s) and the supplied screenshot; derivation and Kaiming qualification supplied by the assistant. Source-access details: [[_system/Digests/Fan-in scaling]].

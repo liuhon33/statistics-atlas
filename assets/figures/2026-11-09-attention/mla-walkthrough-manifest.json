@@ -1,0 +1,151 @@
+{
+  "created": "2026-11-09",
+  "destination": "Learning/Statistical computing & learning/Probabilistic models & neural methods/DeepSeek MLA - a shared latent KV cache.md",
+  "author_of_generated_figures": "Codex; original vector reconstructions and explanatory extensions",
+  "source_coverage": {
+    "existing_notebook": {
+      "path": "raw/notes/2026-11-09-attention.pdf",
+      "sha256": "d486694425adf5de094acaf30558ad0348622a7fc6184da82b26fa5ddd57013e",
+      "coverage": "Earlier completed two-page digest; reread relevant MLA portions as context, not a new PDF ingest."
+    },
+    "new_handwriting": {
+      "path": "raw/assets/2026-11-09-MLA-I01-key-absorption-identity-cache.png",
+      "sha256": "3a3b36b1fe6d97aa4b974a4c1835a59e63dc49643017c3b8eea02fac87541f05",
+      "dimensions_px": [
+        2360,
+        1640
+      ],
+      "coverage": "Whole visible screenshot inspected; both complete key-side comparisons reproduced. Right edge is partly obscured by app controls and bottom is clipped; unavailable writing is not reconstructed.",
+      "original": "Unmodified attachment bytes; drawing date unknown."
+    },
+    "video": {
+      "title": "How DeepSeek Rewrote the Transformer [MLA]",
+      "author": "Welch Labs",
+      "url": "https://www.youtube.com/watch?v=0VLAoVGf_74",
+      "published": "2025-03-05",
+      "caption_capture": "raw/articles/2026-11-09-welch-labs-mla-youtube-auto-captions.txt",
+      "sha256": "4674822a0589ea214d594584a13cb57e11e6d38d46bfb15c20ace778b3c869bd",
+      "read_coverage": "Complete exported automatic English captions plus visible video description; not a claim of watching all video frames.",
+      "first_caption": "0:00",
+      "last_caption": "18:06",
+      "relevant_ranges": [
+        "7:35-9:57: newest-query decoding and cached history",
+        "10:13-10:44: per-token allocation and history memory reads",
+        "13:36-15:37: latent cache and two absorption steps",
+        "15:39-16:14: cache-size examples"
+      ],
+      "limits": "Automatic captions may mistranscribe. Sponsor segments and unsupported universal speed/capability claims are not promoted into learning claims. Numeric examples independently recomputed."
+    },
+    "primary_reference": {
+      "title": "DeepSeek-V2",
+      "url": "https://arxiv.org/html/2405.04434v5",
+      "sections": [
+        "2.1.2 equations 9-13",
+        "2.1.3 equations 14-19",
+        "3.1.2 latent normalization and configuration",
+        "Appendix C"
+      ],
+      "coverage": "Sections relevant to MLA algebra, compressed queries, positional branch and cache dimensions; not a complete paper digest."
+    }
+  },
+  "figures": [
+    {
+      "svg": "mla-01-projections.svg",
+      "preview": "mla-01-projections.png",
+      "coverage": "PDF p. 2 shared latent projection; all four projection products expanded in the established row-vector style.",
+      "sha256": "bb0e4a48dbfbe2851cd9e8bff18da925b676f23cddcc9b384d24d43d9f1994a0",
+      "rendered_preview_visually_inspected": true
+    },
+    {
+      "svg": "mla-02-key-absorption.svg",
+      "preview": "mla-02-key-absorption.png",
+      "coverage": "PDF p. 2 key-side transpose, absorbed query and B_i; each fixed-map product and resulting token rows shown.",
+      "sha256": "fa39dd6908d454eba2895e619950a8e2e92912349e38d5b4365f9a2852632e9f",
+      "rendered_preview_visually_inspected": true
+    },
+    {
+      "svg": "mla-03-weights-and-latents.svg",
+      "preview": "mla-03-weights-and-latents.png",
+      "coverage": "PDF p. 2 average-latent-first insight; added full ten-token weight staircase, A_i C and first/second/last row expansions.",
+      "sha256": "a5b7ecfd33ad9b9a015be71f2b00884b49ca542b70ab8db4eb938dde4513ca90",
+      "rendered_preview_visually_inspected": true
+    },
+    {
+      "svg": "mla-04-value-and-output.svg",
+      "preview": "mla-04-value-and-output.png",
+      "coverage": "PDF p. 2 value/output absorption; H_i U_V,i, Z_i W_i^O, T_i product and head concatenation/sum expanded.",
+      "sha256": "6bfa0422c06fba5d6a620e0219783e2d5a51573967eaf03d582f89353db70e9a",
+      "rendered_preview_visually_inspected": true
+    },
+    {
+      "svg": "mla-05-single-query-decode.svg",
+      "preview": "mla-05-single-query-decode.png",
+      "coverage": "Video automatic captions 7:35-9:57 and 13:36-15:37; original worked token-11 example using notebook dimensions.",
+      "sha256": "cf8c8669d5fcd23ca44d94d49122bfd2a29a3f2a4bb483de4667321ae23b12fc",
+      "rendered_preview_visually_inspected": true
+    },
+    {
+      "svg": "mla-06-handwritten-comparison.svg",
+      "preview": "mla-06-handwritten-comparison.png",
+      "coverage": "Supplied screenshot: upper cached-C comparison and lower cache-X proposal, both with current query, grouped maps and transposed cache; added precise operation counts and conditional halving.",
+      "sha256": "631c1317c4a1a02092ddfd68e7ee6cb2282e9a1b4ab3d4ad6e67d6b294fcbca9",
+      "rendered_preview_visually_inspected": true
+    },
+    {
+      "svg": "mla-07-position-and-query.svg",
+      "preview": "mla-07-position-and-query.png",
+      "coverage": "DeepSeek-V2 sections 2.1.2-2.1.3, equations 9-19, and Appendix C; paper-derived positional and compressed-query additions, distinct from notebook content-only steps.",
+      "sha256": "6be1ea6070c9c469493608611b4b0aa30db5e448e1f592ee4502588c051d5ee2",
+      "rendered_preview_visually_inspected": true
+    }
+  ],
+  "notation_and_corrections": [
+    "Use E for notebook input rows; supplied comparison's X=E. Lower full-width U_K,i is relabeled W_i^K, while upper latent map remains U_K,i.",
+    "All row-oriented dimensions and transposes checked. The comparisons produce one 1-by-n score row, not one scalar.",
+    "Content score scaling remains sqrt(d_h) after absorption, not sqrt(r). Full positional score scaling is sqrt(d_h+d_R).",
+    "Caching X halves KV scalar count only when D=H*d_h and both key/value widths equal d_h in this bias-free, position-free comparison.",
+    "Operation counts compare reconstructing keys from C with transforming one query; they are not a performance claim against already-cached conventional MHA.",
+    "The token-11 diagram processes the current token including itself; its output contributes to following-token prediction.",
+    "About 400 GB in the 100k-token example can denote stored history and approximate history reads per new query; the allocation increase is about 4 MB.",
+    "Nonlinear latent normalization cannot be absorbed into a fixed matrix; only adjacent linear maps are regrouped."
+  ],
+  "preserved_embeds": [
+    "detail-07b-mla-score-staircase.svg",
+    "detail-09b-cache-layout.svg",
+    "p02-mla-absorption.png",
+    "p02-why-kv-and-latent-roles.png"
+  ],
+  "verification": {
+    "numerical": {
+      "rectangular_dimensions": {
+        "tokens": 11,
+        "input_width": 19,
+        "latent_width": 7,
+        "head_width": 4,
+        "heads": 3,
+        "position_width": 2
+      },
+      "max_abs_error": 3.552713678800501e-15,
+      "identities_checked": 28,
+      "mask_and_row_sums": true,
+      "new_query_matches_full_last_row": true,
+      "new_cache_preserves_old_rows": true,
+      "checks_are_supporting_examples": "The displayed associativity and transpose identities give the general proof."
+    },
+    "all_svg_xml_parsed": true,
+    "all_text_within_canvas": true,
+    "preview_inspection": "All seven rendered PNGs inspected for overlap, notation, braces, vector orientation and correspondences to equations; spacing corrected and affected previews reinspected.",
+    "live_obsidian_page_rendering": false
+  },
+  "scope_check": {
+    "baseline_files": 868,
+    "changed_existing_files": [
+      "Learning/Statistical computing & learning/Probabilistic models & neural methods/DeepSeek MLA - a shared latent KV cache.md",
+      "_system/Log.md",
+      "_system/Digest Checkpoints.md"
+    ],
+    "other_baseline_files_unchanged": true,
+    "log_and_checkpoint_prior_bytes_preserved": true,
+    "note_identity_home_connections_status_preserved": true
+  }
+}

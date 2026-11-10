@@ -1,0 +1,28 @@
+{
+  "three_product_views": 0.0,
+  "column_view": 0.0,
+  "key_absorption_0": 7.105427357601002e-15,
+  "causal_weights_sum_0": 1.1102230246251565e-16,
+  "column_token_convention_0": 0.0,
+  "value_absorption_0": 1.304512053934559e-15,
+  "key_absorption_1": 7.105427357601002e-15,
+  "causal_weights_sum_1": 0.0,
+  "column_token_convention_1": 0.0,
+  "value_absorption_1": 3.552713678800501e-15,
+  "key_absorption_2": 7.105427357601002e-15,
+  "causal_weights_sum_2": 2.220446049250313e-16,
+  "column_token_convention_2": 0.0,
+  "value_absorption_2": 8.881784197001252e-16,
+  "all_head_mla_output": 7.105427357601002e-15,
+  "concat_equals_sum_of_blocks": 3.552713678800501e-15,
+  "pooled_heads_counterexample": true,
+  "decoupled_content_and_position": 0.0,
+  "cache_bytes_example": {
+    "MHA_H128": 3997696,
+    "GQA_G16": 499712,
+    "MQA": 31232,
+    "MLA_content": 62464,
+    "MLA_with_position": 70272,
+    "identity_latent_D12288": 1499136
+  }
+}

@@ -59,6 +59,8 @@ The working plugin is included in `.obsidian/plugins/statistics-atlas/`. There i
 
 Switching views keeps the topic positions and camera. Press **Fit visible** if newly shown notes or sources sit outside the current screen. Use **Whole web** to clear a branch focus and return to the overview.
 
+On a topic page, a **My notes** strip under the title links the personal notes attached there and counts those in its sub-topics. Press **Ctrl+Shift+L** (**Cmd+Shift+L** on macOS) on any topic page, or with a topic selected in the map, to search and open one of those notes. Enter opens it in place; Ctrl/Cmd+Enter opens a new tab. Change the key in **Settings → Hotkeys** under **Statistics atlas: Open a learning note attached to this page**. To start a new note on that topic, press **Ctrl+Alt+N** (**Cmd+Alt+N**, command **Statistics atlas: New learning note here**) and type a title. It creates an empty draft attached to the topic, with the folder and properties filled in. Add your explanation yourself or ask an agent to help, then review it before using `approve`.
+
 ### Try the ELBO example
 
 1. Choose **My learning**.
@@ -108,10 +110,13 @@ A **skill** is a saved set of instructions for a repeated task. The shared copie
 | `digest` | Turns one source or the new part of a conversation into one coherent learning note. |
 | `chop` | Splits a source covering several substantial topics into a few notes. |
 | `extend` | Adds new material to an existing learning note. |
-| `connect` | Suggests useful links between existing learning notes; you choose which to keep. |
-| `enrich` | Adds a sourced definition or explanation to an existing backbone topic. |
+| `connect` | Suggests useful links between existing learning notes; you choose which to keep. It can also add small inline pointers without changing the map. |
+| `enrich` | Develops a backbone topic in stages: a quick introduction, the main formulas, then deeper connections. |
+| `enrich-initial` | Adds or improves only the one-minute introduction and its visual. |
 | `add-backbone` | Proposes and adds a missing topic in the right place. |
 | `approve` | Finalizes and commits the work you have reviewed. It does not publish it. |
+
+The supporting `animate-geometry` skill helps the agent make checked mathematical diagrams and animations, with code you can rerun.
 
 There is also an optional `forget_claudian` housekeeping skill for deleting old local Claudian chat records after confirmation. It is not part of studying or saving notes.
 
@@ -157,21 +162,21 @@ The map reads these properties and the written reasons for connections. A casual
 
 The empty `atlas` blocks in backbone pages show live lists of child topics, incoming connections, and attached personal notes. The plugin builds those lists when you view the page. It does not write them back into your notes.
 
-The Atlas itself runs locally, makes no network requests, and does not rewrite learning notes or original sources. Optional AI plugins have their own data handling. The source code is in [`_system/plugin-src`](_system/plugin-src), and the ready-to-run bundle is in [`.obsidian/plugins/statistics-atlas`](.obsidian/plugins/statistics-atlas).
+The Atlas itself runs locally and makes no network requests. Viewing the map and its note lists does not edit your files. The **New learning note here** command creates an empty draft only when you ask it to; the plugin does not generate explanations or change original sources. Properties and source details start collapsed so the explanation is easier to read; you can expand them whenever you need them. Optional AI plugins have their own data handling. The source code is in [`_system/plugin-src`](_system/plugin-src), and the ready-to-run bundle is in [`.obsidian/plugins/statistics-atlas`](.obsidian/plugins/statistics-atlas).
 
 ## What is included
 
 | Folder | Contents |
 | --- | --- |
-| `Backbone/` | 757 topic pages, arranged from broad subjects to individual concepts. |
-| `Learning/` | 14 personal learning notes, including ELBO, bootstrap, regression, probability, and related ML topics. |
+| `Backbone/` | 760 topic pages, arranged from broad subjects to individual concepts. |
+| `Learning/` | 25 personal learning notes, including ELBO, bootstrap, regression, test geometry, confidence intervals, attention, and related topics. |
 | `raw/` | Preserved original sources, screenshots, and handwriting. |
 | `assets/figures/` | Explanatory figures and their reproducible source. |
 | `_system/` | Catalogs, references, layout, workflow records, templates, and tools. |
 | `.agents/skills/` | Shared instructions for digesting, extending, connecting, and reviewing notes. |
 | `.obsidian/plugins/statistics-atlas/` | The custom map plugin, already built. |
 
-These counts describe the initial public snapshot on **2026-11-09**. Many backbone pages are topic scaffolds; 757 pages does not mean 757 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
+These counts describe the public update on **2026-11-10**. Many backbone pages are topic scaffolds; 760 pages does not mean 760 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
 
 The public copy includes the rebuilt vault's content and tools. Local agent sessions, account settings, window layouts, debug logs, and unrelated installed plugins are excluded. Install optional plugins through their own projects. Original sources keep their individual attribution; public availability is not a blanket license to redistribute third-party material.
 
@@ -183,7 +188,7 @@ The public copy includes the rebuilt vault's content and tools. Local agent sess
 - **Opening only the plugin gives an error:** it also needs this vault's notes and `_system/layout.json`. Open the complete vault.
 - **Skills do not appear:** make the vault root the agent's working folder, check `.agents/skills`, and restart the agent. Claude Code also needs the shared-folder setup described above.
 
-Screenshots were captured in Obsidian 1.15.0 on Windows. The Atlas manifest allows mobile, but this publication was checked on desktop; mobile behavior has not been verified.
+Screenshots show the **2026-11-09** snapshot in Obsidian 1.15.0 on Windows. The current version includes more notes and the navigation controls described above. The Atlas manifest allows mobile, but this publication was checked on desktop; mobile behavior has not been verified.
 
 <details>
 <summary>For developers: rebuild and validate</summary>
@@ -204,10 +209,12 @@ For the model and refresh checks, export to a temporary path outside the vault a
 python -X utf8 _system/tools/validate.py . --export ../atlas-check.json
 node _system/tools/test-model.cjs ../atlas-check.json
 node _system/tools/test-refresh.cjs ../atlas-check.json
+node _system/tools/test-fold-properties.cjs
+python -X utf8 _system/tools/test_fold_note_provenance.py
 ```
 
 Reload the plugin or restart Obsidian after rebuilding. `build_vault.py` is the historical initial generator; do not run it over an edited vault. The current notes, rather than the frozen baseline dataset, are the authority.
 
-The existing validation warnings identify three repeated display titles with distinct filenames and the provisional position of Law of total expectation. See the [review queue](_system/Review%20Queue.md) for details.
+The existing validation warnings identify three repeated display titles with distinct filenames and provisional positions for four added topics: Law of total expectation, Attention mechanisms, Cauchy distribution, and Hilbert spaces. See the [review queue](_system/Review%20Queue.md) for details.
 
 </details>

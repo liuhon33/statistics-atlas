@@ -19,11 +19,12 @@ The user first authorized adding the prepared draft to Learning for inspection w
 
 ## Source coverage
 
-Source vault: `D:\obsidian_centre\stats_ML`.
-
-Existing source chat: `01a164b0-3238-7a41-9d34-e391ed82b15f`. Archived excerpt: U01–U09 and A01–A07; images I01–I04. The existing coverage ends at U09, `msg_01a164de-4ca6-7520-9b1e-9cb3cc433edc`, 2026-10-22T18:27:32.648Z. This operation does not import or advance a per-chat checkpoint and makes no claim about later turns.
-
-The draft was checked before placement: Bayes/Jensen algebra and both KL decompositions, support and integrability assumptions, Gaussian loss dimensions, ridge scaling, and finite Monte Carlo distinctions. An independent two-state calculation confirmed the identities; this numerical check supplements the algebra. Authoritative references are cited in the learning note. I04 and I02 are embedded; I01 and I03 remain available as original evidence. Importance sampling is identified as added synthesis from the ratio in the Jensen handwriting.
+> [!info]- Source details
+> Source vault: `D:\obsidian_centre\stats_ML`.
+>
+> Existing source chat: `01a164b0-3238-7a41-9d34-e391ed82b15f`. Archived excerpt: U01–U09 and A01–A07; images I01–I04. The existing coverage ends at U09, `msg_01a164de-4ca6-7520-9b1e-9cb3cc433edc`, 2026-10-22T18:27:32.648Z. This operation does not import or advance a per-chat checkpoint and makes no claim about later turns.
+>
+> The draft was checked before placement: Bayes/Jensen algebra and both KL decompositions, support and integrability assumptions, Gaussian loss dimensions, ridge scaling, and finite Monte Carlo distinctions. An independent two-state calculation confirmed the identities; this numerical check supplements the algebra. Authoritative references are cited in the learning note. I04 and I02 are embedded; I01 and I03 remain available as original evidence. Importance sampling is identified as added synthesis from the ratio in the Jensen handwriting.
 
 ## Old-to-new mapping
 
@@ -42,14 +43,15 @@ Each path below is relative to the source vault and contributes to the single de
 
 ## Preserved original bytes
 
-| Source file | SHA-256 |
-| --- | --- |
-| `raw/conversations/2026-10-22-ELBO-conversation-excerpt.md` | `aa897182021e5d12496e27726e651b9ed5cfb7f1a6c84727e69088cb1bae570d` |
-| `raw/conversations/2026-10-22-ELBO-manifest.json` | `dd1ba6e51489cede21f5a420c4e12b110fc921101125e609cb634f33af42aa3f` |
-| `raw/assets/2026-10-22-ELBO-I01-posterior-KL-attempt.png` | `f59bb6f2584a3e9aa3d1aa747fce994757b79c27fdec4d8d7a4dd1eb65f0132e` |
-| `raw/assets/2026-10-22-ELBO-I02-Jensen-slide-annotations.png` | `729b85d4b1a2cc9cd54c9a831fa2461470e843af895241020c63335d61400974` |
-| `raw/assets/2026-10-22-ELBO-I03-prior-posterior-comparison.png` | `4177b14d0d0ba511f50b54f81aba117a26a825d5324d2433eb3d20f86715ecdf` |
-| `raw/assets/2026-10-22-ELBO-I04-annotated-summary.png` | `159173d7e0f70f2927f35e97248e58f955f0cb8cfa0c66fd462b3b6549d58fea` |
+> [!info]- Source details
+> | Source file | SHA-256 |
+> | --- | --- |
+> | `raw/conversations/2026-10-22-ELBO-conversation-excerpt.md` | `aa897182021e5d12496e27726e651b9ed5cfb7f1a6c84727e69088cb1bae570d` |
+> | `raw/conversations/2026-10-22-ELBO-manifest.json` | `dd1ba6e51489cede21f5a420c4e12b110fc921101125e609cb634f33af42aa3f` |
+> | `raw/assets/2026-10-22-ELBO-I01-posterior-KL-attempt.png` | `f59bb6f2584a3e9aa3d1aa747fce994757b79c27fdec4d8d7a4dd1eb65f0132e` |
+> | `raw/assets/2026-10-22-ELBO-I02-Jensen-slide-annotations.png` | `729b85d4b1a2cc9cd54c9a831fa2461470e843af895241020c63335d61400974` |
+> | `raw/assets/2026-10-22-ELBO-I03-prior-posterior-comparison.png` | `4177b14d0d0ba511f50b54f81aba117a26a825d5324d2433eb3d20f86715ecdf` |
+> | `raw/assets/2026-10-22-ELBO-I04-annotated-summary.png` | `159173d7e0f70f2927f35e97248e58f955f0cb8cfa0c66fd462b3b6549d58fea` |
 
 ## Review status
 

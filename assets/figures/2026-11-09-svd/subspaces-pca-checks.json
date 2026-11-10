@@ -1,0 +1,76 @@
+{
+  "source_pdf_sha256": "0399ad78b326ddff0e884d7ae9843222b521eb73f32b30e4ff17a2cdf0a5a67b",
+  "source_page": 6,
+  "crop_pixels_at_scale_to_1700": {
+    "x": 130,
+    "y": 190,
+    "width": 1155,
+    "height": 850
+  },
+  "excerpt_sha256": "635e712e1120f65d895414a7dd5f1faf913ab06e3543296d2977b59911d2bab3",
+  "toy_X": [
+    [
+      1.0,
+      7.0
+    ],
+    [
+      -5.0,
+      -5.0
+    ],
+    [
+      4.0,
+      -2.0
+    ]
+  ],
+  "toy_covariance": [
+    [
+      21.0,
+      12.0
+    ],
+    [
+      12.0,
+      39.0
+    ]
+  ],
+  "toy_scores": [
+    [
+      6.708203932499369,
+      2.23606797749979
+    ],
+    [
+      -6.708203932499369,
+      2.23606797749979
+    ],
+    [
+      0.0,
+      -4.47213595499958
+    ]
+  ],
+  "checks": {
+    "centered_feature_columns": 0.0,
+    "unit_orthogonal_loadings": 1.1102230246251565e-16,
+    "unit_orthogonal_score_patterns": 2.220446049250313e-16,
+    "covariance": 0.0,
+    "principal_eigenpairs": 7.105427357601002e-15,
+    "singular_values": 8.881784197001252e-16,
+    "unnormalized_one_to_two_combination": 0.0,
+    "pc1_scores": 0.0,
+    "pc2_scores": 0.0,
+    "actual_scores_equal_U_Sigma": 8.881784197001252e-16,
+    "left_vectors_are_normalized_scores": 1.1102230246251565e-16,
+    "dual_observation_weights": 8.881784197001252e-16,
+    "pc1_rank_one_contribution": 8.881784197001252e-16,
+    "pc2_rank_one_contribution": 0.0,
+    "two_component_reconstruction": 8.881784197001252e-16,
+    "pc1_extracts_only_first_outer_product": 8.881784197001252e-16,
+    "pc1_reconstruction_is_projection": 8.881784197001252e-16,
+    "sample_variances": 7.105427357601002e-15,
+    "variance_proportions": 0.0,
+    "rank_one_squared_frobenius_error": 0.0,
+    "basis_goal_A_Vr_equals_Ur_Sigma": 3.552713678800501e-15,
+    "null_A_maps_to_zero": 1.3322676295501878e-15,
+    "left_null_maps_to_zero_under_transpose": 2.3788737367001598e-15,
+    "all_outputs_orthogonal_to_left_null": 2.3788737367001598e-15
+  },
+  "maximum_error": 7.105427357601002e-15
+}

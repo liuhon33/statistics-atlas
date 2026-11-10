@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690" role="img" aria-labelledby="title desc">
+<title id="title">1 · ROW × COLUMN → ONE NUMBER</title><desc id="desc">Highlight the first row of A and the first column of B, then pair their three entries and sum. Repeat for every output entry.</desc>
+<rect width="1100" height="100%" rx="18" fill="white"/>
+<text x="36" y="48" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700" text-anchor="start">1 · ROW × COLUMN → ONE NUMBER</text>
+<text x="36" y="88" fill="#526279" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="start">Choose row i of A and column j of B. Only entry (i, j) is produced.</text>
+<rect x="82" y="152" width="152" height="48" rx="8" fill="#e8f0ff" stroke="#245eb2" stroke-width="2" stroke-dasharray=""/>
+<text x="106.0" y="185.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="158.0" y="185.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="210.0" y="185.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="106.0" y="237.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="158.0" y="237.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="210.0" y="237.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">3</text>
+<path d="M 85 147 H 75 V 257 H 85" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 231 147 H 241 V 257 H 231" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="158.0" y="130" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A : 2 × 3</text>
+<text x="275" y="218" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="400" text-anchor="start">×</text>
+<rect x="342" y="126" width="48" height="152" rx="8" fill="#e4f4f0" stroke="#087e78" stroke-width="2" stroke-dasharray=""/>
+<text x="366.0" y="159.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="418.0" y="159.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="366.0" y="211.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="418.0" y="211.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="366.0" y="263.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="418.0" y="263.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<path d="M 345 121 H 335 V 283 H 345" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 439 121 H 449 V 283 H 439" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="392.0" y="104" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">B : 3 × 2</text>
+<text x="492" y="218" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="400" text-anchor="start">=</text>
+<text x="586.0" y="185.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">4</text>
+<text x="638.0" y="185.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="586.0" y="237.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="638.0" y="237.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">6</text>
+<path d="M 565 147 H 555 V 257 H 565" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 659 147 H 669 V 257 H 659" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="612.0" y="130" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">AB : 2 × 2</text>
+<rect x="562" y="152" width="48" height="48" rx="8" fill="none" stroke="#ad5710" stroke-width="2" stroke-dasharray=""/>
+<text x="740" y="183" fill="#ad5710" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">First row, first column</text>
+<text x="740" y="220" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" text-anchor="start">→ top-left entry = 4</text>
+<path d="M 36 310 L 1064 310" fill="none" stroke="#d6dfeb" stroke-width="2" stroke-dasharray=""/>
+<text x="36" y="335" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="600" text-anchor="start">Extract the two vectors</text>
+<rect x="72" y="410" width="152" height="48" rx="8" fill="#e8f0ff" stroke="#245eb2" stroke-width="2" stroke-dasharray=""/>
+<text x="96.0" y="443.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="148.0" y="443.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="200.0" y="443.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<path d="M 75 405 H 65 V 463 H 75" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 221 405 H 231 V 463 H 221" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="148.0" y="388" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">row 1 : 1 × 3</text>
+<text x="267" y="444" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="400" text-anchor="start">×</text>
+<rect x="337" y="367" width="40" height="128" rx="8" fill="#e4f4f0" stroke="#087e78" stroke-width="2" stroke-dasharray=""/>
+<text x="357.0" y="396.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="357.0" y="440.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="357.0" y="484.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<path d="M 340 362 H 330 V 500 H 340" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 374 362 H 384 V 500 H 374" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="357.0" y="345" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">column 1 : 3 × 1</text>
+<text x="415" y="444" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="start">=  1·2 + 2·1 + 0·0  =  4</text>
+<text x="70" y="538" fill="#526279" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="start">Pair matching positions; add the three scalar products.</text>
+<path d="M 36 560 L 1064 560" fill="none" stroke="#d6dfeb" stroke-width="2" stroke-dasharray=""/>
+<text x="36" y="600" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">Repeat for the other entries:</text>
+<text x="36" y="640" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" text-anchor="start">(1,2): 1·1 + 2·0 + 0·2 = 1</text>
+<text x="390" y="640" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" text-anchor="start">(2,1): 0·2 + 1·1 + 3·0 = 1</text>
+<text x="743" y="640" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" text-anchor="start">(2,2): 0·1 + 1·0 + 3·2 = 6</text>
+</svg>

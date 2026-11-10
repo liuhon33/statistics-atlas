@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="446.4pt" viewBox="0 0 864 446.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-09T01:28:54.930680</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 446.4 
+L 864 446.4 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 33.12 106.56 
+L 143.28 106.56 
+Q 149.04 106.56 149.04 112.32 
+L 149.04 182.88 
+Q 149.04 188.64 143.28 188.64 
+L 33.12 188.64 
+Q 27.36 188.64 27.36 182.88 
+L 27.36 112.32 
+Q 27.36 106.56 33.12 106.56 
+z
+" clip-path="url(#pf3f0b0d652)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 202.32 95.76 
+L 388.08 95.76 
+Q 393.84 95.76 393.84 101.52 
+L 393.84 193.68 
+Q 393.84 199.44 388.08 199.44 
+L 202.32 199.44 
+Q 196.56 199.44 196.56 193.68 
+L 196.56 101.52 
+Q 196.56 95.76 202.32 95.76 
+z
+" clip-path="url(#pf3f0b0d652)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 450.72 95.76 
+L 622.08 95.76 
+Q 627.84 95.76 627.84 101.52 
+L 627.84 193.68 
+Q 627.84 199.44 622.08 199.44 
+L 450.72 199.44 
+Q 444.96 199.44 444.96 193.68 
+L 444.96 101.52 
+Q 444.96 95.76 450.72 95.76 
+z
+" clip-path="url(#pf3f0b0d652)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 684.72 95.76 
+L 827.28 95.76 
+Q 833.04 95.76 833.04 101.52 
+L 833.04 193.68 
+Q 833.04 199.44 827.28 199.44 
+L 684.72 199.44 
+Q 678.96 199.44 678.96 193.68 
+L 678.96 101.52 
+Q 678.96 95.76 684.72 95.76 
+z
+" clip-path="url(#pf3f0b0d652)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 33.12 261.36 
+L 323.28 261.36 
+Q 329.04 261.36 329.04 267.12 
+L 329.04 334.08 
+Q 329.04 339.84 323.28 339.84 
+L 33.12 339.84 
+Q 27.36 339.84 27.36 334.08 
+L 27.36 267.12 
+Q 27.36 261.36 33.12 261.36 
+z
+" clip-path="url(#pf3f0b0d652)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 389.52 261.36 
+L 542.88 261.36 
+Q 548.64 261.36 548.64 267.12 
+L 548.64 334.08 
+Q 548.64 339.84 542.88 339.84 
+L 389.52 339.84 
+Q 383.76 339.84 383.76 334.08 
+L 383.76 267.12 
+Q 383.76 261.36 389.52 261.36 
+z
+" clip-path="url(#pf3f0b0d652)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 612.72 261.36 
+L 827.28 261.36 
+Q 833.04 261.36 833.04 267.12 
+L 833.04 334.08 
+Q 833.04 339.84 827.28 339.84 
+L 612.72 339.84 
+Q 606.96 339.84 606.96 334.08 
+L 606.96 267.12 
+Q 606.96 261.36 612.72 261.36 
+z
+" clip-path="url(#pf3f0b0d652)" style="fill: #eef4fc; stroke: #3568aa; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #243447; font: 700 17px 'DejaVu Sans'; text-anchor: start" x="25.2" y="33.490938" transform="rotate(-0 25.2 33.490938)">STANDARD MULTI-HEAD SELF-ATTENTION</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #243447; font: 11px 'DejaVu Sans'; text-anchor: start" x="25.2" y="62.075312" transform="rotate(-0 25.2 62.075312)">Tokens are rows. The head index stays separate until the final output projection.</text>
+   </g>
+   <g id="text_3">
+    <!-- $E$ -->
+    <g style="fill: #3568aa" transform="translate(83.72 139.583125)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0" y="-0.796875">E</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <!-- $T\times D$ -->
+    <g style="fill: #243447" transform="translate(75.15 170.159375)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 18.383789" y="-0.703125">TD</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="8.056641" y="-0.703125">×</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_5">
+    <!-- $Q_i,\ K_i,\ V_i$ -->
+    <g style="fill: #3568aa" transform="translate(263.91 136.343125)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0 25.848685 49.858503" y="-0.609375">QKV</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="11.019531 35.029349 59.435651" y="1.6875">iii</tspan>
+      <tspan style="font: 14px 'DejaVu Sans'" x="14.125098 38.134915" y="-0.609375">,,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_6">
+    <!-- each: $T\times d_h$ -->
+    <g style="fill: #243447" transform="translate(265.1 175.559375)">
+     <text>
+      <tspan style="font: 10px 'DejaVu Sans'" x="0 6.152344 12.280273 17.77832 24.116211 27.485352 38.720703" y="-0.40625">each: ×</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="30.664062 49.047852" y="-0.40625">Td</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="55.395508" y="1.234375">h</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="patch_9">
+    <path d="M 151.6021 147.6 
+Q 172.80031 147.6 192.545077 147.6 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 187.745077 145.2 
+L 192.545077 147.6 
+L 187.745077 150 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <!-- $i=1,\ldots,H$ -->
+    <g style="fill: #243447" transform="translate(254.88 222.91125)">
+     <text>
+      <tspan style="font: oblique 12px 'DejaVu Sans'" x="0 50.003906" y="-0.875">iH</tspan>
+      <tspan style="font: 12px 'DejaVu Sans'" x="5.671875 18.064453 25.699219 31.851562 43.851562" y="-0.875">=1,…,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <!-- $A_i$ -->
+    <g style="fill: #3568aa" transform="translate(530.03 136.343125)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0" y="-0.796875">A</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="9.577148" y="1.5">i</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_9">
+    <!-- $T\times T$; causal softmax -->
+    <g style="fill: #243447" transform="translate(482.95 175.559375)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 18.383789" y="-0.40625">TT</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="8.056641 24.492188 27.861328 31.040039 36.538086 42.666016 49.003906 54.213867 60.341797 63.120117 66.298828 71.508789 77.626953 81.147461 85.068359 94.80957 100.9375" y="-0.40625">×; causal softmax</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="patch_10">
+    <path d="M 396.397925 147.6 
+Q 419.398452 147.6 440.945535 147.6 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 436.145535 145.2 
+L 440.945535 147.6 
+L 436.145535 150 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_10">
+    <!-- $Q_iK_i^\mathsf{T}/\sqrt{d_h}$ -->
+    <g style="fill: #243447" transform="translate(411.6 78.6)">
+     <text>
+      <tspan style="font: oblique 12px 'DejaVu Sans'" x="0 12.107227 40.309732" y="-0.40499999999999936 -0.40499999999999936 -0.125">QKd</tspan>
+      <tspan style="font: oblique 8.4px 'DejaVu Sans'" x="9.445312 19.976367 47.92692" y="1.5637500000000006 2.876249999999999 1.84375">iih</tspan>
+      <tspan style="font: 8.4px 'DejaVu Sans'" x="20.818555" y="-5.011249999999999">T</tspan>
+      <tspan style="font: 12px 'DejaVu Sans'" x="26.277734" y="-0.40499999999999936">/</tspan>
+      <tspan style="font: 8.033827px 'STIXSizeOneSym'" x="30.320703" y="-0.8112499999999994">√</tspan>
+     </text>
+     <rect x="38.809732" y="-13.5" width="16.269141" height="0.75"/>
+    </g>
+   </g>
+   <g id="text_11">
+    <!-- $Z_i=A_iV_i$ -->
+    <g style="fill: #3568aa" transform="translate(728.35 136.343125)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0 29.881934 42.564648" y="-0.796875">ZAV</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="9.59082 39.459082 52.141797" y="1.5">iii</tspan>
+      <tspan style="font: 14px 'DejaVu Sans'" x="15.423926" y="-0.796875">=</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_12">
+    <!-- $T\times d_h$ -->
+    <g style="fill: #243447" transform="translate(741.25 175.559375)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 18.383789" y="-0.40625">Td</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="8.056641" y="-0.40625">×</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="24.731445" y="1.234375">h</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="patch_11">
+    <path d="M 630.397925 147.6 
+Q 653.398452 147.6 674.945535 147.6 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 670.145535 145.2 
+L 674.945535 147.6 
+L 670.145535 150 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_13">
+    <!-- $[Z_1\ \cdots\ Z_H]$ -->
+    <g style="fill: #3568aa" transform="translate(144.39 293.123125)">
+     <text>
+      <tspan style="font: 14px 'DejaVu Sans'" x="0 26.216458 62.105085" y="-0.359375">[⋯]</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="5.461914 44.762311" y="-0.359375">ZZ</tspan>
+      <tspan style="font: 9.8px 'DejaVu Sans'" x="15.052734" y="1.9375">1</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="54.353132" y="1.9375">H</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- $T\times(Hd_h)$ -->
+    <g style="fill: #243447" transform="translate(155.8 322.259375)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 22.285156 29.804688" y="-0.40625">THd</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="8.056641 18.383789 40.862305" y="-0.40625">×()</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="36.152344" y="1.234375">h</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- $W^O$ -->
+    <g style="fill: #3568aa" transform="translate(454.72 293.123125)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0" y="-0.3671875">W</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="14.824596" y="-5.7265625">O</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- $(Hd_h)\times D$ -->
+    <g style="fill: #243447" transform="translate(443 322.259375)">
+     <text>
+      <tspan style="font: 10px 'DejaVu Sans'" x="0 22.478516 28.328125" y="-0.40625">()×</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="3.901367 11.420898 38.655273" y="-0.40625">HdD</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="17.768555" y="1.234375">h</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- $O=\sum_i Z_iW_i^O$ -->
+    <g style="fill: #3568aa" transform="translate(681.71 289.4)">
+     <text>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="0 40.908203 53.60459" y="-0.765625">OZW</tspan>
+      <tspan style="font: 14px 'DejaVu Sans'" x="13.74707" y="-0.765625">=</tspan>
+      <tspan style="font: 14px 'DejaVu Sans Display'" x="28.205078" y="-0.765625">∑</tspan>
+      <tspan style="font: oblique 9.8px 'DejaVu Sans'" x="33.205078 50.499023 67.447363 68.429186" y="13.1046875 1.53125 3.0625 -6.278124999999999">iiiO</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_18">
+    <!-- $T\times D$ -->
+    <g style="fill: #243447" transform="translate(706.95 322.259375)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 18.383789" y="-0.703125">TD</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="8.056641" y="-0.703125">×</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="patch_12">
+    <path d="M 331.597266 300.96 
+Q 356.398018 300.96 379.745326 300.96 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 374.945326 298.56 
+L 379.745326 300.96 
+L 374.945326 303.36 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 551.200562 300.96 
+Q 577.801582 300.96 602.949159 300.96 
+" style="fill: none; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 598.149159 298.56 
+L 602.949159 300.96 
+L 598.149159 303.36 
+z
+" style="fill: #243447; stroke: #243447; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_19">
+    <!-- Example: $T=10,\ H=96,\ d_h=128,\ D=12288$ -->
+    <g style="fill: #243447" transform="translate(28.8 376.26)">
+     <text>
+      <tspan style="font: 12px 'DejaVu Sans'" x="0 7.582031 14.683594 22.037109 33.726562 41.34375 44.677734 52.060547 56.103516 69.585938 81.978516 89.613281 97.248047 118.658164 131.050742 138.685508 146.320274 171.976094 184.368672 192.003438 199.638203 207.272969 228.899883 241.292461 248.927227 256.561992 264.196758 271.831524" y="-0.875">Example: =10,=96,=128,=12288</tspan>
+      <tspan style="font: oblique 12px 'DejaVu Sans'" x="59.917969 107.296836 156.369063 217.321758" y="-0.875">THdD</tspan>
+      <tspan style="font: oblique 8.4px 'DejaVu Sans'" x="163.98625" y="1.09375">h</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_20">
+    <text style="fill: #167e78; font: 12px 'DejaVu Sans'; text-anchor: start" x="28.8" y="409.39125" transform="rotate(-0 28.8 409.39125)">Attention weights have shape 96 x 10 x 10: one 10 x 10 matrix per head.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf3f0b0d652">
+   <rect x="0" y="0" width="864" height="446.4"/>
+  </clipPath>
+ </defs>
+</svg>

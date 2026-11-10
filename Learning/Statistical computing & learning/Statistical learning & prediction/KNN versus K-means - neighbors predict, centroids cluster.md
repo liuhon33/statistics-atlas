@@ -89,4 +89,5 @@ My contrast describes where the main work happens: KNN retains examples for quer
 
 ## Origin
 
-My supplied handwritten page, right-hand KNN/K-means comparison and two sketches. The comparison and lazy/eager distinction are mine; notation, numerical aggregation examples and qualifications are assistant-added synthesis checked against the linked official documentation. The unchanged original is shared as a source, not a second conceptual attachment.
+> [!info]- Source details
+> My supplied handwritten page, right-hand KNN/K-means comparison and two sketches. The comparison and lazy/eager distinction are mine; notation, numerical aggregation examples and qualifications are assistant-added synthesis checked against the linked official documentation. The unchanged original is shared as a source, not a second conceptual attachment.

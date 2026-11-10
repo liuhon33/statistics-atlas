@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900" role="img" aria-labelledby="title desc">
+<title id="title">2 · MATRIX × COLUMN → ONE OUTPUT COLUMN</title><desc id="desc">Dashed outlines group complete column vectors. Compute Ab1 and Ab2 separately and place them side by side, without adding the output columns.</desc>
+<rect width="1100" height="100%" rx="18" fill="white"/>
+<text x="36" y="48" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700" text-anchor="start">2 · MATRIX × COLUMN → ONE OUTPUT COLUMN</text>
+<text x="36" y="88" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600" text-anchor="start">B = [ b₁ | b₂ ]     ⇒     AB = [ Ab₁ | Ab₂ ]</text>
+<text x="36" y="125" fill="#526279" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="start">Dashed outlines mean “keep this whole column together.”</text>
+<text x="101.0" y="225.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="153.0" y="225.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="205.0" y="225.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="101.0" y="277.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="153.0" y="277.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="205.0" y="277.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">3</text>
+<path d="M 80 187 H 70 V 297 H 80" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 226 187 H 236 V 297 H 226" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="153.0" y="170" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A : 2 × 3</text>
+<text x="275" y="255" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="400" text-anchor="start">×</text>
+<rect x="343" y="166" width="46" height="152" rx="8" fill="#f3f8fd" stroke="#245eb2" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="395" y="166" width="46" height="152" rx="8" fill="#f3f8fd" stroke="#087e78" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="366.0" y="199.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="418.0" y="199.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="366.0" y="251.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="418.0" y="251.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="366.0" y="303.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="418.0" y="303.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<path d="M 345 161 H 335 V 323 H 345" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 439 161 H 449 V 323 H 439" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="392.0" y="144" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">B = [ b₁ | b₂ ]</text>
+<text x="495" y="255" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="400" text-anchor="start">=</text>
+<rect x="568" y="192" width="46" height="100" rx="8" fill="#f3f8fd" stroke="#245eb2" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="620" y="192" width="46" height="100" rx="8" fill="#f3f8fd" stroke="#087e78" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="591.0" y="225.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">4</text>
+<text x="643.0" y="225.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="591.0" y="277.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="643.0" y="277.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">6</text>
+<path d="M 570 187 H 560 V 297 H 570" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 664 187 H 674 V 297 H 664" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="617.0" y="170" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">AB = [ Ab₁ | Ab₂ ]</text>
+<text x="750" y="220" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" text-anchor="start">b₁ and b₂: 3 × 1</text>
+<text x="750" y="259" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" text-anchor="start">Ab₁ and Ab₂: 2 × 1</text>
+<text x="750" y="298" fill="#526279" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">A changes vector length: 3 → 2</text>
+<path d="M 36 350 L 1064 350" fill="none" stroke="#d6dfeb" stroke-width="2" stroke-dasharray=""/>
+<text x="36" y="390" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">Output column 1: use the entries of b1 as weights on A’s columns.</text>
+<text x="40" y="492" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">Ab1 =</text>
+<text x="195" y="492" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">2 ×</text>
+<text x="286.0" y="475.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="286.0" y="527.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<path d="M 265 437 H 255 V 547 H 265" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 307 437 H 317 V 547 H 307" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="286.0" y="420" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A column 1</text>
+<text x="350" y="492" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="start">+</text>
+<text x="415" y="492" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">1 ×</text>
+<text x="506.0" y="475.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="506.0" y="527.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<path d="M 485 437 H 475 V 547 H 485" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 527 437 H 537 V 547 H 527" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="506.0" y="420" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A column 2</text>
+<text x="570" y="492" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="start">+</text>
+<text x="635" y="492" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">0 ×</text>
+<text x="726.0" y="475.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="726.0" y="527.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">3</text>
+<path d="M 705 437 H 695 V 547 H 705" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 747 437 H 757 V 547 H 747" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="726.0" y="420" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A column 3</text>
+<text x="822" y="492" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="400" text-anchor="start">=</text>
+<rect x="888" y="442" width="46" height="100" rx="8" fill="#f3f8fd" stroke="#245eb2" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="911.0" y="475.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">4</text>
+<text x="911.0" y="527.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<path d="M 890 437 H 880 V 547 H 890" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 932 437 H 942 V 547 H 932" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="911.0" y="420" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">Ab1</text>
+<text x="36" y="590" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="start">Output column 2: use the entries of b2 as weights on A’s columns.</text>
+<text x="40" y="692" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">Ab2 =</text>
+<text x="195" y="692" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">1 ×</text>
+<text x="286.0" y="675.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="286.0" y="727.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<path d="M 265 637 H 255 V 747 H 265" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 307 637 H 317 V 747 H 307" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="286.0" y="620" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A column 1</text>
+<text x="350" y="692" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="start">+</text>
+<text x="415" y="692" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">0 ×</text>
+<text x="506.0" y="675.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">2</text>
+<text x="506.0" y="727.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<path d="M 485 637 H 475 V 747 H 485" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 527 637 H 537 V 747 H 527" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="506.0" y="620" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A column 2</text>
+<text x="570" y="692" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="start">+</text>
+<text x="635" y="692" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="start">2 ×</text>
+<text x="726.0" y="675.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">0</text>
+<text x="726.0" y="727.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">3</text>
+<path d="M 705 637 H 695 V 747 H 705" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 747 637 H 757 V 747 H 747" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="726.0" y="620" fill="#245eb2" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">A column 3</text>
+<text x="822" y="692" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="400" text-anchor="start">=</text>
+<rect x="888" y="642" width="46" height="100" rx="8" fill="#f3f8fd" stroke="#087e78" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="911.0" y="675.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">1</text>
+<text x="911.0" y="727.0" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" text-anchor="middle">6</text>
+<path d="M 890 637 H 880 V 747 H 890" fill="none" stroke="#243447" stroke-width="2.5"/>
+<path d="M 932 637 H 942 V 747 H 932" fill="none" stroke="#243447" stroke-width="2.5"/>
+<text x="911.0" y="620" fill="#087e78" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" text-anchor="middle">Ab2</text>
+<rect x="36" y="807" width="1028" height="60" rx="8" fill="#f3f6fb" stroke="none" stroke-width="2" stroke-dasharray=""/>
+<text x="56" y="846" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" text-anchor="start">Place the resulting columns SIDE BY SIDE — do not add Ab₁ and Ab₂.</text>
+</svg>

@@ -1,0 +1,124 @@
+---
+type: synthesis
+created: 2026-11-01
+updated: 2026-11-08
+status: active
+verification: checked
+learning_state: practicing
+tags: [regression, geometry, inference]
+aliases: [Regression geometry and inference]
+sources:
+  - "[[wiki/sources/R squared and adjusted R squared conversation - 2026-11-02]]"
+  - "[[wiki/sources/F and t statistics conversation - 2026-11-02]]"
+  - "[[wiki/sources/Regression slope derivations and geometry - 2026-11-02]]"
+  - "[[wiki/sources/Regression CI p values and F statistics notes - 2026-11-01]]"
+prerequisites:
+  - "[[wiki/equations/OLS coefficient covariance and standard errors]]"
+  - "[[wiki/equations/Classical regression t inference]]"
+related:
+  - "[[wiki/equations/R squared and adjusted R squared]]"
+  - "[[wiki/questions/What is the difference between R squared and adjusted R squared]]"
+  - "[[wiki/questions/How are F and t statistics related in regression]]"
+  - "[[wiki/derivations/Three derivations of the OLS slope correlation identity]]"
+  - "[[wiki/equations/Nested regression F test]]"
+  - "[[wiki/derivations/Slope confidence intervals by inverting an F test]]"
+  - "[[wiki/questions/How are regression tests p values and confidence intervals connected]]"
+  - "[[wiki/synthesis/Bias variance decomposition as Pythagoras]]"
+---
+
+# Regression inference through projection geometry
+
+## The connection in your notes
+
+Your drawings connect three operations: **fit by projection, test the cost of imposing a constraint, and collect the constraints the data do not reject**. A coefficient confidence interval is the last operation applied to every candidate coefficient value. Source: [[wiki/sources/Regression CI p values and F statistics notes - 2026-11-01|handwritten notes, pp. 1–3]]. This is the main node for that supplied document; all four pages, including the p. 4 continuation, are preserved in its [[raw/notes/2026-11-01-Regression-CI-p-values-and-F-statistics.pdf|original PDF]].
+
+## Earlier pieces and their roles
+
+The 2026-11-02 follow-up now has a focused entry point: [[wiki/derivations/Three derivations of the OLS slope correlation identity|three ways to derive the slope as correlation times an SD ratio]]. It compares sum-form derivatives, cosine/projection geometry, and a vector gradient, then shows the one-predictor result inside the full multiple-regression normal equations. The new source is a [[wiki/sources/Regression slope derivations and geometry - 2026-11-02|supplied Markdown summary and original drawing]], distinct from the earlier PDF bundle.
+
+[[wiki/questions/Where does uncertainty in regression coefficients come from|Your earlier uncertainty question]] established that response errors pass into fitted coefficients. [[wiki/equations/OLS coefficient covariance and standard errors|The OLS normal equations]] also say the fitted residual is perpendicular to every design column. That is the bridge from coefficient algebra to a projection picture.
+
+[[wiki/equations/Classical regression t inference|The existing t-inference result]] supplies the residual variance estimate and exact Gaussian reference distribution. Your new notes explain the same inference through squared lengths. These earlier results are building blocks, not presumed mastered topics.
+
+## What the axes and projections mean
+
+For $n$ observations in simple regression, place the response vector $y=(y_1,\ldots,y_n)^\top$ in $\mathbb R^n$. Each coordinate is an observation's response. The predictor vector $x=(x_1,\ldots,x_n)^\top$ and all-ones vector $\mathbf1$ span the allowed mean space
+$$\mathcal M=\{\beta_0\mathbf1+\beta_1x:\beta_0,\beta_1\in\mathbb R\}.$$
+If $x$ is nonconstant, $\dim\mathcal M=2$. With three observations it is a plane in $\mathbb R^3$. The coefficients label combinations of its spanning vectors; they are not the three response axes.
+
+Write $P_{\mathcal M}$ for orthogonal projection onto the plane and $P_{\mathbf1}$ for projection onto the intercept line. Then
+$$\widehat\mu=P_{\mathcal M}y,\qquad e=y-\widehat\mu.$$
+The no-slope fit is $P_{\mathbf1}y=\bar y\mathbf1$, where $\bar y=n^{-1}\sum_i y_i$. The note's $P_{\mathcal M}^{\perp}$ means the **complementary projector** $I-P_{\mathcal M}$, not an inverse. Source: pp. 1–2.
+
+Centering the predictor makes the picture easier to read. With $x_c=x-\bar x\mathbf1$ and $S_{xx}=\|x_c\|^2>0$, an orthonormal basis for the plane is
+$$e_1=\frac{\mathbf1}{\sqrt n},\qquad e_2=\frac{x_c}{\sqrt{S_{xx}}}.$$
+Thus $\widehat\mu=(y^\top e_1)e_1+(y^\top e_2)e_2$. The first component gives the mean response, and the second gives the fitted trend. These are the normalized directions in the user's p. 2 calculation.
+
+## From a longer residual to an F test
+
+The intercept-only residual contains the full-model residual plus the fitted trend component. The two components are orthogonal. Their squared lengths therefore add, so the reduction in RSS equals the squared distance between the two fitted points.
+
+[[wiki/equations/Nested regression F test|The canonical F-test page]] supplies the full formula and proof. It divides the reduction by the number of added directions, then compares it with the full residual variance estimate. Under the null and Gaussian spherical noise, the numerator and denominator come from independent chi-square components.
+
+For the three-point drawing, the full plane leaves **one** residual direction, while the intercept-only line leaves **two**. The added direction contributes one degree of freedom. A large F ratio means the observed improvement is unusually large under the no-trend model, relative to the residual noise estimate. It is not by itself a posterior probability for either model or proof of a practically important effect.
+
+## Your hand-drawn angle and rejection-region picture
+
+![[raw/assets/2026-11-02-my-handdrawn-regression-geometry.png|850]]
+
+Your original image is preserved unchanged. It is a schematic of fit/residual directions and rejection regions, with the visible ratio $\cot\theta=b/a$. The accompanying [[wiki/sources/Regression slope derivations and geometry - 2026-11-02|summary §§4–6]] supplies the precise interpretation below; unspecified axes or colored surfaces are not assigned extra quantitative meaning.
+
+Start from the [[wiki/equations/OLS coefficient covariance and standard errors#Slope as correlation times scale|checked slope identity]]. For nonconstant centered $x_c,y_c$, let $r=r_{xy}$ and $\theta=\angle(x_c,y_c)$. Write $\widehat y_c=\widehat\beta_1x_c$ and $e=y_c-\widehat y_c$. Orthogonality gives
+$$\operatorname{RSS}=\|e\|^2=(1-r^2)\|y_c\|^2,\qquad R^2=r^2.$$
+Here $R^2$ is the ordinary centered goodness-of-fit measure for simple regression with an intercept. It is not a general claim that multiple-regression $R^2$ is any one predictor's squared marginal correlation.
+
+For $n>2$ and positive RSS, the usual estimated standard error and zero-slope statistic become
+$$\widehat{\operatorname{SE}}(\widehat\beta_1)
+=\frac{s_y}{s_x}\sqrt{\frac{1-r^2}{n-2}},\qquad
+t=\frac{\widehat\beta_1}{\widehat{\operatorname{SE}}(\widehat\beta_1)}
+=r\sqrt{\frac{n-2}{1-r^2}}
+=\sqrt{n-2}\cot\theta.$$
+The sign is retained because $\theta\in(0,\pi)$ can be obtuse. In the sketch's **ratio of lengths**, interpret $b$ as $L_{\rm fit}=\|\widehat y_c\|$ and $a$ as $L_{\rm res}=\|e\|$; these are side lengths, not the candidate slope $b$ used elsewhere. Then
+$$\frac{L_{\rm fit}}{L_{\rm res}}=|\cot\theta|,\qquad
+F=t^2=(n-2)\frac{L_{\rm fit}^2}{L_{\rm res}^2}.$$
+The denominator is remaining **residual length**, rather than a separate measure of fitted length. If the fitted vector is nonzero, its acute angle with $y_c$ gives this unsigned ratio. If the fitted vector is zero, the length ratio is zero even though an angle involving that zero vector is undefined.
+
+Under the [[wiki/equations/Classical regression t inference|classical Gaussian assumptions]] and $H_0:\beta_1=0$, a two-sided level-$\alpha$ test rejects when
+$$|\cot\theta|>\frac{t_{n-2,1-\alpha/2}}{\sqrt{n-2}}.$$
+Alignment close to either $+x_c$ or $-x_c$ can lead to rejection; near perpendicularity gives $r=t=0$. The sketch's reject/fail-to-reject markings are qualitative; the exact boundary depends on $n$ and $\alpha$. The slope/projection identities are algebraic, while the exact null t/F laws require the stated error model. The [[wiki/equations/Nested regression F test|one-restriction F/t equivalence]] also applies to a matching coefficient test in multiple regression; its global F test generally tests several restrictions instead.
+
+This is a new angle-based connection, not a re-ingest of the earlier confidence-interval derivation. The signed/unsigned distinction and $n-2$ normalization were checked algebraically and on a negative-correlation numerical example.
+
+## The same restriction viewed through a coefficient or a fit
+
+The current [[wiki/questions/How are F and t statistics related in regression|F/t relationship question]] connects the two routes explicitly. The [[wiki/questions/Where does uncertainty in regression coefficients come from#Follow-up on the simple-slope standard error|standard-error follow-up]] starts with random observation errors, obtains slope variance by squared weights, and estimates its scale. The geometric route measures the added squared distance when the same coefficient restriction is released. With one restriction these yield a squared t and a matching partial F.
+
+With two predictors, dropping only one while retaining and refitting the other tests that coefficient. Dropping both tests a joint null and averages the RSS increase over two restrictions. [[wiki/equations/Nested regression F test#Individual and joint tests compare different restricted models|The canonical comparison]] explains why the joint F generally differs from both individual t squares. Source: [[wiki/sources/F and t statistics conversation - 2026-11-02|U01–U04/A01–A04]]. This is a new conversational clarification, distinct from the supplied diagram and earlier PDF sources.
+
+## From residual length to adjusted fit
+
+[[wiki/questions/What is the difference between R squared and adjusted R squared|The separate R-squared question]] uses the same residual geometry for a fit comparison. Adding predictor directions enlarges the space onto which the response is projected, so the minimum residual length cannot increase. The [[wiki/equations/R squared and adjusted R squared|canonical score definitions]] compare its squared length with the squared length of the centered response. This explains why ordinary training $R^2$ cannot decrease for nested OLS models fitted to the same observations.
+
+Adjusted $R^2$ additionally divides the residual and total sums of squares by their respective degrees of freedom. Enlarging the fitted space removes residual directions, so the adjusted score rises only when the residual mean square falls. This combines the projection picture with [[wiki/equations/Classical regression t inference#Why there are n minus p residual degrees of freedom|the earlier residual-variance calculation]]. Source: [[wiki/sources/R squared and adjusted R squared conversation - 2026-11-02|A01]]. The explicit geometric bridge is agent synthesis; no new drawing or user derivation was supplied.
+
+## From one null slope to all plausible slopes
+
+Your p. 2 comparison asks whether the observed data are too far from a model constrained to one $b$, then asks which values of $b$ give models close enough to the data. [[wiki/questions/How are regression tests p values and confidence intervals connected|The core question]] preserves that formulation and connects it to p-values and coverage.
+
+In [[wiki/derivations/Slope confidence intervals by inverting an F test|your checked derivation]], the full fit $C$ and candidate-slope fit $D_b$ differ by $(\widehat\beta_1-b)x_c$. You can compute that distance directly or recover it by subtracting the two residual sums of squares. Inverting the resulting F inequality gives the same interval as the t pivot. Both routes express one geometric fact.
+
+The $n=3$ example has only one residual degree of freedom. The interval uses approximately $12.706$ standard errors, the square root of the F critical value $161.448$. The source already includes that square root. The 1.96 illustration on p. 3 is a large-degrees-of-freedom approximation, not the exact multiplier for this drawing.
+
+## What is preserved and what is clarified
+
+The user's contributions are the projection drawings, the two ways to calculate added squared distance, the confidence interval as an inverted test, and the explicit repeated-sampling interpretation. The [[wiki/sources/Regression CI p values and F statistics notes - 2026-11-01#Corrections and qualifications|source correction record]] distinguishes these valid steps from repairs to residual degrees of freedom, null-probability wording, scalar versus vector Gaussian claims, and the number-of-restrictions interpretation of t versus F.
+
+The second supplied document uses Pythagoras in [[wiki/synthesis/Bias variance decomposition as Pythagoras|a space of random variables]]. This is a mathematical connection through orthogonality, with different vectors and inner products; the two pictures should not be identified coordinate for coordinate.
+
+## Verification and scope
+
+The linked canonical and derivation pages contain checked projector algebra, normal/chi-square independence, and test-inversion proofs, supported by exact rational calculations and F/t quantile comparisons. The added signed-angle and length-ratio identities were checked algebraically and on a negative-correlation example. No mathematical gap remains for the stated model. This synthesis covers the supplied handwritten notes and the selected geometry connections from the 2026-11-02 Markdown/image follow-up.
+
+The current F/t conversation adds the one-versus-several-restriction distinction and an explicit true-versus-estimated standard-error bridge. Its source records the exact current-chat coverage; it does not recover additional turns from the separate referenced chat.
+
+The separate R-squared exchange adds training-fit and degrees-of-freedom comparisons, checked by the nested-space argument and exact formula arithmetic. Its source has its own current-chat boundary; prior document and conversation sources remain context.

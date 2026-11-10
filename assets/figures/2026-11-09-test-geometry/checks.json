@@ -1,0 +1,11 @@
+{
+  "z_critical": 1.959963984540054,
+  "t_2_critical": 4.302652729696142,
+  "t_cone_half_angle_degrees": 18.194872338977408,
+  "F_1_1_critical": 161.44763879758827,
+  "F_wedge_half_angle_degrees": 4.5000000000000036,
+  "max_identity_error": 8.171241461241152e-14,
+  "max_F_vs_two_sided_t_pvalue_error": 1.1102230246251565e-15,
+  "visual_conventions": "Orthographic 3D; exact equal-axis triangles; F 3D angle deliberately enlarged and labeled 20%, adjacent cross-section is exact 5%.",
+  "source": "Independent algebra in the notes; numerical checks support those derivations."
+}

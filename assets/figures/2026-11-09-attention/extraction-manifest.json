@@ -1,0 +1,63 @@
+{
+  "source": "raw/notes/2026-11-09-attention.pdf",
+  "source_sha256": "d486694425adf5de094acaf30558ad0348622a7fc6184da82b26fa5ddd57013e",
+  "dpi": 150,
+  "coordinate_convention": "pixels, left/top/right/bottom; top-left origin",
+  "excerpts": [
+    {
+      "file": "p01-head-separation-and-output.png",
+      "page": 1,
+      "rectangle": [
+        800,
+        700,
+        1275,
+        1504
+      ],
+      "sha256": "641b4742649e3adab5e699797153f9f171f61cc00f5847970406f42dc8071df0"
+    },
+    {
+      "file": "p01-column-multiplication.png",
+      "page": 1,
+      "rectangle": [
+        0,
+        1530,
+        330,
+        1674
+      ],
+      "sha256": "69fdb65a1edadf56a0678b5c9ccd18d40adf7a75cd1ca2de961bd7e6a7135e17"
+    },
+    {
+      "file": "p02-dot-and-outer-products.png",
+      "page": 2,
+      "rectangle": [
+        0,
+        0,
+        325,
+        140
+      ],
+      "sha256": "97bcd0e4cc7cb43cc084c098ea1ce3954f41be0fbdbb350233cbf672e98fcf66"
+    },
+    {
+      "file": "p02-mla-absorption.png",
+      "page": 2,
+      "rectangle": [
+        0,
+        325,
+        480,
+        1015
+      ],
+      "sha256": "f33ed480eaacd65fb9770109b78d81a4e0fcff5e47254fa7f7e87f2be2e2438d"
+    },
+    {
+      "file": "p02-why-kv-and-latent-roles.png",
+      "page": 2,
+      "rectangle": [
+        0,
+        995,
+        810,
+        1330
+      ],
+      "sha256": "e6e2714a83030b09881b99113be17ad3568e804dc3d3ab4a977f03426c5fd8bd"
+    }
+  ]
+}

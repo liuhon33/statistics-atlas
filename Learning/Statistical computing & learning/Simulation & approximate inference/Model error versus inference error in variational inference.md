@@ -74,6 +74,8 @@ $$
 =D_{\mathrm{KL}}\!\left(q_\phi(z\mid x)\,\|\,p_\theta(z\mid x)\right).}
 $$
 
+The identity follows from the [[Learning/Statistical computing & learning/Simulation & approximate inference/My four approaches to the ELBO#2. Posterior KL: identify exactly what the bound leaves out|posterior-KL derivation of the ELBO]].
+
 At fixed $\theta$, maximizing the ELBO minimizes this posterior KL. Zero gap means $q_\phi=p_\theta(\cdot\mid x)$ almost everywhere; it does **not** mean $p_\theta$ is true. The target here is the **posterior**, not the prior. [Blei, Kucukelbir & McAuliffe (2017), §2.2, equations (12)–(14), p. 862](https://www.cs.columbia.edu/~blei/papers/BleiKucukelbirMcAuliffe2017.pdf#page=5).
 
 Two useful qualifications:
@@ -100,4 +102,5 @@ Conversely, keeping the latent independent but correcting the model to $X\sim\op
 
 ## Origin
 
-One supplied annotated screenshot, specifically its red/purple model-versus-inference distinction and the roles of $\theta$ and $\phi$. No new question wording is attributed to me. The assistant added the comparison table, notation cleanup, ELBO interpretation, qualifications, and Bernoulli counterexample; checked the identity algebraically against the cited review and checked the example by direct enumeration. The clipped upper slide and reparameterization derivation are preserved in the image but not reconstructed or claimed verified. Original bytes and source boundary are recorded in [[_system/Digest Checkpoints]].
+> [!info]- Source details
+> One supplied annotated screenshot, specifically its red/purple model-versus-inference distinction and the roles of $\theta$ and $\phi$. No new question wording is attributed to me. The assistant added the comparison table, notation cleanup, ELBO interpretation, qualifications, and Bernoulli counterexample; checked the identity algebraically against the cited review and checked the example by direct enumeration. The clipped upper slide and reparameterization derivation are preserved in the image but not reconstructed or claimed verified. Original bytes and source boundary are recorded in [[_system/Digest Checkpoints]].

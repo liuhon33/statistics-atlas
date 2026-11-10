@@ -216,6 +216,49 @@ const AtlasCore = (() => {
     const rank={home:0,linked:1};
     return {node:n,topics,inbound,notes:[...notes.values()].sort((a,b)=>rank[a.how]-rank[b.how]||a.node.label.localeCompare(b.node.label))};
   }
-  return {compile,visible,MODES,referenceLayout,clean,hash,pageLinks,RecordStore,reasonLines,needsBody,stable};
+  // Attached-notes strip and picker (Claude, 2026-11-09, AGENTS A16). For a backbone page: learning notes whose
+  // primary_home is this page (here), whose home is any page below it (below, in tree order), and notes that only
+  // link to it (linked). Each note is listed once, in that priority. Derived from properties; nothing is stored.
+  function attachedNotes(model,id){
+    const n=model.byId.get(id);if(!n||n.layer!=='backbone')return null;
+    const rank=new Map(),visit=c=>{if(rank.has(c))return;rank.set(c,rank.size);(model.children.get(c)||[]).forEach(visit);};visit(id);
+    const here=[],below=[],linked=[],seen=new Set();
+    for(const other of model.nodes){
+      if(other.layer!=='learning'||!rank.has(other.home))continue;
+      seen.add(other.id);
+      if(other.home===id)here.push({node:other});else below.push({node:other,home:model.byId.get(other.home)});
+    }
+    for(const e of model.edges){
+      if(e.target!==id||!LINKED_TYPES.has(e.type))continue;
+      const other=model.byId.get(e.source);if(!other||other.layer!=='learning'||seen.has(other.id))continue;
+      seen.add(other.id);linked.push({node:other,reason:e.reason});
+    }
+    const byLabel=(a,b)=>a.node.label.localeCompare(b.node.label);
+    here.sort(byLabel);linked.sort(byLabel);below.sort((a,b)=>rank.get(a.home.id)-rank.get(b.home.id)||byLabel(a,b));
+    return {node:n,here,below,linked};
+  }
+  // New learning note draft (Claude, 2026-11-09, AGENTS A17). Builds path and Markdown for a draft homed on a
+  // backbone page: folder mirrors the home's subject and area folders, metadata is inherited from the home.
+  // Returns {error} instead when the title is empty or the file name or id is already used (validator B1/B7).
+  function newNoteDraft(model,homeId,title,today){
+    const home=model.byId.get(homeId);if(!home||home.layer!=='backbone')return {error:'Not a backbone page.'};
+    title=String(title||'').replace(/\s+/g,' ').trim();if(!title)return {error:'Give the note a title.'};
+    const name=title.replace(/[\\/:*?"<>|#^[\]]/g,'-').replace(/[. ]+$/,'').slice(0,120);
+    if(!name||/^(con|prn|aux|nul|com\d|lpt\d)$/i.test(name))return {error:'That title cannot be a file name.'};
+    const taken=model.nodes.some(n=>n.path.endsWith('.md')&&short(n.path).toLowerCase()===name.toLowerCase());
+    if(taken)return {error:`A note named "${name}" already exists; choose another title.`};
+    const id='learning-'+(name.toLowerCase().normalize('NFKD').replace(/[^\w\s-]/g,'').trim().replace(/[\s_]+/g,'-').replace(/-+/g,'-')||String(hash(title)));
+    if(model.byId.has(id))return {error:`The id ${id} is already used; choose another title.`};
+    const segs=home.path.split('/').slice(1,-1).slice(0,2),folder=['Learning',...segs].join('/'),path=`${folder}/${name}.md`;
+    const subject=String(home.fm.subject||home.core||''),homePath=String(home.fm.backbone_path||home.ancestry||home.label);
+    const q=v=>JSON.stringify(String(v));
+    const yaml=['---',`id: ${id}`,`title: ${q(title)}`,'layer: learning',`primary_home: ${q('[['+home.path.replace(/\.md$/i,'')+']]')}`,
+      ...(subject?[`subject: ${subject}`]:[]),`backbone_path: ${q(homePath)}`,...(home.fm.study_band?[`study_band: ${q(home.fm.study_band)}`]:[]),
+      'note_types: [topic-note]',`created: ${today}`,`updated: ${today}`,'status: draft','verification: needs-review','aliases: []',
+      `tags: [atlas/learning${subject?', subject/'+subject:''}]`,'connections: []','sources: []','---'];
+    const body=['',`# ${title}`,'',homePath,'','State the question, result or connection that makes this note worth revisiting.','',''];
+    return {path,folder,id,title,content:yaml.concat(body).join('\n')};
+  }
+  return {compile,visible,MODES,referenceLayout,clean,hash,pageLinks,attachedNotes,newNoteDraft,RecordStore,reasonLines,needsBody,stable};
 })();
 if(typeof module!=='undefined')module.exports=AtlasCore;

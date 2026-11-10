@@ -1,0 +1,21 @@
+{
+  "normal_example": {
+    "observed_mean": 0.2,
+    "known_SE": 0.1,
+    "alpha": 0.05,
+    "p_at_zero": 0.04550026389635839,
+    "CI": [
+      0.004003601545994606,
+      0.3959963984540054
+    ]
+  },
+  "one_sided_example": {
+    "z": 1.8,
+    "upper_tail_p": 0.03593031911292579,
+    "two_sided_p": 0.07186063822585158
+  },
+  "grid_checks": 5001,
+  "max_F_t_tail_error": 8.326672684688674e-16,
+  "exact_normal_coverage": 0.95,
+  "interpretation": "Numerical checks support algebra, not a proof of general coverage; p(b) is not a density."
+}

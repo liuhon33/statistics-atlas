@@ -1,0 +1,93 @@
+{
+  "capture_date": "2026-11-01",
+  "timezone": "America/New_York",
+  "current_chat_id": "01a19956-9844-76b0-9efe-6e174bc0ae08",
+  "authorization": "Continuation of the current chat request: Digest this to obsidian; final supplied-file message lists both PDFs. No successful prior digest exists in this chat.",
+  "boundary": "User message supplying Regression CI and p value, F statistics.pdf and Bias variance tradeoff geometric view.pdf; message ID unavailable.",
+  "referenced_conversation": {
+    "id": "6ae77b4b-48ec-83ea-9efb-c5eb7516b4a1",
+    "url": "https://chatgpt.com/c/6ae77b4b-48ec-83ea-9efb-c5eb7516b4a1",
+    "title": "Regression p Values and Confidence Intervals",
+    "read": false,
+    "coverage": "zero original conversation turns; PDFs do not expose chat turns or message IDs; notes are handled as supplied evidence only"
+  },
+  "sources": [
+    {
+      "key": "regression",
+      "supplied_path": "C:\\Users\\Hongrui_Liu\\Downloads\\Regression CI and p value, F statistics.pdf",
+      "archived_path": "raw/notes/2026-11-01-Regression-CI-p-values-and-F-statistics.pdf",
+      "bytes": 5078008,
+      "sha256": "b63991eed963c94a1a83f977af32ea0c7f81a0f8efa569b1b31eea431c813498",
+      "page_count": 4,
+      "source_type": "handwritten notes exported as PDF; not a conversation transcript",
+      "source_date": "not stated on handwritten pages",
+      "pdf_metadata": {
+        "/Producer": "iOS Version 18.7.3 (Build 22H217) Quartz PDFContext",
+        "/CreationDate": "D:20261101230334Z00'00'",
+        "/ModDate": "D:20261101230334Z00'00'"
+      },
+      "coverage": "all pages 1-4, visually inspected; enlarged regions inspected where handwriting is dense",
+      "original_standalone_image_files_supplied": false
+    },
+    {
+      "key": "geometry",
+      "supplied_path": "C:\\Users\\Hongrui_Liu\\Downloads\\Bias variance tradeoff geometric view.pdf",
+      "archived_path": "raw/notes/2026-11-01-Bias-variance-tradeoff-geometric-view.pdf",
+      "bytes": 1278734,
+      "sha256": "9d98c55a0edc9ae3197b748fd407e879512e13612609c2fe5e4a5390c61d2657",
+      "page_count": 2,
+      "source_type": "handwritten notes exported as PDF; not a conversation transcript",
+      "source_date": "not stated on handwritten pages",
+      "pdf_metadata": {
+        "/Producer": "iOS Version 18.7.3 (Build 22H217) Quartz PDFContext",
+        "/CreationDate": "D:20261101230314Z00'00'",
+        "/ModDate": "D:20261101230314Z00'00'"
+      },
+      "coverage": "all pages 1-2, visually inspected; enlarged regions inspected where handwriting is dense",
+      "original_standalone_image_files_supplied": false
+    }
+  ],
+  "verification": {
+    "projection_ranks": {
+      "null": 1,
+      "added": 1,
+      "residual": 1
+    },
+    "synthetic_slope_example": {
+      "x": [
+        1,
+        2,
+        3
+      ],
+      "y": [
+        1,
+        2,
+        2
+      ],
+      "beta": [
+        "2/3",
+        "1/2"
+      ],
+      "Sxx": "2",
+      "RSS_full": "1/6",
+      "RSS_reduced": "2/3",
+      "F_equals_t_squared": "3",
+      "p_value": 0.3333333333333333
+    },
+    "F_1_1_95pct": 161.44763879758827,
+    "t_1_97_5pct": 12.706204736432095,
+    "bias_variance_synthetic": {
+      "squared_bias": "1",
+      "variance": "1",
+      "noise_variance": "4",
+      "risk": "6"
+    },
+    "verification": "Analytic proofs in wiki plus exact rational projector, orthogonality, scalar-risk, and counterexample checks; numerical F/t quantile and p-value comparisons."
+  },
+  "exclusions": [
+    "Earlier unrelated Acrobat welcome PDF",
+    "Previous completed vault sources except contextual links",
+    "Unseen linked-chat turns and attachments"
+  ],
+  "archiving": "PDFs copied byte-for-byte; page renderings used for inspection are temporary and not mislabeled as original screenshots."
+}

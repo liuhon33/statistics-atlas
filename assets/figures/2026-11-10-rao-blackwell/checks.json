@@ -1,0 +1,7 @@
+{
+  "conditional_means": "Exact rational checks for all four heads counts passed",
+  "mean_and_variance": "Exact rational checks for p=0, 0.05, ..., 1 passed",
+  "old_variance": "p*(1-p)",
+  "new_variance": "p*(1-p)/3",
+  "scope": "Finite enumeration verifies this example, not a proof of the general theorem"
+}

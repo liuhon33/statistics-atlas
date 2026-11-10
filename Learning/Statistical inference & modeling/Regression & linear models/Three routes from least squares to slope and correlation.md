@@ -10,7 +10,7 @@ note_types: [derivation, question, insight]
 question_roles: [reconcile-approaches, special-to-general, cross-topic-connection]
 source_format: supplied-summary-and-handwriting
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 status: active
 verification: checked
 learning_state: practicing
@@ -20,6 +20,7 @@ connections:
   - "[[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Orthogonal projection]]"
   - "[[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Normal equations and OLS]]"
   - "[[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/One-restriction F equals t squared]]"
+  - "[[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared]]"
 sources:
   - "[[raw/notes/2026-11-02-Regression-Geometry-OLS-Correlation-t-and-F]]"
   - "[[raw/assets/2026-11-02-my-handdrawn-regression-geometry.png]]"
@@ -250,6 +251,8 @@ $$
 F=\frac{\mathrm{ESS}/1}{\mathrm{RSS}/(n-2)}=t^2.
 $$
 
+This is just [[Why one restriction gives F equals t squared]]. And notice that F is the ratio of projection (difference in fit) squared over the perpendicular squared, which geometrically is exactly cotangent squared.
+
 If the fitted centered vector is nonzero, its acute angle with $y_c$ gives this unsigned length ratio. When the fitted vector is zero, the ratio is zero even though an angle involving that zero vector is undefined.
 
 For exact inference, additionally assume fixed nonconstant $x$ and the model $Y_i=\beta_0+\beta_1x_i+\varepsilon_i$, with independent $\varepsilon_i\sim\mathcal N(0,\sigma^2)$ and $\sigma^2>0$. Under $H_0:\beta_1=0$, $t\sim t_{n-2}$ and $F\sim F_{1,n-2}$. A two-sided level-$\alpha$ test, $0<\alpha<1$, rejects when
@@ -277,8 +280,11 @@ The algebra, dimensions, rank conditions, centering, signs, and inference assump
 - [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Normal equations and OLS|Normal equations and OLS]] — The vector gradient combines the component derivatives and extends the one-predictor identity to the coupled multiple-regression system.
 - [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/Regression uncertainty/One-restriction F equals t squared|One-restriction F equals t squared]] — The same fit/residual triangle yields the signed t statistic and the squared-length F comparison for the matching restriction.
 
+- [[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared|Why one restriction gives F equals t squared]] — Expands the fit/residual triangle into a constrained-SSE proof, distinguishing one restriction from one predictor.
+
 ## Origin
 
-This note consolidates the already-digested 2026-11-02 [[raw/notes/2026-11-02-Regression-Geometry-OLS-Correlation-t-and-F|supplied summary]] and my original drawing. Its focus is §§1–3, the multiple-predictor extension, and selected §§4–6/§9 qualifications. The [[raw/notes/2026-11-02-regression-slope-derivations-manifest.json|original manifest]] preserves the exact focus request, hashes, and earlier coverage.
-
-I supplied the summary and identified the drawing as mine. The expanded sum proof, diagonal Gram-matrix presentation, standardized multiple-regression system, counterexample, and precise sign/assumption corrections include earlier assistant contributions. The summary is not a verbatim transcript; its complete authorship and described underlying chat turns are not established. The earlier CI/Cauchy/L2 source material remains outside this focused migration, and its source-authored recall prompts are not recorded as questions I asked.
+> [!info]- Source details
+> This note consolidates the already-digested 2026-11-02 [[raw/notes/2026-11-02-Regression-Geometry-OLS-Correlation-t-and-F|supplied summary]] and my original drawing. Its focus is §§1–3, the multiple-predictor extension, and selected §§4–6/§9 qualifications. The [[raw/notes/2026-11-02-regression-slope-derivations-manifest.json|original manifest]] preserves the exact focus request, hashes, and earlier coverage.
+>
+> I supplied the summary and identified the drawing as mine. The expanded sum proof, diagonal Gram-matrix presentation, standardized multiple-regression system, counterexample, and precise sign/assumption corrections include earlier assistant contributions. The summary is not a verbatim transcript; its complete authorship and described underlying chat turns are not established. The earlier CI/Cauchy/L2 source material remains outside this focused migration, and its source-authored recall prompts are not recorded as questions I asked.

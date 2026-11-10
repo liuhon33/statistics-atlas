@@ -1,0 +1,71 @@
+{
+  "seed": 20261110,
+  "simulation": {
+    "6": {
+      "replicates": 150000,
+      "mean": 5.006706666666667,
+      "variance": 8.306248353955556,
+      "null_rejection_rate_at_11_0705": 0.058826666666666666,
+      "max_cdf_error_on_plot_grid": 0.20318961408860048
+    },
+    "60": {
+      "replicates": 150000,
+      "mean": 5.004922666666666,
+      "variance": 9.826910167352889,
+      "null_rejection_rate_at_11_0705": 0.04737333333333334,
+      "max_cdf_error_on_plot_grid": 0.02268895166318191
+    },
+    "600": {
+      "replicates": 150000,
+      "mean": 5.0241564,
+      "variance": 10.107824817672373,
+      "null_rejection_rate_at_11_0705": 0.05176,
+      "max_cdf_error_on_plot_grid": 0.004660889060206896
+    }
+  },
+  "quadrature_moments": {
+    "1": {
+      "mass": 0.9999999920211542,
+      "mean": 0.9999999999999996,
+      "second_moment": 2.9999999999999987
+    },
+    "2": {
+      "mass": 0.9999999996,
+      "mean": 2.0,
+      "second_moment": 8.0
+    },
+    "5": {
+      "mass": 0.9999999999999994,
+      "mean": 4.999999999999997,
+      "second_moment": 34.99999999999998
+    },
+    "10": {
+      "mass": 1.0000000000000009,
+      "mean": 10.000000000000007,
+      "second_moment": 120.00000000000009
+    },
+    "30": {
+      "mass": 0.9999999999999986,
+      "mean": 29.999999999999957,
+      "second_moment": 959.9999999999986
+    }
+  },
+  "projection_rank": 5,
+  "projection_eigenvalues": [
+    -3.885780586188048e-16,
+    0.9999999999999992,
+    0.9999999999999997,
+    0.9999999999999999,
+    1.0,
+    1.0
+  ],
+  "orthonormal_basis_max_error": 2.220446049250313e-16,
+  "example_squared_length": 15.999999999999998,
+  "rotated_squared_length": 15.999999999999998,
+  "convolution_absolute_errors": [
+    2.8033417025230545e-07,
+    1.830622750609301e-09,
+    1.3877787807814457e-17
+  ],
+  "scope": "Deterministic arithmetic/quadrature and seeded Monte Carlo illustration, not proof or exact finite-sample calibration."
+}

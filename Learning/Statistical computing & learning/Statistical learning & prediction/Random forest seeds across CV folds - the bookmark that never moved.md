@@ -4,18 +4,30 @@ title: Random forest seeds across CV folds - the bookmark that never moved
 layer: learning
 primary_home: "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Trees & ensembles/Random forests]]"
 subject: computing
-backbone_path: "Statistical computing & learning → Statistical learning & prediction → Supervised learning methods → Trees & ensembles → Random forests"
+backbone_path: Statistical computing & learning → Statistical learning & prediction → Supervised learning methods → Trees & ensembles → Random forests
 study_band: U–M
-note_types: [insight, question]
-question_roles: [surprising-result, mechanism]
+note_types:
+  - insight
+  - question
+question_roles:
+  - surprising-result
+  - mechanism
 source_format: article
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 status: active
 verification: checked
 learning_state: unknown
-aliases: [When the docs get randomness wrong, random_state in cross-validation, RandomState instances and clone]
-tags: [atlas/learning, subject/computing, topic/random-forests, topic/cross-validation, tool/scikit-learn]
+aliases:
+  - When the docs get randomness wrong
+  - random_state in cross-validation
+  - RandomState instances and clone
+tags:
+  - atlas/learning
+  - subject/computing
+  - topic/random-forests
+  - topic/cross-validation
+  - tool/scikit-learn
 connections:
   - "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Cross-validation]]"
   - "[[Backbone/Statistical computing & learning/Programming, data & visualization/Statistical programming/Reliable computation/Random seeds and RNG streams]]"
@@ -134,6 +146,8 @@ $$
 \operatorname{Var}(S)=\mathbb E\big[\operatorname{Var}(S\mid G)\big]+\operatorname{Var}\big(\mathbb E[S\mid G]\big).
 $$
 
+Compare the [[Learning/Statistical inference & modeling/Nonparametric & robust inference/Bootstrap mean - two layers of randomness#2. Let the original data vary: my total-variance derivation|bootstrap's within- and between-dataset variance split]], where the conditioning variable is the dataset rather than the forest seed.
+
 A fixed-seed run sees only the conditional part, $\operatorname{Var}(S\mid G=g)$ for its one seed $g$, and none of the second term. The docs themselves note that a constant RNG across folds "isn't inherently wrong". The real problem is reading a fixed-seed spread as robustness to the forest's randomness.
 
 ## Connections
@@ -144,6 +158,7 @@ A fixed-seed run sees only the conditional part, $\operatorname{Var}(S\mid G=g)$
 
 ## Origin
 
-My blog post "When the docs get randomness wrong", published at <https://liuhon33.github.io/blog/random-state/> (first commit 2026-11-04) and archived as [[raw/articles/2026-11-04-random-state-blog-post.html|the original page]] with its [[raw/assets/2026-11-04-random-state-I01-sklearn-docs-estimators-section.png|docs screenshot]]. The two-seed critique, the book-and-bookmark analogy, the quiz, all four code snippets, the printed output, the `clone()`/`deepcopy()` diagnosis and the direct-fit fix are mine.
-
-Added by Claude while checking against scikit-learn 1.8.0 (source and a run on `make_classification(random_state=0)`): the call chain with the forest's seed drawing, the origin of `209652396`, the `RandomState(0)` ≡ `0` equivalence and table, the contradiction in the "Cloning" section, the per-tree note in §1, the reproducibility boundary and per-fold seed alternative in §4, and all of §5. The current docs page (1.9.1) still carries both passages; only 1.8.0's code was checked.
+> [!info]- Source details
+> My blog post "When the docs get randomness wrong", published at <https://liuhon33.github.io/blog/random-state/> (first commit 2026-11-04) and archived as [[raw/articles/2026-11-04-random-state-blog-post.html|the original page]] with its [[raw/assets/2026-11-04-random-state-I01-sklearn-docs-estimators-section.png|docs screenshot]]. The two-seed critique, the book-and-bookmark analogy, the quiz, all four code snippets, the printed output, the `clone()`/`deepcopy()` diagnosis and the direct-fit fix are mine.
+>
+> Added by Claude while checking against scikit-learn 1.8.0 (source and a run on `make_classification(random_state=0)`): the call chain with the forest's seed drawing, the origin of `209652396`, the `RandomState(0)` ≡ `0` equivalence and table, the contradiction in the "Cloning" section, the per-tree note in §1, the reproducibility boundary and per-fold seed alternative in §4, and all of §5. The current docs page (1.9.1) still carries both passages; only 1.8.0's code was checked.

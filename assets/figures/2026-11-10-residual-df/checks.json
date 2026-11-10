@@ -1,0 +1,39 @@
+{
+  "height_cm": [
+    150,
+    160,
+    170,
+    180,
+    190
+  ],
+  "weight_kg": [
+    47,
+    49,
+    60,
+    65,
+    79
+  ],
+  "fitted_kg": [
+    44.0,
+    52.0,
+    60.0,
+    68.0,
+    76.0
+  ],
+  "residuals_kg": [
+    3.0,
+    -3.0,
+    0.0,
+    -3.0,
+    3.0
+  ],
+  "slope_kg_per_cm": 0.8,
+  "residual_sum": 0.0,
+  "height_weighted_residual_sum": 0.0,
+  "rss_kg2": 36.0,
+  "residual_df": 3,
+  "variance_kg2": 12.0,
+  "residual_sd_kg": 3.4641016151377544,
+  "assertions": "passed",
+  "scope": "Exact checks of this constructed example, not a proof of general unbiasedness."
+}

@@ -1,0 +1,69 @@
+---
+type: question
+created: 2026-11-01
+updated: 2026-11-08
+status: answered
+verification: checked
+learning_state: practicing
+tags: [question, regression, p-value, confidence-interval]
+aliases: [Confidence intervals as inverted tests]
+sources:
+  - "[[wiki/sources/Regression CI p values and F statistics notes - 2026-11-01]]"
+prerequisites:
+  - "[[wiki/concepts/Parameters estimators and sampling distributions]]"
+  - "[[wiki/equations/Classical regression t inference]]"
+related:
+  - "[[wiki/equations/Nested regression F test]]"
+  - "[[wiki/derivations/Slope confidence intervals by inverting an F test]]"
+  - "[[wiki/synthesis/Regression inference through projection geometry]]"
+---
+
+# How are regression tests, p values, and confidence intervals connected?
+
+## Your question and insight
+
+**Paraphrase of the handwritten question pair:** For a hypothesis test, are the observed data too far from the model constrained to a candidate slope $b$? For a confidence interval, which values of $b$ give a model close enough to the data?
+
+Source: [[wiki/sources/Regression CI p values and F statistics notes - 2026-11-01|p. 2, blue annotations at the left]]. The title combines that question pair with the p. 3 follow-up about the probability, under the null, of results as extreme as the observed data. The wording above is a labeled paraphrase, not a recovered chat quote. The [[wiki/synthesis/Regression inference through projection geometry|main synthesis]] places it in the geometric argument.
+
+Your p. 3 description of a confidence interval as the collection of null values the data would not reject is the key insight. It explains why tests and intervals give matching decisions when they use the same model, statistic, confidence/significance level, and sidedness.
+
+## The earlier pieces
+
+[[wiki/concepts/Parameters estimators and sampling distributions|The parameter is fixed; the estimator and interval vary across samples]]. A null hypothesis supplies one candidate parameter value for calculating a sampling distribution. [[wiki/equations/Classical regression t inference|The t pivot]] measures coefficient departure from that candidate in estimated-standard-error units. The null model supplies the reference law; the observed data supply the observed statistic.
+
+## A p-value asks about hypothetical data under the null
+
+For a prespecified coefficient $j$, let $b$ be its candidate null value, $\widehat{\operatorname{SE}}_j$ its estimated standard error, and $\nu=n-p$ the residual degrees of freedom. Under the classical Gaussian assumptions,
+$$t_{\rm obs}(b)=\frac{\widehat\beta_j-b}{\widehat{\operatorname{SE}}_j},\qquad
+p_{\rm val}(b)=P\{|T_\nu|\ge|t_{\rm obs}(b)|\}
+=2\{1-F_{t_\nu}(|t_{\rm obs}(b)|)\}.$$
+Here $T_\nu$ is a hypothetical null statistic and $F_{t_\nu}$ its CDF. The two tails implement “at least as extreme” for this two-sided test. The p-value is not $P(H_0\mid y)$, the probability that the observed data themselves occur exactly, or the probability that the result arose “by chance.” A large p-value also does not establish that the null is true.
+
+The notes' p. 3 tail-probability formulation is retained. Nearby informal wording suggesting a probability that the null is true is replaced by the conditional-on-the-null interpretation above.
+
+## A confidence interval inverts all of those tests
+
+Using the convention “reject when $p_{\rm val}<\alpha$,” the matching interval is
+$$\mathcal C_{1-\alpha}(y)=\{b:p_{\rm val}(b)\ge\alpha\}.$$
+Thus $b$ lies outside the interval exactly when the corresponding two-sided test rejects it. At the boundary, equality gives an interval endpoint; the convention is explicit. With continuous statistics this boundary has probability zero under the model.
+
+In particular, for $b=0$ and $\alpha=0.05$:
+
+| Result | Matching statement |
+| --- | --- |
+| $p_{\rm val}<0.05$ | Zero is outside the 95% interval; reject $\beta_j=0$. |
+| $p_{\rm val}>0.05$ | Zero is inside the interval; do not reject $\beta_j=0$. |
+| $p_{\rm val}=0.05$ | Zero is an endpoint under the stated convention. |
+
+[[wiki/derivations/Slope confidence intervals by inverting an F test|Your derivation]] constructs this set geometrically. [[wiki/equations/Nested regression F test|The identity $F=T^2$]] explains why the same set emerges from the upper-tail F test for one restriction. A one-sided test, a different covariance estimate, or a simultaneous confidence procedure need not match the ordinary two-sided interval.
+
+## What 95 percent describes
+
+Before observing the random response vector $Y$, the interval $\mathcal C_{0.95}(Y)$ has probability 0.95 of covering the fixed true coefficient, under its assumptions. After observing $y$, its endpoints are fixed. Frequentist coverage does not assign posterior probability 0.95 to the event that this fixed coefficient lies in that particular observed interval. This preserves the explicit distinction written at the lower right of p. 3.
+
+“Plausible parameter values” is a useful interpretation of non-rejection under the chosen model and test. It is not a probability distribution over the values in the interval. Effect magnitude, practical importance, and model adequacy require more than the significance decision.
+
+## Resolution and verification
+
+Answered for the prespecified classical Gaussian regression procedures. Checked the two-tailed probability, inequality inversion, endpoint convention, coverage event, and one-restriction F/t equivalence. The canonical equations and geometric proof are linked above; all substantive follow-ups from the notes are consolidated here.

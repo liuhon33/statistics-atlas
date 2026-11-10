@@ -4,18 +4,28 @@ title: Bootstrap mean - two layers of randomness
 layer: learning
 primary_home: "[[Backbone/Statistical inference & modeling/Nonparametric & robust inference/Resampling inference/Bootstrap & jackknife/Conditional versus unconditional bootstrap variation]]"
 subject: statistics
-backbone_path: "Statistical inference & modeling → Nonparametric & robust inference → Resampling inference → Bootstrap & jackknife → Conditional versus unconditional bootstrap variation"
+backbone_path: Statistical inference & modeling → Nonparametric & robust inference → Resampling inference → Bootstrap & jackknife → Conditional versus unconditional bootstrap variation
 study_band: U–M
-note_types: [practice, derivation, question]
-question_roles: [concept-distinction, assumption-boundary]
+note_types:
+  - practice
+  - derivation
+  - question
+question_roles:
+  - concept-distinction
+  - assumption-boundary
 source_format: conversation-pdf
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 status: active
 verification: checked
 learning_state: practicing
-aliases: [Conditional and unconditional bootstrap mean moments]
-tags: [atlas/learning, subject/statistics, topic/bootstrap, study/undergraduate-masters]
+aliases:
+  - Conditional and unconditional bootstrap mean moments
+tags:
+  - atlas/learning
+  - subject/statistics
+  - topic/bootstrap
+  - study/undergraduate-masters
 connections:
   - "[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Total variance]]"
   - "[[Backbone/Probability & mathematical foundations/Probability foundations/Probability models/Conditional probability/Conditional independence]]"
@@ -120,6 +130,8 @@ $$
 
 The second term is essential: different original datasets have different sample means. These conditioning laws are reviewed in [ProbabilityCourse §5.1.5](https://www.probabilitycourse.com/chapter5/5_1_5_conditional_expectation.php).
 
+The same conditioning distinction appears when [[Learning/Statistical computing & learning/Statistical learning & prediction/Random forest seeds across CV folds - the bookmark that never moved#5. What the fold-to-fold spread measures|a fixed forest seed hides one source of variability]].
+
 ## 3. A second explanation: conditional independence disappears after averaging
 
 For two distinct resampling positions $j\ne k$ with $n\geq2$, conditional independence implies
@@ -193,6 +205,7 @@ At $n=1$, every bootstrap draw equals the single observed value: conditional var
 
 ## Origin
 
-This note consolidates my exercise-5 discussion in [[raw/conversations/2026-10-18-Estimating-Interval-Probability.pdf|the archived conversation]], pp. 6–10, together with the original exercise screenshot and supplemental handwritten solution. The page-8 question is paraphrased to retain its mathematical issue. The earlier interval-probability exercise on pp. 1–5 is outside this note. The [[raw/conversations/2026-10-18-Estimating-Interval-Probability-manifest.json|original capture manifest]] records the full source bundle; images 1–2 belong to that earlier exercise.
-
-The total-variance calculation and final coefficient are in my handwriting. The resampling explanation, explicit assumptions, and covariance proof include earlier assistant explanations. The centered-error identity and binary illustration are added synthesis for this consolidation. The two original images are preserved unchanged; cropped peripheral handwriting is not reconstructed.
+> [!info]- Source details
+> This note consolidates my exercise-5 discussion in [[raw/conversations/2026-10-18-Estimating-Interval-Probability.pdf|the archived conversation]], pp. 6–10, together with the original exercise screenshot and supplemental handwritten solution. The page-8 question is paraphrased to retain its mathematical issue. The earlier interval-probability exercise on pp. 1–5 is outside this note. The [[raw/conversations/2026-10-18-Estimating-Interval-Probability-manifest.json|original capture manifest]] records the full source bundle; images 1–2 belong to that earlier exercise.
+>
+> The total-variance calculation and final coefficient are in my handwriting. The resampling explanation, explicit assumptions, and covariance proof include earlier assistant explanations. The centered-error identity and binary illustration are added synthesis for this consolidation. The two original images are preserved unchanged; cropped peripheral handwriting is not reconstructed.

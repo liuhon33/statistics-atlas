@@ -159,6 +159,8 @@ $$
 
 The first term follows the changing sample value; the second is the explicit parameter dependence of $f$. The distribution-change contribution has not been discarded: in this representation it is accounted for through $g_\psi$.
 
+This is the gradient issue behind optimizing the [[Learning/Statistical computing & learning/Simulation & approximate inference/My four approaches to the ELBO#3. Likelihood and prior: expose data fit and regularization|ELBO's expected data-fit term]].
+
 **Correction to the handwritten chain-rule line:** the scale derivative must be $\sigma'(\psi)\varepsilon$, not just $\sigma'(\psi)$. The original remains unchanged. Also, $\partial_\varepsilon g_\psi$ is the Jacobian used in substitution, whereas $\partial_\psi g_\psi$ is the derivative used for optimization; they are different operations.
 
 ## 4. Toy example: a zero partial derivative does not imply a zero gradient
@@ -202,6 +204,7 @@ Both representations recover the gradient; only the naive fixed-sample partial d
 
 ## Origin
 
-Digested from my three supplied handwritten screenshots, in order. All originals are preserved byte-for-byte and embedded beside their corresponding reasoning. Non-handwritten slide text and equations were deliberately ignored. The notation is standardized to $p_\psi$ for the parameter-dependent density, $r$ for the fixed noise density, and $g_\psi$ for the transformation; the screenshots alternate density symbols.
-
-The missing-term argument, change of variables, normal substitution and toy example are my handwritten work. Codex added the regularity/support qualifications, the distinction between the two derivatives of $g$, the explicit chain-rule correction, and the final density-term check. Verification covers these equations under the stated assumptions, not any unseen lecture or source chat.
+> [!info]- Source details
+> Digested from my three supplied handwritten screenshots, in order. All originals are preserved byte-for-byte and embedded beside their corresponding reasoning. Non-handwritten slide text and equations were deliberately ignored. The notation is standardized to $p_\psi$ for the parameter-dependent density, $r$ for the fixed noise density, and $g_\psi$ for the transformation; the screenshots alternate density symbols.
+>
+> The missing-term argument, change of variables, normal substitution and toy example are my handwritten work. Codex added the regularity/support qualifications, the distinction between the two derivatives of $g$, the explicit chain-rule correction, and the final density-term check. Verification covers these equations under the stated assumptions, not any unseen lecture or source chat.

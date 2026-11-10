@@ -4,17 +4,25 @@ title: Bias–variance decomposition as Pythagoras in L2
 layer: learning
 primary_home: "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Bias–variance tradeoff]]"
 subject: computing
-backbone_path: "Statistical computing & learning → Statistical learning & prediction → Learning objectives & evaluation → Risk, fit & generalization → Bias–variance tradeoff"
+backbone_path: Statistical computing & learning → Statistical learning & prediction → Learning objectives & evaluation → Risk, fit & generalization → Bias–variance tradeoff
 study_band: U–M
-note_types: [derivation, insight]
+note_types:
+  - derivation
+  - insight
 source_format: handwriting
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-09
 status: active
 verification: checked
 learning_state: unknown
-aliases: [Bias–variance decomposition in L2, Pythagorean bias–variance decomposition, MSE as squared distance in L2]
-tags: [atlas/learning, subject/computing, topic/bias-variance]
+aliases:
+  - Bias–variance decomposition in L2
+  - Pythagorean bias–variance decomposition
+  - MSE as squared distance in L2
+tags:
+  - atlas/learning
+  - subject/computing
+  - topic/bias-variance
 connections:
   - "[[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Mean squared error]]"
   - "[[Learning/Probability & mathematical foundations/Joint variation & conditioning/Conditional expectation as orthogonal projection in L2]]"
@@ -118,7 +126,7 @@ which is the standard decomposition (ISL §2.2.2; ESL §7.3).
 
 **Reading the diagram.** $f(x)$ and $\mathbb E_D\hat f$ are points on the axis $\mathbf 1$, a distance $|\mathrm{Bias}|$ apart. $\hat f(x;D)$ lies in the plane $\mathcal H_D$; its foot on the axis is $\mathbb E_D\hat f$, at distance $\sqrt{\mathrm{Var}}$. That is the first right angle. $Y$ sits above the plane over $f(x)$, at height $\|\varepsilon\|=\sigma$. That is the second right angle. The dashed line from $\hat f$ to $Y$ has length $\sqrt{\mathrm{MSE}}$.
 
-**Why σ² is irreducible** (added). Because $Y-f(x)=\varepsilon\perp\mathcal H_D$, the constant $f(x)$ is the orthogonal projection of $Y$ onto $\mathcal H_D$, that is, $\mathbb E[Y\mid D]=f(x)$. Every predictor $g(D)$ built from the training data therefore satisfies $\|Y-g(D)\|^2=\sigma^2+\|f(x)-g(D)\|^2\ge\sigma^2$. Bias and variance are the two legs inside the plane, which a better estimator can shorten. The noise leg is perpendicular to the plane, so no estimator can shorten it. The tradeoff is between the two in-plane legs: a more flexible estimator typically moves $\mathbb E_D\hat f$ closer to $f(x)$ but spreads $\hat f$ further from it.
+**Why σ² is irreducible** (added). Because $Y-f(x)=\varepsilon\perp\mathcal H_D$, the constant $f(x)$ is the [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Conditional expectation as orthogonal projection in L2#Orthogonality characterizes the conditional expectation|orthogonal projection]] of $Y$ onto $\mathcal H_D$, that is, $\mathbb E[Y\mid D]=f(x)$. Every predictor $g(D)$ built from the training data therefore satisfies $\|Y-g(D)\|^2=\sigma^2+\|f(x)-g(D)\|^2\ge\sigma^2$. Bias and variance are the two legs inside the plane, which a better estimator can shorten. The noise leg is perpendicular to the plane, so no estimator can shorten it. The tradeoff is between the two in-plane legs: a more flexible estimator typically moves $\mathbb E_D\hat f$ closer to $f(x)$ but spreads $\hat f$ further from it.
 
 ## 3. The algebraic proof is the same argument with the cross term written out
 
@@ -154,6 +162,7 @@ The two decompositions therefore differ by one dimension. The estimation MSE, $\
 
 ## Origin
 
-My handwritten page, 2026-11-08: the model and my definitions with the bias calculation, the three-piece split with its orthogonality labels, the $L^2$ diagram, random variables as vectors, the $L^2$ inner product, norm and distance, the Pythagoras lemma, the covariance note, and the formal estimator MSE proof up to the cross term.
-
-Corrections by Claude: the cross-term factor and the missing last step, the two meanings of ⊥, the precise orthogonal-versus-uncorrelated statement, "expected" for "estimated", and the bias sign convention. Added by Claude: the closure and Hilbert-space remarks, the explicit orthogonality checks, the projection argument for the irreducible error, and the one-extra-dimension link between the two proofs.
+> [!info]- Source details
+> My handwritten page, 2026-11-08: the model and my definitions with the bias calculation, the three-piece split with its orthogonality labels, the $L^2$ diagram, random variables as vectors, the $L^2$ inner product, norm and distance, the Pythagoras lemma, the covariance note, and the formal estimator MSE proof up to the cross term.
+>
+> Corrections by Claude: the cross-term factor and the missing last step, the two meanings of ⊥, the precise orthogonal-versus-uncorrelated statement, "expected" for "estimated", and the bias sign convention. Added by Claude: the closure and Hilbert-space remarks, the explicit orthogonality checks, the projection argument for the irreducible error, and the one-extra-dimension link between the two proofs.

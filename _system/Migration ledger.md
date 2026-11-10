@@ -19,7 +19,7 @@ The user explicitly authorized multiple subagents to start migrating leftover di
 | Subagent | Approved note in Obsidian | Primary home |
 | --- | --- | --- |
 | `ols_slope` | [[Learning/Statistical inference & modeling/Regression & linear models/Three routes from least squares to slope and correlation\|Three routes from least squares to slope and correlation]] | [[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Simple slope and correlation\|Simple slope and correlation]] |
-| `density_slices` | [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Density slices, independence, and rotational invariance\|Density slices, independence, and rotational invariance]] | [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Conditional density\|Conditional density]] |
+| `density_slices` | [[Proof of Gaussian's sample mean and variance are independent + rotational invariance\|Density slices, independence, and rotational invariance]] | [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Conditional density\|Conditional density]] |
 | `probability_regions` | [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Why half the square need not mean half the probability\|Why half the square need not mean half the probability]] | [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Joint CDF and density\|Joint CDF and density]] |
 
 Each note is committed separately with its source/figure additions and corresponding record entries. The user’s latest approval covers all three reviewed notes. [[Learning/Statistical inference & modeling/Nonparametric & robust inference/Bootstrap mean - two layers of randomness|The bootstrap exercise]] was approved and committed separately in referenced chat 01a1ba3b-79ee-7411-844f-f9725f9a364e and is excluded from this batch; its mapping and source bounds remain in [[_system/Digest Checkpoints]].
@@ -111,3 +111,9 @@ Each subagent checked its mathematics and inspected the relevant originals; the 
 ## Coverage audit — 2026-11-09
 
 [[_system/Migration coverage audit - 2026-11-09|The current old-to-new coverage audit]] identifies the remaining source groups, partial migrations, missing original files and concept diagrams, and separate visualization projects. It records gaps only; no source coverage or approval status is advanced.
+
+## [2026-11-10] CI/p-value relationship — draft companion
+
+[[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Confidence intervals and p-values - the same test viewed two ways]] consolidates the old `wiki/questions/How are regression tests p values and confidence intervals connected.md` and the CI/coverage portions of the slope-inversion derivation and regression synthesis. The earlier F/t note retains the full constrained-fit proof; this companion develops candidate-specific p-values, matching endpoints, coverage and sidedness. The four-page original, four legacy text records and original manifest are preserved byte-for-byte; pp. 2–3 are rendered and embedded. Hashes and exact scope are in [[_system/Digest Checkpoints]]. R-004 remains open. Status: draft, not committed; this does not supersede unrelated coverage gaps or the historical audit snapshot.
+
+**Approved 2026-11-10:** the user's vault-wide note approval finalizes this companion, its slice-length extension and the associated learning-note connections. Status is now active; original-source coverage and R-004 are unchanged.

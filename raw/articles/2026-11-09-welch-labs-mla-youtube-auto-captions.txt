@@ -1,0 +1,486 @@
+YouTube transcript
+Video ID: 0VLAoVGf_74
+Language: en
+Captions: auto-generated
+
+[0:00] this video is sponsored by kiwo more on
+[0:02] them later in January 2025 the Chinese
+[0:06] company deep seek shocked the world with
+[0:08] the release of R1 a highly competitive
+[0:10] language model that requires only a
+[0:12] fraction of the compute of other leading
+[0:14] models perhaps even more shocking is
+[0:17] that unlike most of its American
+[0:18] counterparts deeps has publicly released
+[0:21] the R1 model weights inference code and
+[0:23] extensive technical reports publishing
+[0:26] an average of one report per month in
+[0:28] 2024 and detailing any of the
+[0:30] innovations that dramatically culminated
+[0:32] in the release of R1 in early
+[0:35] 2025 back in June of 2024 the Deep seek
+[0:38] team introduced a technique that they
+[0:39] call multi-head latent attention unlike
+[0:42] many deep- seek innovations that occur
+[0:43] at the margins of the stack multi-ad
+[0:46] latent detention strikes at the core of
+[0:48] the Transformer itself this is the
+[0:50] compute architecture that virtually all
+[0:52] large language models share this
+[0:54] modification reduces the size of an
+[0:56] important bottleneck called the key
+[0:58] value cache by a factor of 57 allowing
+[1:02] the model to generate text more than six
+[1:04] times faster than a traditional
+[1:05] Transformer in deep seeks implementation
+[1:08] but how exactly was the Deep seek team
+[1:10] able to squeeze such a significant
+[1:11] Improvement out of such a broadly used
+[1:14] architecture like other modern language
+[1:16] models when you give deep seek a prompt
+[1:19] the model generates its response onew
+[1:21] fragment known as a token at a time
+[1:24] mathematically this autor regressive
+[1:25] approach means that each new token the
+[1:27] model generates is a function of all the
+[1:29] tokens that came before it the
+[1:32] interactions between tokens and large
+[1:34] language models are handled by a
+[1:35] mechanism called attention attention
+[1:37] works by Computing matrices called
+[1:39] attention patterns these are the 144
+[1:42] attention patterns computed by the gpt2
+[1:44] small model when given the example input
+[1:46] text the American flag is red white and
+[1:50] this model uses 12 separate attention
+[1:52] mechanisms called attention heads per
+[1:54] layer and has 12 layers making for 144
+[1:58] total attention patterns
+[2:00] deep seek R1 has 128 attention heads per
+[2:03] layer and 61 layers making for 7,808
+[2:07] total
+[2:08] patterns in both models the size of the
+[2:11] attention pattern is equal to the number
+[2:12] of tokens passed into the model our
+[2:15] example input the American flag is red
+[2:17] white and maps to nine tokens so all of
+[2:21] our attention patterns are 9 by9
+[2:23] matrices attention patterns are used by
+[2:26] attention heads to move information
+[2:27] between token positions in the models
+[2:29] residual stream for example this first
+[2:32] attention pattern in the third layer of
+[2:34] gpt2 has a high value mapping from the
+[2:37] input token of American to the output
+[2:39] token of flag meaning this attention
+[2:42] head is likely applying the modifier
+[2:44] American to the noun flag creating a
+[2:47] unified representation for the concept
+[2:49] American
+[2:51] flag this eighth attention pattern in
+[2:53] the 11th layer has high values mapping
+[2:56] the words flag red and white to the
+[2:58] output of the final token and and this
+[3:01] attention head has pulled out words in
+[3:02] our input that are relevant for
+[3:04] predicting the correct next token of
+[3:05] blue which this gp22 small model does
+[3:08] correctly
+[3:09] predict let's dig a bit deeper into
+[3:12] exactly how the standard detention
+[3:13] mechanism Works in models like gpt2 and
+[3:16] build up a few equations so we can make
+[3:18] sense of how the Deep seek team made
+[3:20] such a powerful
+[3:22] Improvement to compute a given an
+[3:24] attention pattern we take the input
+[3:26] Matrix X this could be the input to any
+[3:28] layer of our model and will have one row
+[3:31] for each input token and a number of
+[3:33] columns that corresponds to the
+[3:34] embedding dimension of the model this is
+[3:37] the length of the vector used to
+[3:38] represent each token gpt2 Small's
+[3:41] embedding Dimension is 768 and deeps
+[3:44] r1's embedding Dimension is
+[3:46] 7168 to compute a given attention
+[3:49] pattern we multiply our input Matrix X
+[3:52] by two separate sets of learned weights
+[3:54] WQ and WK in gpt2 these matrices are of
+[3:58] Dimension 768 by 64 and result in two
+[4:02] new matrices q and K each of Dimension 9
+[4:06] by
+[4:07] 64 the rows of our Q Matrix are known as
+[4:10] queries and the rows of our K Matrix are
+[4:12] known as Keys the core idea of attention
+[4:15] is that we now search for pairs of
+[4:17] tokens that have similar queries and
+[4:19] keys allowing the model to learn various
+[4:22] relationships between tokens for example
+[4:25] a token like flag it could query for
+[4:27] words that modify its meaning while
+[4:29] words like American can produce keys in
+[4:31] certain attention heads that flag them
+[4:33] as
+[4:34] modifiers this modifier query and
+[4:36] modifier key should produce similar key
+[4:39] and query
+[4:40] vectors mathematically to find similar
+[4:43] keys in queries we can take the dot
+[4:45] product of the keys and queries for each
+[4:47] possible pair of our nine tokens similar
+[4:50] keys and query vectors will generate
+[4:52] High Dot
+[4:53] products we can compute all these dot
+[4:56] products at once by transposing our key
+[4:58] Matrix and multiplying by our query
+[5:00] Matrix resulting in a new 9 by9 Matrix
+[5:03] where each entry corresponds to the
+[5:05] dotproduct of a single key in query to
+[5:08] compute our attention pattern we apply a
+[5:10] masking operation effectively zeroing
+[5:13] out the upper right portion of our
+[5:15] Matrix this step is mostly important in
+[5:18] training as it prevents the model from
+[5:20] cheating on its task of next token
+[5:21] prediction by just looking at the next
+[5:24] token finally we normalize our result by
+[5:27] dividing by the square root of our
+[5:28] embedding dimension and applying a soft
+[5:30] Max operation which forces each of the
+[5:33] rows of our Matrix to add to
+[5:35] one now that we've computed our
+[5:37] attention pattern we need to actually
+[5:39] use it to process our data this involves
+[5:42] a couple more Matrix multiplies we first
+[5:45] compute what's known as a value matrix
+[5:47] by multiplying our input by a third
+[5:49] weight Matrix
+[5:50] WV this computation is identical to the
+[5:53] way we computed our keys and query
+[5:54] matrices just with a different set of
+[5:57] learned
+[5:58] weights we then mult multiply our
+[6:00] attention pattern matrix by our value
+[6:02] Matrix this effectively takes a weighted
+[6:04] sum of our values following our
+[6:06] attention pattern one way to think about
+[6:09] this step is as processing our inputs
+[6:11] using a neural network where the weights
+[6:13] a are controlled by the data
+[6:16] itself finally the attention Block in
+[6:18] each layer has multiple heads each head
+[6:20] performs the same computations but with
+[6:22] different learned weights resulting in a
+[6:24] different set of queries Keys attention
+[6:27] patterns and values for each head the
+[6:29] the idea here is that various attention
+[6:31] heads can specialize in various tasks
+[6:34] like searching for adjectives or
+[6:35] searching for other instances of the
+[6:37] same token to compute the final output
+[6:40] of the attention block we stack the
+[6:42] results from each head together and
+[6:43] multiply by a final learned weight
+[6:45] Matrix wo giving us the final Matrix
+[6:48] output of our attention block the
+[6:51] attention block is a key part of modern
+[6:53] language models but requires a
+[6:55] significant amount of computation since
+[6:58] the height and width of our attention
+[6:59] and pattern are equal to the number of
+[7:01] input tokens the number of entries in
+[7:03] this Matrix scales as the number of
+[7:04] input tokens squared this is potentially
+[7:07] a huge computational problem for large
+[7:10] models open ai's chat GPT models now
+[7:13] offer maximum context lengths of over
+[7:15] 100,000 tokens for reference this is
+[7:18] about the length of the first Harry
+[7:20] Potter book so Computing each attention
+[7:22] pattern for chat gpt's maximum allowed
+[7:24] input size is equivalent to arranging
+[7:27] the entire text of the book as a single
+[7:29] row and column and then Computing dot
+[7:31] products for every possible pair of
+[7:33] tokens from the entire
+[7:35] text fortunately there's a huge
+[7:37] computational shortcut that we can
+[7:40] take as large language models generate
+[7:42] new text a single token at a time the
+[7:45] attention patterns themselves don't
+[7:47] actually change that much in our
+[7:49] American flag example let's say the
+[7:52] model generates a new token for the word
+[7:54] blue our phrase is now the American flag
+[7:56] is red white and blue to see what the
+[7:59] the model says next we now pass this new
+[8:01] 10 token input back into the model to
+[8:03] get the 11th token and so on our new 10
+[8:07] token input results in key query and
+[8:09] value matrices each of Dimension 10 by
+[8:12] 64 but importantly since our weight
+[8:14] matrices apply the same identical
+[8:16] operation to each token the first nine
+[8:18] rows of our key query and value matrices
+[8:20] are unchanged from our original nine
+[8:22] token input transposing our keys and
+[8:25] multiplying by our queries to compute
+[8:27] our new attention pattern note that the
+[8:29] first nine rows of Q and the first nine
+[8:32] Columns of K transpose are unchanged
+[8:35] this means that the upper left 9 by9
+[8:37] Matrix of our attention pattern will
+[8:38] also be unchanged and we only need to
+[8:41] compute a new Final row and column to
+[8:43] arrive at our new 10x10 attention
+[8:45] pattern and further since we mask out
+[8:48] the upper right corner of our attention
+[8:50] pattern we actually only need to compute
+[8:52] the new bottom row the bottom row of our
+[8:55] attention pattern results from
+[8:56] multiplying the final row of our query
+[8:58] matrix by each column of our transposed
+[9:00] key Matrix so to compute this final
+[9:03] attention pattern row we need to know
+[9:05] all of our keys but only the final new
+[9:08] row of our query Matrix since we already
+[9:11] computed nine out of 10 of our keys on
+[9:12] the previous call of the model it's much
+[9:15] more computationally efficient to store
+[9:17] these keys in memory and just access
+[9:19] them when the new 10 token input comes
+[9:21] along the same logic applies to our
+[9:23] value Matrix we need our full value
+[9:26] Matrix to compute our new outputs but
+[9:28] the first nine rows are unchanged so we
+[9:30] can just cach them in memory note that
+[9:32] there's no need to cach the queries
+[9:34] since we only need the new Final row of
+[9:36] our queries to update our attention
+[9:38] pattern this idea is called key value or
+[9:41] KV caching and is a critical part of
+[9:44] large language model
+[9:46] infrastructure instead of compute
+[9:47] growing quadratically as the square of
+[9:49] the number of input tokens key value
+[9:52] caching means that the compute required
+[9:53] by the model's attention blocks scales
+[9:55] linearly with the number of input tokens
+[9:58] now this comput shortcut does come at a
+[10:01] cost specifically increased memory
+[10:04] usage our system must now store the keys
+[10:06] and values for the full history of the
+[10:08] model session for all attention heads
+[10:10] across all layers in memory given a
+[10:13] model with L layers NH attention heads
+[10:16] per layer a dimension of DH for our key
+[10:18] and value matrices and in input tokens
+[10:22] we must store two * n * DH * NH * L
+[10:26] unique numbers in our KV cache assuming
+[10:29] assuming floating Point 16 numbers the
+[10:31] Deep seek R1 architecture and a context
+[10:33] length of 100,000 tokens we end up
+[10:36] needing to retrieve four megabytes per
+[10:38] token in the model's context window
+[10:40] resulting in a huge 400 gigabyt of
+[10:43] memory reads for each new token we
+[10:45] compute deep seek solution to this
+[10:48] problem is really clever and it was
+[10:50] great to be able to Tinker with their
+[10:51] inference code to really get my head
+[10:53] around it there's nothing quite like
+[10:55] Hands-On experimenting like this for
+[10:57] developing understanding which is why I
+[10:59] was more than happy to partner again
+[11:00] with this video sponsor kiwo kiwo offers
+[11:04] Hands-On project kits that make learning
+[11:06] genuinely fun for kids of all ages my
+[11:09] daughter is obsessed with colors and
+[11:10] rainbows right now and loves the color
+[11:13] Discovery crate these Spinners are such
+[11:15] a fun way for us to explore color mixing
+[11:18] together it's amazing to see how the
+[11:19] crates progress and build on each other
+[11:22] last year she was developing fine motor
+[11:24] skills as part of the panda club and now
+[11:26] in the Sprouts Club she's creating and
+[11:28] experimenting when she turns six in a
+[11:30] few years she can join the Kiwi Co Labs
+[11:32] Club where she'll get to work on more
+[11:34] complex science and engineering projects
+[11:36] like this remote controlled car I would
+[11:39] have absolutely loved this crate as a
+[11:41] kid my son is working on learning the
+[11:43] names of colors so far everything is
+[11:45] blue this Block Puzzle is such a fun
+[11:48] interactive way for him to explore
+[11:50] different colors at his age when my kids
+[11:52] quickly get bored of or break many of
+[11:54] their toys we find ourselves continually
+[11:57] coming back to their kiwi Co crates the
+[11:59] build quality is really great and the
+[12:01] thoughtfulness and multi-purpose design
+[12:03] built into each crate really keeps them
+[12:05] engaged if you want your family to
+[12:08] experience the awesomeness of kiwico use
+[12:10] my code Welch labs to receive 50% off
+[12:12] your first crate for kids three and
+[12:14] older or 20% off your first Panda crate
+[12:16] for kids under three big thanks to kiwo
+[12:19] for sponsoring this video now back to
+[12:22] deep seek solution to the KV cash
+[12:24] problem untenably large KV caches are
+[12:27] not a new problem one popular solution
+[12:30] is to reuse key and value matrices
+[12:32] across multiple attention heads in
+[12:35] multi-query attention blocks instead of
+[12:37] having unique key and value matrices for
+[12:39] each attention head we share a single
+[12:41] key and value Matrix across all Heads
+[12:44] This reduces the required size of our
+[12:46] kavv cache by a significant factor of
+[12:48] the number of heads per layer 128 for
+[12:51] the Deep seek R1
+[12:53] architecture however this modification
+[12:55] does impact model performance as forcing
+[12:58] all attention heads to use the same keys
+[13:00] and values allows for Less
+[13:03] specialization a less destructive
+[13:05] version of this idea is grouped query
+[13:07] attention where instead of forcing all
+[13:09] attention heads in a given layer to
+[13:10] share the same key and value matrices we
+[13:13] create multiple groups of attention
+[13:14] heads that share the same key and value
+[13:16] matrices metas llama 3 models use
+[13:18] grouped query attention with groups of
+[13:21] eight attention heads sharing the same
+[13:22] key and value matrices reducing the size
+[13:25] of the KV cache by a factor of eight
+[13:28] grouped query attention reduces KV cache
+[13:30] size but still takes a performance hit
+[13:33] relative to full multi-head
+[13:35] attention now what's really remarkable
+[13:37] about deep seeks approach called
+[13:39] multi-head latent attention is that they
+[13:42] were able to reduce the needed KV cache
+[13:43] size by a factor of 57 while actually
+[13:46] improving
+[13:48] performance the key Insight is a novel
+[13:50] application of a very common idea in
+[13:52] machine learning a latent space what if
+[13:56] the model could learn to efficiently
+[13:58] compress its own keys and values
+[14:01] multi-ad latent attention effectively
+[14:02] adds an extra step between each
+[14:04] attention head's input and the key and
+[14:06] value
+[14:07] matrices the idea is to project our
+[14:10] input into a compressed latent space
+[14:12] that like multi-query attention is
+[14:14] shared across all attention heads in a
+[14:16] given block however unlike multi-query
+[14:19] attention where each head shares the
+[14:21] same exact keys and values in multi-ad
+[14:24] latent attention the compressed latent
+[14:26] space is projected back up to keys and
+[14:28] value Ates using another set of learned
+[14:30] weights wuk and wuv where the weights
+[14:34] are unique to each attention
+[14:37] head this gives multi-head latent
+[14:39] attention more flexibility than
+[14:40] multi-query attention or grouped query
+[14:43] attention now at face value since we've
+[14:46] introduced a new Matrix multiply it
+[14:48] appears that we've just trated some
+[14:49] memory bandwidth for additional compute
+[14:52] and after all the entire point of KV
+[14:54] caching was to reduce the high compute
+[14:55] needs of attention blocks however is the
+[14:58] Deep SE team points out with some clever
+[15:01] linear algebra we can rearrange our
+[15:03] query computation to absorb the wuk
+[15:06] weights and rearrange our final output
+[15:08] computation to absorb the W UV weights
+[15:11] since all these weights are fixed at
+[15:13] training time we only have to compute
+[15:15] the absorbed weights once and can avoid
+[15:18] any additional compute during
+[15:20] inference so when a new token comes
+[15:22] along we simultaneously compute its
+[15:24] query vector and the query's projection
+[15:26] into the latent cache space in one step
+[15:29] and then compute our attention pattern
+[15:31] directly from the latent key value cache
+[15:34] matrix it's a really elegant
+[15:37] solution with multi-head latent
+[15:39] attention the size of the needed KV
+[15:41] Cache no longer has any dependence on
+[15:43] the number of attention heads per layer
+[15:45] and instead just depends on the size of
+[15:47] the shared KV cache Matrix for deep seek
+[15:50] R1 this is equal to the number of input
+[15:52] tokens by
+[15:54] 576 if implemented with traditional
+[15:56] attention blocks R1 would require 4
+[15:59] megabytes of KV cache per token grouped
+[16:02] query attention with a group size of
+[16:04] eight would cut this down to 500
+[16:05] kilobytes per token and multi-ad latent
+[16:08] attention reduces the needed cache to
+[16:09] only 70 kilobytes per token a 57x
+[16:14] reduction what we're left with is a true
+[16:16] Improvement to the Transformer
+[16:18] architecture enabling deep sec car1 to
+[16:21] generate tokens more than six times
+[16:22] faster than a vanilla Transformer while
+[16:25] actually improving algorithmic
+[16:27] performance multi-ad lat to attention
+[16:29] allows attention heads to share key and
+[16:31] value information in a more optimal way
+[16:34] where the model itself learns how to
+[16:35] compress and share this information
+[16:37] between attention heads the Transformer
+[16:40] architecture is one of the most
+[16:41] significant breakthroughs in modern AI
+[16:43] history and deep seek appears to have
+[16:45] just made it work significantly
+[16:47] better it's amazing to see the path that
+[16:50] deep sea carved through their 2024
+[16:52] papers systematically making substantial
+[16:54] improvements to models that required
+[16:56] hundreds of millions of dollars in R&D
+[16:58] and infrastructure
+[16:59] costs the stakes have never been higher
+[17:02] for neural networks it will be
+[17:04] fascinating to see what new set of ideas
+[17:06] unlocks the next level of capabilities
+[17:08] as we build more and more intelligent
+[17:11] systems if you enjoyed the graphics in
+[17:14] this video I think you'll really like
+[17:15] the poster version the poster includes a
+[17:18] walkthrough of multi-head latent
+[17:19] attention with detailed captions and
+[17:22] I've rearranged the flow a bit to work
+[17:23] better as a poster on the bottom I've
+[17:25] included a detailed comparison between
+[17:27] various forms of attention including the
+[17:29] required sizes of the KV caches and a 3D
+[17:32] model of each attention block The Matrix
+[17:34] images in the video and poster are
+[17:36] actually from the real deep seek model
+[17:39] I'm mostly showing the weights from the
+[17:40] first layer of deep seek V3 the poster
+[17:43] looks great in a simple frame that you
+[17:45] can pick up on Amazon and is a great way
+[17:47] to see how MLA works and just a nice way
+[17:49] to decorate your walls I'm offering free
+[17:51] shipping on the poster for a limited
+[17:53] time at Welch labs.com or you can pick
+[17:56] it up as a limited edition bundle with a
+[17:58] signed copy of of my imaginary numbers
+[17:59] book finally big thank you to everyone
+[18:02] who's purchased from the Welch lab store
+[18:04] your purchases go a long way to helping
+[18:06] me make more great videos

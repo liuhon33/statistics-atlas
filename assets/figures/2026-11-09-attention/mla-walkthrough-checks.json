@@ -1,0 +1,67 @@
+{
+  "mla-01-projections": {
+    "canvas_inches": [
+      16.0,
+      17.2
+    ],
+    "text_within_canvas": true
+  },
+  "mla-02-key-absorption": {
+    "canvas_inches": [
+      16.0,
+      20.6
+    ],
+    "text_within_canvas": true
+  },
+  "mla-03-weights-and-latents": {
+    "canvas_inches": [
+      16.0,
+      17.8
+    ],
+    "text_within_canvas": true
+  },
+  "mla-04-value-and-output": {
+    "canvas_inches": [
+      16.0,
+      24.5
+    ],
+    "text_within_canvas": true
+  },
+  "mla-05-single-query-decode": {
+    "canvas_inches": [
+      16.0,
+      23.1
+    ],
+    "text_within_canvas": true
+  },
+  "mla-06-handwritten-comparison": {
+    "canvas_inches": [
+      24.0,
+      17.8
+    ],
+    "text_within_canvas": true
+  },
+  "mla-07-position-and-query": {
+    "canvas_inches": [
+      16.0,
+      20.0
+    ],
+    "text_within_canvas": true
+  },
+  "checks": {
+    "rectangular_dimensions": {
+      "tokens": 11,
+      "input_width": 19,
+      "latent_width": 7,
+      "head_width": 4,
+      "heads": 3,
+      "position_width": 2
+    },
+    "max_abs_error": 3.552713678800501e-15,
+    "identities_checked": 28,
+    "mask_and_row_sums": true,
+    "new_query_matches_full_last_row": true,
+    "new_cache_preserves_old_rows": true,
+    "checks_are_supporting_examples": "The displayed associativity and transpose identities give the general proof."
+  }
+}
