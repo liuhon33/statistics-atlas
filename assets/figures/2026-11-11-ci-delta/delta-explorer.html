@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>Delta method — local slope, curvature and distribution</title><style>:root{color-scheme:light;--bg:#f5f7f5;--panel:#fff;--text:#263d33;--muted:#65766d;--line:#dbe5de;--green:#16866c;--blue:#3975b7;--orange:#cd7134;--purple:#8060b5}*{box-sizing:border-box}body{margin:0;padding:18px;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,sans-serif}main{max-width:1260px;margin:auto}.eyebrow{margin:0 0 5px;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--green)}h1{font-size:23px;line-height:1.25;letter-spacing:-.5px;margin:0 0 6px}h2{font-size:14px;margin:0 0 6px}.intro{margin:0 0 13px;color:var(--muted)}.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;padding:13px;background:white;border:1px solid var(--line);border-radius:12px}label{font-size:12px;color:var(--muted);display:block}output{float:right;color:var(--text);font-weight:650;font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--green);margin:8px 0 0}select,button{font:inherit;font-size:12px;border:1px solid var(--line);border-radius:6px;background:white;color:var(--text);padding:7px 8px}select{width:100%;margin-top:6px}button{cursor:pointer}button:hover{background:#e5f1e9}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--green);outline-offset:3px}.buttons,.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:11px 0}.legend{font-size:11px;color:var(--muted)}.legend i{display:inline-block;width:10px;height:8px;margin-right:5px;border-radius:2px}.blue{background:var(--blue)}.orange{background:var(--orange)}.green{background:var(--green)}.purple{background:var(--purple)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}.metric{padding:7px 10px;background:white;border-left:2px solid var(--green)}.metric span{display:block;font-size:10px;color:var(--muted)}.metric b{font-size:17px;font-weight:650;font-variant-numeric:tabular-nums}.notice{padding:9px 12px;font-size:12px;background:#e7f2eb;border-radius:8px;margin:12px 0}.notice.reject{background:#f5e9e6;color:#8c4747}.plots{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.stack{display:grid;gap:12px}.panel{padding:12px;background:white;border:1px solid var(--line);border-radius:12px;min-width:0}.panel svg{display:block;width:100%;height:auto}.caption,.foot{font-size:11px;color:var(--muted);line-height:1.5;margin:5px 0 0}.foot{margin-top:14px}.numbers{font-variant-numeric:tabular-nums;font-size:13px;line-height:1.8}.numbers strong{font-weight:650}.variance-track{display:flex;height:11px;border-radius:5px;overflow:hidden;background:var(--orange);margin:10px 0 5px}.variance-track span{display:block;background:var(--blue);height:100%}.formula{font-size:14px;line-height:1.7;margin:8px 0;font-variant-numeric:tabular-nums}.blue-text{color:var(--blue)}.orange-text{color:var(--orange)}.green-text{color:var(--green)}.pin{color:var(--purple);font-size:11px}.delta .plots{grid-template-columns:1fr 1.15fr}@media(max-width:700px){body{padding:12px}.controls{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr 1fr}.plots,.delta .plots{grid-template-columns:1fr}h1{font-size:21px}}
+</style></head><body><main class="delta"><p class="eyebrow">LOCAL SLOPE · CURVATURE · DISTRIBUTION</p><h1>When the delta method keeps the important part of the error</h1><p class="intro">For normal observations with variance 1, X̄ = μ + Z/√n and Z ∼ N(0,1). Squaring the mean creates a linear term and a quadratic remainder.</p>
+<div class="controls"><label>True mean μ <output id="mu-out"></output><input id="mu" aria-label="True mean mu" type="range" min="-1.5" max="1.5" step=".05" value=".8"></label><label>Sample size n <output id="n-out"></output><input id="n" aria-label="Sample size n" type="range" min="1" max="500" step="1" value="25"></label><label>One standardized draw z <output id="z-out"></output><input id="z" aria-label="Standardized draw z" type="range" min="-3" max="3" step=".05" value="1.2"></label><label>Distribution error scale<select id="scale" aria-label="Distribution error scale"><option value="sqrt">√n · (X̄² − μ²)</option><option value="n">n · (X̄² − μ²)</option><option value="raw">X̄² − μ²</option></select></label></div>
+<div class="buttons"><button id="regular">Away from zero</button><button id="zero">At μ = 0</button><button id="second">At zero: use n scale</button><button id="pin">Pin current exact CDF</button><button id="play">Play sample size</button></div>
+<div class="metrics"><div class="metric"><span>Distance from zero in standard errors</span><b id="regime"></b></div><div class="metric"><span>Exact SD on selected scale</span><b id="exact-sd"></b></div><div class="metric"><span>First-order SD on selected scale</span><b id="linear-sd"></b></div><div class="metric"><span>Bias before rescaling: E[X̄²] − μ²</span><b id="bias"></b></div></div>
+<div id="notice" class="notice" role="status"></div>
+<div class="plots"><div class="stack"><article class="panel"><h2>Keep the linear term, inspect the remainder</h2><div class="legend"><span><i class="green"></i>exact</span><span><i class="blue"></i>linear</span><span><i class="orange"></i>quadratic</span></div><svg id="terms" role="img" aria-label="Exact square-mean error decomposed into linear and quadratic terms"></svg><p class="formula">√n(X̄² − μ²) = <span class="blue-text">2μZ</span> + <span class="orange-text">Z²/√n</span></p><p class="numbers" id="draw-values"></p><p class="caption">This panel always uses √n scaling and fixed axes. Changing z selects one possible draw; it does not change the sampling distribution on the right.</p></article><article class="panel"><h2>How much variation does the linear term retain?</h2><p class="formula">Var(X̄²) = <span class="blue-text">4μ²/n</span> + <span class="orange-text">2/n²</span></p><div class="variance-track" aria-label="Share of exact variance explained by the linear term"><span id="variance-share"></span></div><p id="variance-caption" class="caption"></p></article></div><article class="panel"><h2>Compare the entire distributions</h2><div class="legend"><span><i class="green"></i>exact CDF</span><span><i class="blue"></i>first-order approximation</span><span><i class="purple"></i>pinned exact CDF</span></div><svg id="cdf" role="img" aria-label="Exact transformed-error CDF and first-order delta approximation"></svg><p id="pin-caption" class="pin"></p><p class="formula" id="cdf-formula"></p><p class="caption">A higher curve means more probability lies below that horizontal value. The x-range adapts to include the current and pinned distributions; CDF height always runs from 0 to 1.</p><p class="caption">Pin a distribution, then increase n to compare widths in the same units. Changing the error scale clears the pin. At μ = 0, the first-order approximation is a point mass at zero, shown as a jump.</p></article></div>
+<p class="foot">Exact formulas apply to iid normal observations with variance 1. This is a finite-sample comparison, not a proof of the general CLT or delta theorem. Keeping the same z as n changes couples one-time examples; it does not simulate a nested growing dataset. The distribution panel averages over all possible Z and is independent of the selected z. Curves are CDFs, so the unbounded density of Z² at zero causes no plotting singularity.</p></main>
+<script>(function(root){'use strict';
+ const phi=x=>Math.exp(-x*x/2)/Math.sqrt(2*Math.PI),clamp=x=>Math.max(0,Math.min(1,x));
+ // If H(x)=integral_0^x exp(-t^2/2)dt / exp(-x^2/2), then H'=1+xH.
+ // Its positive-term series is x + x^3/3 + x^5/(3*5) + ... .
+ function cdf(x){if(x<=-8)return 0;if(x>=8)return 1;const a=Math.abs(x);let term=a,sum=a;for(let k=3;k<401;k+=2){term*=a*a/k;const next=sum+term;if(next===sum)break;sum=next;}return clamp(.5+Math.sign(x)*phi(a)*sum);}
+ function quantile(p){if(!(p>0&&p<1))throw new RangeError('Quantile requires 0 < p < 1.');let lo=-8,hi=8;for(let k=0;k<55;k++){const mid=(lo+hi)/2;if(cdf(mid)<p)lo=mid;else hi=mid;}return(lo+hi)/2;}
+ function testModel(kind,alpha){
+  if(!(alpha>0&&alpha<1))throw new RangeError('Use 0 < alpha < 1.');
+  if(kind==='normal'){const tau=.1,z=quantile(1-alpha/2),h=tau*z;return{kind,alpha,tau,z,h,domain:[-.85,.85],controls:[-.5,.5],acceptance:b=>[b-h,b+h],interval:x=>[x-h,x+h],p:(x,b)=>2*cdf(-Math.abs(x-b)/tau),density:(t,b)=>phi((t-b)/tau)/tau};}
+  if(kind==='scale'){const L=.5+alpha/2,U=1.5-alpha/2;return{kind,alpha,L,U,domain:[0,6],controls:[.2,2.8],acceptance:b=>[L*b,U*b],interval:x=>[x/U,x/L],p:(x,b)=>{if(b<=0)return 0;const f=clamp(x/b-.5);return 2*Math.min(f,1-f);},density:(t,b)=>b>0&&t>=b/2&&t<=1.5*b?1/b:0};}
+  throw new Error('Unknown model');
+ }
+ const inside=(x,pair)=>x>=pair[0]-1e-12&&x<=pair[1]+1e-12;
+ function testState(kind,x,b,alpha){const model=testModel(kind,alpha),acceptance=model.acceptance(b),interval=model.interval(x),p=model.p(x,b);return{model,x,b,alpha,p,acceptance,interval,inBand:inside(x,acceptance),inCI:inside(b,interval),pRetains:p>=alpha-1e-12};}
+ const scaleFactor=(mode,n)=>mode==='raw'?1:mode==='n'?n:Math.sqrt(n);
+ function deltaState(mu,n,mode='sqrt'){if(!(n>=1&&Math.abs(mu)<=10))throw new RangeError('Invalid model parameters.');const a=scaleFactor(mode,n),rawVar=4*mu*mu/n+2/(n*n),linearVar=4*mu*mu/n;return{mu,n,mode,a,rawMean:1/n,rawVar,linearVar,mean:a/n,sd:a*Math.sqrt(rawVar),linearSD:a*2*Math.abs(mu)/Math.sqrt(n),share:linearVar/rawVar,support:-a*mu*mu};}
+ function exactDeltaCDF(v,s){const r=s.mu*s.mu+v/s.a;if(r<=0)return 0;const t=Math.sqrt(r),sn=Math.sqrt(s.n);return clamp(cdf((t-s.mu)*sn)-cdf((-t-s.mu)*sn));}
+ const linearDeltaCDF=(v,s)=>s.linearSD===0?(v<0?0:1):cdf(v/s.linearSD);
+ function deltaQuantile(p,s){let lo=s.support,hi=s.a*((Math.abs(s.mu)+8/Math.sqrt(s.n))**2-s.mu*s.mu);for(let k=0;k<55;k++){const mid=(lo+hi)/2;if(exactDeltaCDF(mid,s)<p)lo=mid;else hi=mid;}return(lo+hi)/2;}
+ function oneDraw(mu,n,z){const bar=mu+z/Math.sqrt(n),linear=2*mu*z,quadratic=z*z/Math.sqrt(n);return{bar,estimate:bar*bar,linear,quadratic,exact:linear+quadratic};}
+ const api={phi,cdf,quantile,testModel,testState,inside,scaleFactor,deltaState,exactDeltaCDF,linearDeltaCDF,deltaQuantile,oneDraw};
+ if(typeof module==='object'&&module.exports)module.exports=api;else root.InferenceMath=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+
+;
+(()=>{'use strict';
+ const C={blue:'#3975b7',orange:'#cd7134',green:'#16866c',purple:'#8060b5',red:'#b64f56',ink:'#344640',muted:'#6c7b75',grid:'#e4e9e5'};
+ const el=(tag,parent,attrs={},text)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;parent.appendChild(e);return e;};
+ const fmt=(x,d=3)=>{if(Math.abs(x)<1e-12)return'0';if(Math.abs(x)>=10000||Math.abs(x)<.0001)return x.toExponential(2).replace('-','−');return Number(x.toFixed(d)).toString().replace('-','−');};
+ function plot(id,xr,yr,xlabel,ylabel,square=false){const svg=document.getElementById(id),W=500,H=square?500:264;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.replaceChildren();const l=53,r=481,t=23,b=square?451:217;const x=v=>l+(v-xr[0])/(xr[1]-xr[0])*(r-l),y=v=>b-(v-yr[0])/(yr[1]-yr[0])*(b-t);const defs=el('defs',svg),clip=el('clipPath',defs,{id:id+'-clip'});el('rect',clip,{x:l,y:t,width:r-l,height:b-t});
+  const xdigits=Math.max(2,Math.min(5,2-Math.floor(Math.log10((xr[1]-xr[0])/4))));
+  const ydigits=square?xdigits:2;
+  for(let k=0;k<=4;k++){const xx=xr[0]+k*(xr[1]-xr[0])/4,yy=yr[0]+k*(yr[1]-yr[0])/4;el('line',svg,{x1:x(xx),x2:x(xx),y1:t,y2:b,stroke:C.grid});el('line',svg,{x1:l,x2:r,y1:y(yy),y2:y(yy),stroke:C.grid});el('text',svg,{x:x(xx),y:b+17,'text-anchor':'middle','font-size':11,fill:C.muted},fmt(xx,xdigits));el('text',svg,{x:l-7,y:y(yy)+4,'text-anchor':'end','font-size':11,fill:C.muted},fmt(yy,ydigits));}
+  el('text',svg,{x:(l+r)/2,y:H-8,'text-anchor':'middle','font-size':12,fill:C.ink},xlabel);el('text',svg,{x:l,y:13,'font-size':11,fill:C.ink},ylabel);const g=el('g',svg,{'clip-path':`url(#${id}-clip)`});return{svg,g,x,y,xr,yr,l,r,t,b};
+ }
+ function path(p,points,color,width=2,dash='',fill='none',opacity=1){return el('path',p.g,{d:points.map((q,i)=>(i?'L':'M')+p.x(q[0]).toFixed(3)+','+p.y(q[1]).toFixed(3)).join(' '),stroke:color,'stroke-width':width,'stroke-dasharray':dash,fill,opacity});}
+ const sample=(a,b,n,fn)=>Array.from({length:n+1},(_,i)=>{const x=a+(b-a)*i/n;return[x,fn(x)];});
+ const curve=(p,fn,color,width=2,dash='')=>path(p,sample(...p.xr,360,fn),color,width,dash);
+ const dot=(p,x,y,color,r=4)=>el('circle',p.g,{cx:p.x(x),cy:p.y(y),r,fill:color,stroke:'white','stroke-width':1});
+ const vline=(p,x,color,dash='4 4',width=1)=>path(p,[[x,p.yr[0]],[x,p.yr[1]]],color,width,dash);
+ const hline=(p,y,color,dash='4 4',width=1)=>path(p,[[p.xr[0],y],[p.xr[1],y]],color,width,dash);
+ const area=(p,points,color,alpha=.15)=>path(p,[[points[0][0],0],...points,[points.at(-1)[0],0]],color,0,'',color,alpha);
+ window.InferencePlot={C,el,fmt,plot,path,sample,curve,dot,vline,hline,area};
+})();
+
+;
+(()=>{'use strict';const M=InferenceMath,P=InferencePlot,C=P.C,$=id=>document.getElementById(id);let timer=null,pinned=null;
+ const get=()=>M.deltaState(Number($('mu').value),Number($('n').value),$('scale').value);
+ const scaleText=mode=>mode==='raw'?'X̄² − μ²':mode==='n'?'n(X̄² − μ²)':'√n(X̄² − μ²)';
+ function stop(){if(timer){clearInterval(timer);timer=null;}$('play').textContent='Play sample size';}
+ function render(){const s=get(),z=Number($('z').value),d=M.oneDraw(s.mu,s.n,z);$('mu-out').textContent=P.fmt(s.mu);$('n-out').textContent=s.n;$('z-out').textContent=P.fmt(z);$('regime').textContent=`√n|μ| = ${P.fmt(Math.sqrt(s.n)*Math.abs(s.mu))}`;$('exact-sd').textContent=P.fmt(s.sd,5);$('linear-sd').textContent=P.fmt(s.linearSD,5);$('bias').textContent=P.fmt(s.rawMean,5);
+  $('notice').textContent=s.mu===0?(s.mode==='n'?'At μ = 0, nX̄² = Z² exactly for every n. The exact CDF stays fixed as n changes; the first-order approximation still puts all mass at zero.':'At μ = 0, the slope 2μ is zero. The linear term vanishes, but Z²/n remains random. Try the n scale to keep that variation visible.'):'The approximation keeps the linear term 2μZ. The quadratic term matters when the mean is close to zero relative to its standard error, or the sample is small.';
+  const terms=P.plot('terms',[-3.2,3.2],[-11,21],'standardized draw z','√n × transformed estimation error');P.hline(terms,0,C.muted,'',.8);P.curve(terms,t=>2*s.mu*t+t*t/Math.sqrt(s.n),C.green,2.5);P.curve(terms,t=>2*s.mu*t,C.blue,2,'5 4');P.curve(terms,t=>t*t/Math.sqrt(s.n),C.orange,2,'2 3');P.vline(terms,z,C.muted);for(const[v,c]of[[d.exact,C.green],[d.linear,C.blue],[d.quadratic,C.orange]])P.dot(terms,z,v,c,4);
+  $('draw-values').textContent=`For z = ${P.fmt(z)}: X̄ = ${P.fmt(d.bar,4)}, X̄² = ${P.fmt(d.estimate,4)}. Scaled error: ${P.fmt(d.exact,4)} = ${P.fmt(d.linear,4)} + ${P.fmt(d.quadratic,4)}.`;
+  $('variance-share').style.width=(100*s.share)+'%';$('variance-caption').textContent=`Blue retains ${P.fmt(100*s.share,1)}% of the exact variance; orange supplies the remaining ${P.fmt(100*(1-s.share),1)}%. These are exact normal-model moments, not simulation estimates.`;
+  let lo=Math.min(M.deltaQuantile(.001,s),-3.2*s.linearSD,0),hi=Math.max(M.deltaQuantile(.999,s),3.2*s.linearSD,0);if(pinned){lo=Math.min(lo,M.deltaQuantile(.001,pinned));hi=Math.max(hi,M.deltaQuantile(.999,pinned));}const pad=Math.max((hi-lo)*.06,1e-5);lo-=pad;hi+=pad;
+  const cdf=P.plot('cdf',[lo,hi],[0,1],scaleText(s.mode),'cumulative probability');P.vline(cdf,s.support,C.muted,'2 4');if(pinned)P.curve(cdf,x=>M.exactDeltaCDF(x,pinned),C.purple,2,'3 4');P.curve(cdf,x=>M.exactDeltaCDF(x,s),C.green,2.5);
+  if(s.linearSD===0){P.path(cdf,[[lo,0],[0,0],[0,1],[hi,1]],C.blue,2,'5 4');P.dot(cdf,0,1,C.blue,3);}else P.curve(cdf,x=>M.linearDeltaCDF(x,s),C.blue,2,'5 4');
+  $('pin-caption').textContent=pinned?`Pinned: μ = ${P.fmt(pinned.mu)}, n = ${pinned.n}, same ${scaleText(s.mode)} scale.`:'No reference pinned. The pin keeps an exact distribution visible as you change μ or n.';$('pin').textContent=pinned?'Clear pinned CDF':'Pin current exact CDF';
+  $('cdf-formula').textContent=s.mu===0&&s.mode==='n'?'Exact: nX̄² ∼ χ²₁, for every n.':`Exact mean on this scale: ${P.fmt(s.mean,4)}. First-order mean: 0. The gray line marks the exact lower support boundary.`;
+ }
+ function preset(mu,n,mode){stop();pinned=null;$('mu').value=mu;$('n').value=n;$('scale').value=mode;render();}
+ for(const id of ['mu','n','z'])$(id).addEventListener('input',()=>{stop();render();});$('scale').addEventListener('change',()=>{stop();pinned=null;render();});$('regular').addEventListener('click',()=>preset(1,100,'sqrt'));$('zero').addEventListener('click',()=>preset(0,25,'sqrt'));$('second').addEventListener('click',()=>preset(0,25,'n'));$('pin').addEventListener('click',()=>{pinned=pinned?null:get();render();});
+ $('play').addEventListener('click',()=>{if(timer){stop();return;}let t=0;$('n').value=1;render();timer=setInterval(()=>{t+=1;$('n').value=Math.round(Math.exp(Math.log(500)*t/100));render();if(t>=100)stop();},matchMedia('(prefers-reduced-motion: reduce)').matches?350:100);$('play').textContent='Pause sample size';});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});window.addEventListener('pagehide',stop);render();
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>

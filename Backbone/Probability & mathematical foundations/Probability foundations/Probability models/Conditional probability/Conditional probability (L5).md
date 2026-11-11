@@ -7,7 +7,7 @@ subject: probability
 study_band: U
 backbone_path: Probability & mathematical foundations → Probability foundations → Probability models → Conditional probability → Conditional probability
 created: '2026-11-08'
-updated: '2026-11-09'
+updated: '2026-11-11'
 aliases: []
 tags:
 - atlas/backbone
@@ -39,7 +39,25 @@ Knowing $B$ occurred restricts attention to $B$; division by $P(B)$ makes that r
 
 ## Reading the density slices
 
-![[raw/assets/2026-11-08-total-expectation-I01-joint-density-slices.png]]
+Try **Independent: ρ = 0**, then move either slice: its raw area changes, while its normalized density stays equal to the corresponding marginal. Change ρ to see that equality disappear. This independence conclusion uses the jointly Gaussian model.
+
+```atlas-interactive
+path: assets/figures/2026-11-11-joint-density/joint-density.html
+title: Joint density — slices, conditional distributions, and total expectation
+height: 1400
+```
+
+*Original interactive reconstruction, Codex. The source screenshot is preserved below. Both variables have variance 1; μᵧ = 0, while μₓ, ρ, x₀ and y₀ are adjustable. A camera drag changes only the view. Conditional areas and means use the full Gaussian support.*
+
+[[assets/figures/2026-11-11-joint-density/joint-density.html|Open the standalone explorer]] · [[assets/figures/2026-11-11-joint-density/build.py|Reproduce the figure]] · [[assets/figures/2026-11-11-joint-density/checks.json|Numerical checks]]
+
+> [!example]- Static view
+> ![[assets/figures/2026-11-11-joint-density/overview.svg]]
+> *Original analytic reconstruction at the screenshot's parameter values. Dashed curves are raw slices; solid curves are normalized conditionals. Dot areas represent relative weights for equal-width y bins.*
+
+> [!info]- Original supplied screenshot
+> ![[raw/assets/2026-11-08-total-expectation-I01-joint-density-slices.png]]
+> *Preserved unchanged; this original is a static capture. The working controls above are a new reconstruction, not recovered source code.*
 
 
 For jointly continuous $X,Y$, write $p(x,y)$ for their joint density and $p_Y(y)=\int p(x,y)\,dx$ for the marginal density. Where $0<p_Y(y_0)<\infty$,

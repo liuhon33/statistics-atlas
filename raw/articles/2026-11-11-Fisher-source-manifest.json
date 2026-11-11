@@ -1,0 +1,61 @@
+{
+  "source_url": "https://www.youtube.com/watch?v=pneluWj-U-o",
+  "title": "The Fisher Information",
+  "channel": "Mutual Information",
+  "presenter": "DJ",
+  "publication_date": "2021-05-04",
+  "capture_date": "2026-11-11",
+  "duration": "17:27",
+  "captions": {
+    "type": "English, auto-generated",
+    "read_range": "0:07–17:25, all available captions"
+  },
+  "used_visuals": {
+    "I03": "Video-player capture near 8:06, six-panel layout",
+    "I06": "Video-player capture at 12:13, two-dimensional likelihood ellipses and score histogram"
+  },
+  "unused_capture_notes": {
+    "I01": "Initial browser view at 8:46; top of player partly out of viewport. Not used as mathematical evidence.",
+    "I02": "Filename was a planned seek target; observed displayed player time was 8:06. Superseded for presentation by I03; bytes retained.",
+    "I04": "Capture at 14:19 showed presenter; not the requested 2D graphic. Not used.",
+    "I05": "Advertisement displayed during seek; not lecture evidence. Not used."
+  },
+  "coverage_limit": "Caption-based full lecture digest plus inspected key diagrams; not continuous audiovisual review. The unlabeled non-normal deformation is not identified as a specific model.",
+  "files": [
+    {
+      "path": "raw/articles/2026-11-11-Fisher-Information-youtube-captions.txt",
+      "bytes": 22145,
+      "sha256": "790e66cc1c4875ec207ad682c3a4a2965deb8a957b4e5a5bea01274dd1eb342c"
+    },
+    {
+      "path": "raw/assets/2026-11-11-Fisher-I01-six-panels-browser.jpg",
+      "bytes": 111384,
+      "sha256": "e04805978feaa3b9f7f1469a0d0a97787c063265475f04c8e799e460eaa83ec7"
+    },
+    {
+      "path": "raw/assets/2026-11-11-Fisher-I02-normal-six-panels-7m56.jpg",
+      "bytes": 111457,
+      "sha256": "39cd63a28824e72970c86892907c7bfee8fcc83474b211c87512db764789cb23"
+    },
+    {
+      "path": "raw/assets/2026-11-11-Fisher-I03-six-panels-8m06.jpg",
+      "bytes": 44755,
+      "sha256": "26830b396c640e36ee9a00030d47d826ad3de5eec84acb049006b24e6d8449b9"
+    },
+    {
+      "path": "raw/assets/2026-11-11-Fisher-I04-two-dimensional-reference.jpg",
+      "bytes": 37398,
+      "sha256": "462433306721cbda34f0fa2d6c041ccdb700d674aea59e917b0cbfcf00e550a5"
+    },
+    {
+      "path": "raw/assets/2026-11-11-Fisher-I05-two-dimensional-13m15.jpg",
+      "bytes": 40863,
+      "sha256": "b400e2bdaa6100b939fa105b9fa0625d233bb95d569b94c88288987aeba01933"
+    },
+    {
+      "path": "raw/assets/2026-11-11-Fisher-I06-two-dimensional-12m13.jpg",
+      "bytes": 52068,
+      "sha256": "8f570e1736c15d6225deda059704328b9313aa71be4b373b5eb29aac43c3ff2f"
+    }
+  ]
+}

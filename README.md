@@ -40,7 +40,7 @@ The native graph is still available. The Atlas is an additional view made for th
 5. Open the command palette with **Ctrl+P** on Windows/Linux or **Cmd+P** on macOS. Run **Statistics atlas: Open statistics atlas**. You can also use its network icon in the left ribbon.
 6. Open **Start Here** for the short in-vault guide.
 
-The working plugin is included in `.obsidian/plugins/statistics-atlas/`. There is no build step and no Python, Node.js, AI subscription, or Obsidian Publish subscription needed to browse the vault. The Markdown notes also work with the plugin disabled; the custom map and live `atlas` blocks need the plugin.
+The working plugin is included in `.obsidian/plugins/statistics-atlas/`. There is no build step and no Python, Node.js, AI subscription, or Obsidian Publish subscription needed to browse the vault. The Markdown notes also work with the plugin disabled; the custom map, live `atlas` blocks and embedded interactive figures need the plugin.
 
 **Keep the whole folder together.** `.obsidian` may be hidden by your file manager. On Windows, use a short location such as `C:\atlas` because the topic folders are deeply nested. Open this as its own vault first; placing it inside another vault changes the root used by its links and layout file. [Obsidian's folder-opening guide](https://help.obsidian.md/manage-vaults) explains the same setup.
 
@@ -73,6 +73,10 @@ On a topic page, a **My notes** strip under the title links the personal notes a
 *The focused branch shows ELBO, its place under variational inference, and related personal notes. The panel also lists connections to topics outside the focused branch: Jensen's inequality, KL divergence, importance sampling, and latent-variable models.*
 
 For example, Jensen's inequality helps derive the lower bound, while KL divergence explains the gap between that bound and the log evidence. The connection text tells you why each topic matters.
+
+### Explore an idea with sliders
+
+Open the Fisher information, CI/p-value, or CLT/delta-method note in Reading view or rendered Live Preview. The included Statistics Atlas plugin shows sliders and linked plots directly inside the note: move a candidate null, change a sample size, or compare a distribution with its approximation. The conditional-probability and total-expectation pages also share a rotatable joint-density explorer. These figures run offline, include static alternatives, and provide a standalone HTML file you can open in a browser. No additional plugin or server is required.
 
 ### A few useful controls
 
@@ -116,7 +120,7 @@ A **skill** is a saved set of instructions for a repeated task. The shared copie
 | `add-backbone` | Proposes and adds a missing topic in the right place. |
 | `approve` | Finalizes and commits the work you have reviewed. It does not publish it. |
 
-The supporting `animate-geometry` skill helps the agent make checked mathematical diagrams and animations, with code you can rerun.
+The supporting `animate-geometry` skill helps the agent make checked mathematical diagrams, animations and offline interactive figures with linked plots and sliders, with code you can rerun.
 
 There is also an optional `forget_claudian` housekeeping skill for deleting old local Claudian chat records after confirmation. It is not part of studying or saving notes.
 
@@ -169,14 +173,14 @@ The Atlas itself runs locally and makes no network requests. Viewing the map and
 | Folder | Contents |
 | --- | --- |
 | `Backbone/` | 760 topic pages, arranged from broad subjects to individual concepts. |
-| `Learning/` | 25 personal learning notes, including ELBO, bootstrap, regression, test geometry, confidence intervals, attention, and related topics. |
+| `Learning/` | 30 personal learning notes, including ELBO, diffusion, Fisher information, CLT and delta method, MLE, bootstrap, regression, test geometry, confidence intervals, and attention. |
 | `raw/` | Preserved original sources, screenshots, and handwriting. |
 | `assets/figures/` | Explanatory figures and their reproducible source. |
 | `_system/` | Catalogs, references, layout, workflow records, templates, and tools. |
 | `.agents/skills/` | Shared instructions for digesting, extending, connecting, and reviewing notes. |
 | `.obsidian/plugins/statistics-atlas/` | The custom map plugin, already built. |
 
-These counts describe the public update on **2026-11-10**. Many backbone pages are topic scaffolds; 760 pages does not mean 760 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
+These counts describe the public update on **2026-11-11**. Many backbone pages are topic scaffolds; 760 pages does not mean 760 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
 
 The public copy includes the rebuilt vault's content and tools. Local agent sessions, account settings, window layouts, debug logs, and unrelated installed plugins are excluded. Install optional plugins through their own projects. Original sources keep their individual attribution; public availability is not a blanket license to redistribute third-party material.
 

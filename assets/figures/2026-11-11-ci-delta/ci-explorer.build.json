@@ -1,0 +1,34 @@
+{
+  "output": "ci-explorer.html",
+  "output_sha256": "3a2262ccf2143698970708b9980d87e35358fff2d2352af4ecbe3bc2cc9aeca0",
+  "inputs": [
+    {
+      "name": "ci-body.html",
+      "sha256": "a04b7c9b58e3722ffba7a74af13130b3692b7b9cfd6bfa2603007c1151ac16e7"
+    },
+    {
+      "name": "explorer.css",
+      "sha256": "18c52eb15845e3b22d1a632a57f64ebf336d5cc9c2ff99ab39f29d8af96fa173"
+    },
+    {
+      "name": "math.js",
+      "sha256": "30201099ebc47992b723e8b59671e45d14d9696b6b47709d6d57c362c2939725"
+    },
+    {
+      "name": "plot.js",
+      "sha256": "b24661363319b207227bd30c12e6e2bd7926adc9390b6e489add127748bfa48a"
+    },
+    {
+      "name": "ci.js",
+      "sha256": "5b0b82493a50a58cd78f28352c268daa590540339dfef47d6bdd9ce16441e80f"
+    },
+    {
+      "name": "build.py",
+      "sha256": "3cc99c573defdfde63720afd15fb3fd7671cb0b71ee463c4d350022e4ea8b068"
+    },
+    {
+      "name": "build_explorer.py",
+      "sha256": "90ed20cb9b71d790b309293129826a533c6512c2ec06b164ce1f85ec76d021f2"
+    }
+  ]
+}

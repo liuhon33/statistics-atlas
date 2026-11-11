@@ -3,7 +3,7 @@ id: system-sop-amendments
 title: SOP amendments
 layer: auxiliary
 created: '2026-11-10'
-updated: '2026-11-10'
+updated: '2026-11-11'
 tags:
 - atlas/auxiliary
 - system/sop
@@ -49,6 +49,7 @@ Up to A17, each amended passage in `AGENTS.md` also carried an inline marker suc
 | A16 | 2026-11-09 | Claude (Opus 5.5) | §3 | Backbone pages show a live **My notes** strip under the title, and a new plugin command with default hotkey `Ctrl/Cmd+Shift+L` opens a searchable list of the notes attached to the current page or anywhere below it (§3). Both are derived at display time; nothing is written to backbone pages. New `AtlasCore.attachedNotes`, checked in `test-model.cjs` on the fixture and the live vault. | User request: see each backbone page's learning notes as a property near the top, and a shortcut to open them from any L1–L5 page. The user chose the live strip over a stored `learning_notes` property, which would have copied `primary_home` and broken C5. |
 | A17 | 2026-11-10 | Claude (Opus 5.5) | §3 | New plugin command **New learning note here** (default `Ctrl/Cmd+Alt+N`) creates a valid draft learning note homed on the current backbone page and opens it (§3). New `AtlasCore.newNoteDraft`, checked in `test-model.cjs`: the draft compiles cleanly at its home, and taken names, empty titles and non-backbone homes are refused. | User request: a quick way to start a note under the backbone page in front of them, instead of filling the template by hand. |
 | A18 | 2026-11-10 | Claude (Opus 5.5) | all; §13 | SOP made concise (about 6,400 → 3,500 words) with the same rules and the same §1–§14 numbering. The amendment table and signing rule moved here from §13, and the 51 inline markers were removed in favour of this ledger's **Sections** column. Duplicate detail was replaced by pointers: plugin behaviour to `_system/Map implementation.md` (now also covering the A7 halo), check details to `_system/Claude/Validator.md`, and the `connect` and `enrich` procedures to their skills. `SOP draft.md` moved to `_system/SOP/history/`. The redundant `_system/Final SOP.md` pointer was deleted. The supporting `animate-geometry` skill is now listed in §14. Supersedes A1's rule that markers must stay inline. | User request: the SOP had become long. Rules should stay concise in `AGENTS.md`, which Codex loads every session, and amendments should be signed separately in their own folder. The user approved removing the inline markers. |
+| A19 | 2026-11-11 | Codex | §14 | Extended the supporting `animate-geometry` description to include offline interactive explorers and Obsidian embeds. The shared skill now routes between static figures, staged GIFs and parameter-driven HTML, with a reusable builder and focused interactive reference. Existing authorization, source preservation and commit rules remain unchanged. | User liked the Fisher sliders, requested a reusable skill update and an interactive reconstruction of the joint-density screenshot. Extending the existing skill avoids a second overlapping command. |
 
 ## Connections
 

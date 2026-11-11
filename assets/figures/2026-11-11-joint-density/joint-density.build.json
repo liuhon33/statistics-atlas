@@ -1,0 +1,26 @@
+{
+  "output": "joint-density.html",
+  "output_sha256": "1bc91c7216fd630009628a8fbb127e336ad3faa5a16c4c8eb2ad7bd5338999ab",
+  "inputs": [
+    {
+      "name": "body.html",
+      "sha256": "a4848ed1fbf9697cc6f8599f343ef7c49d7351150d8255b0ad8d59f651762c2c"
+    },
+    {
+      "name": "explorer.css",
+      "sha256": "cfc02e8f34c00c79589b52c2145fbfe1c224b521d8f192a1a99f14afd0df92b9"
+    },
+    {
+      "name": "math.js",
+      "sha256": "812a1fa4fc6ed0234a67ff2104e4042d224babbdd1ea37275b76566e98e68ed4"
+    },
+    {
+      "name": "explorer.js",
+      "sha256": "2766ef207a590211d462b798219daebd0fd81052bf860cd919cfcb05dde50bc8"
+    },
+    {
+      "name": "build_explorer.py",
+      "sha256": "90ed20cb9b71d790b309293129826a533c6512c2ec06b164ce1f85ec76d021f2"
+    }
+  ]
+}

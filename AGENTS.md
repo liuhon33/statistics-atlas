@@ -3,7 +3,7 @@ id: system-sop
 title: Statistics vault SOP
 layer: auxiliary
 created: 2026-11-08
-updated: 2026-11-10
+updated: 2026-11-11
 status: active
 tags: [atlas/auxiliary, system/sop]
 ---
@@ -175,7 +175,7 @@ Routine operations are packaged as Agent Skills in `.agents/skills/<name>/SKILL.
 | `approve` | After the user's review: validate and commit exactly that work | one commit |
 | `forget_claudian` | Delete earlier Claudian chats that used Claude, after confirmation | nothing in the vault; local chat files |
 
-The supporting skill `animate-geometry` makes reproducible mathematical diagrams and GIFs for the writing commands.
+The supporting skill `animate-geometry` makes checked mathematical diagrams, GIFs and offline interactive explorers for the writing commands; it also documents embedding them in Obsidian.
 
 Every writing command leaves an uncommitted draft for review in Obsidian, asks only the decisions it cannot settle in one message, and ends with validation and a few lines in the existing `_system/` records, never new pages there. An inline-only `connect` that reuses an approved relationship or a named target needs no repeated approval and is logged as `connect-inline`. Only `approve`, or an explicit commit instruction, commits. `forget_claudian` writes nothing to the vault and records nothing, because the chats it deletes are private; it keeps the current chat.
 

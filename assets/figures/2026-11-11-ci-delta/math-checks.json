@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "normalCDFComparisons": 801,
+  "normalQuantileComparisons": 13,
+  "deltaCDFComparisons": 630,
+  "decisionComparisons": 15606,
+  "maxNormalCDFError": 6.661338147750939e-16,
+  "maxNormalQuantileError": 2.708944180085382e-14,
+  "maxExactCDFError": 1.6653345369377348e-15,
+  "maxExpansionError": 5.551115123125783e-15,
+  "maxCoverageError": 2.220446049250313e-16,
+  "referenceLengths": {
+    "normal": 0.3919927969080101,
+    "scaleVertical": 0.9500000000000001,
+    "scaleHorizontal": 1.2267958030669894
+  },
+  "independentPythonChecks": {
+    "moment_cases": 30,
+    "max_moment_error": 4.440892098500626e-16,
+    "method": "Full Gaussian moments by quadrature; exact CDF via independent noncentral chi-square distribution."
+  },
+  "limits": "Numerical comparisons support the analytic derivations. No simulation-based proof of asymptotics; boundary comparisons tolerate 1e-12 floating-point roundoff."
+}

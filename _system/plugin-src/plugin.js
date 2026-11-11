@@ -95,10 +95,38 @@ class StatisticsAtlasView extends ItemView {
   async setState(state,result){this.pendingState=state;if(this.ui)this.restore(state);await super.setState(state,result);}
   restore(s){if(typeof s.panel==='boolean')this.ui.setPanel(s.panel);if(AtlasCore.MODES.includes(s.mode))this.ui.mode=s.mode;if(s.depth>=1&&s.depth<=5)this.ui.depth=s.depth;this.ui.depthSelect.value=this.ui.depth;if(this.plugin.model.byId.has(s.focus))this.ui.focus=s.focus;if(this.plugin.model.byId.has(s.selected))this.ui.selected=s.selected;if(s.camera&&Number.isFinite(s.camera.k)&&s.camera.k>0){this.ui.camera={...s.camera};this.ui.fitted=true;}this.ui.update();}
 }
+// Offline mathematical explorers authored in assets/figures. The iframe is isolated
+// from Obsidian (no same-origin permission); the HTML supplies its own restrictive CSP.
+class AtlasInteractiveBlock extends MarkdownRenderChild {
+  constructor(el,plugin,source){super(el);this.plugin=plugin;this.source=source;}
+  async onload(){
+    this.alive=true;
+    try{
+      const cfg=parseYaml(this.source)||{},path=String(cfg.path||'');
+      if(!/^assets\/figures\/[A-Za-z0-9_./-]+\.html$/.test(path)||path.split('/').includes('..'))throw new Error('Use a local HTML file under assets/figures/.');
+      const html=await this.plugin.app.vault.adapter.read(path);
+      if(!this.alive)return;
+      const frame=this.containerEl.createEl('iframe');
+      frame.setAttribute('sandbox','allow-scripts');frame.setAttribute('referrerpolicy','no-referrer');
+      frame.title=String(cfg.title||'Interactive mathematical illustration');
+      frame.style.cssText='width:100%;border:0;border-radius:12px;display:block;';
+      frame.style.height=Math.max(320,Math.min(2200,Number(cfg.height)||1100))+'px';
+      this.registerDomEvent(window,'message',event=>{
+        if(event.source!==frame.contentWindow||event.data?.type!=='atlas-interactive-ready')return;
+        const height=Number(event.data.height);
+        if(Number.isFinite(height)&&height>0)frame.style.height=Math.max(320,Math.min(5000,height))+'px';
+        this.containerEl.dataset.atlasInteractive='ready';
+      });
+      frame.srcdoc=html;
+    }catch(e){if(this.alive)this.containerEl.createDiv({text:'Interactive illustration unavailable: '+e.message+' The static figure below remains available.'});}
+  }
+  onunload(){this.alive=false;this.containerEl.empty();}
+}
 module.exports=class StatisticsAtlasPlugin extends Plugin {
   async onload(){
     this.store=new AtlasCore.RecordStore();this.dirty=new Set();this.layout=null;this.blocks=new Set();this.registerView(ATLAS_VIEW,leaf=>new StatisticsAtlasView(leaf,this));
     this.registerMarkdownCodeBlockProcessor('atlas',(source,el,ctx)=>ctx.addChild(new AtlasPageBlock(el,this,ctx.sourcePath)));
+    this.registerMarkdownCodeBlockProcessor('atlas-interactive',(source,el,ctx)=>this.renderInteractive(source,el,ctx));
     this.addRibbonIcon('network','Open statistics atlas',()=>this.activate());
     this.addCommand({id:'open-atlas',name:'Open statistics atlas',callback:()=>this.activate()});
     this.addCommand({id:'refresh-atlas',name:'Refresh statistics atlas',callback:async()=>{this.layout=null;this.fullPending=true;await this.refresh();new Notice('Statistics atlas refreshed.');}});
@@ -135,6 +163,7 @@ module.exports=class StatisticsAtlasPlugin extends Plugin {
     this.registerEvent(this.app.vault.on('rename',(file,oldPath)=>{this.forget(file,oldPath);if(file instanceof TFile)this.markDirty(file.path);else{this.fullPending=true;this.queueRefresh();}}));
     this.app.workspace.onLayoutReady(async()=>{try{await this.ready;await this.activate();}catch(e){console.error('Statistics atlas',e);new Notice('Statistics atlas could not load: '+e.message);}});
   }
+  renderInteractive(source,el,ctx){ctx.addChild(new AtlasInteractiveBlock(el,this,source));}
   markDirty(path){this.dirty.add(path);this.queueRefresh();}
   queuePropertyFoldDefaults(){
     for(const timer of this.propertyFoldTimers)clearTimeout(timer);

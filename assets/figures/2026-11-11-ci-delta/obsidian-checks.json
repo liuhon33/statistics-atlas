@@ -1,0 +1,73 @@
+{
+  "vault": "stats_ML_rebuild",
+  "frames": [
+    {
+      "title": "ci 760",
+      "width": 760,
+      "height": 1015,
+      "ready": true,
+      "sandbox": "allow-scripts"
+    },
+    {
+      "title": "ci 420",
+      "width": 420,
+      "height": 1782,
+      "ready": true,
+      "sandbox": "allow-scripts"
+    },
+    {
+      "title": "delta 760",
+      "width": 760,
+      "height": 1087,
+      "ready": true,
+      "sandbox": "allow-scripts"
+    },
+    {
+      "title": "delta 420",
+      "width": 420,
+      "height": 1807,
+      "ready": true,
+      "sandbox": "allow-scripts"
+    }
+  ],
+  "stable": true,
+  "messages": [
+    {
+      "title": "ci 760",
+      "data": {
+        "type": "atlas-interactive-ready",
+        "height": 4656
+      }
+    },
+    {
+      "title": "ci 760",
+      "data": {
+        "type": "atlas-interactive-ready",
+        "height": 1015
+      }
+    },
+    {
+      "title": "ci 420",
+      "data": {
+        "type": "atlas-interactive-ready",
+        "height": 1782
+      }
+    },
+    {
+      "title": "delta 760",
+      "data": {
+        "type": "atlas-interactive-ready",
+        "height": 1087
+      }
+    },
+    {
+      "title": "delta 420",
+      "data": {
+        "type": "atlas-interactive-ready",
+        "height": 1807
+      }
+    }
+  ],
+  "pass": true,
+  "scope": "Execution, initial sizing and stability at two widths. Offscreen Chromium frames may defer later viewport relayout; interactive resizing is checked separately in the visible browser preview."
+}

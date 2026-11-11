@@ -1,0 +1,44 @@
+{
+  "source": "raw/notes/2026-11-10-Lec12-diffusion-models.pdf",
+  "pages_in_source": 32,
+  "scale": 2.0,
+  "method": "Full-page PDFium render; no cropping, retouching, or relabeling",
+  "renders": [
+    {
+      "page": 5,
+      "path": "raw/assets/2026-11-11-Diffusion-lecture-P05-processes.png",
+      "sha256": "ce3f9f27d885c195c8b0dd4e44edc35d3f188ef2c4d7b572cdfb07a00078692a",
+      "size": [
+        1584,
+        894
+      ]
+    },
+    {
+      "page": 28,
+      "path": "raw/assets/2026-11-11-Diffusion-lecture-P28-guidance.png",
+      "sha256": "df634cf4f7d8a9f84923e4de1b407bf8f881811ab75b0c86b460e5e0dc41e029",
+      "size": [
+        1584,
+        894
+      ]
+    },
+    {
+      "page": 29,
+      "path": "raw/assets/2026-11-11-Diffusion-lecture-P29-conditioning-applications.png",
+      "sha256": "61135a6a7e47b1fd447fd56aa583e7d3059640805f1922cd2d1256a565d67839",
+      "size": [
+        1584,
+        894
+      ]
+    },
+    {
+      "page": 30,
+      "path": "raw/assets/2026-11-11-Diffusion-lecture-P30-tradeoffs.png",
+      "sha256": "2167bfb54249382169c503a8183f7855bdbdba3404e65c0931c6d38ee915b371",
+      "size": [
+        1584,
+        894
+      ]
+    }
+  ]
+}

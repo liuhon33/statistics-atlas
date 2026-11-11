@@ -1,0 +1,35 @@
+{
+  "slide20_schedule": {
+    "alpha_bar_T": 4.035829765375676e-05,
+    "signal_coefficient": 0.006352818087570016,
+    "noise_coefficient": 0.99997982064757,
+    "maximum_variance_recursion_error": 5.551115123125783e-16
+  },
+  "elbo": {
+    "path_loss": 1.1517187567354317,
+    "decomposed_loss": 1.1517187567354321,
+    "difference": 4.440892098500626e-16,
+    "maximum_q_factorization_error": 2.842170943040401e-14,
+    "terminal_kl": 0.22206967612860473,
+    "reconstruction": 0.3433203564584204,
+    "local_kls": [
+      0.42387667450408534,
+      0.16245204964432164
+    ]
+  },
+  "bridge_and_noise": {
+    "mass": 0.9999999999999999,
+    "mean": 0.217563440786588,
+    "variance": 0.16935483870967738,
+    "kl_quadrature_error": 2.7755575615628914e-16,
+    "mean_noise_equivalence_error": 5.551115123125783e-17,
+    "weighted_loss_equivalence_error": 2.220446049250313e-16
+  },
+  "guidance": {
+    "max_bayes_score_error": 6.133671348607095e-11,
+    "tilted_mean_numeric": 0.7440000000000001,
+    "tilted_mean_formula": 0.744,
+    "noise_score_relation_error": 2.7755575615628914e-17
+  },
+  "result": "PASS"
+}

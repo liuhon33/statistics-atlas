@@ -1,0 +1,226 @@
+{
+  "date": "2026-11-11",
+  "pass": true,
+  "checks": [
+    {
+      "test": "normal reference",
+      "data": {
+        "alpha": "0.05",
+        "b": "0",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is outside the band, b is outside the confidence interval, and p < α. Reject this candidate null.",
+        "horizontal": "0.392",
+        "interval": "[0.004, 0.396]",
+        "model": "normal",
+        "p": "0.0455",
+        "scrollWidth": 1265,
+        "vertical": "0.392",
+        "x": "0.2"
+      },
+      "pass": true
+    },
+    {
+      "test": "normal boundary",
+      "data": {
+        "alpha": "0.05",
+        "b": "0",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is in the band, b is in the confidence interval, and p ≥ α. Retain this candidate null.",
+        "horizontal": "0.392",
+        "interval": "[0, 0.392]",
+        "model": "normal",
+        "p": "0.05",
+        "scrollWidth": 1265,
+        "vertical": "0.392",
+        "x": "0.195996398454005"
+      },
+      "pass": true
+    },
+    {
+      "test": "normal x maximum",
+      "data": {
+        "alpha": "0.05",
+        "b": "0",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is outside the band, b is outside the confidence interval, and p < α. Reject this candidate null.",
+        "horizontal": "0.392",
+        "interval": "[0.304, 0.696]",
+        "model": "normal",
+        "p": "< 0.0001",
+        "scrollWidth": 1265,
+        "vertical": "0.392",
+        "x": "0.5"
+      },
+      "pass": true
+    },
+    {
+      "test": "alpha minimum",
+      "data": {
+        "alpha": "0.01",
+        "b": "0",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is outside the band, b is outside the confidence interval, and p < α. Reject this candidate null.",
+        "horizontal": "0.5152",
+        "interval": "[0.242, 0.758]",
+        "model": "normal",
+        "p": "< 0.0001",
+        "scrollWidth": 1265,
+        "vertical": "0.5152",
+        "x": "0.5"
+      },
+      "pass": true
+    },
+    {
+      "test": "scale reference",
+      "data": {
+        "alpha": "0.05",
+        "b": "1",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is in the band, b is in the confidence interval, and p ≥ α. Retain this candidate null.",
+        "horizontal": "1.2268",
+        "interval": "[0.678, 1.905]",
+        "model": "scale",
+        "p": "1",
+        "scrollWidth": 1265,
+        "vertical": "0.95",
+        "x": "1"
+      },
+      "pass": true
+    },
+    {
+      "test": "scale boundary",
+      "data": {
+        "alpha": "0.05",
+        "b": "1",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is in the band, b is in the confidence interval, and p ≥ α. Retain this candidate null.",
+        "horizontal": "1.8095",
+        "interval": "[1, 2.81]",
+        "model": "scale",
+        "p": "0.05",
+        "scrollWidth": 1265,
+        "vertical": "0.95",
+        "x": "1.475"
+      },
+      "pass": true
+    },
+    {
+      "test": "scale candidate maximum",
+      "data": {
+        "alpha": "0.05",
+        "b": "2.8",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is outside the band, b is outside the confidence interval, and p < α. Reject this candidate null.",
+        "horizontal": "1.2268",
+        "interval": "[0.678, 1.905]",
+        "model": "scale",
+        "p": "< 0.0001",
+        "scrollWidth": 1265,
+        "vertical": "2.66",
+        "x": "1"
+      },
+      "pass": true
+    },
+    {
+      "test": "CI playback advances",
+      "data": {
+        "alpha": "0.05",
+        "b": "1.695",
+        "bodyWidth": 1265,
+        "decision": "One agreement: the observed point is in the band, b is in the confidence interval, and p ≥ α. Retain this candidate null.",
+        "horizontal": "1.2268",
+        "interval": "[0.678, 1.905]",
+        "model": "scale",
+        "p": "0.17994",
+        "scrollWidth": 1265,
+        "vertical": "1.6103",
+        "x": "1"
+      },
+      "pass": true
+    },
+    {
+      "test": "z changes realization, not distribution",
+      "pass": true
+    },
+    {
+      "test": "zero first derivative",
+      "pass": true
+    },
+    {
+      "test": "pin reference while error shrinks",
+      "pass": true,
+      "sd": "0.06325"
+    },
+    {
+      "test": "n scale at zero preserves exact CDF",
+      "pass": true,
+      "method": "Compare rendered curve paths and SD; axis coordinate strings may differ below floating-point precision."
+    },
+    {
+      "test": "opposite means have same square-mean law",
+      "pass": true
+    },
+    {
+      "test": "scale change clears pin",
+      "pass": true
+    },
+    {
+      "test": "sample-size playback finishes at 500",
+      "pass": true
+    },
+    {
+      "test": "sample-size play/pause controls",
+      "pass": true
+    },
+    {
+      "test": "narrow responsive layouts",
+      "pass": true,
+      "data": [
+        {
+          "id": "ci",
+          "width": 420,
+          "scrollWidth": 420,
+          "height": "1795",
+          "bodyHeight": 1795,
+          "viewportHeight": 1795
+        },
+        {
+          "id": "delta",
+          "width": 420,
+          "scrollWidth": 420,
+          "height": "1823",
+          "bodyHeight": 1823,
+          "viewportHeight": 1823
+        }
+      ]
+    },
+    {
+      "test": "visible frames resize to 580 CSS pixels",
+      "pass": true,
+      "data": [
+        {
+          "id": "ci",
+          "width": 580,
+          "scrollWidth": 580,
+          "height": "2024",
+          "bodyHeight": 2024,
+          "viewportHeight": 2024
+        },
+        {
+          "id": "delta",
+          "width": 565,
+          "scrollWidth": 565,
+          "height": "1831",
+          "bodyHeight": 1831,
+          "viewportHeight": 1831
+        }
+      ]
+    },
+    {
+      "test": "resized heights stay stable",
+      "pass": true
+    }
+  ],
+  "visualReview": "Static SVG/PNG figures, full wide-layout panels, narrow 420px controls and charts inspected through separate viewport screenshots. Browser resize widths and heights are recorded above; browser scrollbars can reduce child content width.",
+  "liveAppScope": "Separate offscreen integration result in obsidian-checks.json. No full visual inspection of the active Obsidian note pane."
+}

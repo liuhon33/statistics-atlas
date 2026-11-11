@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>Confidence intervals and tests — three linked views</title><style>:root{color-scheme:light;--bg:#f5f7f5;--panel:#fff;--text:#263d33;--muted:#65766d;--line:#dbe5de;--green:#16866c;--blue:#3975b7;--orange:#cd7134;--purple:#8060b5}*{box-sizing:border-box}body{margin:0;padding:18px;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,sans-serif}main{max-width:1260px;margin:auto}.eyebrow{margin:0 0 5px;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--green)}h1{font-size:23px;line-height:1.25;letter-spacing:-.5px;margin:0 0 6px}h2{font-size:14px;margin:0 0 6px}.intro{margin:0 0 13px;color:var(--muted)}.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;padding:13px;background:white;border:1px solid var(--line);border-radius:12px}label{font-size:12px;color:var(--muted);display:block}output{float:right;color:var(--text);font-weight:650;font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--green);margin:8px 0 0}select,button{font:inherit;font-size:12px;border:1px solid var(--line);border-radius:6px;background:white;color:var(--text);padding:7px 8px}select{width:100%;margin-top:6px}button{cursor:pointer}button:hover{background:#e5f1e9}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--green);outline-offset:3px}.buttons,.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:11px 0}.legend{font-size:11px;color:var(--muted)}.legend i{display:inline-block;width:10px;height:8px;margin-right:5px;border-radius:2px}.blue{background:var(--blue)}.orange{background:var(--orange)}.green{background:var(--green)}.purple{background:var(--purple)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}.metric{padding:7px 10px;background:white;border-left:2px solid var(--green)}.metric span{display:block;font-size:10px;color:var(--muted)}.metric b{font-size:17px;font-weight:650;font-variant-numeric:tabular-nums}.notice{padding:9px 12px;font-size:12px;background:#e7f2eb;border-radius:8px;margin:12px 0}.notice.reject{background:#f5e9e6;color:#8c4747}.plots{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.stack{display:grid;gap:12px}.panel{padding:12px;background:white;border:1px solid var(--line);border-radius:12px;min-width:0}.panel svg{display:block;width:100%;height:auto}.caption,.foot{font-size:11px;color:var(--muted);line-height:1.5;margin:5px 0 0}.foot{margin-top:14px}.numbers{font-variant-numeric:tabular-nums;font-size:13px;line-height:1.8}.numbers strong{font-weight:650}.variance-track{display:flex;height:11px;border-radius:5px;overflow:hidden;background:var(--orange);margin:10px 0 5px}.variance-track span{display:block;background:var(--blue);height:100%}.formula{font-size:14px;line-height:1.7;margin:8px 0;font-variant-numeric:tabular-nums}.blue-text{color:var(--blue)}.orange-text{color:var(--orange)}.green-text{color:var(--green)}.pin{color:var(--purple);font-size:11px}.delta .plots{grid-template-columns:1fr 1.15fr}@media(max-width:700px){body{padding:12px}.controls{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr 1fr}.plots,.delta .plots{grid-template-columns:1fr}h1{font-size:21px}}
+</style></head><body><main><p class="eyebrow">ONE RULE · THREE VIEWS</p><h1>A confidence interval is a collection of retained null values</h1><p class="intro" id="model-info"></p>
+<div class="controls"><label>Sampling model<select id="model" aria-label="Sampling model"><option value="normal">Normal location</option><option value="scale">Uniform scale</option></select></label><label>Observed value x <output id="x-out"></output><input id="x" aria-label="Observed value x" type="range" min="-.5" max=".5" step="any" value=".2"></label><label>Candidate null b <output id="b-out"></output><input id="b" aria-label="Candidate null b" type="range" min="-.5" max=".5" step="any" value="0"></label><label>Significance α <output id="alpha-out"></output><input id="alpha" aria-label="Significance alpha" type="range" min=".01" max=".2" step=".005" value=".05"></label></div>
+<div class="buttons"><button id="reset">Reference values</button><button id="boundary">Exactly on the boundary</button><button id="play">Play null sweep</button></div>
+<div class="metrics"><div class="metric"><span>p-value for this candidate</span><b id="pval"></b></div><div class="metric"><span>Confidence interval</span><b id="interval"></b></div><div class="metric"><span>Vertical data-slice length</span><b id="vertical-length"></b></div><div class="metric"><span>Horizontal CI-slice length</span><b id="horizontal-length"></b></div></div>
+<div id="decision" class="notice" role="status"></div><div class="legend"><span><i class="blue"></i>fix b: possible data</span><span><i class="orange"></i>fix x: candidate parameters</span><span><i class="green"></i>the observed point / p-value</span></div>
+<div class="plots"><article class="panel"><h2>The same point in the acceptance band</h2><svg id="band" role="img" aria-label="Acceptance band with vertical test and horizontal confidence interval slices"></svg><p id="band-formula" class="formula"></p><p class="caption">Both axes use the same physical scale. The shaded band is a decision rule, not a probability distribution over parameters.</p></article><div class="stack"><article class="panel"><h2>Under this candidate null</h2><svg id="tails" role="img" aria-label="Sampling density under the candidate null with p-value tails shaded"></svg><p class="caption">Green tails sum to p. Blue dashed cutoffs bound the non-rejection region. The orange line marks the observed value.</p></article><article class="panel"><h2>Now vary the candidate null</h2><svg id="pcurve" role="img" aria-label="P-value curve with significance threshold and matching confidence interval"></svg><p class="caption">The orange segment collects all b with p(b) ≥ α. This curve is not a posterior density.</p></article></div></div>
+<p class="foot">Hold x and α fixed while sweeping b: the confidence interval stays fixed. Boundaries are included; the convention is reject when p &lt; α. Numbers are rounded. Plot windows are fixed within each model; tail probabilities use the full distribution. The scale model permits only positive parameters. Changing model resets to its reference example.</p></main>
+<script>(function(root){'use strict';
+ const phi=x=>Math.exp(-x*x/2)/Math.sqrt(2*Math.PI),clamp=x=>Math.max(0,Math.min(1,x));
+ // If H(x)=integral_0^x exp(-t^2/2)dt / exp(-x^2/2), then H'=1+xH.
+ // Its positive-term series is x + x^3/3 + x^5/(3*5) + ... .
+ function cdf(x){if(x<=-8)return 0;if(x>=8)return 1;const a=Math.abs(x);let term=a,sum=a;for(let k=3;k<401;k+=2){term*=a*a/k;const next=sum+term;if(next===sum)break;sum=next;}return clamp(.5+Math.sign(x)*phi(a)*sum);}
+ function quantile(p){if(!(p>0&&p<1))throw new RangeError('Quantile requires 0 < p < 1.');let lo=-8,hi=8;for(let k=0;k<55;k++){const mid=(lo+hi)/2;if(cdf(mid)<p)lo=mid;else hi=mid;}return(lo+hi)/2;}
+ function testModel(kind,alpha){
+  if(!(alpha>0&&alpha<1))throw new RangeError('Use 0 < alpha < 1.');
+  if(kind==='normal'){const tau=.1,z=quantile(1-alpha/2),h=tau*z;return{kind,alpha,tau,z,h,domain:[-.85,.85],controls:[-.5,.5],acceptance:b=>[b-h,b+h],interval:x=>[x-h,x+h],p:(x,b)=>2*cdf(-Math.abs(x-b)/tau),density:(t,b)=>phi((t-b)/tau)/tau};}
+  if(kind==='scale'){const L=.5+alpha/2,U=1.5-alpha/2;return{kind,alpha,L,U,domain:[0,6],controls:[.2,2.8],acceptance:b=>[L*b,U*b],interval:x=>[x/U,x/L],p:(x,b)=>{if(b<=0)return 0;const f=clamp(x/b-.5);return 2*Math.min(f,1-f);},density:(t,b)=>b>0&&t>=b/2&&t<=1.5*b?1/b:0};}
+  throw new Error('Unknown model');
+ }
+ const inside=(x,pair)=>x>=pair[0]-1e-12&&x<=pair[1]+1e-12;
+ function testState(kind,x,b,alpha){const model=testModel(kind,alpha),acceptance=model.acceptance(b),interval=model.interval(x),p=model.p(x,b);return{model,x,b,alpha,p,acceptance,interval,inBand:inside(x,acceptance),inCI:inside(b,interval),pRetains:p>=alpha-1e-12};}
+ const scaleFactor=(mode,n)=>mode==='raw'?1:mode==='n'?n:Math.sqrt(n);
+ function deltaState(mu,n,mode='sqrt'){if(!(n>=1&&Math.abs(mu)<=10))throw new RangeError('Invalid model parameters.');const a=scaleFactor(mode,n),rawVar=4*mu*mu/n+2/(n*n),linearVar=4*mu*mu/n;return{mu,n,mode,a,rawMean:1/n,rawVar,linearVar,mean:a/n,sd:a*Math.sqrt(rawVar),linearSD:a*2*Math.abs(mu)/Math.sqrt(n),share:linearVar/rawVar,support:-a*mu*mu};}
+ function exactDeltaCDF(v,s){const r=s.mu*s.mu+v/s.a;if(r<=0)return 0;const t=Math.sqrt(r),sn=Math.sqrt(s.n);return clamp(cdf((t-s.mu)*sn)-cdf((-t-s.mu)*sn));}
+ const linearDeltaCDF=(v,s)=>s.linearSD===0?(v<0?0:1):cdf(v/s.linearSD);
+ function deltaQuantile(p,s){let lo=s.support,hi=s.a*((Math.abs(s.mu)+8/Math.sqrt(s.n))**2-s.mu*s.mu);for(let k=0;k<55;k++){const mid=(lo+hi)/2;if(exactDeltaCDF(mid,s)<p)lo=mid;else hi=mid;}return(lo+hi)/2;}
+ function oneDraw(mu,n,z){const bar=mu+z/Math.sqrt(n),linear=2*mu*z,quadratic=z*z/Math.sqrt(n);return{bar,estimate:bar*bar,linear,quadratic,exact:linear+quadratic};}
+ const api={phi,cdf,quantile,testModel,testState,inside,scaleFactor,deltaState,exactDeltaCDF,linearDeltaCDF,deltaQuantile,oneDraw};
+ if(typeof module==='object'&&module.exports)module.exports=api;else root.InferenceMath=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+
+;
+(()=>{'use strict';
+ const C={blue:'#3975b7',orange:'#cd7134',green:'#16866c',purple:'#8060b5',red:'#b64f56',ink:'#344640',muted:'#6c7b75',grid:'#e4e9e5'};
+ const el=(tag,parent,attrs={},text)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;parent.appendChild(e);return e;};
+ const fmt=(x,d=3)=>{if(Math.abs(x)<1e-12)return'0';if(Math.abs(x)>=10000||Math.abs(x)<.0001)return x.toExponential(2).replace('-','−');return Number(x.toFixed(d)).toString().replace('-','−');};
+ function plot(id,xr,yr,xlabel,ylabel,square=false){const svg=document.getElementById(id),W=500,H=square?500:264;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.replaceChildren();const l=53,r=481,t=23,b=square?451:217;const x=v=>l+(v-xr[0])/(xr[1]-xr[0])*(r-l),y=v=>b-(v-yr[0])/(yr[1]-yr[0])*(b-t);const defs=el('defs',svg),clip=el('clipPath',defs,{id:id+'-clip'});el('rect',clip,{x:l,y:t,width:r-l,height:b-t});
+  const xdigits=Math.max(2,Math.min(5,2-Math.floor(Math.log10((xr[1]-xr[0])/4))));
+  const ydigits=square?xdigits:2;
+  for(let k=0;k<=4;k++){const xx=xr[0]+k*(xr[1]-xr[0])/4,yy=yr[0]+k*(yr[1]-yr[0])/4;el('line',svg,{x1:x(xx),x2:x(xx),y1:t,y2:b,stroke:C.grid});el('line',svg,{x1:l,x2:r,y1:y(yy),y2:y(yy),stroke:C.grid});el('text',svg,{x:x(xx),y:b+17,'text-anchor':'middle','font-size':11,fill:C.muted},fmt(xx,xdigits));el('text',svg,{x:l-7,y:y(yy)+4,'text-anchor':'end','font-size':11,fill:C.muted},fmt(yy,ydigits));}
+  el('text',svg,{x:(l+r)/2,y:H-8,'text-anchor':'middle','font-size':12,fill:C.ink},xlabel);el('text',svg,{x:l,y:13,'font-size':11,fill:C.ink},ylabel);const g=el('g',svg,{'clip-path':`url(#${id}-clip)`});return{svg,g,x,y,xr,yr,l,r,t,b};
+ }
+ function path(p,points,color,width=2,dash='',fill='none',opacity=1){return el('path',p.g,{d:points.map((q,i)=>(i?'L':'M')+p.x(q[0]).toFixed(3)+','+p.y(q[1]).toFixed(3)).join(' '),stroke:color,'stroke-width':width,'stroke-dasharray':dash,fill,opacity});}
+ const sample=(a,b,n,fn)=>Array.from({length:n+1},(_,i)=>{const x=a+(b-a)*i/n;return[x,fn(x)];});
+ const curve=(p,fn,color,width=2,dash='')=>path(p,sample(...p.xr,360,fn),color,width,dash);
+ const dot=(p,x,y,color,r=4)=>el('circle',p.g,{cx:p.x(x),cy:p.y(y),r,fill:color,stroke:'white','stroke-width':1});
+ const vline=(p,x,color,dash='4 4',width=1)=>path(p,[[x,p.yr[0]],[x,p.yr[1]]],color,width,dash);
+ const hline=(p,y,color,dash='4 4',width=1)=>path(p,[[p.xr[0],y],[p.xr[1],y]],color,width,dash);
+ const area=(p,points,color,alpha=.15)=>path(p,[[points[0][0],0],...points,[points.at(-1)[0],0]],color,0,'',color,alpha);
+ window.InferencePlot={C,el,fmt,plot,path,sample,curve,dot,vline,hline,area};
+})();
+
+;
+(()=>{'use strict';const M=InferenceMath,P=InferencePlot,C=P.C,$=id=>document.getElementById(id);let timer=null,direction=1;
+ const get=()=>M.testState($('model').value,Number($('x').value),Number($('b').value),Number($('alpha').value));
+ function stop(){if(timer){clearInterval(timer);timer=null;}$('play').textContent='Play null sweep';}
+ function render(){const s=get(),m=s.model,normal=m.kind==='normal',range=m.domain;for(const id of ['x','b','alpha'])$(id+'-out').textContent=P.fmt(s[id],4);
+  $('model-info').textContent=normal?'Known standard error τ = 0.1. The observed sample mean is x; under H₀: θ = b, its sampling distribution is N(b, 0.01).':'One observation X ∼ Uniform(θ/2, 3θ/2), θ > 0. Larger candidate parameters imply wider sampling distributions.';
+  $('pval').textContent=s.p<.0001?'< 0.0001':P.fmt(s.p,5);$('interval').textContent=`[${P.fmt(s.interval[0])}, ${P.fmt(s.interval[1])}]`;$('vertical-length').textContent=P.fmt(s.acceptance[1]-s.acceptance[0],4);$('horizontal-length').textContent=P.fmt(s.interval[1]-s.interval[0],4);
+  const retained=s.inBand;$('decision').className='notice'+(retained?'':' reject');$('decision').textContent=retained?'One agreement: the observed point is in the band, b is in the confidence interval, and p ≥ α. Retain this candidate null.':'One agreement: the observed point is outside the band, b is outside the confidence interval, and p < α. Reject this candidate null.';
+  const band=P.plot('band',range,range,'candidate parameter b','possible observed value x',true),bs=P.sample(...range,180,b=>m.acceptance(b)[0]),tops=P.sample(...range,180,b=>m.acceptance(b)[1]);P.path(band,[...bs,...tops.reverse()],C.blue,0,'',C.blue,.09);P.path(band,bs,C.blue,1);P.path(band,tops,C.blue,1);
+  P.vline(band,s.b,C.blue,'4 4');P.hline(band,s.x,C.orange,'4 4');P.path(band,[[s.b,s.acceptance[0]],[s.b,s.acceptance[1]]],C.blue,5);P.path(band,[[s.interval[0],s.x],[s.interval[1],s.x]],C.orange,5);P.dot(band,s.b,s.x,retained?C.green:C.red,5);
+  $('band-formula').textContent=normal?`b − ${P.fmt(m.h,4)} ≤ x ≤ b + ${P.fmt(m.h,4)}`:`${P.fmt(m.L,4)}b ≤ x ≤ ${P.fmt(m.U,4)}b`;
+  const tails=P.plot('tails',range,[0,normal?4.4:5.5],'possible observation t','sampling density under b'),d=Math.abs(s.x-s.b);
+  if(normal){for(const [a,b] of [[range[0],Math.min(range[1],s.b-d)],[Math.max(range[0],s.b+d),range[1]]])if(b>a)P.area(tails,P.sample(a,b,100,t=>m.density(t,s.b)),C.green,.24);P.curve(tails,t=>m.density(t,s.b),C.ink,2);}
+  else{const lo=s.b/2,hi=1.5*s.b;for(const[a,b]of[[lo,Math.min(hi,s.b-d)],[Math.max(lo,s.b+d),hi]])if(b>a)P.area(tails,[[a,1/s.b],[b,1/s.b]],C.green,.24);P.path(tails,[[lo,0],[lo,1/s.b],[hi,1/s.b],[hi,0]],C.ink,2);}
+  for(const cutoff of s.acceptance)P.vline(tails,cutoff,C.blue);P.vline(tails,s.x,C.orange,'',2);
+  const pv=P.plot('pcurve',range,[0,1.05],'candidate parameter b','p-value');P.hline(pv,s.alpha,C.orange,'5 4',1.4);P.curve(pv,b=>m.p(s.x,b),C.green,2.5);P.path(pv,[[s.interval[0],s.alpha],[s.interval[1],s.alpha]],C.orange,5);P.vline(pv,s.b,C.blue);P.dot(pv,s.b,s.p,retained?C.green:C.red,5);
+ }
+ function reset(){stop();const normal=$('model').value==='normal';for(const id of ['x','b']){const input=$(id);input.min=normal?-.5:.2;input.max=normal?.5:2.8;input.value=normal?(id==='x'?.2:0):1;}$('alpha').value=.05;render();}
+ $('model').addEventListener('change',reset);for(const id of ['x','b','alpha'])$(id).addEventListener('input',()=>{stop();render();});$('reset').addEventListener('click',reset);
+ $('boundary').addEventListener('click',()=>{stop();const kind=$('model').value,m=M.testModel(kind,Number($('alpha').value)),b=kind==='normal'?0:1;$('b').value=b;$('x').value=m.acceptance(b)[1];render();});
+ $('play').addEventListener('click',()=>{if(timer){stop();return;}direction=1;const input=$('b'),lo=Number(input.min),hi=Number(input.max);timer=setInterval(()=>{let b=Number(input.value)+direction*(hi-lo)/160;if(b>hi||b<lo){direction*=-1;b=Math.max(lo,Math.min(hi,b));}input.value=b;render();},matchMedia('(prefers-reduced-motion: reduce)').matches?350:90);$('play').textContent='Pause null sweep';});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});window.addEventListener('pagehide',stop);reset();
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>

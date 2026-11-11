@@ -1,0 +1,82 @@
+{
+  "normal": [
+    {
+      "sigma": 1,
+      "E_score": -2.0816681711721685e-17,
+      "E_score_squared": 1.0,
+      "negative_E_hessian": 1.0
+    },
+    {
+      "sigma": 2.5,
+      "E_score": 9.71445146547012e-16,
+      "E_score_squared": 0.1600000000000002,
+      "negative_E_hessian": 0.16
+    },
+    {
+      "sigma": 5,
+      "E_score": 1.8041124150158843e-16,
+      "E_score_squared": 0.04000000000000024,
+      "negative_E_hessian": 0.04
+    }
+  ],
+  "logistic": [
+    {
+      "sigma": 1,
+      "scale": 0.5513288954217921,
+      "E_score": 7.03271174002352e-18,
+      "E_score_squared": 1.096622711232151,
+      "negative_E_hessian": 1.0966227112321507
+    },
+    {
+      "sigma": 2.5,
+      "scale": 1.37832223855448,
+      "E_score": 3.51635587001176e-18,
+      "E_score_squared": 0.17545963379714416,
+      "negative_E_hessian": 0.1754596337971442
+    },
+    {
+      "sigma": 5,
+      "scale": 2.75664447710896,
+      "E_score": 1.75817793500588e-18,
+      "E_score_squared": 0.04386490844928604,
+      "negative_E_hessian": 0.04386490844928605
+    }
+  ],
+  "two_d": {
+    "Sigma": [
+      [
+        4.0,
+        3.0
+      ],
+      [
+        3.0,
+        4.0
+      ]
+    ],
+    "I": [
+      [
+        0.5714285714285714,
+        -0.42857142857142855
+      ],
+      [
+        -0.42857142857142855,
+        0.5714285714285714
+      ]
+    ],
+    "score_covariance_error": 0.0,
+    "eigenvalues_I": [
+      0.14285714285714285,
+      1.0
+    ]
+  },
+  "off_truth_normal": {
+    "mu_star": 5,
+    "mu0": 6,
+    "sigma": 1,
+    "mean_score": -1,
+    "variance_score": 1,
+    "second_moment_score": 2,
+    "negative_expected_hessian": 1
+  },
+  "status": "PASS; quadrature supports the analytic proofs in the note."
+}

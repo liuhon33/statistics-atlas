@@ -1,0 +1,59 @@
+{
+  "model": {
+    "prior": [
+      0.5,
+      0.5
+    ],
+    "likelihood": [
+      0.8,
+      0.2
+    ],
+    "joint": [
+      0.4,
+      0.1
+    ],
+    "evidence": 0.5,
+    "posterior": [
+      0.8,
+      0.2
+    ]
+  },
+  "examples": [
+    {
+      "r": 0.5,
+      "fit": -0.916290731874155,
+      "prior_kl": 0.0,
+      "posterior_kl": 0.22314355131420976,
+      "elbo": -0.916290731874155,
+      "weights": [
+        0.8,
+        0.2
+      ]
+    },
+    {
+      "r": 0.7,
+      "fit": -0.639031859650177,
+      "prior_kl": 0.08228287850505184,
+      "posterior_kl": 0.02816755759528347,
+      "elbo": -0.7213147381552287,
+      "weights": [
+        0.5714285714285715,
+        0.3333333333333333
+      ]
+    },
+    {
+      "r": 0.8,
+      "fit": -0.5004024235381878,
+      "prior_kl": 0.1927447570217575,
+      "posterior_kl": -4.4408920985006264e-17,
+      "elbo": -0.6931471805599452,
+      "weights": [
+        0.5,
+        0.5000000000000001
+      ]
+    }
+  ],
+  "grid_points_checked": 999,
+  "reused_path_A_posterior_KL": 0.14674358169677854,
+  "checks": "PASS: normalization, both ELBO identities, bound, importance weights, equality, reused path figure"
+}

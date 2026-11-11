@@ -1,0 +1,34 @@
+{
+  "output": "delta-explorer.html",
+  "output_sha256": "51e8c8a073530167ccd2b04689881d737d511d34e46eac61b63c168b71030302",
+  "inputs": [
+    {
+      "name": "delta-body.html",
+      "sha256": "66550631bce31a4a508208515e892c5ca9b9ba00b01f3bf9363ff87cf087fc6f"
+    },
+    {
+      "name": "explorer.css",
+      "sha256": "18c52eb15845e3b22d1a632a57f64ebf336d5cc9c2ff99ab39f29d8af96fa173"
+    },
+    {
+      "name": "math.js",
+      "sha256": "30201099ebc47992b723e8b59671e45d14d9696b6b47709d6d57c362c2939725"
+    },
+    {
+      "name": "plot.js",
+      "sha256": "b24661363319b207227bd30c12e6e2bd7926adc9390b6e489add127748bfa48a"
+    },
+    {
+      "name": "delta.js",
+      "sha256": "2722cb9f2ac4ed5ed71b93a4e44346ae91b1146aa3b6c3a32392955ec6a402e6"
+    },
+    {
+      "name": "build.py",
+      "sha256": "3cc99c573defdfde63720afd15fb3fd7671cb0b71ee463c4d350022e4ea8b068"
+    },
+    {
+      "name": "build_explorer.py",
+      "sha256": "90ed20cb9b71d790b309293129826a533c6512c2ec06b164ce1f85ec76d021f2"
+    }
+  ]
+}

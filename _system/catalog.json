@@ -5518,6 +5518,46 @@
       "layer": "learning",
       "primary_home": "test-invert",
       "status": "active"
+    },
+    {
+      "id": "learning-vae-diffusion-elbo-paths",
+      "title": "VAE and diffusion ELBO - images, hidden paths, and Gaussian KL",
+      "path": "Learning/Statistical computing & learning/Simulation & approximate inference/VAE and diffusion ELBO - images, hidden paths, and Gaussian KL.md",
+      "layer": "learning",
+      "primary_home": "elbo",
+      "status": "active"
+    },
+    {
+      "id": "learning-diffusion-lecture12",
+      "title": "Diffusion models - Lecture 12 derivations and guided generation",
+      "path": "Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion models - Lecture 12 derivations and guided generation.md",
+      "layer": "learning",
+      "primary_home": "neural-models",
+      "status": "active"
+    },
+    {
+      "id": "learning-fisher-score-curvature-precision",
+      "title": "Fisher information - score spread, curvature, and parameter precision",
+      "path": "Learning/Statistical inference & modeling/Frequentist & likelihood inference/Fisher information - score spread, curvature, and parameter precision.md",
+      "layer": "learning",
+      "primary_home": "likelihood-fisher-information",
+      "status": "active"
+    },
+    {
+      "id": "learning-clt-delta-scaling-transformation",
+      "title": "CLT and delta method - scaling and transforming estimation error",
+      "path": "Learning/Probability & mathematical foundations/Limits & concentration/CLT and delta method - scaling and transforming estimation error.md",
+      "layer": "learning",
+      "primary_home": "delta",
+      "status": "active"
+    },
+    {
+      "id": "learning-normal-threshold-mle-full-versus-signs",
+      "title": "Normal-threshold MLE - full measurements versus signs",
+      "path": "Learning/Statistical inference & modeling/Frequentist & likelihood inference/Normal-threshold MLE - full measurements versus signs.md",
+      "layer": "learning",
+      "primary_home": "likelihood-maximum-likelihood-estimation",
+      "status": "active"
     }
   ]
 }

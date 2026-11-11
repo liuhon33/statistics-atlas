@@ -1,0 +1,21 @@
+<main id="app">
+  <header><p class="eyebrow">SLICE · NORMALIZE · AVERAGE</p><h1>From a joint density to a conditional mean</h1><p class="intro">A Gaussian pair with Var(X) = Var(Y) = 1 and E[Y] = 0. Move a slice, then compare its raw area with the normalized curve.</p></header>
+  <section class="controls" aria-label="Model and slice controls">
+    <label>Slice y₀ for X | Y <output id="y0-out">−1.30</output><input id="y0" aria-label="Slice y₀ for X given Y" type="range" min="-2.5" max="2.5" step="0.05" value="-1.3"></label>
+    <label>Slice x₀ for Y | X <output id="x0-out">1.00</output><input id="x0" aria-label="Slice x₀ for Y given X" type="range" min="-2.5" max="2.5" step="0.05" value="1"></label>
+    <label>Correlation ρ <output id="rho-out">0.80</output><input id="rho" aria-label="Correlation rho" type="range" min="-0.95" max="0.95" step="0.05" value="0.8"></label>
+    <label>Mean of X, μₓ <output id="mux-out">0.00</output><input id="mux" aria-label="Mean of X" type="range" min="-1.5" max="1.5" step="0.05" value="0"></label>
+  </section>
+  <div class="buttons"><button id="reference">Screenshot values</button><button id="independent">Independent: ρ = 0</button><button id="negative">Negative: ρ = −0.8</button><button id="play">Play y₀ sweep</button></div>
+  <div class="options"><label><input id="marginals" type="checkbox" checked> Show marginals</label><label><input id="means" type="checkbox" checked> Show conditional means</label><label><input id="raw" type="checkbox" checked> Compare raw slices</label></div>
+  <div class="legend"><span><i class="gray"></i>joint surface</span><span><i class="green"></i>X | Y = y₀</span><span><i class="orange"></i>Y | X = x₀</span><span><i class="purple"></i>marginals / overall mean</span><span>dashed curves = raw slices</span></div>
+  <section class="views">
+    <article class="surface panel"><div class="panel-heading"><h2>One surface, two slices</h2><button id="reset-view">Reset view</button></div><div class="surface-canvas"><canvas id="surface" width="680" height="490" tabindex="0" role="img" aria-label="Rotatable joint Gaussian surface with two density slices. Drag to rotate; arrow keys rotate and tilt the view."></canvas></div><p class="caption">Drag to rotate; arrow keys also change the view. Camera motion leaves the model unchanged. Purple wall heights equal the corresponding slice areas.</p></article>
+    <div class="conditionals">
+      <article class="panel"><h2 class="green-text">X | Y = y₀: a density in x</h2><svg id="cx" role="img" aria-label="Conditional X density and its unnormalized joint-density slice" viewBox="0 0 420 220"></svg><p class="formula" id="cx-formula"></p><p class="caption" id="cx-caption"></p></article>
+      <article class="panel"><h2 class="orange-text">Y | X = x₀: a density in y</h2><svg id="cy" role="img" aria-label="Conditional Y density and its unnormalized joint-density slice" viewBox="0 0 420 220"></svg><p class="formula" id="cy-formula"></p><p class="caption" id="cy-caption"></p></article>
+    </div>
+  </section>
+  <section class="averaging panel"><div><h2>Average the conditional means</h2><svg id="weighted" role="img" aria-label="Conditional mean as a function of y, with marginal-density weights" viewBox="0 0 600 255"></svg><p class="caption">Equal-width y bins: dot areas ∝ pY(y) Δy. Their x-coordinate on the surface is the conditional mean; below it is plotted vertically against y.</p></div><div class="readouts"><p class="formula">m(y) = E[X | Y = y] = μₓ + ρy</p><dl><dt>Selected conditional mean m(y₀)</dt><dd id="selected-mean"></dd><dt>Average over every possible Y</dt><dd id="overall-mean"></dd><dt>Conditional variance</dt><dd id="conditional-var"></dd></dl><p id="explanation"></p><p class="caption">∫ m(y) pY(y) dy = μₓ + ρ E[Y] = μₓ.<br>The identity concerns the full distribution, not an unweighted average of the dots.</p></div></section>
+  <p class="foot">Original reconstruction of the supplied image. At the screenshot preset: ρ = 0.8, μₓ = 0, y₀ = −1.3, x₀ = 1. N(mean, variance) is used throughout. Plot windows and vertical scales stay fixed; Gaussian tails outside them are omitted visually, never renormalized. All integral readouts are exact full-support formulas. |ρ| = 1 is excluded because the joint density becomes singular.</p>
+</main>

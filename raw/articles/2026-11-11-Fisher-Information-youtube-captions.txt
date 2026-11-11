@@ -1,0 +1,530 @@
+YouTube transcript
+Video ID: pneluWj-U-o
+Language: en
+Captions: auto-generated
+
+[0:07] Welcome to Mutual Information. My name
+[0:09] is DJ. In this video, we're going to
+[0:11] learn about the Fisher Information.
+[0:13] This thing is an absolutely foundational
+[0:15] idea which quantifies the amount of
+[0:17] information an observation carries about
+[0:19] a parameter.
+[0:20] More generally, it provides a general
+[0:22] framework for reasoning about parameter
+[0:24] uncertainty.
+[0:25] It is a frequentist concept, which is
+[0:27] kind of a dirty term these days, but it
+[0:29] has grown beyond that world. Bayesians
+[0:32] and machine learning practitioners love
+[0:33] to borrow it for new ideas. To name a
+[0:35] few, it's used in the Jeffreys prior,
+[0:37] natural gradient methods, experimental
+[0:38] design, and probably others that I just
+[0:41] haven't heard of. So, to empower you
+[0:43] with this idea, my approach will be to
+[0:45] explain the goal of the Fisher
+[0:46] Information and then show
+[0:49] how it's a clever way to achieve that
+[0:50] goal.
+[0:51] Now, for the sake of a gradual
+[0:52] explanation, I'm going to start in the
+[0:54] simple one-dimensional case and then
+[0:56] generalize to higher dimensions. The
+[0:58] higher dimensional case is really what
+[0:59] you want for applications. That's where
+[1:01] all the cool stuff happens. That said,
+[1:03] let's jump in.
+[1:05] First, let's say random variable Y is
+[1:07] related to a parameter, which is just a
+[1:09] single number here, by some known
+[1:11] probability density function. We write
+[1:13] that generally with this expression,
+[1:16] which is here to represent any function
+[1:17] that accepts both an observation of Y
+[1:19] and a parameter value and then gives us
+[1:21] a number which tells us the likelihood
+[1:23] of that observation according to that
+[1:24] parameter.
+[1:25] Now, here's the question. According to
+[1:28] whatever this thing is, how well does an
+[1:30] observation of Y locate the parameter
+[1:32] value that produced it?
+[1:34] In fact, the goal is to measure how well
+[1:37] an observation locates that parameter.
+[1:40] Now, if you're like me, the vagueness of
+[1:42] this goal makes it hard to imagine what
+[1:44] a solution would even look like. But
+[1:46] what does help me is to consider cases
+[1:48] at two extremes.
+[1:50] For the first case, let's use the normal
+[1:52] distribution with a large variance. What
+[1:54] I mean by that is P of Y given theta is
+[1:57] the normal density function where our
+[1:59] theta is the mean of the normal and we
+[2:01] assume we know the variance, which we'll
+[2:03] set to a relatively high value of 25.
+[2:06] For the other case, we'll consider the
+[2:08] exact same thing except with a small
+[2:10] variance of one.
+[2:12] Very, very frequently, when we want to
+[2:13] go from observations to parameter
+[2:15] estimates, we consider the log
+[2:17] likelihood function.
+[2:18] To show that, I'm going to simulate data
+[2:20] according to the large variance case
+[2:21] first. And then, for each observation,
+[2:24] draw the log likelihood function.
+[2:26] Each one of these lines tells us how
+[2:28] likely one of our observations is as we
+[2:31] vary our mean parameter along the
+[2:32] horizontal axis.
+[2:33] Keep in mind, the data is generated
+[2:35] according to some parameter value, which
+[2:37] I haven't told you.
+[2:38] We'll call that value the true parameter
+[2:40] value.
+[2:41] Naturally, let's consider the small
+[2:43] variance case as well.
+[2:45] Okay, now, take a step back and look at
+[2:47] these two cases. I have not told you the
+[2:49] true parameter value. But you tell me,
+[2:52] in which case would you have an easier
+[2:54] time guessing that parameter value?
+[2:57] Isn't it obvious?
+[2:58] It's clearly the right side, the small
+[3:00] variance case.
+[3:02] Effectively, each line shows one
+[3:03] observation's vote of where the true
+[3:05] parameter is.
+[3:06] In this case, all observations overlap
+[3:08] on a narrow range, making it easier to
+[3:10] pinpoint that value.
+[3:12] As you may be able to guess, that true
+[3:13] parameter value is five.
+[3:16] Going forward, we'll refer to that true
+[3:17] value as mu star.
+[3:19] And so, we might say that in the small
+[3:22] variance case, our observations provide
+[3:24] more information about where mu star is.
+[3:27] In fact, I should emphasize, when we say
+[3:30] information, it's this narrowness that
+[3:32] we're after. Honestly, this view is all
+[3:34] you need to understand the goal of the
+[3:36] Fisher information. But now, separately,
+[3:38] the question becomes, how does the
+[3:39] Fisher information turn this narrowness
+[3:42] into a number? How do we measure that
+[3:44] information? For that, we'll need a new
+[3:46] view. First, let's redraw what we just
+[3:49] saw.
+[3:50] Here, we're showing the small variance
+[3:51] case.
+[3:52] Next, let's pick a parameter value,
+[3:54] totally arbitrarily, to plug into these
+[3:56] functions.
+[3:57] I'll call this evaluation point mu
+[3:59] naught.
+[4:00] If we plug mu naught in, we'll get back
+[4:02] a big list of numbers. Over here, we'll
+[4:05] see an estimated distribution of those
+[4:07] numbers. Finally, we're in a position to
+[4:09] see the key idea of the Fisher
+[4:11] information. The idea is to consider the
+[4:13] slopes of these functions at our
+[4:15] evaluation point. If we recall a smidge
+[4:18] of calculus, we know the functions that
+[4:20] generate these slopes are the
+[4:21] derivatives, which we can draw as well.
+[4:24] In general, the derivative of a log
+[4:25] likelihood with respect to the
+[4:26] parameters has a special name. We call
+[4:29] them score functions. As you can see, in
+[4:31] this case, the score functions happen to
+[4:33] be linear. As we'll see, all the action
+[4:36] hangs out in the distribution of scores
+[4:38] at our evaluation point. So, just like
+[4:41] we did below, let's show that
+[4:43] distribution along with the mean line of
+[4:45] that distribution. To get a feel, let's
+[4:48] move around the evaluation point a bit.
+[4:50] The first thing I bet you'll notice is
+[4:52] the shape of the slopes distribution
+[4:53] stays the same. Well, please ignore that
+[4:56] observation. That comes from the fact
+[4:58] that the normal distribution has linear
+[4:59] score functions, and that's not true in
+[5:01] other non-normal cases.
+[5:03] But, there is one thing that generalizes
+[5:06] to all of the cases. When we evaluate
+[5:08] these score functions at the true
+[5:09] parameter value, the mean of the scores
+[5:12] is zero. To provide some real simple
+[5:15] intuition, the average score is zero at
+[5:17] the true point because it has to be. If
+[5:19] it wasn't, the data would be suggesting
+[5:21] a more likely parameter value is
+[5:23] somewhere else.
+[5:24] But, in this setup, that can't be. The
+[5:27] most likely parameter value must be our
+[5:29] true parameter value because it
+[5:30] generated our data.
+[5:32] And now, we're just about ready to see
+[5:34] the Fisher information. But, I want you
+[5:37] to guess what it is. To help, I'm going
+[5:39] to move between our two cases. We're
+[5:41] starting in the informative case with a
+[5:43] small variance. Now, let's increase it.
+[5:47] Hmm.
+[5:49] Getting any ideas? Anything jumping out?
+[5:52] It seems to me, in the informative case,
+[5:54] there's a wider variance in the scores.
+[5:57] In the uninformative case, there is a
+[5:59] small variance, which means they're all
+[6:01] hanging around zero. To gain some
+[6:03] intuition, think about what single small
+[6:05] score value is telling you.
+[6:08] If it's .001, that means that data point
+[6:11] recommends shifting mu by a thousand if
+[6:13] you'd like to increase the log
+[6:14] likelihood by one.
+[6:16] If it's minus .001, it's saying you need
+[6:19] to shift mu by a thousand in the other
+[6:20] direction.
+[6:22] So, a lot of score values huddled around
+[6:24] zero collectively tell you to move
+[6:26] nowhere, but individually provide wildly
+[6:28] different recommendations about where
+[6:30] the true value lives. In other words, a
+[6:32] small variance of the scores implies a
+[6:34] large range of possible mu values.
+[6:37] This is the key idea behind the Fisher
+[6:38] information.
+[6:39] And finally, we can state its
+[6:41] definition. The Fisher information is
+[6:43] the variance of the score functions when
+[6:46] we evaluate them at the true parameter
+[6:47] value.
+[6:48] In other words, it's a measure of the
+[6:50] width of this distribution when it's
+[6:52] centered on zero.
+[6:53] To put it on the screen, I'll show two
+[6:55] times the square of the Fisher
+[6:56] information as this horizontal width.
+[6:59] Now look, as we move between the
+[7:01] uninformative and informative cases, the
+[7:03] Fisher information follows naturally.
+[7:06] And hopefully, you can feel mechanically
+[7:08] what's going on. Remember, the goal of
+[7:10] the Fisher information is to measure
+[7:12] narrowness, and this does precisely
+[7:14] that. As we become more narrow, the
+[7:16] slopes vary more widely, and the Fisher
+[7:18] information increases.
+[7:20] But, there's more, as you may have
+[7:22] guessed from this big empty space. Let's
+[7:25] once again consider the slopes at our
+[7:27] evaluation point, but this time of the
+[7:30] score functions.
+[7:31] In fact, in the exact same way the
+[7:33] middle row relates to the bottom row,
+[7:36] let's create a top row which relates to
+[7:38] the middle row.
+[7:39] That means we'll plot the second
+[7:41] derivatives and an estimated density of
+[7:43] the second derivatives at the evaluation
+[7:45] point. As you could tell, in this normal
+[7:48] distribution case, the second derivative
+[7:50] is constant.
+[7:51] Okay, now I can state this result. The
+[7:54] Fisher information, which is the
+[7:55] variance of the scores, is also, if it
+[7:58] exists, equal to the negative expected
+[8:01] value of the second derivatives.
+[8:03] Now, the normal distribution isn't a
+[8:05] great case to show that since the second
+[8:07] derivative is always one value.
+[8:09] So, let's transform it into a weirder
+[8:12] case where that isn't true. And now we
+[8:15] can see it. Now, you may reasonably ask,
+[8:18] why is this true? Well, I will avoid the
+[8:20] proof because I do not know it. But, I
+[8:24] can offer intuition.
+[8:25] Basically, you expect a wide variance in
+[8:27] your slopes if your slopes are changing
+[8:29] a lot. Slopes that are changing a lot
+[8:31] have extreme slopes themselves, meaning
+[8:34] the average second derivative is
+[8:35] extreme. So, it's not crazy to imagine
+[8:39] the expected second derivative is the
+[8:41] variance of the slopes.
+[8:43] Now, that wordy explanation may not do
+[8:45] it for you. In that case, just try to
+[8:47] feel the mechanics between extremes.
+[8:49] When the observations make it easy to
+[8:51] locate a parameter, your slopes vary a
+[8:53] lot. When they vary a lot, the average
+[8:55] second derivative is extreme.
+[8:57] Now, the view I've given so far is a bit
+[8:59] too simple to be useful. I don't think
+[9:01] anyone really cares about the
+[9:02] one-dimensional case. So, let's
+[9:04] generalize all the way to two
+[9:07] dimensions. I'll do that by doing the
+[9:09] exact same exercise, except we'll be
+[9:11] using a 2D multivariate normal. The
+[9:13] parameters in this case will be the
+[9:14] vector of two means, and we'll assume
+[9:16] the covariance matrix is known, just
+[9:18] like we assumed the variance was known
+[9:20] in the earlier case. Since two
+[9:21] dimensions is a heavier lift visually,
+[9:23] we can't show all six of these graphs.
+[9:26] So, we'll generalize only two of them.
+[9:28] The first will be the one showing the
+[9:29] log likelihood curves and their slopes,
+[9:32] and the second will be the distribution
+[9:34] of those slopes.
+[9:35] Ready?
+[9:36] All right, let's jump back into the
+[9:38] black abyss. Now, let's think. In the 1D
+[9:41] case, the x-axis was our one-dimensional
+[9:43] parameter space.
+[9:44] Now, we need to generalize that to a 2D
+[9:46] parameter space.
+[9:48] Okay, let's draw that with the true
+[9:50] parameter point called out. The next
+[9:52] thing we need to do is draw a 2D version
+[9:54] of those log likelihood curves we saw
+[9:56] earlier.
+[9:57] Let's think. Those curves receive a
+[9:59] single parameter value as input and gave
+[10:01] us back a log likelihood. Now, they need
+[10:03] to accept two parameter values. So, we
+[10:06] could think of the 2D version as domes
+[10:08] that cover this 2D plane. And typically,
+[10:10] such things are represented with contour
+[10:12] lines like this.
+[10:14] Next, we need a 2D version of a slope.
+[10:17] Those told us how changing the parameter
+[10:19] value at a point would change the log
+[10:21] likelihood.
+[10:22] The analogy in higher dimensions is the
+[10:23] gradient vector.
+[10:25] That's the line that looks like this.
+[10:27] The gradient vector tells you the
+[10:29] direction you should choose if you want
+[10:31] to increase the function as much as
+[10:32] possible. The length of the gradient
+[10:34] tells you how much the function will
+[10:35] increase if you take that step.
+[10:38] Earlier, we didn't play with just one
+[10:39] likelihood function, we played with
+[10:41] many, one for each observation sampled
+[10:43] using the true parameter.
+[10:45] So, to avoid a blizzard of contour
+[10:46] lines, I'll represent one likelihood
+[10:48] function with a single ellipse. And now,
+[10:51] we can represent many.
+[10:53] So, staring at this setup, can you guess
+[10:56] what the 2D Fisher information will tell
+[10:57] us?
+[10:58] Seriously, pause the video and scratch
+[11:00] your head on this one. It's worth
+[11:02] thinking about. Just try to carry the
+[11:04] analogy from 1D to 2D.
+[11:07] Done?
+[11:08] Okay, let's do it. In the 1D case, the
+[11:11] Fisher information told us the variance
+[11:13] of the log likelihood slopes.
+[11:15] More generally, it's describing the
+[11:16] distribution of those slopes.
+[11:18] Now, in this case, we need to describe
+[11:20] the distribution of these gradient
+[11:21] vectors. To do that, let's plot the 2D
+[11:26] histogram of these vectors.
+[11:28] If a square is bright, that means there
+[11:29] are a lot of gradient vectors with the
+[11:31] coordinates of that square.
+[11:33] With that, I can say, whatever the 2D
+[11:35] Fisher information is, it's going to
+[11:37] describe this histogram.
+[11:39] Before I tell you it, I should point
+[11:41] something out. On the left, the
+[11:42] gradients randomly point out from the
+[11:44] center. They don't agree on any one
+[11:46] direction.
+[11:47] In the 1D case, we saw this behavior as
+[11:49] the slopes averaging out to zero. To
+[11:51] refresh, this is because we are
+[11:52] evaluating our gradient at the true
+[11:54] parameter value from which all our
+[11:56] observations are generated.
+[11:58] If we were evaluating at a point that
+[11:59] wasn't the true parameter vector, these
+[12:02] gradients would favor one direction over
+[12:03] the other, and the Fisher information
+[12:05] wouldn't apply.
+[12:07] With that, let's think about what this
+[12:08] Fisher information must do. We need to
+[12:10] describe this 2D histogram centered at
+[12:12] zero.
+[12:13] In the 1D case, it was the variance.
+[12:16] Some of you who know your stats may be
+[12:18] able to guess it. It's the covariance
+[12:20] matrix. It's a square grid of numbers
+[12:22] that describes how elements of a vector
+[12:25] sampled from a distribution vary
+[12:27] together.
+[12:28] So, in this case, the higher dimensional
+[12:30] Fisher information is the covariance
+[12:32] matrix of the gradient vectors.
+[12:34] I can just show you. The Fisher
+[12:36] information tells us that this ellipse.
+[12:39] How it tells us that a later isn't
+[12:40] important. Think of it as a compact
+[12:43] summary of this histogram, and then
+[12:44] let's just focus on that histogram.
+[12:47] To get a feel, let's consider the
+[12:48] simplest case where the gradient
+[12:50] elements aren't correlated. In this
+[12:52] case, the variance of each gradient
+[12:53] element is all there is to know.
+[12:55] And we can interpret each of those in
+[12:57] much the same way we did in the 1D case.
+[12:59] If that gradient vector element varies a
+[13:01] lot, we can nail down the parameter
+[13:03] associated with it very well.
+[13:05] Now, let's introduce some serious
+[13:07] correlation.
+[13:09] To intuit this, let's consider only
+[13:11] parameter values that fall on this red
+[13:13] strip.
+[13:14] The question is, if you were only
+[13:16] looking at parameter values here, could
+[13:18] you easily determine which ones are
+[13:19] likely to be near the truth?
+[13:22] I mean, yeah. It looks like it would be
+[13:24] easy. The observations only fall on a
+[13:26] small piece of this diagonal line. And
+[13:28] it's no accident. This is also a
+[13:30] direction the histogram varies quite a
+[13:32] bit.
+[13:33] In other words, a direction in which the
+[13:34] gradients vary widely is a direction
+[13:36] where you can easily separate likely
+[13:38] from unlikely true parameter values. And
+[13:41] it's for exactly the same curvature
+[13:42] reasons we saw in the 1D case.
+[13:45] As you can guess, a direction like this
+[13:47] is where you have difficulty determining
+[13:49] the true parameter values. And this is a
+[13:51] direction along which gradients don't
+[13:53] vary much at all.
+[13:55] This is the Fisher information. It's
+[13:57] telling us how well observations will
+[13:59] separate likely from unlikely true
+[14:01] parameter values along any given
+[14:03] direction, and it does that using the
+[14:05] distribution of slopes at the true
+[14:07] parameter values.
+[14:09] But, what about the second derivative
+[14:11] stuff? Does that work here, too? Yes,
+[14:14] 100%. There's a higher dimensional
+[14:15] analogy of the second derivative called
+[14:17] the Hessian, and the expected negative
+[14:20] Hessian turns out to be equal to our
+[14:21] gradients covariance matrix.
+[14:23] Though showing that would be tricky, but
+[14:26] say it again, that's easy. In fact, we
+[14:28] should restate everything with the glory
+[14:30] math. After all, my goal is to help you
+[14:32] apply this stuff. These visuals are nice
+[14:34] and all, but to be useful, they need to
+[14:36] connect to the papers and textbooks that
+[14:37] handle this beast. Ready? Okay. The
+[14:41] Fisher information is a measure of the
+[14:43] amount of information an observation of
+[14:45] a random variable carries about a
+[14:46] parameter according to the probability
+[14:48] function that relates them. It's defined
+[14:51] with this expression, which I'll break
+[14:53] down.
+[14:54] First, we write it as a function of a
+[14:56] true parameter value, which is theta
+[14:58] star, to generalize it beyond a specific
+[15:00] true parameter.
+[15:01] Second, this means the variance of
+[15:04] something that depends on Y, where the
+[15:06] random behavior of Y is according to
+[15:07] that theta star.
+[15:09] Third, this means we'll be evaluating
+[15:11] each score function at the true theta,
+[15:14] giving us a bunch of numbers, of which
+[15:16] we are interested in their variance. And
+[15:19] as we mentioned, the variance turns out
+[15:20] to be equal to the negative expected
+[15:22] value of the second derivative.
+[15:24] These two expressions communicate
+[15:26] everything we covered with those six
+[15:27] panels we saw earlier. Sidebar, I just
+[15:30] want to point out this is why
+[15:31] mathematical notation is so useful. With
+[15:33] a very compact expression, we can
+[15:35] communicate a big idea very precisely.
+[15:38] Next, let's move on to the
+[15:39] multi-dimensional case.
+[15:41] I covered it in 2D, but just take it as
+[15:43] given that those same ideas generalize
+[15:46] to N dimensions.
+[15:48] Ready?
+[15:49] Okay. The higher-dimensional form is
+[15:51] called the Fisher information matrix,
+[15:53] which generalizes the Fisher information
+[15:55] to handle a vector of parameters rather
+[15:57] than a single one. In this case, the
+[15:59] matrix is a square grid of numbers,
+[16:02] where the ith row and jth column are
+[16:04] given by this expression. If this
+[16:06] expression looks unfamiliar, that's
+[16:07] because this is a different way to write
+[16:09] covariance.
+[16:10] Since the expected partial derivative
+[16:12] with respect to any parameter is zero,
+[16:14] we can write their covariance as this
+[16:16] expected product. It just follows from
+[16:18] the definition of covariance. If this
+[16:20] algebra looks like a lot, that's fine.
+[16:22] It's not important to internalize it.
+[16:24] What is important is to know the overall
+[16:26] statement which I'm about to say.
+[16:29] The Fisher information matrix is the
+[16:31] covariance matrix of the log-likelihood
+[16:33] gradient with respect to the parameters
+[16:35] when we evaluate that gradient at the
+[16:37] true parameter vector and the randomness
+[16:40] comes from that true parameter vector.
+[16:43] That's a lot.
+[16:45] Okay, let's also say that last part
+[16:47] regarding the Hessian. That is an
+[16:49] element of the Fisher information matrix
+[16:51] also turns out to be equal to the
+[16:52] negative expected value of the second
+[16:55] partial derivative for the two
+[16:56] parameters associated with that element.
+[16:59] If that's also hard to digest, just
+[17:02] think in terms of that 1D graphic and
+[17:04] trust that it works in higher
+[17:05] dimensions. And that's all of it.
+[17:08] If you have any questions, please
+[17:09] comment and I'll do my best to answer.
+[17:11] Anything worth clarifying after the
+[17:12] fact, I'll include in the description.
+[17:14] Also, there you'll find my go-to sources
+[17:16] on this topic in case you want to learn
+[17:18] more.
+[17:19] And finally, if you enjoyed this video,
+[17:21] please like and subscribe. Content like
+[17:23] this is the content I'll continue to
+[17:24] make, especially if I can get your
+[17:25] support.

@@ -1,0 +1,13 @@
+{
+  "seed": 1126,
+  "beta": 0.1,
+  "x0": 4.0,
+  "steps": 100,
+  "diffusion_mean_at_100": 0.02061510082928048,
+  "random_walk_variance_at_100": 10.0,
+  "diffusion_variance_at_100": 0.9999734386011124,
+  "maximum_variance_recursion_error": 2.220446049250313e-16,
+  "svg_xml_parse": "PASS",
+  "paired_noise_checks": "PASS",
+  "scope": "Exact conditional moments and three illustrative paths; not empirical proof."
+}

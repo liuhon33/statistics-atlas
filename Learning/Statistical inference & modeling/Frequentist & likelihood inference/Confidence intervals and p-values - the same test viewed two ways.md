@@ -10,7 +10,7 @@ note_types: [question, derivation, insight]
 question_roles: [concept-distinction, cross-topic-connection, assumption-boundary]
 source_format: handwriting-and-legacy-learning-notes
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-11
 status: active
 verification: checked
 learning_state: unknown
@@ -130,8 +130,26 @@ The distinction is:
 
 | Property                                    | Always?                                                |
 | ------------------------------------------- | ------------------------------------------------------ |
-| Equal horizontal and vertical slice lengths | **No**, but yes for both illustrated bands             |
+| Equal horizontal and vertical slice lengths | **No**: yes in the additive normal band, no in the uniform-scale example |
 | CI excludes 0 ⇔ matching test rejects 0     | **Yes**, for a CI constructed by inverting those tests |
+
+### Move the slices yourself
+
+Keep the observed $x$ fixed and sweep the candidate null $b$: the blue sampling distribution moves, while the orange CI stays put. The point enters the band exactly when $b$ enters the CI and its p-value reaches $\alpha$. Then switch to **Uniform scale**: the slices have different lengths, but all three decisions still agree. **Exactly on the boundary** makes the endpoint convention visible.
+
+```atlas-interactive
+path: assets/figures/2026-11-11-ci-delta/ci-explorer.html
+title: Test inversion — linked slices, tails and p-values
+height: 1250
+```
+
+*Original Codex interactive illustration of the two models above. Move $x$, $b$ or $\alpha$, or play the null sweep. Blue fixes the candidate; orange fixes the observation. The square band uses equal axis scales; each model's plot windows stay fixed.*
+
+[[assets/figures/2026-11-11-ci-delta/ci-explorer.html|Open the standalone explorer]]
+
+> [!example]- Static comparison
+> ![[assets/figures/2026-11-11-ci-delta/ci-overview.svg]]
+> At $\alpha=0.05$, the normal example has equal slice lengths; the uniform example has lengths $0.950$ and $1.227$. The orange p-value level set is the CI in each case.
 
 ## 2. A p-value is a threshold, not a probability that the null is true
 
@@ -280,3 +298,5 @@ Finally, “0 is excluded” does not say the effect is practically large, and �
 > The original referenced conversation remains unavailable (R-004); no unseen turns or new coverage of that conversation are claimed. Mathematics, endpoint conventions and numerical examples were checked; the reproducible figure script and checks are linked in sources. Editorial review and mastery are separate from these checks.
 >
 > The 2026-11-10 slice-length extension follows my clarification that I meant horizontal versus vertical lengths. Codex supplied the uniform-scale counterexample, exact inversion and coverage calculation, and reproducible two-panel SVG. The earlier asymmetric additive-noise example does not demonstrate unequal lengths and is not embedded here. No original handwriting or prior figure was altered.
+>
+> The 2026-11-11 interactive addition links the band, null tails and p-value curve, including adjustable significance and exact-boundary presets. Original Codex implementation and static fallback: [[assets/figures/2026-11-11-ci-delta/build.py|builder]], [[assets/figures/2026-11-11-ci-delta/ci-delta-reproduction|reproduction and checks]], and [[assets/figures/2026-11-11-ci-delta/math-checks.json|numerical results]]. The comparison table's stale claim of equal lengths in both examples is corrected; the existing model, derivations and source coverage are retained.

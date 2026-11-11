@@ -7,7 +7,7 @@ subject: probability
 study_band: U
 backbone_path: Probability & mathematical foundations → Joint variation & conditioning → Joint distributions → Conditional expectation → Law of total expectation
 created: '2026-11-08'
-updated: '2026-11-08'
+updated: '2026-11-11'
 status: active
 aliases: []
 tags:
@@ -53,9 +53,25 @@ Thus an overall mean is the **probability-weighted average of subgroup means**, 
 
 ## Reading the joint-density graph
 
-![[raw/assets/2026-11-08-total-expectation-I01-joint-density-slices.png]]
+Move y₀ to change one conditional mean, then move μₓ to shift their overall weighted average. The lower panel shows the full identity $\mathbb E[\mathbb E[X\mid Y]]=\mu_X$ alongside the selected slice. **Screenshot values** restores the original example used below.
 
-*User-supplied screenshot, preserved unchanged. Interpretation adapted from the user's accompanying explanation, with normalization and Gaussian assumptions made explicit. This is a static capture; its sliders are not interactive here.*
+```atlas-interactive
+path: assets/figures/2026-11-11-joint-density/joint-density.html
+title: Joint density — slices, conditional distributions, and total expectation
+height: 1400
+```
+
+*Original interactive reconstruction, Codex. The source screenshot is preserved below. Both variables have variance 1; μᵧ = 0, while μₓ, ρ, x₀ and y₀ are adjustable. A camera drag changes only the view. Conditional areas and means use the full Gaussian support.*
+
+[[assets/figures/2026-11-11-joint-density/joint-density.html|Open the standalone explorer]] · [[assets/figures/2026-11-11-joint-density/build.py|Reproduce the figure]] · [[assets/figures/2026-11-11-joint-density/checks.json|Numerical checks]]
+
+> [!example]- Static view
+> ![[assets/figures/2026-11-11-joint-density/overview.svg]]
+> *Original analytic reconstruction at the screenshot's parameter values. Dashed curves are raw slices; solid curves are normalized conditionals. Dot areas represent relative weights for equal-width y bins.*
+
+> [!info]- Original supplied screenshot
+> ![[raw/assets/2026-11-08-total-expectation-I01-joint-density-slices.png]]
+> *Preserved unchanged; this original is a static capture. The working controls above are a new reconstruction, not recovered source code.*
 
 $p(x)$ is a distribution of the height for all age groups
 $p(x|y)$ distribution of the height, for age y

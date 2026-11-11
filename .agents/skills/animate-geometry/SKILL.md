@@ -1,13 +1,23 @@
 ---
 name: animate-geometry
-description: Create reproducible mathematical diagrams and GIFs for learning notes, especially vector projections, centering, normalization, and geometric transformations. Use when a user asks to animate a mathematical process or reuse the standardization GIF style; not for decorative image generation.
+description: Create checked mathematical diagrams, GIFs, and offline interactive explorers for Obsidian notes. Use for sliders, linked plots, rotatable geometry, or animated mathematical transformations, including adapting a source diagram; not decorative image generation.
 ---
 
 # Animate geometry for learning notes
 
 The user explicitly liked the standardization GIF and asked to preserve its technique on 2026-11-09. Treat it as a useful example, not a requirement to animate every note. Follow the vault SOP for authorization, note placement, source preservation and review; making a figure does not authorize a digest or a commit.
 
-## Working reference
+## Choose the useful format
+
+The user also requested reusable slider-based figures after the Fisher-information explorers on 2026-11-11. Keep one skill: the mathematical and visual checks are shared, while the output formats serve different reading tasks.
+
+- **Static SVG:** a definition, comparison or geometry is clearest when all relevant states are visible together.
+- **GIF with static keyframes:** a staged transformation has a useful order, such as center then normalize. Follow the generator guidance below.
+- **Interactive HTML:** the reader should control a parameter, inspect a slice, rotate a view, or compare linked distributions. Read [references/interactive-explorers.md](references/interactive-explorers.md) for the existing Obsidian renderer, reusable builder, control design and integration checks.
+
+Reuse an existing source figure when it already explains the relationship. If asked to find other suitable notes, inspect them and recommend specific controls and insights; discovery alone does not authorize changing the whole list. Existing note identities, approvals and source bytes stay intact during a visual-only update.
+
+## Working GIF reference
 
 Resolve these paths against the current vault root:
 
