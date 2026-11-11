@@ -172,15 +172,15 @@ The Atlas itself runs locally and makes no network requests. Viewing the map and
 
 | Folder | Contents |
 | --- | --- |
-| `Backbone/` | 760 topic pages, arranged from broad subjects to individual concepts. |
-| `Learning/` | 30 personal learning notes, including ELBO, diffusion, Fisher information, CLT and delta method, MLE, bootstrap, regression, test geometry, confidence intervals, and attention. |
+| `Backbone/` | 761 topic pages, arranged from broad subjects to individual concepts. |
+| `Learning/` | 37 personal learning notes, including ELBO, diffusion and PyTorch, Fisher information, CLT and delta method, MLE, bootstrap, regression, test geometry, confidence intervals, attention, concordance, AIC/BIC, reinforcement learning, and gambler’s ruin. |
 | `raw/` | Preserved original sources, screenshots, and handwriting. |
 | `assets/figures/` | Explanatory figures and their reproducible source. |
 | `_system/` | Catalogs, references, layout, workflow records, templates, and tools. |
 | `.agents/skills/` | Shared instructions for digesting, extending, connecting, and reviewing notes. |
 | `.obsidian/plugins/statistics-atlas/` | The custom map plugin, already built. |
 
-These counts describe the public update on **2026-11-11**. Many backbone pages are topic scaffolds; 760 pages does not mean 760 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
+These counts describe the public update on **2026-11-11**. Many backbone pages are topic scaffolds; 761 pages does not mean 761 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
 
 The public copy includes the rebuilt vault's content and tools. Local agent sessions, account settings, window layouts, debug logs, and unrelated installed plugins are excluded. Install optional plugins through their own projects. Original sources keep their individual attribution; public availability is not a blanket license to redistribute third-party material.
 

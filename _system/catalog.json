@@ -5558,6 +5558,68 @@
       "layer": "learning",
       "primary_home": "likelihood-maximum-likelihood-estimation",
       "status": "active"
+    },
+    {
+      "id": "learning-categorical-association-cramers-v",
+      "title": "Categorical association and Cramér's V",
+      "path": "Learning/Statistical inference & modeling/Regression & linear models/Categorical association and Cramér's V.md",
+      "layer": "learning",
+      "primary_home": "categorical-contingency-tables",
+      "status": "active"
+    },
+    {
+      "id": "learning-concordance-c-statistics",
+      "title": "Concordance and C-statistics - ranking pairs correctly",
+      "path": "Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly.md",
+      "layer": "learning",
+      "primary_home": "prediction-assessment-roc-and-precisionrecall",
+      "status": "active"
+    },
+    {
+      "id": "learning-likelihood-aic-bic-introduction",
+      "title": "Likelihood and information criteria - AIC and BIC",
+      "path": "Learning/Statistical computing & learning/Statistical learning & prediction/Likelihood and information criteria - AIC and BIC.md",
+      "layer": "learning",
+      "primary_home": "validation",
+      "status": "active"
+    },
+    {
+      "id": "learning-diffusion-pytorch-unet",
+      "title": "Diffusion in PyTorch - why U-Net and how the formulas become code",
+      "path": "Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion in PyTorch - why U-Net and how the formulas become code.md",
+      "layer": "learning",
+      "primary_home": "neural-models",
+      "status": "active"
+    },
+    {
+      "id": "reinforcement-learning",
+      "title": "Reinforcement learning",
+      "path": "Backbone/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning/Reinforcement learning.md",
+      "level": 3
+    },
+    {
+      "id": "learning-rl-bellman-to-sampled-updates",
+      "title": "Reinforcement learning - from Bellman equations to sampled updates",
+      "path": "Learning/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning - from Bellman equations to sampled updates.md",
+      "layer": "learning",
+      "primary_home": "reinforcement-learning",
+      "status": "active"
+    },
+    {
+      "id": "learning-gamblers-problem-dynamic-programming",
+      "title": "Gamblers problem - learning an optimal betting policy",
+      "path": "Learning/Statistical computing & learning/Statistical learning & prediction/Gamblers problem - learning an optimal betting policy.md",
+      "layer": "learning",
+      "primary_home": "reinforcement-learning",
+      "status": "active"
+    },
+    {
+      "id": "learning-gamblers-problem-analytic-probability",
+      "title": "Gamblers problem - probability, martingales, and bold play",
+      "path": "Learning/Probability & mathematical foundations/Stochastic processes/Gamblers problem - probability, martingales, and bold play.md",
+      "layer": "learning",
+      "primary_home": "martingale",
+      "status": "active"
     }
   ]
 }

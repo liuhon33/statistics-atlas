@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>The gamblers problem - values, actions and policies</title><style>:root{color-scheme:light dark;--bg:#f8fafc;--fg:#172739;--muted:#526273;--line:#d6dfe7;--blue:#236aad;--green:#23835a;--orange:#b95b19;--panel:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#151c24;--fg:#e8eef5;--muted:#b1becc;--line:#3c4b5c;--blue:#71b7f3;--green:#6bd4a1;--orange:#f4ad69;--panel:#202b37}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}main{max-width:1080px;margin:auto;padding:24px}h1{font-size:30px;line-height:1.2;margin:4px 0 10px}h2{font-size:19px;margin:0}p{margin:8px 0 16px}.eyebrow{color:var(--muted);font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin:0}.controls{display:flex;flex-wrap:wrap;gap:16px;margin:22px 0 10px}.controls label{flex:1 1 170px}label{display:block;font-size:14px;font-weight:600}select,button{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 10px}select{display:block;width:100%;margin-top:5px}button{cursor:pointer;min-height:42px}button:disabled{opacity:.45;cursor:default}button#next{background:var(--fg);color:var(--bg)}:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.model,footer{font-size:13px;color:var(--muted)}.transport{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 12px}.timeline input,input#state{display:block;width:100%;accent-color:var(--blue);margin:12px 0}output{font-variant-numeric:tabular-nums}.timeline output{float:right}#status{font-weight:600;margin-bottom:4px}#phaseHelp{min-height:20px}.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}.section-head span{font-size:13px;color:var(--muted)}section{margin:24px 0}.plot{width:100%;height:240px}.plot.small{height:200px}svg{width:100%;height:100%;overflow:visible}svg text{font-family:system-ui,sans-serif;fill:var(--fg);font-size:12px}svg .grid{stroke:var(--line);stroke-width:1}svg .axis{stroke:var(--muted);stroke-width:1}.inspect{border-top:1px solid var(--line);padding-top:20px}.inspect label{margin-top:14px}.selected{font-weight:600}.formula{font-family:ui-monospace,monospace;font-size:14px;overflow-wrap:anywhere}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{font-weight:600;color:var(--muted)}tr.chosen{background:color-mix(in srgb,var(--green) 13%,transparent)}tr.selected-row{background:color-mix(in srgb,var(--blue) 13%,transparent)}summary{cursor:pointer;font-weight:600;margin:10px 0}footer{border-top:1px solid var(--line);padding-top:16px;margin-top:24px}footer p{margin:6px 0}button,select,input{touch-action:manipulation}
+@media(max-width:560px){main{padding:16px 12px}h1{font-size:25px}.controls{gap:10px}.plot{height:210px}.section-head{display:block}.transport{gap:6px}.transport button{flex:1 1 auto}.timeline output{float:none;margin-left:8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head><body><main>
+  <header><p class="eyebrow">Reinforcement learning / dynamic programming</p><h1>The gambler’s problem</h1><p>Learn a betting policy by propagating the chance of reaching the goal.</p></header>
+  <div class="controls">
+    <label>Goal capital<select id="goal"><option value="100">100 · lecture example</option><option value="10">10 · inspect every entry</option></select></label>
+    <label>Win probability<select id="prob"><option value="0.4">0.4 · unfavorable coin</option><option value="0.5">0.5 · fair coin</option><option value="0.6">0.6 · favorable coin</option></select></label>
+    <label>Algorithm<select id="method"><option value="value">Value iteration</option><option value="policy">Policy iteration</option></select></label>
+  </div>
+  <p class="model">Fixed: independent flips, positive integer stakes, no discount, stop at ruin or the goal. V(0) = 0 and V(goal) = 1 are success-probability boundaries.</p>
+  <div class="transport"><button id="reset">Reset</button><button id="back">Previous</button><button id="next">Next sweep</button><button id="play">Play</button><button id="finish">Go to converged</button></div>
+  <label class="timeline" for="step">Learning progress <span id="stepLabel"></span><input id="step" type="range" min="0" value="0" max="1"></label>
+  <p id="status" role="status" aria-live="polite"></p>
+  <p id="phaseHelp" class="model"></p>
+  <section><div class="section-head"><h2>State values</h2><span id="valueLabel"></span></div><div class="plot"><svg id="values" role="img" aria-label="Success probability estimates by capital"></svg></div></section>
+  <section><div class="section-head"><h2>Policy: stake at each capital</h2><span id="policyLabel"></span></div><div class="plot"><svg id="policy" role="img" aria-label="Chosen stakes by capital"></svg></div></section>
+  <section class="inspect">
+    <h2>Inspect one state</h2>
+    <label for="state">Current capital s = <output id="stateLabel">25</output></label><input id="state" type="range" min="1" max="99" value="25">
+    <p id="selected" class="selected"></p>
+    <p id="backup" class="formula"></p>
+    <div class="plot small"><svg id="actionPlot" role="img" aria-label="One-step action values at the selected capital"></svg></div>
+    <details open><summary>Action table: every legal stake at this state</summary><div class="table-wrap"><table><thead><tr><th>Stake a</th><th>Win → s+a</th><th>Loss → s−a</th><th>p V(s+a)</th><th>(1−p) V(s−a)</th><th>Q(s,a)</th><th>Choice</th></tr></thead><tbody id="actionRows"></tbody></table></div></details>
+  </section>
+  <details><summary>Full state and policy table</summary><div class="table-wrap"><table><thead><tr><th>Capital s</th><th>Legal stakes</th><th>Current V(s)</th><th id="tablePolicyLabel">Greedy stake</th><th>Best one-step Q</th></tr></thead><tbody id="stateRows"></tbody></table></div></details>
+  <footer><p id="tieHelp"></p><p>These updates use the known transition probabilities. They are planning updates, not sampled coin flips or Q-learning episodes. Original reconstruction inspired by Mutual Information’s Part 2 lecture; algorithms follow Sutton &amp; Barto, Chapter 4.</p></footer>
+</main>
+<script>/* Original implementation, 2026-11-11. Success-probability boundary convention. */
+(function(root){
+  'use strict';
+  const TOL=1e-10;
+  function initial(n){const v=Array(n+1).fill(0);v[n]=1;return v;}
+  function actions(n,s){return Array.from({length:Math.min(s,n-s)},(_,i)=>i+1);}
+  function row(v,p,s){const n=v.length-1;return actions(n,s).map(a=>({a,up:s+a,down:s-a,win:p*v[s+a],loss:(1-p)*v[s-a],q:p*v[s+a]+(1-p)*v[s-a]}));}
+  function choice(rows,previous=null){const best=Math.max(...rows.map(r=>r.q));const tied=rows.filter(r=>best-r.q<=TOL).map(r=>r.a);return {best,tied,a:previous!==null&&tied.includes(previous)?previous:tied[0]};}
+  function greedy(v,p,old=null){return v.map((_,s)=>s===0||s===v.length-1?0:choice(row(v,p,s),old?old[s]:null).a);}
+  function sweep(v,p){const out=initial(v.length-1);let delta=0;for(let s=1;s<v.length-1;s++){out[s]=choice(row(v,p,s)).best;delta=Math.max(delta,Math.abs(out[s]-v[s]));}return {v:out,delta};}
+  function solve(a,b){
+    const n=b.length,m=a.map((r,i)=>[...r,b[i]]);
+    for(let k=0;k<n;k++){
+      let pivot=k;for(let i=k+1;i<n;i++)if(Math.abs(m[i][k])>Math.abs(m[pivot][k]))pivot=i;
+      if(Math.abs(m[pivot][k])<1e-14)throw Error('Singular policy evaluation');
+      [m[k],m[pivot]]=[m[pivot],m[k]];
+      for(let i=k+1;i<n;i++){const f=m[i][k]/m[k][k];m[i][k]=0;for(let j=k+1;j<=n;j++)m[i][j]-=f*m[k][j];}
+    }
+    const x=Array(n).fill(0);for(let i=n-1;i>=0;i--){let z=m[i][n];for(let j=i+1;j<n;j++)z-=m[i][j]*x[j];x[i]=z/m[i][i];}return x;
+  }
+  function evaluate(n,p,pi){
+    const a=Array.from({length:n-1},(_,i)=>Array.from({length:n-1},(_,j)=>Number(i===j))),b=Array(n-1).fill(0);
+    for(let s=1;s<n;s++)for(const [t,w] of [[s+pi[s],p],[s-pi[s],1-p]]){if(t===n)b[s-1]+=w;else if(t>0)a[s-1][t-1]-=w;}
+    return [0,...solve(a,b),1];
+  }
+  function residual(v,p){return sweep(v,p).delta;}
+  function valueHistory(n,p,max=10000){
+    let v=initial(n);const hist=[{v:[...v],phase:'Initial values',iteration:0,delta:null}];
+    for(let k=1;k<=max;k++){const next=sweep(v,p);v=next.v;hist.push({v:[...v],phase:'Value sweep',iteration:k,delta:next.delta});if(next.delta<1e-12){hist[hist.length-1].phase='Converged value estimates';return hist;}}
+    throw Error('Value iteration did not converge within the iteration limit');
+  }
+  function policyHistory(n,p){
+    let pi=Array.from({length:n+1},(_,s)=>s>0&&s<n?1:0),v=initial(n);
+    const hist=[{v:[...v],pi:[...pi],phase:'Initial policy: bet 1',iteration:0,unevaluated:true}];
+    for(let k=1;k<=100;k++){
+      v=evaluate(n,p,pi);hist.push({v:[...v],pi:[...pi],phase:'Evaluate current policy',iteration:k,unevaluated:false});
+      const next=greedy(v,p,pi),changed=next.filter((a,s)=>a!==pi[s]).length;
+      hist.push({v:[...v],pi:[...next],previousPi:[...pi],phase:changed?'Improve policy':'Policy stable',iteration:k,changed,unevaluated:changed>0});
+      if(!changed)return hist;pi=next;
+    }
+    throw Error('Policy iteration did not stabilize');
+  }
+  const api={TOL,initial,actions,row,choice,greedy,sweep,evaluate,residual,valueHistory,policyHistory};
+  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.GamblerMath=api;
+})(typeof window!=='undefined'?window:this);
+
+;
+(function(){
+  'use strict';
+  const M=window.GamblerMath,$=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+  let n=100,p=.4,method='value',history=[],index=0,selected=25,timer=null;
+  const fmt=x=>Math.abs(x)<1e-13?'0':x.toFixed(6),pct=x=>(100*x).toFixed(3)+'%';
+  function el(tag,attrs,text){const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;}
+  function chart(id,data,ymax,color,xlabel,ylabel,focus){
+    const svg=$(id),w=svg.parentElement.clientWidth,h=svg.parentElement.clientHeight,L=48,R=12,T=24,B=39,iw=w-L-R,ih=h-T-B;
+    svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.replaceChildren();svg.append(el('title',{},`${ylabel} by ${xlabel}`));
+    const yTicks=ymax===1?4:5;
+    for(let j=0;j<=yTicks;j++){const y=T+ih*(1-j/yTicks),val=ymax*j/yTicks;svg.append(el('line',{x1:L,y1:y,x2:w-R,y2:y,class:'grid'}));svg.append(el('text',{x:L-7,y:y+4,'text-anchor':'end'},ymax===1?val.toFixed(2):String(val)));}
+    const band=iw/data.length;
+    data.forEach((d,i)=>{const bh=Math.max(0,Math.min(ymax,d.y))/ymax*ih;const bar=el('rect',{x:L+i*band+band*.13,y:T+ih-bh,width:Math.max(.5,band*.74),height:bh,fill:d.x===focus?'var(--orange)':color,opacity:d.x===0||d.x===n?.5:1});bar.append(el('title',{},`${xlabel} ${d.x}: ${d.y.toPrecision(7)}`));svg.append(bar);if(d.x===focus)svg.append(el('line',{x1:L+(i+.5)*band,y1:T,x2:L+(i+.5)*band,y2:T+ih,stroke:'var(--orange)','stroke-dasharray':'3 3','stroke-opacity':.5}));});
+    const tickCount=Math.min(data.length-1,w<450?4:8),tickIndices=new Set(Array.from({length:tickCount+1},(_,j)=>Math.round(j*(data.length-1)/Math.max(1,tickCount))));
+    data.forEach((d,i)=>{if(tickIndices.has(i))svg.append(el('text',{x:L+(i+.5)*band,y:T+ih+17,'text-anchor':'middle'},d.x));});
+    svg.append(el('text',{x:L,y:14},ylabel));svg.append(el('text',{x:L+iw/2,y:h-3,'text-anchor':'middle'},xlabel));
+  }
+  function stop(){if(timer)clearInterval(timer);timer=null;$('play').textContent='Play';}
+  function rebuild(){stop();n=+$('goal').value;p=+$('prob').value;method=$('method').value;history=method==='value'?M.valueHistory(n,p):M.policyHistory(n,p);index=0;selected=Math.min(Math.max(1,selected),n-1);if(n===10&&selected>5)selected=3;$('state').max=n-1;$('state').value=selected;$('step').max=history.length-1;render();}
+  function render(){
+    const cur=history[index],v=cur.v,rows=M.row(v,p,selected),pick=M.choice(rows),preview=M.greedy(v,p),pi=method==='value'?preview:cur.pi,res=M.residual(v,p),done=index===history.length-1;
+    $('step').value=index;$('stepLabel').textContent=`${index} / ${history.length-1}`;
+    $('status').textContent=method==='value'?`Sweep ${cur.iteration} · ${cur.phase} · Bellman residual ${res.toExponential(2)}`:`Round ${cur.iteration} · ${cur.phase}${cur.changed!==undefined?' · '+cur.changed+' changed states':''}`;
+    $('phaseHelp').textContent=method==='value'?'The displayed V is the current table. Action values and policy use this table; Next sweep writes max Q into every state simultaneously.':cur.unevaluated?(index===0?'Initial V is only an estimate. Next phase evaluates the bet-1 policy.':'The policy has changed; the displayed V still evaluates the previous policy. Next phase evaluates the new policy.'):'The displayed V evaluates the displayed policy. Improvement compares every legal action using this V.';
+    $('next').textContent=method==='value'?'Next sweep':'Next phase';$('back').disabled=index===0;$('next').disabled=done;$('play').disabled=done;$('finish').disabled=done;
+    $('valueLabel').textContent=method==='value'?`V${cur.iteration} · success probability`:cur.unevaluated?'Estimates before evaluating this policy':'Vπ · exact policy evaluation';
+    $('policyLabel').textContent=method==='value'?'Greedy preview from current V':'Current deterministic policy';$('tablePolicyLabel').textContent=method==='value'?'Greedy stake':'Policy stake';
+    chart('values',v.map((y,x)=>({x,y})),1,'var(--blue)','Capital s','Success probability',selected);
+    chart('policy',pi.slice(1,n).map((y,i)=>({x:i+1,y})),n/2,'var(--green)','Capital s','Stake',selected);
+    chart('actionPlot',rows.map(r=>({x:r.a,y:r.q})),1,'var(--blue)','Stake a','One-step action value Q',pi[selected]);
+    $('stateLabel').textContent=selected;
+    $('selected').textContent=`V(${selected}) = ${fmt(v[selected])} (${pct(v[selected])}) · ${method==='value'?'Greedy':'Current'} stake = ${pi[selected]} · Best one-step Q = ${fmt(pick.best)}`;
+    const r=rows.find(z=>z.a===pi[selected]);$('backup').textContent=`Q(${selected}, ${r.a}) = ${p} × V(${r.up}) + ${(1-p).toFixed(1)} × V(${r.down}) = ${fmt(r.win)} + ${fmt(r.loss)} = ${fmt(r.q)}`;
+    $('actionRows').innerHTML=rows.map(r=>`<tr class="${r.a===pi[selected]?'chosen':''}"><td>${r.a}</td><td>${r.up}</td><td>${r.down}</td><td>${fmt(r.win)}</td><td>${fmt(r.loss)}</td><td>${fmt(r.q)}</td><td>${r.a===pi[selected]?'Chosen':pick.tied.includes(r.a)?'Tied best':''}</td></tr>`).join('');
+    $('stateRows').innerHTML=v.map((val,s)=>{const term=s===0||s===n;return `<tr class="${s===selected?'selected-row':''}"><td>${s}${term?' (terminal)':''}</td><td>${term?'—':'1 … '+Math.min(s,n-s)}</td><td>${fmt(val)}</td><td>${term?'—':pi[s]}</td><td>${term?'—':fmt(M.choice(M.row(v,p,s)).best)}</td></tr>`;}).join('');
+    $('tieHelp').textContent='Ties mean action values differ by at most 10⁻¹⁰. Value iteration shows the smallest tied stake. Policy iteration retains the current stake if tied; otherwise it chooses the smallest maximizer. Early ties reflect current estimates, not proven optimality. Multiple final policies can have the same success probability.';
+    if(done)stop();
+  }
+  for(const id of ['goal','prob','method'])$(id).addEventListener('change',rebuild);
+  $('state').addEventListener('input',e=>{selected=+e.target.value;render();});$('step').addEventListener('input',e=>{stop();index=+e.target.value;render();});
+  $('next').addEventListener('click',()=>{stop();index=Math.min(index+1,history.length-1);render();});$('back').addEventListener('click',()=>{stop();index=Math.max(0,index-1);render();});
+  $('reset').addEventListener('click',()=>{stop();index=0;render();});$('finish').addEventListener('click',()=>{stop();index=history.length-1;render();});
+  $('play').addEventListener('click',()=>{if(timer){stop();return;} $('play').textContent='Pause';timer=setInterval(()=>{index=Math.min(index+1,history.length-1);render();},window.matchMedia('(prefers-reduced-motion: reduce)').matches?1500:700);});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});window.addEventListener('resize',render);rebuild();
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>

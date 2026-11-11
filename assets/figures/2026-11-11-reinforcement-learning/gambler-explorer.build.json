@@ -1,0 +1,22 @@
+{
+  "output": "gambler-explorer.html",
+  "output_sha256": "aeff6fae20cc3d4b9f12c6fab367600f78ab64f650449b3bdd5a88b163fe3763",
+  "inputs": [
+    {
+      "name": "body.html",
+      "sha256": "f782446e234b8264a014d3da593a009c0a5c52160346e39d699180afde7f0b36"
+    },
+    {
+      "name": "explorer.css",
+      "sha256": "f1a7b44e3e300a4b67064c3a736a03d65085b87b3541ab31d2221b0ab207ef64"
+    },
+    {
+      "name": "math.js",
+      "sha256": "23c059973f2ff8cedbdb45db4d7a29fc52b288935cfd0ae1551e2679b9e47373"
+    },
+    {
+      "name": "explorer.js",
+      "sha256": "c404e1d2aa1a187e166bbf09e6a33685e94dee9b6afa03ab42235b4d3ad2302c"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "status": "pass",
+  "cases": [
+    {
+      "goal": 10,
+      "p": 0.4,
+      "sweeps": 40,
+      "policy_phases": 4,
+      "policy_evaluation_error": 2.728928194528635e-13,
+      "linear_program_error": 2.728928194528635e-13,
+      "policy_iteration_error": 2.728928194528635e-13
+    },
+    {
+      "goal": 10,
+      "p": 0.5,
+      "sweeps": 40,
+      "policy_phases": 2,
+      "policy_evaluation_error": 7.276401703393276e-13,
+      "linear_program_error": 7.276401703393276e-13,
+      "policy_iteration_error": 7.276401703393276e-13
+    },
+    {
+      "goal": 10,
+      "p": 0.6,
+      "sweeps": 343,
+      "policy_phases": 2,
+      "policy_evaluation_error": 1.3070433624307043e-11,
+      "linear_program_error": 1.307032260200458e-11,
+      "policy_iteration_error": 1.3071099758121818e-11
+    },
+    {
+      "goal": 100,
+      "p": 0.4,
+      "sweeps": 40,
+      "policy_phases": 10,
+      "policy_evaluation_error": 3.6215475063272606e-13,
+      "linear_program_error": 3.6193270602780103e-13,
+      "policy_iteration_error": 3.6215475063272606e-13
+    },
+    {
+      "goal": 100,
+      "p": 0.5,
+      "sweeps": 40,
+      "policy_phases": 2,
+      "policy_evaluation_error": 8.719691635405979e-13,
+      "linear_program_error": 8.731348977164544e-13,
+      "policy_iteration_error": 8.719691635405979e-13
+    },
+    {
+      "goal": 100,
+      "p": 0.6,
+      "sweeps": 1400,
+      "policy_phases": 2,
+      "policy_evaluation_error": 5.028999439105064e-11,
+      "linear_program_error": 1.44575862393026e-09,
+      "policy_iteration_error": 5.0295545506173767e-11
+    }
+  ],
+  "exhaustive_toy_policies": 2880,
+  "exhaustive_max_error": 2.73003841755326e-13,
+  "gridworld_linear_system_error": 1.0658141036401503e-14,
+  "checks": [
+    "probability bounds",
+    "monotone synchronous value iteration",
+    "policy improvement is nondecreasing",
+    "independent linear policy evaluation",
+    "linear-program Bellman inequalities",
+    "fair-coin values s/goal",
+    "favorable-coin bet-1 policy",
+    "all 2880 toy deterministic policies",
+    "running-average identity",
+    "gridworld linear system and first two sweeps",
+    "SVG XML parsing"
+  ],
+  "toy": {
+    "values": [
+      0,
+      0.043463497453186034,
+      0.10865874363323309,
+      0.18607809847180445,
+      0.2716468590830827,
+      0.4,
+      0.4651952461797791,
+      0.5629881154498497,
+      0.6791171477077067,
+      0.8074702886246241,
+      1
+    ],
+    "policy": [
+      0,
+      1,
+      2,
+      2,
+      1,
+      5,
+      1,
+      2,
+      2,
+      1,
+      0
+    ],
+    "sweeps": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        0.4,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0.16000000000000003,
+        0.16000000000000003,
+        0.4,
+        0.4,
+        0.4,
+        0.64,
+        0.64,
+        1
+      ],
+      [
+        0,
+        0,
+        0.06400000000000002,
+        0.16000000000000003,
+        0.25600000000000006,
+        0.4,
+        0.4,
+        0.49600000000000005,
+        0.64,
+        0.784,
+        1
+      ]
+    ]
+  }
+}

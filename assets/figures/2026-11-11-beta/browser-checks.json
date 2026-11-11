@@ -1,0 +1,204 @@
+{
+  "pass": true,
+  "engine": "Fresh headless Edge through Playwright; Browser plugin had no connected browsers",
+  "cases": [
+    {
+      "mode": "shapes",
+      "preset": [
+        1,
+        1
+      ],
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "preset": [
+        2,
+        2
+      ],
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "preset": [
+        10,
+        10
+      ],
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "preset": [
+        2,
+        8
+      ],
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "preset": [
+        8,
+        2
+      ],
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "preset": [
+        0.5,
+        0.5
+      ],
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "keyboard_range_and_clipping": true,
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "layout": {
+        "width": 900,
+        "bodyWidth": 900,
+        "height": 828.59375,
+        "paths": 1
+      },
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "layout": {
+        "width": 420,
+        "bodyWidth": 420,
+        "height": 1004.375,
+        "paths": 1
+      },
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "preset": [
+        1,
+        1,
+        3,
+        1
+      ],
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "preset": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "preset": [
+        1,
+        1,
+        30,
+        10
+      ],
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "preset": [
+        10,
+        10,
+        3,
+        1
+      ],
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "preset": [
+        1,
+        1,
+        10,
+        0
+      ],
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "keyboard_range_and_clipping": true,
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "maximum_counts": true,
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "layout": {
+        "width": 900,
+        "bodyWidth": 900,
+        "height": 936.09375,
+        "paths": 2
+      },
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "layout": {
+        "width": 420,
+        "bodyWidth": 420,
+        "height": 1125.1875,
+        "paths": 2
+      },
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "sandbox_width": 760,
+      "height": 917,
+      "stable": true,
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "sandbox_width": 420,
+      "height": 1005,
+      "stable": true,
+      "pass": true
+    },
+    {
+      "mode": "shapes",
+      "sandbox_width": 760,
+      "height": 917,
+      "stable": true,
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "sandbox_width": 760,
+      "height": 956,
+      "stable": true,
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "sandbox_width": 420,
+      "height": 1126,
+      "stable": true,
+      "pass": true
+    },
+    {
+      "mode": "update",
+      "sandbox_width": 760,
+      "height": 956,
+      "stable": true,
+      "pass": true
+    }
+  ],
+  "console_errors": [],
+  "remote_requests": [],
+  "live_obsidian": "Not tested: CLI could not reach the running app. Generic sandbox checks are not live-app verification."
+}

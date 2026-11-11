@@ -1,0 +1,26 @@
+{
+  "output": "update.html",
+  "output_sha256": "7d8199aa4b1e3fc7f8c7e2aee5838ef65e828c79d490b0c05373a4e7da73a4f8",
+  "inputs": [
+    {
+      "name": "update-body.html",
+      "sha256": "26fe1d832caca7e104fe9d651fe3f1a3701766919aff66f5bb33db9e138fd13b"
+    },
+    {
+      "name": "explorer.css",
+      "sha256": "7e008f41e74076fbccc17d83ba913acdb799a4b57447ec9a0b1d8620ea7e6427"
+    },
+    {
+      "name": "math.js",
+      "sha256": "e4beb43f370f15bfe09cd67eda8735d4026b4d4ac114d2017697d6a592e1aa6f"
+    },
+    {
+      "name": "explorer.js",
+      "sha256": "103927da7b892479a796fb486c0ecb83259bb5ac5beccce542f651832b09053c"
+    },
+    {
+      "name": "build_explorer.py",
+      "sha256": "90ed20cb9b71d790b309293129826a533c6512c2ec06b164ce1f85ec76d021f2"
+    }
+  ]
+}

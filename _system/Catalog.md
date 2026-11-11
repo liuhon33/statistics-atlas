@@ -6,7 +6,7 @@ layer: auxiliary
 
 # Topic catalog
 
-All 760 reference nodes. Paths and links are organizational; they are not study completion records.
+All 761 reference nodes. Paths and links are organizational; they are not study completion records.
 
 ## Probability & mathematical foundations
 
@@ -743,6 +743,7 @@ All 760 reference nodes. Paths and links are organizational; they are not study 
 - L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Prediction sets|Prediction sets]] · M elective
 - L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Marginal versus conditional coverage|Marginal versus conditional coverage]] · M elective
 - L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Calibration under shift|Calibration under shift]] · M elective
+- L3 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning/Reinforcement learning|Reinforcement learning]] · M
 - L2 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic models & neural methods|Probabilistic models & neural methods]] · U–M
 - L3 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Probabilistic graphical models|Probabilistic graphical models]] · M elective
 - L4 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Factorization & graphical models|Factorization & graphical models]] · M elective
@@ -818,12 +819,25 @@ All 760 reference nodes. Paths and links are organizational; they are not study 
 
 - [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Confidence intervals and p-values - the same test viewed two ways|Confidence intervals and p-values - the same test viewed two ways]] — Approved: old CI/p-value question and handwritten pp. 2–3, test inversion, endpoint/coverage interpretation and unequal horizontal/vertical slice lengths; three embedded static diagrams and a null-value sweep animation. Home: Inverting a test.
 
-- [[Learning/Statistical computing & learning/Simulation & approximate inference/VAE and diffusion ELBO - images, hidden paths, and Gaussian KL|VAE and diffusion ELBO - images, hidden paths, and Gaussian KL]] — Draft: one-pixel path example, typeset VAE-to-diffusion derivation, analytic Gaussian KL and stochastic training; home: ELBO.
+- [[Learning/Statistical computing & learning/Simulation & approximate inference/VAE and diffusion ELBO - images, hidden paths, and Gaussian KL|VAE and diffusion ELBO - images, hidden paths, and Gaussian KL]] — Approved: one-pixel path example, typeset VAE-to-diffusion derivation, analytic Gaussian KL and stochastic training; home: ELBO.
 
-- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion models - Lecture 12 derivations and guided generation|Diffusion models - Lecture 12 derivations and guided generation]] — Draft: lecture-only walkthrough of forward diffusion, variational training, noise prediction, sampling and guidance; inline links to the companion ELBO note; home: Selected architectures & latent models.
+- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion models - Lecture 12 derivations and guided generation|Diffusion models - Lecture 12 derivations and guided generation]] — Approved: lecture-only walkthrough of forward diffusion, variational training, noise prediction, sampling and guidance; inline links to the companion ELBO note; home: Selected architectures & latent models.
 
-- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Fisher information - score spread, curvature, and parameter precision|Fisher information - score spread, curvature, and parameter precision]] — Draft: lecture digest with six-panel and 2D offline explorers, complete score/curvature proofs, regularity boundaries, and inline MLE/reparameterization/OLS/KL connections; home: Fisher information.
+- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Fisher information - score spread, curvature, and parameter precision|Fisher information - score spread, curvature, and parameter precision]] — Approved: lecture digest with six-panel and 2D offline explorers, complete score/curvature proofs, regularity boundaries, and inline MLE/reparameterization/OLS/KL connections; home: Fisher information.
 
 
-- [[Learning/Probability & mathematical foundations/Limits & concentration/CLT and delta method - scaling and transforming estimation error|CLT and delta method - scaling and transforming estimation error]] — Draft migration: scaled error, Taylor proof, squared-mean derivation and zero-slope case; home: Delta method.
-- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Normal-threshold MLE - full measurements versus signs|Normal-threshold MLE - full measurements versus signs]] — Draft migration: original exercise and revised handwriting, two likelihoods, parameter/estimator question, intervals, efficiency and robustness; home: Maximum likelihood estimation.
+- [[Learning/Probability & mathematical foundations/Limits & concentration/CLT and delta method - scaling and transforming estimation error|CLT and delta method - scaling and transforming estimation error]] — Approved migration: scaled error, Taylor proof, squared-mean derivation and zero-slope case; home: Delta method.
+- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Normal-threshold MLE - full measurements versus signs|Normal-threshold MLE - full measurements versus signs]] — Approved migration: original exercise and revised handwriting, two likelihoods, parameter/estimator question, intervals, efficiency and robustness; home: Maximum likelihood estimation.
+- [[Learning/Statistical inference & modeling/Regression & linear models/Categorical association and Cramér's V|Categorical association and Cramér's V]] — Approved starter: expected counts, Pearson χ², V's rescaling and bounds, toy tables, two original figures and cautions; home: Contingency tables.
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly|Concordance and C-statistics - ranking pairs correctly]] — Approved starter: binary pair counting, score ties, censored-survival example, usage cautions and a separate binary C = AUROC proof; three original figures. Home: ROC and precision–recall. Deeper connections deferred.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Likelihood and information criteria - AIC and BIC|Likelihood and information criteria - AIC and BIC]] — Approved starter: likelihood, coin-model AIC/BIC comparisons, parameter counting and practical use; optional derivations with an exact normal-mean AIC demonstration and a qualified BIC approximation. Home: Validation & model selection. Two original figures; deeper connections deferred.
+
+
+- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion in PyTorch - why U-Net and how the formulas become code|Diffusion in PyTorch - why U-Net and how the formulas become code]] — Approved: DAT112 code-to-formula companion; U-Net rationale and checked tensor shapes, learned time embedding, schedule/training/sampling excerpts and explicit slide/indexing corrections. Links to both existing diffusion notes. Home: Selected architectures & latent models.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning - from Bellman equations to sampled updates|Reinforcement learning - from Bellman equations to sampled updates]] — Approved: Three-page handwriting digest: Bellman/tower derivation, gridworld, MC, off-policy correction, TD and semi-gradients. Home: Reinforcement learning.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Gamblers problem - learning an optimal betting policy|Gamblers problem - learning an optimal betting policy]] — Approved: Betting MDP, action and policy tables, value/policy iteration, and checked offline explorer. Home: Reinforcement learning.
+
+- [[Learning/Probability & mathematical foundations/Stochastic processes/Gamblers problem - probability, martingales, and bold play|Gamblers problem - probability, martingales, and bold play]] — Approved: Exact fixed-stake ruin formula, martingale stopping, bold-play cycle solution and all-action certificates; a separately labeled Brownian analogue. Home: Random walks & martingales. Links to the RL gambler note; two original static figures.

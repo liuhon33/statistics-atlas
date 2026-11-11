@@ -9,7 +9,7 @@ study_band: U–M
 note_types: [derivation, insight, topic-note]
 source_format: handwriting
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-11
 status: active
 verification: checked
 aliases: [train test split bias in ML]
@@ -17,6 +17,7 @@ tags: [atlas/learning, subject/computing]
 connections:
   - "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Data leakage]]"
   - "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Group and temporal splits]]"
+  - "[[Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly]]"
 sources:
   - "[[raw/assets/2026-11-08-Train-test-split-and-KNN-I01-original-notes.png]]"
   - "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage"
@@ -115,12 +116,16 @@ My “10,000 generated features” observation is the same mechanism at scale: i
 3. Use validation data or inner CV for model choices; reserve test data or outer folds for evaluating the selected procedure.
 4. Once a test score drives another choice, that set is serving as validation, not an untouched final test.
 
+This boundary also applies to [[Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly#How to use it|C-statistic evaluation]].
+
 [References: preprocessing boundaries](https://scikit-learn.org/stable/common_pitfalls.html#how-to-avoid-data-leakage) and [model-selection/evaluation boundaries](https://scikit-learn.org/stable/modules/cross_validation.html).
 
 ## Connections
 
 - [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Data leakage|Data leakage]] — Feature selection and model selection can transmit held-out information even when the estimator never directly fits the test rows.
 - [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Group and temporal splits|Group and temporal splits]] — The repeated-visit sketch requires choosing a split unit and time boundary that match the intended generalization target.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly|Concordance and C-statistics - ranking pairs correctly]] — The separation between model selection and final evaluation also applies when the reported score is concordance rather than accuracy.
 
 ## Origin
 

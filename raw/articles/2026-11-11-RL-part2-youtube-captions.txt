@@ -1,0 +1,593 @@
+YouTube transcript
+Video ID: _j6pvGEchWU
+Language: en
+Captions: auto-generated
+
+[0:00] It's time to learn about the Bellman
+[0:01] equations, bedrock theory for
+[0:03] reinforcement learning. The Bellman
+[0:04] equations provide the connecting web of
+[0:06] our state space, a space that our agent
+[0:08] needs to intelligently traverse.
+[0:10] As we'll see, these equations allow us
+[0:12] to convert information on the
+[0:13] environment into improvements in the
+[0:15] agent's behavior. Obviously, that's
+[0:17] important. And on our path to learning
+[0:19] this, we'll also cover dynamic
+[0:21] programming, whereby we assume perfect
+[0:23] knowledge of the environment's dynamics,
+[0:25] and can therefore discover optimal
+[0:27] policies, policies that are better than
+[0:29] all other policies. Considering the huge
+[0:31] space of potential policies for any
+[0:32] given problem, this is quite powerful
+[0:34] theory. We'll also learn about
+[0:36] generalized policy iteration, which is a
+[0:38] kind of solution template used by huge
+[0:41] number of RL methods. We'll see that it
+[0:43] casts the component operations of RL
+[0:45] algorithms as both competing and
+[0:47] cooperating forces that together yield
+[0:50] strong policies. For me personally, this
+[0:52] angle on the subject makes everything
+[0:54] seem a bit simpler. And if I do my job,
+[0:57] you'll soon feel the same way. So, if
+[0:58] you'd like to understand reinforcement
+[1:00] learning, these are must-know topics. In
+[1:02] fact, this is part two of my six-part
+[1:04] series on RL fundamentals. So, enough
+[1:07] with the selling. Let's get into it.
+[1:09] We'll start with a short review, which
+[1:11] you can skip with the time codes if
+[1:12] you've seen the previous video. Okay, we
+[1:14] cast, quite generally, our problem with
+[1:17] a finite Markov decision process, or
+[1:20] MDP. We can think of it as a process
+[1:22] whereby an agent
+[1:24] takes actions that are passed to an
+[1:27] environment, which then produces a
+[1:29] reward and the next state.
+[1:32] These are then passed back to the agent,
+[1:34] and the process repeats. In the episodic
+[1:37] case, it repeats until some terminal
+[1:39] state is reached, marking the end of an
+[1:41] episode. The possible state, action, and
+[1:44] reward values are restricted to
+[1:46] problem-specific finite sets. The
+[1:49] dynamics of the environment are given
+[1:51] with a probability function, which
+[1:53] provides the probability of the next
+[1:54] state and reward given the current state
+[1:56] and action. Our goal is to determine a
+[1:59] policy, which is a state-dependent
+[2:01] distribution over actions. The agent
+[2:04] selects actions by sampling from this
+[2:06] distribution. If we run an agent's
+[2:08] policy through the MDP, we'll get a
+[2:10] trajectory of states, actions, and
+[2:13] rewards. Our goal is to obtain a high
+[2:15] discounted sum of future rewards,
+[2:18] averaged over many trajectories. One
+[2:20] such sum is written as GT, which means
+[2:23] our goal is this. Now, to make progress,
+[2:26] we consider state value functions and
+[2:29] action value functions, which give us
+[2:31] the expected value of GT assuming the
+[2:34] agent follows the policy pi
+[2:36] [snorts]
+[2:36] and is at a given state or state-action
+[2:39] pair. We learned previously we can find
+[2:42] the optimal policy if we can find the
+[2:44] optimum of these functions. Okay, end of
+[2:47] review. Now, we can mention something
+[2:49] new, dynamic programming. In our
+[2:51] context, DP refers to algorithms used to
+[2:54] find optimal policies when we have
+[2:55] complete knowledge of the environment.
+[2:57] In other words, we have exact access to
+[3:00] this, which is an unrealistic assumption
+[3:02] in the real world. But, for now, it
+[3:04] gives us a lot of strength. Now, to
+[3:06] exploit this, we'll use an absolutely
+[3:08] universal concept in the world of
+[3:09] sequential decision-making, the Bellman
+[3:12] equation.
+[3:13] There are actually a few of them. We'll
+[3:14] start with the one for the value
+[3:16] function. Now, before I show you this, I
+[3:18] should warn you. This panel is mostly
+[3:21] algebra.
+[3:22] It's not complicated, but it's a little
+[3:23] boring. Now, as a YouTube educator, I'm
+[3:25] supposed to make this fun, cool, and
+[3:27] exciting. Well, algebra is none of
+[3:29] those. But, you got to know some of it
+[3:31] if you want to know RL. Okay, let's
+[3:33] motivate this with an example.
+[3:34] Let's say we have these states, which we
+[3:37] can label like this.
+[3:39] Now, instead of describing the whole
+[3:41] MDP, I'm going to focus on this state S0
+[3:44] and tell you, from this state, the agent
+[3:47] can pick left or right.
+[3:50] If the agent selects right, the reward
+[3:52] next state probabilities are given by
+[3:54] this distribution.
+[3:56] For example, if the agent selects right,
+[3:59] this cell tells us there is a 9% chance
+[4:03] the agent will end up at S2 with a
+[4:05] reward of zero.
+[4:07] As you'd expect, something similar is
+[4:09] true for selecting left. Next, the
+[4:12] policy from this state is a 40% chance
+[4:15] of choosing left and a 60% chance of
+[4:17] choosing right. And the discount factor
+[4:20] is 0.95. Now, here's the question. If I
+[4:23] also tell you the state values of the
+[4:25] possible next states, can you determine
+[4:28] the state value of S0? Yes, and it's the
+[4:32] Bellman equation that does this. To
+[4:34] discover it ourselves, we start with the
+[4:35] definition of what we're trying to
+[4:37] calculate. Remember, it's the expected
+[4:39] return conditional on the center state
+[4:41] S0.
+[4:43] Regarding notation, I'll be using this
+[4:45] shorthand to omit the random variable
+[4:47] when it's obvious. Okay, back to it. We
+[4:50] break this down by action, meaning it'll
+[4:52] be a sum of two terms, one for the left
+[4:55] action and one for the right action.
+[4:58] Each term will be the expected return
+[5:00] conditional on the current state and the
+[5:03] action, weighted by the probability of
+[5:06] taking each action.
+[5:08] If you know your probability theory,
+[5:09] you'll notice this is just an
+[5:10] application of the law of total
+[5:12] probability.
+[5:13] Also, if you're observant, you'll
+[5:15] recognize that this term is in fact an
+[5:17] action value. Okay, from here, let's
+[5:20] pick out the go right expectation and
+[5:23] recognize something about GT. It obeys a
+[5:27] simple recursive relationship. GT is
+[5:31] equal to the reward
+[5:33] plus the once discounted return one step
+[5:36] later.
+[5:37] With a little algebra, that's not too
+[5:39] hard to see. And so, we can write this.
+[5:42] And then something sneaky.
+[5:45] This.
+[5:46] What I've done here is I've replaced GT
+[5:49] + 1 with what you get when plugging the
+[5:52] randomly determined next state into the
+[5:54] value function.
+[5:56] This is sneaky because they're not
+[5:58] equal. However, in expectation, they
+[6:00] are.
+[6:02] This isn't too hard to see if you recall
+[6:03] the definition of the state value
+[6:05] function and apply the law of total
+[6:06] probability, but more importantly,
+[6:08] because it's true, this substitution
+[6:10] works. Now, from here, it gets easier.
+[6:13] We just remember that these are random
+[6:16] variables and we're calculating an
+[6:18] expectation.
+[6:19] By definition, it's just a probability
+[6:21] weighted average of values and we can
+[6:23] find that information in the go right
+[6:25] distribution. Specifically, this will
+[6:28] equal a sum over all pairs of reward and
+[6:30] next state.
+[6:32] Each term will be weighted by their
+[6:34] probability.
+[6:35] The terms themselves are just this
+[6:37] expression
+[6:38] with the values substituted in, which is
+[6:41] this.
+[6:42] And remember at the start, we were given
+[6:44] these values. So, we have everything we
+[6:46] need to calculate the right action
+[6:48] expectation. And we can do the exact
+[6:50] same thing for the left action.
+[6:53] That would give us all numbers for this,
+[6:56] which means we have everything to
+[6:57] calculate our answer. And this is what
+[6:59] the Bellman equation does for us. It
+[7:01] connects state values.
+[7:04] In fact, it connects all state values.
+[7:07] This means if we can solve for some
+[7:09] state values, we can solve for others.
+[7:12] That's huge. But it's not the whole
+[7:14] story. These are connections for any
+[7:16] policy. Let's now talk about optimal
+[7:19] policies.
+[7:20] In particular, the Bellman optimality
+[7:22] equation for state value functions. If
+[7:25] you recall, the optimal state value
+[7:27] function gives the highest possible
+[7:29] values across all policies.
+[7:31] The optimal action value function is the
+[7:33] same for state action pairs.
+[7:35] Now, let's revisit those five states and
+[7:38] focus again on the left and right
+[7:40] actions. Okay, if I gave you the optimal
+[7:44] action value for going left and going
+[7:46] right, could you tell me the optimal
+[7:49] state value of the center state? Just
+[7:51] imagine you're the agent. If you select
+[7:53] left and continue to follow whatever the
+[7:55] optimal policy is, you'll get on average
+[7:58] a return of 19.1.
+[8:00] If you select right, you'll get on
+[8:02] average a return of 21.3.
+[8:05] So,
+[8:06] what would you do? Clearly, select
+[8:08] right. There's more reward there. And in
+[8:11] fact, it's obvious that's what the
+[8:12] optimal policy must do. Otherwise,
+[8:15] you're leaving expected return on the
+[8:16] table. That means the value of the
+[8:18] center state must be 21.3. It's the max
+[8:21] action value. And that's the fundamental
+[8:24] condition of Bellman optimality. The
+[8:25] agent must always select the highest
+[8:27] action value. Otherwise, it's not
+[8:29] behaving optimally. Now, there is one
+[8:31] complication that arises from multiple
+[8:33] actions achieving the same highest
+[8:35] value.
+[8:36] It just means that there are multiple
+[8:37] optimal policies. Read this for more
+[8:40] details.
+[8:41] Okay, at this point, it'll help if we
+[8:43] take a step back and talk generally
+[8:44] about the Bellman equations. What we've
+[8:47] seen is that for any policy and for all
+[8:49] states and for all actions in each
+[8:51] state, we have the following. The value
+[8:54] of a state when following the policy pi
+[8:57] is equal to the policy weighted average
+[8:59] of the action values, which is something
+[9:01] we saw earlier. To be clear, if we had
+[9:03] 100 states, this would provide 100
+[9:05] equations. Second, the action value of a
+[9:09] state action pair is the probability
+[9:11] weighted average of the reward you'll
+[9:13] get in the next step and the once
+[9:16] discounted value of the next state.
+[9:18] Hopefully, given what we've covered
+[9:20] already, these equations make sense to
+[9:22] you. Now, these aren't the Bellman
+[9:23] equations, but they can be used to build
+[9:25] them. To frame this, I'll use a grid
+[9:28] with the state
+[9:30] and action value along the rows and
+[9:34] along the columns. Each of these cells
+[9:36] will refer to an equation where what
+[9:38] appears on the left-hand side of the
+[9:40] equation is given by the row label
+[9:43] and what appears within the right-hand
+[9:45] side is given by the column label. For
+[9:48] example, an equation with V on the
+[9:50] left-hand side and Q in the right-hand
+[9:52] side is given by equation one.
+[9:56] And naturally, equation two goes here.
+[9:59] All I'm doing is organizing things a
+[10:00] bit. But here's the nice part. The grid
+[10:03] suggests something more.
+[10:05] If we substitute two into one, we can
+[10:08] relate any state value to all state
+[10:11] values one step away.
+[10:13] And this gives us the Bellman equation
+[10:15] for the state value function.
+[10:18] Here it is written out explicitly.
+[10:20] This is exactly what we worked through
+[10:22] earlier in the video. And if we
+[10:23] substitute one into two, we can relate
+[10:26] any action value to all action values
+[10:29] one step away, giving us the Bellman
+[10:32] equation for the action value function.
+[10:34] Again, here is what the equation looks
+[10:37] like written out explicitly.
+[10:39] Now, the most important thing to
+[10:40] understand is using the MDP
+[10:42] distribution, the Bellman equations
+[10:44] allow us to calculate state values from
+[10:46] one step away state values. And to do
+[10:48] something similar for state action
+[10:50] pairs. Also, for each unknown value of
+[10:53] the function, there is a Bellman
+[10:54] equation. So, finding the solution can
+[10:56] be thought of as solving a system of
+[10:58] equations. Finally, there's something
+[11:00] else that's nice about this view.
+[11:02] To refer to the Bellman optimality
+[11:03] equations, which concern optimal
+[11:05] policies in particular, we only need to
+[11:07] make a few modifications.
+[11:10] There's basically only one tweak to call
+[11:12] out. The state value must be the maximum
+[11:15] over optimal action values, like we
+[11:17] discussed earlier.
+[11:19] Structurally, everything else is exactly
+[11:21] the same.
+[11:22] Take a second to absorb this.
+[11:24] Okay. Now, let's step way back and
+[11:26] remember our original goal is to find an
+[11:28] optimal policy for a given MDP. As we'll
+[11:31] see, the Bellman equations will be the
+[11:32] backbone of our algorithms to do this.
+[11:35] In particular, we'll see that a major
+[11:37] subroutine is policy evaluation. This
+[11:40] refers to computing the state value
+[11:42] function or action value function for a
+[11:44] given fixed policy pi for all states or
+[11:49] state-action pairs under some MDP. Now,
+[11:52] there are several ways we could approach
+[11:53] this. In our case, we'll consider a very
+[11:55] simple iterative solution, which we'll
+[11:57] explore with example 4.1 from Sutton and
+[11:59] Barto. Here's the setup. We have 16
+[12:02] states, of which two are terminal.
+[12:05] In each state, the agent can move up,
+[12:07] down, left, or right. And that will
+[12:09] deterministically move it to whichever
+[12:11] neighboring state, unless that state is
+[12:13] off the grid, in which case nothing
+[12:15] happens. Every move will incur a reward
+[12:17] of minus one, and there's no
+[12:18] discounting. So, the goal is to reach a
+[12:20] terminal state as quickly as possible.
+[12:22] And here's the question.
+[12:24] Given a policy which simply samples
+[12:26] actions with equal probability, what is
+[12:29] its value function? Well, the approach
+[12:31] starts by randomly initializing the
+[12:33] state values, with the exception that
+[12:36] the terminal states must have a value of
+[12:38] zero, which is always true.
+[12:40] We will refer to each of these values
+[12:42] with a capital VS.
+[12:45] It's capital because, especially in our
+[12:47] future algorithms, it's a random
+[12:49] estimate which approximates the true
+[12:51] value. Okay, now clearly these values
+[12:53] aren't the solution.
+[12:54] And we know that because they don't obey
+[12:56] the Bellman equation. But,
+[12:58] what's the simplest thing we could do to
+[12:59] fix that? How about just reassigning
+[13:01] each state value according to the
+[13:03] Bellman equation? Like this.
+[13:06] For example, that means this value will
+[13:09] be determined by these values.
+[13:12] In fact, one application gives us this.
+[13:16] From here, we continue reassigning each
+[13:19] state.
+[13:20] One pass over all states is called a
+[13:23] sweep, and we repeat these sweeps until
+[13:25] the values stop changing by more than
+[13:27] some small amount. And due to some nice
+[13:30] theory, this process always converges to
+[13:32] the right answer. My intuition is that
+[13:34] each assignment imports some small piece
+[13:36] of the known MDP, always making the
+[13:39] value estimates a little better. And
+[13:41] that's it for policy evaluation. We just
+[13:43] turned the Bellman equation into an
+[13:45] assignment and repeatedly applied it
+[13:47] starting from random values. For action
+[13:49] values, the process is virtually
+[13:51] identical, except states are replaced
+[13:53] with state-action pairs, and we use the
+[13:55] Bellman equation for the action value
+[13:57] function instead. Next, we'll cover
+[13:59] another major subroutine of many RL
+[14:01] algorithms, policy improvement. The
+[14:04] question here is, given the value
+[14:06] function of some policy pi,
+[14:08] how can we determine a better policy? To
+[14:10] explain this, let's say for simplicity,
+[14:12] the policy is deterministic.
+[14:15] Next, let's recall what an optimal
+[14:17] policy does.
+[14:18] The action selected in each state must
+[14:21] achieve the max action value.
+[14:24] So,
+[14:25] does this inspire any ideas? Here's one.
+[14:28] We define a new policy which always
+[14:31] selects a max action value in every
+[14:33] state. As a reminder, we can form the
+[14:35] action values like this using the state
+[14:38] values. Also, regarding terminology, we
+[14:41] say the new policy is acting greedily
+[14:43] with respect to the value function,
+[14:46] since it's akin to a greedy algorithm
+[14:47] which uses many local optimizations to
+[14:50] travel towards a global optimum.
+[14:52] Moving on, because of something called
+[14:53] the policy improvement theorem, we are
+[14:56] guaranteed that this new policy is at
+[14:59] least as good as the policy of the given
+[15:01] value function. So,
+[15:03] this always helps.
+[15:04] And that's great news. As an example,
+[15:06] let's revisit the value function from
+[15:08] earlier.
+[15:09] Remember, this values the policy that
+[15:11] gives all actions the same probability.
+[15:14] Now, applying policy improvement here
+[15:17] means our new policy would, in each
+[15:19] state, select only the highest action
+[15:21] value.
+[15:22] And by eyeballing this, you can tell
+[15:24] this is an optimal policy. Though, in
+[15:26] general, it'll take more than one
+[15:27] iteration of policy improvement to get
+[15:29] to the optimal policy.
+[15:31] Now, you may ask, what if the policy is
+[15:33] already greedy with respect to its value
+[15:35] function? There would be no improvement
+[15:37] to make. Yes. But very interestingly, if
+[15:40] you meet that condition where the value
+[15:42] function values a policy and that policy
+[15:45] is greedy with respect to that value
+[15:46] function, you must in fact be at the
+[15:48] optimal policy. And that's huge news. It
+[15:51] means this tweaking only becomes
+[15:53] impossible when there's no more helping
+[15:54] to do. And so, this leads us finally to
+[15:57] the big picture, generalized policy
+[15:59] iteration, or GPI.
+[16:02] It refers to an entire class of
+[16:03] algorithms. So, we'll start with a
+[16:05] specific case called, naturally, policy
+[16:07] iteration, which will get us the optimal
+[16:09] policy and value function. It starts
+[16:11] with some arbitrarily initialized
+[16:13] policy, which we'll call pi zero.
+[16:16] We then apply policy evaluation, which
+[16:18] means we'll determine its value
+[16:19] function, V pi zero. Next, because we
+[16:22] know about policy improvement, we can
+[16:23] create a slightly better policy, pi one.
+[16:27] But now, our value function no longer
+[16:29] applies. So, we apply evaluation again
+[16:31] to get a new value function.
+[16:33] Then, we apply policy improvement to
+[16:35] this to yield another better policy. And
+[16:37] this process continues until both the
+[16:39] policy and the value function stop
+[16:41] changing, at which point we must have
+[16:43] arrived at the optimal policy and value
+[16:46] function.
+[16:47] Let's appreciate this.
+[16:49] It's rare you come across something so
+[16:50] simple that does something so useful.
+[16:53] Today's a lucky day.
+[16:54] Okay. Now, generalized policy iteration
+[16:57] refers to something, well, more general.
+[17:00] The textbook has a nice description of
+[17:02] it, which I'll just read.
+[17:06] GPI refers to the general idea of
+[17:08] letting policy evaluation and policy
+[17:10] improvement processes interact,
+[17:13] independent of the granularity and the
+[17:14] other details of the two processes.
+[17:16] Almost all reinforcement learning
+[17:18] methods are well described as GPI.
+[17:20] I couldn't say it any better myself.
+[17:22] This really captures just how big of a
+[17:24] picture GPI really is. To get a sense of
+[17:26] the generality, let's imagine adjusting
+[17:28] policy iteration.
+[17:30] Remember, policy evaluation, as we
+[17:32] covered, involves multiple sweeps over
+[17:34] the states until the values stop
+[17:36] changing. But what if we switch to
+[17:38] policy improvement after only one sweep?
+[17:40] Would we still converge to the optimum?
+[17:42] Yes, and this is in fact called value
+[17:44] iteration, a different algorithm within
+[17:46] GPI, which we'll see an example of in a
+[17:48] minute. Generally speaking, as long as
+[17:50] each process does their job at least
+[17:52] partially, the algorithm will still
+[17:54] recover the optimal policy in the limit.
+[17:56] As a footnote, the book has this really
+[17:58] beautiful way of picturing how these two
+[17:59] processes interact.
+[18:01] I was going to walk through it, but it's
+[18:03] a bit too redundant with what I've
+[18:04] already covered and rather heavy to
+[18:06] explain.
+[18:07] I'm including it here because I just
+[18:09] don't have the heart to cut it. So, feel
+[18:11] free to mute me and pause your way
+[18:12] through this if you're interested.
+[18:14] Okay, now let's do the value iteration
+[18:16] example. This is the gambler's problem
+[18:18] from the book. Here's the setup.
+[18:20] The gambler's state is his capital,
+[18:23] which is an integer between 1 and 99.
+[18:26] His goal is to reach the terminal state
+[18:28] of $100 before the terminal state of $0.
+[18:31] To achieve the goal, he can repeatedly
+[18:33] bet on an inbounds coin, which has a
+[18:35] probability of heads of 40%.
+[18:38] Specifically, he can bet an integer up
+[18:40] to the amount he has or the difference
+[18:42] to $100.
+[18:44] If the coin comes up heads, he gains as
+[18:46] much as he bet. Otherwise, he loses it.
+[18:49] This can be encoded as an MDP by
+[18:51] applying no discounting and saying all
+[18:54] rewards are zero, except there is a
+[18:56] reward of one when transitioning to the
+[18:57] state of $100.
+[18:59] This can all be expressed with an
+[19:01] indicator function like this. To
+[19:03] visualize the solution, we'll start with
+[19:05] a plot of our value function, where we
+[19:08] have the state across the horizontal
+[19:09] axis and the value along the vertical
+[19:12] axis.
+[19:13] Second, we'll have a similar plot except
+[19:15] the vertical axis gives us the policy's
+[19:17] bet amount in each state,
+[19:19] which in this case is deterministic.
+[19:22] Since this problem will give us quite a
+[19:23] bit of ties among highest action values,
+[19:25] we'll break those ties by always
+[19:27] selecting the smallest bet.
+[19:29] Okay, we start by initializing the value
+[19:31] function to zero.
+[19:33] Doesn't have to be that, but it works.
+[19:36] From here, we do our first iteration of
+[19:38] policy improvement, which gives us these
+[19:41] bets.
+[19:43] This policy says, "Once over 50, bet
+[19:45] whatever it takes to get to 100." Now we
+[19:47] ask, "What value does this policy imply
+[19:50] for each state?"
+[19:52] Well, if we're doing policy iteration,
+[19:55] we would continually sweep over the
+[19:57] states until the value function stop
+[19:59] changing.
+[20:00] But,
+[20:01] as we mentioned, that's not required. In
+[20:04] value iteration, we only do one sweep
+[20:07] before making the policy greedy with
+[20:09] respect to this value function. And this
+[20:12] process
+[20:13] iterates
+[20:14] back
+[20:16] and forth, and back, and forth, and
+[20:19] back, and forth until the process stops
+[20:22] changing and we have the optimal policy.
+[20:25] And as you'll notice, the optimal policy
+[20:27] looks interesting and unusual. And
+[20:29] that's part of the beauty. I'm sure some
+[20:31] clever analysis of this problem would
+[20:32] uncover the strategy, but dynamic
+[20:34] programming makes that unnecessary. With
+[20:36] a simple general algorithm, you get
+[20:38] whatever optimal strategy the problem
+[20:40] demands. So, this is a very powerful
+[20:42] tool, but its power is limited. To get
+[20:44] here, we required perfect knowledge of
+[20:46] the environment. And I didn't go into
+[20:47] detail about this, but the state space
+[20:49] is also limited. It can't be too big.
+[20:51] Nonetheless, the theory is foundational
+[20:53] to RL. As real-world problems strip away
+[20:56] these cushy assumptions, we can address
+[20:57] those holes directly and still make good
+[20:59] progress. To see that, you'll need to
+[21:01] watch the next video on Monte Carlo
+[21:02] methods for RL. Don't be soft, be tough,
+[21:05] and keep focusing. See you there.

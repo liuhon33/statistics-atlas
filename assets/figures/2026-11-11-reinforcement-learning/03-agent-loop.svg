@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="728.39952pt" height="260.39952pt" viewBox="0 0 728.39952 260.39952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-11T13:54:02.939412</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 260.39952 
+L 728.39952 260.39952 
+L 728.39952 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 42.899976 183.181471 
+L 192.839875 183.181471 
+Q 201.407869 183.181471 201.407869 176.060992 
+L 201.407869 110.789929 
+Q 201.407869 103.669449 192.839875 103.669449 
+L 42.899976 103.669449 
+Q 34.331982 103.669449 34.331982 110.789929 
+L 34.331982 176.060992 
+Q 34.331982 183.181471 42.899976 183.181471 
+z
+" clip-path="url(#p29f6730b24)" style="fill: #23835a; opacity: 0.12"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 499.859669 183.181471 
+L 649.799568 183.181471 
+Q 658.367562 183.181471 658.367562 176.060992 
+L 658.367562 110.789929 
+Q 658.367562 103.669449 649.799568 103.669449 
+L 499.859669 103.669449 
+Q 491.291675 103.669449 491.291675 110.789929 
+L 491.291675 176.060992 
+Q 491.291675 183.181471 499.859669 183.181471 
+z
+" clip-path="url(#p29f6730b24)" style="fill: #236aad; opacity: 0.12"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 209.121126 125.624261 
+Q 346.348527 125.624261 481.898877 125.624261 
+" clip-path="url(#p29f6730b24)" style="fill: none; stroke: #526273; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 475.898877 122.624261 
+L 481.898877 125.624261 
+L 475.898877 128.624261 
+" clip-path="url(#p29f6730b24)" style="fill: none; stroke: #526273; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 483.578418 161.226659 
+Q 346.351017 161.226659 210.800667 161.226659 
+" clip-path="url(#p29f6730b24)" style="fill: none; stroke: #526273; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 216.800667 164.226659 
+L 210.800667 161.226659 
+L 216.800667 158.226659 
+" clip-path="url(#p29f6730b24)" style="fill: none; stroke: #526273; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font: 12px 'DejaVu Sans'" transform="translate(95.095238 140.018023)">Policy π</text>
+    <text style="font: 12px 'DejaVu Sans'" transform="translate(65.955863 153.455398)">Choose an action</text>
+   </g>
+   <g id="text_2">
+    <text style="font: 12px 'DejaVu Sans'" transform="translate(530.805556 140.018023)">Environment p</text>
+    <text style="font: 12px 'DejaVu Sans'" transform="translate(514.125556 153.455398)">Next state + reward</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #526273; font: 11px 'DejaVu Sans'; text-anchor: middle" x="346.349772" y="109.671628" transform="rotate(-0 346.349772 109.671628)">Action Aₜ</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #526273; font: 11px 'DejaVu Sans'; text-anchor: middle" x="346.349772" y="183.249917" transform="rotate(-0 346.349772 183.249917)">Sₜ₊₁, Rₜ₊₁</text>
+   </g>
+   <g id="text_5">
+    <text style="font: 12px 'DejaVu Sans'; text-anchor: middle" x="364.19976" y="235.398321" transform="rotate(-0 364.19976 235.398321)">Evaluate π → compute Vπ and Qπ → improve π → repeat</text>
+   </g>
+  </g>
+  <g id="text_6">
+   <text style="font: 15px 'DejaVu Sans'; text-anchor: middle" x="364.19976" y="18.597656" transform="rotate(-0 364.19976 18.597656)">Actions change the future states that generate later rewards</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p29f6730b24">
+   <rect x="7.2" y="27.717668" width="713.99952" height="225.481853"/>
+  </clipPath>
+ </defs>
+</svg>

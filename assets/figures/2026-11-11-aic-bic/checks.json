@@ -1,0 +1,34 @@
+{
+  "coin": {
+    "n": 100,
+    "heads": 60,
+    "ll_fixed": -69.31471805599453,
+    "ll_free": -67.30116670092565,
+    "twice_loglik_gain": 4.027102710137768,
+    "gain_80_heads": 38.5489514043515,
+    "AIC": [
+      138.62943611198907,
+      136.6023334018513
+    ],
+    "BIC": [
+      138.62943611198907,
+      139.2075035878394
+    ]
+  },
+  "normal_AIC": {
+    "n": 20,
+    "replications": 160000,
+    "mean_training_SSE": 19.02463316791654,
+    "mean_conditional_fresh_SSE": 20.998149511763184,
+    "exact_expectations": [
+      19,
+      21
+    ]
+  },
+  "BIC": {
+    "area_ratio_n25_over_n100": 2.0000000000000004,
+    "max_prior_integral_error": 5.48172618408671e-16
+  },
+  "checks": "PASS: coin arithmetic/rankings, exact normal expectations (Monte Carlo support), Gaussian area and proper-prior quadrature, SVG XML",
+  "limits": "Numerics support the written identities; they do not prove general asymptotic AIC/BIC validity."
+}

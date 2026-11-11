@@ -1,0 +1,131 @@
+{
+  "method": "exact rational cycle elimination and all-action verification inequalities",
+  "certificates": [
+    {
+      "target": 10,
+      "p": "2/5",
+      "state_action_checks": 25,
+      "all_inequalities_exact": true,
+      "policy_equalities_exact": true
+    },
+    {
+      "target": 10,
+      "p": "1/2",
+      "state_action_checks": 25,
+      "all_inequalities_exact": true,
+      "policy_equalities_exact": true
+    },
+    {
+      "target": 10,
+      "p": "3/5",
+      "state_action_checks": 25,
+      "all_inequalities_exact": true,
+      "policy_equalities_exact": true
+    },
+    {
+      "target": 100,
+      "p": "2/5",
+      "state_action_checks": 2500,
+      "all_inequalities_exact": true,
+      "policy_equalities_exact": true
+    },
+    {
+      "target": 100,
+      "p": "1/2",
+      "state_action_checks": 2500,
+      "all_inequalities_exact": true,
+      "policy_equalities_exact": true
+    },
+    {
+      "target": 100,
+      "p": "3/5",
+      "state_action_checks": 2500,
+      "all_inequalities_exact": true,
+      "policy_equalities_exact": true
+    }
+  ],
+  "N10_gap_common_denominator": 2945,
+  "N10_scaled_gap_rows": [
+    {
+      "capital": 1,
+      "scaled_gaps": [
+        0
+      ]
+    },
+    {
+      "capital": 2,
+      "scaled_gaps": [
+        24,
+        0
+      ]
+    },
+    {
+      "capital": 3,
+      "scaled_gaps": [
+        36,
+        0,
+        0
+      ]
+    },
+    {
+      "capital": 4,
+      "scaled_gaps": [
+        0,
+        60,
+        60,
+        0
+      ]
+    },
+    {
+      "capital": 5,
+      "scaled_gaps": [
+        150,
+        186,
+        186,
+        150,
+        0
+      ]
+    },
+    {
+      "capital": 6,
+      "scaled_gaps": [
+        0,
+        90,
+        90,
+        0
+      ]
+    },
+    {
+      "capital": 7,
+      "scaled_gaps": [
+        36,
+        0,
+        0
+      ]
+    },
+    {
+      "capital": 8,
+      "scaled_gaps": [
+        54,
+        0
+      ]
+    },
+    {
+      "capital": 9,
+      "scaled_gaps": [
+        0
+      ]
+    }
+  ],
+  "independent_float_policy_max_error": 4.440892098500626e-15,
+  "Brownian_ODE_boundary_and_zero_drift_limit": "symbolic PASS",
+  "scaled_bold_N10_N100_identity": "exact PASS",
+  "examples": {
+    "N10_s3_timid": "2432/58025",
+    "N100_s30_timid": "4189092247830487780292005199872/8881990878621479186020000509045960727365865",
+    "N100_s30_timid_decimal": 4.716388819891078e-13,
+    "N100_s30_bold": "548/2945",
+    "N100_s30_bold_decimal": 0.18607809847198642
+  },
+  "svg_XML_parsing": "PASS (2 figures)"
+}

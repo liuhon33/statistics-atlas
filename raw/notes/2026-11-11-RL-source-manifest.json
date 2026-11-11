@@ -1,0 +1,124 @@
+{
+  "capture_date": "2026-11-11",
+  "source_key": "RL-handwriting-2026-11-11-first-digest",
+  "source_pdf_origin": "C:\\Users\\Hongrui_Liu\\Downloads\\Reinforcement learning.pdf",
+  "scope": {
+    "pdf_pages": [
+      1,
+      2,
+      3
+    ],
+    "video_available_captions": "0:00-21:05",
+    "video_player_duration": "21:32",
+    "visually_inspected_video_times": [
+      "18:47",
+      "20:08"
+    ],
+    "not_claimed": [
+      "continuous audiovisual viewing",
+      "later playlist videos",
+      "handwritten gambler computations not present in the PDF"
+    ]
+  },
+  "video": {
+    "url": "https://www.youtube.com/watch?v=_j6pvGEchWU",
+    "title": "Bellman Equations, Dynamic Programming, Generalized Policy Iteration | Reinforcement Learning Part 2",
+    "channel": "Mutual Information",
+    "published": "2022-10-25",
+    "gambler_section": "18:14-20:42",
+    "automatic_caption_caution": "Mathematical notation checked against handwriting, visible rules and textbook; no exact narration reconstruction"
+  },
+  "files": [
+    {
+      "path": "raw/notes/2026-11-11-Reinforcement-learning-handwritten-notes.pdf",
+      "sha256": "a3c1f5adf2a4b8c86a93394514389915e75585edd0a480a06884fc2cb18904dc",
+      "bytes": 4287955,
+      "role": "Supplied original, copied byte-for-byte; all 3 pages visually inspected"
+    },
+    {
+      "path": "raw/articles/2026-11-11-RL-part2-youtube-captions.txt",
+      "sha256": "b05906bc574ee2c7029aeb495931ec96e0de658941b6f1cff522d3ff96adb161",
+      "bytes": 25087,
+      "role": "Complete available English automatic-caption export, 0:00-21:05"
+    },
+    {
+      "path": "raw/assets/2026-11-11-RL-video-gambler-18m36.jpg",
+      "sha256": "61abeb40c0b97601275e29c47873426bf7f237e9fe882cbc26c482e091fd2ce9",
+      "bytes": 122971,
+      "role": "Original browser screenshot: requested seek 18:36, actual visible player time 18:47"
+    },
+    {
+      "path": "raw/assets/2026-11-11-RL-video-gambler-bars.jpg",
+      "sha256": "630ee5b1d66c80b89c6d6e4ec2531266773f01f3ec67358fdc41d78ae4376d15",
+      "bytes": 127248,
+      "role": "Original browser screenshot: actual visible player time 20:08"
+    },
+    {
+      "path": "raw/assets/2026-11-11-RL-I01-page-1-Im1.png",
+      "sha256": "b4d63041dafe3244fa279df657034d40d8e679ba7051476e6a30b8cac1aaf382",
+      "bytes": 1878,
+      "role": "PDF-embedded 512x512 background resource; extraction does not contain the vector handwriting and is not used as a note illustration"
+    },
+    {
+      "path": "raw/assets/2026-11-11-RL-I02-page-2-Im1.png",
+      "sha256": "b4d63041dafe3244fa279df657034d40d8e679ba7051476e6a30b8cac1aaf382",
+      "bytes": 1878,
+      "role": "PDF-embedded 512x512 background resource; extraction does not contain the vector handwriting and is not used as a note illustration"
+    },
+    {
+      "path": "raw/assets/2026-11-11-RL-I03-page-3-Im1.png",
+      "sha256": "b4d63041dafe3244fa279df657034d40d8e679ba7051476e6a30b8cac1aaf382",
+      "bytes": 1878,
+      "role": "PDF-embedded 512x512 background resource; extraction does not contain the vector handwriting and is not used as a note illustration"
+    }
+  ],
+  "derived_handwriting": [
+    {
+      "path": "assets/figures/2026-11-11-reinforcement-learning/handwriting-bellman.png",
+      "source_pdf_page": 1,
+      "render_max_dimension_px": 3500,
+      "crop_xyxy": [
+        0,
+        1000,
+        2667,
+        1960
+      ]
+    },
+    {
+      "path": "assets/figures/2026-11-11-reinforcement-learning/handwriting-approximation.png",
+      "source_pdf_page": 3,
+      "render_max_dimension_px": 3500,
+      "crop_xyxy": [
+        0,
+        0,
+        1200,
+        1600
+      ]
+    }
+  ],
+  "supporting_reference": {
+    "authors": [
+      "Richard S. Sutton",
+      "Andrew G. Barto"
+    ],
+    "title": "Reinforcement Learning: An Introduction",
+    "edition": 2,
+    "year": 2018,
+    "url": "https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf",
+    "download_sha256": "f1df4739245b64b2411932d76f3f996e687f674cc51040f84f0fb1ff02fb4e4d",
+    "retention": "Downloaded to temporary working storage for verification; remote primary-source citation is retained in the notes",
+    "sections_used": [
+      "1.1",
+      "3.1",
+      "3.5",
+      "4.1-4.6",
+      "5.1-5.2",
+      "5.5",
+      "6.3-6.6",
+      "7.1",
+      "9.2-9.4"
+    ]
+  },
+  "authorship": "Handwriting is user supplied. Explanations, corrections, target-10 example, code, derived crops and analytic figures are agent additions. Source screenshots are captures from the linked lecture.",
+  "deferred": "Probability-theoretic and stochastic-calculus comparisons, as explicitly requested for later."
+}

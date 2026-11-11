@@ -1,0 +1,31 @@
+{
+  "binary_C": 0.75,
+  "tied_binary_C": 0.875,
+  "survival_C": 0.75,
+  "survival_comparable_pairs": [
+    [
+      0,
+      1,
+      1.0
+    ],
+    [
+      0,
+      2,
+      1.0
+    ],
+    [
+      0,
+      3,
+      1.0
+    ],
+    [
+      2,
+      3,
+      0.0
+    ]
+  ],
+  "exhaustive_tie_cases": 729,
+  "max_auc_pair_block_error": 1.1102230246251565e-16,
+  "svg_parse": "PASS",
+  "scope": "Distinct survival times; no software survival API execution. Numerical checks support the analytic proof."
+}

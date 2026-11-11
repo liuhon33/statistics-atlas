@@ -16,7 +16,7 @@ question_roles:
   - assumption-boundary
 source_format: handwriting-and-pasted-conversation
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-11
 status: active
 verification: checked
 learning_state: unknown
@@ -32,6 +32,7 @@ connections:
   - "[[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Intervals & test inversion/Inverting a test]]"
   - "[[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Power and sample size]]"
   - "[[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Confidence intervals and p-values - the same test viewed two ways]]"
+  - "[[Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly]]"
 sources:
   - "[[assets/figures/2026-11-10-testing-power/draw_precision_areas.py]]"
   - "[[assets/figures/2026-11-10-testing-power/precision-areas-checks.json]]"
@@ -312,7 +313,7 @@ $$
 \qquad u=\mathrm{FPR}.
 $$
 
-For independent scores $S_1$ from the actually positive class and $S_0$ from the actually negative class, continuous score distributions give $\mathrm{AUC}=P(S_1>S_0)$. With ties, the standard interpolated-ROC convention adds $\tfrac12P(S_1=S_0)$. This is ranking across thresholds, not the precision, accuracy or power at the marked cutoff. See [Google ML Crash Course, ROC and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc).
+For independent scores $S_1$ from the actually positive class and $S_0$ from the actually negative class, continuous score distributions give $\mathrm{AUC}=P(S_1>S_0)$. With ties, the [[Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly#Count the same pairs through ROC strips|standard interpolated-ROC convention]] adds $\tfrac12P(S_1=S_0)$. This is ranking across thresholds, not the precision, accuracy or power at the marked cutoff. See [Google ML Crash Course, ROC and AUC](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc).
 
 For this specific illustration, $S_1-S_0\sim N(\delta,2)$ by independence. Hence
 
@@ -508,6 +509,8 @@ The weaker pointwise statement puts the limit first for each fixed $\theta$. Uni
 - [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Tests & confidence sets/Testing principles/Power and sample size|Power and sample size]] — The normal power function explicitly connects effect size, sample size, significance level, and desired detection probability.
 
 - [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Confidence intervals and p-values - the same test viewed two ways|Confidence intervals and p-values - the same test viewed two ways]] — A calibrated decision rule for each candidate null converts Type I error control into confidence coverage; fixing the data reveals the matching p-value and interval decisions.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Concordance and C-statistics - ranking pairs correctly|Concordance and C-statistics - ranking pairs correctly]] — The AUC ranking probability here becomes explicit pair counting, with a proof including score ties; neither measures power at one chosen cutoff.
 
 ## Origin
 

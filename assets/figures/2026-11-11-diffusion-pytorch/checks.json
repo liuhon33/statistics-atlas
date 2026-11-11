@@ -1,0 +1,306 @@
+{
+  "runtime": {
+    "python": "C:\\Users\\Hongrui_Liu\\.conda\\envs\\pytorch_learn\\python.exe",
+    "torch": "2.10.0+cu130",
+    "digest_check_device": "cpu",
+    "cuda_available": true,
+    "cuda_name": "NVIDIA GeForce RTX 4090"
+  },
+  "limits": [
+    "Small n_feat=8 model, not the n_feat=512 training run.",
+    "No pretrained checkpoint loaded, no full training, no image-quality claim.",
+    "No TensorFlow forward-output parity or live Obsidian-render claim.",
+    "Known schedule/indexing and slide discrepancies are documented, not repaired."
+  ],
+  "sources": [
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/ddpm.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\ddpm.py",
+      "sha256": "9c3deef8cadbb32e194d567715e0858961e8470f340e0f9ae09faf3ce2759454",
+      "bytes": 1086,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/diffusion_model.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\diffusion_model.py",
+      "sha256": "7ed6e8b5c191938348eae7da84835c543f1f1dd670d22c39dd8dbc74bf7015a2",
+      "bytes": 10510,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/reverse_diffusion.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\reverse_diffusion.py",
+      "sha256": "102f82a263fa3092fb627bf725474dc2b99c59713709978e4daf43a3f3930cd5",
+      "bytes": 4270,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/sample_archive.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\sample_archive.py",
+      "sha256": "e950f79e5305f7bbd2d434f9be25f6b652169e3838aeba3a9802c86821f9bf3a",
+      "bytes": 3327,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/show_samples.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\show_samples.py",
+      "sha256": "8ade4a6ae46cd869d9ad089d33545af307838c18cd2d393c4c1b8eb59eaf0138",
+      "bytes": 1616,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/test_conversion.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\test_conversion.py",
+      "sha256": "ab670be7ede5de345315acf24e595352d600a253f20c64461c12fd4482ae23aa",
+      "bytes": 3521,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/test_sample_archive.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\test_sample_archive.py",
+      "sha256": "d855cbaa933e6dced37a70ef05a8904be7bf4fb58cbd51d8b6e03890d43023ce",
+      "bytes": 5708,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/unet.py",
+      "source_path": "E:\\DAT112\\lecture07\\torch\\unet.py",
+      "sha256": "d4b36859788fe8f3ae39272c9800a18bdf75d40e9afbd015102a8be156094dd6",
+      "bytes": 4223,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2026-11-11-DAT112-Lecture07-torch/2026-11-11-DAT112-Lecture07-source-README.md",
+      "source_path": "E:\\DAT112\\lecture07\\README.md",
+      "sha256": "99880406cfa7be7c45599edd0b21b339928e85b68378b588af62045c4dc90cf5",
+      "bytes": 14171,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/notes/2025-05-13-DAT112-Lecture07-Diffusion-models.pdf",
+      "source_path": "E:\\DAT112\\lecture07\\slides\\7_DM.pdf",
+      "sha256": "b95786add72b7fe38fab35245a63f466e8beec91e6217c233b64ec5c0d82ca4c",
+      "bytes": 746167,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    },
+    {
+      "path": "raw/assets/2025-05-13-DAT112-diffusion-I01-unet.png",
+      "source_path": "D:\\CODEXS~1\\temp\\claudian-codex-images-m3qWzc\\1-image.png",
+      "sha256": "6b0d1ba6c74da90a6e9ed44890238388d7acc27487d4c2e50768e2f961af0c59",
+      "bytes": 272498,
+      "source_exists_on_rerun": true,
+      "byte_identity_verified": true
+    }
+  ],
+  "shapes": {
+    "init_conv": [
+      2,
+      8,
+      64,
+      64
+    ],
+    "down1": [
+      2,
+      8,
+      32,
+      32
+    ],
+    "down2": [
+      2,
+      16,
+      16,
+      16
+    ],
+    "down3": [
+      2,
+      16,
+      8,
+      8
+    ],
+    "to_vec": [
+      2,
+      16,
+      2,
+      2
+    ],
+    "timeemb": [
+      2,
+      16
+    ],
+    "up0": [
+      2,
+      16,
+      8,
+      8
+    ],
+    "up1": [
+      2,
+      16,
+      16,
+      16
+    ],
+    "up2": [
+      2,
+      8,
+      32,
+      32
+    ],
+    "up3": [
+      2,
+      8,
+      64,
+      64
+    ],
+    "out": [
+      2,
+      3,
+      64,
+      64
+    ]
+  },
+  "skip_shapes": {
+    "up1": {
+      "main": [
+        2,
+        16,
+        8,
+        8
+      ],
+      "skip": [
+        2,
+        16,
+        8,
+        8
+      ],
+      "cat": [
+        2,
+        32,
+        8,
+        8
+      ]
+    },
+    "up2": {
+      "main": [
+        2,
+        16,
+        16,
+        16
+      ],
+      "skip": [
+        2,
+        16,
+        16,
+        16
+      ],
+      "cat": [
+        2,
+        32,
+        16,
+        16
+      ]
+    },
+    "up3": {
+      "main": [
+        2,
+        8,
+        32,
+        32
+      ],
+      "skip": [
+        2,
+        8,
+        32,
+        32
+      ],
+      "cat": [
+        2,
+        16,
+        32,
+        32
+      ]
+    }
+  },
+  "small_model_parameters": 33003,
+  "training": {
+    "mse": 2.233192205429077,
+    "all_gradients_finite": true,
+    "time_embedding_nonzero_gradient": true,
+    "optimizer_changed_weights": true,
+    "broadcast_shapes": [
+      [
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        1
+      ]
+    ],
+    "loss_denominator": 24576
+  },
+  "schedule": {
+    "length": 1001,
+    "beta0": 0.0001,
+    "beta1": 0.00011990000000000001,
+    "alphabar0": 0.9999,
+    "alphabar1": 0.99978011199,
+    "alphabar1000": 3.995202405970437e-05,
+    "training_indices": [
+      1,
+      1000
+    ],
+    "sampling_indices": [
+      1000,
+      0
+    ],
+    "standard_baralpha0": 1.0
+  },
+  "algebra": {
+    "mean_recurrence_pass": true,
+    "weighted_loss_abs_error": 3.0531133177191805e-16
+  },
+  "dataset": {
+    "synthetic_layout": [
+      3,
+      64,
+      64
+    ],
+    "range": [
+      0,
+      1
+    ],
+    "pass": true
+  },
+  "sampler_trace": {
+    "T": 2,
+    "calls": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "mode_restored": true,
+    "rng_preserved": true
+  },
+  "supplied_tests": {
+    "run": 8,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "output": "test_dataset_layout_and_normalization (test_conversion.ConversionTests.test_dataset_layout_and_normalization) ... ok\ntest_original_tensorflow_schedule (test_conversion.ConversionTests.test_original_tensorflow_schedule) ... ok\ntest_schedule_and_forward_noise_variance (test_conversion.ConversionTests.test_schedule_and_forward_noise_variance) ... ok\ntest_shapes_gradients_and_weight_reload (test_conversion.ConversionTests.test_shapes_gradients_and_weight_reload) ... ok\ntest_repeated_epoch_never_overwrites_and_saves_eight_images (test_sample_archive.SampleArchiveTests.test_repeated_epoch_never_overwrites_and_saves_eight_images) ... ok\ntest_resume_at_nine_archives_ten_only_without_changing_training (test_sample_archive.SampleArchiveTests.test_resume_at_nine_archives_ten_only_without_changing_training) ... ok\ntest_sampling_preserves_rng_mode_weights_and_is_repeatable (test_sample_archive.SampleArchiveTests.test_sampling_preserves_rng_mode_weights_and_is_repeatable) ... ok\ntest_sampling_restores_training_mode_on_failure (test_sample_archive.SampleArchiveTests.test_sampling_restores_training_mode_on_failure) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.855s\n\nOK\n"
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,60 @@
+{
+  "pass": true,
+  "density_values_compared": 1815,
+  "density_max_scaled_error": 1.6191788271563512e-13,
+  "moment_parameter_pairs": 121,
+  "moments_max_absolute_error": 1.5631940186722204e-13,
+  "posterior_cases": 2420,
+  "posterior_max_absolute_error": 0.0,
+  "endpoint_limits": "PASS",
+  "normalization_and_moments_quadrature": [
+    {
+      "alpha": 1,
+      "beta": 1,
+      "maximum_error": 5.551115123125783e-17
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.25,
+      "maximum_error": 2.220446049250313e-16
+    },
+    {
+      "alpha": 0.25,
+      "beta": 20,
+      "maximum_error": 1.1102230246251565e-15
+    },
+    {
+      "alpha": 20,
+      "beta": 0.25,
+      "maximum_error": 1.1102230246251565e-15
+    },
+    {
+      "alpha": 2,
+      "beta": 2,
+      "maximum_error": 0.0
+    },
+    {
+      "alpha": 4,
+      "beta": 2,
+      "maximum_error": 1.1102230246251565e-16
+    },
+    {
+      "alpha": 10,
+      "beta": 10,
+      "maximum_error": 4.440892098500626e-16
+    },
+    {
+      "alpha": 31,
+      "beta": 11,
+      "maximum_error": 6.661338147750939e-16
+    },
+    {
+      "alpha": 70,
+      "beta": 70,
+      "maximum_error": 8.43769498715119e-15
+    }
+  ],
+  "coin_example_integrals": "PASS",
+  "svg_xml": "PASS",
+  "scope": "Independent numerical support; analytic proof is in the note. Browser/live-app checks recorded separately."
+}

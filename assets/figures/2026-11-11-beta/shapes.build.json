@@ -1,0 +1,26 @@
+{
+  "output": "shapes.html",
+  "output_sha256": "c9889751ae3ee7698526ed913e1c7d61908adb624787f983bad775bcd9871a19",
+  "inputs": [
+    {
+      "name": "shapes-body.html",
+      "sha256": "6e0422cd47dff6afdc0bb77a37b5abf79eb4ff0b0f8294c0840ebf3fef47f2e6"
+    },
+    {
+      "name": "explorer.css",
+      "sha256": "7e008f41e74076fbccc17d83ba913acdb799a4b57447ec9a0b1d8620ea7e6427"
+    },
+    {
+      "name": "math.js",
+      "sha256": "e4beb43f370f15bfe09cd67eda8735d4026b4d4ac114d2017697d6a592e1aa6f"
+    },
+    {
+      "name": "explorer.js",
+      "sha256": "103927da7b892479a796fb486c0ecb83259bb5ac5beccce542f651832b09053c"
+    },
+    {
+      "name": "build_explorer.py",
+      "sha256": "90ed20cb9b71d790b309293129826a533c6512c2ec06b164ce1f85ec76d021f2"
+    }
+  ]
+}

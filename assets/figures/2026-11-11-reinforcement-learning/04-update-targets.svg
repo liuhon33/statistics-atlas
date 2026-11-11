@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="728.39952pt" height="325.19952pt" viewBox="0 0 728.39952 325.19952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-11T13:54:03.035683</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 325.19952 
+L 728.39952 325.19952 
+L 728.39952 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="table_1">
+    <g id="patch_2">
+     <path d="M 7.2 123.400974 
+L 171.41989 123.400974 
+L 171.41989 89.46923 
+L 7.2 89.46923 
+z
+" style="fill: #eaf1f7; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_1">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="23.621989" y="109.194477" transform="rotate(-0 23.621989 109.194477)">Method</text>
+    </g>
+    <g id="patch_3">
+     <path d="M 171.41989 123.400974 
+L 364.19976 123.400974 
+L 364.19976 89.46923 
+L 171.41989 89.46923 
+z
+" style="fill: #eaf1f7; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_2">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="190.697877" y="109.194477" transform="rotate(-0 190.697877 109.194477)">What is used</text>
+    </g>
+    <g id="patch_4">
+     <path d="M 364.19976 123.400974 
+L 649.799568 123.400974 
+L 649.799568 89.46923 
+L 364.19976 89.46923 
+z
+" style="fill: #eaf1f7; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_3">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="392.759741" y="109.194477" transform="rotate(-0 392.759741 109.194477)">Update target</text>
+    </g>
+    <g id="patch_5">
+     <path d="M 649.799568 123.400974 
+L 721.19952 123.400974 
+L 721.19952 89.46923 
+L 649.799568 89.46923 
+z
+" style="fill: #eaf1f7; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_4">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="656.939563" y="109.194477" transform="rotate(-0 656.939563 109.194477)">Model?</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 7.2 157.332717 
+L 171.41989 157.332717 
+L 171.41989 123.400974 
+L 7.2 123.400974 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_5">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="23.621989" y="143.12622" transform="rotate(-0 23.621989 143.12622)">Dynamic programming</text>
+    </g>
+    <g id="patch_7">
+     <path d="M 171.41989 157.332717 
+L 364.19976 157.332717 
+L 364.19976 123.400974 
+L 171.41989 123.400974 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_6">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="190.697877" y="143.12622" transform="rotate(-0 190.697877 143.12622)">Every possible next state</text>
+    </g>
+    <g id="patch_8">
+     <path d="M 364.19976 157.332717 
+L 649.799568 157.332717 
+L 649.799568 123.400974 
+L 364.19976 123.400974 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="392.759741" y="143.12622" transform="rotate(-0 392.759741 143.12622)">Exact expectation</text>
+    </g>
+    <g id="patch_9">
+     <path d="M 649.799568 157.332717 
+L 721.19952 157.332717 
+L 721.19952 123.400974 
+L 649.799568 123.400974 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_8">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="656.939563" y="143.12622" transform="rotate(-0 656.939563 143.12622)">Yes</text>
+    </g>
+    <g id="patch_10">
+     <path d="M 7.2 191.26446 
+L 171.41989 191.26446 
+L 171.41989 157.332717 
+L 7.2 157.332717 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_9">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="23.621989" y="177.057963" transform="rotate(-0 23.621989 177.057963)">Monte Carlo</text>
+    </g>
+    <g id="patch_11">
+     <path d="M 171.41989 191.26446 
+L 364.19976 191.26446 
+L 364.19976 157.332717 
+L 171.41989 157.332717 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_10">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="190.697877" y="177.057963" transform="rotate(-0 190.697877 177.057963)">One completed trajectory</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 364.19976 191.26446 
+L 649.799568 191.26446 
+L 649.799568 157.332717 
+L 364.19976 157.332717 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_11">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="392.759741" y="177.057963" transform="rotate(-0 392.759741 177.057963)">Observed return Gₜ</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 649.799568 191.26446 
+L 721.19952 191.26446 
+L 721.19952 157.332717 
+L 649.799568 157.332717 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_12">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="656.939563" y="177.057963" transform="rotate(-0 656.939563 177.057963)">No</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 7.2 225.196203 
+L 171.41989 225.196203 
+L 171.41989 191.26446 
+L 7.2 191.26446 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_13">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="23.621989" y="210.989706" transform="rotate(-0 23.621989 210.989706)">TD(0)</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 171.41989 225.196203 
+L 364.19976 225.196203 
+L 364.19976 191.26446 
+L 171.41989 191.26446 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_14">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="190.697877" y="210.989706" transform="rotate(-0 190.697877 210.989706)">One transition</text>
+    </g>
+    <g id="patch_16">
+     <path d="M 364.19976 225.196203 
+L 649.799568 225.196203 
+L 649.799568 191.26446 
+L 364.19976 191.26446 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_15">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="392.759741" y="210.989706" transform="rotate(-0 392.759741 210.989706)">Rₜ₊₁ + γV(Sₜ₊₁)</text>
+    </g>
+    <g id="patch_17">
+     <path d="M 649.799568 225.196203 
+L 721.19952 225.196203 
+L 721.19952 191.26446 
+L 649.799568 191.26446 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_16">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="656.939563" y="210.989706" transform="rotate(-0 656.939563 210.989706)">No</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 7.2 259.127946 
+L 171.41989 259.127946 
+L 171.41989 225.196203 
+L 7.2 225.196203 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_17">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="23.621989" y="244.921449" transform="rotate(-0 23.621989 244.921449)">Q-learning</text>
+    </g>
+    <g id="patch_19">
+     <path d="M 171.41989 259.127946 
+L 364.19976 259.127946 
+L 364.19976 225.196203 
+L 171.41989 225.196203 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_18">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="190.697877" y="244.921449" transform="rotate(-0 190.697877 244.921449)">One transition</text>
+    </g>
+    <g id="patch_20">
+     <path d="M 364.19976 259.127946 
+L 649.799568 259.127946 
+L 649.799568 225.196203 
+L 364.19976 225.196203 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_19">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="392.759741" y="244.921449" transform="rotate(-0 392.759741 244.921449)">Rₜ₊₁ + γ maxₐ Q(Sₜ₊₁,a)</text>
+    </g>
+    <g id="patch_21">
+     <path d="M 649.799568 259.127946 
+L 721.19952 259.127946 
+L 721.19952 225.196203 
+L 649.799568 225.196203 
+z
+" style="fill: #ffffff; stroke: #d6dfe7; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_20">
+     <text style="font: 10px 'DejaVu Sans'; text-anchor: start" x="656.939563" y="244.921449" transform="rotate(-0 656.939563 244.921449)">No</text>
+    </g>
+   </g>
+   <g id="text_21">
+    <text style="font: 15px 'DejaVu Sans'; text-anchor: middle" x="364.19976" y="18.597656" transform="rotate(-0 364.19976 18.597656)">Same goal, different ways to construct the update target</text>
+   </g>
+  </g>
+ </g>
+</svg>
