@@ -26,7 +26,91 @@ Incremental refresh (Claude, 2026-11-08, AGENTS A5): the plugin keeps an `AtlasC
 
 Direction chevrons (Claude, 2026-11-08): prerequisite and application links are dashed lines with filled chevrons spaced along them, pointing source → target (`AtlasUI.chevrons`). There is no end arrowhead, so direction stays readable where many links meet one node.
 
-Drawing cost (Claude, 2026-11-08, review item 14): pointer moves repaint only when the hovered dot changes. Theme colours and wrapped label sizes are cached (`AtlasUI.theme`, `AtlasUI.labelBox`) and reset by the theme observer. While a dot is hovered or selected, `paint()` keeps the faded web in an off-screen canvas (`paintScene(ctx,'base')`), keyed on camera, view, depth, focus, canvas size and theme, and draws only the highlighted neighbourhood and labels over it (`paintScene(ctx,'overlay',active)`). With nothing highlighted it draws the full scene as before.
+Drawing cost (Claude, 2026-11-08, review item 14): pointer moves repaint only when the hovered dot changes. Theme colours and wrapped label sizes are cached (`AtlasUI.theme`, `AtlasUI.labelBox`) and reset by the theme observer.
+
+Smooth drawing (Claude, 2026-11-11, Phase 1 of the atlas interaction plan; replaces the 2026-11-08 base/overlay split). Real on-screen frames (144 Hz screen, pixel ratio 2.25, animated pan in My learning) showed the limit is GPU fill, not JavaScript (under 2 ms a frame). Before: 18.9 ms a frame panning the whole web and 23 ms at 0.4× zoom, with most frames late. After: 7.9 ms and 9.3 ms; wheel zoom 8.5 and 11.8 ms; 7.1 ms (full rate) at 1×.
+- **At rest**, `paint()` keeps the labelless web in an off-screen canvas, keyed on camera, size, pixel ratio, visible set and theme. Hover changes and fades only copy it. A highlight copies it at a quarter strength and draws the neighbourhood on top (`paintOverlay`), fading over 160 ms.
+- **While the camera moves** (drag, wheel, glide), frames copy a motion bitmap (`buildMotionCache`). It is built at idle with a margin of 40% of the stage on each side, at pixel ratio ≤1.5 (`motionDpr`), then shifted and scaled to the camera. Beyond its margin, or outside ×0.5–1.8 of its zoom, frames draw the web directly at that capped ratio. 120 ms after motion stops the map redraws sharp. `update()` keeps the same visible set when only the selection changes, so these caches survive a click.
+- **Links and dots** stay one short path each, with style set once per group. One combined path measured slower in Chromium (contains links 5.6 vs 2.0 ms). Dashed links are cut to the screen, with the dash offset kept so dashes do not crawl (`strokeLink`, `clipSeg`).
+- **Labels:** which labels qualify is unchanged. `placeLabels` uses an overlap grid and a 160-label budget, and tries a label's previous side first. Labels are cached bitmaps (`sprite`) that fade in and out. During motion they ride with their dots, and are re-placed only after a 25% zoom change.
+- **Camera:** Fit, Home, search, selection and the zoom buttons glide along a van Wijk–Nuij zoom path (`moveCamera`). The wheel eases toward a target zoom. A drag or wheel cancels a glide.
+- **Fixes:** until the user moves the camera or selects a dot, a resize redoes the automatic fit (a new tab had opened at 0.016×). Fallback theme colours are never cached, so a paint before `styles.css` applies no longer leaves dark label boxes on a light theme. The saved view state also records `stage`, the map size its camera belongs to. A restore during tab layout is then no longer shifted off-centre by the resize logic, which had put a selected dot below the visible map.
+- **Timing method:** `getImageData` read-backs move a canvas to software rendering, so off-screen timings with read-back do not reflect the on-screen GPU canvas. Benchmark with `requestAnimationFrame` intervals on the live canvas.
+
+Semantic zoom (Claude, 2026-11-11, Phase 2). Labels are grouped as levels 1–5, learning notes, sources and records.
+- **When labels appear:** levels 1–2 always qualify. Every other group starts at zoom `LABEL_GAP` ÷ its spacing. Spacing is the median distance from each of the group's dots to the nearest dot of the same group (`labelPlan`, rebuilt per model, so the thresholds follow the backbone as it grows). Each group then fades in over a further ×1.35 (`zoomAlpha`). The fade is applied every frame, so labels fade with the camera. With the live backbone (whole web 0.18×), labels start at:
+
+  | Group | Zoom |
+  |---|---|
+  | L3 | 0.27× |
+  | L4 | 0.41× |
+  | Records | 0.46× |
+  | Sources | 0.68× |
+  | Learning notes | 0.84× |
+  | L5 | 1.03× |
+
+  Inside a focused branch the thresholds are ×0.6. In Notes only, note labels always qualify.
+- **Old quirk removed:** learning-note and source labels used to always qualify (`null <= 2`), which crowded the halo at the whole-web zoom.
+- **Priority:** levels 1–4, then learning notes, level 5, sources and records. Within a group, labels already showing come first, then those nearest the view centre.
+- **Size and weight by level** (`LABEL_STYLE`): L1 15 px semibold down to L5 11 px.
+- **Dots as obstacles:** labels keep off L1–L2 dots, off L3 dots once L3 labels qualify, and off the highlighted neighbourhood.
+- **Links:** hierarchy links are weighted by depth (L1→L2 1.5 px down to L4→L5 0.75 px). Level-5 links, attachments and level-5 dots are quiet at the whole-web zoom and reach full strength by 0.5× (`QUIET`).
+- **Saved state:** the view asks Obsidian to save its state whenever the camera settles (`onStateChange`); camera moves never did, so a restored focus could arrive with a camera from another moment. `ensureVisible` refits a restored view that would show no dot.
+
+Where am I, spotlight and links (Claude, 2026-11-11, Phase 3). Display only: nothing is written to notes. Follow mode is kept in the atlas view's saved state.
+- **Where am I** (command `where-am-i`, default Ctrl/Cmd+Shift+M; also a locate button in the header of every backbone page and learning note). It shows the note on the atlas in a split to the right of the note (`StatisticsAtlasPlugin.whereAmI`). An atlas already open in another tab group is reused; the note keeps the focus. Run again on the same note, it switches between the whole path and a close-up. Run from the atlas, it spotlights the selected dot.
+- **Spotlight** (`AtlasUI.spotlight`, `buildSpot`, `paintSpot`). The rest of the web dims to about a third (`SPOT_DIM` 0.35; first 0.1, raised at the user's request because the surroundings were too dim). The lineage from the subject to the dot is drawn 3.5 px wide in its subject colour over a 26 px beam. The dot glows, rings and pulses three times (`PULSES`, `PULSE_MS`). Its typed links (and its home's, for a learning note) light as the supporting cast at 75%; its sub-topics and attached notes stay at half strength. Lit dots are labelled first, with path labels pinned. The ordinary labels for the zoom fill the remaining space at half strength (`SPOT_LABEL`). The camera glides to frame the path (`frameSpot('path')`), the close-up frames the dot at ≥1.6×, and `auto` moves only when the dot is near an edge. A spotlight leaves any focused branch, since the path needs its ancestors.
+- **Breadcrumbs** (`renderCrumbs`): a bar over the map. Each step moves the light; the current step switches path/close-up; × or Esc leaves.
+- **Clicks under a spotlight:** clicking a dot (or a panel button) moves the light. Clicking the spotlit dot again, or empty map, leaves the spotlight without moving the camera. Home and Focus this branch also leave it. Clicking a selected link again deselects it.
+- **Follow mode** (toolbar crosshair, `setFollow`; saved as `follow`). Each atlas note opened in front of the user (`file-open`) is spotlit (`followFile`). Where am I turns it on in its split.
+- **Links:**
+  - Hovering a link (within 5 px; typed links preferred, `hitLink`) thickens it, rings its ends, and shows a tooltip with its type, direction and reason.
+  - Clicking and double-clicking links are turned off at the user's request (2026-11-11). A dot's panel already lists its links with reasons, and clicks near the dense hierarchy lines picked a link instead of leaving the spotlight. When on, a click selected the link (`selectLink`): both ends glowed and the panel (`renderLinkPanel`) gave its meaning, reason, ends and where it is written. A double-click framed both ends. Both methods remain, unhooked from the pointer handlers. Only dots show the pointer cursor.
+- **Checked live** (2026-11-11) on the Fisher information learning note: right split opened, note kept focus, all six path dots framed, breadcrumbs, follow to the backbone page, link panel, Esc.
+
+Dive (Claude, 2026-11-11, Phase 4): explore from the centre outwards, keeping track of the route. Display only; the footprints last only as long as the view.
+- **Keys and buttons:** with the map focused, Space or Enter dives into the spotlit or selected dot's branch (`diveInto`); Backspace climbs one level (`climb`, leaving at a subject); Esc leaves the dive (`exitDive`). The panel offers Dive in, Up one level and Leave the dive.
+- **Leaves and notes:** a level-5 topic or a learning note dives into its parent branch and stays lit there. Climbing keeps the lit dot while it is inside the wider branch.
+- **Fog** (`buildDive`, `FOG`, `FOG_OUT`): every dot gets a strength from how far up the dive's path its branch was left. The dive's own branch, its path and notes homed in it get 1; sibling branches 0.4; branches left one step earlier 0.2, then 0.1; other subjects 0.06. Links take their fainter end, and links too faint to see are skipped. `paintScene` applies the fog per dot. The scene cache and the motion bitmap are keyed on the dive, so the fogged web is drawn once per dive step.
+- **Camera and drawing:** each dive glides to frame the dive's own branch (`frameDive`). `paintDive` draws the thread along the path from the subject, a dashed ring on the branch being explored, and footprint rings on branches dived into earlier.
+- **Labels:** the path is pinned. The dive's branch follows the zoom rules (thresholds relaxed as in a focused branch), sibling branches are labelled at half strength, and fainter branches get none.
+- **Clicks and other actions:** clicking a dot moves the light within the dive. Clicking outside it widens the dive to the shared branch without moving the camera (`commonAncestor`). Where am I, follow, Home and Focus this branch leave the dive.
+- **Breadcrumbs:** they show the dive's path (each step dives there), the lit dot when deeper, and the keys.
+- **Checked** (2026-11-11) in the running app, rendered off-screen at 1357×749 because the atlas tab was hidden: Space from the Fisher note dived into Likelihood methods (1.77×, sibling L4 at 0.4, other subjects 0.06); Backspace climbed to Point estimation with a footprint; Esc left. A trailing comment that disabled the per-frame canvas clear (smearing) was caught by these renders and fixed before commit.
+- **Keys changed by extra idea 2:** Space alone dives; Enter opens the lit note.
+
+Extra ideas 1–3 (Claude, 2026-11-11). Display only.
+- **Hover peek** (`schedulePeek`, `endPeek`). Resting on a dot for `PEEK_MS` asks the view for Obsidian's page preview of its note (`hover-link`). The atlas is registered as a page-preview source, so Settings → Page preview lists "Statistics atlas" with its own Ctrl/Cmd choice, off by default. Moving onto the preview keeps it open; moving away closes it; there is no peek while the camera moves. Obsidian's preview behaves in three ways that shaped the design, all found by reading its handler in the running app:
+  - It rejects the canvas's own pointer event, so the atlas passes a plain untargeted `mouseover`.
+  - It ignores a request for an anchor whose last preview is still closing, so each peek uses a fresh invisible anchor over the dot, removed later.
+  - It stays open only while it believes the pointer is on its target (`onTarget`, set by mouseover/mouseout on the anchor). The anchor ignores the real pointer so the dot stays clickable; instead it is told the pointer is there every 150 ms while the pointer rests on the dot, and gets a `mouseout` on leaving.
+  - Checked with synthetic events: the preview opens at about 0.75 s and stays open while resting. The final feel with a real mouse is for the user to judge.
+  - **One layer only** (user request, 2026-11-11). Hovering a link inside an atlas preview opens no nested preview; clicking it still works. `StatisticsAtlasView` defines `hoverPopover` as an accessor. When Obsidian assigns the preview, a capture-phase `mouseover` guard on its `hoverEl` stops events aimed at links inside it, and re-sends a plain `mouseover` to the preview so it knows the pointer is on it and stays open. Other previews in Obsidian keep their normal nesting. Checked in the app: after a link hover the preview count stayed at 1 and the preview stayed open.
+- **Keyboard exploring** (`step`; the map must have focus):
+  - ↑ goes further out, to the sub-topic nearest in angle or else an attached note; ↓ comes back to the parent (a note's home). These were swapped at the user's request. ←/→ go to the previous/next sibling counter-clockwise/clockwise around their parent (subjects around the centre, notes around their home).
+  - With nothing lit, it starts at the first subject. The light moves as a click would: a selection, a spotlight, or within a dive.
+  - Enter opens the note and Space dives. The breadcrumbs and the panel's start text list the keys.
+- **Coverage glow** (toolbar sprout; `coverageMap`, `setCoverage`; saved as `coverage`).
+  - Each backbone topic counts the learning notes homed at it or below. Topics with notes get a soft halo in their subject colour, wider for more notes (radius `r + 6 + 5·log2(1 + count)`). Topics with none fade to `COVER_FADE` (0.28), their links take the fainter end, and their labels are drawn at half strength after the covered ones.
+  - The tooltip and side panel give the count, and a legend key explains the glow. Coverage multiplies with dive fog; the scene cache and motion bitmap are keyed on both (`styleKey`).
+  - Checked off-screen (2026-11-11): 79 covered topics; the subject roots carry 17, 11 and 9 notes.
+
+Atlas ideas not yet built (Claude, 2026-11-11). Agreed with the user to keep these for a later session. Each needs the user's go-ahead before building, and the user reviews the result in the app.
+
+| Idea | What it would do | Effort | Notes |
+| --- | --- | --- | --- |
+| Minimap | Corner overview of the whole web, with the viewport box and the lit path; click to jump there. | Medium | Most useful in deep dives. The dive thread and breadcrumbs already cover part of it. |
+| Growth replay | A slider over `created` dates; learning notes light up in the order they were written. | Medium | Motivational. Could combine with coverage glow. |
+| Prerequisite trace | Light "what I need first" and "what this unlocks", following prerequisite/application links in chains. | Small–medium | Worth building once more typed links exist: 98 backbone cross-links among 763 topics on 2026-11-11, so most chains are 0–2 steps. |
+| Route between two topics | Shift-click a second dot to light the shortest route through hierarchy and typed links. | Medium | Same caveat. Through the hierarchy alone the route is just up to the shared branch and down, which the breadcrumbs show. |
+| Today's trail | Notes opened today joined by a faint line. | Small–medium | Needs a session-only list of opened notes; nothing written to notes. |
+| Search fly-through | Light all search matches; Tab glides from one to the next. | Small | Extends the existing search. |
+
+Smaller options raised along the way:
+- **↓ zooms out:** the down arrow could also zoom the camera out one level as it climbs. Today the camera follows only when the lit dot nears the edge.
+- **Link clicks:** selecting a link (`selectLink`, `renderLinkPanel`) is still in the code, unhooked from the pointer handlers, and can be switched back on.
+- **Label thresholds:** the per-level `LABEL_GAP` values are first-pass and can be tuned level by level.
+- **Unfold lens:** a temporary fan-out of crowded leaves inside a dive. It is display-only but borderline under SOP §4 (frozen coordinates), so it needs explicit agreement and possibly an amendment.
 
 Compact controls (Claude, 2026-11-08, review item 15): the view is a flex column. One toolbar row holds the view switch, search (results as a dropdown), the levels select and icon buttons (`AtlasUI.iconButton`, which uses Obsidian's `setIcon` when the host passes it and a text glyph otherwise). The map stage fills the remaining height. Legend and status sit in an overlay in the map's bottom corners. The side panel holds the selection details (`panelBody`), **Browse all topics** and **Map checks**; `setPanel` hides it, and the view state saves it as `panel`. `resize()` keeps the map centre fixed when the stage changes size. The administration cluster (auxiliary records that are not cited sources) is laid out in `compile()` on a sunflower in the top-right corner, just beyond the outermost placed dot.
 

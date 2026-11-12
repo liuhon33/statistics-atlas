@@ -1,4 +1,4 @@
-const {Plugin, ItemView, Notice, TFile, parseYaml, MarkdownRenderChild, Keymap, setIcon, FuzzySuggestModal, Modal} = require('obsidian');
+const {Plugin, ItemView, MarkdownView, Notice, TFile, parseYaml, MarkdownRenderChild, Keymap, setIcon, FuzzySuggestModal, Modal} = require('obsidian');
 const ATLAS_VIEW='statistics-atlas-view',LAYOUT_PATH='_system/layout.json',PICKER_COMMAND='open-attached-note';
 // A note link that opens in place (Ctrl/Cmd-click: new tab) and shows Obsidian's hover preview.
 function atlasLink(app,parent,node,sourcePath,hoverParent){
@@ -85,15 +85,26 @@ class AtlasPageBlock extends MarkdownRenderChild {
   }
 }
 class StatisticsAtlasView extends ItemView {
-  constructor(leaf,plugin){super(leaf);this.plugin=plugin;}
+  constructor(leaf,plugin){
+    super(leaf);this.plugin=plugin;
+    // One layer of preview (user request, 2026-11-11). Obsidian sets view.hoverPopover when it opens a preview for this
+    // view (the hover peek). A capture-phase guard on that preview stops mouseover from reaching the links inside it,
+    // so they cannot open nested previews, and tells the preview instead that the pointer is on it, so it stays open.
+    // Clicking those links still works. Other previews in Obsidian keep their normal nesting.
+    let popover=null;
+    const guard=p=>{const el=p?.hoverEl;if(!el||el.atlasOneLayer)return;el.atlasOneLayer=true;
+      el.addEventListener('mouseover',e=>{if(e.target!==el&&e.target.closest?.('a,.internal-link,[data-href]')){e.stopPropagation();el.dispatchEvent(new MouseEvent('mouseover',{bubbles:true,relatedTarget:e.relatedTarget}));}},true);};
+    Object.defineProperty(this,'hoverPopover',{configurable:true,get:()=>popover,set:p=>{popover=p;guard(p);if(p)setTimeout(()=>guard(p),0);}});
+  }
   getViewType(){return ATLAS_VIEW;}
   getDisplayText(){return 'Statistics atlas';}
   getIcon(){return 'network';}
-  async onOpen(){await this.plugin.ready;this.ui=new AtlasUI(this.contentEl,this.plugin.model,{openNote:path=>this.plugin.openNote(path),setIcon,onStateChange:()=>this.app.workspace.requestSaveLayout()},AtlasCore);if(this.pendingState)this.restore(this.pendingState);}
+  async onOpen(){await this.plugin.ready;this.ui=new AtlasUI(this.contentEl,this.plugin.model,{openNote:(path,heading)=>this.plugin.openNote(path,heading),onPeek:(path,targetEl,event)=>this.app.workspace.trigger('hover-link',{event,source:ATLAS_VIEW,hoverParent:this,targetEl,linktext:path.replace(/\.md$/i,''),sourcePath:''}),onFollow:on=>{if(on)this.plugin.followFile(this.plugin.lastNote,true);},setIcon,onStateChange:()=>this.app.workspace.requestSaveLayout()},AtlasCore);if(this.pendingState)this.restore(this.pendingState);}
   async onClose(){this.ui?.destroy();this.ui=null;}
-  getState(){return this.ui?{mode:this.ui.mode,depth:this.ui.depth,focus:this.ui.focus,selected:this.ui.selected,camera:this.ui.camera,panel:this.ui.panelOpen}:{};}
+  // stage: the map size the saved camera belongs to, so a restore during tab layout is not shifted off-centre (Claude, 2026-11-11).
+  getState(){return this.ui?{mode:this.ui.mode,depth:this.ui.depth,focus:this.ui.focus,selected:this.ui.selected,camera:this.ui.camera,stage:this.ui._stageSize,panel:this.ui.panelOpen,follow:!!this.ui.follow,coverage:!!this.ui.coverage}:{};}
   async setState(state,result){this.pendingState=state;if(this.ui)this.restore(state);await super.setState(state,result);}
-  restore(s){if(typeof s.panel==='boolean')this.ui.setPanel(s.panel);if(AtlasCore.MODES.includes(s.mode))this.ui.mode=s.mode;if(s.depth>=1&&s.depth<=5)this.ui.depth=s.depth;this.ui.depthSelect.value=this.ui.depth;if(this.plugin.model.byId.has(s.focus))this.ui.focus=s.focus;if(this.plugin.model.byId.has(s.selected))this.ui.selected=s.selected;if(s.camera&&Number.isFinite(s.camera.k)&&s.camera.k>0){this.ui.camera={...s.camera};this.ui.fitted=true;}this.ui.update();}
+  restore(s){if(typeof s.follow==='boolean')this.ui.setFollow(s.follow);if(typeof s.coverage==='boolean')this.ui.setCoverage(s.coverage);if(typeof s.panel==='boolean')this.ui.setPanel(s.panel);if(AtlasCore.MODES.includes(s.mode))this.ui.mode=s.mode;if(s.depth>=1&&s.depth<=5)this.ui.depth=s.depth;this.ui.depthSelect.value=this.ui.depth;if(this.plugin.model.byId.has(s.focus))this.ui.focus=s.focus;if(this.plugin.model.byId.has(s.selected))this.ui.selected=s.selected;if(s.camera&&Number.isFinite(s.camera.k)&&s.camera.k>0){this.ui.camera={...s.camera};this.ui.fitted=true;this.ui.autoFit=false;this.ui.glide=null;if(s.stage?.w>0&&s.stage?.h>0)this.ui._stageSize={w:s.stage.w,h:s.stage.h};}this.ui.update();this.ui.ensureVisible();}
 }
 // Offline mathematical explorers authored in assets/figures. The iframe is isolated
 // from Obsidian (no same-origin permission); the HTML supplies its own restrictive CSP.
@@ -125,19 +136,25 @@ class AtlasInteractiveBlock extends MarkdownRenderChild {
 module.exports=class StatisticsAtlasPlugin extends Plugin {
   async onload(){
     this.store=new AtlasCore.RecordStore();this.dirty=new Set();this.layout=null;this.blocks=new Set();this.registerView(ATLAS_VIEW,leaf=>new StatisticsAtlasView(leaf,this));
+    // Hover peek (extra idea 1): the atlas is a page-preview source, so Settings → Page preview lists it with its own
+    // "require Ctrl/Cmd" choice; off by default.
+    this.registerHoverLinkSource?.(ATLAS_VIEW,{display:'Statistics atlas',defaultMod:false});
     this.registerMarkdownCodeBlockProcessor('atlas',(source,el,ctx)=>ctx.addChild(new AtlasPageBlock(el,this,ctx.sourcePath)));
     this.registerMarkdownCodeBlockProcessor('atlas-interactive',(source,el,ctx)=>this.renderInteractive(source,el,ctx));
     this.addRibbonIcon('network','Open statistics atlas',()=>this.activate());
     this.addCommand({id:'open-atlas',name:'Open statistics atlas',callback:()=>this.activate()});
     this.addCommand({id:'refresh-atlas',name:'Refresh statistics atlas',callback:async()=>{this.layout=null;this.fullPending=true;await this.refresh();new Notice('Statistics atlas refreshed.');}});
     // A16: default hotkey only; the user can rebind it in Settings → Hotkeys.
+    // Phase 3 (Claude, 2026-11-11): the note in front of the user, spotlit on the atlas in a split to its right.
+    this.addCommand({id:'where-am-i',name:'Where am I in the atlas',hotkeys:[{modifiers:['Mod','Shift'],key:'M'}],callback:()=>this.whereAmI()});
     this.addCommand({id:PICKER_COMMAND,name:'Open a learning note attached to this page',hotkeys:[{modifiers:['Mod','Shift'],key:'L'}],callback:()=>this.openAttachedPicker()});
     // A17: a draft learning note homed on the current backbone page (or the topic selected in the atlas).
     this.addCommand({id:'new-learning-note',name:'New learning note here',hotkeys:[{modifiers:['Mod','Alt'],key:'N'}],callback:()=>this.newNoteHere()});
-    this.stripTimers=[];this.modelVersion=0;
+    this.stripTimers=[];this.modelVersion=0;this.whereActions=new WeakMap();
     this.app.workspace.onLayoutReady(()=>{
       for(const event of ['file-open','layout-change','active-leaf-change'])
         this.registerEvent(this.app.workspace.on(event,()=>this.queueNoteStrips()));
+      this.registerEvent(this.app.workspace.on('file-open',file=>this.followFile(file)));
       // A Reading view rendered for the first time can finish after those events; its render triggers one more pass.
       this.registerMarkdownPostProcessor((el,ctx)=>{if(this.nodeAt(ctx.sourcePath)?.layer!=='backbone')return;clearTimeout(this.stripSoon);this.stripSoon=setTimeout(()=>this.applyNoteStrips(),50);});
       this.queueNoteStrips();
@@ -263,6 +280,10 @@ module.exports=class StatisticsAtlasPlugin extends Plugin {
       const view=leaf.view,root=view?.containerEl;
       if(!view?.file||!root?.querySelector)continue;
       const node=this.nodeAt(view.file.path),data=node?.layer==='backbone'?AtlasCore.attachedNotes(this.model,node.id):null;
+      // "Where am I" button in the header of every backbone page and learning note (Phase 3). Display only.
+      const wants=!!node&&node.layer!=='auxiliary'&&typeof view.addAction==='function';let action=this.whereActions.get(view);
+      if(wants&&!action){action=view.addAction('locate-fixed','Where am I in the atlas',()=>this.whereAmI(view.file,leaf));this.whereActions.set(view,action);}
+      else if(!wants&&action){action.remove();this.whereActions.delete(view);}
       const show=!!data&&(data.here.length+data.below.length+data.linked.length)>0,key=view.file.path+'\0'+this.modelVersion;
       // Live Preview/Source: between Properties and the text. Reading view: end of the title header.
       for(const [hostSel,beforeSel] of [['.markdown-source-view .cm-sizer','.cm-contentContainer'],['.markdown-reading-view .mod-header',null]]){
@@ -311,8 +332,39 @@ module.exports=class StatisticsAtlasPlugin extends Plugin {
     return this.store.set(file.path,fm||{},body);
   }
   async activate(){await this.ready;if(!this.model)return;let leaf=this.app.workspace.getLeavesOfType(ATLAS_VIEW)[0];if(!leaf){leaf=this.app.workspace.getLeaf('tab');await leaf.setViewState({type:ATLAS_VIEW,active:true});}await this.app.workspace.revealLeaf(leaf);}
-  async openNote(path){const file=this.app.vault.getAbstractFileByPath(path);if(!(file instanceof TFile)){new Notice('Note is unavailable: '+path);return;}await this.app.workspace.getLeaf('tab').openFile(file);}
+  // Where am I (Claude, 2026-11-11, Phase 3). Shows the note in front of the user on the atlas, in a split to the right
+  // of the note; an atlas already open in another tab group is reused. Its backbone path goes into the spotlight and
+  // follow mode is turned on there. Run again on the same note, it switches between the whole path and a close-up;
+  // run from the atlas itself, it spotlights the selected dot. The note keeps the focus.
+  async whereAmI(file,noteLeaf){
+    await this.ready;if(!this.model)return;
+    const atlas=!file&&this.app.workspace.getActiveViewOfType?.(StatisticsAtlasView);
+    if(atlas){const ui=atlas.ui;if(ui?.spot)ui.toggleFrame();else if(ui?.selected)ui.spotlight(ui.selected);else new Notice('Select a dot first, or run Where am I from a note.');return;}
+    noteLeaf=noteLeaf||(MarkdownView&&this.app.workspace.getActiveViewOfType?.(MarkdownView)?.leaf)||null;file=file||noteLeaf?.view?.file||this.app.workspace.getActiveFile();
+    const node=this.nodeAt(file?.path);if(!node||node.layer==='auxiliary'){new Notice('This note is not on the atlas map.');return;}
+    this.lastNote=file;
+    let leaf=this.app.workspace.getLeavesOfType(ATLAS_VIEW).find(l=>!noteLeaf||l.parent!==noteLeaf.parent);
+    if(!leaf){leaf=noteLeaf?this.app.workspace.createLeafBySplit(noteLeaf,'vertical'):this.app.workspace.getLeaf('split','vertical');await leaf.setViewState({type:ATLAS_VIEW,active:false});}
+    else this.app.workspace.revealLeaf(leaf);
+    const ui=await this.atlasUi(leaf);if(!ui)return;
+    if(ui.spot?.kind==='node'&&ui.spot.id===node.id)ui.toggleFrame();else ui.spotlight(node.id,'path');
+    ui.setFollow(true);this.app.workspace.requestSaveLayout();
+    if(noteLeaf)this.app.workspace.setActiveLeaf(noteLeaf,{focus:true});
+  }
+  async atlasUi(leaf){for(let i=0;i<60&&!leaf.view?.ui;i++)await new Promise(r=>setTimeout(r,25));return leaf.view?.ui||null;}
+  // Follow mode (Phase 3): every atlas view with follow on spotlights each atlas note opened in front of the user.
+  followFile(file,force=false){
+    const node=file?.path?this.nodeAt(file.path):null;if(!node||node.layer==='auxiliary')return;this.lastNote=file;
+    for(const leaf of this.app.workspace.getLeavesOfType(ATLAS_VIEW)){const ui=leaf.view?.ui;if(ui?.follow&&(force||!(ui.spot?.kind==='node'&&ui.spot.id===node.id)))ui.spotlight(node.id,'path');}
+  }
+  // heading: open at that heading when the note has it (the link panel's "Open where it's written").
+  async openNote(path,heading){
+    const file=this.app.vault.getAbstractFileByPath(path);if(!(file instanceof TFile)){new Notice('Note is unavailable: '+path);return;}
+    if(heading&&this.app.metadataCache.getFileCache(file)?.headings?.some(h=>h.heading===heading)){await this.app.workspace.openLinkText(file.path.replace(/\.md$/i,'')+'#'+heading,'','tab');return;}
+    await this.app.workspace.getLeaf('tab').openFile(file);
+  }
   onunload(){
+    for(const leaf of this.app.workspace.getLeavesOfType?.('markdown')||[])this.whereActions?.get(leaf.view)?.remove();
     clearTimeout(this.timer);clearTimeout(this.stripSoon);for(const timer of [...(this.propertyFoldTimers||[]),...(this.stripTimers||[])])clearTimeout(timer);
     for(const leaf of this.app.workspace.getLeavesOfType?.('markdown')||[])leaf.view?.containerEl?.querySelectorAll?.('.atlas-note-strip').forEach(el=>el.remove());
   }

@@ -62,3 +62,22 @@
 .atlas-note-strip button.atlas-note-strip-more{flex:none;height:auto;padding:0 2px;background:none;border:none;box-shadow:none;color:var(--text-muted);font-size:inherit;cursor:pointer}.atlas-note-strip button.atlas-note-strip-more:hover{color:var(--text-normal);text-decoration:underline}.atlas-note-strip .atlas-note-strip-open{flex:none;margin-left:auto}.atlas-pick .suggestion-note{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* New learning note prompt (Claude, 2026-11-09, AGENTS A17). */
 .atlas-newnote-home{color:var(--text-muted);font-size:var(--font-ui-small,13px);margin-bottom:10px}.atlas-newnote-input{width:100%}.atlas-newnote-error{color:var(--text-error);font-size:var(--font-ui-small,13px);min-height:1.4em;margin-top:6px}
+/* Spotlight breadcrumb bar, link tooltips and the link panel (Claude, 2026-11-11, Phase 3). */
+.statistics-atlas .sa-crumbs{position:absolute;z-index:12;top:8px;left:8px;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;max-width:calc(100% - 16px);padding:3px 4px 3px 8px;border:1px solid var(--sa-border);border-radius:8px;background:var(--sa-glass);box-shadow:0 2px 10px #0001;font-size:12px;line-height:1.4}
+.statistics-atlas .sa-crumbs[hidden]{display:none}
+.statistics-atlas .sa-crumbs .sa-button{border:0;background:none;padding:2px 3px;color:var(--text-accent,#487ce8);font-size:12px}
+.statistics-atlas .sa-crumbs .sa-button:hover{text-decoration:underline}
+.statistics-atlas .sa-crumbs .sa-button.is-current{color:var(--sa-fg);font-weight:650}
+.statistics-atlas .sa-crumb-sep{color:var(--sa-muted);padding:0 1px}
+.statistics-atlas .sa-crumbs .sa-crumb-close{width:22px;height:22px;margin-left:4px}
+.statistics-atlas .sa-tooltip{white-space:pre-line}
+.statistics-atlas canvas:focus{outline:none}
+.statistics-atlas .sa-reason{font-size:13px;line-height:1.55;margin:6px 0 4px}
+/* Dive breadcrumbs (Claude, 2026-11-11, Phase 4). */
+.statistics-atlas .sa-crumb-tag{font-size:10px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--sa-muted);border:1px solid var(--sa-border);border-radius:4px;padding:0 4px;margin-right:4px}
+.statistics-atlas .sa-crumbs .sa-button.is-star{color:var(--sa-fg);font-style:italic}
+.statistics-atlas .sa-crumb-hint{color:var(--sa-muted);font-size:11px;margin-left:8px}
+/* Hover peek anchor: an invisible box over the hovered dot for Obsidian's page preview (extra idea 1). */
+.statistics-atlas .sa-peek-anchor{position:absolute;pointer-events:none;width:0;height:0}
+/* Coverage glow legend key (extra idea 3). */
+.statistics-atlas .sa-coverage-key[hidden]{display:none}

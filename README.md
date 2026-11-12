@@ -80,9 +80,13 @@ Open the Fisher information, CI/p-value, or CLT/delta-method note in Reading vie
 
 ### A few useful controls
 
-- **Click a dot** to select it and inspect its connections. **Double-click** to open its note.
+- **Click a dot** to select it and inspect its connections. **Double-click** to open its note. **Rest the pointer** on a dot to preview its note.
 - **Search** by title or alias to focus a topic. Clicking a topic in the panel follows that connection.
-- **Scroll** to zoom and **drag** to pan.
+- **Scroll** to zoom and **drag** to pan. Names appear level by level as you zoom in.
+- **Where am I:** on any topic page or learning note, press **Ctrl+Shift+M** (**Cmd+Shift+M** on macOS) or click the locate button in the note's header. The atlas opens beside the note, with the note's path from its subject in a spotlight. Press again for a close-up. Click the lit dot again, or press **Esc**, to turn the lights back up.
+- **Follow** (crosshair button in the atlas toolbar) puts each atlas note you open into the spotlight.
+- **Explore with the keyboard:** click the map, then press **↑** to move outward to a sub-topic, **↓** to come back to its parent, and **←/→** to move around the ring. **Space** dives into a branch and fades the rest; **Backspace** climbs back out; **Enter** opens the note.
+- **Coverage** (sprout button) makes topics that hold your notes glow and fades the ones you have not studied yet.
 - Use **Visible levels** to show just the broad subjects or progressively more detail.
 - Open **Map checks** to inspect missing homes, unresolved links, or topics needing a saved position.
 
