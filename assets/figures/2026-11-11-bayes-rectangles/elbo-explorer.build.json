@@ -1,0 +1,22 @@
+{
+  "output": "elbo-explorer.html",
+  "output_sha256": "3d73721c34c104a7c54161a7aa6ef30e45a0887a0688311cff6fa25ee89c428f",
+  "inputs": [
+    {
+      "name": "explorer.css",
+      "sha256": "cba2cb10b11448db4d33f8ef95ead6dcadd4d072dbe8e8e6e64c6a978b060465"
+    },
+    {
+      "name": "math.js",
+      "sha256": "912c5771ab111785b7e1ab3339f0ca0ac598533bdfe1a60348ab364e0728876f"
+    },
+    {
+      "name": "explorer.js",
+      "sha256": "6ad4a5f6c15d89135c1e77cc32b23c4d2de7fa5b23cc3ad201e2a295d10c73bb"
+    },
+    {
+      "name": "build_figures.py",
+      "sha256": "38813d6100540e8aad687fb050d0077b92eb92f3f1c62dd216dd6b4a14471076"
+    }
+  ]
+}

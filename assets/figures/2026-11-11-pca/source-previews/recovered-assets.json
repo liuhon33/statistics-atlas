@@ -1,0 +1,44 @@
+[
+  {
+    "cell": 7,
+    "output": 1,
+    "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-07-output-1.png",
+    "sha256": "f6aac8ee08175e7ffbf3b210101a5ed9866ac56e6a4187a57f875c9c6ac26edb"
+  },
+  {
+    "cell": 9,
+    "output": 1,
+    "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-09-output-1.png",
+    "sha256": "4fe94d7c7f3da8336dc03e8894cbf3c7f54587bdbb94e01dc2d8b5258aa893f9"
+  },
+  {
+    "cell": 10,
+    "output": 2,
+    "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-10-output-2.png",
+    "sha256": "ddc35cfa7aa3ba4bade8868b123d826b760ece02a320c6c5c9ac98ecf6dd5c62"
+  },
+  {
+    "cell": 11,
+    "output": 3,
+    "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-11-output-3.png",
+    "sha256": "c74f5db8efcf3369b7cffedf3881f169e8760fc7773495617da8c12a575fbbde"
+  },
+  {
+    "cell": 12,
+    "output": 2,
+    "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-12-output-2.png",
+    "sha256": "c8117c82b5265e17ad22bfbcd2394b1ea189ff277aa88c7c7124e47a9fa17af4"
+  },
+  {
+    "cell": 13,
+    "output": 1,
+    "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-13-output-1.png",
+    "sha256": "4d0ee52f5fb179052a0e3c0d917488bf13faa6484a3b52a33f0c9e18152fc374"
+  },
+  {
+    "cell": 16,
+    "output": 1,
+    "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-16-output-1.png",
+    "sha256": "09d204ab292f340ac074677a7b8b9625b1bd471ea3eb81fdb8aba70af68d45bc"
+  }
+]

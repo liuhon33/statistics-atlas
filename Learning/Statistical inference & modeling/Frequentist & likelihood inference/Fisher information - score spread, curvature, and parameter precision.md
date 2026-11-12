@@ -10,7 +10,7 @@ note_types: [topic-note, derivation, insight, question]
 question_roles: [reconcile-approaches, surprising-result, cross-topic-connection]
 source_format: youtube-video
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 status: active
 verification: checked
 learning_state: introduced
@@ -25,6 +25,7 @@ connections:
   - '[[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Asymptotic normality]]'
   - '[[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Cramer–Rao bound]]'
   - '[[Learning/Statistical inference & modeling/Regression & linear models/OLS coefficients through algebra, projection, and likelihood]]'
+  - "[[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]]"
 sources:
   - 'https://www.youtube.com/watch?v=pneluWj-U-o'
   - '[[raw/articles/2026-11-11-Fisher-Information-youtube-captions.txt]]'
@@ -461,6 +462,8 @@ $$
 
 A nearly collinear coefficient direction gives a small eigenvalue of $X^\top X$, hence little information and large estimator variance in that direction. This is the same narrow-score / broad-uncertainty geometry as the 2D explorer, now in regression coordinates.
 
+A Gaussian prior [[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit#3. Complete the square to get the whole posterior|adds prior precision]] to this matrix.
+
 ## 6. Why this deserves the name information
 
 ### Local distinguishability is curvature of KL divergence
@@ -516,6 +519,8 @@ This is the [[Backbone/Statistical inference & modeling/Frequentist & likelihood
 - [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Asymptotic normality|Asymptotic normality]] — A score CLT and local Hessian averaging explain the regular MLE's inverse-information limit.
 - [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Constructing & improving estimators/Cramer–Rao bound|Cramér–Rao bound]] — Unbiasedness and Cauchy–Schwarz convert score variance into a lower bound on estimator variance.
 - [[Learning/Statistical inference & modeling/Regression & linear models/OLS coefficients through algebra, projection, and likelihood|OLS through algebra, projection, and likelihood]] — Gaussian regression information is $X^\top X/\sigma^2$; its inverse is the familiar coefficient covariance.
+
+- [[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit|Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]] — Adding Gaussian prior precision to the likelihood information gives the posterior precision and explains ridge shrinkage.
 
 ## Origin
 

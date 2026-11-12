@@ -10,7 +10,7 @@ note_types: [question, insight, derivation]
 question_roles: [concept-distinction, assumption-boundary, cross-topic-connection]
 source_format: conversation
 created: 2026-11-08
-updated: 2026-11-09
+updated: 2026-11-12
 status: active
 verification: checked
 learning_state: practicing
@@ -20,6 +20,7 @@ connections:
   - "[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Independence versus zero covariance]]"
   - "[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate normal laws/Gaussian linear transformations]]"
   - "[[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Sample mean and variance]]"
+  - "[[Learning/Probability & mathematical foundations/Random variables & distributions/Geometric interpretation of the t-statistic]]"
 sources:
   - "[[raw/notes/2026-11-09-Statistics-is-just-Geometry-auto-captions.txt]]"
   - "[[raw/conversations/2026-11-04-density-slices-rotation-side-chat-excerpts]]"
@@ -299,11 +300,15 @@ $$
 
 The two statistics depend on disjoint independent coordinates. That is the probabilistic reason the theorem works; perpendicular arrows alone are not enough.
 
+The resulting [[Learning/Probability & mathematical foundations/Random variables & distributions/Geometric interpretation of the t-statistic#2. Orthogonality is geometry; independence uses the Gaussian law|t ratio]] has Student’s t distribution.
+
 ## Connections
 
 - [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Marginal & conditional laws/Independence versus zero covariance|Independence versus zero covariance]] — The rotated square and disk have zero covariance while their conditional distributions change, giving explicit counterexamples to the converse of independence implying zero covariance.
 - [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Multivariate probability/Multivariate normal laws/Gaussian linear transformations|Gaussian linear transformations]] — The orthogonal sum-and-difference transformation preserves the standard Gaussian joint law, and its density factorization proves independence of the transformed coordinates.
 - [[Backbone/Probability & mathematical foundations/Random variables & distributions/Useful distribution families/Sample statistics & order/Sample mean and variance|Sample mean and variance]] — For two observations, the sum coordinate determines the sample mean and the squared difference coordinate determines sample variance, transferring the dependence comparison to familiar statistics.
+
+- [[Learning/Probability & mathematical foundations/Random variables & distributions/Geometric interpretation of the t-statistic|Geometric interpretation of the t-statistic]] — The Gaussian rotation proof supplies the independent normal numerator and chi-square denominator needed for the t distribution.
 
 ## Origin
 

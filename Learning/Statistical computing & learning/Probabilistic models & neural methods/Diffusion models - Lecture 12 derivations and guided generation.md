@@ -9,12 +9,14 @@ study_band: M elective
 note_types: [topic-note, derivation]
 source_format: lecture-slides
 created: 2026-11-11
-updated: 2026-11-11
+updated: '2026-11-12'
 status: active
 verification: checked
 learning_state: introduced
 aliases: [Lecture 12 diffusion models, Diffusion lecture derivations]
 tags: [atlas/learning, subject/computing, topic/diffusion, study/masters-elective]
+connections:
+  - "[[Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles]]"
 sources:
   - "[[raw/notes/2026-11-10-Lec12-diffusion-models.pdf]]"
 ---
@@ -404,7 +406,7 @@ A\|u\|^2-2b^Tu
 =A\|u-A^{-1}b\|^2-A^{-1}\|b\|^2.
 $$
 
-[^gp-completing-square]: Future connection: you recall completing the square in your earlier Gaussian-process work, which has not yet been digested. Once that note exists, revisit this step and link the corresponding derivations.
+[^gp-completing-square]: The corresponding GP derivation is now in [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square#3. Complete the square in the joint Gaussian|Gaussian-process prediction by completing the square]]. Both collect a quadratic precision term and a linear precision-times-mean term; [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square#4. The promised connection to diffusion|the side-by-side comparison]] identifies the unknown and fixed information in each problem.
 
 Thus the mean is $A^{-1}b$ and the covariance is $A^{-1}I_d$. Simplify the precision denominator:
 
@@ -685,7 +687,7 @@ The new mean is $\mu+s\Sigma g$ and the covariance stays $\Sigma$. This identity
 
 ### 9.3 Derive the classifier-free gradient identity
 
-The next slide avoids a separate classifier by using conditional and unconditional diffusion predictions. Start with full Bayes' rule:
+The next slide avoids a separate classifier by using conditional and unconditional diffusion predictions. Start with full [[Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles#6.2 Reweight noisy images by a desired label|Bayes' rule]]:
 
 $$
 p(y\mid x_t)=\frac{p(x_t\mid y)p(y)}{p(x_t)}.
@@ -807,6 +809,10 @@ The distinction between the mathematical stages is useful when rereading the der
 | Gaussian guidance mean shift | Exact for a linear tilt; locally approximate for a nonlinear classifier |
 | Bayes score difference | Exact for consistent differentiable distributions |
 | Network noise/score predictions | Learned approximations |
+
+## Connections
+
+- [[Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles|Monty Hall - seeing Bayes through rectangles]] — Its rectangle-to-density comparison explains the likelihood reweighting behind the conditional-score identity and why the evidence normalizer disappears upon differentiation.
 
 ## Origin
 

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="728.39952pt" height="195.59952pt" viewBox="0 0 728.39952 195.59952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-11T21:26:35.256136</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 195.59952 
+L 728.39952 195.59952 
+L 728.39952 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 14.339995 153.971611 
+L 232.109849 153.971611 
+Q 239.249844 153.971611 239.249844 152.159616 
+L 239.249844 38.003918 
+Q 239.249844 36.191923 232.109849 36.191923 
+L 14.339995 36.191923 
+Q 7.2 36.191923 7.2 38.003918 
+L 7.2 152.159616 
+Q 7.2 153.971611 14.339995 153.971611 
+z
+" clip-path="url(#p3af42b108c)" style="fill: #f6f8fa; stroke: #2864a0; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 253.529834 153.971611 
+L 471.299688 153.971611 
+Q 478.439683 153.971611 478.439683 152.159616 
+L 478.439683 38.003918 
+Q 478.439683 36.191923 471.299688 36.191923 
+L 253.529834 36.191923 
+Q 246.389839 36.191923 246.389839 38.003918 
+L 246.389839 152.159616 
+Q 246.389839 153.971611 253.529834 153.971611 
+z
+" clip-path="url(#p3af42b108c)" style="fill: #f6f8fa; stroke: #d97724; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 492.719674 153.971611 
+L 710.489527 153.971611 
+Q 717.629522 153.971611 717.629522 152.159616 
+L 717.629522 38.003918 
+Q 717.629522 36.191923 710.489527 36.191923 
+L 492.719674 36.191923 
+Q 485.579678 36.191923 485.579678 38.003918 
+L 485.579678 152.159616 
+Q 485.579678 153.971611 492.719674 153.971611 
+z
+" clip-path="url(#p3af42b108c)" style="fill: #f6f8fa; stroke: #158477; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #2864a0; font: 700 14px 'DejaVu Sans'; text-anchor: middle" x="123.224922" y="66.995842" transform="rotate(-0 123.224922 66.995842)">PCA</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #263447; font: 10px 'DejaVu Sans'" transform="translate(57.274922 107.644195)">Choose shared linear axes</text>
+    <text style="fill: #263447; font: 10px 'DejaVu Sans'" transform="translate(43.132734 118.842008)">Keep variance; reconstruct data</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #d97724; font: 700 14px 'DejaVu Sans'; text-anchor: middle" x="362.414761" y="66.995842" transform="rotate(-0 362.414761 66.995842)">t-SNE</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #263447; font: 10px 'DejaVu Sans'" transform="translate(303.510855 107.644195)">Match pair probabilities</text>
+    <text style="fill: #263447; font: 10px 'DejaVu Sans'" transform="translate(289.635074 118.842008)">Arrange nearby observations</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #158477; font: 700 14px 'DejaVu Sans'; text-anchor: middle" x="601.6046" y="66.995842" transform="rotate(-0 601.6046 66.995842)">UMAP</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #263447; font: 10px 'DejaVu Sans'" transform="translate(516.916319 107.644195)">Match a weighted neighbor graph</text>
+    <text style="fill: #263447; font: 10px 'DejaVu Sans'" transform="translate(520.140538 118.842008)">Arrange connected observations</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #263447; font: 11px 'DejaVu Sans'; text-anchor: middle" x="364.19976" y="181.151539" transform="rotate(-0 364.19976 181.151539)">Same high-dimensional samples  →  fewer coordinates; different targets</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3af42b108c">
+   <rect x="7.2" y="7.2" width="713.99952" height="181.19952"/>
+  </clipPath>
+ </defs>
+</svg>

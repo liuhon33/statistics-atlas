@@ -5598,6 +5598,18 @@
       "level": 3
     },
     {
+      "id": "markov-decision-processes",
+      "title": "Markov decision processes",
+      "path": "Backbone/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning/Markov decision processes/Markov decision processes.md",
+      "level": 4
+    },
+    {
+      "id": "markov-decision-processes-bellman-equations",
+      "title": "Bellman equations",
+      "path": "Backbone/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning/Markov decision processes/Bellman equations.md",
+      "level": 5
+    },
+    {
       "id": "learning-rl-bellman-to-sampled-updates",
       "title": "Reinforcement learning - from Bellman equations to sampled updates",
       "path": "Learning/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning - from Bellman equations to sampled updates.md",
@@ -5619,6 +5631,62 @@
       "path": "Learning/Probability & mathematical foundations/Stochastic processes/Gamblers problem - probability, martingales, and bold play.md",
       "layer": "learning",
       "primary_home": "martingale",
+      "status": "active"
+    },
+    {
+      "id": "learning-pca-tsne-umap-rnaseq",
+      "title": "PCA, t-SNE, and UMAP - what an RNA-seq map preserves",
+      "path": "Learning/Statistical computing & learning/Statistical learning & prediction/PCA, t-SNE, and UMAP - what an RNA-seq map preserves.md",
+      "layer": "learning",
+      "primary_home": "embeddings-pca-versus-visualization-embeddings",
+      "status": "active"
+    },
+    {
+      "id": "learning-monty-hall-bayes-rectangles",
+      "title": "Monty Hall - seeing Bayes through rectangles",
+      "path": "Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles.md",
+      "layer": "learning",
+      "primary_home": "bayesrule",
+      "status": "active"
+    },
+    {
+      "id": "learning-bootstrap-size-repetitions-clt",
+      "title": "Bootstrap means - resample size, repetitions, and the CLT",
+      "path": "Learning/Statistical inference & modeling/Nonparametric & robust inference/Bootstrap means - resample size, repetitions, and the CLT.md",
+      "layer": "learning",
+      "primary_home": "bootstrap-point",
+      "status": "active"
+    },
+    {
+      "id": "learning-vector-norms-unit-balls",
+      "title": "Vector norms - unit balls, convexity, and the zero-count exception",
+      "path": "Learning/Probability & mathematical foundations/Mathematical tools/Vector norms - unit balls, convexity, and the zero-count exception.md",
+      "layer": "learning",
+      "primary_home": "spaces-inner-products-and-norms",
+      "status": "active"
+    },
+    {
+      "id": "learning-bayesian-regression-ridge-flat-prior",
+      "title": "Bayesian linear regression - ridge, uncertainty, and the flat-prior limit",
+      "path": "Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit.md",
+      "layer": "learning",
+      "primary_home": "posterior-conjugate-updating",
+      "status": "active"
+    },
+    {
+      "id": "learning-kernels-features-gaussian-covariance",
+      "title": "Kernels - feature inner products and Gaussian covariances",
+      "path": "Learning/Probability & mathematical foundations/Stochastic processes/Kernels - feature inner products and Gaussian covariances.md",
+      "layer": "learning",
+      "primary_home": "gaussian-process-covariance-kernels",
+      "status": "active"
+    },
+    {
+      "id": "learning-gp-conditioning-completing-square",
+      "title": "Gaussian processes - conditioning by completing the square",
+      "path": "Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square.md",
+      "layer": "learning",
+      "primary_home": "neighbors-kernels-gaussian-process-regression",
       "status": "active"
     }
   ]

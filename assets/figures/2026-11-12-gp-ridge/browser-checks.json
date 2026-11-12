@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-12",
+  "environment": "Codex in-app browser, standalone explorer served on loopback",
+  "checks": {
+    "strong_prior_preset": "PASS: tau=0.1, lambda=56.25, intercept=0.1091, slope=0.2066, posterior slope SD=0.0940",
+    "moderate_prior_preset": "PASS: tau=1, lambda=0.5625, intercept=0.5121, slope=1.4839",
+    "weak_prior_preset": "PASS: tau=31.623, lambda=0.000562, intercept=0.5000, slope=1.5999",
+    "ols_limit_preset": "PASS: tau=infinity, lambda=0, intercept=0.5, slope=1.6, posterior slope SD=0.3141",
+    "keyboard_slider": "PASS: ArrowRight changes log10(tau) from -1 to -0.99 and updates numeric values and plots",
+    "play": "PASS: pressed state changes to Pause; numeric state and plots advance",
+    "pause": "PASS: returns to Play at an intermediate tau=1.995",
+    "animation_completion": "PASS: reaches exact flat-prior endpoint and returns to Play",
+    "reset": "PASS: restores strong-prior state",
+    "wide_layout": "PASS: inspected screenshot at default approximately 1265-pixel viewport; no horizontal overflow",
+    "narrow_layout": "PASS: inspected screenshot with 520-pixel viewport override; fit plot switches to 500-unit viewBox; document clientWidth=scrollWidth (505 CSS pixels excluding scrollbar in final inspection)",
+    "svg_path_numbers": "PASS: no NaN or Infinity in rendered path geometry at tested presets",
+    "offline_dependencies": "PASS: no script[src], link[href], img[src] or iframe[src] dependencies in rendered standalone page; HTML embeds its styles and scripts"
+  },
+  "screenshots": ["explorer-wide.png", "explorer-narrow.png"],
+  "limitations": [
+    "Actual Obsidian rendering was not tested: its CLI could not find a running app.",
+    "An initial JavaScript exponent syntax error was corrected before final browser checks."
+  ]
+}

@@ -9,7 +9,7 @@ study_band: U–M
 note_types: [insight, topic-note]
 source_format: handwriting
 created: 2026-11-08
-updated: 2026-11-08
+updated: '2026-11-12'
 status: active
 verification: checked
 aliases: [KNN and K-means difference]
@@ -53,6 +53,8 @@ $$
 \hat y_{\mathrm{regression}}(x)
 =\frac1k\sum_{i\in N_k(x)}y_i.
 $$
+
+See the [[Learning/Statistical computing & learning/Statistical learning & prediction/Bias–variance decomposition as Pythagoras in L2#A worked example with exact bias and variance|worked bias–variance tradeoff]] for this average.
 
 Ties need a rule. Distance-weighted variants give nearer observations more influence. “Lazy learning” means prediction uses retained examples rather than a fitted global regression equation; fitting may still construct a search index.
 

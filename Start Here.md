@@ -13,8 +13,8 @@ New here? Open [[README|the illustrated setup and usage guide]] for installation
 
 Open **Statistics atlas: Open statistics atlas** from the command palette, or select the network icon in the ribbon.
 
-- **Backbone** shows the reference-topic hierarchy and typed connections. The 2026-11-11 snapshot has 761 topics and 856 backbone connections.
-- **My learning** adds personal notes and selected connections. The snapshot includes 37 approved learning notes.
+- **Backbone** shows the reference-topic hierarchy and typed connections. The 2026-11-12 snapshot has 763 topics and 864 backbone connections.
+- **My learning** adds personal notes and selected connections. The snapshot includes 44 approved learning notes.
 - **Notes only** shows personal notes and links between them, keeping their map positions.
 - **Everything** adds source records and administrative material. Use **Fit visible** to include the outer auxiliary cluster.
 

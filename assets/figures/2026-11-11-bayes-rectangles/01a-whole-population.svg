@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="806.4pt" height="561.6pt" viewBox="0 0 806.4 561.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-11T23:31:17.648992</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 561.6 
+L 806.4 561.6 
+L 806.4 0 
+L 0 0 
+z
+" style="fill: #f7f8fa"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 100.8 158.4 
+L 705.6 158.4 
+L 705.6 446.4 
+L 100.8 446.4 
+z
+" clip-path="url(#pc421861b6a)" style="fill: #e6ebf0; stroke: #8796a8; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 129.6 158.4 
+L 129.6 446.4 
+" clip-path="url(#pc421861b6a)" style="fill: none; stroke: #aab7c7; stroke-width: 1.3; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #172b40; font: 700 26px 'DejaVu Sans'; text-anchor: start" x="46.8" y="43.792813" transform="rotate(-0 46.8 43.792813)">Bayes' rule, by moving areas</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #172b40; font: 700 20px 'DejaVu Sans'; text-anchor: start" x="46.8" y="83.920625" transform="rotate(-0 46.8 83.920625)">1   Start with one big rectangle</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #65758a; font: 13.5px 'DejaVu Sans'; text-anchor: start" x="46.8" y="112.445156" transform="rotate(-0 46.8 112.445156)">Its whole area represents 210 people: 10 librarians and 200 farmers.</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 130.727048 147.161531 
+Q 123.586911 151.914691 118.107363 156.145118 
+" style="fill: none; stroke: #307eae; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 124.689973 154.853124 
+L 118.107363 156.145118 
+L 121.023334 150.103834 
+" style="fill: none; stroke: #307eae; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="fill: #307eae; font: 15px 'DejaVu Sans'; text-anchor: start" x="100.8" y="140.939062" transform="rotate(-0 100.8 140.939062)">10 librarians</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #986411; font: 15px 'DejaVu Sans'; text-anchor: middle" x="417.6" y="140.939062" transform="rotate(-0 417.6 140.939062)">200 farmers</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #65758a; font: 24px 'DejaVu Sans'; text-anchor: middle" x="410.4" y="283.8225" transform="rotate(-0 410.4 283.8225)">Whole population</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #65758a; font: 17px 'DejaVu Sans'; text-anchor: middle" x="410.4" y="314.290937" transform="rotate(-0 410.4 314.290937)">total area = 210 people</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #65758a; font: 13px 'DejaVu Sans'; text-anchor: middle" x="403.2" y="513.347188" transform="rotate(-0 403.2 513.347188)">Column widths encode the 10 : 200 prior ratio.</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #65758a; font: 10.5px 'DejaVu Sans'; text-anchor: middle" x="403.2" y="547.094297" transform="rotate(-0 403.2 547.094297)">Illustrative Steve model   |   Blue: librarian   Orange: farmer   |   Fixed camera</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc421861b6a">
+   <rect x="0" y="0" width="806.4" height="561.6"/>
+  </clipPath>
+ </defs>
+</svg>

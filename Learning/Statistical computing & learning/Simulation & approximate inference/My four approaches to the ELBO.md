@@ -16,7 +16,7 @@ question_roles:
   - mechanism
 source_format: handwriting
 created: 2026-11-08
-updated: 2026-11-09
+updated: '2026-11-12'
 status: active
 verification: checked
 learning_state: practicing
@@ -29,10 +29,12 @@ tags:
   - topic/elbo
   - study/masters
 connections:
+  - "[[Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles]]"
   - "[[Backbone/Probability & mathematical foundations/Mathematical tools/Convexity & inequalities/Convex functions & bounds/Jensen inequality]]"
   - "[[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/KL divergence]]"
   - "[[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Prior and posterior]]"
   - "[[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Importance sampling]]"
+  - '[[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]]'
 sources:
   - "[[raw/notebooks/2026-11-08-VAE-opening-excerpt.json]]"
   - "[[raw/conversations/2026-10-22-ELBO-conversation-excerpt]]"
@@ -127,6 +129,8 @@ $$
 
 Jensen establishes nonnegativity; Bayes' rule identifies the gap as posterior KL. Equality holds when $q(z)=p(z\mid x)$ almost everywhere: then $W(z)=p(x)$ is constant under $q$.
 
+The [[Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles#5. The connection to ELBO — normalize, or fit the normalized shares|Monty Hall rectangles]] give a three-state example of this gap and its support condition.
+
 A zero gap can still mean [[Learning/Statistical computing & learning/Simulation & approximate inference/Model error versus inference error in variational inference#A small counterexample: perfect inference, wrong model|perfect inference in a wrong model]].
 
 **Why a lower bound if we maximize it?** The ordering is $\mathcal L(q)\leq\log p(x)$. If log evidence is $-10$, moving ELBO from $-15$ to $-11$ tightens the bound. A restricted variational family may leave a positive gap; an upper bound alone does not guarantee an attained maximum.
@@ -208,7 +212,7 @@ y\mid w\sim\mathcal N(Xw,\sigma^2I_n),\qquad
 w\sim\mathcal N(0,\tau^2I_d).
 $$
 
-MAP minimizes $\|y-Xw\|^2/(2\sigma^2)+\|w\|^2/(2\tau^2)$. Multiplying by $2\sigma^2$ gives ridge with summed squared error and $\lambda=\sigma^2/\tau^2$:
+[[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit#2. How the prior becomes an L2 penalty|MAP minimizes]] $\|y-Xw\|^2/(2\sigma^2)+\|w\|^2/(2\tau^2)$. Multiplying by $2\sigma^2$ gives ridge with summed squared error and $\lambda=\sigma^2/\tau^2$:
 
 $$
 \widehat w=\arg\min_w\{\|y-Xw\|^2+\lambda\|w\|^2\},\qquad
@@ -342,6 +346,9 @@ Moving $q$ from the prior to the posterior raises the reconstruction term by $6.
 - [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Information for statistical learning/Information measures/KL divergence|KL divergence]] — Posterior KL is the exact Jensen gap; prior KL is the regularization term in the likelihood/prior decomposition.
 - [[Backbone/Statistical inference & modeling/Bayesian inference/Bayesian inference foundations/Prior, likelihood & posterior/Prior and posterior|Prior and posterior]] — Bayes' rule explains why fitting the posterior and balancing likelihood against prior regularization give the same objective.
 - [[Backbone/Statistical computing & learning/Simulation & approximate inference/Monte Carlo methods/Efficient integration/Importance sampling|Importance sampling]] — The ratio $p(x,z)/q(z)$ permits evidence estimation under $q$ and exposes the difference between averaging weights and averaging log weights.
+- [[Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles|Monty Hall - seeing Bayes through rectangles]] — Its retained rectangles give explicit joint weights for the posterior-KL identity and show why positive variational mass on an impossible state makes the ELBO negative infinity.
+
+- [[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit|Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]] — Extends the existing MAP/ridge comparison to the full posterior and distinguishes a coefficient penalty from variational KL.
 
 ## Origin
 

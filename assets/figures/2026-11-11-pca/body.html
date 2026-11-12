@@ -1,0 +1,14 @@
+<main>
+  <header><p class="eyebrow">PCA: two measurements, one coordinate</p><h1>Find the most useful line</h1>
+  <p>Twelve fixed samples. Blue points are centered measurements. Orange points are their perpendicular projections; gray segments are reconstruction errors.</p></header>
+  <div class="controls"><label for="angle">Line angle: <output id="angle-label">45°</output></label>
+    <input id="angle" type="range" min="0" max="180" step="1" value="45">
+    <div class="buttons"><button id="pc1">Best line: PC1</button><button id="horizontal">Horizontal</button><button id="pc2">Perpendicular: PC2</button></div>
+  </div>
+  <div class="plots"><section><h2>Project in measurement space</h2><svg id="cloud" viewBox="0 0 440 440" role="img" aria-label="Centered measurements and their projections onto a rotating line"></svg></section>
+    <section><h2>Read the new coordinates</h2><svg id="strip" viewBox="0 0 440 200" role="img" aria-label="One dimensional score plot"></svg>
+    <div class="readouts" aria-live="polite"><p><span class="orange">Retained variance</span><strong id="variance"></strong></p><p><span class="blue">Squared error / 11</span><strong id="error"></strong></p><p><span>Fraction retained</span><strong id="fraction"></strong></p></div>
+    <p class="equation">Retained variance + squared error / 11 = <b>17.6364</b></p><p id="hint"></p></section></div>
+  <p class="try">Try the horizontal line, then PC1. What happens to the orange spread and the gray distances? Rotating to PC2 reverses the tradeoff.</p>
+  <details><summary>What are the points and units?</summary><p>Each point is one sample with two readings in the same measurement units. Column means (10, 20) have already been removed. The plot has equal horizontal and vertical scales. Scores have measurement units; variance and squared error have squared units. The sample variance divisor is n − 1 = 11.</p><p>The direction is v = (cos θ, sin θ). Each score is t = x · v and its reconstructed point is t v. This original deterministic example is the one used throughout the note.</p></details>
+</main>

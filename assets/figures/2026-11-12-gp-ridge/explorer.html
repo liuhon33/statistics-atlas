@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>Bayesian regression, ridge, and the flat-prior limit</title><style>:root{color-scheme:light;--ink:#20313b;--teal:#087f83;--gold:#b77418;--slate:#66788a}*{box-sizing:border-box}body{margin:0;background:#f5f7f7;color:var(--ink);font:16px/1.5 system-ui,sans-serif}main{max-width:1040px;margin:auto;padding:26px}.eyebrow{font-size:11px;letter-spacing:.14em;color:var(--teal);font-weight:800}h1{font-size:30px;line-height:1.16;margin:10px 0}h2{font-size:17px;margin:0 0 5px}p{margin:10px 0 16px}.controls,.panels section{background:#fff;border:1px solid #dbe4e6;border-radius:12px;padding:18px}.controls label{font-weight:700;display:flex;justify-content:space-between}input[type=range]{width:100%;accent-color:var(--teal);margin:18px 0}.buttons{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;background:#f1f6f6;border:1px solid #b9cdcf;border-radius:7px;padding:8px 12px;cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #dca94b;outline-offset:3px}button[aria-pressed=true]{background:var(--teal);color:white}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}.metrics div{font-size:12px;background:#e5f0f0;padding:13px;border-radius:8px}.metrics b{font-size:21px;display:block}.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px}.wide{grid-column:1/-1}svg{display:block;width:100%;height:auto;overflow:hidden}.panels p{font-size:13px;margin-bottom:0}.teal{color:var(--teal)}.gold{color:var(--gold)}.slate{color:var(--slate)}.takeaway{background:#e5f0f0;border-left:4px solid var(--teal);padding:15px}.foot{font-size:12px;color:#586b75}#state{min-height:1.5em;font-size:13px;margin-bottom:0}@media(max-width:620px){main{padding:14px}.panels{grid-template-columns:1fr}.wide{grid-column:auto}.metrics{grid-template-columns:1fr 1fr}h1{font-size:25px}.controls,.panels section{padding:12px}}
+</style></head><body><main>
+<p class="eyebrow">GAUSSIAN PRIOR → RIDGE → LEAST SQUARES</p>
+<h1>Let the prior loosen its grip</h1>
+<p>Keep the five observations and noise SD σ = 0.75 fixed. Increase the prior SD τ in <b>w ∼ N(0, τ²I)</b>. The ridge estimate and the Bayesian posterior mean move together.</p>
+<section class="controls" aria-label="Prior controls">
+<label for="tau">Prior SD τ <output id="tau-value" for="tau"></output></label>
+<input type="range" id="tau" min="-1" max="1.5" step="0.01" value="-1" aria-label="Logarithm base ten of prior standard deviation">
+<div class="buttons"><button id="strong">Strong prior</button><button id="moderate">τ = 1</button><button id="weak">Weak prior</button><button id="limit">OLS limit</button><button id="play" aria-pressed="false">Play</button><button id="reset">Reset</button></div>
+<p id="state" aria-live="polite"></p>
+</section>
+<div class="metrics"><div>Penalty λ = σ²/τ²<b id="lambda"></b></div><div>Intercept mean<b id="intercept"></b></div><div>Slope mean<b id="slope"></b></div><div>Posterior slope SD<b id="sd"></b></div></div>
+<div class="panels"><section><h2>1. Parameter space</h2><svg id="geometry" viewBox="0 0 500 350" role="img" aria-label="Posterior contours move toward the least squares coefficient"></svg><p><span class="teal">● posterior mean = ridge</span> · <span class="slate">× OLS</span><br>Teal contours: squared Mahalanobis distances 1 and 4. Gray dashed: normalized likelihood contours.</p></section>
+<section><h2>2. Slope distributions</h2><svg id="density" viewBox="0 0 500 350" role="img" aria-label="Prior and posterior slope densities"></svg><p><span class="gold">Gold: prior marginal</span> · <span class="teal">Teal: posterior marginal</span> · gray dashed: flat-prior posterior. Density tails outside the fixed window are omitted.</p></section>
+<section class="wide"><h2>3. The same data, changing shrinkage</h2><svg id="fit" viewBox="0 0 900 350" role="img" aria-label="Fitted line and uncertainty band compared with ordinary least squares"></svg><p>Teal: posterior mean; pale band: pointwise mean ± 2 posterior SD for the <b>latent function</b>. Gray dashed: OLS line. A new noisy response has an additional variance σ².</p></section></div>
+<p class="takeaway" id="takeaway"></p>
+<p class="foot">Original illustrative data; no resampling or moving axes. Both the intercept and slope are penalized. The feature matrix has full column rank. “OLS limit” uses prior precision 0: this is an improper flat-prior limit, not a normalized Gaussian with infinite variance. The logarithmic slider spans τ = 0.1 to 31.62. Animation starts paused.</p>
+</main>
+<script>/* Original deterministic example. All coefficients, including the intercept, have the prior. */
+var BayesRidgeMath = (() => {
+  const x = [-1, 0, 0.5, 1.5, 2], y = [-1.2, 0.8, 1.1, 2.9, 3.7], sigma = 0.75;
+  const n = x.length, sx = x.reduce((a,b)=>a+b,0), sxx=x.reduce((a,b)=>a+b*b,0);
+  const sy=y.reduce((a,b)=>a+b,0), sxy=x.reduce((a,b,i)=>a+b*y[i],0);
+  function posterior(tau) {
+    const lambda = tau === Infinity ? 0 : sigma*sigma/(tau*tau);
+    const a=n+lambda,b=sx,d=sxx+lambda,det=a*d-b*b;
+    const mu=[(d*sy-b*sxy)/det,(a*sxy-b*sy)/det];
+    const V=[sigma*sigma*d/det,-sigma*sigma*b/det,-sigma*sigma*b/det,sigma*sigma*a/det];
+    return {tau,lambda,mu,V};
+  }
+  function predict(p,t){return {mean:p.mu[0]+t*p.mu[1],variance:p.V[0]+2*t*p.V[1]+t*t*p.V[3]};}
+  function density(t,m,v){return Math.exp(-((t-m)**2)/(2*v))/Math.sqrt(2*Math.PI*v);}
+  function ellipse(p,r=1){
+    const a=p.V[0],b=p.V[1],d=p.V[3],q=Math.hypot(a-d,2*b);
+    const e1=Math.sqrt((a+d+q)/2),e2=Math.sqrt((a+d-q)/2),angle=Math.atan2(2*b,a-d)/2;
+    return Array.from({length:121},(_,i)=>{const t=2*Math.PI*i/120,u=r*e1*Math.cos(t),v=r*e2*Math.sin(t);
+      return [p.mu[0]+u*Math.cos(angle)-v*Math.sin(angle),p.mu[1]+u*Math.sin(angle)+v*Math.cos(angle)];});
+  }
+  return {x,y,sigma,posterior,predict,density,ellipse};
+})();
+if(typeof module!=='undefined') module.exports=BayesRidgeMath;
+
+;
+(()=>{
+  const M=BayesRidgeMath,$=id=>document.getElementById(id),teal='#087f83',gold='#b77418',gray='#788793';
+  let atLimit=false,playing=false,last=0,elapsed=0,raf=0;
+  function plot(id,xmin,xmax,ymin,ymax,xlabel,ylabel,xticks,yticks){
+    const el=$(id),W=el.viewBox.baseVal.width,H=350,l=62,r=18,t=24,b=49;
+    const X=x=>l+(x-xmin)/(xmax-xmin)*(W-l-r),Y=y=>H-b-(y-ymin)/(ymax-ymin)*(H-b-t);
+    let s=`<defs><clipPath id="clip-${id}"><rect x="${l}" y="${t}" width="${W-l-r}" height="${H-b-t}"/></clipPath></defs>`;
+    for(const x of xticks)s+=`<path d="M${X(x)},${t}V${H-b}" stroke="#e7ecee"/><text x="${X(x)}" y="${H-b+20}" text-anchor="middle">${x}</text>`;
+    for(const y of yticks)s+=`<path d="M${l},${Y(y)}H${W-r}" stroke="#e7ecee"/><text x="${l-9}" y="${Y(y)+4}" text-anchor="end">${y}</text>`;
+    s+=`<path d="M${l},${t}V${H-b}H${W-r}" stroke="#7b8a92" fill="none"/><text x="${(W+l-r)/2}" y="${H-5}" text-anchor="middle">${xlabel}</text><text x="18" y="${H/2}" transform="rotate(-90 18 ${H/2})" text-anchor="middle">${ylabel}</text>`;
+    const path=(pts,color,width=2,dash='',fill='none')=>`<path clip-path="url(#clip-${id})" d="${pts.map((p,i)=>(i?'L':'M')+X(p[0])+','+Y(p[1])).join(' ')}" stroke="${color}" stroke-width="${width}" stroke-dasharray="${dash}" fill="${fill}"/>`;
+    const point=(x,y,color,radius=5)=>`<circle cx="${X(x)}" cy="${Y(y)}" r="${radius}" fill="${color}"/>`;
+    return {path,point,X,Y,finish:extra=>{el.innerHTML=`<g font-family="system-ui,sans-serif" font-size="13" fill="#344650">${s}${extra}</g>`;}};
+  }
+  function render(){
+    $('fit').setAttribute('viewBox',`0 0 ${document.documentElement.clientWidth<620?500:900} 350`);
+    const tau=atLimit?Infinity:10**Number($('tau').value),p=M.posterior(tau),ols=M.posterior(Infinity);
+    $('tau-value').textContent=atLimit?'∞ (limit)':tau.toFixed(3);
+    $('lambda').textContent=p.lambda.toFixed(p.lambda<.01?6:3);$('intercept').textContent=p.mu[0].toFixed(4);$('slope').textContent=p.mu[1].toFixed(4);$('sd').textContent=Math.sqrt(p.V[3]).toFixed(4);
+    $('state').textContent=atLimit?'Flat-prior endpoint: λ = 0; the posterior remains proper because the design has full rank.':'Only the prior changes. The data and observation noise remain fixed.';
+    $('takeaway').textContent=atLimit?'The posterior mean equals OLS, while posterior uncertainty stays positive. Removing regularization does not remove uncertainty.':'As τ grows, λ falls. The posterior mean approaches OLS; the posterior covariance grows toward the data-only limit.';
+    const g=plot('geometry',-1.4,2.6,-.5,3.5,'intercept w₀','slope w₁',[-1,0,1,2],[0,1,2,3]);
+    let s='';for(const r of [1,2])s+=g.path(M.ellipse(ols,r),gray,1.5,'5 4');
+    const trajectory=Array.from({length:130},(_,i)=>M.posterior(10**(-2+5*i/129)).mu);s+=g.path(trajectory,'#bac8ca',1.4);
+    for(const r of [1,2])s+=g.path(M.ellipse(p,r),teal,2);
+    s+=g.path([[ols.mu[0]-.07,ols.mu[1]-.07],[ols.mu[0]+.07,ols.mu[1]+.07]],gray,3)+g.path([[ols.mu[0]-.07,ols.mu[1]+.07],[ols.mu[0]+.07,ols.mu[1]-.07]],gray,3);
+    s+=g.point(p.mu[0],p.mu[1],teal);g.finish(s);
+    const d=plot('density',-2.5,4,0,4.3,'slope w₁','probability density',[-2,-1,0,1,2,3,4],[0,1,2,3,4]);
+    const grid=Array.from({length:600},(_,i)=>-2.5+6.5*i/599);
+    s=d.path(grid.map(z=>[z,M.density(z,ols.mu[1],ols.V[3])]),gray,2,'6 4');
+    if(!atLimit)s+=d.path(grid.map(z=>[z,M.density(z,0,tau*tau)]),gold,2.5);
+    s+=d.path(grid.map(z=>[z,M.density(z,p.mu[1],p.V[3])]),teal,2.6);d.finish(s);
+    const f=plot('fit',-2.3,3,-4.8,6.8,'input x','latent value f(x)',[-2,-1,0,1,2,3],[-4,-2,0,2,4,6]);
+    const xs=Array.from({length:180},(_,i)=>-2.3+5.3*i/179),upper=[],lower=[];
+    for(const x of xs){const q=M.predict(p,x);upper.push([x,q.mean+2*Math.sqrt(q.variance)]);lower.push([x,q.mean-2*Math.sqrt(q.variance)]);}
+    s=f.path([...upper,...lower.reverse(),upper[0]],'none',0,'','#dceeee');
+    s+=f.path(xs.map(x=>[x,M.predict(ols,x).mean]),gray,2,'6 4')+f.path(xs.map(x=>[x,M.predict(p,x).mean]),teal,3);
+    M.x.forEach((x,i)=>s+=f.point(x,M.y[i],'#223d4a',4.8));f.finish(s);
+  }
+  function stop(){playing=false;cancelAnimationFrame(raf);$('play').textContent='Play';$('play').setAttribute('aria-pressed','false');}
+  function preset(value,limit=false){stop();atLimit=limit;$('tau').value=value;render();}
+  $('tau').addEventListener('input',()=>{stop();atLimit=false;render();});
+  $('strong').onclick=()=>preset(-1);$('moderate').onclick=()=>preset(0);$('weak').onclick=()=>preset(1.5);$('limit').onclick=()=>preset(1.5,true);$('reset').onclick=()=>preset(-1);
+  function frame(t){if(!playing)return;if(last)elapsed+=t-last;last=t;
+    if(elapsed>=13000){atLimit=true;render();stop();return;}
+    $('tau').value=-1+2.5*Math.min(1,Math.max(0,(elapsed-1200)/10000));render();raf=requestAnimationFrame(frame);
+  }
+  $('play').onclick=()=>{if(playing){stop();return;}atLimit=false;playing=true;elapsed=0;last=0;$('play').textContent='Pause';$('play').setAttribute('aria-pressed','true');raf=requestAnimationFrame(frame);};
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+  const motion=matchMedia('(prefers-reduced-motion: reduce)');if(motion.matches)$('play').title='Motion is optional; use the presets or slider for still comparisons.';
+  window.addEventListener('resize',render);
+  render();
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>

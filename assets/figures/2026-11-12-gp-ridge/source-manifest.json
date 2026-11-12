@@ -1,0 +1,48 @@
+{
+  "source": {
+    "title": "Gaussian Processes",
+    "author": "Thibault Randrianarisoa",
+    "institution": "University of Toronto",
+    "term": "Winter 2026",
+    "slide_date": "2026-03-09",
+    "capture_date": "2026-11-12",
+    "annotation_date": "not supplied",
+    "path": "raw/notes/private-course-slides/2026-03-09-PML-Lec09-Gaussian-process.pdf",
+    "sha256": "8dbde56a53ff9bc4dfd4da516101690be9b8aab47a705518ca3435a0061b3517",
+    "page_count": 41
+  },
+  "renderings": [
+    {
+      "path": "raw/assets/private-course-slides/2026-03-09-Lec09-I01-p14-ridge.png",
+      "source_pdf_page": 14,
+      "type": "full-page rendering of supplied annotated PDF",
+      "sha256": "fb8db2b1763b84929c82c7fcd6074ecce63dce6a4b4ca85bcc9a4d1951c9f55e"
+    },
+    {
+      "path": "raw/assets/private-course-slides/2026-03-09-Lec09-I02-p27-feature-map.png",
+      "source_pdf_page": 27,
+      "type": "full-page rendering of supplied annotated PDF",
+      "sha256": "cae7401d76fbdc5abb97fc247730b2695a3006145830dda9dc5f9ade626885b5"
+    },
+    {
+      "path": "raw/assets/private-course-slides/2026-03-09-Lec09-I04-p28-covariance.png",
+      "source_pdf_page": 28,
+      "type": "full-page rendering of supplied annotated PDF",
+      "sha256": "a3f2a8cfa968a43fd1b0940e57abf5f0b4cf23a3b44bf005237ff222ec668b91"
+    },
+    {
+      "path": "raw/assets/private-course-slides/2026-03-09-Lec09-I03-p29-rbf-handwriting.png",
+      "source_pdf_page": 29,
+      "type": "right-margin handwriting crop from 3000px-wide page render",
+      "crop_pixels": [
+        2200,
+        430,
+        2980,
+        1400
+      ],
+      "sha256": "fe5dbcea65a82d01904ae02603950dd2a9ece854f82a84290a9dd6d4eb088043"
+    }
+  ],
+  "coverage": "All 41 pages read and visually inspected. The p29 handwriting was additionally inspected at 3000px width. Text extraction was used only alongside rendered pages.",
+  "privacy": "Only the original PDF is Git-ignored and excluded from public export. Handwritten images and selected page renders are eligible for Git tracking and inclusion with the notes, as clarified by the user on 2026-11-12 (SOP A21). Existing source bytes and paths are preserved. Generated analytic figures contain no slide artwork."
+}

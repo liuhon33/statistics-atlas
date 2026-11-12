@@ -1,0 +1,113 @@
+{
+  "model": {
+    "population": [
+      10,
+      200
+    ],
+    "likelihoods": [
+      "2/5",
+      "1/10"
+    ],
+    "retained_counts": [
+      4,
+      20
+    ],
+    "posterior_librarian": "1/6"
+  },
+  "geometry": {
+    "whole_rectangle_xywh": [
+      140.0,
+      220.0,
+      840.0,
+      400.0
+    ],
+    "pixels_squared_per_person": 1600.0,
+    "blue_area": 6400.0,
+    "orange_area": 32000.0,
+    "rotation_pivot_xy": [
+      80.0,
+      495.0
+    ],
+    "rotation_degrees": 90,
+    "final_widths": [
+      160,
+      800
+    ],
+    "final_common_height": 40
+  },
+  "checks": {
+    "samples": 2001,
+    "maximum_area_error": 1.1641532182693481e-10,
+    "maximum_ratio_error": 1.2490009027033011e-15,
+    "maximum_side_length_error": 1.1368683772161603e-13,
+    "minimum_horizontal_gap": 0.0,
+    "equal_final_heights": true,
+    "pieces_touch_without_overlapping": true,
+    "camera_fixed": true
+  },
+  "interpretation": "The retained area is 24/210 of the original area. The blue fraction within it is 4/24, not 24/4. No stretching or zoom occurs.",
+  "render": {
+    "gif": "01-bayes-area-update.gif",
+    "requested_frames": 220,
+    "saved_frames": 87,
+    "duration_ms": 17600,
+    "size": [
+      1120,
+      780
+    ],
+    "loop": "infinite",
+    "keyframes": [
+      "01a-whole-population.svg",
+      "01b-retained-areas.svg",
+      "01c-side-by-side-ratio.svg"
+    ],
+    "decoded_samples": [
+      {
+        "time_seconds": 1.0,
+        "saved_frame": 0,
+        "phase": "whole"
+      },
+      {
+        "time_seconds": 3.0,
+        "saved_frame": 13,
+        "phase": "reveal"
+      },
+      {
+        "time_seconds": 4.4,
+        "saved_frame": 20,
+        "phase": "reveal"
+      },
+      {
+        "time_seconds": 6.0,
+        "saved_frame": 36,
+        "phase": "extract"
+      },
+      {
+        "time_seconds": 7.5,
+        "saved_frame": 48,
+        "phase": "rotate"
+      },
+      {
+        "time_seconds": 8.2,
+        "saved_frame": 57,
+        "phase": "rotate"
+      },
+      {
+        "time_seconds": 9.5,
+        "saved_frame": 70,
+        "phase": "rotate"
+      },
+      {
+        "time_seconds": 10.3,
+        "saved_frame": 76,
+        "phase": "join"
+      },
+      {
+        "time_seconds": 13.0,
+        "saved_frame": 86,
+        "phase": "ratio"
+      }
+    ],
+    "visual_review": "Inspected all three static PNG keyframes and nine decoded GIF samples spanning every phase, including the rotation midpoint and final fraction; labels and geometry are clear. All three SVGs parse. Live Obsidian rendering was not checked."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "status": "pass",
+  "scope_notes": 7,
+  "new_map_links": [
+    {
+      "source": "prediction-risk-regularization",
+      "property": "applied_in",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Elastic net]]"
+    },
+    {
+      "source": "prediction-risk-regularization",
+      "property": "applied_in",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Lasso]]"
+    },
+    {
+      "source": "prediction-risk-regularization",
+      "property": "applied_in",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Ridge regression]]"
+    },
+    {
+      "source": "spaces-inner-products-and-norms",
+      "property": "applied_in",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Elastic net]]"
+    },
+    {
+      "source": "spaces-inner-products-and-norms",
+      "property": "applied_in",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Lasso]]"
+    },
+    {
+      "source": "spaces-inner-products-and-norms",
+      "property": "applied_in",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Ridge regression]]"
+    },
+    {
+      "source": "learning-bayesian-regression-ridge-flat-prior",
+      "property": "connections",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Regularization]]"
+    },
+    {
+      "source": "learning-bayesian-regression-ridge-flat-prior",
+      "property": "connections",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Elastic net]]"
+    },
+    {
+      "source": "learning-bayesian-regression-ridge-flat-prior",
+      "property": "connections",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Lasso]]"
+    },
+    {
+      "source": "learning-vector-norms-unit-balls",
+      "property": "connections",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Regularization]]"
+    },
+    {
+      "source": "learning-vector-norms-unit-balls",
+      "property": "connections",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Elastic net]]"
+    },
+    {
+      "source": "learning-vector-norms-unit-balls",
+      "property": "connections",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Lasso]]"
+    },
+    {
+      "source": "learning-vector-norms-unit-balls",
+      "property": "connections",
+      "target": "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Supervised learning methods/Penalized linear models/Ridge regression]]"
+    },
+    {
+      "source": "learning-vector-norms-unit-balls",
+      "property": "connections",
+      "target": "[[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]]"
+    }
+  ],
+  "added_backbone_applications": 6,
+  "added_learning_connections": 8,
+  "preserved_identity_hierarchy_sources_approval_states": true,
+  "layout_sha256": "751B6FCB472F8A243FBC51376BBECF5FCD56F985EFE1C3CB88FCB6CD3832B6D3",
+  "exact_heading_destinations_checked": 9,
+  "intro_prose_word_counts_math_tokens_collapsed": {
+    "ridge": 165,
+    "penalized-lasso": 170,
+    "penalized-elastic-net": 163
+  },
+  "svg_direct_rasterization": "Sharp; all six SVGs rendered",
+  "new_notes": 0,
+  "catalog_change_needed": false
+}

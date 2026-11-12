@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "numerical_errors": {
+    "centering": 3.700743415417188e-17,
+    "scores_from_recipe": 1.7763568394002505e-15,
+    "scores_sample_covariance": 0.0,
+    "reconstruction": 0.0,
+    "feature_pc_correlations": 1.1102230246251565e-16,
+    "full_correlation_from_arrows": 6.661338147750939e-16,
+    "correlation_circle_radius": 6.661338147750939e-16,
+    "raw_coefficient_arrow_dot": 0.0,
+    "true_feature_correlation": 3.3306690738754696e-16,
+    "single_pc_feature_cos2": 5.551115123125783e-16,
+    "coefficient_contributions_sum": 2.220446049250313e-16,
+    "biplot_display_scale_undone": 8.881784197001252e-16,
+    "simple_scores": 4.440892098500626e-16,
+    "separate_four_feature_centering": 1.3877787807814457e-17,
+    "separate_four_feature_unit_variance": 2.220446049250313e-16,
+    "separate_four_feature_spectrum": 4.440892098500626e-16,
+    "separate_four_feature_cumulative": 0.0,
+    "svd_scores": 3.1086244689504383e-15,
+    "svd_eigenvalues": 7.105427357601002e-15,
+    "rank_one_residual": 3.552713678800501e-15,
+    "full_score_distances": 2.842170943040401e-14
+  },
+  "truncated_correlation_error_bound": "PASS",
+  "projection_distance_contraction": "PASS",
+  "svg_xml_parse": "PASS (3 files)",
+  "max_numerical_error": 2.842170943040401e-14,
+  "scope": "Independent numerical support; not a proof or live Obsidian rendering check."
+}

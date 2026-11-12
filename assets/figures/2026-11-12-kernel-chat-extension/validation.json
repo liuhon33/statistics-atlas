@@ -1,0 +1,40 @@
+{
+  "live_vault_status": "pass",
+  "counts": {
+    "backbone": 763,
+    "learning": 44,
+    "levels": {
+      "1": 3,
+      "2": 22,
+      "3": 52,
+      "4": 105,
+      "5": 581
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "rule": "W2",
+      "message": "\"conditional expectation\" is the title of 2 pages; their file names keep them apart"
+    },
+    {
+      "rule": "W2",
+      "message": "\"conditional probability\" is the title of 2 pages; their file names keep them apart"
+    },
+    {
+      "rule": "W2",
+      "message": "\"spatial statistics\" is the title of 2 pages; their file names keep them apart"
+    }
+  ],
+  "regression_status": "PASS: 15/15 cases.",
+  "scoped_checks": {
+    "original_and_archive_identical": true,
+    "existing_identity_home_status_connections_unchanged": true,
+    "note_math_fences_and_whitespace": true,
+    "new_figure_previews_inspected": true,
+    "embedded_python_execution": true,
+    "CRLF_aware_git_diff_check": true
+  },
+  "live_obsidian_rendering": "Not tested.",
+  "earlier_transient_failure": "Initial live validation found five missing MGF assets in unrelated concurrent work; initial regression aborted. Final reruns pass without this task changing that page."
+}

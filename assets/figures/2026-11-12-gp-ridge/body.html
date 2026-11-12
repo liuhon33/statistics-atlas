@@ -1,0 +1,17 @@
+<main>
+<p class="eyebrow">GAUSSIAN PRIOR → RIDGE → LEAST SQUARES</p>
+<h1>Let the prior loosen its grip</h1>
+<p>Keep the five observations and noise SD σ = 0.75 fixed. Increase the prior SD τ in <b>w ∼ N(0, τ²I)</b>. The ridge estimate and the Bayesian posterior mean move together.</p>
+<section class="controls" aria-label="Prior controls">
+<label for="tau">Prior SD τ <output id="tau-value" for="tau"></output></label>
+<input type="range" id="tau" min="-1" max="1.5" step="0.01" value="-1" aria-label="Logarithm base ten of prior standard deviation">
+<div class="buttons"><button id="strong">Strong prior</button><button id="moderate">τ = 1</button><button id="weak">Weak prior</button><button id="limit">OLS limit</button><button id="play" aria-pressed="false">Play</button><button id="reset">Reset</button></div>
+<p id="state" aria-live="polite"></p>
+</section>
+<div class="metrics"><div>Penalty λ = σ²/τ²<b id="lambda"></b></div><div>Intercept mean<b id="intercept"></b></div><div>Slope mean<b id="slope"></b></div><div>Posterior slope SD<b id="sd"></b></div></div>
+<div class="panels"><section><h2>1. Parameter space</h2><svg id="geometry" viewBox="0 0 500 350" role="img" aria-label="Posterior contours move toward the least squares coefficient"></svg><p><span class="teal">● posterior mean = ridge</span> · <span class="slate">× OLS</span><br>Teal contours: squared Mahalanobis distances 1 and 4. Gray dashed: normalized likelihood contours.</p></section>
+<section><h2>2. Slope distributions</h2><svg id="density" viewBox="0 0 500 350" role="img" aria-label="Prior and posterior slope densities"></svg><p><span class="gold">Gold: prior marginal</span> · <span class="teal">Teal: posterior marginal</span> · gray dashed: flat-prior posterior. Density tails outside the fixed window are omitted.</p></section>
+<section class="wide"><h2>3. The same data, changing shrinkage</h2><svg id="fit" viewBox="0 0 900 350" role="img" aria-label="Fitted line and uncertainty band compared with ordinary least squares"></svg><p>Teal: posterior mean; pale band: pointwise mean ± 2 posterior SD for the <b>latent function</b>. Gray dashed: OLS line. A new noisy response has an additional variance σ².</p></section></div>
+<p class="takeaway" id="takeaway"></p>
+<p class="foot">Original illustrative data; no resampling or moving axes. Both the intercept and slope are penalized. The feature matrix has full column rank. “OLS limit” uses prior precision 0: this is an improper flat-prior limit, not a normalized Gaussian with infinite variance. The logarithmic slider spans τ = 0.1 to 31.62. Animation starts paused.</p>
+</main>

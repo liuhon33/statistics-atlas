@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "example": {
+    "l1": 7,
+    "l2": 5,
+    "linf": 4,
+    "l0": 2,
+    "p_half": 13.928203230275509
+  },
+  "max_boundary_error": 8.881784197001252e-16,
+  "random_triangle_checks": 1800,
+  "analytic_checks": [
+    "three norm axioms and convex-ball implication",
+    "normalization proof of convex-ball converse under positivity and homogeneity",
+    "p>=1 convexity proof via convex scalar powers",
+    "p<1 triangle counterexample for dimension >=2",
+    "l0 support union implies subadditivity; scaling violates homogeneity",
+    "p to infinity via max <= lp <= n^(1/p) max",
+    "p to zero: sum of powers tends to support count, root does not",
+    "p to zero balls: bounded axis segments, not the unbounded l0 set"
+  ],
+  "limits": "Numerical checks support the written algebra; they are not general proofs."
+}

@@ -1,0 +1,120 @@
+{
+  "capture_date": "2026-11-11",
+  "source_key": "pca-enrich-rnaseq-digest-2026-11-11",
+  "ubuntu_root": "/home/hongrui_liu/learning/tsne/rna-seq-tsne",
+  "upstream": "https://github.com/berenslab/rna-seq-tsne.git",
+  "main_notebook_status": "local untracked adaptation; all 16 cells and 7 PNG outputs read",
+  "supplementary_scope": {
+    "demo.ipynb": "cells 9 and 14-17 used for comparison",
+    "umap-comparison.ipynb": "cells 3-6 used for metrics, preprocessing, and parameter-label comparison"
+  },
+  "slides": {
+    "url": "https://docs.google.com/presentation/d/1DLhkGDhKqwqpm--8rLNCNh243BtSmmCrJLuGnqupzQg/edit",
+    "title": "Dimensionality Reduction Methods",
+    "pages": 36,
+    "coverage": "Static pages inspected; PCA/t-SNE/UMAP and RNA-seq material selected. Embedded videos not recovered."
+  },
+  "video": {
+    "url": "https://www.youtube.com/watch?v=o_cAOa5fMhE&t=951s",
+    "title": "Latent Space Visualisation: PCA, t-SNE, UMAP | Deep Learning Animated",
+    "channel": "Deepia",
+    "coverage": "Exported English transcript, all returned lines 0:02-18:29; not a full visual audit"
+  },
+  "files": [
+    {
+      "path": "raw/articles/2026-11-11-dimensionality-reduction-slides.pdf",
+      "bytes": 1870056,
+      "sha256": "791ad7fc98b3cc514ea0fdf58455386946c2166c366c587d1128a45ec83658b7"
+    },
+    {
+      "path": "raw/articles/2026-11-11-Deepia-PCA-tSNE-UMAP-transcript.txt",
+      "bytes": 19249,
+      "sha256": "27e8fd7451b362c6cd900954ec933b976dbd34215617337158cfb53f8cddda3a"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/2026-11-11-rna-seq-tsne-readme.md",
+      "bytes": 1887,
+      "sha256": "4a9b9d1979e60d0d57d2da27e354484c0e745e8f14e95cf26266529ec50c54d4"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/capture-manifest.json",
+      "bytes": 1593,
+      "sha256": "6f6f6dc312f0608602a78dc0e3ecb9e7f113bd2423fde16e3d3734e348debbfb"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/demo.ipynb",
+      "bytes": 1387868,
+      "sha256": "42af61b6fda965722ad386c682128bf5374feba5af32706c7d6868eafd20deff"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/pca_plot.pdf",
+      "bytes": 446021,
+      "sha256": "de25408d8c2e7d269378f645a1cab4496c52be489dbab352f76caebfdb56a179"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/PCA_tSNE_UMAP.ipynb",
+      "bytes": 680216,
+      "sha256": "a0ce9cb168b1c61f5374ff5e15076bcb9747f9c22a31c4116152c362ceefc5f3"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/rnaseqTools.py",
+      "bytes": 10912,
+      "sha256": "be789e2b3120d3c3843ecbeec1138e876c9f407d98ed2b22b841bbce13f9e668"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/tSNE_plot.pdf",
+      "bytes": 461986,
+      "sha256": "8ea8897625c346aed8b2f3e2abbd64ee3dc2b8d6405f4c9c4b195846e0704b9c"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/tSNE_plot_high_perplexity.pdf",
+      "bytes": 464398,
+      "sha256": "3c247d2858547bacc4f90c78ae3958aa556c2a90eb1fc7f409623a208c32a4d4"
+    },
+    {
+      "path": "raw/notebooks/2026-11-11-rna-seq-tsne/umap-comparison.ipynb",
+      "bytes": 699280,
+      "sha256": "77243b2b2bee1e095e5791f20f78338a43e69e2b63081c2b181f148e349d1a16"
+    },
+    {
+      "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-07-output-1.png",
+      "bytes": 42293,
+      "sha256": "f6aac8ee08175e7ffbf3b210101a5ed9866ac56e6a4187a57f875c9c6ac26edb"
+    },
+    {
+      "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-09-output-1.png",
+      "bytes": 44928,
+      "sha256": "4fe94d7c7f3da8336dc03e8894cbf3c7f54587bdbb94e01dc2d8b5258aa893f9"
+    },
+    {
+      "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-10-output-2.png",
+      "bytes": 31438,
+      "sha256": "ddc35cfa7aa3ba4bade8868b123d826b760ece02a320c6c5c9ac98ecf6dd5c62"
+    },
+    {
+      "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-11-output-3.png",
+      "bytes": 47310,
+      "sha256": "c74f5db8efcf3369b7cffedf3881f169e8760fc7773495617da8c12a575fbbde"
+    },
+    {
+      "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-12-output-2.png",
+      "bytes": 121262,
+      "sha256": "c8117c82b5265e17ad22bfbcd2394b1ea189ff277aa88c7c7124e47a9fa17af4"
+    },
+    {
+      "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-13-output-1.png",
+      "bytes": 133264,
+      "sha256": "4d0ee52f5fb179052a0e3c0d917488bf13faa6484a3b52a33f0c9e18152fc374"
+    },
+    {
+      "path": "raw/assets/2026-11-11-rna-seq-PCA-tSNE-UMAP-cell-16-output-1.png",
+      "bytes": 69958,
+      "sha256": "09d204ab292f340ac074677a7b8b9625b1bd471ea3eb81fdb8aba70af68d45bc"
+    }
+  ]
+}

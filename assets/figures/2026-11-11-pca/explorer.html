@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>PCA - find the most useful line</title><style>:root{font-family:system-ui,sans-serif;color:#263447;background:#fff;font-size:16px}*{box-sizing:border-box}body{margin:0}main{max-width:1100px;margin:auto;padding:20px}h1{font-size:clamp(1.45rem,3vw,2rem);margin:.2em 0}h2{font-size:1rem;margin:.3em 0}p{line-height:1.5}.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#2864a0;margin:0}.controls{background:#f3f6f8;padding:16px;border-radius:10px}.controls label{font-weight:650;display:block}.controls input{width:100%;accent-color:#d97724;margin:14px 0}.buttons{display:flex;gap:8px;flex-wrap:wrap}button{padding:9px 13px;border:1px solid #bfcbd6;background:white;color:#263447;border-radius:6px;font:inherit;cursor:pointer}button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #2864a0;outline-offset:3px}button:hover{background:#e8f0f6}.plots{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}.plots section{min-width:0}svg{width:100%;height:auto;display:block}svg text{font-family:system-ui,sans-serif;fill:#263447}.readouts{display:grid;gap:3px}.readouts p{display:flex;justify-content:space-between;gap:10px;margin:3px 0}.orange{color:#b45d13}.blue{color:#2864a0}.equation,.try{background:#f3f6f8;padding:12px;border-radius:6px;font-size:.9rem}details{font-size:.9rem;border-top:1px solid #ddd;padding-top:12px}summary{cursor:pointer;font-weight:600}#hint{font-size:.9rem;color:#158477;min-height:3em}@media(max-width:680px){main{padding:12px}.plots{grid-template-columns:1fr;gap:12px}.plots section{max-width:540px;width:100%;margin:auto}.readouts p{font-size:.95rem}}
+</style></head><body><main>
+  <header><p class="eyebrow">PCA: two measurements, one coordinate</p><h1>Find the most useful line</h1>
+  <p>Twelve fixed samples. Blue points are centered measurements. Orange points are their perpendicular projections; gray segments are reconstruction errors.</p></header>
+  <div class="controls"><label for="angle">Line angle: <output id="angle-label">45°</output></label>
+    <input id="angle" type="range" min="0" max="180" step="1" value="45">
+    <div class="buttons"><button id="pc1">Best line: PC1</button><button id="horizontal">Horizontal</button><button id="pc2">Perpendicular: PC2</button></div>
+  </div>
+  <div class="plots"><section><h2>Project in measurement space</h2><svg id="cloud" viewBox="0 0 440 440" role="img" aria-label="Centered measurements and their projections onto a rotating line"></svg></section>
+    <section><h2>Read the new coordinates</h2><svg id="strip" viewBox="0 0 440 200" role="img" aria-label="One dimensional score plot"></svg>
+    <div class="readouts" aria-live="polite"><p><span class="orange">Retained variance</span><strong id="variance"></strong></p><p><span class="blue">Squared error / 11</span><strong id="error"></strong></p><p><span>Fraction retained</span><strong id="fraction"></strong></p></div>
+    <p class="equation">Retained variance + squared error / 11 = <b>17.6364</b></p><p id="hint"></p></section></div>
+  <p class="try">Try the horizontal line, then PC1. What happens to the orange spread and the gray distances? Rotating to PC2 reverses the tradeoff.</p>
+  <details><summary>What are the points and units?</summary><p>Each point is one sample with two readings in the same measurement units. Column means (10, 20) have already been removed. The plot has equal horizontal and vertical scales. Scores have measurement units; variance and squared error have squared units. The sample variance divisor is n − 1 = 11.</p><p>The direction is v = (cos θ, sin θ). Each score is t = x · v and its reconstructed point is t v. This original deterministic example is the one used throughout the note.</p></details>
+</main>
+<script>const PcaMath = (() => {
+  const a = [-6,-5,-4,-3,-2,-1,1,2,3,4,5,6];
+  const b = [1,-1,1,-1,1,-1,-1,1,-1,1,-1,1];
+  const points = a.map((x,i)=>[(x+b[i])/Math.SQRT2,(x-b[i])/Math.SQRT2]);
+  function project(degrees){
+    const angle=degrees*Math.PI/180, v=[Math.cos(angle),Math.sin(angle)];
+    const scores=points.map(p=>p[0]*v[0]+p[1]*v[1]);
+    const feet=scores.map(t=>v.map(x=>x*t));
+    const ss=scores.reduce((sum,t)=>sum+t*t,0);
+    const error=points.reduce((sum,p,i)=>sum+(p[0]-feet[i][0])**2+(p[1]-feet[i][1])**2,0);
+    return {v,scores,feet,variance:ss/11,error:error/11,fraction:ss/194};
+  }
+  return {points,project};
+})();
+if(typeof module!=='undefined') module.exports=PcaMath;
+
+;
+(() => {
+const cloud=document.getElementById('cloud'),strip=document.getElementById('strip');
+const angle=document.getElementById('angle');
+const line=(x1,y1,x2,y2,color,width=1)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${width}"/>`;
+const text=(x,y,label,anchor='middle')=>`<text x="${x}" y="${y}" text-anchor="${anchor}" font-size="13">${label}</text>`;
+const dot=(x,y,color,r=4)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${color}"/>`;
+const pos=p=>[220+p[0]*28,205-p[1]*28];
+function draw(){
+ const degrees=Number(angle.value),s=PcaMath.project(degrees);
+ document.getElementById('angle-label').textContent=degrees+'°';
+ let plot='';
+ for(let t=-6;t<=6;t+=2){plot+=line(...pos([t,-6]),...pos([t,6]),'#e9edf0');plot+=line(...pos([-6,t]),...pos([6,t]),'#e9edf0');plot+=text(pos([t,0])[0],390,t);plot+=text(35,pos([0,t])[1]+4,t);}
+ plot+=line(...pos([-6,0]),...pos([6,0]),'#b8c3ce');plot+=line(...pos([0,-6]),...pos([0,6]),'#b8c3ce');
+ plot+=line(...pos(s.v.map(x=>-7*x)),...pos(s.v.map(x=>7*x)),'#d97724',2.5);
+ PcaMath.points.forEach((p,i)=>{plot+=line(...pos(p),...pos(s.feet[i]),'#929da8');});
+ PcaMath.points.forEach(p=>{plot+=dot(...pos(p),'#2864a0',4.5);});
+ s.feet.forEach(p=>{plot+=dot(...pos(p),'#d97724',3.8);});
+ plot+=text(220,421,'Measurement A, centered');
+ plot+='<text transform="translate(14 205) rotate(-90)" text-anchor="middle" font-size="13">Measurement B, centered</text>';
+ cloud.innerHTML=plot;
+ let row=line(35,80,405,80,'#d97724',2);
+ for(let t=-6;t<=6;t+=2){row+=line(220+t*27,75,220+t*27,85,'#263447');row+=text(220+t*27,111,t);}
+ // Vertical offsets only separate coincident markers; vertical position is not a second score.
+ s.scores.forEach((t,i)=>{row+=dot(220+t*27,80+(i%3-1)*13,'#d97724',5);});
+ row+=text(220,144,'One score per sample');row+=text(220,170,'Small vertical offsets reveal overlapping dots');
+ strip.innerHTML=row;
+ document.getElementById('variance').textContent=s.variance.toFixed(4);
+ document.getElementById('error').textContent=s.error.toFixed(4);
+ document.getElementById('fraction').textContent=(100*s.fraction).toFixed(2)+'%';
+ document.getElementById('hint').textContent=degrees===45?'PC1 keeps the most variance. Its reconstruction has the least squared error.':degrees===135?'This is PC2. Keeping this direction alone discards the larger PC1 variation.':'Rotate the line toward 45° to retain more of this dataset’s variation.';
+}
+angle.addEventListener('input',draw);
+for(const [id,value] of [['pc1',45],['horizontal',0],['pc2',135]])document.getElementById(id).addEventListener('click',()=>{angle.value=value;draw();});
+draw();
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>

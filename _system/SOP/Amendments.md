@@ -3,7 +3,7 @@ id: system-sop-amendments
 title: SOP amendments
 layer: auxiliary
 created: '2026-11-10'
-updated: '2026-11-11'
+updated: '2026-11-12'
 tags:
 - atlas/auxiliary
 - system/sop
@@ -50,6 +50,8 @@ Up to A17, each amended passage in `AGENTS.md` also carried an inline marker suc
 | A17 | 2026-11-10 | Claude (Opus 5.5) | §3 | New plugin command **New learning note here** (default `Ctrl/Cmd+Alt+N`) creates a valid draft learning note homed on the current backbone page and opens it (§3). New `AtlasCore.newNoteDraft`, checked in `test-model.cjs`: the draft compiles cleanly at its home, and taken names, empty titles and non-backbone homes are refused. | User request: a quick way to start a note under the backbone page in front of them, instead of filling the template by hand. |
 | A18 | 2026-11-10 | Claude (Opus 5.5) | all; §13 | SOP made concise (about 6,400 → 3,500 words) with the same rules and the same §1–§14 numbering. The amendment table and signing rule moved here from §13, and the 51 inline markers were removed in favour of this ledger's **Sections** column. Duplicate detail was replaced by pointers: plugin behaviour to `_system/Map implementation.md` (now also covering the A7 halo), check details to `_system/Claude/Validator.md`, and the `connect` and `enrich` procedures to their skills. `SOP draft.md` moved to `_system/SOP/history/`. The redundant `_system/Final SOP.md` pointer was deleted. The supporting `animate-geometry` skill is now listed in §14. Supersedes A1's rule that markers must stay inline. | User request: the SOP had become long. Rules should stay concise in `AGENTS.md`, which Codex loads every session, and amendments should be signed separately in their own folder. The user approved removing the inline markers. |
 | A19 | 2026-11-11 | Codex | §14 | Extended the supporting `animate-geometry` description to include offline interactive explorers and Obsidian embeds. The shared skill now routes between static figures, staged GIFs and parameter-driven HTML, with a reusable builder and focused interactive reference. Existing authorization, source preservation and commit rules remain unchanged. | User liked the Fisher sliders, requested a reusable skill update and an interactive reconstruction of the joint-density screenshot. Extending the existing skill avoids a second overlapping command. |
+| A20 | 2026-11-12 | Codex | §9 | Preserve course-slide originals and selected source renders in dedicated Git-ignored private directories; exclude both from public exports, replace private embeds/links with source citations in any future export, and retain author/page provenance. No disguise-by-reformatting or retrospective movement of older originals. | User requested private handling of supplied U of T slides and a future default during the GP lecture digest. |
+| A21 | 2026-11-12 | Codex | §9 | Correct A20: only original course-slide PDFs are ignored and excluded from public exports. Handwritten images and selected page renders can be tracked and included with the notes. Keep existing source bytes and paths. | User clarified: “hand written images don't need to be git ignored. only the original pdf”. |
 
 ## Connections
 

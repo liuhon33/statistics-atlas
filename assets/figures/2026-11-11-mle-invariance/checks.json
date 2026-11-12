@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "data_cm": [
+    8.0,
+    12.0
+  ],
+  "model": "Independent Normal(10 cm, v); known mean; v > 0",
+  "variance_mle_cm2": 4.0,
+  "standard_deviation_mle_cm": 2.0,
+  "max_relative_likelihood_identity_error": 1.1102230246251565e-15,
+  "independent_numeric_variance_mle": 4.000000060458061,
+  "independent_numeric_sd_mle": 2.000000027525052,
+  "analytic_certificate": "log(r) <= r - 1 for r > 0; r = 4/v",
+  "axis_ranges": {
+    "variance_cm2": [
+      0,
+      16
+    ],
+    "sd_cm": [
+      0,
+      4
+    ]
+  },
+  "matching_parameter_values": [
+    [
+      1,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      9,
+      3
+    ]
+  ],
+  "likelihood_scale": "Same likelihood divided by its common maximum; not a probability density over the parameter",
+  "scope": "Constructed example and coordinate identity, not empirical model validation",
+  "svg_xml": "PASS",
+  "png_integrity": "PASS"
+}

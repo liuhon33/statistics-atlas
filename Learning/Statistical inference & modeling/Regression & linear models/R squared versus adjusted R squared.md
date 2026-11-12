@@ -9,7 +9,7 @@ study_band: U
 note_types: [topic-note, insight]
 source_format: conversation
 created: 2026-11-09
-updated: 2026-11-09
+updated: 2026-11-12
 status: active
 verification: checked
 aliases: [R2 versus adjusted R2]
@@ -17,6 +17,8 @@ tags: [atlas/learning, subject/statistics, topic/regression]
 connections:
   - "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Cross-validation]]"
   - "[[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Overfitting]]"
+  - "[[Learning/Statistical computing & learning/Statistical learning & prediction/Likelihood and information criteria - AIC and BIC]]"
+  - "[[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared]]"
 ---
 
 # R squared versus adjusted R squared
@@ -57,6 +59,10 @@ Suppose $n=100$, $\mathrm{SST}=100$, and we add one predictor:
 
 **The training fit improves slightly, but not enough to justify the extra predictor by adjusted $R^2$.** Here adjusted $R^2$ would increase only if the new SSE were below $40(96/97)\approx39.588$.
 
+With one added predictor, this is exactly [[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared#4. One restriction can occur inside a many-predictor model|partial F > 1]].
+
+Compare the [[Learning/Statistical computing & learning/Statistical learning & prediction/Likelihood and information criteria - AIC and BIC#6. Exactly how much improvement pays for another parameter?|AIC/BIC complexity penalties]].
+
 ## What to remember
 
 - Under the stated setup, $0\le R^2\le1$ and $R^2_{\mathrm{adj}}\le R^2$; adjusted $R^2$ can be negative. Test-set $R^2$ can also be negative, and the training monotonicity argument does not apply there.
@@ -67,6 +73,10 @@ Suppose $n=100$, $\mathrm{SST}=100$, and we add one predictor:
 
 - [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Validation & model selection/Cross-validation|Cross-validation]] — Evaluates performance on held-out observations rather than relying on a degrees-of-freedom correction to training fit.
 - [[Backbone/Statistical computing & learning/Statistical learning & prediction/Learning objectives & evaluation/Risk, fit & generalization/Overfitting|Overfitting]] — Adding predictors can improve training $R^2$ without improving generalization; adjusted $R^2$ penalizes complexity but does not eliminate overfitting.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Likelihood and information criteria - AIC and BIC|Likelihood and information criteria - AIC and BIC]] — Both adjust regression fit for added parameters, but use different penalties and can rank the same models differently.
+
+- [[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared|Why one restriction gives F equals t squared]] — For nested OLS fits on the same data, adjusted R² increases after adding one predictor exactly when its partial F exceeds 1; this is not a fixed-significance-level rule.
 
 ## Origin
 

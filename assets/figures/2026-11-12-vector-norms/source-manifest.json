@@ -1,0 +1,68 @@
+{
+  "capture_date": "2026-11-12",
+  "chat_id": "01a1ce34-7a25-7142-95d7-4f741fea1db6",
+  "video_id": "NcPUI7aPFhA",
+  "title": "Lecture 8: Norms of Vectors and Matrices",
+  "instructor": "Gilbert Strang",
+  "course": "MIT 18.065, Spring 2018",
+  "requested_seconds": [
+    560,
+    1110
+  ],
+  "caption_url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/616222274741581db8e343fa71d465b9_NcPUI7aPFhA.vtt",
+  "caption_kind": "MIT OCW official timed caption file, original downloaded bytes",
+  "coverage": {
+    "intersecting_cues": 138,
+    "first_cue": {
+      "start": "00:09:18.830",
+      "end": "00:09:21.900"
+    },
+    "last_cue": {
+      "start": "00:18:24.180",
+      "end": "00:18:30.030"
+    },
+    "context_only_read_seconds": {
+      "first_cue_start": "00:09:12.800",
+      "last_cue_start": "00:18:36.840",
+      "last_cue_end": "00:18:41.610",
+      "note": "Adjacent context only; digest boundary remains 9:20-18:30."
+    },
+    "selected_board_times": [
+      "17:50",
+      "18:26"
+    ],
+    "full_video_viewed": false,
+    "full_caption_file_read": false,
+    "excluded": "S-norm definition after 18:30; later matrix norms; regularization/overfitting connections"
+  },
+  "files": [
+    {
+      "path": "raw/articles/2026-11-12-MIT18065-L08-norms-official-captions.vtt",
+      "bytes": 51878,
+      "sha256": "933abe9a64df080db3ad25577ef580bdf7cf5c3a24f7dfab35913c2e99a1ac3c"
+    },
+    {
+      "path": "raw/assets/2026-11-12-Norms-I01-unit-balls-at-17m50.png",
+      "bytes": 128823,
+      "sha256": "058d524d608b14e7d054f8ae10d316e9f96b6bff4f19fb96278b81421df5627c"
+    },
+    {
+      "path": "raw/assets/2026-11-12-Norms-I02-board-at-18m26.png",
+      "bytes": 128958,
+      "sha256": "bfaf5003cdbb90bb9a7ad1255960a72d5364f46c2c0c0268be8301fd0a2cfb03"
+    }
+  ],
+  "screenshots": "Unretouched browser viewport captures, paused at observed player times; source screenshots linked but not embedded in the explanation.",
+  "supporting_references": [
+    {
+      "url": "https://www.math.uh.edu/~giles/PDFpapers/Lects.pdf",
+      "read": "Lecture 1, pp. 2-3: norm axioms, lp family, p<1, monotonicity"
+    },
+    {
+      "url": "https://e.math.cornell.edu/people/belk/measuretheory/Inequalities.pdf",
+      "read": "pp. 9-11 text: norm definition, Minkowski, convex unit balls",
+      "correction": "p. 10 radius 2 sentence is a source typo; a Euclidean unit disk has radius 1."
+    }
+  ],
+  "authorship": "Lecture ideas are paraphrased. Expanded proofs, examples, zero-limit distinction and illustrations are agent additions."
+}

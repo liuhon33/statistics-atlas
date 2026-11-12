@@ -1,0 +1,46 @@
+{
+  "source": "assets/figures/2026-11-10-testing-power/roc-error-rates.svg",
+  "source_sha256": "eb4e2fe0de2171ff3589199fdf21d7fb0cdb9b78b84d23d6afa27546bb6fd05d",
+  "method": "Outer SVG viewport/dimensions changed; line-end whitespace trimmed; descendant geometry/labels unchanged",
+  "panels": {
+    "roc-operating-point.svg": {
+      "viewBox": [
+        615,
+        70,
+        485,
+        365
+      ],
+      "sha256": "9c9a67f6bbd8e6b2c965822f8cdf7cf1373bfeda0d292593f258ec1f93241989"
+    },
+    "two-error-areas.svg": {
+      "viewBox": [
+        48,
+        70,
+        470,
+        333
+      ],
+      "sha256": "4f139bbc3d1adbe9cf7696b4e27e2f0f156a32ee42eda9c6fc4e7d607447f716"
+    }
+  },
+  "exact_rates": {
+    "recall_power": "4/5",
+    "false_positive_rate": "1/20",
+    "type_II": "1/5",
+    "specificity": "19/20",
+    "precision": "16/25",
+    "accuracy": "187/200"
+  },
+  "precision_at_one_percent_prevalence": "16/115",
+  "normal_model": {
+    "cutoff": 1.6448536269514715,
+    "separation": 2.486474860524386,
+    "FPR": 0.050000000000000155,
+    "power": 0.8,
+    "AUC": 0.9606435325062272
+  },
+  "empirical_AUC_with_ties": {
+    "pair_counting": "7/9",
+    "ROC_trapezoids": "7/9"
+  },
+  "checks": "PASS: XML; crop bounds; unchanged source/geometry; exact count fractions; complements; Bayes; AUC with ties; 2001 monotone ROC points"
+}

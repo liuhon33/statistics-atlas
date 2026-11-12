@@ -1,0 +1,226 @@
+YouTube transcript
+Video ID: o_cAOa5fMhE
+Language: en
+Captions: authored or unspecified
+
+[0:02] You've probably seen these kind of images representing the latent
+[0:05] space of a deep neural network, but have you ever wondered how they are created ?
+[0:09] Well reducing data from 50 dimensions to just 2 or 3 is no simple task.
+[0:14] Today, we'll explore three famous and powerful dimensionality reduction techniques:
+[0:18] PCA, t-SNE, and UMAP. By the end of the video,
+[0:23] you'll know how each of these methods work, and what type of data they can handle.
+[0:36] First, let's talk about PCA, or Principal Component Analysis.
+[0:41] Imagine we have gathered data on the weight and height of a thousand people.
+[0:45] We can plot this data on a 2D graph to observe how it is distributed.
+[0:51] And additionally, we can normalize the data to range from 0 to 1.
+[0:56] You can see that the data varies along two main directions represented
+[1:00] by the red and green arrows, and the variation along the
+[1:03] red arrow seems more significant than that along the green arrow.
+[1:08] These directions are known as the 'Principal Components' in Principal Component Analysis.
+[1:13] Now, suppose we want to represent this 2D data on a single axis.
+[1:17] One way to do it is to project the data onto the largest principal component, which is the
+[1:22] axis given by the red arrow. And here is the final 1D
+[1:25] graph representing our population. However, you might wonder why we can't
+[1:30] just project it onto the horizontal axis ? Indeed, if we revert back to our original
+[1:35] distribution, it seems that just projecting to this axis yields a very similar result.
+[1:41] Let's change the dataset: imagine we have data on the blood pressure
+[1:45] and cholesterol levels of several patients. When we plot this distribution, we observe that
+[1:50] the patients form three distinct clusters. If we project the data along the x-axis,
+[1:56] we only see two clusters, meaning we've combined two different populations
+[2:00] in our low-dimensional representation. And if we project along the other axis,
+[2:04] we run into the same issue. Now what happens if we project
+[2:08] onto the principal component? Well, it seems that this time,
+[2:12] we successfully retain all three clusters in our low-dimensional representation.
+[2:17] This low-dimensional representation successfully preserves the main feature of our original data,
+[2:22] which is much better than the simple projections we tried previously.
+[2:26] Now that we've seen some examples,
+[2:28] let's see how we can calculate these principal components in practice.
+[2:35] The first step in Principal Component Analysis,
+[2:37] is to calculate the covariance matrix of the data set.
+[2:41] Let's look at a simple example using our previous 2D data set.
+[2:44] To calculate the covariance matrix, we first need to centre our data.
+[2:49] This means calculating the mean of each variable, and then subtracting
+[2:52] that mean from each data point. Next, we multiply the transpose of
+[2:59] our centred data by the centred data itself and then scale it by the number of samples.
+[3:05] Since we are working with 2D data, we end up with this nice and simple 2 by 2 matrix,
+[3:10] which is called the covariance matrix. The second step is to find the eigenvectors
+[3:15] of the covariance matrix, which are the vectors whose direction remains unchanged
+[3:20] when the matrix is applied to them. These are precisely the vectors
+[3:24] that satisfy this equation. Solving for these vectors is
+[3:27] a very common task in linear algebra, and can be done using various methods.
+[3:32] Once we have the eigenvectors, we sort them in descending order by their eigenvalues.
+[3:37] The eigenvectors with the largest eigenvalues are our 'principal components'.
+[3:42] Finally, we create a matrix to project our data onto the principal components, finishing the PCA.
+[3:52] There are lots of advantages to using Principal Components
+[3:55] Analysis instead of other more complex methods. The main benefit is that it relies only on basic
+[4:02] linear algebra, which makes it very fast. Indeed, if we look at the time complexity
+[4:07] for a second, PCA is linear in terms of the number of samples.
+[4:11] This means that the time required to project the data increases
+[4:14] proportionally with the dataset size. The other great thing about PCA is that
+[4:21] when you use it to visualise the latent space of an auto-encoder,
+[4:24] you also get the eigenvalue information. This means we can now identify which
+[4:29] dimensions of our latent space are the most important, and by how much.
+[4:33] However, there is one thing that PCA struggles with: it doesn't work well with non-linear data
+[4:38] because it relies on linear projections. Take spiral-shaped data, for example.
+[4:44] PCA struggles to separate such data into distinct clusters effectively.
+[4:49] The problem is not the direction of projection, but the fact that we are
+[4:52] using a linear operation at all, whereas the relationship between the data is non-linear.
+[4:59] Despite this, it is still the fastest and most interpretable method for dimensionality
+[5:03] reduction, which is why it is used so widely in research and engineering.
+[5:07] However, there is still a need for methods that can effectively deal with more complex data,
+[5:11] as the relationship between latent variables may not be linear.
+[5:16] Another well-known method for visualising latent space is t-SNE, but before we look at
+[5:21] how it works, let's give it some background. t-SNE stands for t-Distributed Stochastic
+[5:27] Neighbour Embedding and was developed in 2008 by Laurens van der Maaten and Geoffrey Hinton.
+[5:33] Geoffrey Hinton is a big name in deep learning, often referred to
+[5:36] as one of the "godfathers" of the field, along with Yoshua Bengio and Yann LeCun.
+[5:42] Hinton has come up with several key ideas in deep learning, such as backpropagation,
+[5:47] dropout, autoencoders, knowledge distillation, and contrastive learning, and the list goes on and on.
+[5:54] t-SNE is actually an improved version of an earlier technique called SNE,
+[5:58] which Hinton published in 2002. We'll start by looking at the
+[6:02] basics of SNE, and then quickly go over what t-SNE adds to the mix.
+[6:07] The main idea behind SNE is pretty straightforward: points that are
+[6:11] close to each other in high-dimensional space should also be close to each other
+[6:15] when we bring them down to a lower dimension. To make this happen, we measure the distance
+[6:20] between a point and its neighbors in the high-dimensional space,
+[6:24] and then we try to make sure those distances stay similar in the lower-dimensional space.
+[6:30] We do this by using a special kind of loss function that tells us how different the
+[6:34] distances are in the high-dimensional and low-dimensional representations.
+[6:39] Next, we simply minimize this loss function to improve our low-dimensional representation.
+[6:44] Let's take a look at how we actually calculate all this in practice.
+[6:48] The first step in the SNE algorithm is to turn the distances between a point and its
+[6:53] neighbors into a probability distribution. More specifically, we convert these distances
+[6:58] into a Gaussian distribution. You can think of this Gaussian
+[7:02] distribution as the probability that a blue point is a neighbour of the red point.
+[7:07] To get the probability for each point in our high-dimensional space, we use this formula,
+[7:12] which is basically the exponential function applied to the distance between the points.
+[7:17] If you know a bit about Gaussians, you’ll know that the shape of the bell curve
+[7:21] changes based on the variance sigma. The shape of this Gaussian is crucial
+[7:26] because if it's wider, more points will be considered as neighbors of the red point.
+[7:31] And if it's narrow, only the closest points will be considered as neighbors.
+[7:35] We adjust the variance of this Gaussian using a hyperparameter called "Perplexity,"
+[7:40] which we'll talk about later. Now that we have the probabilities
+[7:43] for the neighbors of this point, we repeat the same process for each
+[7:46] point in our high dimensional representation. To make all these probabilities add up to one,
+[7:52] we normalise each Gaussian by the sum of all the others, which is very
+[7:56] costly in terms of computations. In our low-dimensional space,
+[8:00] we start by placing points randomly. Then, we repeat the same process we
+[8:05] just did with our high-dimensional data: we calculate the same kind of probabilities
+[8:09] based on the distances between these points. As you can see, it is exactly the same formula,
+[8:15] except we use different variables since we describe the low-dimensional representation.
+[8:21] Now that we have two different probability distributions representing our high-dimensional
+[8:25] and low-dimensional spaces, let's see how we bring each of these distribution closer together.
+[8:32] The most common way to measure how similar two probability distributions are is by
+[8:37] using the Kullback-Leibler divergence. You can think of it as a kind of distance,
+[8:41] but between probability distributions. If the KL divergence is large,
+[8:46] the distributions are very different and if it small, they're very similar.
+[8:50] For instance let's take these two Gaussians: the Kullback-Leibler divergence between these two
+[8:55] functions is the blue area under the blue curve. As these Gaussians move further apart,
+[9:00] the KL divergence increases, and as they move closer together, the KL decreases.
+[9:06] Finally if the two functions match perfectly, the KL is 0.
+[9:10] We can explicitly compute the KL divergence between the distribution representing our
+[9:15] high-dimensional space and the distribution representing our low-dimensional space.
+[9:21] Then we can calculate the gradient of this KL divergence with respect to our low-dimensional
+[9:25] embeddings, which gives us this nice formula. This allows us to adjust the low-dimensional
+[9:30] representation to be closer to our original distribution.
+[9:35] Let's take the example of these four clusters, and see how their
+[9:38] 1D representation evolves using t-SNE. As you can see, after 80 iterations
+[9:59] we indeed have 4 clusters, just like in the higher dimensional space, which is already
+[10:03] something that PCA would not be able to do. So now that we saw the whole process,
+[10:09] what about that perplexity hyperparameter we mentioned earlier?
+[10:13] Perplexity helps us choose the correct sigma parameter, which controls the width of the
+[10:18] Gaussians in the high-dimensional representation. More precisely, it is calculated with the entropy
+[10:24] of each distribution P using this formula. So what happens in practice is that the
+[10:30] algorithm iteratively selects different values of sigma until this quantity is roughly equal
+[10:35] to the perplexity chosen by the user. Theoretically, the perplexity should
+[10:40] represent the number of other points that a given point will consider as neighbors,
+[10:44] but in practice this is not so obvious. Let's take the example of the mnist dataset:
+[10:50] here is the 2D representation computed by SNE with a perplexity of 30.
+[10:55] With its default parameters, the algorithm already provides a decent visualisation,
+[11:00] with some easily identifiable clusters. Let's increase the perplexity
+[11:04] and see what happens. As the perplexity increases,
+[11:16] the effects on the size of the clusters and their distribution is not all that clear, but
+[11:20] the clusters are supposed to be more diffused now. Perplexity is the most important parameter of SNE,
+[11:26] but you kind of have to test different values, and adjust until you are happy with the visualisation.
+[11:33] As you may have guessed the main advantage of SNE is that it can handle non-linear data,
+[11:37] which is a big improvement over PCA. For example, take this spring-like 3D dataset:
+[11:44] on the right is the 2D representation of this dataset using PCA and SNE.
+[11:50] As you can see, PCA produces only one mixed-up cluster, whereas SNE successfully separates the
+[11:56] two classes in the 2D representation. Even if the visualisation is better,
+[12:02] SNE has one major flaw, it runs terribly slowly. t-SNE introduces several changes to speed up and
+[12:09] improve the visualisations of SNE, but we won't cover all of these in this video.
+[12:15] The most important tweaks are in the probability distributions, like using symmetric distributions
+[12:20] in the high-dimensional space and Student's t-distribution in the low-dimensional space.
+[12:25] Indeed these distributions are easier to compute because they don't use the exponential function.
+[12:31] Even with many modifications and hacks, t-SNE is still very slow compared to PCA: as you can see
+[12:38] when running it on 10 thousands MNIST samples, it takes almost 90 seconds to get the result.
+[12:44] Another drawback of t-SNE is the perplexity hyperparameter.
+[12:48] The big problem with perplexity is that changing this parameter even a little can
+[12:52] completely mess up our visualisation. For instance here we just went from
+[12:56] a perplexity of 30 to a perplexity of 31, and many clusters have completely changed.
+[13:03] This means that when using t-SNE, we have to check the visualization each time we
+[13:08] change the perplexity until we get a good representation, which is very time-consuming.
+[13:14] And the bigger the perplexity, the slower the algorithm runs,
+[13:17] making it even harder to tune this parameter. Still, for a long time, t-SNE was the most widely
+[13:23] used visualization method because it could handle non-linear relationships way better than PCA.
+[13:30] In 2018, a new dimensionality reduction technique called UMAP was introduced, which stands for
+[13:35] Uniform Manifold Approximation and Projection. While the algorithm has a strong mathematical
+[13:40] foundation, particularly in topology and category theory, we won’t be diving into
+[13:45] the theoretical details in this video. If you're curious about the deeper
+[13:50] mathematical justifications, there's a link to the original paper in the description.
+[13:55] Now, let’s break down the main steps of the algorithm.
+[13:58] The core idea of this algorithm is somewhat similar to t-SNE: we look at the distance to
+[14:03] each neighbor of every high-dimensional sample and aim for a low-dimensional representation
+[14:08] that roughly matches those distances. But instead of using Gaussians and probability
+[14:13] distributions, we'll use graphs to represent both our high-dimensional and low-dimensional data.
+[14:19] So, how exactly do we compute these graphs? Well first, we will need to find the
+[14:23] nearest neighbors of each samples. There are several algorithms to achieve this, all
+[14:29] based on comparing the distances between points. For each neighbour, we construct an edge between
+[14:34] the two points and move on to the next neighbour until we have k neighbours.
+[14:43] In this example, k is equal to 3: keep in mind that this
+[14:46] is in fact the main hyperparameter of UMAP. This gives us a first binary graph, which we'll
+[14:53] transform into a weighted graph to represent how close each point is to its neighbors.
+[14:58] We achieve this by applying an exponential decay over the distances
+[15:02] between a point and its neighbors. We offset this decay by the distance
+[15:06] rho to the closest neighbor so that the closest neighbor keeps a weight of 1.
+[15:11] As you can see, we have a similar formula to t-SNE, but we don't normalize this quantity,
+[15:16] making it much faster to compute. Now that we have the weights for
+[15:20] this sample, we will repeat the same process for each of the other samples.
+[15:25] Although we only show three graphs here, we end up with one weighted graph per sample, which we need
+[15:30] to combine into a single weighted graph. So, how do we proceed ?
+[15:36] Well, to keep a weighted binary graph, we need to symmetrize it so that there's only
+[15:41] one edge between any two points instead of two. We simply use this formula that does just that,
+[15:46] combining edges and keeping the weights between 0 and 1.
+[15:50] For instance if we want to combine the edges between the white and red vertices,
+[15:55] we simply take their respective weight and apply the formula, and end up with a weight of 1.
+[16:02] Now that we have our final graph construction, we repeat the same process for our initial
+[16:06] low-dimensional representation, which gives us another weighted binary graph.
+[16:12] So, can you guess what the next step of the algorithm will be?
+[16:16] You've guessed right, we'll try to match both representations with the help of a loss function.
+[16:22] To calculate how close the two graphs are, we use their adjacency matrices, which represent
+[16:28] the weight of each edge in the graph. We then compute the cross-entropy over
+[16:33] these matrices and simply minimize it using the stochastic gradient descent, and we adjust the
+[16:38] low-dimensional representation accordingly. Let's see some visualisations now.
+[16:43] Let's look at the MNIST dataset again, but this time we'll visualise it using UMAP.
+[16:48] Amazing, right? The classes are beautifully
+[16:51] clustered, and the result looks almost perfect. UMAP's strong theoretical foundations really shine
+[16:57] here, both in visualization quality and speed. It took UMAP just 5 seconds to generate this
+[17:03] visualization, compared to the 40 seconds it took t-SNE.
+[17:08] And if we compare the runtime versus the number of samples, you see that
+[17:11] UMAP grows much slower than t-SNE. Another advantage of UMAP is its
+[17:17] main hyperparameter—the number of nearest neighbors in the initial graph construction.
+[17:23] Let's look at the evolution of the projection of this
+[17:25] mammoth as we increase the number of neighbors. In the beginning we have just one big fuzzy set,
+[17:31] and as we increase the parameter, we get more and more details coming through.
+[17:36] As you can see, the behaviour of the algorithm is much more predictible than
+[17:39] t-SNE when changing the main hyperparameter. With the perplexity, on the other hand,
+[17:45] it was difficult to determine whether results were actually improving when we modified the value.
+[17:51] Finally, UMAP is pretty good at preserving global structure: as you can see,
+[17:56] the parts of the mammoth that are close together in 3D stay close together in the 2D projection.
+[18:02] Even though UMAP often outperforms PCA and t-SNE, these two techniques are still
+[18:06] widely used in engineering and research. As a rule of thumb, if you need a quick
+[18:11] visualization, PCA is a great starting point. For more complex data, t-SNE can provide good
+[18:17] results, but I believe UMAP is the best choice overall.
+[18:20] Additionally, there are even more recent methods, like TriMAP and PACMAP.
+[18:25] I also linked the papers for these in the description below.
+[18:29] Thank you so much for watching this video ! Stay tuned for the next one which will be

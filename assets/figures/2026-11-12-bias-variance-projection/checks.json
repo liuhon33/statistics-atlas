@@ -1,0 +1,192 @@
+{
+  "geometry": {
+    "basis": [
+      "constant 1",
+      "independent fair sign U",
+      "independent fair sign V"
+    ],
+    "D": "U",
+    "estimator": "2+4U",
+    "Y": "5+3V",
+    "vertices": {
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "mean_estimator": [
+        2,
+        0,
+        0
+      ],
+      "truth": [
+        5,
+        0,
+        0
+      ],
+      "estimator": [
+        2,
+        4,
+        0
+      ],
+      "response": [
+        5,
+        0,
+        3
+      ]
+    },
+    "screen_basis": [
+      [
+        1,
+        0
+      ],
+      [
+        0.48,
+        -0.62
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "cross_inner_products_exact": [
+      "0",
+      "0",
+      "0"
+    ],
+    "noise_bias_variance_squared_exact": [
+      "9",
+      "9",
+      "16"
+    ],
+    "prediction_mse_exact": "34",
+    "outcomes": 4,
+    "scope": "3D L2 slice; oblique screen projection does not preserve angles or lengths"
+  },
+  "application": {
+    "scope": "Invented building electricity-demand model; not measured data",
+    "temperatures_C": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "mean_kWh": [
+      "58",
+      "109/2",
+      "52",
+      "101/2",
+      "50",
+      "101/2",
+      "52",
+      "109/2",
+      "58"
+    ],
+    "target_C": 20,
+    "truth_at_target_kWh": 50,
+    "noise_variance_kWh2": 16,
+    "conditional_on_fixed_training_temperatures": true,
+    "exact_enumerated_noise_outcomes_per_k": 1024,
+    "rows": [
+      {
+        "k": 1,
+        "neighbors_C": [
+          20
+        ],
+        "mean_prediction": "50",
+        "signed_bias": "0",
+        "bias_squared": "0",
+        "variance": "16",
+        "noise": "16",
+        "test_mse": "32"
+      },
+      {
+        "k": 3,
+        "neighbors_C": [
+          20,
+          19,
+          21
+        ],
+        "mean_prediction": "151/3",
+        "signed_bias": "-1/3",
+        "bias_squared": "1/9",
+        "variance": "16/3",
+        "noise": "16",
+        "test_mse": "193/9"
+      },
+      {
+        "k": 5,
+        "neighbors_C": [
+          20,
+          19,
+          21,
+          18,
+          22
+        ],
+        "mean_prediction": "51",
+        "signed_bias": "-1",
+        "bias_squared": "1",
+        "variance": "16/5",
+        "noise": "16",
+        "test_mse": "101/5"
+      },
+      {
+        "k": 7,
+        "neighbors_C": [
+          20,
+          19,
+          21,
+          18,
+          22,
+          17,
+          23
+        ],
+        "mean_prediction": "52",
+        "signed_bias": "-2",
+        "bias_squared": "4",
+        "variance": "16/7",
+        "noise": "16",
+        "test_mse": "156/7"
+      },
+      {
+        "k": 9,
+        "neighbors_C": [
+          20,
+          19,
+          21,
+          18,
+          22,
+          17,
+          23,
+          16,
+          24
+        ],
+        "mean_prediction": "160/3",
+        "signed_bias": "-10/3",
+        "bias_squared": "100/9",
+        "variance": "16/9",
+        "noise": "16",
+        "test_mse": "260/9"
+      }
+    ],
+    "max_exact_moment_or_mse_error": "0"
+  },
+  "runtime": {
+    "python": "3.12.4",
+    "numpy": "1.26.4",
+    "matplotlib": "3.8.4"
+  },
+  "svg_xml_parse": "PASS: both SVG roots parsed",
+  "generated_artifact_sha256": {
+    "01-l2-projections.png": "f2aeb7f92129b330760a4419d403d2f602b3adc7aafe1684a288b2b4c6b85056",
+    "01-l2-projections.svg": "b389e3bd7b4c0b631f4bae07c43d9d325cf137e8651369ce564981cddb11f8fb",
+    "02-electricity-knn-tradeoff.png": "c22e3545c924fad5dc986f991fda8b7b0833f142f9ac578fad22523d097c342c",
+    "02-electricity-knn-tradeoff.svg": "2c1d8a6a9b92db9387e7c0222f61afdc092c761c39e040f43007247cd0b79ba1",
+    "build.py": "1951dc2a2ae505187bb288647e3a9951a3e62c9e27b00abb141890c7ca7e38ce"
+  }
+}

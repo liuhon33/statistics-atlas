@@ -9,7 +9,7 @@ study_band: M elective
 note_types: [topic-note, derivation, insight]
 source_format: handwriting
 created: '2026-11-09'
-updated: '2026-11-09'
+updated: 2026-11-12
 status: active
 verification: checked
 learning_state: practicing
@@ -18,6 +18,7 @@ tags: [atlas/learning, subject/computing, topic/attention]
 connections:
   - '[[Learning/Statistical computing & learning/Probabilistic models & neural methods/DeepSeek MLA - a shared latent KV cache]]'
   - '[[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Inner products and norms]]'
+  - "[[Learning/Probability & mathematical foundations/Stochastic processes/Kernels - feature inner products and Gaussian covariances]]"
 sources:
   - '[[raw/notes/2026-11-09-attention.pdf]]'
 ---
@@ -53,6 +54,8 @@ A_{i,ts}=\frac{\exp(S_{i,ts})}{\sum_{u=1}^{T}\exp(S_{i,tu})},
 $$
 
 $S_i,A_i\in\mathbb R^{T\times T}$ and $Z_i\in\mathbb R^{T\times d_h}$. For causal self-attention, $M_{ts}=0$ when $s\leq t$ and $-\infty$ otherwise. Thus query 1 cannot attend to key 2; each row of $A_i$ sums to one over its allowed keys.
+
+Even before masking, these scores need not form a [[Learning/Probability & mathematical foundations/Stochastic processes/Kernels - feature inner products and Gaussian covariances#1. Why positive semidefiniteness is the right requirement|covariance kernel]].
 
 ![[assets/figures/2026-11-09-attention/detail-02-causal-scores.svg]]
 
@@ -145,6 +148,8 @@ MLA replaces these separate histories with a [[Learning/Statistical computing & 
 
 - [[Learning/Statistical computing & learning/Probabilistic models & neural methods/DeepSeek MLA - a shared latent KV cache|DeepSeek MLA]] — Starts with these headwise equations, then factorizes keys and values and regroups the same products around a smaller cache.
 - [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Inner products and norms|Inner products and norms]] — Query-key scores are dot products; their magnitudes and coordinate variances explain the dimension-dependent scaling.
+
+- [[Learning/Probability & mathematical foundations/Stochastic processes/Kernels - feature inner products and Gaussian covariances|Kernels - feature inner products and Gaussian covariances]] — Query–key scores use different feature maps and need not be symmetric or positive semidefinite, unlike a covariance kernel.
 
 ## Origin
 

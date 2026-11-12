@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="656.39952pt" height="490.797267pt" viewBox="0 0 656.39952 490.797267" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-11T21:46:02.356403</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 490.797267 
+L 656.39952 490.797267 
+L 656.39952 -0 
+L 0 -0 
+z
+" style="fill: #f7f8fa"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 48.8975 326.897434 
+L 645.38202 326.897434 
+L 645.38202 36.14175 
+L 48.8975 36.14175 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 48.8975 326.897434 
+L 247.725673 326.897434 
+L 247.725673 36.14175 
+L 48.8975 36.14175 
+z
+" clip-path="url(#p2b2b50cbae)" style="fill: #e6ebf0; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 48.8975 326.897434 
+L 247.725673 326.897434 
+L 247.725673 181.519592 
+L 48.8975 181.519592 
+z
+" clip-path="url(#p2b2b50cbae)" style="fill: #307eae; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 247.725673 326.897434 
+L 446.553847 326.897434 
+L 446.553847 36.14175 
+L 247.725673 36.14175 
+z
+" clip-path="url(#p2b2b50cbae)" style="fill: #e6ebf0; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 247.725673 326.897434 
+L 446.553847 326.897434 
+L 446.553847 36.14175 
+L 247.725673 36.14175 
+z
+" clip-path="url(#p2b2b50cbae)" style="fill: #d49b43; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 446.553847 326.897434 
+L 645.38202 326.897434 
+L 645.38202 36.14175 
+L 446.553847 36.14175 
+z
+" clip-path="url(#p2b2b50cbae)" style="fill: #e6ebf0; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 446.553847 326.897434 
+L 645.38202 326.897434 
+L 645.38202 326.897434 
+L 446.553847 326.897434 
+z
+" clip-path="url(#p2b2b50cbae)" style="fill: #9aa7b5; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mcc75805610" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mcc75805610" x="48.8975" y="326.897434" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: middle" x="48.8975" y="343.015559" transform="rotate(-0 48.8975 343.015559)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mcc75805610" x="645.38202" y="326.897434" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: middle" x="645.38202" y="343.015559" transform="rotate(-0 645.38202 343.015559)">1</text>
+     </g>
+    </g>
+    <g id="text_3">
+     <text style="fill: #172b40; font: 12px 'DejaVu Sans'; text-anchor: middle" x="347.13976" y="358.629309" transform="rotate(-0 347.13976 358.629309)">Prior probability (column width)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="m158f04fd69" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m158f04fd69" x="48.8975" y="326.897434" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: end" x="41.8975" y="331.456497" transform="rotate(-0 41.8975 331.456497)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m158f04fd69" x="48.8975" y="181.519592" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: end" x="41.8975" y="186.078655" transform="rotate(-0 41.8975 186.078655)">0.5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m158f04fd69" x="48.8975" y="36.14175" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: end" x="41.8975" y="40.700812" transform="rotate(-0 41.8975 40.700812)">1.0</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="fill: #172b40; font: 12px 'DejaVu Sans'; text-anchor: middle" x="16.318125" y="181.519592" transform="rotate(-90 16.318125 181.519592)">Fraction producing the evidence</text>
+    </g>
+   </g>
+   <g id="patch_9">
+    <path d="M 48.8975 326.897434 
+L 48.8975 36.14175 
+" style="fill: none; stroke: #abb8c8; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 48.8975 326.897434 
+L 645.38202 326.897434 
+" style="fill: none; stroke: #abb8c8; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_8">
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(124.318149 107.427217)">Car at 1</text>
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(117.623462 120.864592)">height 1/2</text>
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(123.371274 134.301967)">area 1/6</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(323.146322 171.393467)">Car at 2</text>
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(322.290385 184.830842)">height 1</text>
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(322.199448 198.268217)">area 1/3</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(521.974496 107.427217)">Car at 3</text>
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(521.118558 120.864592)">height 0</text>
+    <text style="fill: #172b40; font: 12px 'DejaVu Sans'" transform="translate(526.866371 134.301967)">area 0</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #172b40; font: 700 14.4px 'DejaVu Sans'; text-anchor: start" x="48.8975" y="18.14175" transform="rotate(-0 48.8975 18.14175)">Monty opens door 3: the standard informed host</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_11">
+    <path d="M 48.8975 454.35212 
+L 247.725673 454.35212 
+L 247.725673 417.135392 
+L 48.8975 417.135392 
+z
+" clip-path="url(#p81ef554954)" style="fill: #307eae; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 247.725673 454.35212 
+L 645.38202 454.35212 
+L 645.38202 417.135392 
+L 247.725673 417.135392 
+z
+" clip-path="url(#p81ef554954)" style="fill: #d49b43; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_12">
+    <text style="fill: #172b40; font: 700 12px 'DejaVu Sans'; text-anchor: start" x="48.8975" y="388.059824" transform="rotate(-0 48.8975 388.059824)">Retained area = 1/2. Divide each surviving area by 1/2.</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #307eae; font: 12px 'DejaVu Sans'; text-anchor: start" x="48.8975" y="481.101642" transform="rotate(-0 48.8975 481.101642)">Stay: 1/3</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #906019; font: 12px 'DejaVu Sans'; text-anchor: start" x="347.13976" y="481.101642" transform="rotate(-0 347.13976 481.101642)">Switch: 2/3</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2b2b50cbae">
+   <rect x="48.8975" y="36.14175" width="596.48452" height="290.755684"/>
+  </clipPath>
+  <clipPath id="p81ef554954">
+   <rect x="48.8975" y="367.125414" width="596.48452" height="116.302274"/>
+  </clipPath>
+ </defs>
+</svg>

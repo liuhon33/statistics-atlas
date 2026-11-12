@@ -81,11 +81,12 @@ Open the Fisher information, CI/p-value, or CLT/delta-method note in Reading vie
 ### A few useful controls
 
 - **Click a dot** to select it and inspect its connections. **Double-click** to open its note. **Rest the pointer** on a dot to preview its note.
-- **Search** by title or alias to focus a topic. Clicking a topic in the panel follows that connection.
+- **Search** topics and your notes by title or alias. Matches light up on the map, along with your notes filed under a matching topic (dotted ring), so `regression` also finds the OLS notes. Press **Tab** (or **↓**) to fly from one to the next and **Shift+Tab** (or **↑**) to go back. **Enter** focuses the match you are on, and **Esc** clears the search and returns to where you were. Clicking a topic in the panel follows that connection.
 - **Scroll** to zoom and **drag** to pan. Names appear level by level as you zoom in.
 - **Where am I:** on any topic page or learning note, press **Ctrl+Shift+M** (**Cmd+Shift+M** on macOS) or click the locate button in the note's header. The atlas opens beside the note, with the note's path from its subject in a spotlight. Press again for a close-up. Click the lit dot again, or press **Esc**, to turn the lights back up.
 - **Follow** (crosshair button in the atlas toolbar) puts each atlas note you open into the spotlight.
 - **Explore with the keyboard:** click the map, then press **↑** to move outward to a sub-topic, **↓** to come back to its parent, and **←/→** to move around the ring. **Space** dives into a branch and fades the rest; **Backspace** climbs back out; **Enter** opens the note.
+- **Minimap** (map button, off until you switch it on): a small overview in the map's top-right corner shows the whole web, the part you are looking at, and any lit path or search matches. Click it to glide there, or drag in it to move the view.
 - **Coverage** (sprout button) makes topics that hold your notes glow and fades the ones you have not studied yet.
 - Use **Visible levels** to show just the broad subjects or progressively more detail.
 - Open **Map checks** to inspect missing homes, unresolved links, or topics needing a saved position.
@@ -176,17 +177,17 @@ The Atlas itself runs locally and makes no network requests. Viewing the map and
 
 | Folder | Contents |
 | --- | --- |
-| `Backbone/` | 761 topic pages, arranged from broad subjects to individual concepts. |
-| `Learning/` | 37 personal learning notes, including ELBO, diffusion and PyTorch, Fisher information, CLT and delta method, MLE, bootstrap, regression, test geometry, confidence intervals, attention, concordance, AIC/BIC, reinforcement learning, and gambler’s ruin. |
+| `Backbone/` | 763 topic pages, arranged from broad subjects to individual concepts. |
+| `Learning/` | 44 personal learning notes, including ELBO, diffusion and PyTorch, Fisher information, CLT and delta method, MLE, bootstrap, regression, test geometry, confidence intervals, attention, concordance, AIC/BIC, reinforcement learning, gambler’s ruin, Bayesian regression, Gaussian processes, kernels, and vector norms. |
 | `raw/` | Preserved original sources, screenshots, and handwriting. |
 | `assets/figures/` | Explanatory figures and their reproducible source. |
 | `_system/` | Catalogs, references, layout, workflow records, templates, and tools. |
 | `.agents/skills/` | Shared instructions for digesting, extending, connecting, and reviewing notes. |
 | `.obsidian/plugins/statistics-atlas/` | The custom map plugin, already built. |
 
-These counts describe the public update on **2026-11-11**. Many backbone pages are topic scaffolds; 761 pages does not mean 761 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
+These counts describe the public update on **2026-11-12**. Many backbone pages are topic scaffolds; 763 pages does not mean 763 complete lessons. Migration from the old vault is still in progress. See the [build status](_system/Build%20status.md) and [migration coverage report](_system/Migration%20coverage%20audit%20-%202026-11-09.md).
 
-The public copy includes the rebuilt vault's content and tools. Local agent sessions, account settings, window layouts, debug logs, and unrelated installed plugins are excluded. Install optional plugins through their own projects. Original sources keep their individual attribution; public availability is not a blanket license to redistribute third-party material.
+The public copy includes the rebuilt vault's content and tools. Original course-slide PDFs are kept private; their citations and selected handwritten images remain available. Local agent sessions, account settings, window layouts, debug logs, and unrelated installed plugins are excluded. Install optional plugins through their own projects. Original sources keep their individual attribution; public availability is not a blanket license to redistribute third-party material.
 
 ## Troubleshooting and development
 

@@ -3788,6 +3788,34 @@
     "information-measures-likelihood-and-compression": {
       "x": -1483.6234101206605,
       "y": -704.7927775850919
+    },
+    "reinforcement-learning": {
+      "x": -1031.8523066978928,
+      "y": -129.92619890629354
+    },
+    "markov-decision-processes": {
+      "x": -1319.580353757882,
+      "y": -166.15561975516385
+    },
+    "markov-decision-processes-bellman-equations": {
+      "x": -1639.057702562422,
+      "y": -206.38276980115089
+    },
+    "neural-basics-attention-mechanisms": {
+      "x": -1585.0187957389876,
+      "y": -458.49254863533974
+    },
+    "conditional-mean-law-of-total-expectation": {
+      "x": -134.81341939286702,
+      "y": -1621.405051784286
+    },
+    "continuous-cauchy-distribution": {
+      "x": -424.3748623234443,
+      "y": -1569.6439010896572
+    },
+    "spaces-hilbert-spaces": {
+      "x": -1260.2211701464757,
+      "y": -1068.1510203686776
     }
   }
 }

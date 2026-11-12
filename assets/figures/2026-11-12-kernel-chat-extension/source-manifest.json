@@ -1,0 +1,393 @@
+{
+  "source_name": "ChatGPT-Feature_Map_and_Kernel.json",
+  "archive": "raw/conversations/2026-08-13-Feature-Map-and-Kernel.json",
+  "conversation_id": "6a7e0ad5-f974-83ea-9890-37fcdecd0169",
+  "title": "Feature Map and Kernel",
+  "bytes": 262391,
+  "sha256": "cf88caff18dfa13cd866646b66f6b351af96ab0b6b78fe93bad7957afcdfefa5",
+  "current_node": "ca541cee-0890-46fd-a36b-fdcb5e3e7515",
+  "visible_text_coverage": [
+    {
+      "message_id": "7eb6e36a-23c7-425d-bad9-e28263830270",
+      "role": "user",
+      "characters": 142
+    },
+    {
+      "message_id": "f0877b2a-b4b7-4922-b632-27e09c963035",
+      "role": "assistant",
+      "characters": 13476
+    },
+    {
+      "message_id": "c55ab1f4-aa11-4598-ad0d-a5be2da0b03e",
+      "role": "user",
+      "characters": 24
+    },
+    {
+      "message_id": "7f0901ae-e94c-4aa0-bc70-09333db878b5",
+      "role": "assistant",
+      "characters": 7520
+    },
+    {
+      "message_id": "e70144a9-34d9-4a9c-93d5-eb3ec2a76fec",
+      "role": "user",
+      "characters": 115
+    },
+    {
+      "message_id": "612bd352-0961-4ec1-a8ba-001b3a3b41eb",
+      "role": "assistant",
+      "characters": 2135
+    },
+    {
+      "message_id": "b3bbb64f-2501-4014-881a-3754d01a1725",
+      "role": "user",
+      "characters": 30
+    },
+    {
+      "message_id": "73af81c8-01bb-47d0-86b9-2ffc6c5b7c61",
+      "role": "assistant",
+      "characters": 19206
+    },
+    {
+      "message_id": "61584a81-5fe7-402f-a329-aa5cbbf13703",
+      "role": "user",
+      "characters": 40
+    },
+    {
+      "message_id": "e8fc493f-10dc-4b32-b43a-0b804960d8f0",
+      "role": "assistant",
+      "characters": 17197
+    },
+    {
+      "message_id": "e9e9262d-c652-4cfc-8418-91b148772b36",
+      "role": "user",
+      "characters": 177
+    },
+    {
+      "message_id": "d47db8f3-8f39-4419-b5fa-87373c74976b",
+      "role": "assistant",
+      "characters": 12288
+    },
+    {
+      "message_id": "e7be153c-3589-4e95-b19e-aeda9de8834a",
+      "role": "user",
+      "characters": 274
+    },
+    {
+      "message_id": "20d6ee53-f4c1-4ebe-bbfc-9e95b794795e",
+      "role": "assistant",
+      "characters": 4349
+    },
+    {
+      "message_id": "9d8f0bc6-52fb-4530-889c-ace13b917843",
+      "role": "user",
+      "characters": 287
+    },
+    {
+      "message_id": "ca541cee-0890-46fd-a36b-fdcb5e3e7515",
+      "role": "assistant",
+      "characters": 7972
+    }
+  ],
+  "image_pointers": [
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://88bd2b402d8f9dd#file_00000000a82481fdbf5e7730e73c95e3#p_0.99ceeeeb5b.jpg",
+      "size_bytes": 34866,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://f1947cf6414594d#file_00000000a82481fdbf5e7730e73c95e3#p_1.946c454b3a.jpg",
+      "size_bytes": 38438,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://c7885ce53d41332#file_00000000a82481fdbf5e7730e73c95e3#p_2.ea1fa3850a.jpg",
+      "size_bytes": 28097,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://2024436c69e3c0f#file_00000000a82481fdbf5e7730e73c95e3#p_3.6162204d91.jpg",
+      "size_bytes": 81770,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://5c872a17edc6940#file_00000000a82481fdbf5e7730e73c95e3#p_4.fb86c7548d.jpg",
+      "size_bytes": 72518,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://768cd7fb6739ed7#file_00000000a82481fdbf5e7730e73c95e3#p_5.b60173a06c.jpg",
+      "size_bytes": 71728,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://015296125a532a6#file_00000000a82481fdbf5e7730e73c95e3#p_6.43f1a2758c.jpg",
+      "size_bytes": 108460,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://a6903f4cad4a841#file_00000000a82481fdbf5e7730e73c95e3#p_7.ebfa86c363.jpg",
+      "size_bytes": 99021,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://35cea67d12faecc#file_00000000a82481fdbf5e7730e73c95e3#p_8.e816ebe93e.jpg",
+      "size_bytes": 109609,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://0a9ec8c2224afdf#file_00000000a82481fdbf5e7730e73c95e3#p_9.77c953869d.jpg",
+      "size_bytes": 101794,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://27483313147227a#file_00000000a82481fdbf5e7730e73c95e3#p_10.b042944e65.jpg",
+      "size_bytes": 61398,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://7c0283333482456#file_00000000a82481fdbf5e7730e73c95e3#p_11.2c8cd7611e.jpg",
+      "size_bytes": 90943,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://657b915ed6df414#file_00000000a82481fdbf5e7730e73c95e3#p_12.b61aed4c14.jpg",
+      "size_bytes": 102818,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "665854a1-fc95-4a2b-8c51-8963d392d55b",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://7b6882fbacd7748#file_00000000a82481fdbf5e7730e73c95e3#p_13.b2f70f3a58.jpg",
+      "size_bytes": 190027,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://140b131c62d7929#file_00000000a82481fdbf5e7730e73c95e3#p_26.d7f307a45f.jpg",
+      "size_bytes": 68227,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://8d79feedc7c3f05#file_00000000a82481fdbf5e7730e73c95e3#p_27.5a4c524d3f.jpg",
+      "size_bytes": 117785,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://8021c1f4a034f8d#file_00000000a82481fdbf5e7730e73c95e3#p_28.c87fe16077.jpg",
+      "size_bytes": 97475,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://457a1b73bd6efbe#file_00000000a82481fdbf5e7730e73c95e3#p_29.2665ab8d1e.jpg",
+      "size_bytes": 109473,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://45808eb1aa999f1#file_00000000a82481fdbf5e7730e73c95e3#p_30.d73b8758f7.jpg",
+      "size_bytes": 88317,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://decb347252ff949#file_00000000a82481fdbf5e7730e73c95e3#p_31.c85cd04ad9.jpg",
+      "size_bytes": 81802,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://68083ca6e08108e#file_00000000a82481fdbf5e7730e73c95e3#p_32.e832ca73b9.jpg",
+      "size_bytes": 73920,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://fe76238d761b2b4#file_00000000a82481fdbf5e7730e73c95e3#p_33.04b8a8c22a.jpg",
+      "size_bytes": 59871,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://8a37a7491973e1f#file_00000000a82481fdbf5e7730e73c95e3#p_34.75c098116c.jpg",
+      "size_bytes": 51569,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "0fc98e39-8b2d-4a99-9ce2-081362eab004",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://e38f07117bb3d85#file_00000000a82481fdbf5e7730e73c95e3#p_35.130492c469.jpg",
+      "size_bytes": 83970,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "38dc8151-febd-4256-8490-d130ea13e735",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://cf941094fcfe0d8#file_00000000a82481fdbf5e7730e73c95e3#p_36.7801ca6507.jpg",
+      "size_bytes": 73378,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "38dc8151-febd-4256-8490-d130ea13e735",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://316e8d1e4ad7f3c#file_00000000a82481fdbf5e7730e73c95e3#p_37.ff90dc0e37.jpg",
+      "size_bytes": 87624,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "38dc8151-febd-4256-8490-d130ea13e735",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://44c4fe08200d2da#file_00000000a82481fdbf5e7730e73c95e3#p_38.5c0fc92f52.jpg",
+      "size_bytes": 85562,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "38dc8151-febd-4256-8490-d130ea13e735",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://78fad05ff735ac4#file_00000000a82481fdbf5e7730e73c95e3#p_39.f2e96538c1.jpg",
+      "size_bytes": 113712,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    },
+    {
+      "message_id": "38dc8151-febd-4256-8490-d130ea13e735",
+      "content_type": "image_asset_pointer",
+      "asset_pointer": "sediment://c6cea226b5e06f1#file_00000000a82481fdbf5e7730e73c95e3#p_40.ce97d487a1.jpg",
+      "size_bytes": 88423,
+      "width": 1320,
+      "height": 744,
+      "fovea": 768,
+      "metadata": null
+    }
+  ],
+  "image_status": "Pointers only; no image bytes or visual attachment recovery. Existing lecture PDF is a separate source.",
+  "note_targets": [
+    "Learning/Probability & mathematical foundations/Stochastic processes/Kernels - feature inner products and Gaussian covariances.md",
+    "Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square.md"
+  ],
+  "integration_status": "Visible-text boundary completed through current_node after final vault validation and 15/15 regression cases. Attachment bytes and future messages excluded.",
+  "verification_limits": [
+    "Numerical checks support the written proofs.",
+    "Static PNG previews inspected; not live Obsidian rendering."
+  ]
+}

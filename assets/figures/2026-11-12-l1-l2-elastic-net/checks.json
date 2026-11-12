@@ -1,0 +1,65 @@
+{
+  "status": "pass",
+  "example_ols": [
+    3.0,
+    0.6
+  ],
+  "expected_fits": {
+    "ridge": [
+      1.5,
+      0.3
+    ],
+    "lasso": [
+      2.0,
+      0.0
+    ],
+    "elastic-net": [
+      1.0,
+      0.0
+    ]
+  },
+  "scalar_kkt_cases": 2515,
+  "max_kkt_residual": 3.885780586188048e-16,
+  "max_map_objective_identity_error": 3.552713678800501e-15,
+  "random_competitors_per_method": 10000,
+  "min_competitor_objective_gaps": {
+    "ridge": 0.000669937993032832,
+    "lasso": 0.012876180508386348,
+    "elastic-net": 0.007257470524764997
+  },
+  "ridge_vs_augmented_least_squares_max_error": 8.881784197001252e-16,
+  "identical_columns_elastic_net_coefficients": [
+    0.6666666666666666,
+    0.6666666666666666
+  ],
+  "laplace_posterior_example": {
+    "observation": 0.6,
+    "noise_variance": 1.0,
+    "laplace_scale": 1.0,
+    "mode": 0.0,
+    "mean": 0.29110627626076346
+  },
+  "limits": "Numerical checks support the analytic derivations; no data-driven prediction guarantee or live Obsidian rendering is tested.",
+  "geometry": {
+    "ridge": {
+      "boundary_max_error": 4.440892098500626e-16,
+      "prior_normalizer_sigma2_1": 2.5066282746309994
+    },
+    "lasso": {
+      "boundary_max_error": 4.440892098500626e-16,
+      "prior_normalizer_sigma2_1": 2.0000000000000004
+    },
+    "elastic-net": {
+      "boundary_max_error": 4.440892098500626e-16,
+      "prior_normalizer_sigma2_1": 1.311359084837597
+    }
+  },
+  "artifact_sha256": {
+    "elastic-net-intro.svg": "0e1333af2066a4b93a10ea975266e0bb60dc484430ca31e331b116b518a1b4b3",
+    "elastic-net-mechanics.svg": "fc6d2aeb4e4f56788b5231df9df19b06bf297d4dd637f373533a6345d81a25c3",
+    "lasso-intro.svg": "392e1834cffde5efd86d38eca7aee94b1c9d3e55690761f38956724c257faed9",
+    "lasso-mechanics.svg": "b3cec9b5f6e105365c278f4f295c83a74c398486aa9d95302e07ddbb80d5ae88",
+    "ridge-intro.svg": "4adb1cc5326815210278d5c63d950051e05c072f0ca187988736459aae5aeb1a",
+    "ridge-mechanics.svg": "dbec5eda0e1cd45ba50fe8d87e572007f3dbcbc13ae6f44f901871626af5b077"
+  }
+}

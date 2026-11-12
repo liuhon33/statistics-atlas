@@ -10,7 +10,7 @@ note_types: [practice, derivation, question]
 question_roles: [concept-distinction]
 source_format: conversation-pdf
 created: 2026-11-11
-updated: 2026-11-11
+updated: '2026-11-12'
 status: active
 verification: checked
 learning_state: introduced
@@ -20,6 +20,7 @@ connections:
   - "[[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/MLE invariance]]"
   - "[[Learning/Probability & mathematical foundations/Limits & concentration/CLT and delta method - scaling and transforming estimation error]]"
   - "[[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Misspecified-model targets]]"
+  - "[[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Fisher information - score spread, curvature, and parameter precision]]"
 sources:
   - "[[raw/conversations/2026-10-18-MLE-conversation.pdf]]"
   - "[[raw/conversations/2026-10-18-MLE-source-manifest.json]]"
@@ -148,6 +149,8 @@ $$
 
 Cauchy–Schwarz and $\operatorname{Var}(X)=1$ give $\phi(\theta)^2<\psi(1-\psi)$; equality would require a binary indicator to be affine in a continuous normal variable. The full measurements retain useful magnitude information.
 
+Their precision gap can also be read through [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Fisher information - score spread, curvature, and parameter precision#5. How the same quantity controls MLE precision|Fisher information]].
+
 ## What survives when the normal model is wrong
 
 For iid observations from an actual law $F$ with finite mean $\mu_F$, the normal working-model formula and the sign estimator converge to
@@ -167,6 +170,8 @@ For $X=E-1$ with $E\sim\operatorname{Exp}(1)$, the mean is 0 and variance is 1, 
 - [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Likelihood methods/MLE invariance|MLE invariance]] — Transforms the normal-mean optimizer into a probability estimate without discarding observations.
 - [[Learning/Probability & mathematical foundations/Limits & concentration/CLT and delta method - scaling and transforming estimation error|CLT and delta method]] — Derives the error transformation used for the probability interval and the efficiency comparison.
 - [[Backbone/Statistical inference & modeling/Frequentist & likelihood inference/Point estimation/Large-sample inference/Misspecified-model targets|Misspecified-model targets]] — Separates the actual event probability from the limit of the normal working-model estimator.
+
+- [[Learning/Statistical inference & modeling/Frequentist & likelihood inference/Fisher information - score spread, curvature, and parameter precision|Fisher information - score spread, curvature, and parameter precision]] — Interprets the full-data/sign-data efficiency comparison through Fisher information and the inverse-information MLE limit.
 
 ## Origin
 

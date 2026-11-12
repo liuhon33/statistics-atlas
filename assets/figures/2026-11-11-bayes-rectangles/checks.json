@@ -1,0 +1,42 @@
+{
+  "steve_evidence": "4/35",
+  "steve_posterior": "1/6",
+  "elbo_identity_max_error": 1.1102230246251565e-15,
+  "elbo_table": [
+    {
+      "r": 0.047619047619047616,
+      "fit": -2.23657107579786,
+      "prior_kl": 0.0,
+      "elbo": -2.23657107579786,
+      "gap": 0.0675173754283373
+    },
+    {
+      "r": 0.5,
+      "fit": -1.6094379124341003,
+      "prior_kl": 0.8535091203864822,
+      "elbo": -2.4629470328205825,
+      "gap": 0.29389333245105953
+    },
+    {
+      "r": 0.16666666666666666,
+      "fit": -2.0715360328073973,
+      "prior_kl": 0.09751766756212592,
+      "elbo": -2.169053700369523,
+      "gap": 0.0
+    }
+  ],
+  "monty_retained_car_states": [
+    1,
+    2,
+    2
+  ],
+  "blind_retained_car_states": [
+    1,
+    2
+  ],
+  "n_door_cases": 98,
+  "biased_host_cases": 101,
+  "diffusion_score_max_error": 1.259299331479724e-10,
+  "monty_elbo_gap": 0.05889151782819173,
+  "svg_parse": "PASS"
+}

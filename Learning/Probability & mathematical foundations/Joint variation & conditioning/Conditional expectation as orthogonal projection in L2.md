@@ -14,7 +14,7 @@ question_roles:
   - cross-topic-connection
 source_format: handwriting
 created: 2026-11-08
-updated: 2026-11-09
+updated: '2026-11-12'
 status: active
 verification: checked
 learning_state: unknown
@@ -32,6 +32,7 @@ connections:
   - "[[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Total variance]]"
   - "[[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Mean squared error]]"
   - "[[Learning/Statistical inference & modeling/Regression & linear models/Three routes from least squares to slope and correlation]]"
+  - '[[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square]]'
 sources:
   - "[[raw/conversations/2026-10-27-total-expectation-and-variance-group-intuition-excerpt]]"
   - "[[raw/assets/2026-11-08-L2-geometry-I01-conditional-expectation-projection-notes.png]]"
@@ -123,6 +124,8 @@ $$
 Subtle: minimize a thing over $\infty$-dim subspace requires functional analysis. $\mathcal H_Y$ is a closed subspace.
 
 **Added.** "$g\in L^2$" means $\mathbb E[g(Y)^2]<\infty$ for a measurable $g$. Closedness is what the projection theorem needs: every closed subspace of a Hilbert space has a unique nearest point to each $X$ (unique up to almost-sure equality). So this definition always produces exactly one $\mathbb E[X\mid Y]$.
+
+For jointly Gaussian variables, this gives the [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square#3. Complete the square in the joint Gaussian|GP predictive mean]].
 
 ## Orthogonality characterizes the conditional expectation
 
@@ -316,6 +319,8 @@ This expectation is the inner product of ① and ②.
 - [[Backbone/Probability & mathematical foundations/Joint variation & conditioning/Joint distributions/Conditional expectation/Total variance|Total variance]] — The right triangle in my conditional-expectation drawing is the total-variance decomposition, and the side I marked $?$ is $\sqrt{\mathbb E[\operatorname{Var}(X\mid Y)]}$.
 - [[Backbone/Statistical inference & modeling/Inference foundations/Statistical reasoning/Sampling distributions/Mean squared error|Mean squared error]] — My orange overlay reads $\operatorname{MSE}=\operatorname{Bias}^2+\operatorname{Var}$ as Pythagoras: the bias lies along $\mathbf 1$ and the fluctuation is perpendicular to it.
 - [[Learning/Statistical inference & modeling/Regression & linear models/Three routes from least squares to slope and correlation|Three routes from least squares to slope and correlation]] — The same geometry in sample space: centering removes the projection onto $\mathbf 1$, and the OLS residual is perpendicular to the fitted subspace, just as $X-\mathbb E[X\mid Y]$ is perpendicular to $\mathcal H_Y$.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square|Gaussian processes - conditioning by completing the square]] — Joint Gaussianity makes the minimum-MSE conditional mean affine in the observed values.
 
 ## Origin
 

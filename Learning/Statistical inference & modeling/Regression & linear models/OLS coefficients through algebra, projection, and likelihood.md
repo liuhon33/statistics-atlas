@@ -10,7 +10,7 @@ note_types: [derivation, question, insight]
 question_roles: [reconcile-approaches, cross-topic-connection, special-to-general, assumption-boundary]
 source_format: handwriting-and-conversation
 created: 2026-11-09
-updated: 2026-11-09
+updated: '2026-11-12'
 status: active
 verification: checked
 learning_state: unknown
@@ -26,6 +26,7 @@ connections:
   - "[[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Frisch–Waugh–Lovell theorem]]"
   - "[[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Singular value decomposition]]"
   - "[[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared]]"
+  - '[[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]]'
 sources:
   - "[[raw/assets/2026-11-09-OLS-I01-normal-equations-and-slope.png]]"
   - "[[raw/notes/2025-06-12-linear-algebra-summary.pdf]]"
@@ -541,7 +542,7 @@ $$
 \kappa_2(X^\top X)=\left(\frac{d_{\max}}{d_{\min}}\right)^2.
 $$
 
-Thus forming $X^\top X$ can magnify numerical difficulties. The inverse formula explains OLS; QR or SVD is usually a better way to compute it in floating point. A positive ridge penalty changes the objective and generally changes the estimator; it is not another formula for the same OLS coefficients.
+Thus forming $X^\top X$ can magnify numerical difficulties. The inverse formula explains OLS; QR or SVD is usually a better way to compute it in floating point. A [[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit#2. How the prior becomes an L2 penalty|positive ridge penalty]] changes the objective and generally changes the estimator; it is not another formula for the same OLS coefficients.
 
 ## 10. Iterative optimization reaches the same solution
 
@@ -624,6 +625,8 @@ The algebraic identities and rank/variance conditions above were checked directl
 - [[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Matrices & decompositions/Singular value decomposition|Singular value decomposition]] — Separates identifiable and null-space directions, supplies the pseudoinverse, and explains sensitivity to small singular values.
 
 - [[Learning/Statistical inference & modeling/Regression & linear models/Why one restriction gives F equals t squared|Why one restriction gives F equals t squared]] — Uses the completed-square identity and coefficient covariance to derive the cost of any single linear restriction.
+
+- [[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit|Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]] — Shows how a Gaussian prior changes the OLS quadratic, and when removing the penalty recovers OLS.
 
 ## Origin
 

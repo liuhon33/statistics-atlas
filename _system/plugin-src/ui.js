@@ -28,10 +28,19 @@ const AtlasUI = (() => {
   const PEEK_MS=180;
   // Coverage glow (Claude, 2026-11-11, extra idea 3): strength of topics with none of the user's notes under them.
   const COVER_FADE=.28;
+  // Search fly-through (Claude, 2026-11-11): up to FIND_MAX matches are lit on the map (more asks for a longer query);
+  // the rest of the web dims to FIND_DIM. FIND_PULSES: pulses of a match after the camera arrives at it.
+  const FIND_MAX=100,FIND_DIM=.45,FIND_PULSES=2;
+  // Minimap (Claude, 2026-11-12): a MINI px square in the map's top-right corner, off by default and shown while its
+  // toolbar switch is on (user request), on maps at least MINI_MIN px wide and high. Keep MINI equal to .sa-minimap's CSS size.
+  const MINI=156,MINI_MIN=[420,300];
   const LINK_META={contains:{name:'Hierarchy',arrow:'›',says:(a,b)=>`${a} contains ${b}.`},attachment:{name:'Primary home',arrow:'›',says:(a,b)=>`${a} is the primary home of ${b}.`},prerequisite:{name:'Prerequisite',arrow:'→',says:(a,b)=>`${a} is a prerequisite for ${b}.`},application:{name:'Application',arrow:'→',says:(a,b)=>`${a} is applied in ${b}.`},connection:{name:'Related',arrow:'—',says:(a,b)=>`${a} and ${b} are related.`},source:{name:'Source',arrow:'→',says:(a,b)=>`${a} cites ${b}.`}};
   const toRgba=(c,a)=>{let h=String(c).trim();if(/^#[0-9a-f]{3}$/i.test(h))h='#'+[...h.slice(1)].map(x=>x+x).join('');const m=/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(h);return m?`rgba(${parseInt(m[1],16)},${parseInt(m[2],16)},${parseInt(m[3],16)},${a})`:c;};
   const dashOf=type=>type==='contains'||type==='attachment'?null:type==='connection'?[2,4]:[6,4];
   const ease=u=>u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;
+  // One fade step from v toward goal (Claude, 2026-11-12). The highlight and spotlight fades used to step away from a
+  // goal they had already reached, so at rest they flipped between 1 and 1 minus a step on each repaint.
+  const toward=(v,goal,step)=>v<goal?Math.min(goal,v+step):Math.max(goal,v-step);
   // Smooth zoom-and-pan path (van Wijk & Nuij 2003; the same formula as d3-interpolate's interpolateZoom). A view is
   // [cx,cy,w]: the world point at the screen centre and the world width shown. A long jump zooms out, travels, zooms in.
   function zoomPath([ux0,uy0,w0],[ux1,uy1,w1]){
@@ -54,13 +63,19 @@ const AtlasUI = (() => {
       const find=el('div','sa-find');this.search=el('input','sa-search');this.search.type='search';this.search.placeholder='Find a topic, alias or note…';this.search.setAttribute('aria-label','Search the atlas');
       this.results=el('div','sa-results');this.results.setAttribute('aria-label','Search results');this.results.addEventListener('mousedown',e=>e.preventDefault());find.append(this.search,this.results);bar.append(find);
       this.search.addEventListener('input',()=>this.searchResults());this.search.addEventListener('focus',()=>this.searchResults());this.search.addEventListener('blur',()=>this.results.replaceChildren());
-      this.search.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();this.results.querySelector('button')?.click();}else if(e.key==='Escape'){this.search.value='';this.results.replaceChildren();}});
+      // Search fly-through (Claude, 2026-11-11): Tab or the down arrow glides to the next lit match, Shift+Tab or the up
+      // arrow to the previous one; Enter picks the match flown to (else the first); Esc clears and returns to the view
+      // from before the first glide, if the camera is still where the last glide left it.
+      this.search.addEventListener('keydown',e=>{const f=this.finds,mods=e.ctrlKey||e.metaKey||e.altKey;
+        if((e.key==='Tab'||e.key==='ArrowDown'||e.key==='ArrowUp')&&f?.ids.length&&!mods){e.preventDefault();this.fly(e.key==='ArrowUp'||(e.key==='Tab'&&e.shiftKey)?-1:1);}
+        else if(e.key==='Enter'){e.preventDefault();const n=this.model.byId.get(f&&f.i>=0?f.ids[f.i]:null)||this.matches?.[0];if(n)this.pickResult(n);}
+        else if(e.key==='Escape'){this.endSearch(true);}});
       this.depthSelect=el('select','sa-depth');this.depthSelect.setAttribute('aria-label','Visible levels');this.depthSelect.title='Visible levels';for(let i=1;i<=5;i++){const o=el('option','',i===5?'All levels':i===1?'Level 1':`Levels 1–${i}`);o.value=i;this.depthSelect.append(o);}this.depthSelect.value=5;
       this.depthSelect.addEventListener('change',()=>{this.depth=Number(this.depthSelect.value);if(this.focus&&this.model.byId.get(this.focus)?.level>this.depth)this.focus=null;this.update();});bar.append(this.depthSelect);
-      const tools=el('div','sa-tools');this.coverageToggle=this.iconButton('sprout','✿','Coverage: glow where your notes are, fade topics with none yet',()=>{this.setCoverage(!this.coverage);this.options.onStateChange?.();});this.followToggle=this.iconButton('locate','◎','Follow: spotlight each atlas note you open',()=>{this.setFollow(!this.follow);this.options.onFollow?.(this.follow);this.options.onStateChange?.();});this.panelToggle=this.iconButton('panel-right','▥','Show or hide the side panel',()=>{this.setPanel(!this.panelOpen);this.options.onStateChange?.();});
-      tools.append(this.iconButton('home','⌂','Whole web',()=>{this.focus=null;this.selected=null;this.spot=null;this.dive=null;this.selectedLink=null;this.depth=5;this.depthSelect.value=5;this.update();this.fit();}),this.iconButton('maximize','⤢','Fit visible',()=>this.fit()),this.iconButton('zoom-out','−','Zoom out',()=>this.zoom(.75,this.width/2,this.height/2)),this.iconButton('zoom-in','+','Zoom in',()=>this.zoom(1.33,this.width/2,this.height/2)),this.coverageToggle,this.followToggle,this.panelToggle);
+      const tools=el('div','sa-tools');this.minimap=false;this.minimapToggle=this.iconButton('map','▣','Minimap: show a corner overview of the whole web; click or drag in it to move there',()=>{this.setMinimap(!this.minimap);this.options.onStateChange?.();});this.minimapToggle.setAttribute('aria-pressed','false');this.coverageToggle=this.iconButton('sprout','✿','Coverage: glow where your notes are, fade topics with none yet',()=>{this.setCoverage(!this.coverage);this.options.onStateChange?.();});this.followToggle=this.iconButton('locate','◎','Follow: spotlight each atlas note you open',()=>{this.setFollow(!this.follow);this.options.onFollow?.(this.follow);this.options.onStateChange?.();});this.panelToggle=this.iconButton('panel-right','▥','Show or hide the side panel',()=>{this.setPanel(!this.panelOpen);this.options.onStateChange?.();});
+      tools.append(this.iconButton('home','⌂','Whole web',()=>{this.focus=null;this.selected=null;this.spot=null;this.dive=null;this.selectedLink=null;this.depth=5;this.depthSelect.value=5;this.update();this.fit();}),this.iconButton('maximize','⤢','Fit visible',()=>this.fit()),this.iconButton('zoom-out','−','Zoom out',()=>this.zoom(.75,this.width/2,this.height/2)),this.iconButton('zoom-in','+','Zoom in',()=>this.zoom(1.33,this.width/2,this.height/2)),this.minimapToggle,this.coverageToggle,this.followToggle,this.panelToggle);
       bar.append(tools);host.append(bar);
-      const main=el('div','sa-main');this.stage=el('div','sa-stage');this.canvas=el('canvas');this.canvas.setAttribute('role','img');const desc=el('span','sa-sr','Statistics network. Search and the topic browser provide keyboard navigation.');desc.id='sa-desc-'+Math.random().toString(36).slice(2);this.stage.append(desc);this.canvas.setAttribute('aria-labelledby',desc.id);this.stage.append(this.canvas);this.tooltip=el('div','sa-tooltip');this.stage.append(this.tooltip);this.crumbs=el('div','sa-crumbs');this.crumbs.hidden=true;this.crumbs.setAttribute('aria-label','Spotlight path');this.stage.append(this.crumbs);
+      const main=el('div','sa-main');this.stage=el('div','sa-stage');this.canvas=el('canvas');this.canvas.setAttribute('role','img');const desc=el('span','sa-sr','Statistics network. Search and the topic browser provide keyboard navigation.');desc.id='sa-desc-'+Math.random().toString(36).slice(2);this.stage.append(desc);this.canvas.setAttribute('aria-labelledby',desc.id);this.stage.append(this.canvas);this.tooltip=el('div','sa-tooltip');this.stage.append(this.tooltip);this.crumbs=el('div','sa-crumbs');this.crumbs.hidden=true;this.crumbs.setAttribute('aria-label','Spotlight path');this.stage.append(this.crumbs);this.mini=el('canvas','sa-minimap');this.mini.setAttribute('aria-hidden','true');this.mini.title='Minimap: click or drag to move the view there';this.stage.append(this.mini);
       const overlay=el('div','sa-overlay'),legend=el('div','sa-legend');for(const [id,label] of [['probability','Probability & foundations'],['statistics','Inference & modeling'],['computing','Computing & learning']]){const item=el('span','');const dot=el('i','sa-dot');dot.style.background=model.colors[id];item.append(dot,document.createTextNode(label));legend.append(item);}
       legend.append(el('span','sa-shapes','● backbone · ○ learning · ■ auxiliary'));this.coverageKey=el('span','sa-coverage-key','✿ glow: your notes under a topic · faded: none yet');this.coverageKey.hidden=true;legend.append(this.coverageKey);this.status=el('div','sa-status');this.status.setAttribute('aria-live','polite');overlay.append(legend,this.status);this.stage.append(overlay);main.append(this.stage);
       this.panel=el('aside','sa-panel');this.panel.setAttribute('aria-label','Selected topic details');this.panelBody=el('div','sa-panel-body');this.panel.append(this.panelBody);
@@ -68,7 +83,7 @@ const AtlasUI = (() => {
       this.outline.addEventListener('toggle',()=>{if(this.outline.open&&!this.tree.childElementCount)this.buildTree();});
       this.issues=el('details','sa-issues');this.issueSummary=el('summary','','Map checks');this.issues.append(this.issueSummary);this.issueBody=el('div');this.issues.append(this.issueBody);this.panel.append(this.issues);
       main.append(this.panel);host.append(main);
-      this.ctx=this.canvas.getContext('2d');this.attachCanvas();
+      this.ctx=this.canvas.getContext('2d');this.attachCanvas();this.attachMini();
       this.resizeObserver=new ResizeObserver(()=>this.resize());this.resizeObserver.observe(this.stage);
       // Theme observer (Claude, 2026-11-11): Obsidian touches body class and style often; cached colours, label sizes,
       // label bitmaps and the scene are reset only when a colour or the font really changed. motionDpr: pixel-ratio cap while moving.
@@ -90,11 +105,16 @@ const AtlasUI = (() => {
       for(const [id,b] of Object.entries(this.modes))b.setAttribute('aria-pressed',String(id===this.mode));
       this.depthSelect.disabled=notesOnly;this.depthSelect.title=notesOnly?'Levels apply to backbone topics, which this view hides':'Visible levels';
       this.search.placeholder=notesOnly?'Find one of my notes…':'Find a topic, alias or note…';
-      const counts={backbone:0,learning:0,auxiliary:0};this.model.nodes.forEach(n=>counts[n.layer]++);
-      this.status.textContent=`${counts.backbone} topics · ${counts.learning} notes · showing ${this.visible.nodes.length} nodes, ${this.visible.edges.length} links`+(this.focus?' · focused branch':'')+((this.mode==='learning'||notesOnly)&&!counts.learning?' · no learning notes yet':'')+(notesOnly&&this.focus&&counts.learning&&!this.visible.nodes.length?' · no notes in this branch':'');
+      // Notes only searches notes alone, so its matches are recomputed when the view switches to or from it.
+      if(this.search.value.trim()&&this.findPool!==notesOnly)this.searchResults();
+      this.renderStatus();
       const issues=this.model.issues.length;this.issueBody.replaceChildren();for(const issue of this.model.issues)this.issueBody.append(el('p','',issue));this.issues.hidden=!issues;this.issueSummary.textContent=`Map checks (${issues})`;
       this.panelToggle.classList.toggle('sa-flag',!!issues);this.panelToggle.title=issues?`Show or hide the side panel · ${issues} map check${issues>1?'s':''}`:'Show or hide the side panel';
       this.renderPanel();this.renderCrumbs();this.draw();
+    }
+    renderStatus(){
+      const notesOnly=this.mode==='notes',counts={backbone:0,learning:0,auxiliary:0};this.model.nodes.forEach(n=>counts[n.layer]++);const lit=this.finds?.ids.length;
+      this.status.textContent=`${counts.backbone} topics · ${counts.learning} notes · showing ${this.visible.nodes.length} nodes, ${this.visible.edges.length} links`+(this.focus?' · focused branch':'')+((this.mode==='learning'||notesOnly)&&!counts.learning?' · no learning notes yet':'')+(notesOnly&&this.focus&&counts.learning&&!this.visible.nodes.length?' · no notes in this branch':'')+(lit?` · ${lit} search match${lit===1?'':'es'} lit (Esc clears)`:'');
     }
     select(id,focus=false){
       if((this.spot||this.dive)&&!focus)return this.spotlight(id,'auto'); // inside a spotlight or a dive, a pick moves the light (Phases 3-4)
@@ -108,12 +128,73 @@ const AtlasUI = (() => {
       else if(this.focus&&!this.core.visible(this.model,this.mode,this.depth,this.focus).nodes.some(v=>v.id===id))this.focus=null;
       this.update();if(focus)this.fit();else {const p=this.screen(id);if(p&&(p.x<30||p.x>this.width-30||p.y<30||p.y>this.height-30))this.center(id);}
     }
+    // Search (fly-through: Claude, 2026-11-11). Matches are ranked: exact title, title starting with the query, a word
+    // of the title starting with it, title containing it, then alias or id only; ties keep the tree order, so neighbouring
+    // matches tend to sit near each other and the glides between them stay short. Up to FIND_MAX matches are lit on the
+    // map (setFinds) and stay lit while the query is in the box, also after the box loses focus.
+    // Related notes (Claude, 2026-11-12, user request): a learning note whose title does not match is still lit when
+    // its primary home, or a topic above it from level 2 down, matches; "regression" then finds the OLS notes homed
+    // under Linear regression. Subjects (level 1) are left out, since they would light every note in a subject. They
+    // follow the direct matches in the list and the Tab order, and `relatedVia` names the matching topic for each.
     searchResults(){
-      this.results.replaceChildren();const q=this.search.value.trim().toLowerCase();if(!q)return;
-      const notesOnly=this.mode==='notes',pool=notesOnly?this.model.nodes.filter(n=>n.layer==='learning'):this.model.nodes;
-      const matches=pool.filter(n=>[n.label,...n.aliases,n.id].some(s=>s.toLowerCase().includes(q))).sort((a,b)=>(a.label.toLowerCase()===q?-1:0)-(b.label.toLowerCase()===q?-1:0)).slice(0,24);
-      if(!matches.length)this.results.append(el('span','sa-muted',notesOnly?'No matching notes.':'No matching topics.'));
-      matches.forEach(n=>this.results.append(this.button(`${n.label} · ${n.layer==='backbone'?'L'+n.level:n.layer}`,()=>{this.select(n.id,n.layer==='backbone');this.search.value='';this.results.replaceChildren();})));
+      const q=this.search.value.trim().toLowerCase(),notesOnly=this.mode==='notes',m=this.model;this.findPool=notesOnly;this.relatedVia=new Map();
+      if(!q){this.matches=[];this.setFinds(null);this.renderResults();return;}
+      const rank=n=>{const l=n.label.toLowerCase();return l===q?0:l.startsWith(q)?1:l.split(/[\s\-–(),&/]+/).some(w=>w.startsWith(q))?2:l.includes(q)?3:[...n.aliases,n.id].some(s=>s.toLowerCase().includes(q))?4:5;};
+      // Auxiliary records (raw sources, figures, vault administration) are not searched (user request, 2026-11-12).
+      const all=m.nodes.filter(n=>n.layer!=='auxiliary').map((n,i)=>({n,r:rank(n),i})).filter(x=>x.r<5).sort((a,b)=>a.r-b.r||a.i-b.i).map(x=>x.n);
+      const direct=notesOnly?all.filter(n=>n.layer==='learning'):all;
+      if(direct.length>FIND_MAX){this.matches=direct;this.setFinds(null);this.renderResults();return;}
+      const topics=new Set(all.filter(n=>n.layer==='backbone'&&n.level>=2).map(n=>n.id)),seen=new Set(direct.map(n=>n.id)),related=[];
+      for(const n of m.nodes){if(n.layer!=='learning'||seen.has(n.id))continue;let x=m.byId.get(n.home),guard=0;while(x&&guard++<12){if(topics.has(x.id)){this.relatedVia.set(n.id,x.id);related.push(n);break;}x=m.byId.get(x.parent);}}
+      this.matches=[...direct,...related];
+      this.setFinds(this.matches.length?this.matches.map(n=>n.id):null,related.map(n=>n.id));this.renderResults();
+    }
+    // The dropdown, shown only while the search box has focus: a header with the count and keys, then the lit matches
+    // (or the first 24 when there are too many to light). The row Enter would pick is marked.
+    renderResults(){
+      this.results.replaceChildren();const q=this.search.value.trim();if(!q||this.search.ownerDocument.activeElement!==this.search)return;
+      const all=this.matches||[],f=this.finds,cur=f&&f.i>=0?f.ids[f.i]:null;
+      if(!all.length){this.results.append(el('span','sa-muted',this.findPool?'No matching notes.':'No matching topics.'));return;}
+      const via=this.relatedVia||new Map(),nd=f?f.ids.length-f.rel.size:0,nr=f?f.rel.size:0,more=nr?` + ${nr} of your note${nr===1?'':'s'} in matching topics`:'';
+      this.results.append(el('div','sa-results-head',!f?`${all.length} matches · type more to light them on the map`:cur?`${f.i+1} of ${f.ids.length} · Tab next · ⇧Tab back · Enter picks · Esc goes back`:`${nd} match${nd===1?'':'es'}${more} lit · Tab flies to each`));
+      (f?this.matches:all.slice(0,24)).forEach((n,i)=>{
+        const v=via.get(n.id);if(v&&!via.has(this.matches[i-1]?.id))this.results.append(el('div','sa-results-sub','Your notes in matching topics'));
+        const b=this.button(n.label,()=>this.pickResult(n));b.append(el('span','sa-result-tag',v?`my note · in ${this.model.byId.get(v)?.label}`:n.layer==='backbone'?'L'+n.level:'my note'));if(cur?n.id===cur:!i){b.classList.add('is-target');if(cur)b.setAttribute('aria-current','true');}this.results.append(b);});
+      if(cur)this.results.querySelector('.is-target')?.scrollIntoView({block:'nearest'});
+    }
+    // Lights these matches (null: none); rel: those lit as related notes. The match flown to is kept when it is still among them.
+    setFinds(ids,rel=[]){
+      const key=ids?ids.join('\n')+'\n#'+rel.length:'';if((this.finds?.key||'')===key)return;
+      const old=this.finds,cur=old&&old.i>=0?old.ids[old.i]:null;
+      this.finds=ids?{key,ids,set:new Set(ids),rel:new Set(rel),i:cur?ids.indexOf(cur):-1,t0:old?.t0||0,ver:(this.findVer=(this.findVer||0)+1)}:null;
+      if(this.visible)this.renderStatus();this.draw();
+    }
+    // Glides to the next (dir 1) or previous (dir -1) lit match without selecting it. The view switches and levels open
+    // as a pick would, so the match can be seen; the camera centres it at a zoom where its label group shows. The view
+    // before the first glide is kept for Esc.
+    fly(dir){
+      const f=this.finds;if(!f?.ids.length)return;
+      f.i=f.i<0?(dir>0?0:f.ids.length-1):(f.i+dir+f.ids.length)%f.ids.length;const n=this.model.byId.get(f.ids[f.i]);if(!n)return;
+      if(!this.flight)this.flight={from:{camera:{...(this.glide?.to||this.camera)},mode:this.mode,depth:this.depth,focus:this.focus}};
+      if(n.layer==='learning'&&this.mode==='backbone')this.mode='learning';
+      if(n.layer==='backbone')this.depth=Math.max(this.depth,n.level);else if(n.home)this.depth=Math.max(this.depth,this.model.byId.get(n.home)?.level||5);this.depthSelect.value=this.depth;
+      if(this.focus&&!this.core.visible(this.model,this.mode,this.depth,this.focus).nodes.some(v=>v.id===n.id))this.focus=null;
+      this.update();
+      const p=this.model.positions[n.id];f.t0=performance.now();
+      if(p&&this.width){
+        const start=this.mode==='notes'&&n.layer==='learning'?0:(this.labelPlan().start[groupOf(n)]||0)*(this.focus||this.dive?FOCUS_RELAX:1);
+        const k=Math.min(2.5,Math.max((this.glide?.to||this.camera).k,start*LABEL_RAMP*1.1)),top=(this.spot||this.dive)?44:0,to={k,x:this.width/2-p.x*k,y:(this.height+top)/2-p.y*k};
+        this.moveCamera(to);this.flight.to=to;f.t0+=this.glide?.dur||0;
+      }
+      this.renderResults();this.draw();
+    }
+    pickResult(n){this.flight=null;this.search.value='';this.matches=[];this.setFinds(null);this.results.replaceChildren();this.select(n.id,n.layer==='backbone');}
+    // Clears the search. restore (Esc in the box): if the camera is still where the last glide left it, the view from
+    // before the first glide comes back (camera, view, levels and focused branch).
+    endSearch(restore){
+      const fl=this.flight;this.flight=null;
+      if(restore&&fl?.to){const c=this.glide?.to||this.camera,t=fl.to;if(Math.abs(c.k/t.k-1)<1e-6&&Math.abs(c.x-t.x)<.5&&Math.abs(c.y-t.y)<.5){const v=fl.from;this.mode=v.mode;this.depth=v.depth;this.depthSelect.value=v.depth;this.focus=v.focus;this.update();this.moveCamera(v.camera);}}
+      this.search.value='';this.matches=[];this.setFinds(null);this.results.replaceChildren();
     }
     renderPanel(){
       this.panelBody.replaceChildren();if(this.selectedLink)return this.renderLinkPanel();const n=this.model.byId.get(this.selected);
@@ -129,7 +210,7 @@ const AtlasUI = (() => {
         return;
       }
       if(!n){
-        this.panelBody.append(el('div','sa-eyebrow','THREE SUBJECTS · FIVE LEVELS'),el('h3','','Explore the backbone'),el('p','sa-muted','Select a dot to inspect its path and connections. Search opens a focused branch. Double-click a dot to open its note. With the map clicked, the arrow keys move between topics, Space dives into a branch and Enter opens the note.'));
+        this.panelBody.append(el('div','sa-eyebrow','THREE SUBJECTS · FIVE LEVELS'),el('h3','','Explore the backbone'),el('p','sa-muted','Select a dot to inspect its path and connections. Search lights its matches; Tab flies from one to the next and Enter opens a focused branch. Double-click a dot to open its note. With the map clicked, the arrow keys move between topics, Space dives into a branch and Enter opens the note.'));
         const roots=this.model.nodes.filter(n=>n.layer==='backbone'&&n.level===1);roots.forEach(n=>this.panelBody.append(this.button(n.label,()=>this.select(n.id,true))));
         this.panelBody.append(el('p','sa-muted','Hierarchy is solid. Prerequisites and applications are dashed lines with chevrons pointing toward the dependent topic. Conceptual connections are dotted.'));
         if(this.mode==='everything'){const d=el('details');d.append(el('summary','','Auxiliary records'));this.model.nodes.filter(v=>v.layer==='auxiliary').forEach(v=>d.append(this.button(v.label,()=>this.select(v.id))));this.panelBody.append(d);}return;
@@ -279,12 +360,15 @@ const AtlasUI = (() => {
       let more=this.stepCamera(now,dt);const moving=more||now-(this.lastMotion||-1e9)<IDLE_MS;
       if(!this.syncSize(moving))return;const theme=this.theme(),active=this.spot?null:(this.hover||this.selected);
       if(active)this.litId=active;
-      const goal=active?1:0,lit=this.litT=goal>(this.litT||0)?Math.min(1,(this.litT||0)+fdt/FADE_MS):Math.max(0,(this.litT||0)-fdt/FADE_MS);
+      const goal=active?1:0,lit=this.litT=toward(this.litT||0,goal,fdt/FADE_MS);
       if(lit!==goal)more=true;else if(!active)this.litId=null;
       if(this.spot)this.spotOut=this.spot;
-      const sGoal=this.spot?1:0,sT=this.spotT=sGoal>(this.spotT||0)?Math.min(1,(this.spotT||0)+fdt/SPOT_MS):Math.max(0,(this.spotT||0)-fdt/SPOT_MS);
+      const sGoal=this.spot?1:0,sT=this.spotT=toward(this.spotT||0,sGoal,fdt/SPOT_MS);
       if(sT!==sGoal)more=true;else if(!this.spot)this.spotOut=null;
-      const ctx=this.ctx,dim=(1-.75*lit)*(1-sT)+(this.dive?1:SPOT_DIM)*sT;ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.clearRect(0,0,this.canvas.width,this.canvas.height); // in a dive the fog already sets the strengths
+      if(this.finds)this.findsOut=this.finds;
+      const fGoal=this.finds?1:0,fT=this.findT=toward(this.findT||0,fGoal,fdt/SPOT_MS);
+      if(fT!==fGoal)more=true;else if(!this.finds)this.findsOut=null;
+      const ctx=this.ctx,dim=Math.min((1-.75*lit)*(1-sT)+(this.dive?1:SPOT_DIM)*sT,1-(1-FIND_DIM)*fT);ctx.setTransform(1,0,0,1,0,0);ctx.globalAlpha=1;ctx.clearRect(0,0,this.canvas.width,this.canvas.height); // in a dive the fog already sets the strengths
       if(moving){if(!this.blitMotion(ctx,dim,theme))this.paintScene(ctx,dim);}
       else{
         const cam=this.camera,key=[this.canvas.width,this.canvas.height,this.dpr,cam.x,cam.y,cam.k,this.styleKey()].join('|');
@@ -296,16 +380,18 @@ const AtlasUI = (() => {
       if(this.litId&&lit>0)this.paintOverlay(ctx,this.litId,lit);
       if(this.dive)this.paintDive(ctx);
       if(this.spotOut&&sT>0&&this.paintSpot(ctx,this.spotOut,sT,now))more=true;
+      if(this.findsOut&&fT>0&&this.paintFinds(ctx,this.findsOut,fT,now))more=true;
       if(this.hoverLink&&this.hoverLink!==this.selectedLink)this.paintHoverLink(ctx,this.hoverLink);
       // Labels are re-placed at rest when anything they depend on changed, and during a move only when the zoom has
       // changed by a quarter since the last placement (so zooming out does not pile labels on top of each other).
-      const c=this.camera,lkey=[c.x,c.y,c.k,this.width,this.height,active,this.focus,this.spot?.key,this.dive?.key,this.coverage].join('|');
+      const c=this.camera,lkey=[c.x,c.y,c.k,this.width,this.height,active,this.focus,this.spot?.key,this.dive?.key,this.coverage,this.finds?this.finds.ver+':'+this.finds.i:'',this.miniShown].join('|');
       if(!this.labelFx||this.placedFor!==this.visible||(moving?Math.abs(Math.log(c.k/this.placedK))>.223:this.placedKey!==lkey))this.placeLabels(active,lkey);
       if(this.drawLabels(ctx,fdt))more=true;
       if(!moving&&!more)this.queueMotionCache();
       // Camera settled somewhere new: ask Obsidian to save the view state (Claude, 2026-11-11). Camera moves never did,
       // so a saved focus could be restored with a camera from another moment, pointing at empty space.
       if(!moving){const ck=c.x+'|'+c.y+'|'+c.k;if(this.savedCam!==ck){if(this.savedCam!==undefined)this.options.onStateChange?.();this.savedCam=ck;}}
+      this.paintMini();
       if(!moving){this.canvas.dataset.mode=this.mode;this.canvas.dataset.visibleNodes=this.visible.nodes.length;this.canvas.dataset.visibleEdges=this.visible.edges.length;this.canvas.dataset.camera=JSON.stringify(this.camera);}
       if(more)this.draw();
     }
@@ -402,7 +488,13 @@ const AtlasUI = (() => {
       // neighbourhood (Phase 2): a level-2 label used to cover half of a subject dot. Level-3 dots are not obstacles
       // at the whole-web zoom, where they are too dense and blocked most level-2 labels.
       const dot=n=>{const p=P[n.id];if(!p)return;const x=p.x*k+cx,y=p.y*k+cy,r=this.radius(n)+2;if(x>-r&&x<W+r&&y>-r&&y<H+r)add({x:x-r,y:y-r,w:2*r,h:2*r});};
+      // Labels keep clear of the minimap while it is shown (Claude, 2026-11-12).
+      if(this.miniShown)add({x:W-MINI-14,y:0,w:MINI+14,h:MINI+14});
       for(const g of ['L1','L2','L3']){const list=prep.groups.get(g);if(list.length&&(g!=='L3'||this.zoomAlpha(list[0],k)>0))list.forEach(dot);}for(const id of nb){const n=this.model.byId.get(id);if(n&&prep.ids.has(id)&&n.layer==='backbone'&&n.level>3)dot(n);}
+      // Search matches are labelled first (fly-through): the match flown to (always placed), then the others nearest the
+      // centre; their labels ignore the zoom rules, and other labels are drawn at half strength while matches are lit.
+      const finds=this.finds,curFind=finds&&finds.i>=0?finds.ids[finds.i]:null;
+      if(finds){push(this.model.byId.get(curFind));const c=[];for(const id of finds.ids){if(seen.has(id))continue;const p=P[id];if(!p)continue;c.push({id,d:(p.x*k+cx-W/2)**2+(p.y*k+cy-H/2)**2});}c.sort((a,b)=>a.d-b.d);c.forEach(x=>push(this.model.byId.get(x.id)));}
       // Under a spotlight the lit dots are labelled first: the dot (or both ends of a link), then its path from the
       // deepest level up, then its typed links and its sub-topics and notes, nearest the centre first. The ordinary
       // labels for the zoom follow at SPOT_LABEL strength in the space left (Phase 3).
@@ -430,13 +522,14 @@ const AtlasUI = (() => {
         const isActive=n.id===active,near=nb.has(n.id);
         const p=P[n.id];if(!p)continue;const px=p.x*k+cx,py=p.y*k+cy;if(px<0||px>W||py<0||py>H)continue;
         const major=n.level===1&&!this.focus,[size,weight,wrap]=LABEL_STYLE[groupOf(n)],lh=Math.round(size*1.3),f=`${weight} ${size}px ${font}`,text=major?majors[n.id]||n.label:n.label;
-        const box=this.labelBox(text,f,lh,wrap),w=box.w,h=box.h,r=this.radius(n),off=r+6;
+        const box=this.labelBox(text,f,lh,wrap),w=box.w,h=box.h,r=this.radius(n),off=r+(n.id===curFind?12:6);
         const cands=major?[[-w/2,r+7]]:[[off,-h/2],[-w-off,-h/2],[-w/2,off],[-w/2,-h-off]],old=fx.get(n.id),tries=cands.map((_,i)=>i);
         if(old?.target===1&&old.cand>0&&old.cand<cands.length){tries.splice(old.cand,1);tries.unshift(old.cand);}
         let ci=-1,bx=0,by=0;
         for(const i of tries){const x=px+cands[i][0],y=py+cands[i][1];if(x>=3&&y>=3&&x+w<W-3&&y+h<H-3&&!hits({x:x-3,y:y-2,w:w+6,h:h+4})){ci=i;bx=x;by=y;break;}}
-        if(ci<0){if(!major&&!isActive&&!['star','path','end'].includes(role(n.id))&&!dive?.trailSet.has(n.id))continue;ci=0;bx=Math.max(3,Math.min(W-w-3,px+cands[0][0]));by=Math.max(3,Math.min(H-h-3,py+cands[0][1]));}
-        add({x:bx-3,y:by-2,w:w+6,h:h+4});placed.set(n.id,{dx:bx-3-px,dy:by-2-py,cand:ci,text,font:f,lh,wrap,node:n,always:near||major||!!role(n.id)||!!dive?.trailSet.has(n.id),dim:(dive?(fogOf(n.id)<1&&!role(n.id)):(!!spot&&!role(n.id)))||(!covered(n)&&!role(n.id)&&!near)});
+        if(ci<0){if(!major&&!isActive&&!['star','path','end'].includes(role(n.id))&&!dive?.trailSet.has(n.id)&&n.id!==curFind)continue;ci=0;bx=Math.max(3,Math.min(W-w-3,px+cands[0][0]));by=Math.max(3,Math.min(H-h-3,py+cands[0][1]));}
+        const found=!!finds?.set.has(n.id);
+        add({x:bx-3,y:by-2,w:w+6,h:h+4});placed.set(n.id,{dx:bx-3-px,dy:by-2-py,cand:ci,text,font:f,lh,wrap,node:n,always:near||major||found||!!role(n.id)||!!dive?.trailSet.has(n.id),dim:!found&&((dive?(fogOf(n.id)<1&&!role(n.id)):(!!spot&&!role(n.id)))||(!covered(n)&&!role(n.id)&&!near)||(!!finds&&!role(n.id)&&!near))});
       }
       for(const [id,s] of fx)if(!placed.has(id))s.target=0;
       for(const [id,p] of placed){const s=fx.get(id);if(s){Object.assign(s,p);s.target=1;}else fx.set(id,{...p,alpha:0,target:1});}
@@ -541,6 +634,61 @@ const AtlasUI = (() => {
     notesUnder(id){const c=this.coverageMap().count.get(id)||0;return c===1?'1 note':`${c} notes`;}
     setCoverage(on){this.coverage=!!on;this.coverageToggle?.setAttribute('aria-pressed',String(this.coverage));if(this.coverageKey)this.coverageKey.hidden=!this.coverage;this.update();}
     styleKey(){return (this.dive?.key||'')+(this.coverage?'|cover':'');}
+    // Minimap (Claude, 2026-11-12). The visible web is drawn once into a small bitmap (dots in their subject colours,
+    // hierarchy links down to level 3, dive fog and coverage applied), rebuilt only when the visible set, theme, dive or
+    // coverage changes. Each frame copies it and draws on top: lit search matches, the dive's thread, the spotlight's
+    // path, a ring on the lit dot, and the box the main view shows. It is drawn only while shown, and only when one
+    // of those changed.
+    setMinimap(on){this.minimap=!!on;this.minimapToggle?.setAttribute('aria-pressed',String(this.minimap));this.draw();}
+    // Bounds of the visible web, per visible set.
+    miniFit(){
+      if(this._miniFit?.for===this.visible)return this._miniFit.v;
+      const P=this.model.positions;let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+      for(const n of this.visible.nodes){const p=P[n.id];if(!p)continue;if(p.x<x0)x0=p.x;if(p.x>x1)x1=p.x;if(p.y<y0)y0=p.y;if(p.y>y1)y1=p.y;}
+      const v=x0!==Infinity?{x0,y0,x1,y1}:null;this._miniFit={for:this.visible,v};return v;
+    }
+    miniBase(d,fit){
+      const th=this.theme(),sk=this.styleKey(),b=this._miniBase;
+      if(b&&b.for===this.visible&&b.theme===th&&b.sk===sk&&b.d===d&&b.fit===fit)return b;
+      const S=Math.round(MINI*d),c=b?.canvas||document.createElement('canvas');c.width=S;c.height=S;const x=c.getContext('2d');x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,MINI,MINI);
+      const P=this.model.positions,s=Math.min((MINI-12)/Math.max(1,fit.x1-fit.x0),(MINI-12)/Math.max(1,fit.y1-fit.y0)),ox=MINI/2-(fit.x0+fit.x1)/2*s,oy=MINI/2-(fit.y0+fit.y1)/2*s;this.miniT={s,ox,oy};
+      // Dive fog and coverage keep a floor here, so the shape of the whole web stays readable around a deep dive.
+      const fog=this.dive?.fog,cov=this.coverage?this.coverageMap():null,fo=id=>.25+.75*(fog?(fog.get(id)??FOG_OUT):1)*(cov?(cov.factor.get(id)??COVER_FADE):1);
+      x.strokeStyle=th.muted;x.lineWidth=.6;
+      for(const e of this.visible.edges){if(e.type!=='contains')continue;const t=this.model.byId.get(e.target);if(!t||t.level>3)continue;const a=P[e.source],q=P[e.target];if(!a||!q)continue;x.globalAlpha=.4*Math.min(fo(e.source),fo(e.target));x.beginPath();x.moveTo(a.x*s+ox,a.y*s+oy);x.lineTo(q.x*s+ox,q.y*s+oy);x.stroke();}
+      for(const n of this.visible.nodes){const p=P[n.id];if(!p)continue;const r=n.layer==='backbone'?[0,3.2,2,1.4,1.1,.8][n.level]||.8:n.layer==='learning'?1.1:.9;x.globalAlpha=(n.layer==='backbone'&&n.level===5?.55:.85)*fo(n.id);x.fillStyle=this.model.colors[n.core]||th.muted;x.beginPath();x.arc(p.x*s+ox,p.y*s+oy,r,0,Math.PI*2);x.fill();}
+      x.globalAlpha=1;return this._miniBase={canvas:c,for:this.visible,theme:th,sk,d,fit,v:(b?.v||0)+1};
+    }
+    paintMini(){
+      const m=this.mini;if(!m)return;const fit=this.miniFit();
+      const show=this.minimap&&!!fit&&this.width>=MINI_MIN[0]&&this.height>=MINI_MIN[1];
+      if(show!==this.miniShown){this.miniShown=show;m.classList.toggle('is-shown',show);this.stage.classList.toggle('sa-mini-on',show);if(!show)this.miniDrag=null;}
+      if(!show)return;
+      const d=this.fullDpr||window.devicePixelRatio||1,S=Math.round(MINI*d);if(m.width!==S||m.height!==S){m.width=S;m.height=S;this.miniKey=null;}
+      const base=this.miniBase(d,fit),c=this.camera,sp=this.spot,f=this.finds,dv=this.dive,star=f&&f.i>=0?f.ids[f.i]:sp?.kind==='node'?sp.id:this.selected;
+      const key=[c.x,c.y,c.k,this.width,this.height,base.v,sp?.key,dv?.key,f?f.ver+':'+f.i:'',star].join('|');if(key===this.miniKey)return;this.miniKey=key;
+      const x=m.getContext('2d'),{s,ox,oy}=this.miniT,th=this.theme(),P=this.model.positions,ids=this.prepared().ids,pt=id=>{const p=P[id];return p&&ids.has(id)?[p.x*s+ox,p.y*s+oy]:null;};
+      x.setTransform(1,0,0,1,0,0);x.globalAlpha=1;x.clearRect(0,0,S,S);x.drawImage(base.canvas,0,0);x.setTransform(d,0,0,d,0,0);x.lineJoin='round';x.lineCap='round';
+      if(f){x.fillStyle=th.fg;x.globalAlpha=.9;for(const id of f.ids){const q=pt(id);if(!q)continue;x.beginPath();x.arc(q[0],q[1],1.7,0,Math.PI*2);x.fill();}}
+      const line=(list,col)=>{const pts=list.map(pt).filter(Boolean);if(pts.length<2)return;x.globalAlpha=.95;x.strokeStyle=col;x.lineWidth=2;x.beginPath();pts.forEach((q,i)=>i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1]));x.stroke();};
+      if(dv)line(dv.trail,this.model.colors[this.model.byId.get(dv.id)?.core]||th.fg);
+      if(sp?.kind==='node')line(sp.path,sp.color||th.fg);
+      const q=star&&pt(star);if(q){x.globalAlpha=1;x.strokeStyle=th.fg;x.lineWidth=1.4;x.beginPath();x.arc(q[0],q[1],3.6,0,Math.PI*2);x.stroke();}
+      // The box the main view shows, at least 8 px so it stays findable when zoomed far in.
+      let bx=-c.x/c.k*s+ox,by=-c.y/c.k*s+oy,bw=this.width/c.k*s,bh=this.height/c.k*s;if(bw<8){bx-=(8-bw)/2;bw=8;}if(bh<8){by-=(8-bh)/2;bh=8;}
+      x.globalAlpha=.1;x.fillStyle=th.fg;x.fillRect(bx,by,bw,bh);x.globalAlpha=.85;x.strokeStyle=th.fg;x.lineWidth=1.2;x.strokeRect(bx,by,bw,bh);x.globalAlpha=1;
+    }
+    // Click in the minimap: the view glides to centre that point; drag: the view follows the pointer. The zoom stays.
+    attachMini(){
+      const m=this.mini,at=e=>{const t=this.miniT,b=m.getBoundingClientRect();return t?{x:(e.clientX-b.left-m.clientLeft-t.ox)/t.s,y:(e.clientY-b.top-m.clientTop-t.oy)/t.s}:null;};
+      const centre=(p,k)=>({k,x:this.width/2-p.x*k,y:this.height/2-p.y*k});
+      m.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();this.endPeek();this.glide=null;this.wheel=null;this.miniDrag={x:e.clientX,y:e.clientY,moved:false};try{m.setPointerCapture(e.pointerId);}catch{}});
+      m.addEventListener('pointermove',e=>{const dr=this.miniDrag;if(!dr)return;if(!dr.moved&&Math.hypot(e.clientX-dr.x,e.clientY-dr.y)>3)dr.moved=true;const p=dr.moved&&at(e);if(p){this.camera=centre(p,this.camera.k);this.markMotion();this.draw();}});
+      m.addEventListener('pointerup',e=>{const dr=this.miniDrag;this.miniDrag=null;if(!dr||dr.moved)return;const p=at(e);if(p)this.moveCamera(centre(p,(this.glide?.to||this.camera).k));});
+      m.addEventListener('pointercancel',()=>{this.miniDrag=null;});
+      m.addEventListener('wheel',e=>e.preventDefault(),{passive:false});
+      m.addEventListener('dblclick',e=>e.stopPropagation());
+    }
     setFollow(on){this.follow=!!on;this.followToggle?.setAttribute('aria-pressed',String(this.follow));}
     // Spotlight (Claude, 2026-11-11, Phase 3: "Where am I"). The web dims to a tenth. The backbone path from the subject
     // down to the dot is drawn thick in its subject colour over a soft beam; the dot glows and pulses a few times; its
@@ -615,6 +763,25 @@ const AtlasUI = (() => {
       }
       ctx.globalAlpha=1;ctx.lineCap='butt';ctx.lineJoin='miter';return pulsing;
     }
+    // Search matches over the dimmed web at strength t (fly-through, Claude, 2026-11-11): each match gets a soft disc in
+    // its subject colour and a thin ring (dotted for a related note); the match flown to gets a glow, a bold ring and FIND_PULSES pulses once the
+    // camera arrives. True while that pulse is still due or running.
+    paintFinds(ctx,f,t,now){
+      const {fg,bg,muted}=this.theme(),P=this.model.positions,{x:cx,y:cy,k}=this.camera,ids=this.prepared().ids,byId=this.model.byId,W=this.width,H=this.height,cur=f.i>=0?f.ids[f.i]:null;let pulsing=false;
+      ctx.setTransform(this.dpr,0,0,this.dpr,0,0);ctx.setLineDash([]);
+      const one=(id,star)=>{
+        const n=byId.get(id),p=P[id];if(!n||!p||!ids.has(id))return;const x=p.x*k+cx,y=p.y*k+cy;if(x<-50||x>W+50||y<-50||y>H+50)return;
+        const c=this.model.colors[n.core]||muted,r=this.radius(n)+(star?2:.5);
+        if(star){const R=r+34,g=ctx.createRadialGradient(x,y,r,x,y,R);g.addColorStop(0,toRgba(c,.55));g.addColorStop(1,toRgba(c,0));ctx.globalAlpha=t;ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,R,0,Math.PI*2);ctx.fill();}
+        else{ctx.globalAlpha=.22*t;ctx.fillStyle=c;ctx.beginPath();ctx.arc(x,y,r+7,0,Math.PI*2);ctx.fill();}
+        ctx.globalAlpha=t;ctx.fillStyle=ctx.strokeStyle=c;ctx.lineWidth=1.8;ctx.beginPath();if(n.layer==='auxiliary')ctx.rect(x-r,y-r,2*r,2*r);else ctx.arc(x,y,r,0,Math.PI*2);
+        if(n.layer==='learning'){ctx.fillStyle=bg;ctx.fill();ctx.stroke();}else ctx.fill();
+        ctx.globalAlpha=(star?1:.8)*t;ctx.strokeStyle=fg;ctx.lineWidth=star?2:1.2;ctx.setLineDash(f.rel?.has(id)&&!star?[2,2.5]:[]);ctx.beginPath();ctx.arc(x,y,r+(star?6:3.5),0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
+        if(star){const age=now-f.t0;if(age<FIND_PULSES*PULSE_MS){pulsing=true;if(age>=0){const ph=(age%PULSE_MS)/PULSE_MS;ctx.globalAlpha=(1-ph)*.7*t;ctx.strokeStyle=c;ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y,r+6+ph*28,0,Math.PI*2);ctx.stroke();}}}
+      };
+      for(const id of f.ids)if(id!==cur)one(id,false);if(cur)one(cur,true);
+      ctx.globalAlpha=1;return pulsing;
+    }
     // The link under the pointer, drawn thick with rings on its ends (Phase 3).
     paintHoverLink(ctx,e){
       const P=this.model.positions,a=P[e.source],b=P[e.target],ids=this.prepared().ids;if(!a||!b||!ids.has(e.source)||!ids.has(e.target))return;
@@ -656,13 +823,14 @@ const AtlasUI = (() => {
       const arrows={ArrowUp:'deeper',ArrowDown:'back',ArrowLeft:'left',ArrowRight:'right'}; // up goes further out, down comes back (user request, 2026-11-11)
       this.host.addEventListener('keydown',e=>{if(e.target.closest?.('input,select,textarea'))return;const stop=()=>{e.preventDefault();e.stopPropagation();},cur=this.spot?.kind==='node'?this.spot.id:this.selected;
         if(e.key==='Escape'&&(this.dive||this.spot||this.selectedLink)){stop();if(this.dive)this.exitDive();else this.clearSpot();}
+        else if(e.key==='Escape'&&this.finds){stop();this.endSearch(false);}
         else if(e.key==='Backspace'&&this.dive){stop();this.climb();}
         else if(e.target!==this.canvas||e.ctrlKey||e.metaKey||e.altKey)return;
         else if(e.key===' '&&cur){stop();this.diveInto(cur);}
         else if(e.key==='Enter'&&cur){stop();const n=this.model.byId.get(cur);if(n)this.options.openNote?.(n.path);}
         else if(arrows[e.key]){stop();this.step(arrows[e.key]);}});
       this.canvas.addEventListener('pointerdown',e=>{const p=local(e);this.endPeek();this.canvas.focus({preventScroll:true});this.glide=null;this.wheel=null;this.drag={...p,cx:this.camera.x,cy:this.camera.y,moved:false};try{this.canvas.setPointerCapture(e.pointerId);}catch{}});
-      this.canvas.addEventListener('pointermove',e=>{const p=local(e);if(this.drag){const dx=p.x-this.drag.x,dy=p.y-this.drag.y;if(Math.hypot(dx,dy)>5)this.drag.moved=true;if(this.drag.moved){this.camera={...this.camera,x:this.drag.cx+dx,y:this.drag.cy+dy};this.markMotion();this.draw();}}else{const id=this.hit(p.x,p.y),link=id?null:this.hitLink(p.x,p.y);this.tooltip.style.left=Math.min(p.x+12,this.width-250)+'px';this.tooltip.style.top=Math.max(3,p.y-35)+'px';if(id===this.hover&&link===this.hoverLink)return;if(id!==this.hover){this.endPeek();this.schedulePeek(id,e);}this.hover=id;this.hoverLink=link;const n=this.model.byId.get(id);this.tooltip.textContent=n?`${n.label} · ${n.layer==='backbone'?'L'+n.level+' · '+n.stage:n.layer}${this.coverage&&n.layer==='backbone'?' · '+this.notesUnder(n.id):''}`:link?this.linkText(link):'';this.tooltip.hidden=!n&&!link;this.canvas.style.cursor=n?'pointer':'grab';this.draw();}});
+      this.canvas.addEventListener('pointermove',e=>{const p=local(e);if(this.drag){const dx=p.x-this.drag.x,dy=p.y-this.drag.y;if(Math.hypot(dx,dy)>5)this.drag.moved=true;if(this.drag.moved){this.camera={...this.camera,x:this.drag.cx+dx,y:this.drag.cy+dy};this.markMotion();this.draw();}}else{const id=this.hit(p.x,p.y),link=id?null:this.hitLink(p.x,p.y);this.tooltip.style.left=Math.min(p.x+12,this.width-250)+'px';this.tooltip.style.top=Math.max(3,p.y-35)+'px';if(id===this.hover&&link===this.hoverLink)return;if(id!==this.hover){this.endPeek();this.schedulePeek(id,e);}this.hover=id;this.hoverLink=link;const n=this.model.byId.get(id);this.tooltip.textContent=n?`${n.label} · ${n.layer==='backbone'?'L'+n.level+' · '+n.stage:n.layer}${this.coverage&&n.layer==='backbone'?' · '+this.notesUnder(n.id):''}${this.finds?.rel.has(n.id)?' · lit: homed in '+(this.model.byId.get(this.relatedVia?.get(n.id))?.label||'a matching topic'):''}`:link?this.linkText(link):'';this.tooltip.hidden=!n&&!link;this.canvas.style.cursor=n?'pointer':'grab';this.draw();}});
       // Click: a dot selects it (inside a spotlight, moves the light there); clicking the spotlit dot again, or empty map,
       // leaves the spotlight without moving the camera. Double-click a dot: open its note. (Phase 3)
       // Link clicks (select a link, double-click to frame its ends) were turned off at the user's request (2026-11-11):

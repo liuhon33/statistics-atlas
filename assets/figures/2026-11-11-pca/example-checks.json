@@ -1,0 +1,13 @@
+{
+  "python_note_example": "PASS (scikit-learn 1.4.2)",
+  "R_note_example": "PASS (R 4.4.1)",
+  "interactive_math": {
+    "angles": 181,
+    "max_error": 8.881784197001252e-15
+  },
+  "rectangular_rank_deficient_max_error": 7.105427357601002e-15,
+  "tSNE_pair_distribution_sums": [
+    1.0,
+    1.0
+  ]
+}

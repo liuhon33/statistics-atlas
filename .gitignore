@@ -32,3 +32,6 @@ node_modules/
 .env.*
 !.env.example
 *.log
+
+# Original course-slide PDFs: retained locally, excluded from Git/public exports.
+/raw/notes/private-course-slides/**/*.pdf

@@ -1,0 +1,53 @@
+{
+  "source_thread_id": "01a1cd94-bfa5-7eb2-8dab-b63d0d62b544",
+  "date": "2026-11-11",
+  "generated_sha256": {
+    "01-one-minute.png": "bc0bb9a1a2f13eed3a168088cc20b58a07ced6f575146140545446618cda410c",
+    "01-one-minute.svg": "adcaef5e884a5722120b4a267c4ed4d1046367caedce3b8a9b3748828a8b6448",
+    "02-steve-rectangles.png": "31fc8fc76ae4dc180ece41aef08d33135d6f3da8fbe994ebdd76df8c4919bb83",
+    "02-steve-rectangles.svg": "fab338629fd9056063fea7dcd1a8e0c7e854c6702107f349d1a74c9ee45864a9",
+    "03-elbo-shares.png": "b4da2356462422ed8d4b8aec0d90d4c79a39ff9e4485eac3d8307cc61371787c",
+    "03-elbo-shares.svg": "71bcaad45794a2eb314c08297fea7b50c6feba5e60d06fbb4ea7947038109e9e",
+    "04-monty-rectangles.png": "78d67abaad3f408f4ef28401bd2ec7c05e443595204397d9670cdb8df55638d3",
+    "04-monty-rectangles.svg": "c2e57ada3037e2871ca778273d209d2120f21e2afb5aa57ccbcd4aff7af4ebb5",
+    "05-host-comparison.png": "a4d01213ee28db314b0b04d45cc997f78d93b8b46aed1a45e484696ab1d308f0",
+    "05-host-comparison.svg": "a0a33d36f89a0aa07a5c6084a1000d3d4cf83584a5017041b607e99c38b1a3a3",
+    "06-hundred-doors.png": "a3fe6b1491ccc4bb168d6892cd8d15fc2f53e6719f7ecc37245894ae839ca781",
+    "06-hundred-doors.svg": "461a702350c5ba030fa7b16b435f3612765fb5d71228e080fb492435d95bc0a6",
+    "bayes-explorer.build.json": "e1c81686021b3bfa4311c134bdcfb20d6570f89d1082d1db314481f2ff9b8c06",
+    "bayes-explorer.html": "80cb8ea4ed4cedf456a80270ffa500b3d0f49959dfabcc296939725e727a376e",
+    "build_figures.py": "38813d6100540e8aad687fb050d0077b92eb92f3f1c62dd216dd6b4a14471076",
+    "checks.json": "471ce356bf627e99b92b9679aef32585256739866af90e9778b05376f7adca03",
+    "elbo-explorer.build.json": "cadc0d1dfedf1d44425acdd0d4ef023aaf1e55265d7f4663fbbe3a3ccd05f06a",
+    "elbo-explorer.html": "3d73721c34c104a7c54161a7aa6ef30e45a0887a0688311cff6fa25ee89c428f",
+    "explorer.css": "cba2cb10b11448db4d33f8ef95ead6dcadd4d072dbe8e8e6e64c6a978b060465",
+    "explorer.js": "6ad4a5f6c15d89135c1e77cc32b23c4d2de7fa5b23cc3ad201e2a295d10c73bb",
+    "math.js": "912c5771ab111785b7e1ab3339f0ca0ac598533bdfe1a60348ab364e0728876f",
+    "monty-explorer.build.json": "fa22858b16acf10b5cb17db861c430916191ec65c538b00d4479911eefa62eca",
+    "monty-explorer.html": "3deead3c55c17fcd309cd83859dc3a367d035cdee4c09b233569c74affc541f2",
+    "verify_assets.cjs": "75f2ada6b70245b87e2e30b6a4a9e6075517c09c6757f8a660a278ae9eefd2a5"
+  },
+  "scope": "Current commissioned Bayes/Monty explanations; official written video adaptation, not full video playback",
+  "static_visual_inspection": [
+    "01-one-minute",
+    "02-steve-rectangles",
+    "03-elbo-shares",
+    "04-monty-rectangles",
+    "05-host-comparison",
+    "06-hundred-doors"
+  ],
+  "browser_cases": [
+    "Steve reference",
+    "equal likelihoods",
+    "zero evidence",
+    "ELBO equal/prior/posterior presets",
+    "informed fair host",
+    "blind host",
+    "biased host",
+    "wide and 420px layouts"
+  ],
+  "live_obsidian": "Unavailable: CLI could not find the app",
+  "vault": "PASS; existing W2 repeated display titles",
+  "regression": "15/15 PASS",
+  "local_targets_and_anchors": 104
+}

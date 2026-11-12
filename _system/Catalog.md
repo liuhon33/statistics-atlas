@@ -6,7 +6,7 @@ layer: auxiliary
 
 # Topic catalog
 
-All 761 reference nodes. Paths and links are organizational; they are not study completion records.
+All 763 reference nodes. Paths and links are organizational; they are not study completion records.
 
 ## Probability & mathematical foundations
 
@@ -744,6 +744,8 @@ All 761 reference nodes. Paths and links are organizational; they are not study 
 - L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Marginal versus conditional coverage|Marginal versus conditional coverage]] · M elective
 - L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Modern predictive inference/Prediction uncertainty/Calibration under shift|Calibration under shift]] · M elective
 - L3 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning/Reinforcement learning|Reinforcement learning]] · M
+- L4 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning/Markov decision processes/Markov decision processes|Markov decision processes]] · M
+- L5 · [[Backbone/Statistical computing & learning/Statistical learning & prediction/Reinforcement learning/Markov decision processes/Bellman equations|Bellman equations]] · M
 - L2 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic models & neural methods|Probabilistic models & neural methods]] · U–M
 - L3 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Probabilistic graphical models|Probabilistic graphical models]] · M elective
 - L4 · [[Backbone/Statistical computing & learning/Probabilistic models & neural methods/Probabilistic graphical models/Factorization & graphical models/Factorization & graphical models|Factorization & graphical models]] · M elective
@@ -841,3 +843,18 @@ All 761 reference nodes. Paths and links are organizational; they are not study 
 - [[Learning/Statistical computing & learning/Statistical learning & prediction/Gamblers problem - learning an optimal betting policy|Gamblers problem - learning an optimal betting policy]] — Approved: Betting MDP, action and policy tables, value/policy iteration, and checked offline explorer. Home: Reinforcement learning.
 
 - [[Learning/Probability & mathematical foundations/Stochastic processes/Gamblers problem - probability, martingales, and bold play|Gamblers problem - probability, martingales, and bold play]] — Approved: Exact fixed-stake ruin formula, martingale stopping, bold-play cycle solution and all-action certificates; a separately labeled Brownian analogue. Home: Random walks & martingales. Links to the RL gambler note; two original static figures.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/PCA, t-SNE, and UMAP - what an RNA-seq map preserves|PCA, t-SNE, and UMAP - what an RNA-seq map preserves]] — Approved: three objectives, saved RNA-seq plots, 3,000 genes → 50 PCs → 2D, source/code corrections and comparison diagnostics; home: PCA versus visualization embeddings.
+
+
+- [[Learning/Probability & mathematical foundations/Probability foundations/Monty Hall - seeing Bayes through rectangles|Monty Hall - seeing Bayes through rectangles]] — Approved: problem and 50–50 confusion, 100 doors, exact area conditioning, host-policy variants, and explicit ELBO/diffusion connections. Home: Bayes rule.
+
+- [[Learning/Statistical inference & modeling/Nonparametric & robust inference/Bootstrap means - resample size, repetitions, and the CLT|Bootstrap means - resample size, repetitions, and the CLT]] — Approved: resample size versus repetitions, conditional CLT, rare-value counterexample and uncertainty scale; home: Nonparametric bootstrap. Two selected questions and one original comparison figure.
+
+- [[Learning/Probability & mathematical foundations/Mathematical tools/Vector norms - unit balls, convexity, and the zero-count exception|Vector norms - unit balls, convexity, and the zero-count exception]] — Approved: MIT Lecture 8, 9:20–18:30; vector norms, unit-ball geometry, convexity, p<1 and zero-count exceptions, two analytic diagrams and an offline explorer. Home: Inner products and norms. Includes the approved norm, Bayesian-regression and regularization connections.
+
+- [[Learning/Statistical inference & modeling/Bayesian inference/Bayesian linear regression - ridge, uncertainty, and the flat-prior limit|Bayesian linear regression - ridge, uncertainty, and the flat-prior limit]] — Approved: annotated GP lecture, checked derivations and original figures; home: Conjugate updating.
+
+- [[Learning/Probability & mathematical foundations/Stochastic processes/Kernels - feature inner products and Gaussian covariances|Kernels - feature inner products and Gaussian covariances]] — Approved: annotated GP lecture, checked derivations and original figures; home: Covariance kernels.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square|Gaussian processes - conditioning by completing the square]] — Approved: annotated GP lecture, checked derivations and original figures; home: Gaussian process regression.

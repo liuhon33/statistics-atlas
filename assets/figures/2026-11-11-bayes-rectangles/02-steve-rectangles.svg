@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="562.115pt" height="404.550015pt" viewBox="0 0 562.115 404.550015" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-11T21:46:02.031223</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 404.550015 
+L 562.115 404.550015 
+L 562.115 0 
+L 0 0 
+z
+" style="fill: #f7f8fa"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 48.8975 242.06175 
+L 551.0975 242.06175 
+L 551.0975 36.14175 
+L 48.8975 36.14175 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 48.8975 242.06175 
+L 72.811786 242.06175 
+L 72.811786 36.14175 
+L 48.8975 36.14175 
+z
+" clip-path="url(#pdcb3ef3355)" style="fill: #e6ebf0; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 48.8975 242.06175 
+L 72.811786 242.06175 
+L 72.811786 159.69375 
+L 48.8975 159.69375 
+z
+" clip-path="url(#pdcb3ef3355)" style="fill: #307eae; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 72.811786 242.06175 
+L 551.0975 242.06175 
+L 551.0975 36.14175 
+L 72.811786 36.14175 
+z
+" clip-path="url(#pdcb3ef3355)" style="fill: #e6ebf0; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 72.811786 242.06175 
+L 551.0975 242.06175 
+L 551.0975 221.46975 
+L 72.811786 221.46975 
+z
+" clip-path="url(#pdcb3ef3355)" style="fill: #d49b43; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m8ff82843c5" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m8ff82843c5" x="48.8975" y="242.06175" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: middle" x="48.8975" y="258.179875" transform="rotate(-0 48.8975 258.179875)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m8ff82843c5" x="551.0975" y="242.06175" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: middle" x="551.0975" y="258.179875" transform="rotate(-0 551.0975 258.179875)">1</text>
+     </g>
+    </g>
+    <g id="text_3">
+     <text style="fill: #172b40; font: 12px 'DejaVu Sans'; text-anchor: middle" x="299.9975" y="273.793625" transform="rotate(-0 299.9975 273.793625)">Prior probability (column width)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <defs>
+       <path id="m9a4c356e97" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m9a4c356e97" x="48.8975" y="242.06175" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: end" x="41.8975" y="246.620812" transform="rotate(-0 41.8975 246.620812)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m9a4c356e97" x="48.8975" y="139.10175" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: end" x="41.8975" y="143.660812" transform="rotate(-0 41.8975 143.660812)">0.5</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m9a4c356e97" x="48.8975" y="36.14175" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font: 12px 'DejaVu Sans'; text-anchor: end" x="41.8975" y="40.700812" transform="rotate(-0 41.8975 40.700812)">1.0</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="fill: #172b40; font: 12px 'DejaVu Sans'; text-anchor: middle" x="16.318125" y="139.10175" transform="rotate(-90 16.318125 139.10175)">Fraction producing the evidence</text>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 48.8975 242.06175 
+L 48.8975 36.14175 
+" style="fill: none; stroke: #abb8c8; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 48.8975 242.06175 
+L 551.0975 242.06175 
+" style="fill: none; stroke: #abb8c8; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 158.065091 113.946562 
+Q 110.24454 151.645565 63.301997 188.652395 
+" style="fill: none; stroke: #307eae; stroke-linecap: round"/>
+    <path d="M 68.557339 187.565483 
+L 63.301997 188.652395 
+L 65.585673 183.795974 
+" style="fill: none; stroke: #307eae; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="fill: #307eae; font: 12px 'DejaVu Sans'" transform="translate(119.2055 94.776375)">Librarian area</text>
+    <text style="fill: #307eae; font: 12px 'DejaVu Sans'" transform="translate(119.2055 108.21375)">(1/21) × .4 = 2/105</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 353.864265 161.984695 
+Q 364.301785 195.919055 374.410617 228.784788 
+" style="fill: none; stroke: #d49b43; stroke-linecap: round"/>
+    <path d="M 375.293419 223.491333 
+L 374.410617 228.784788 
+L 370.705534 224.902474 
+" style="fill: none; stroke: #d49b43; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="fill: #906019; font: 12px 'DejaVu Sans'" transform="translate(289.9535 142.137975)">Farmer area</text>
+    <text style="fill: #906019; font: 12px 'DejaVu Sans'" transform="translate(289.9535 155.57535)">(20/21) × .1 = 2/21</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #172b40; font: 700 14.4px 'DejaVu Sans'; text-anchor: start" x="48.8975" y="18.14175" transform="rotate(-0 48.8975 18.14175)">Steve: keep the evidence-producing part of each column</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_11">
+    <path d="M 48.8975 373.43871 
+L 132.5975 373.43871 
+L 132.5975 348.72831 
+L 48.8975 348.72831 
+z
+" clip-path="url(#pb3a0e72d12)" style="fill: #307eae; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 132.5975 373.43871 
+L 551.0975 373.43871 
+L 551.0975 348.72831 
+L 132.5975 348.72831 
+z
+" clip-path="url(#pb3a0e72d12)" style="fill: #d49b43; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_11">
+    <text style="fill: #172b40; font: 700 12px 'DejaVu Sans'; text-anchor: start" x="48.8975" y="326.48895" transform="rotate(-0 48.8975 326.48895)">Normalize by total retained area: 2/105 + 2/21 = 4/35</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #307eae; font: 12px 'DejaVu Sans'; text-anchor: start" x="48.8975" y="394.85439" transform="rotate(-0 48.8975 394.85439)">Librarian 1/6</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #906019; font: 12px 'DejaVu Sans'; text-anchor: start" x="299.9975" y="394.85439" transform="rotate(-0 299.9975 394.85439)">Farmer 5/6</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdcb3ef3355">
+   <rect x="48.8975" y="36.14175" width="502.2" height="205.92"/>
+  </clipPath>
+  <clipPath id="pb3a0e72d12">
+   <rect x="48.8975" y="314.13375" width="502.2" height="82.368"/>
+  </clipPath>
+ </defs>
+</svg>

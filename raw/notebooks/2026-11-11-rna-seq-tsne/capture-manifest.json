@@ -1,0 +1,52 @@
+{
+  "source_root": "/home/hongrui_liu/learning/tsne/rna-seq-tsne",
+  "capture_date": "2026-11-11",
+  "files": [
+    {
+      "path": "PCA_tSNE_UMAP.ipynb",
+      "sha256": "a0ce9cb168b1c61f5374ff5e15076bcb9747f9c22a31c4116152c362ceefc5f3",
+      "bytes": 680216
+    },
+    {
+      "path": "demo.ipynb",
+      "sha256": "42af61b6fda965722ad386c682128bf5374feba5af32706c7d6868eafd20deff",
+      "bytes": 1387868
+    },
+    {
+      "path": "umap-comparison.ipynb",
+      "sha256": "77243b2b2bee1e095e5791f20f78338a43e69e2b63081c2b181f148e349d1a16",
+      "bytes": 699280
+    },
+    {
+      "path": "rnaseqTools.py",
+      "sha256": "be789e2b3120d3c3843ecbeec1138e876c9f407d98ed2b22b841bbce13f9e668",
+      "bytes": 10912
+    },
+    {
+      "path": "2026-11-11-rna-seq-tsne-readme.md",
+      "sha256": "4a9b9d1979e60d0d57d2da27e354484c0e745e8f14e95cf26266529ec50c54d4",
+      "bytes": 1887,
+      "original_name": "README.md"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "pca_plot.pdf",
+      "sha256": "de25408d8c2e7d269378f645a1cab4496c52be489dbab352f76caebfdb56a179",
+      "bytes": 446021
+    },
+    {
+      "path": "tSNE_plot.pdf",
+      "sha256": "8ea8897625c346aed8b2f3e2abbd64ee3dc2b8d6405f4c9c4b195846e0704b9c",
+      "bytes": 461986
+    },
+    {
+      "path": "tSNE_plot_high_perplexity.pdf",
+      "sha256": "3c247d2858547bacc4f90c78ae3958aa556c2a90eb1fc7f409623a208c32a4d4",
+      "bytes": 464398
+    }
+  ]
+}

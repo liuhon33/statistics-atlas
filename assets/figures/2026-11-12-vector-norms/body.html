@@ -1,0 +1,25 @@
+<main>
+  <p class="eyebrow">VECTOR NORMS · FIXED COORDINATE AXES</p>
+  <h1>Change the ruler, change the unit ball</h1>
+  <p>The same points live in ℝ² throughout. The shaded set contains points with size ≤ 1.</p>
+  <div class="presets" role="group" aria-label="Choose a size measure">
+    <button data-p="0">ℓ₀ count</button><button data-p="0.5">p = ½</button>
+    <button data-p="1">ℓ₁</button><button data-p="2">ℓ₂</button><button data-p="Infinity">ℓ∞</button>
+  </div>
+  <label for="p">Finite p <output id="p-value" for="p">2.00</output></label>
+  <input id="p" type="range" min="0.25" max="8" step="0.05" value="2" aria-label="Finite p">
+  <p class="hint">Move the slider to return to finite p. Infinity and zero-count use their own definitions.</p>
+  <div class="grid">
+    <div class="plot"><svg id="plot" viewBox="0 0 480 480" role="img" aria-label="Unit ball and the segment between two unit coordinate vectors"></svg></div>
+    <div class="details" aria-live="polite">
+      <h2 id="measure-name">Euclidean norm</h2>
+      <p id="formula"></p><p id="classification" class="badge"></p>
+      <p id="meaning"></p>
+      <div class="card"><strong>Test the midpoint</strong><p>e₁ = (1, 0), e₂ = (0, 1)<br>m = ½e₁ + ½e₂ = (½, ½)</p><p id="midpoint"></p><p id="chord"></p></div>
+      <div class="card"><strong>One fixed example in ℝ³</strong><p>v = (3, −4, 0)</p><p id="example"></p></div>
+    </div>
+  </div>
+  <p class="legend"><span class="teal">Filled region / thick axes:</span> size ≤ 1. <span class="orange">Orange dashed line:</span> the segment joining e₁ and e₂. The dot marks its midpoint.</p>
+  <p class="hint">Try ½ → 1 → 2 → ∞. When does the midpoint enter the set? One segment can disprove convexity; a general proof is given in the note.</p>
+  <footer>Original analytic illustration. Same scales in both directions; ℓ₀ axes continue beyond the frame. No regularization objective is shown here.</footer>
+</main>

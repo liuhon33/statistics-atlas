@@ -1,0 +1,13 @@
+{
+  "center_error": 3.700743415417188e-17,
+  "covariance_expected_error": 3.552713678800501e-15,
+  "eigen_equation_error": 5.329070518200751e-15,
+  "sklearn_eigenvalue_error": 1.0658141036401503e-14,
+  "singular_square_error": 8.526512829121202e-14,
+  "score_covariance_error": 3.1893679616504496e-15,
+  "pythagorean_error": 6.394884621840902e-14,
+  "rank_one_residual_ss": 11.999999999999996,
+  "retained_fraction": 0.9381443298969073,
+  "loading_feature_correlation": 0.9685785099293227,
+  "sklearn_version": "1.4.2"
+}

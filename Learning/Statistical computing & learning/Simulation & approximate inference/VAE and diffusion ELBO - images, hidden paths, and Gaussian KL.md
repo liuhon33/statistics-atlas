@@ -10,7 +10,7 @@ note_types: [conversation-digest, derivation, question, insight]
 question_roles: [concept-distinction, reconcile-approaches, modeling-consequence]
 source_format: conversation-and-handwriting
 created: 2026-11-11
-updated: 2026-11-11
+updated: '2026-11-12'
 status: active
 verification: checked
 learning_state: practicing
@@ -633,6 +633,8 @@ $$
 The three pieces are reconstruction, terminal-prior KL, and intermediate-step KLs. This identity is exact. [DDPM, equations (5)–(7)](https://arxiv.org/html/2006.11239v2#S2) gives this rearrangement and the Gaussian bridge below; the uploaded lecture develops it on PDF pages 12–17.
 
 ### 7.2 Derive the known Gaussian bridge by completing the square
+
+The same precision-and-linear-term calculation appears in [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square#4. The promised connection to diffusion|Gaussian-process conditioning and Bayesian regression]]. There the unknown is a function value or a coefficient; here it is the previous diffusion state.
 
 Assume the standard forward noising rule, with independent standard Gaussian noises:
 

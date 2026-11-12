@@ -1,0 +1,13 @@
+{
+  "description": "Original deterministic mathematical graphics; no external image or source original was edited.",
+  "generator": "build.py",
+  "sha256": {
+    "mgf-use.svg": "45f97ee6f6c0ed881706cef5efc3e3a278f97a3347328ab0e5c6c0118cbd46bb",
+    "mgf-use.png": "2c42a29a145851c3e580f355916c9653b9da99613c245e6cd7c07e3108552308",
+    "mgf-derivative-ladder.svg": "b08efcb7c07848b23d9159e3e63967ab083cc970a109296ea39d0cd2bb82933e",
+    "mgf-derivative-ladder.png": "b609996448e76b492a9412da22a064308af9219f0363723ee4b1423635fe2ea2",
+    "mgf-derivative-ladder.gif": "81497a983b205bb4958f14c4f57706f3ff336f164814ff775e80c8ce39086833",
+    "decoded-stages.png": "f225024df9c0df31e3a2e40f4f91a9442646c7eebb3e8684c678b9b6b6622f70",
+    "checks.json": "09b6a573ed740b2c84b8a7e75b1e1787882d3c405e73600fda8856b899683eed"
+  }
+}

@@ -3,7 +3,7 @@ id: system-sop
 title: Statistics vault SOP
 layer: auxiliary
 created: 2026-11-08
-updated: 2026-11-11
+updated: 2026-11-12
 status: active
 tags: [atlas/auxiliary, system/sop]
 ---
@@ -134,6 +134,8 @@ Give each developed level at least one useful visual, each explaining a distinct
 A first digest covers the available authorized material; later digests cover only new material since the same chat's completed boundary. Use actual chat or message IDs when available, otherwise precise observed locators. Never invent IDs or advance past unread material. Repeated requests with no new substantive material create no duplicate records.
 
 Original files are immutable: preserve bytes and source locators, and label excerpts as excerpts. Raw-file classification belongs in a catalog, not in edits to original bytes. Keep user reasoning, source claims and agent synthesis distinct. A checked label requires stated verification and assumptions; migration alone does not establish verification.
+
+**Private course-slide PDFs.** Preserve supplied University of Toronto or similar course-slide PDFs byte-for-byte under `raw/notes/private-course-slides/`. Only the original PDFs are Git-ignored and excluded from public exports, including filesystem-based exports. Handwritten images and selected page renders can be tracked in Git and included with the notes; do not ignore or exclude them under this rule. Keep existing image paths, author/course attribution and page locators. A changed layout does not turn slides into a new original; retain the original PDFs privately. Public exports must omit links/embeds targeting those PDFs or replace them with plain source citations; `.gitignore` alone is not an export filter. Do not retroactively move or untrack older originals without an explicit request.
 
 ## 10. Migration reference
 

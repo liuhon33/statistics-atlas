@@ -4,18 +4,30 @@ title: Three routes from least squares to slope and correlation
 layer: learning
 primary_home: "[[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Simple slope and correlation]]"
 subject: statistics
-backbone_path: "Statistical inference & modeling → Regression & linear models → Linear regression → OLS estimation & geometry → Simple slope and correlation"
+backbone_path: Statistical inference & modeling → Regression & linear models → Linear regression → OLS estimation & geometry → Simple slope and correlation
 study_band: U
-note_types: [derivation, question, insight]
-question_roles: [reconcile-approaches, special-to-general, cross-topic-connection]
+note_types:
+  - derivation
+  - question
+  - insight
+question_roles:
+  - reconcile-approaches
+  - special-to-general
+  - cross-topic-connection
 source_format: supplied-summary-and-handwriting
 created: 2026-11-08
 updated: 2026-11-09
 status: active
 verification: checked
 learning_state: practicing
-aliases: [Three derivations of the OLS slope correlation identity, Slope equals correlation times scale]
-tags: [atlas/learning, subject/statistics, topic/regression]
+aliases:
+  - Three derivations of the OLS slope correlation identity
+  - Slope equals correlation times scale
+tags:
+  - atlas/learning
+  - subject/statistics
+  - topic/regression
+  - linear-regression
 connections:
   - "[[Backbone/Probability & mathematical foundations/Mathematical tools/Linear algebra for statistics/Vectors, spaces & projections/Orthogonal projection]]"
   - "[[Backbone/Statistical inference & modeling/Regression & linear models/Linear regression/OLS estimation & geometry/Normal equations and OLS]]"

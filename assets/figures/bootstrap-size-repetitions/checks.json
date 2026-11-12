@@ -1,0 +1,64 @@
+{
+  "seed": 20261112,
+  "data": [
+    1,
+    2,
+    2,
+    3,
+    4,
+    4,
+    4,
+    5,
+    7,
+    8
+  ],
+  "mean": 4.0,
+  "empirical_variance_denominator_n": 4.4,
+  "columns": {
+    "1": {
+      "exact_mean": 4.0,
+      "exact_variance": 4.4,
+      "exact_sd": 2.0976176963403033,
+      "simulations": {
+        "100": {
+          "mean": 3.95,
+          "sd_ddof_1": 2.100384765136179,
+          "max_bin_probability_error": 0.040000000000000036
+        },
+        "10000": {
+          "mean": 4.01,
+          "sd_ddof_1": 2.093690128418096,
+          "max_bin_probability_error": 0.007699999999999929
+        }
+      }
+    },
+    "10": {
+      "exact_mean": 3.9999999999999996,
+      "exact_variance": 0.44,
+      "exact_sd": 0.6633249580710799,
+      "simulations": {
+        "100": {
+          "mean": 3.907,
+          "sd_ddof_1": 0.6200773819419312,
+          "max_bin_probability_error": 0.04798686970000003
+        },
+        "10000": {
+          "mean": 3.99321,
+          "sd_ddof_1": 0.6613566625985682,
+          "max_bin_probability_error": 0.004652212200000061
+        }
+      }
+    }
+  },
+  "rare_value_example": {
+    "mean": 1,
+    "empirical_variance": 99,
+    "probability_zero_mean": {
+      "20": 0.8179069375972308,
+      "100": 0.3660323412732292,
+      "1000": 4.317124741065786e-05
+    }
+  },
+  "se_ratio_m20_to_m100": 2.23606797749979,
+  "se_ratio_m10000_to_m100": 0.1
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>Vector norms and their unit balls</title><style>:root{color-scheme:light dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#e9edf4;background:#111923;font-size:16px}*{box-sizing:border-box}body{margin:0}main{max-width:1000px;margin:auto;padding:24px}h1{font-size:clamp(23px,3vw,32px);line-height:1.18;margin:8px 0 12px}h2{font-size:22px;margin:0 0 12px}p{line-height:1.5;margin:10px 0}.eyebrow{color:#69d7c4;font-size:12px;letter-spacing:.1em}.presets{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}button{font:inherit;background:#202c3a;color:#ecf0f6;border:1px solid #657384;border-radius:7px;padding:9px 15px;cursor:pointer}button[aria-pressed="true"]{background:#124f48;border-color:#65d7c3}button:focus-visible,input:focus-visible{outline:3px solid #ffd280;outline-offset:3px}label{display:flex;justify-content:space-between;font-weight:650}input{width:100%;accent-color:#66d6c4;margin:14px 0 4px}.hint,footer{font-size:13px;color:#b8c6d5}.grid{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:start;margin:20px 0}.plot{background:#172332;border-radius:12px;overflow:hidden}svg{width:100%;display:block;aspect-ratio:1}svg text{font-family:inherit;fill:#e9edf4;font-size:17px}.details{min-width:0}.badge{display:inline-block;border-radius:6px;padding:6px 10px;background:#203d3b;color:#7fe4cc;font-size:14px}.badge.invalid{background:#452e28;color:#ffd09c}.card{padding:12px 14px;border:1px solid #3d5062;border-radius:8px;margin-top:14px}.card p{margin:7px 0}.teal{color:#79decb}.orange{color:#ffd096}footer{border-top:1px solid #3d5062;margin-top:20px;padding-top:12px}@media(max-width:650px){main{padding:16px}.grid{grid-template-columns:1fr;gap:18px}.plot{max-width:480px;width:100%;margin:auto}h2{font-size:21px}button{padding:8px 12px}.legend{font-size:14px}}
+</style></head><body><main>
+  <p class="eyebrow">VECTOR NORMS · FIXED COORDINATE AXES</p>
+  <h1>Change the ruler, change the unit ball</h1>
+  <p>The same points live in ℝ² throughout. The shaded set contains points with size ≤ 1.</p>
+  <div class="presets" role="group" aria-label="Choose a size measure">
+    <button data-p="0">ℓ₀ count</button><button data-p="0.5">p = ½</button>
+    <button data-p="1">ℓ₁</button><button data-p="2">ℓ₂</button><button data-p="Infinity">ℓ∞</button>
+  </div>
+  <label for="p">Finite p <output id="p-value" for="p">2.00</output></label>
+  <input id="p" type="range" min="0.25" max="8" step="0.05" value="2" aria-label="Finite p">
+  <p class="hint">Move the slider to return to finite p. Infinity and zero-count use their own definitions.</p>
+  <div class="grid">
+    <div class="plot"><svg id="plot" viewBox="0 0 480 480" role="img" aria-label="Unit ball and the segment between two unit coordinate vectors"></svg></div>
+    <div class="details" aria-live="polite">
+      <h2 id="measure-name">Euclidean norm</h2>
+      <p id="formula"></p><p id="classification" class="badge"></p>
+      <p id="meaning"></p>
+      <div class="card"><strong>Test the midpoint</strong><p>e₁ = (1, 0), e₂ = (0, 1)<br>m = ½e₁ + ½e₂ = (½, ½)</p><p id="midpoint"></p><p id="chord"></p></div>
+      <div class="card"><strong>One fixed example in ℝ³</strong><p>v = (3, −4, 0)</p><p id="example"></p></div>
+    </div>
+  </div>
+  <p class="legend"><span class="teal">Filled region / thick axes:</span> size ≤ 1. <span class="orange">Orange dashed line:</span> the segment joining e₁ and e₂. The dot marks its midpoint.</p>
+  <p class="hint">Try ½ → 1 → 2 → ∞. When does the midpoint enter the set? One segment can disprove convexity; a general proof is given in the note.</p>
+  <footer>Original analytic illustration. Same scales in both directions; ℓ₀ axes continue beyond the frame. No regularization objective is shown here.</footer>
+</main>
+<script>/* Finite real vectors. p=0 means support count; Infinity means max norm. */
+const NormMath = (() => {
+  function measure(v, p) {
+    if (p === 0) return v.filter(x => x !== 0).length;
+    const a = v.map(Math.abs), m = Math.max(...a);
+    if (p === Infinity || m === 0) return m;
+    if (!(p > 0)) throw new RangeError('Use p > 0, infinity, or support count.');
+    return m * Math.pow(a.reduce((s, x) => s + Math.pow(x / m, p), 0), 1 / p);
+  }
+  function boundary(p, steps = 960) {
+    if (p === 0) return [];
+    return Array.from({length: steps + 1}, (_, i) => {
+      const t = 2 * Math.PI * i / steps, v = [Math.cos(t), Math.sin(t)];
+      const r = 1 / measure(v, p);
+      return v.map(x => x * r);
+    });
+  }
+  return {measure, boundary};
+})();
+if (typeof module !== 'undefined') module.exports = NormMath;
+
+;
+(() => {
+  const $ = id => document.getElementById(id);
+  const X = x => 240 + 166 * x, Y = y => 240 - 166 * y;
+  const fmt = x => Number.isInteger(x) ? String(x) : x.toFixed(4);
+  function render(p) {
+    const zero = p === 0, inf = p === Infinity, valid = p >= 1;
+    $('p-value').textContent = zero ? 'ℓ₀ count selected' : inf ? '∞ selected' : p.toFixed(2);
+    if (!zero && !inf) $('p').value = p;
+    document.querySelectorAll('[data-p]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.p) === p)));
+    $('measure-name').textContent = zero ? 'Support count (ℓ₀)' : inf ? 'Maximum norm (ℓ∞)' : p === 1 ? 'Sum of magnitudes (ℓ₁)' : p === 2 ? 'Euclidean norm (ℓ₂)' : `p = ${fmt(p)}`;
+    $('formula').textContent = zero ? 'Count the coordinates that are not zero.' : inf ? 'Size = maxᵢ |vᵢ|' : `Size = (Σᵢ |vᵢ|ᵖ)¹ᐟᵖ, with p = ${fmt(p)}`;
+    $('classification').textContent = zero ? 'Not a norm: homogeneity fails' : valid ? 'A norm: the unit ball is convex' : 'Not a norm: triangle inequality fails';
+    $('classification').className = 'badge' + (valid ? '' : ' invalid');
+    $('meaning').textContent = zero ? 'At most one nonzero coordinate is allowed. Its magnitude is unrestricted. The origin is included in size ≤ 1.' : inf ? 'Both coordinates lie between −1 and 1: a square.' : p === 1 ? 'A total magnitude budget: a diamond.' : p === 2 ? 'Ordinary Euclidean length: a disk.' : valid ? 'As p increases, the unit ball expands toward the square.' : 'The sides bow inward. The set is not convex in two or more dimensions.';
+    const midpoint = NormMath.measure([0.5, 0.5], p), inside = midpoint <= 1 + 1e-12;
+    $('midpoint').textContent = `Size of m = ${fmt(midpoint)} → ${inside ? 'inside or on the boundary' : 'outside'}.`;
+    $('chord').textContent = zero ? 'The endpoints each have one nonzero; the midpoint has two.' : valid ? 'The entire orange segment lies in the ball.' : 'The endpoints are in the set, but their midpoint is outside.';
+    $('example').textContent = `Size of v = ${fmt(NormMath.measure([3,-4,0],p))}`;
+    let s = '<defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6cdeca"/></marker></defs>';
+    for (const v of [-1,0,1]) {
+      s += `<line x1="${X(v)}" y1="35" x2="${X(v)}" y2="445" stroke="#334558"/><line x1="35" y1="${Y(v)}" x2="445" y2="${Y(v)}" stroke="#334558"/>`;
+      if (v) s += `<text x="${X(v)}" y="${Y(0)+24}" text-anchor="middle">${v}</text><text x="${X(0)-14}" y="${Y(v)+6}" text-anchor="end">${v}</text>`;
+    }
+    if(zero) s += '<path d="M 28 240 H 452" fill="none" stroke="#6cdeca" stroke-width="5" marker-start="url(#arrow)" marker-end="url(#arrow)"/><path d="M 240 28 V 452" fill="none" stroke="#6cdeca" stroke-width="5" marker-start="url(#arrow)" marker-end="url(#arrow)"/><circle cx="240" cy="240" r="5" fill="#6cdeca"/>';
+    else {
+      const d=NormMath.boundary(p).map(([x,y],i)=>`${i?'L':'M'} ${X(x).toFixed(3)} ${Y(y).toFixed(3)}`).join(' ')+' Z';
+      s += `<path d="${d}" fill="#60d5bf" fill-opacity=".2" stroke="#6cdeca" stroke-width="3"/>`;
+    }
+    s += `<line x1="${X(1)}" y1="${Y(0)}" x2="${X(0)}" y2="${Y(1)}" stroke="#ffbd79" stroke-width="2.5" stroke-dasharray="7 5"/>`;
+    for(const [x,y] of [[1,0],[0,1]]) s += `<circle cx="${X(x)}" cy="${Y(y)}" r="5" fill="#ffbd79"/>`;
+    s += `<circle cx="${X(.5)}" cy="${Y(.5)}" r="6" fill="#ffbd79" stroke="#111923" stroke-width="2"/><text x="${X(.5)+12}" y="${Y(.5)-12}">m</text><text x="447" y="270">x₁</text><text x="260" y="31">x₂</text><text x="257" y="270">0</text>`;
+    $('plot').innerHTML=s;
+    $('plot').setAttribute('aria-label',`${$('measure-name').textContent}. ${$('midpoint').textContent}`);
+  }
+  document.querySelectorAll('[data-p]').forEach(b=>b.addEventListener('click',()=>render(Number(b.dataset.p))));
+  $('p').addEventListener('input',e=>render(Number(e.target.value)));
+  render(2);
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>
