@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>EM playground — two Gaussian components</title><style>:root{color-scheme:light dark;--bg:#111829;--card:#1c263b;--ink:#eef2fb;--muted:#b6c4dc;--border:#34445f;--blue:#7196ff;--red:#ff8c83;--accent:#e9c66e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Segoe UI,sans-serif}main{max-width:1120px;margin:auto;padding:22px}h1{font-size:clamp(24px,3.5vw,34px);line-height:1.15;margin:6px 0 12px}h2{font-size:16px;margin:0 0 12px}p{margin:9px 0}.eyebrow{font-size:12px;letter-spacing:.13em;color:var(--accent);font-weight:700}.controls,.card,.plotcard{border:1px solid var(--border);border-radius:12px;background:var(--card);padding:16px}.controls{margin:20px 0 12px}label{display:block;font-size:13px;color:var(--muted)}select,input,button{font:inherit}select,input[type=number]{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--border);border-radius:6px;padding:8px;margin-top:5px}select{max-width:520px}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}button{background:#31466d;color:var(--ink);border:1px solid #6480b0;border-radius:7px;padding:9px 12px;cursor:pointer}button:disabled{opacity:.42;cursor:not-allowed}button:hover:enabled{background:#405d90}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}#eStep{border-color:var(--blue)}#mStep{border-color:var(--red)}#play{border-color:var(--accent)}details{margin-top:14px}summary{cursor:pointer;color:var(--muted)}.tuning{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}.grid{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(270px,1fr);gap:16px;align-items:start}.grid>*{min-width:0}aside{display:grid;gap:14px}.phase{padding:12px 16px;margin-bottom:14px;background:#253650;border-left:4px solid var(--accent);border-radius:5px}.error{padding:12px;background:#64262c;border-radius:7px}.small,footer{font-size:12px;color:var(--muted)}svg{display:block;width:100%;height:auto}#scatter{aspect-ratio:620/610}#trace{aspect-ratio:850/170;min-height:120px}.legend{display:flex;justify-content:space-between;gap:8px;font-size:11px}.blue{color:var(--blue)}.red{color:var(--red)}.gradient{height:7px;border-radius:6px;background:linear-gradient(90deg,#3b6cef,#ef5b52);margin:9px 0}.metric{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);padding:8px 0;font-size:12px}.metric strong{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--accent)}.component{padding:8px 0;font-size:12px;border-bottom:1px solid var(--border)}.component code{display:block;font:12px/1.65 ui-monospace,Consolas,monospace;color:var(--ink)}input[type=range]{width:100%;accent-color:var(--accent);margin:12px 0}.trace{margin-top:16px}footer{margin-top:18px}#pointReadout{font-size:13px}output{font-variant-numeric:tabular-nums}
+@media(max-width:800px){.grid{grid-template-columns:1fr}aside{grid-template-columns:repeat(2,minmax(0,1fr))}aside .card:last-child{grid-column:1/-1}main{padding:14px}.tuning{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){aside{grid-template-columns:1fr}.controls,.card,.plotcard{padding:12px}main{padding:10px}.legend{font-size:10px}.buttons button{font-size:13px;flex:1 1 42%}.metric{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head><body><main>
+  <header><div class="eyebrow">GENERAL EM → TWO GAUSSIANS</div><h1>Color the points. Refit the clouds.</h1>
+  <p>240 fixed observations; two fitted Gaussian components. <strong>The data never move.</strong> E changes the membership colors; M changes the centers, ellipses and mixing weights.</p></header>
+  <section class="controls" aria-label="Simulation controls">
+    <label class="preset">Starting configuration <select id="preset"><option value="crossed">Crossed centers — like slide 13</option><option value="close">Centers near the two clouds</option><option value="left">Both centers start on the left</option><option value="identical">Identical centers — symmetry trap</option></select></label>
+    <details><summary>Tune the initial parameters (resets the fit, not the data)</summary><div class="tuning">
+      <label>Blue mean x₁ <input id="m00" type="number" min="-3" max="3" step="0.1" value="-1.4"></label>
+      <label>Blue mean x₂ <input id="m01" type="number" min="-3" max="3" step="0.1" value="1.1"></label>
+      <label>Red mean x₁ <input id="m10" type="number" min="-3" max="3" step="0.1" value="1.5"></label>
+      <label>Red mean x₂ <input id="m11" type="number" min="-3" max="3" step="0.1" value="-1.0"></label>
+      <label>Initial blue weight π₁ <input id="weight" type="number" min="0.1" max="0.9" step="0.1" value="0.5"></label>
+      <label>Initial standard deviation <input id="spread" type="number" min="0.2" max="1.6" step="0.1" value="0.7"></label>
+    </div><p class="small">Initially Σ₁ = Σ₂ = s²I; later M-steps fit separate full covariance matrices. Each input change restarts at iteration 0.</p></details>
+    <div class="buttons"><button id="eStep">E-step · recolor</button><button id="mStep" disabled>M-step · refit</button><button id="iterate">1 iteration</button><button id="play">Play</button><button id="reset">Reset</button></div>
+  </section>
+  <div class="phase" id="phase" role="status" aria-live="polite"></div><p class="error" id="error" role="alert" hidden></p>
+  <div class="grid">
+    <section class="plotcard"><svg id="scatter" viewBox="0 0 620 610" role="img" aria-label="Fixed data points with posterior membership colors and fitted Gaussian contours"></svg>
+    <div class="legend"><span class="blue">Blue: component 1</span><span class="red">Red: component 2</span></div><div class="gradient"></div><div class="legend"><span>rₙ₁ = 1</span><span>uncertain: rₙ₁ = 0.5</span><span>rₙ₁ = 0</span></div>
+    <p class="small">Green = not inferred yet. Crosses = fitted means. Contours have Mahalanobis radii 1 and 2 (not confidence intervals). Axes have fixed, equal scales; contours may extend beyond the plotting window.</p></section>
+    <aside>
+      <section class="card"><h2>What is being optimized?</h2><div class="metric"><span>Completed M-steps</span><strong id="iteration">0</strong></div><div class="metric"><span>Observed log-likelihood ℓ(θ)</span><strong id="likelihood"></strong></div><div class="metric"><span>Latest M-step gain Δℓ</span><strong id="deltaL">—</strong></div><div class="metric"><span>Latest M-step gain ΔQ (same q)</span><strong id="deltaQ">—</strong></div><p class="small">E keeps θ and ℓ fixed. M maximizes Q with E's probabilities frozen. Do not compare raw Q across different E-steps.</p></section>
+      <section class="card"><h2>Fitted components</h2><div id="parameters"></div></section>
+      <section class="card"><h2>Inspect one observation</h2><label for="point">Point number <output id="pointNumber">120</output></label><input id="point" type="range" min="1" max="240" step="1" value="120"><div id="pointReadout"></div><p class="small">Click a dot or use the slider. The highlighted dot is a measurement, not a fitted center.</p></section>
+    </aside>
+  </div>
+  <section class="card trace"><h2>Observed log-likelihood after each M-step</h2><svg id="trace" viewBox="0 0 850 170" role="img" aria-label="Observed log-likelihood versus completed M-steps"></svg><p class="small">The trace rescales to the recorded range; the data axes above never rescale. Play alternates E then M, stopping at a small likelihood gain or 60 iterations. Reset repeats the current initialization.</p></section>
+  <footer>Original, deterministic reconstruction inspired by Lecture 7, slide 13—not the lecture's original data or animation. Exact full-covariance updates, no added regularizer. Extreme near-empty or singular components stop with a warning instead of silently changing the method. Different starts need not find a global maximum.</footer>
+</main>
+<script>/* Exact full-covariance, two-component EM. No covariance regularizer is added. */
+const EMToy = (() => {
+  const seed = 20261113;
+  function random(seedValue) {
+    let s = seedValue >>> 0;
+    return () => { s = (1664525 * s + 1013904223) >>> 0; return (s + 0.5) / 4294967296; };
+  }
+  function data() {
+    const u = random(seed);
+    const normal = () => Math.sqrt(-2 * Math.log(u())) * Math.cos(2 * Math.PI * u());
+    return Array.from({length: 240}, () => {
+      const k = u() < 0.42 ? 0 : 1, a = normal(), b = normal();
+      // Cholesky factors of [[.16,.04],[.04,.24]] and [[.28,.12],[.12,.22]].
+      if (k === 0) return [-1.4 + 0.4 * a, -1.1 + 0.1 * a + Math.sqrt(0.23) * b];
+      return [1.2 + Math.sqrt(0.28) * a, 0.9 + 0.12 / Math.sqrt(0.28) * a + Math.sqrt(0.22 - 0.12 ** 2 / 0.28) * b];
+    });
+  }
+  const presets = {
+    crossed: {label: 'Crossed centers — like slide 13', means: [[-1.4, 1.1], [1.5, -1.0]]},
+    close: {label: 'Centers near the two clouds', means: [[-1.6, -1.0], [1.3, 0.8]]},
+    left: {label: 'Both centers start on the left', means: [[-2.1, -1.8], [-0.9, -0.2]]},
+    identical: {label: 'Identical centers — symmetry trap', means: [[0, 0], [0, 0]]}
+  };
+  const clone = x => JSON.parse(JSON.stringify(x));
+  function initialize(key = 'crossed', weight = 0.5, sd = 0.7, means = null) {
+    if (!(weight > 0 && weight < 1 && sd > 0)) throw Error('Use positive spread and weights strictly between 0 and 1.');
+    const mus = means || presets[key].means;
+    if (!mus.flat().every(Number.isFinite)) throw Error('Enter finite starting coordinates.');
+    return {weights: [weight, 1 - weight], means: clone(mus), covs: [[[sd * sd, 0], [0, sd * sd]], [[sd * sd, 0], [0, sd * sd]]]};
+  }
+  function logGaussian(x, mean, c) {
+    const a = c[0][0], b = c[0][1], d = c[1][1], det = a * d - b * b;
+    if (!(a > 0 && det > 0)) throw Error('A covariance is not positive definite. Reset to a different initialization.');
+    const dx = x[0] - mean[0], dy = x[1] - mean[1];
+    return -Math.log(2 * Math.PI) - 0.5 * Math.log(det) - 0.5 * (d * dx * dx - 2 * b * dx * dy + a * dy * dy) / det;
+  }
+  function expectation(xs, p) {
+    let logLikelihood = 0;
+    const r = xs.map(x => {
+      const v = p.weights.map((w, k) => Math.log(w) + logGaussian(x, p.means[k], p.covs[k]));
+      const m = Math.max(...v), logDen = m + Math.log(Math.exp(v[0] - m) + Math.exp(v[1] - m));
+      logLikelihood += logDen;
+      return v.map(z => Math.exp(z - logDen));
+    });
+    return {r, logLikelihood};
+  }
+  function maximization(xs, r) {
+    const counts = [0, 0], means = [[0, 0], [0, 0]];
+    for (let n = 0; n < xs.length; n++) for (let k = 0; k < 2; k++) {
+      counts[k] += r[n][k];
+      for (let j = 0; j < 2; j++) means[k][j] += r[n][k] * xs[n][j];
+    }
+    if (counts.some(v => v < 1e-7)) throw Error('A component has almost no effective data. No update applied; reset with less extreme starting values.');
+    for (let k = 0; k < 2; k++) for (let j = 0; j < 2; j++) means[k][j] /= counts[k];
+    const covs = [[[0, 0], [0, 0]], [[0, 0], [0, 0]]];
+    for (let n = 0; n < xs.length; n++) for (let k = 0; k < 2; k++) {
+      const d = xs[n].map((v, j) => v - means[k][j]);
+      for (let i = 0; i < 2; i++) for (let j = 0; j < 2; j++) covs[k][i][j] += r[n][k] * d[i] * d[j] / counts[k];
+    }
+    for (const c of covs) {
+      const eigenMin = (c[0][0] + c[1][1] - Math.hypot(c[0][0] - c[1][1], 2 * c[0][1])) / 2;
+      if (!(eigenMin > 1e-7)) throw Error('A covariance is nearly singular. No update applied; reset. This is a known GMM likelihood pathology.');
+    }
+    return {weights: counts.map(n => n / xs.length), means, covs};
+  }
+  function qValue(xs, r, p) {
+    let q = 0;
+    for (let n = 0; n < xs.length; n++) for (let k = 0; k < 2; k++) {
+      if (r[n][k] > 0) q += r[n][k] * (Math.log(p.weights[k]) + logGaussian(xs[n], p.means[k], p.covs[k]));
+    }
+    return q;
+  }
+  function entropy(r) { return -r.flat().reduce((s, p) => s + (p > 0 ? p * Math.log(p) : 0), 0); }
+  function ellipse(mean, c, radius = 1, count = 100) {
+    const a = Math.sqrt(c[0][0]), b = c[1][0] / a, d = Math.sqrt(c[1][1] - b * b);
+    return Array.from({length: count + 1}, (_, i) => {
+      const t = 2 * Math.PI * i / count;
+      return [mean[0] + radius * a * Math.cos(t), mean[1] + radius * (b * Math.cos(t) + d * Math.sin(t))];
+    });
+  }
+  return {seed, data, presets, clone, initialize, logGaussian, expectation, maximization, qValue, entropy, ellipse};
+})();
+if (typeof module !== 'undefined' && module.exports) module.exports = EMToy;
+
+;
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id), xs = EMToy.data(), colors = ['#3b6cef', '#ef5b52'];
+  let p, r = null, qIteration = null, iteration = 0, next = 'E', logL = 0, deltaL = null, deltaQ = null, history = [], timer = null, converged = false;
+  const f = (x, d = 3) => Number.isFinite(x) ? x.toFixed(d) : '—';
+  const sx = x => 55 + (x + 3.5) * 520 / 7, sy = y => 550 - (y + 3.5) * 520 / 7;
+  const path = points => points.map((p, i) => `${i ? 'L' : 'M'}${f(sx(p[0]), 2)},${f(sy(p[1]), 2)}`).join(' ');
+  function stop() { if (timer !== null) clearInterval(timer); timer = null; $('play').textContent = 'Play'; }
+  function reset() {
+    stop(); $('error').hidden = true;
+    try {
+      const controls = ['m00','m01','m10','m11','weight','spread'].map($);
+      if (controls.some(e => e.value === '' || !e.checkValidity())) throw Error('Use starting means between −3 and 3, weight 0.1–0.9, and standard deviation 0.2–1.6.');
+      p = EMToy.initialize($('preset').value, +$('weight').value, +$('spread').value, [[+$('m00').value,+$('m01').value],[+$('m10').value,+$('m11').value]]);
+      r = null; qIteration = null; iteration = 0; next = 'E'; deltaL = deltaQ = null; converged = false;
+      logL = EMToy.expectation(xs, p).logLikelihood; history = [logL]; render();
+    } catch (error) { fail(error); }
+  }
+  function fail(error) { stop(); $('error').textContent = error.message; $('error').hidden = false; $('eStep').disabled = $('mStep').disabled = $('iterate').disabled = $('play').disabled = true; }
+  function eStep() {
+    const result = EMToy.expectation(xs, p); r = result.r; qIteration = iteration; next = 'M'; deltaL = deltaQ = null; render();
+  }
+  function mStep() {
+    const before = EMToy.qValue(xs, r, p), candidate = EMToy.maximization(xs, r), after = EMToy.expectation(xs, candidate).logLikelihood;
+    const gainQ = EMToy.qValue(xs, r, candidate) - before;
+    if (after < logL - 1e-7 || gainQ < -1e-7) throw Error('Numerical monotonicity check failed; no update applied. Reset to a different start.');
+    deltaL = after - logL; deltaQ = gainQ; p = candidate; logL = after; iteration++; next = 'E'; history.push(logL);
+    converged = iteration >= 2 && deltaL <= 1e-8 * (1 + Math.abs(logL));
+    if (converged || iteration >= 60) stop(); render();
+  }
+  function step() { if (next === 'E') eStep(); else mStep(); }
+  function safe(action) { try { action(); } catch (error) { fail(error); } }
+  function scatter() {
+    let s = '<title>Fixed observations and fitted Gaussian components</title><defs><clipPath id="plotclip"><rect x="55" y="30" width="520" height="520"/></clipPath></defs>';
+    for (let i = -3; i <= 3; i++) s += `<path d="M${sx(i)},30V550 M55,${sy(i)}H575" stroke="#35445f" stroke-width="1"/><text x="${sx(i)}" y="572" fill="#b6c4dc" text-anchor="middle" font-size="13">${i}</text><text x="43" y="${sy(i)+4}" fill="#b6c4dc" text-anchor="end" font-size="13">${i}</text>`;
+    s += '<text x="315" y="601" fill="#d5deee" text-anchor="middle" font-size="15">Observed feature x₁</text><text x="15" y="290" transform="rotate(-90 15 290)" fill="#d5deee" text-anchor="middle" font-size="15">Observed feature x₂</text><g clip-path="url(#plotclip)">';
+    xs.forEach((x, i) => {
+      const v = r ? r[i][0] : null, color = v === null ? '#73cf9b' : `rgb(${Math.round(59*v+239*(1-v))},${Math.round(108*v+91*(1-v))},${Math.round(239*v+82*(1-v))})`;
+      s += `<circle data-point="${i+1}" cx="${sx(x[0])}" cy="${sy(x[1])}" r="3.8" fill="${color}" opacity="0.87"><title>Point ${i+1}: (${f(x[0],2)}, ${f(x[1],2)})${v===null?'':`; stored r₁=${f(v)}`}</title></circle>`;
+    });
+    const selected = xs[+$('point').value - 1];
+    s += `<circle cx="${sx(selected[0])}" cy="${sy(selected[1])}" r="8" stroke="#ffe095" stroke-width="2.5" fill="none" pointer-events="none"/>`;
+    p.means.forEach((mean,k) => {
+      [1,2].forEach(radius => { s += `<path d="${path(EMToy.ellipse(mean,p.covs[k],radius))} Z" fill="none" stroke="${colors[k]}" stroke-width="${radius===1?3:2}" stroke-dasharray="${radius===2?'7 4':'none'}"/>`; });
+      const x=sx(mean[0]), y=sy(mean[1]); s += `<path d="M${x-7},${y}h14 M${x},${y-7}v14" stroke="white" stroke-width="5"/><path d="M${x-7},${y}h14 M${x},${y-7}v14" stroke="${colors[k]}" stroke-width="3"/>`;
+    });
+    $('scatter').innerHTML = s + '</g>';
+  }
+  function trace() {
+    const low = Math.min(...history)-5, high=Math.max(...history)+5, maxX=Math.max(5,iteration);
+    const x=i=>80+740*i/maxX, y=v=>125-100*(v-low)/(high-low);
+    let s=`<path d="M80,15V125H820" fill="none" stroke="#8194b5"/><text x="70" y="24" text-anchor="end" fill="#b6c4dc" font-size="13">${f(high,0)}</text><text x="70" y="130" text-anchor="end" fill="#b6c4dc" font-size="13">${f(low,0)}</text><text x="80" y="150" fill="#b6c4dc" font-size="13">0</text><text x="820" y="150" text-anchor="end" fill="#b6c4dc" font-size="13">${maxX}</text><text x="450" y="163" text-anchor="middle" fill="#b6c4dc" font-size="13">Completed M-steps</text>`;
+    s+=`<path d="${history.map((v,i)=>`${i?'L':'M'}${x(i)},${y(v)}`).join(' ')}" fill="none" stroke="#e9c66e" stroke-width="3"/>`;
+    history.forEach((v,i)=>{s+=`<circle cx="${x(i)}" cy="${y(v)}" r="3" fill="#e9c66e"/>`;}); $('trace').innerHTML=s;
+  }
+  function render() {
+    $('iteration').textContent=iteration; $('likelihood').textContent=f(logL); $('deltaL').textContent=deltaL===null?'—':f(deltaL,6); $('deltaQ').textContent=deltaQ===null?'—':f(deltaQ,6);
+    let status = r===null ? 'Initialized θ⁽⁰⁾. The green points have not been assigned posterior colors. Next: E-step.' : next==='M' ? `E-step at θ⁽${iteration}⁾: colors now show its posterior probabilities. θ and the observed log-likelihood did not change. Next: M-step.` : `M-step ${iteration}: centers, covariances and mixing weights updated. Colors are still frozen from E at θ⁽${qIteration}⁾. Next E-step refreshes them.`;
+    if (converged) status+=' Small likelihood gain: playback stopped (not a global-optimum certificate).';
+    if (iteration>=60) status+=' Demo limit: 60 iterations; Reset to run again.';
+    $('phase').textContent=status;
+    $('eStep').disabled=next!=='E'||iteration>=60; $('mStep').disabled=next!=='M'||iteration>=60; $('iterate').disabled=iteration>=60; $('play').disabled=iteration>=60;
+    $('parameters').innerHTML=p.means.map((mean,k)=>`<div class="component ${k?'red':'blue'}"><strong>${k?'Red · k = 2':'Blue · k = 1'}</strong><code>π = ${f(p.weights[k])}; μ = (${f(mean[0],2)}, ${f(mean[1],2)})<br>Σ = [${f(p.covs[k][0][0],2)}, ${f(p.covs[k][0][1],2)};<br>　　 ${f(p.covs[k][1][0],2)}, ${f(p.covs[k][1][1],2)}]<br>Stored E-step count Nₖ = ${r?f(r.reduce((s,v)=>s+v[k],0),2):'not computed'}</code></div>`).join('');
+    const i=+$('point').value-1; $('pointNumber').textContent=i+1;
+    $('pointReadout').innerHTML=`x = (${f(xs[i][0],2)}, ${f(xs[i][1],2)})<br>${r?`Stored rₙ₁ = <strong>${f(r[i][0],4)}</strong><br>Stored rₙ₂ = <strong>${f(r[i][1],4)}</strong><br>Posterior computed at θ⁽${qIteration}⁾.`:'Press E-step to compute membership probabilities.'}`;
+    scatter(); trace();
+  }
+  $('eStep').addEventListener('click',()=>{stop();safe(eStep);}); $('mStep').addEventListener('click',()=>{stop();safe(mStep);});
+  $('iterate').addEventListener('click',()=>{stop();safe(()=>{if(next==='E')eStep();mStep();});});
+  $('play').addEventListener('click',()=>{if(timer!==null){stop();return;} converged=false; $('play').textContent='Pause'; timer=setInterval(()=>safe(step),matchMedia('(prefers-reduced-motion: reduce)').matches?1600:900);});
+  $('reset').addEventListener('click',reset); $('point').addEventListener('input',render);
+  $('scatter').addEventListener('click',e=>{const point=e.target.closest('[data-point]'); if(point){$('point').value=point.dataset.point;render();}});
+  $('preset').addEventListener('change',()=>{const means=EMToy.presets[$('preset').value].means; for(let k=0;k<2;k++)for(let j=0;j<2;j++)$('m'+k+j).value=means[k][j]; $('weight').value=.5; $('spread').value=.7;reset();});
+  ['m00','m01','m10','m11','weight','spread'].forEach(id=>$(id).addEventListener('input',reset));
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();}); window.addEventListener('pagehide',stop); reset();
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>

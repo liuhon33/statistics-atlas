@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "presets": [
+    "study",
+    "decreasing",
+    "flat",
+    "steep"
+  ],
+  "sliders": [
+    "intercept",
+    "slope",
+    "x"
+  ],
+  "standalone_mobile_width": 390,
+  "sandbox_note_width": 760,
+  "sandbox_mobile_width": 390,
+  "sandbox": "allow-scripts (no same-origin)",
+  "stable_note_height_px": 881,
+  "stable_mobile_height_px": 1517,
+  "live_obsidian": "not checked: CLI could not reach app",
+  "source_review": "selected Bilibili diagrams and visible Chinese captions, not full transcripts"
+}

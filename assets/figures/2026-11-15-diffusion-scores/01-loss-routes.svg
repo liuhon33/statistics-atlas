@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="750.96pt" height="241.704pt" viewBox="0 0 750.96 241.704" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 241.704 
+L 750.96 241.704 
+L 750.96 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 23.2952 101.0982 
+L 154.7848 101.0982 
+Q 159.1496 101.0982 159.1496 96.7686 
+L 159.1496 52.9314 
+Q 159.1496 48.6018 154.7848 48.6018 
+L 23.2952 48.6018 
+Q 18.9304 48.6018 18.9304 52.9314 
+L 18.9304 96.7686 
+Q 18.9304 101.0982 23.2952 101.0982 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #2969a7; fill-opacity: 0.062745; stroke: #2969a7; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 186.9752 101.0982 
+L 323.9208 101.0982 
+Q 328.2856 101.0982 328.2856 96.7686 
+L 328.2856 52.9314 
+Q 328.2856 48.6018 323.9208 48.6018 
+L 186.9752 48.6018 
+Q 182.6104 48.6018 182.6104 52.9314 
+L 182.6104 96.7686 
+Q 182.6104 101.0982 186.9752 101.0982 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #2969a7; fill-opacity: 0.062745; stroke: #2969a7; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 356.1112 101.0982 
+L 495.7848 101.0982 
+Q 500.1496 101.0982 500.1496 96.7686 
+L 500.1496 52.9314 
+Q 500.1496 48.6018 495.7848 48.6018 
+L 356.1112 48.6018 
+Q 351.7464 48.6018 351.7464 52.9314 
+L 351.7464 96.7686 
+Q 351.7464 101.0982 356.1112 101.0982 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #2969a7; fill-opacity: 0.062745; stroke: #2969a7; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 23.2952 187.6902 
+L 154.7848 187.6902 
+Q 159.1496 187.6902 159.1496 183.3606 
+L 159.1496 139.5234 
+Q 159.1496 135.1938 154.7848 135.1938 
+L 23.2952 135.1938 
+Q 18.9304 135.1938 18.9304 139.5234 
+L 18.9304 183.3606 
+Q 18.9304 187.6902 23.2952 187.6902 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #138d82; fill-opacity: 0.062745; stroke: #138d82; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 186.9752 187.6902 
+L 323.9208 187.6902 
+Q 328.2856 187.6902 328.2856 183.3606 
+L 328.2856 139.5234 
+Q 328.2856 135.1938 323.9208 135.1938 
+L 186.9752 135.1938 
+Q 182.6104 135.1938 182.6104 139.5234 
+L 182.6104 183.3606 
+Q 182.6104 187.6902 186.9752 187.6902 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #138d82; fill-opacity: 0.062745; stroke: #138d82; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 356.1112 187.6902 
+L 495.7848 187.6902 
+Q 500.1496 187.6902 500.1496 183.3606 
+L 500.1496 139.5234 
+Q 500.1496 135.1938 495.7848 135.1938 
+L 356.1112 135.1938 
+Q 351.7464 135.1938 351.7464 139.5234 
+L 351.7464 183.3606 
+Q 351.7464 187.6902 356.1112 187.6902 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #138d82; fill-opacity: 0.062745; stroke: #138d82; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 161.968711 74.85 
+Q 170.880964 74.85 178.395674 74.85 
+" clip-path="url(#p2c38ca309b)" style="fill: none; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 173.595674 72.45 
+L 178.395674 74.85 
+L 173.595674 77.25 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #26364a; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 331.104711 74.85 
+Q 340.016964 74.85 347.531674 74.85 
+" clip-path="url(#p2c38ca309b)" style="fill: none; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 342.731674 72.45 
+L 347.531674 74.85 
+L 342.731674 77.25 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #26364a; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 161.968711 161.442 
+Q 170.880964 161.442 178.395674 161.442 
+" clip-path="url(#p2c38ca309b)" style="fill: none; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 173.595674 159.042 
+L 178.395674 161.442 
+L 173.595674 163.842 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #26364a; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 331.104711 161.442 
+Q 340.016964 161.442 347.531674 161.442 
+" clip-path="url(#p2c38ca309b)" style="fill: none; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 342.731674 159.042 
+L 347.531674 161.442 
+L 342.731674 163.842 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #26364a; stroke: #26364a; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 557.9832 147.1002 
+L 716.7528 147.1002 
+Q 721.1176 147.1002 721.1176 142.7706 
+L 721.1176 90.8154 
+Q 721.1176 86.4858 716.7528 86.4858 
+L 557.9832 86.4858 
+Q 553.6184 86.4858 553.6184 90.8154 
+L 553.6184 142.7706 
+Q 553.6184 147.1002 557.9832 147.1002 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #8c61ae; fill-opacity: 0.062745; stroke: #8c61ae; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 502.660512 75.910334 
+Q 526.884091 91.086057 549.923348 105.519819 
+" clip-path="url(#p2c38ca309b)" style="fill: none; stroke: #2969a7; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 547.129843 100.937643 
+L 549.923348 105.519819 
+L 544.581505 105.005317 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #2969a7; stroke: #2969a7; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 502.641531 160.341135 
+Q 526.886526 144.392539 549.963944 129.211985 
+" clip-path="url(#p2c38ca309b)" style="fill: none; stroke: #138d82; stroke-width: 1.25; stroke-linecap: round"/>
+    <path d="M 544.634825 129.844828 
+L 549.963944 129.211985 
+L 547.272747 133.854986 
+z
+" clip-path="url(#p2c38ca309b)" style="fill: #138d82; stroke: #138d82; stroke-width: 1.25; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #26364a; font: 700 17px 'DejaVu Sans'; text-anchor: start" x="18.112" y="20.73" transform="rotate(-0 18.112 20.73)">Two routes to a trainable noise predictor</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #2969a7; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="89.04" y="70.092032" transform="rotate(-0 89.04 70.092032)">Likelihood / ELBO</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #26364a; font: 10px 'DejaVu Sans'; text-anchor: middle" x="89.04" y="87.838055" transform="rotate(-0 89.04 87.838055)">compare reverse Gaussians</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #2969a7; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="255.448" y="70.092032" transform="rotate(-0 255.448 70.092032)">Mean prediction</text>
+   </g>
+   <g id="text_5">
+    <!-- $\|\widetilde{\mu}_t-\mu_\theta\|^2$ -->
+    <g style="fill: #26364a" transform="translate(231.698 88.42868)">
+     <text>
+      <tspan style="font: 10px 'DejaVu Sans'" x="0 16.424316 37.669922" y="-0.9765625">‖−‖</tspan>
+      <tspan style="font: 6.504593px 'STIXSizeTwoSym'" x="13.074951" y="-3.7421875">̃</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="5 26.751465" y="-0.9765625">μμ</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="11.458008 33.11377" y="0.6640625">tθ</tspan>
+      <tspan style="font: 7px 'DejaVu Sans'" x="42.765625" y="-4.8046875">2</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_6">
+    <text style="fill: #2969a7; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="425.948" y="70.092032" transform="rotate(-0 425.948 70.092032)">Reparameterize</text>
+   </g>
+   <g id="text_7">
+    <!-- $\mu_\theta=A_tx_t-B_t\epsilon_\theta$ -->
+    <g style="fill: #26364a" transform="translate(388.848 87.817742)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 23.193848 33.052734 54.26416 64.142578" y="-0.703125">μAxBε</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="6.362305 30.034668 38.970703 61.124512 69.547852" y="0.9375">θtttθ</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="12.866699 43.937012" y="-0.703125">=−</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="fill: #138d82; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="89.04" y="156.641064" transform="rotate(-0 89.04 156.641064)">Score matching</text>
+   </g>
+   <g id="text_9">
+    <!-- $s_t=\nabla\log p_t$ -->
+    <g style="fill: #26364a" transform="translate(62.29 174.42068)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 44.060579" y="-0.40625">sp</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="5.209961 50.408236" y="1.234375">tt</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="10.17627 20.503418 27.192871 29.971191 36.089355" y="-0.40625">=∇log</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_10">
+    <text style="fill: #138d82; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="255.448" y="156.684033" transform="rotate(-0 255.448 156.684033)">Gaussian teacher</text>
+   </g>
+   <g id="text_11">
+    <!-- $\nabla\log q_t=-\epsilon/b_t$ -->
+    <g style="fill: #26364a" transform="translate(217.598 174.42068)">
+     <text>
+      <tspan style="font: 10px 'DejaVu Sans'" x="0 6.689453 9.467773 15.585938 34.871126 47.146517 62.878939" y="-0.40625">∇log=−/</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="23.557161 57.473665 66.248079" y="-0.40625">qεb</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="29.904818 72.595736" y="1.234375">tt</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="fill: #138d82; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="425.948" y="156.684033" transform="rotate(-0 425.948 156.684033)">Reparameterize</text>
+   </g>
+   <g id="text_13">
+    <!-- $s_\theta=-\epsilon_\theta/b_t$ -->
+    <g style="fill: #26364a" transform="translate(397.398 174.430055)">
+     <text>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="0 34.316895 47.647461" y="-0.40625">sεb</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="5.209961 39.722168 53.995117" y="1.234375">θθt</tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="11.714355 23.989746 44.27832" y="-0.40625">=−/</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_14">
+    <text style="fill: #8c61ae; font: 700 11px 'DejaVu Sans'; text-anchor: middle" x="637.368" y="110.736153" transform="rotate(-0 637.368 110.736153)">Noise MSE</text>
+   </g>
+   <g id="text_15">
+    <!-- $\mathbb{E}\|\epsilon-\epsilon_\theta(x_t,t)\|^2$ -->
+    <g style="fill: #26364a" transform="translate(600.018 132.07646)">
+     <text>
+      <tspan style="font: italic 10px 'STIXNonUnicode'" x="0" y="-0.9765625"></tspan>
+      <tspan style="font: 10px 'DejaVu Sans'" x="6.389984 18.7435 39.032074 51.869476 60.917328 64.818695" y="-0.9765625">‖−(,)‖</tspan>
+      <tspan style="font: oblique 10px 'DejaVu Sans'" x="11.389984 29.070648 42.933441 56.996429" y="-0.9765625">εεxt</tspan>
+      <tspan style="font: oblique 7px 'DejaVu Sans'" x="34.475922 48.85141" y="0.6640625">θt</tspan>
+      <tspan style="font: 7px 'DejaVu Sans'" x="69.914398" y="-4.8046875">2</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_16">
+    <text style="fill: #26364a; font: 11px 'DejaVu Sans'; text-anchor: start" x="23.568" y="219.3504" transform="rotate(-0 23.568 219.3504)">Same regression target; timestep weights must be accounted for separately.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2c38ca309b">
+   <rect x="7.2" y="7.2" width="736.56" height="227.304"/>
+  </clipPath>
+ </defs>
+</svg>

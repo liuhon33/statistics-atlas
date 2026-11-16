@@ -1,0 +1,29 @@
+<main>
+  <header><div class="eyebrow">GENERAL EM → TWO GAUSSIANS</div><h1>Color the points. Refit the clouds.</h1>
+  <p>240 fixed observations; two fitted Gaussian components. <strong>The data never move.</strong> E changes the membership colors; M changes the centers, ellipses and mixing weights.</p></header>
+  <section class="controls" aria-label="Simulation controls">
+    <label class="preset">Starting configuration <select id="preset"><option value="crossed">Crossed centers — like slide 13</option><option value="close">Centers near the two clouds</option><option value="left">Both centers start on the left</option><option value="identical">Identical centers — symmetry trap</option></select></label>
+    <details><summary>Tune the initial parameters (resets the fit, not the data)</summary><div class="tuning">
+      <label>Blue mean x₁ <input id="m00" type="number" min="-3" max="3" step="0.1" value="-1.4"></label>
+      <label>Blue mean x₂ <input id="m01" type="number" min="-3" max="3" step="0.1" value="1.1"></label>
+      <label>Red mean x₁ <input id="m10" type="number" min="-3" max="3" step="0.1" value="1.5"></label>
+      <label>Red mean x₂ <input id="m11" type="number" min="-3" max="3" step="0.1" value="-1.0"></label>
+      <label>Initial blue weight π₁ <input id="weight" type="number" min="0.1" max="0.9" step="0.1" value="0.5"></label>
+      <label>Initial standard deviation <input id="spread" type="number" min="0.2" max="1.6" step="0.1" value="0.7"></label>
+    </div><p class="small">Initially Σ₁ = Σ₂ = s²I; later M-steps fit separate full covariance matrices. Each input change restarts at iteration 0.</p></details>
+    <div class="buttons"><button id="eStep">E-step · recolor</button><button id="mStep" disabled>M-step · refit</button><button id="iterate">1 iteration</button><button id="play">Play</button><button id="reset">Reset</button></div>
+  </section>
+  <div class="phase" id="phase" role="status" aria-live="polite"></div><p class="error" id="error" role="alert" hidden></p>
+  <div class="grid">
+    <section class="plotcard"><svg id="scatter" viewBox="0 0 620 610" role="img" aria-label="Fixed data points with posterior membership colors and fitted Gaussian contours"></svg>
+    <div class="legend"><span class="blue">Blue: component 1</span><span class="red">Red: component 2</span></div><div class="gradient"></div><div class="legend"><span>rₙ₁ = 1</span><span>uncertain: rₙ₁ = 0.5</span><span>rₙ₁ = 0</span></div>
+    <p class="small">Green = not inferred yet. Crosses = fitted means. Contours have Mahalanobis radii 1 and 2 (not confidence intervals). Axes have fixed, equal scales; contours may extend beyond the plotting window.</p></section>
+    <aside>
+      <section class="card"><h2>What is being optimized?</h2><div class="metric"><span>Completed M-steps</span><strong id="iteration">0</strong></div><div class="metric"><span>Observed log-likelihood ℓ(θ)</span><strong id="likelihood"></strong></div><div class="metric"><span>Latest M-step gain Δℓ</span><strong id="deltaL">—</strong></div><div class="metric"><span>Latest M-step gain ΔQ (same q)</span><strong id="deltaQ">—</strong></div><p class="small">E keeps θ and ℓ fixed. M maximizes Q with E's probabilities frozen. Do not compare raw Q across different E-steps.</p></section>
+      <section class="card"><h2>Fitted components</h2><div id="parameters"></div></section>
+      <section class="card"><h2>Inspect one observation</h2><label for="point">Point number <output id="pointNumber">120</output></label><input id="point" type="range" min="1" max="240" step="1" value="120"><div id="pointReadout"></div><p class="small">Click a dot or use the slider. The highlighted dot is a measurement, not a fitted center.</p></section>
+    </aside>
+  </div>
+  <section class="card trace"><h2>Observed log-likelihood after each M-step</h2><svg id="trace" viewBox="0 0 850 170" role="img" aria-label="Observed log-likelihood versus completed M-steps"></svg><p class="small">The trace rescales to the recorded range; the data axes above never rescale. Play alternates E then M, stopping at a small likelihood gain or 60 iterations. Reset repeats the current initialization.</p></section>
+  <footer>Original, deterministic reconstruction inspired by Lecture 7, slide 13—not the lecture's original data or animation. Exact full-covariance updates, no added regularizer. Extreme near-empty or singular components stop with a warning instead of silently changing the method. Different starts need not find a global maximum.</footer>
+</main>

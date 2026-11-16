@@ -372,6 +372,80 @@ D_{\rm KL}(q(x_{t-1}\mid x_t,x_0)\|p_\theta(x_{t-1}\mid x_t))}_{L_{t-1}(x_0)}\\
 \end{aligned}}
 $$
 
+> [!note]- Hidden step: from the whole-path expectation to the local KL
+> **The other variables have been integrated out, not discarded. The averaging over $x_{t-1}$ is now hidden inside the KL.** Keep $x_0$ fixed, take $2\leq t\leq T$, and retain the support and finite-expectation assumptions from §4.
+>
+> **1. Start with one summand before introducing the KL.** Write
+>
+> $$
+> f_t(x_{t-1},x_t)
+> =\log\frac{q(x_{t-1}\mid x_t,x_0)}{p_\theta(x_{t-1}\mid x_t)},
+> \qquad
+> I_t=\mathbb E_{q(x_{1:T}\mid x_0)}[f_t(x_{t-1},x_t)].
+> $$
+>
+> Although the expectation covers the whole path, this summand depends on only two random states: $x_{t-1}$ and $x_t$. Integrating out the remaining noisy states gives their joint marginal:
+>
+> $$
+> \int q(x_{1:T}\mid x_0)\,dx_{\rm rest}
+> =q(x_{t-1},x_t\mid x_0),
+> $$
+>
+> where $x_{\rm rest}$ denotes all states in $x_{1:T}$ except $x_{t-1},x_t$. Consequently,
+>
+> $$
+> I_t=\mathbb E_{q(x_{t-1},x_t\mid x_0)}[f_t(x_{t-1},x_t)].
+> $$
+>
+> This does **not** assume that the states are independent. Their dependence is preserved in the joint marginal.
+>
+> **2. Split that joint density into marginal times conditional.** By the definition of conditional probability,
+>
+> $$
+> q(x_{t-1},x_t\mid x_0)
+> =q(x_t\mid x_0)\,q(x_{t-1}\mid x_t,x_0).
+> $$
+>
+> Substituting into the expectation gives
+>
+> $$
+> I_t=\int q(x_t\mid x_0)
+> \underbrace{\left[
+> \int q(x_{t-1}\mid x_t,x_0)
+> \log\frac{q(x_{t-1}\mid x_t,x_0)}{p_\theta(x_{t-1}\mid x_t)}
+> \,dx_{t-1}\right]}_{\displaystyle D_{\rm KL}(q(x_{t-1}\mid x_t,x_0)\|p_\theta(x_{t-1}\mid x_t))}
+> \,dx_t.
+> $$
+>
+> For each fixed $x_t,x_0$, the inner integral is exactly a KL divergence **over $x_{t-1}$**. Once this integral is evaluated, the KL is a number depending on $x_t,x_0$; since $x_0$ is fixed, only $x_t$ remains to average over:
+>
+> $$
+> I_t=\mathbb E_{q(x_t\mid x_0)}
+> \left[D_{\rm KL}(q(x_{t-1}\mid x_t,x_0)\|p_\theta(x_{t-1}\mid x_t))\right]
+> =L_{t-1}(x_0).
+> $$
+>
+> **3. Track where each variable went.**
+>
+> | Variables | What happened to them? |
+> | --- | --- |
+> | All noisy states except $x_{t-1},x_t$ | Integrated out to obtain the pair's joint marginal |
+> | $x_{t-1}$ | Averaged over inside the KL |
+> | $x_t$ | Still averaged over by the outer expectation |
+> | $x_0$ | Fixed throughout this calculation |
+>
+> This is the **law of total expectation**, with the dependence on fixed $x_0$ understood:
+>
+> $$
+> \mathbb E_{q(x_{1:T}\mid x_0)}[f_t]
+> =\mathbb E_{q(x_t\mid x_0)}
+> \left[\mathbb E_{q(x_{t-1}\mid x_t,x_0)}[f_t]\right].
+> $$
+>
+> We have **not replaced a whole-path KL with a single-state KL**. We first decomposed the loss into local terms, then rewrote each term's averaging exactly. The terminal term similarly needs only $x_T$, and the reconstruction term only $x_1$. No approximation is introduced here.
+
+^diffusion-kl-hidden-averaging
+
 The subscript $t-1$ names the loss associated with predicting state $x_{t-1}$ from state $x_t$. In particular, $t=2$ contributes $L_1$. [[raw/notes/2026-11-10-Lec12-diffusion-models.pdf#page=13|Lecture pp. 13–14]].
 
 For a fixed forward schedule and fixed terminal prior, $L_T$ is independent of the reverse-model parameters, so it can be omitted when optimizing those parameters. It need not be zero. The outer expectations in the intermediate and reconstruction terms still remain.
@@ -462,6 +536,11 @@ $$
 +\frac{\|\tilde\mu_t-\mu_\theta(x_t,t)\|^2}{\sigma_t^2}\right].}
 $$
 
+Core idea:
+1. $q(x_{t-1}\mid x_t,x_0)$ is a multi-variable Gaussian by completing the squres
+2. $p(x_{t-1}\mid x_t)$ is also multi-variable Gaussian by our design (reverse process)
+3. therefore, the $D_{\rm KL}(q\|p_\theta)$ is also computable for each term
+
 When the reverse variance is fixed, the covariance terms are independent of $\theta$. Hence
 
 $$
@@ -488,6 +567,8 @@ $$
 \begin{aligned}
 \tilde\mu_t
 ={}&\frac{\sqrt{\alpha_t}(1-\bar\alpha_{t-1})}{1-\bar\alpha_t}x_t
++\frac{\sqrt{\bar\alpha_{t-1}}\beta_t}{1-\bar\alpha_t}x_0(section5.4)\\
+={}&\frac{\sqrt{\alpha_t}(1-\bar\alpha_{t-1})}{1-\bar\alpha_t}x_t
 +\frac{\beta_t}{\sqrt{\alpha_t}(1-\bar\alpha_t)}
 \left(x_t-\sqrt{1-\bar\alpha_t}\,\epsilon\right)\\
 ={}&\frac{\alpha_t(1-\bar\alpha_{t-1})+\beta_t}
@@ -498,6 +579,7 @@ $$
 \end{aligned}
 $$
 
+Reminder: This is the mean of $q(x_{t-1}\mid x_t,x_0)$
 The same cancellation $\alpha_t(1-\bar\alpha_{t-1})+\beta_t=1-\bar\alpha_t$ appears again. [[raw/notes/2026-11-10-Lec12-diffusion-models.pdf#page=16|Lecture p. 16]].
 
 ### 6.2 Let the network predict noise
@@ -508,6 +590,317 @@ $$
 \mu_\theta(x_t,t)=\frac1{\sqrt{\alpha_t}}\left(x_t-
 \frac{\beta_t}{\sqrt{1-\bar\alpha_t}}\epsilon_\theta(x_t,t)\right).
 $$
+
+> [!note]- What the optimal mean predicts, and what the expectation averages over
+> **1. What does training ask the mean to predict?**
+>
+> For $t\geq2$, with fixed reverse variance $0<\sigma_t^2<\infty$, §5.5 gives a variance-weighted squared error. The training objective also averages that per-image loss over clean images:
+>
+> $$
+> \begin{aligned}
+> \mathcal L_{t-1}(\theta)
+> &:=\mathbb E_{X_0\sim q_{\rm data}}[L_{t-1}(X_0)]\\
+> &=\mathbb E_q\left[
+> \frac{1}{2\sigma_t^2}
+> \|\tilde\mu_t(X_t,X_0)-\mu_\theta(X_t,t)\|^2
+> \right]+C_t.
+> \end{aligned}
+> $$
+>
+> Here $q_{\rm data}=q_0$ is the clean-data distribution, $q$ in the last expectation is the joint law $q_{\rm data}(x_0)q(x_t\mid x_0)$, and $C_t$ is independent of $\theta$. Thus the task is:
+>
+> **Given $x_t,t$, predict the teacher mean $\tilde\mu_t(x_t,x_0)$.**
+>
+> But the network does not receive $x_0$. Different clean images and noise realizations can lead to the same noisy input.
+>
+> **2. What is the best possible prediction?**
+>
+> Under squared-error loss, the best prediction is the conditional average of the target:
+>
+> $$
+> \boxed{\mu^*(x_t,t)
+> =\mathbb E[\tilde\mu_t(x_t,X_0)\mid X_t=x_t].}
+> $$
+>
+> Here training averages over clean images; we are **no longer fixing one particular $x_0$**. At fixed $t$, the positive weight $1/(2\sigma_t^2)$ does not change this optimum.
+>
+> Now use the teacher formula already derived in §6.1:
+>
+> $$
+> \tilde\mu_t(X_t,X_0)
+> =\frac1{\sqrt{\alpha_t}}
+> \left(X_t-\frac{\beta_t}{\sqrt{1-\bar\alpha_t}}\epsilon\right).
+> $$
+>
+> Taking its conditional expectation, $x_t$ and the schedule coefficients stay fixed:
+>
+> $$
+> \boxed{
+> \mu^*(x_t,t)
+> =\frac1{\sqrt{\alpha_t}}
+> \left(
+> x_t-\frac{\beta_t}{\sqrt{1-\bar\alpha_t}}
+> \underbrace{\mathbb E[\epsilon\mid X_t=x_t]}_{\text{unknown function to learn}}
+> \right).
+> }
+> $$
+>
+> Thus the structure of the model-mean equation above emerges from the optimal-prediction calculation, without assuming its parameterization first. Modeling the unknown conditional-noise mean with $\epsilon_\theta(x_t,t)$ gives that parameterization; it does not require predicting each sample's realized $\epsilon$ exactly.
+>
+> **3. Why is the conditional expectation best?**
+>
+> Fix timestep $t$, and call the training target $Y$. For mean prediction,
+>
+> $$
+> Y=\tilde\mu_t(X_t,X_0).
+> $$
+>
+> Once the network sees $X_t=x$, it must output **one vector** $a$. Define
+>
+> $$
+> m(x)=\mathbb E[Y\mid X_t=x].
+> $$
+>
+> Assuming finite second moments, expand the conditional squared error:
+>
+> $$
+> \begin{aligned}
+> \mathbb E[\|Y-a\|^2\mid X_t=x]
+> ={}&\mathbb E[\|Y-m(x)\|^2\mid X_t=x]\\
+> &+\|m(x)-a\|^2\\
+> &+2(m(x)-a)^\top
+> \underbrace{\mathbb E[Y-m(x)\mid X_t=x]}_{0}.
+> \end{aligned}
+> $$
+>
+> Therefore,
+>
+> $$
+> \boxed{
+> \begin{aligned}
+> \text{conditional mean squared error}
+> ={}&\text{remaining uncertainty given }x\\
+> &+\text{squared distance from the conditional mean}.
+> \end{aligned}
+> }
+> $$
+>
+> The first term cannot be changed by choosing $a$. The second is minimized at $a=m(x)$. Doing this for each input minimizes the overall expected loss. [MIT's conditional-mean proof](https://gradml.mit.edu/supervised/regression/#the-optimal-estimator).
+>
+> Thus, in our fixed-variance diffusion setup,
+>
+> $$
+> \boxed{\mu^*(x,t)
+> =\mathbb E[\tilde\mu_t(x,X_0)\mid X_t=x].}
+> $$
+>
+> This is exactly the [[Learning/Probability & mathematical foundations/Joint variation & conditioning/Conditional expectation as orthogonal projection in L2#Defining the conditional expectation by minimum MSE|L² projection result]]. It describes the ideal optimum among all square-integrable functions of the available input, up to almost-sure equality; a finite trained network only approximates it.
+>
+> **We condition the target, not the current network output.** Conditioning the latter would change nothing (with $t$ and the network parameters held fixed):
+>
+> $$
+> \mathbb E[\mu_\theta(X_t,t)\mid X_t]
+> =\mu_\theta(X_t,t).
+> $$
+>
+> **4. With one clean sample, isn't there only one $X_t$?**
+>
+> Only after the noise has also been drawn. At fixed $t$, training samples a clean image and independent Gaussian noise:
+>
+> $$
+> X_0\sim q_{\rm data},
+> \qquad \epsilon\sim\mathcal N(0,I_d),
+> \qquad
+> X_t=\sqrt{\bar\alpha_t}X_0+\sqrt{1-\bar\alpha_t}\epsilon.
+> $$
+>
+> Even holding the clean image $X_0=x_0$ fixed, drawing fresh noise produces different noisy images.
+>
+> There are **two different conditioning directions**:
+>
+> | What is held fixed? | What remains uncertain? |
+> | --- | --- |
+> | Clean image $X_0=x_0$ | The noise, hence $X_t$ |
+> | Noisy image $X_t=x$ | Which clean image and noise produced it |
+>
+> The optimal-prediction formula uses the **second row**. It averages over possible clean sources:
+>
+> $$
+> \mu^*(x,t)
+> =\int\tilde\mu_t(x,x_0)\,
+> q(x_0\mid X_t=x)\,dx_0.
+> $$
+>
+> Use a sum instead when the clean-data distribution is discrete. **We are not averaging over different $X_t$'s inside this conditional expectation. $X_t=x$ is held fixed.**
+>
+> **A tiny example.** Suppose clean data are $X_0=+1$ or $-1$, equally likely, and
+>
+> $$
+> X_t=\frac{X_0+\epsilon}{\sqrt2},
+> \qquad \epsilon\sim\mathcal N(0,1)
+> $$
+>
+> with independent noise. For the observed noisy value $X_t=0$, the two possible explanations are
+>
+> $$
+> (X_0,\epsilon)=(+1,-1)
+> \quad\text{or}\quad
+> (-1,+1).
+> $$
+>
+> The two clean values have equal posterior probability by symmetry: their Gaussian likelihood densities at $x=0$ agree. Therefore,
+>
+> $$
+> \mathbb E[\epsilon\mid X_t=0]=0.
+> $$
+>
+> The network sees the **same input $0$** in either explanation, so it cannot identify the particular noise realization. Its best squared-error prediction is their conditional average.
+>
+> **5. But each training example has just one target!**
+>
+> Correct. For one sampled pair $(x_0,\epsilon)$, both $x_t$ and its target are known. That gives **one stochastic observation of the expected loss**.
+>
+> Across training, we sample many clean images and fresh noises. Their losses train one shared prediction function. We do **not** need to collect repeated examples with exactly identical $x_t$.
+>
+> If training literally used **only one fixed clean image forever**, then knowing $x_t$ would determine its noise:
+>
+> $$
+> \epsilon
+> =\frac{x_t-\sqrt{\bar\alpha_t}x_0}
+> {\sqrt{1-\bar\alpha_t}}.
+> $$
+>
+> That conditional average would indeed collapse to a single value. Ordinary diffusion training instead averages over a distribution of clean images.
+>
+> **Bottom line: one training example supplies one target; the expected-loss optimum averages over targets that remain possible given only the network's input.**
+
+> [!note]- Where this model-mean formula comes from
+> **First rewrite the exact posterior mean using the noise $\epsilon$, then replace that noise with the network prediction $\epsilon_\theta(x_t,t)$.** The last step is a parameterization choice, not another probability identity.
+>
+> **1. Start from the known posterior mean.** For $t\geq2$, with the nondegenerate Gaussian schedule used above, completing the square gave
+>
+> $$
+> q(x_{t-1}\mid x_t,x_0)
+> =\mathcal N(\tilde\mu_t,\tilde\beta_tI_d),
+> $$
+>
+> where
+>
+> $$
+> \tilde\mu_t
+> =\frac{\sqrt{\alpha_t}(1-\bar\alpha_{t-1})}{1-\bar\alpha_t}x_t
+> +\frac{\sqrt{\bar\alpha_{t-1}}\beta_t}{1-\bar\alpha_t}x_0.
+> $$
+>
+> This teacher mean uses the **clean image $x_0$**.
+>
+> **2. Express that clean image using the forward noise.** From
+>
+> $$
+> x_t=\sqrt{\bar\alpha_t}\,x_0+\sqrt{1-\bar\alpha_t}\,\epsilon,
+> $$
+>
+> solve for
+>
+> $$
+> x_0=\frac{x_t-\sqrt{1-\bar\alpha_t}\,\epsilon}{\sqrt{\bar\alpha_t}}.
+> $$
+>
+> Since $\bar\alpha_t=\alpha_t\bar\alpha_{t-1}$,
+>
+> $$
+> \frac{\sqrt{\bar\alpha_{t-1}}}{\sqrt{\bar\alpha_t}}
+> =\frac1{\sqrt{\alpha_t}}.
+> $$
+>
+> Substitute and collect the coefficients of $x_t$ and $\epsilon$:
+>
+> $$
+> \begin{aligned}
+> \tilde\mu_t
+> & =\frac{\sqrt{\alpha_t}(1-\bar\alpha_{t-1})}{1-\bar\alpha_t}x_t
+> +\frac{\beta_t}{\sqrt{\alpha_t}(1-\bar\alpha_t)}
+> \left(x_t-\sqrt{1-\bar\alpha_t}\,\epsilon\right)\\
+> & =\frac{\alpha_t(1-\bar\alpha_{t-1})+\beta_t}
+> {\sqrt{\alpha_t}(1-\bar\alpha_t)}x_t
+> -\frac{\beta_t}{\sqrt{\alpha_t}\sqrt{1-\bar\alpha_t}}\epsilon.
+> \end{aligned}
+> $$
+>
+> The numerator of the $x_t$ coefficient simplifies because
+>
+> $$
+> \begin{aligned}
+> \alpha_t(1-\bar\alpha_{t-1})+\beta_t
+> &=(\alpha_t+\beta_t)-\alpha_t\bar\alpha_{t-1}\\
+> &=1-\bar\alpha_t.
+> \end{aligned}
+> $$
+>
+> Cancel that factor against the denominator and factor out $1/\sqrt{\alpha_t}$:
+>
+> $$
+> \boxed{\tilde\mu_t(x_t,x_0)
+> =\frac1{\sqrt{\alpha_t}}
+> \left(x_t-\frac{\beta_t}{\sqrt{1-\bar\alpha_t}}\epsilon\right).}
+> $$
+>
+> **Up to here, everything is exact algebra.** The $\epsilon$ is the aggregate forward noise used to construct $x_t$, not just the noise added in the latest step.
+>
+> **3. Replace the unknown noise with a learned prediction.** During training, we know $x_0$ and the noise we generated. During generation, we do not know a corresponding clean image or its noise. Let the network predict $\epsilon_\theta(x_t,t)$ and **define the model's reverse mean** using the same expression:
+>
+> $$
+> \boxed{\mu_\theta(x_t,t)
+> :=\frac1{\sqrt{\alpha_t}}
+> \left(x_t-\frac{\beta_t}{\sqrt{1-\bar\alpha_t}}\epsilon_\theta(x_t,t)\right).}
+> $$
+>
+> The network predicts noise rather than the mean directly; this equation converts its noise prediction into a reverse mean. It does **not** assert that $\epsilon_\theta=\epsilon$ or $\mu_\theta=\tilde\mu_t$ for every sample. The exact teacher-posterior derivation here is for $t\geq2$; using the model parameterization at $t=1$ does not turn that endpoint into a nondegenerate teacher Gaussian KL.
+
+> [!note]- Can we predict the mean first, then derive epsilon?
+> **Yes. Direct mean prediction is a valid alternative; predicting noise first is not a mathematical requirement.**
+>
+> **1. Let the network output $\mu_\theta(x_t,t)$ directly.** For a fixed $t\geq2$ and fixed reverse variance, train it toward the known teacher mean with
+>
+> $$
+> \mathcal L_{{\rm mean},t}(\theta)
+> =\mathbb E_q\left[
+> \frac{1}{2\sigma_t^2}
+> \|\mu_\theta(x_t,t)-\tilde\mu_t(x_t,x_0)\|^2
+> \right].
+> $$
+>
+> This is the expected Gaussian KL up to a constant independent of $\theta$. The $\mu_\theta$ is already our learned prediction of the teacher mean, using only $x_t,t$ as inputs; $x_0$ is available to construct the training target, not supplied to this network.
+>
+> **2. Sample directly using that predicted mean:**
+>
+> $$
+> x_{t-1}=\mu_\theta(x_t,t)+\sigma_tz,
+> \qquad z\sim\mathcal N(0,I_d).
+> $$
+>
+> We do **not need to produce an epsilon prediction at all** to perform this sampling.
+>
+> **3. If an equivalent epsilon prediction is wanted, calculate it afterward:**
+>
+> $$
+> \boxed{\epsilon_\theta^{\rm derived}(x_t,t)
+> =\frac{\sqrt{1-\bar\alpha_t}}{\beta_t}
+> \left(x_t-\sqrt{\alpha_t}\,\mu_\theta(x_t,t)\right).}
+> $$
+>
+> Under the usual $0<\beta_t<1$ schedule, this conversion requires **no second network or additional approximation**. It simply expresses the same predicted mean in noise coordinates.
+>
+> **Why predict noise first instead?** These are two alternative implementations:
+>
+> | Network outputs | Then compute |
+> | --- | --- |
+> | Mean $\mu_\theta$ | Sample directly; derive epsilon only if wanted |
+> | Noise prediction $\epsilon_\theta$ | Convert it into $\mu_\theta$, then sample |
+>
+> The original DDPM paper tested both. With fixed variances and the original variational objective, their performance was similar. Noise prediction combined with the simplified noise-MSE objective gave better sample quality in those CIFAR10 experiments. This is an **empirical training advantage, not a mathematical requirement**. [DDPM §4.2 and Table 2](https://arxiv.org/html/2006.11239v2#S4.SS2).
+>
+> **Unweighted mean-MSE and unweighted noise-MSE are not the same objective across timesteps**: the conversion introduces timestep-dependent weights, as the equations below show. Learning the mean first, then deriving epsilon if needed, remains entirely legitimate.
 
 Then
 
@@ -549,6 +942,43 @@ Replacing $\lambda_t$ by one **changes the relative weighting of timesteps**. It
 
 The bound was already trainable before this rearrangement: forward samples and differentiable reverse log densities suffice. The companion note separates [[Learning/Statistical computing & learning/Simulation & approximate inference/VAE and diffusion ELBO - images, hidden paths, and Gaussian KL#9.2 Density evaluation, integration, and optimization are different operations|density evaluation, analytic integration, and optimization]].
 
+> [!note]- VAE versus diffusion: why do we not predict both mean and variance here?
+> **We use one learned output because the reverse variance is fixed in this setup, not because the mean determines the variance.** A Gaussian's mean and covariance are separate parameters; knowing one does not generally determine the other.
+>
+> **In the usual diagonal-Gaussian VAE encoder**, the network parameterizes
+>
+> $$
+> q_\phi(z\mid x)
+> =\mathcal N\!\left(\mu_\phi(x),\operatorname{diag}(\sigma_\phi^2(x))\right).
+> $$
+>
+> It learns both the mean and a variance parameter, commonly $\log\sigma_\phi^2(x)$; the standard deviation is then $\exp(\tfrac12\log\sigma_\phi^2(x))$, elementwise. These can be two outputs of the same network, not two separate networks. This statement concerns the **encoder**; the VAE decoder has its own likelihood choices. [Auto-Encoding Variational Bayes, §3, Eq. (9), and Appendix C.2](https://arxiv.org/pdf/1312.6114).
+>
+> **The diffusion teacher is an analytic distribution, not a teacher network.** For $t\geq2$,
+>
+> $$
+> q(x_{t-1}\mid x_t,x_0)
+> =\mathcal N(\tilde\mu_t(x_t,x_0),\tilde\beta_tI_d),
+> \qquad
+> \tilde\beta_t=\frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_t}\beta_t.
+> $$
+>
+> Both formulas come from the specified forward process, but they do not determine each other: $\tilde\mu_t$ depends on $x_t,x_0$, whereas $\tilde\beta_t$ depends only on the schedule and $t$. Different image pairs can have different teacher means at the same teacher variance.
+>
+> **For the learned reverse model in this lecture**, $p_\theta(x_{t-1}\mid x_t)=\mathcal N(\mu_\theta(x_t,t),\sigma_t^2I_d)$, we choose $\sigma_t^2=\beta_t$ in advance, so $\sigma_t=\sqrt{\beta_t}$ needs no network prediction. Another fixed choice for $t\geq2$ is $\sigma_t^2=\tilde\beta_t$. These are variance choices, not consequences of the learned mean. [DDPM, §3.2](https://arxiv.org/html/2006.11239v2#S3.SS2).
+>
+> Thus the two computations are
+>
+> $$
+> \underbrace{\epsilon_\theta(x_t,t)\longrightarrow\mu_\theta(x_t,t)}_{\text{learned prediction converted to a mean}},
+> \qquad
+> \underbrace{\{\beta_s\}_{s=1}^T,t\longrightarrow\sigma_t}_{\text{chosen schedule rule, no learned mean needed}}.
+> $$
+>
+> "One output" means one image-shaped prediction tensor, not one scalar. The previous callout's conversion is **noise prediction ↔ mean**, not **mean ↔ standard deviation**.
+>
+> **Diffusion can also learn variance.** Learned-variance variants predict a variance parameter in addition to the mean/noise output; Improved DDPM does this with a log-variance parameterization. Pure noise-MSE does not train that variance output, so the paper adds a variational-bound term. Fixing variance is a modeling choice, not a defining requirement of diffusion. [Improved DDPM, §3.1, Eqs. (14)–(15)](https://proceedings.mlr.press/v139/nichol21a/nichol21a.pdf).
+
 ## 7. Training, sampling, and the noise schedule
 
 ### 7.1 Training uses a randomly selected noise level
@@ -566,6 +996,60 @@ The target noise is known because training generated it. One training example do
 ### 7.2 Sampling starts from noise
 
 A draw from a Gaussian can be written as mean plus standard deviation times fresh standard noise. Substituting the noise-parameterized mean gives
+
+> [!note]- Derive the sampling update from the reverse Gaussian
+> **1. Start from the reverse Gaussian chosen in §3.**
+>
+> $$
+> p_\theta(x_{t-1}\mid x_t)
+> =\mathcal N\!\left(
+> \underbrace{\mu_\theta(x_t,t)}_{\text{mean}},
+> \underbrace{\sigma_t^2I_d}_{\text{covariance}}
+> \right).
+> $$
+>
+> The current noisy image $x_t$ is the **conditioning input**, not the mean itself. The mean is $\mu_\theta(x_t,t)$, and the per-coordinate standard deviation is $\sigma_t$. In this lecture, $\sigma_t^2=\beta_t$, so $\sigma_t=\sqrt{\beta_t}$.
+>
+> The network output $\epsilon_\theta(x_t,t)$ is **not the standard deviation**: §6.2 uses it to calculate $\mu_\theta(x_t,t)$.
+>
+> **2. Standardize that Gaussian, then rearrange.** For fixed $x_t$ and $\sigma_t>0$,
+>
+> $$
+> \left.
+> \frac{X_{t-1}-\mu_\theta(x_t,t)}{\sigma_t}
+> \,\right|\,X_t=x_t
+> \sim\mathcal N(0,I_d).
+> $$
+>
+> Call this standardized random vector $Z$. Solving for the variable being sampled gives
+> $X_{t-1}-\mu_\theta(x_t,t)=\sigma_tZ$. Thus we can draw a fresh $z\sim\mathcal N(0,I_d)$, independently of the current state, and set
+>
+> $$
+> x_{t-1}=\mu_\theta(x_t,t)+\sigma_tz.
+> $$
+>
+> This is a sampling representation of the **chosen model conditional**, not a claim that the true data reverse conditional must be exactly Gaussian.
+>
+> **3. Substitute the noise-parameterized mean from §6.2.**
+>
+> $$
+> \begin{aligned}
+> x_{t-1}
+> &=\mu_\theta(x_t,t)+\sigma_tz\\
+> &=\frac1{\sqrt{\alpha_t}}
+> \left(x_t-\frac{\beta_t}{\sqrt{1-\bar\alpha_t}}
+> \epsilon_\theta(x_t,t)\right)+\sigma_tz\\
+> &=\frac1{\sqrt{\alpha_t}}
+> \left(x_t-\frac{1-\alpha_t}{\sqrt{1-\bar\alpha_t}}
+> \epsilon_\theta(x_t,t)\right)+\sigma_tz,
+> \end{aligned}
+> $$
+>
+> where the last equality uses $\beta_t=1-\alpha_t$. This is the boxed update below.
+>
+> **Keep the two noises separate:** $\epsilon_\theta(x_t,t)$ is a deterministic network prediction once $x_t,t$ and the trained parameters are fixed; it sets the mean. The $z$ is newly drawn Gaussian randomness around that mean, scaled by $\sigma_t$. They are not interchangeable.
+>
+> The lecture uses this stochastic draw for $t>1$. Its final-step rule $z=0$ is a separate sampling convention, as noted below.
 
 $$
 \boxed{x_{t-1}=\frac1{\sqrt{\alpha_t}}\left(x_t-
@@ -817,6 +1301,18 @@ The distinction between the mathematical stages is useful when rereading the der
 ## Origin
 
 > [!info]- Source details
+> Reverse-sampling expansion (2026-11-12): prompted by the user's question about the Gaussian's mean and noise arguments, the assistant added a collapsed derivation after the opening sentence of §7.2 and before its boxed update. It starts from the model conditional already specified in §3, standardizes and rearranges the Gaussian draw, substitutes §6.2's mean, and uses beta equals one minus alpha. It distinguishes the conditioning image, learned mean, fixed standard deviation, predicted noise, and fresh sampling noise, while retaining the final-step convention. This is checked explanatory algebra from the current conversation, not additional lecture coverage; no new local source files were added.
+>
+> Conditional-mean extension (2026-11-12): at the user's request, the assistant added the selected explanation immediately below §6.2's model-mean equation, in a new collapsed callout. It connects the data-averaged teacher-mean loss to the optimal conditional-noise mean, proves the squared-error projection identity, and distinguishes fixed-clean-image noising from fixed-noisy-input prediction and single-sample training. The user-selected live-conversation text was reformatted and its training-law notation made explicit; the focused MIT conditional-mean proof is cited inline, with a pointer to the existing L² note. This is explanatory synthesis, not additional lecture text or a user-authored derivation; no new local source files were added.
+>
+> VAE/diffusion variance clarification (2026-11-12): prompted by the user's proposed mean–variance relationship, the assistant added a corrected auxiliary callout at the end of §6. It distinguishes the VAE's learned encoder parameters, the analytic diffusion teacher, a fixed reverse variance, and optional learned-variance variants. Focused source checks cover AEVB §3/Eq. (9)/Appendix C.2, DDPM §3.2, and Improved DDPM §3.1/Eqs. (14)–(15), cited in the callout; no full-paper ingestion or extra lecture coverage is claimed. No new local source files were added.
+>
+> Direct-mean alternative (2026-11-12): at the user's request, the assistant added a second collapsed callout immediately after the model-mean explanation in §6.2. It preserves the user's proposed mean-first route, optional algebraic conversion to epsilon, and the distinction between output parameterization and loss weighting. The focused [original DDPM comparison, §4.2 and Table 2](https://arxiv.org/html/2006.11239v2#S4.SS2) supports only this follow-up's empirical comparison; it does not expand the original lecture-digest boundary. No new local source files were added.
+>
+> Model-mean expansion (2026-11-12): at the user's request, the assistant added the collapsed explanation below §6.2's definition of $\mu_\theta$. It derives the exact teacher mean in aggregate-noise form, exposes the coefficient cancellation, and separates that identity from the choice to parameterize the learned mean through a noise predictor. This is checked explanatory synthesis from the current conversation, not additional lecture text or a user-authored derivation.
+>
+> Hidden-expectation expansion (2026-11-12): at the user's request, the assistant added the collapsed derivation immediately below §5.3's boxed loss decomposition. It makes marginalization, the conditional expectation inside the KL, and the remaining outer expectation explicit. This is explanatory synthesis from the current conversation, not new lecture text or a user-authored derivation.
+>
 > Loss-substitution expansion (2026-11-11): at the user's request, the assistant expanded §5.3 from the earlier definition of $L$, explicitly substituted both path factorizations, separated the $t=1$ decoder factor, and applied the logarithm rules. This is checked explanatory algebra, not new lecture text or source ingestion.
 >
 > Visual extension (2026-11-11): the user requested an SVG or GIF comparison in §2.4. The original static SVG shows exact conditional moments alongside three seeded illustrative trajectories; it is not lecture data or an empirical proof. [[assets/figures/2026-11-11-diffusion-lecture/draw_random_walk_comparison.py|Generator]], [[assets/figures/2026-11-11-diffusion-lecture/random-walk-comparison-data.npz|constructed data]] and [[assets/figures/2026-11-11-diffusion-lecture/random-walk-comparison-checks.json|checks]] are preserved beside the figure. SVG XML parsed and the generated PNG preview visually inspected; no live Obsidian rendering check.

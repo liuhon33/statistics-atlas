@@ -632,6 +632,8 @@ $$
 
 The three pieces are reconstruction, terminal-prior KL, and intermediate-step KLs. This identity is exact. [DDPM, equations (5)–(7)](https://arxiv.org/html/2006.11239v2#S2) gives this rearrangement and the Gaussian bridge below; the uploaded lecture develops it on PDF pages 12–17.
 
+Expanded steps: [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion models - Lecture 12 derivations and guided generation#5.2 Show the cancellation in the path factorization|telescoping cancellation]] and [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion models - Lecture 12 derivations and guided generation#^diffusion-kl-hidden-averaging|hidden averaging step]].
+
 ### 7.2 Derive the known Gaussian bridge by completing the square
 
 The same precision-and-linear-term calculation appears in [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square#4. The promised connection to diffusion|Gaussian-process conditioning and Bayesian regression]]. There the unknown is a function value or a coefficient; here it is the previous diffusion state.

@@ -94,20 +94,20 @@ The context-versus-localization motivation is the original U-Net design principl
 
 PyTorch uses **NCHW**: batch, channels, height, width. Let $F=\texttt{n\_feat}$; the training default is $512$, while the lightweight checks use $8$ without changing the spatial architecture.
 
-| Code value | Shape | Operation |
-| --- | --- | --- |
-| `img_input` | `[B, 3, 64, 64]` | Noisy image $x_t$ |
-| `x = init_conv(img_input)` | `[B, F, 64, 64]` | Two padded $3\times3$ convolutions; local residual |
-| `down1` | `[B, F, 32, 32]` | Convolution block, then $2\times2$ max pooling |
-| `down2` | `[B, 2F, 16, 16]` | Same pattern, more channels |
-| `down3` | `[B, 2F, 8, 8]` | Same pattern |
-| `to_vec(down3)` | `[B, 2F, 2, 2]` | $4\times4$ average pooling; despite its name, not a flat vector |
-| `timeemb` after reshape | `[B, 2F, 1, 1]` | Broadcast over the $2\times2$ bottleneck |
-| `up0(thro + timeemb)` | `[B, 2F, 8, 8]` | Transposed convolution: kernel 4, stride 4 |
-| `up1([thro, down3])` | `[B, 2F, 16, 16]` | Concatenate at $8\times8$, then upsample |
-| `up2([up1, down2])` | `[B, F, 32, 32]` | Concatenate at $16\times16$, then upsample |
-| `up3([up2, down1])` | `[B, F, 64, 64]` | Concatenate at $32\times32$, then upsample |
-| `out(cat([up3, x]))` | `[B, 3, 64, 64]` | Concatenate at $64\times64$, predict noise |
+| Code value                 | Shape             | Operation                                                       |
+| -------------------------- | ----------------- | --------------------------------------------------------------- |
+| `img_input`                | `[B, 3, 64, 64]`  | Noisy image $x_t$                                               |
+| `x = init_conv(img_input)` | `[B, F, 64, 64]`  | Two padded $3\times3$ convolutions; local residual              |
+| `down1`                    | `[B, F, 32, 32]`  | Convolution block, then $2\times2$ max pooling                  |
+| `down2`                    | `[B, 2F, 16, 16]` | Same pattern, more channels                                     |
+| `down3`                    | `[B, 2F, 8, 8]`   | Same pattern                                                    |
+| `to_vec(down3)`            | `[B, 2F, 2, 2]`   | $4\times4$ average pooling; despite its name, not a flat vector |
+| `timeemb` after reshape    | `[B, 2F, 1, 1]`   | Broadcast over the $2\times2$ bottleneck                        |
+| `up0(thro + timeemb)`      | `[B, 2F, 8, 8]`   | Transposed convolution: kernel 4, stride 4                      |
+| `up1([thro, down3])`       | `[B, 2F, 16, 16]` | Concatenate at $8\times8$, then upsample                        |
+| `up2([up1, down2])`        | `[B, F, 32, 32]`  | Concatenate at $16\times16$, then upsample                      |
+| `up3([up2, down1])`        | `[B, F, 64, 64]`  | Concatenate at $32\times32$, then upsample                      |
+| `out(cat([up3, x]))`       | `[B, 3, 64, 64]`  | Concatenate at $64\times64$, predict noise                      |
 
 This is the checked source-specific order: **concatenate first, upsample second** inside each `UnetUpLayer`. Not every U-Net implementation uses that order. Source: [[raw/notes/2026-11-11-DAT112-Lecture07-torch/unet.py|unet.py, NaiveUnet and UnetUpLayer]].
 

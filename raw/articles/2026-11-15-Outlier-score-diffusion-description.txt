@@ -1,0 +1,75 @@
+Source: https://www.youtube.com/watch?v=B4oHJpEJBAA
+Capture: visible expanded description, 2026-11-15 America/New_York
+
+73,286 views  Oct 9, 2024  #flux #stablediffusion #diffusion
+In this video we are looking at Diffusion Models from a different angle, namely through Score-Based Generative Models, which arguably can be considered as the broader family of diffusion models. Personally, this approach has helped me so much in getting a better intuition for diffusion models and how to visualize the idea and especially connect different approaches like DDPM, DDIM or EDM to one another. 
+
+00:00 Introduction
+03:13 Score
+04:18 Score Matching
+09:10 Noise Perturbation
+12:33 Denoising Score Matching
+21:41 Sampling
+24:00 Multiple Noise Perturbations
+26:03 Differential Equations
+31:36 Link to diffusion models
+33:58 Summary
+37:10 Conclusion
+
+Further Reading:
+1. Sliced Score Matching: https://arxiv.org/pdf/1905.07088 
+2. Improved Techniques for Score-Based Generative Models: https://arxiv.org/pdf/2006.09011 
+3. Generative Modeling by Estimating Gradients of the Data Distribution: https://arxiv.org/pdf/1907.05600 
+4. Original Score Matching Paper (Hyvärinen): https://core.ac.uk/download/pdf/82826... 
+5. Langevian Dynamics: https://en.wikipedia.org/wiki/Langevi... 
+6. Score-Based Generative Modeling through Stochastic Differential Equations: https://arxiv.org/pdf/2011.13456 
+7. A Connection Between Score Matching and Denoising Autoencoders: https://www.iro.umontreal.ca/~vincent... 
+8. EDM: https://arxiv.org/pdf/2206.00364 
+9. DDPM: https://arxiv.org/pdf/2006.11239 
+10. DDIM: https://arxiv.org/pdf/2010.02502 
+11. Yang Song Blog Post on Score Matching: https://yang-song.net/blog/2021/score/ 
+
+#diffusion #scorematching #stablediffusion #maths #flux #generativemodels
+How this was made
+Auto-dubbed
+Audio tracks for some languages were automatically generated. Learn more
+Ask
+Get answers, explore topics, and more
+Ask questions
+Chapters
+View all
+Introduction
+0:00
+Score
+3:13
+Score Matching
+4:18
+Noise Perturbation
+9:10
+Denoising Score Matching
+12:33
+Sampling
+21:41
+Multiple Noise Perturbations
+24:00
+Differential Equations
+26:03
+Transcript
+
+Follow along using the transcript.
+
+Show transcript
+Outlier
+21.2K subscribers
+Videos
+About
+Instagram
+Twitter
+Video details
+Date
+Oct 9, 2024
+Views
+73,286
+Likes
+3,092
+Show less

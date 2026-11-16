@@ -1,0 +1,1000 @@
+YouTube transcript
+Video ID: B4oHJpEJBAA
+Language: en
+Captions: auto-generated
+
+[0:00] [Music]
+[0:05] hey there and welcome to this video in
+[0:08] this video I'll be presenting
+[0:09] score-based generative models and before
+[0:12] you leave this video thinking I've never
+[0:14] heard about this topic this must be
+[0:15] super boring and unimportant let me stop
+[0:18] you there if you're interested in the
+[0:20] topic of diffusion models and might even
+[0:22] struggle to fully understand it this
+[0:25] video might be really helpful for you
+[0:27] score based generative models are a
+[0:29] different formulation of diffusion
+[0:31] models and might even be considered the
+[0:33] broader family that diffusion models
+[0:35] belong to and while the derivation is
+[0:37] motivated differently both score based
+[0:39] generative models and diffusion models
+[0:41] will come out at the same point and to
+[0:44] me this formulation makes so much more
+[0:46] sense and is so beautiful when I did my
+[0:49] video about the fusion models there were
+[0:51] many things that I didn't really know
+[0:53] where they came from I was able to
+[0:55] follow the derivation but a lot of the
+[0:57] steps seemed so unexplained and then
+[1:00] when I learned about score based
+[1:01] generative models it felt like a big
+[1:03] relief as I was understanding the ideas
+[1:05] behind the derivation and understanding
+[1:08] the ideas behind the derivation is so
+[1:10] important unlike just understanding the
+[1:12] derivation itself so trust me if you're
+[1:15] interested in diffusion models you might
+[1:18] really enjoy this topic and video the
+[1:20] outline of this video will be the
+[1:22] following most of these things will not
+[1:24] make sense for now but they represent
+[1:26] the red thread of this video which will
+[1:28] work along with so let's get into the
+[1:31] details assume that we have a data set
+[1:33] and we want to learn the probability
+[1:35] distribution of this data set such that
+[1:38] we can sample from it to generate new
+[1:40] data points we can try to estimate the
+[1:42] probability density function or PDF of
+[1:45] the data a PDF is a function that is
+[1:47] non- negative and sums to one when
+[1:50] integrated this here is the well-known
+[1:52] normal distribution and this here is its
+[1:55] PDF a PDF is all you need to sample from
+[1:58] a distribution so if we have the
+[2:00] underlying PDF of our data set we can
+[2:02] sample from it and generate new data
+[2:04] points let's call the PDF of a data set
+[2:07] P of X it is unknown and we want to
+[2:09] approximate it by something we can call
+[2:11] P Theta of x a good way to parameterize
+[2:15] it is like the following the reason for
+[2:17] that is that a negative exponent and
+[2:19] forces everything to be non- negative
+[2:21] and the learnable constant Z Theta is
+[2:24] used for normalization such that the PDF
+[2:27] integrates to one and if you remember
+[2:29] those are the two constraints a PDF has
+[2:32] you can see the same things in the PDF
+[2:34] of the normal distribution this is the
+[2:36] normalizing constant and this negative
+[2:38] exponent and forces the outputs to be
+[2:40] non- negative and F Theta of X could be
+[2:44] learned to Output how dense the
+[2:46] probability is around x a high value
+[2:48] would mean that we are in a dense area
+[2:50] of our data and a low value means we're
+[2:53] further away trying to actually train
+[2:55] this would make us run into a problem
+[2:58] calculating Z Theta requires us to
+[3:00] integrate over the entire space of X
+[3:03] this can be extremely high dimensional
+[3:05] and intractable to compute going forward
+[3:08] with this approach requires restrictions
+[3:10] to the model or approximating Z Theta
+[3:13] but there's a trick that we can apply
+[3:15] and we call it the score the score
+[3:18] refers to the log gradient of the
+[3:20] probability density function with
+[3:23] respect to X this doesn't seem to make
+[3:25] things easier and rather looks even more
+[3:28] complicated but let's take a closer look
+[3:31] first we can apply the logarithm Rule
+[3:34] and rewrite the division as a
+[3:36] subtraction and now we see that the
+[3:38] first logarithm cancels with the
+[3:41] exponent and now look at this the second
+[3:43] term becomes zero because it does not
+[3:46] depend on X it's like having the
+[3:48] function f ofx is equal to X and taking
+[3:50] the derivative with respect to Y as y
+[3:53] doesn't occur in F ofx the change of it
+[3:56] has no effect on F ofx and therefore the
+[3:59] derivative is zero and now we just left
+[4:02] with the negative gradient with respect
+[4:04] to X of f Theta of X this is really good
+[4:07] because the normalizing constant falls
+[4:09] away which introduced many restrictions
+[4:11] to the model in order to stick with the
+[4:13] paper notation we'll Define this to be
+[4:16] equal to S Theta of X now score matching
+[4:19] means to approximate the scores of the
+[4:21] original distribution with the predicted
+[4:23] scores from s Theta of X like so this
+[4:27] basically means that we try to minimize
+[4:29] the difference between the original and
+[4:31] predicted scores very simple right and
+[4:33] intuitively the score function makes a
+[4:35] lot of sense too it tells you in which
+[4:38] direction you have to move a data point
+[4:40] to increase the probability of it and
+[4:43] increasing the lock probability means
+[4:45] that you also increase the probability
+[4:47] because the logarithm increases
+[4:49] monotonically so basically the true
+[4:51] score function can tell you for any
+[4:53] point in your data space in which
+[4:56] direction you have to move to get closer
+[4:58] to actual data points the paper shows
+[5:01] some intuitive visualizations given this
+[5:03] data density the scores look like the
+[5:05] following the errors indicate the scores
+[5:08] and you can see they always Point
+[5:10] towards the closest data center
+[5:13] similarly in the case of images let's
+[5:15] say you are at a point you sampled from
+[5:17] a gaussian distribution inputting this
+[5:19] into the score function will give you a
+[5:21] direction you should move to get closer
+[5:24] to the image manifold so now we just
+[5:26] need to minimize this objective and we
+[5:28] can sample new dat points but
+[5:30] unfortunately there's a catch our
+[5:32] biggest problem is that we don't know
+[5:34] gradient with respect to X log of P of X
+[5:38] just like we don't know P of X we also
+[5:41] don't have access to the gradient log of
+[5:43] it however we can apply some math tricks
+[5:45] to solve this problem we'll start from
+[5:48] the objective above and we can expand
+[5:50] the expectation as an integral by
+[5:52] following the general rule of this let's
+[5:55] run it out next we apply the algebraic
+[5:59] ident identity which is what you
+[6:01] probably learned in school already and
+[6:03] get this and now we separate the
+[6:06] different parts into individual
+[6:08] integrals let's take a closer look at
+[6:11] the last term we can apply another rule
+[6:14] to simplify things later on we can
+[6:16] rewrite nabla X log P of X as nabla x p
+[6:21] of x / P of X plugging this into the
+[6:25] last term will look like the following
+[6:27] and now we can apply integration by
+[6:29] parts to this integral the formula for
+[6:32] integration by parts is this so if we
+[6:35] have an integral where we multiply the
+[6:38] derivative or gradient of a function
+[6:40] with another function we can rewrite it
+[6:43] with the formula on the right hand side
+[6:45] you can just look up integration by
+[6:47] parts to understand the details applying
+[6:49] this to our formula results in the
+[6:51] following the first term will become
+[6:53] zero because as X goes to Infinity
+[6:56] probability densities typically Decay to
+[6:59] zero a good example of this is the
+[7:01] normal distribution the further you go
+[7:03] away from the mean the closer the
+[7:05] probability density gets to zero
+[7:07] therefore we have this now we can plug
+[7:10] this back into the previous equation we
+[7:13] can see that the first term does not
+[7:15] involve to learn score model as Theta
+[7:17] and therefore it just acts as a constant
+[7:20] and for the optimization process we can
+[7:22] ignore it now we can rewrite the
+[7:24] integrals back as an expectation using
+[7:27] the forementioned formula of the expect
+[7:29] expected value with respect to P of X is
+[7:31] equal to the integral of P of X
+[7:34] DX so to summarize we started at the
+[7:37] formula that compares original scores
+[7:39] with the predicted scores realized that
+[7:42] we don't have access to the original
+[7:44] scores and started reformulating and
+[7:46] ended up at an equivalent objective
+[7:49] without needing the original scores
+[7:51] which is the same up to a constant but a
+[7:53] constant does not change an optimization
+[7:55] process and this formula is very
+[7:57] beautiful if you look at what the two
+[8:00] terms mean remember that we want to
+[8:02] minimize this objective looking at the
+[8:04] second term we see that we want the
+[8:06] gradient of the score model at data
+[8:08] points to be zero this means it should
+[8:11] be a local maximum and the first term
+[8:13] tries to make the predicted scores of
+[8:15] the score model to be zero at data
+[8:18] points remember that the score refers to
+[8:20] the direction we have to go to increase
+[8:22] likelihood for data points and if the
+[8:24] scores are zero it means we're at a data
+[8:26] point now unfortunately this gives us
+[8:29] two problems one is that the objective
+[8:32] is very expensive to compute because of
+[8:34] this term this requires calculating the
+[8:36] Jacobian which does an individual back
+[8:39] propagation for every input variable
+[8:41] this becomes a very big problem when the
+[8:43] input space is very large like it is for
+[8:45] images where there can be millions of
+[8:47] pixels in the input in a follow-up paper
+[8:50] yangong and colleagues propose a way to
+[8:52] overcome this expensive training in a
+[8:54] method called sliced score matching I
+[8:57] won't go into the details here because
+[8:59] the final method that we'll be arriving
+[9:01] at won't make use of this idea and as
+[9:03] far as I know the method is not used in
+[9:05] a classical large scale generative AI
+[9:07] field but I will link the paper if you
+[9:09] want to read it the second problem can
+[9:11] be seen when looking at the example data
+[9:14] densities during training we mostly see
+[9:17] data points that come from the very
+[9:19] likely areas of the data space so data
+[9:21] points would be close to this normal
+[9:23] distribution or this so our model
+[9:25] becomes really good at learning the
+[9:27] score function in these areas ever the
+[9:29] problem comes during sampling when we
+[9:32] start from a random position this
+[9:34] position could be anywhere here it could
+[9:36] be here or here or here a model has
+[9:38] never seen these areas during training
+[9:41] and might not know which direction the
+[9:42] data densities lie the paper shows this
+[9:45] example how the true scores and the
+[9:47] estimated scores look like and you can
+[9:49] clearly see that in many cases the
+[9:51] scores Point towards here which lies in
+[9:54] the middle of both data densities but
+[9:56] does not represent correct samples now
+[9:58] one way of solving the second issue is
+[10:01] by adding something that will bring us
+[10:03] closer to something that looks like
+[10:04] diffusion will noise our data the result
+[10:07] of this will be that we cover more of
+[10:09] the data space as you can see here and
+[10:12] we simply do this by taking all of our
+[10:14] data points and adding a bit of gaussian
+[10:16] noise to them specifically we'll take a
+[10:19] data point and we'll just add Epsilon
+[10:22] which comes from a normal distribution
+[10:24] given the mean of zero and some standard
+[10:26] deviation Sigma and we denote the new
+[10:29] distri distribution as P Sigma of X
+[10:31] Tilda so if we try a model with the
+[10:34] previously discussed original score
+[10:36] matching algorithm with the noise
+[10:38] perturbation we solve the problem that
+[10:40] when we start sampling from regions
+[10:42] where there's little amount of data a
+[10:44] model has still seen those regions
+[10:46] during training because we added noise
+[10:48] to our data and thus the predicted
+[10:50] scores are likely going to make sense
+[10:52] how much noise we add is dependent on a
+[10:54] variable which we will denote as Sigma
+[10:57] we can add this to our training object
+[10:59] too by the way if you're very familiar
+[11:01] with diffusion you might get confused
+[11:03] and think Sigma is a varying value that
+[11:06] is determined by noise schedule but this
+[11:08] here is much simpler Sigma is a single
+[11:10] number that we choose as a hyper
+[11:12] parameter if we choose Sigma to be large
+[11:15] we cover a lot of data space however
+[11:17] this comes with the problem that a
+[11:19] perturb distribution is very different
+[11:21] from the original one but if it's too
+[11:23] small the space we cover is much smaller
+[11:26] as well so we have a tradeoff here but
+[11:28] this gives us a good way to approach the
+[11:30] second problem that we mentioned earlier
+[11:33] now we still have the problem that using
+[11:34] the original objective is very expensive
+[11:37] to compute so we need to find a way to
+[11:39] overcome this before that let's Briefly
+[11:41] summarize a goal is to learn a model
+[11:44] that given some point in our data space
+[11:46] predicts the Direction Where We should
+[11:48] move to get closer to data learning the
+[11:51] scores is much easier because we don't
+[11:53] have a normalizing constant that we need
+[11:55] to approximate so our objective looks
+[11:58] quite easy however we don't have access
+[12:00] to the original scores which is why some
+[12:02] clever people found the remarkable
+[12:04] reformulation which doesn't depend on
+[12:06] having the original scores now we found
+[12:08] two problems one being that this is very
+[12:11] expensive to calculate and the second
+[12:13] being the fact that our score model is
+[12:15] not trained on inputs from the entire
+[12:17] space we can find a workaround for the
+[12:19] letter by introducing noise
+[12:21] perturbations which unfortunately comes
+[12:23] with a trade-off which is that too much
+[12:25] noise is not representative of our data
+[12:27] anymore and too little noise is not
+[12:29] covering a lot of this data space now
+[12:31] there's still the first problem of the
+[12:32] expensive computation luckily in 2010 a
+[12:36] really smart person called Pascal
+[12:37] Vincent saw a connection between score
+[12:40] matching and denoising auton coders
+[12:42] denoising auton coders were used back in
+[12:44] the days to learn representative
+[12:46] features of data the idea was to train a
+[12:49] regular auton coder but to add noise in
+[12:51] the bottleneck and give that to the
+[12:53] decoder which is tasked to predict the
+[12:55] original input by being able to separate
+[12:58] noise from data it was possible that the
+[13:00] model learned important features from
+[13:02] the data he looked at score matching and
+[13:04] tried to introduce some Concepts from
+[13:06] dening Auto encoders he started from the
+[13:09] original objective with the noise
+[13:10] perturbed data distributions what
+[13:12] follows now is quite a long derivation
+[13:15] to arrive at an objective that looks
+[13:17] almost exactly like this one I'm already
+[13:19] showing this to you now so that you know
+[13:22] where we will arrive you see that the
+[13:24] only difference is basically that we
+[13:25] don't have P Sigma of X Tilda anymore
+[13:28] but we we have P of Sigma of X till the
+[13:31] given X as I'll explain later this will
+[13:34] make a huge difference because we can
+[13:36] evaluate the score of this directly well
+[13:39] we can't calculate the scores of P Sigma
+[13:42] of X Tilda but first let's do the
+[13:44] derivation the first part is very
+[13:46] similar to what we did before we'll take
+[13:49] the objective and rewrite the
+[13:51] expectation as the integral again note
+[13:54] that this time we work with X Tilda and
+[13:56] not X anymore now we expand using the
+[13:59] algebraic identity again and separate
+[14:01] the different terms into their own
+[14:03] integral let's move the two outside
+[14:06] which cancels with the one2 and now we
+[14:09] will look at the last term again and do
+[14:11] some fancy maths with it first we make
+[14:13] use of this logarithm rule again which
+[14:15] allows us to write the gradient log of
+[14:17] the perturbed noise distribution with
+[14:20] this injecting this into the equation
+[14:22] gives us the following and here you see
+[14:24] that P Sigma of X Tila cancels and we
+[14:28] are left with just this now let's make
+[14:30] use of marginalization and write P Sigma
+[14:33] of X Tilda as its marginal probability
+[14:36] by integrating overx in the previous
+[14:39] reformulation we applied integration by
+[14:41] parts instead of marginalization because
+[14:44] we couldn't do this before and you'll
+[14:45] see that this will allow us to simplify
+[14:48] things in a little bit now we can plug
+[14:50] this back into the formula which gives
+[14:52] us this and now another math rule which
+[14:54] is called the LI nits integration rule
+[14:56] so many math rules huh this one only
+[14:59] states that under certain conditions the
+[15:01] differentiation operator in our case the
+[15:03] gradient can be moved inside of the
+[15:06] integral since P of X doesn't depend on
+[15:08] X Tilda we can move it directly to P
+[15:11] Sigma of X Tilda given X now earlier we
+[15:14] saw the following log rule if you
+[15:16] multiply this by F ofx we get the
+[15:19] following equation now we can apply this
+[15:21] reformulation to the gradient with
+[15:24] respect to X Tilda P Sigma of X Tia
+[15:27] given X and we get the follow
+[15:29] which we can plug into the formula again
+[15:32] also know that if this is too fast which
+[15:34] it certainly is just pause the video and
+[15:37] take your time to understand it now we
+[15:39] can apply the linearity of integrals and
+[15:42] move s Theta of X Tilda into the inner
+[15:44] integral because it is only a constant
+[15:47] for it now remember that this is the
+[15:49] last term of our full equation that we
+[15:51] are rewriting the whole time let's bring
+[15:54] it back into the
+[15:56] formula and now let's rewrite the
+[15:59] integrals back into expectations all
+[16:01] right we're almost done and we'll arrive
+[16:03] at the final objective soon to get there
+[16:06] we'll perform some operations on the
+[16:08] last two terms first let's rewrite this
+[16:11] term as this the only thing that changes
+[16:14] is that we Rite where X tilder is drawn
+[16:17] from which we can do because of
+[16:19] marginalization which we discussed
+[16:21] before you may think hm why do we do
+[16:23] this well now we're able to write the
+[16:26] last two terms as one expectation and
+[16:29] noticed that we have to multiply the
+[16:31] second term by two because we have one
+[16:33] half in front of the first term and the
+[16:35] second term didn't have that and now
+[16:37] let's add this term to gradient with
+[16:39] respect to X Tilda log P Sigma of X
+[16:42] Tilda given X and subtracted immediately
+[16:45] afterwards again useless right well now
+[16:48] you can see that this whole part is
+[16:50] equal to just this which is the
+[16:52] algebraic identity just reversed and as
+[16:56] a quick side note a lot of these steps
+[16:58] probably re requir a lot of thinking for
+[17:00] the people that came up with them and
+[17:02] are not obvious at all at least to me so
+[17:04] don't worry if some of these steps seem
+[17:06] super arbitrary as long as you can
+[17:08] understand the different steps and keep
+[17:10] the overall goal in mind you're good I
+[17:13] just show all these derivations because
+[17:14] a lot of the papers leave them away and
+[17:16] I think actually going through them can
+[17:18] help a lot with learning and
+[17:19] understanding how you can approach such
+[17:21] problems and it's just satisfying and
+[17:24] now we can separate the last term from
+[17:26] the mean squired eror and now we have
+[17:28] three different terms again so now this
+[17:30] is our full objective which in theory we
+[17:33] can try to minimize optimizing the score
+[17:35] model with its parameters Theta but the
+[17:37] cool thing is that the first term and
+[17:39] the last term don't include the score
+[17:41] model so they just become a constant in
+[17:44] the objective and therefore we can
+[17:46] ignore them and this leaves us with the
+[17:48] final objective and this is exactly the
+[17:50] objective I showed you in the beginning
+[17:52] which is super similar to the previous
+[17:54] one now let me show you why this is so
+[17:57] much better and why we can calculate the
+[17:59] gradient with respect to X Tilda log P
+[18:01] Sigma of X Tilda given X this is also
+[18:04] where the connection to D noising Auto
+[18:06] encod us come in there you encode your
+[18:08] data and noise it and then give it to
+[18:10] the decoder to reconstruct the original
+[18:12] signal and then you take the means squ
+[18:14] error between data and reconstructed now
+[18:16] X Tilda which is equal to X Plus Epsilon
+[18:19] corresponds to a conditional density of
+[18:21] the following here x tiler is normally
+[18:24] distributed around X and we expressed it
+[18:27] as the PDF of a multivari calcium
+[18:29] distribution and now look at this this
+[18:31] is the same as what we have in our
+[18:33] objective here now can we calculate this
+[18:36] entire expression now well let's try it
+[18:39] we can write out the expression like
+[18:41] this now we can apply the lock rule to
+[18:43] separate this factor from the rest which
+[18:45] gives us this expression now the first
+[18:47] term is zero because there is no exility
+[18:49] in the expression which makes it a
+[18:51] constant and taking the derivative of a
+[18:53] constant is zero we can also see that
+[18:55] the log and the exponential cancel out
+[18:57] leaving us with the following expression
+[19:00] and now we take the derivative of this
+[19:02] with respect to X zilda we have to apply
+[19:04] the chain rule here which first
+[19:06] calculates the outer derivative and
+[19:08] multiplies it by the inner derivative
+[19:10] the outer derivative is the exponent
+[19:12] minus one and move to the front leaving
+[19:15] us with -2 / 2 Sigma 2 which is -1 /
+[19:19] Sigma 2 the inner derivative of x Tilla
+[19:23] minus X is just one and multiplying this
+[19:26] doesn't change anything this leaves us
+[19:28] with this equation now which we can
+[19:30] further simplify to 1 / Sigma 2 * x - x
+[19:34] Tila because minus a - b is equal to - A
+[19:40] + B which is equal to b - A so to
+[19:43] conclude the gradient log of P Sigma of
+[19:46] X till the given X simplifies to 1 /
+[19:49] Sigma ^ 2 x - x Tia and remember this is
+[19:54] what we need in our objective function
+[19:56] as the ground truth and different than
+[19:58] before for we can actually calculate
+[20:00] this now calculating this is super easy
+[20:02] and super efficient we don't need to
+[20:04] evaluate and separate backward passes as
+[20:07] with the previous objective and remember
+[20:09] that the noised input X tiler is just
+[20:11] the original plus random noise to get a
+[20:13] better idea what this objective actually
+[20:15] means let's plug that in pull in the
+[20:17] minus and see that the 2x cancel and we
+[20:20] are left with just negative Epsilon
+[20:22] scaled by a factor which we can also
+[20:24] write by plugging in the scaled negative
+[20:26] Epsilon so now let's think about what
+[20:28] this actually does a model takes in the
+[20:30] noised input and is trying to predict
+[20:32] the negative Epsilon right visualizing
+[20:35] this shows us very nicely if this is our
+[20:37] data and we noise our data point which
+[20:39] could end up here the model should take
+[20:41] this point and predict the negative of
+[20:44] the noise that we added and this
+[20:46] prediction the negative of the noise
+[20:48] points exactly into the direction of our
+[20:50] data manifold so where the data
+[20:52] likelihood grows and remember this is
+[20:55] exactly what score matching is all about
+[20:57] right finding a model that that predicts
+[20:59] the scores and the score refers to the
+[21:01] direction you have to move to increase
+[21:03] the likelihood of seeing data so this
+[21:06] all makes sense and is super intuitive
+[21:08] right it took us a while to get here but
+[21:10] to me that is very beautiful to see and
+[21:13] if you're already familiar with
+[21:14] diffusion models this has some
+[21:16] similarities with Epsilon prediction
+[21:19] right but we'll get to this later
+[21:21] looking back at our two problems we had
+[21:23] we have solved one that made training
+[21:25] super expensive and we have a trade-off
+[21:28] for the low coverage of our data space
+[21:30] which we can tackle by increasing or
+[21:32] decreasing Sigma to cover more or less
+[21:34] of the space this tradeoff solution is
+[21:36] not optimal and later we'll find a much
+[21:38] better solution for it by just extending
+[21:41] this idea for now though let's talk
+[21:43] about how we can actually generate new
+[21:45] data points so far we only talked about
+[21:48] training and we do that by sampling the
+[21:51] essential idea is that we start at a
+[21:53] random point in our data space and we
+[21:55] give the point to our score model which
+[21:57] predicts the direction we should move to
+[21:59] get closer to data if we just do this
+[22:01] once there's a high chance that the
+[22:03] prediction will not be too good because
+[22:05] just following the linear Direction can
+[22:07] overshoot the data easily this is why it
+[22:10] is much better to repeat the prediction
+[22:12] several times and move only a little bit
+[22:15] after every prediction the formula for
+[22:17] this is super simple it means that at
+[22:19] every step we take the current X tiler
+[22:22] and subtract the noise prediction
+[22:24] multiplied by Alpha which is a very
+[22:26] small number like 0.001
+[22:28] to Showcase this let's look back at the
+[22:31] toy example and assume we have trained a
+[22:33] score model to estimate the scores of
+[22:35] this data distribution let's initialize
+[22:37] a lot of points and let's sample with
+[22:39] the formula I just showed and they all
+[22:42] collapse to the same point which is the
+[22:45] mean of a data set in this case the
+[22:47] reason is that the scores always show
+[22:49] directions towards higher likelihood so
+[22:52] they will always point to the mean of
+[22:54] the data because that's where we have
+[22:56] the highest density of data in in a real
+[22:58] world setting this probably would show
+[23:00] in a different way but still be very
+[23:02] noticeable but there's an easy fix with
+[23:04] a complicated name that we can use to
+[23:06] overcome this it's called levian
+[23:09] Dynamics and for our case the change is
+[23:11] super simple we just add the following
+[23:13] to the formula from above Epsilon is
+[23:16] random gaussian noise and the square
+[23:18] root of 2 Alpha is a very small number
+[23:21] there's a whole derivation why it is
+[23:23] square root of 2 Alpha and not just
+[23:25] Alpha but I'm not going into this here
+[23:27] because it's not super related to score
+[23:28] matching itself I will link some
+[23:30] resources for it if you want to look at
+[23:32] it and if we use this for sampling we
+[23:34] now get nice outputs that don't collapse
+[23:37] and could actually come from our data
+[23:39] distribution awesome so in summary we
+[23:42] found a different objective than before
+[23:45] which is much cheaper to compute and
+[23:46] makes a lot of intuitive sense the model
+[23:49] now learns to predict noise that we
+[23:51] added to our data scaled by some value
+[23:53] also we've seen how we're able to sample
+[23:55] from a model that we trained which
+[23:57] results in output that could come from
+[23:59] our data distribution now remember that
+[24:02] we still have this trade-off that adding
+[24:04] noise covers more of our data space but
+[24:06] also changes our data distribution also
+[24:08] if we choose Sigma to be very low then
+[24:11] when we calculate X Tia Epsilon has a
+[24:13] very small standard deviation obviously
+[24:15] and thus only contain small values when
+[24:18] our model needs to predict Epsilon given
+[24:20] X Tilda this becomes extremely difficult
+[24:22] because EXA barely contains any noise
+[24:25] and therefore our training will not work
+[24:27] so well and has a high variants so how
+[24:30] can we solve this the solution for it
+[24:32] will be very easy and not math heavy at
+[24:34] all so where do we stand if we use noise
+[24:37] perturbation that add a lot of noise we
+[24:39] cover a lot of the data space but change
+[24:41] our data distribution a lot if we add
+[24:43] little noise we don't cover a lot of the
+[24:45] data space but don't change our data too
+[24:47] much so what about the following we do
+[24:50] both and everything in between we TR our
+[24:52] model on high noise levels and middle
+[24:54] noise levels and low noise levels in
+[24:57] practice we simply VAR Sigma between
+[24:59] some predefined range like between 0.01
+[25:02] and 25 so the model will see data points
+[25:05] all over the space we can also condition
+[25:08] our model on the noise level it is just
+[25:10] free extra information that could help
+[25:12] the model with the task of predicting
+[25:14] the scores our noising formula changes
+[25:16] slightly and looks like this now you see
+[25:19] that the only thing that changed is the
+[25:21] index at the sigma indicating that it is
+[25:23] not a fixed single value anymore but a
+[25:25] sequence of different values low and
+[25:28] high values so now during training a
+[25:30] model sees most of the data space when
+[25:32] using large Sigma but also sees the
+[25:34] clear data distribution when Sigma is
+[25:36] small so we have the best from both
+[25:38] worlds and then during sampling we can
+[25:40] start at a random point and at the
+[25:42] highest noise scale and slowly move
+[25:44] towards a data distribution while also
+[25:47] lowering the noise scale but how many
+[25:49] noise levels do we use in this paper by
+[25:52] yang song and Stefano Amon which was the
+[25:54] first paper to use multiple noise levels
+[25:56] for score matching they used 1,000 and
+[25:59] this might remind you of the fusion
+[26:00] models too where we also take data
+[26:02] points and noise them with varying
+[26:04] amounts in a follow-up paper they showed
+[26:06] that when you would increase the number
+[26:08] of noise levels to Infinity the noise
+[26:11] perturbation becomes a stochastic
+[26:12] process now the benefit of this is that
+[26:15] it improves the quality of your samples
+[26:17] will make things a bit easier
+[26:19] implementation wise and can allow you to
+[26:21] compute exact Lo likelihoods for data
+[26:23] samples and another Super incredible
+[26:26] thing is that this will give us a link
+[26:28] to the diffusion literature you will be
+[26:30] able to understand how you can derive
+[26:32] all the big diffusion papers like ddpm
+[26:35] ddim EDM Etc and this is super cool
+[26:39] because there are so many details left
+[26:41] out in these big papers that make it
+[26:43] super hard to understand how they
+[26:45] arrived at their Solutions but given
+[26:47] everything we discussed in this video
+[26:49] you will have very solid preliminaries a
+[26:52] comparison would be that this video
+[26:54] teaches you how to engineer cars in
+[26:55] general and papers like ddpm DDM and EDM
+[26:59] teach you the specifics to build a
+[27:01] Ferrari Porsche and Tesla but you don't
+[27:04] have to do it if you followed until here
+[27:07] you have a good understanding of the
+[27:09] fundamental idea of score-based models
+[27:11] and that is really cool but for those of
+[27:14] you interested let's take a look letting
+[27:16] the number of noise Devils approach
+[27:18] Infinity gives us a stochastic process a
+[27:21] stochastic process describes systems
+[27:24] that evolve over time which inherently
+[27:26] have some Randomness like the stock
+[27:28] market or climate models and we can use
+[27:31] wait for it fancy term stochastic
+[27:33] differential equations to model
+[27:35] stochastic processes the general form of
+[27:38] a stochastic differential equation or
+[27:40] sde is the following DX refers to the
+[27:43] change in X which is described by the
+[27:45] right hand side of this equation f of x
+[27:48] and t is called the drift coefficient
+[27:51] and G of T is called the diffusion
+[27:53] coefficient W stands for the vena
+[27:56] process which is named after nor Vena
+[27:59] and basically just refers to normally
+[28:01] distributed noise and DW refers to the
+[28:04] infinite small changes in the noise the
+[28:06] drift is fixed and basically describes
+[28:09] if and how we change X in a
+[28:11] deterministic way like for example we
+[28:13] scale it up or we scale it down and the
+[28:15] diffusion coefficient describes the
+[28:17] influence of the stochasticity over time
+[28:20] for example at earlier times x may not
+[28:22] experience a lot of change due to
+[28:24] Randomness because G of T is small but
+[28:27] as we keep keep going and the diffusion
+[28:29] coefficient increases X could be changed
+[28:31] much more by the noise so with this
+[28:34] formulation we have a way to determined
+[28:36] how we want our data to change with time
+[28:39] given a deterministic influence and a
+[28:41] stochastic influence now remember how we
+[28:44] noise our data in score matching it was
+[28:46] the following now we know that as T
+[28:49] increases so does our noise level so our
+[28:51] change in X is only influenced by a
+[28:54] stochastic term in other words there's
+[28:56] no drift in our process and only a
+[28:58] diffusion coefficient therefore the
+[29:00] drift is zero and we only use the second
+[29:03] term to model the stochastic process in
+[29:05] the limit as noise scales approach
+[29:07] Infinity it doesn't make so much sense
+[29:10] anymore to use an index here and a
+[29:12] function of T would make more sense like
+[29:14] before if we assume we had 1,000 noise
+[29:17] scales we just create a list with the
+[29:19] different sigmas and then we can just
+[29:21] take from this list as we have infinite
+[29:23] noise scales a list doesn't work anymore
+[29:26] but if we have a function that could
+[29:27] take Tak in any time step and return a
+[29:30] corresponding Sigma that would be
+[29:32] awesome so let's simply call this
+[29:34] function Sigma of T and let's assume T
+[29:36] is a value between zero and one zero
+[29:39] would mean that we add the least amount
+[29:41] of noise and one would refer to the
+[29:43] highest noise level now we didn't
+[29:45] specify how we create this list of noise
+[29:47] scales and also didn't Define a function
+[29:49] we won't be using this specifically for
+[29:52] the rest of the video but in practice
+[29:54] there are many ways that you could
+[29:55] Define this the easiest would be to just
+[29:57] set the the smallest and highest Sigma
+[29:59] and then just do a linear interpolation
+[30:01] between them other functions might work
+[30:03] better or worse but you get the idea the
+[30:06] field of differential equations is a
+[30:07] well studied field and has been used for
+[30:10] other applications long before score
+[30:11] matching and diffusion models what I've
+[30:13] shown you here is a stochastic
+[30:15] differential equation that corresponds
+[30:16] to the process of noising our data let's
+[30:19] call it the forward SD analogously to
+[30:22] the discrete case where we use levian
+[30:24] Dynamics to sample here we can find an
+[30:27] SD for sampling we will call this the
+[30:29] reverse SD now in 1982 another smart
+[30:34] person called Brian Anderson came up
+[30:36] with a general reverse SD if we have a
+[30:38] forward SD that has this exact form this
+[30:42] General solution looks like the
+[30:44] following there's a whole paper by
+[30:45] Anderson about how to derive the reverse
+[30:48] SD from the forward SD I will not cover
+[30:51] it in this video here since it would
+[30:53] probably make it way longer but you can
+[30:55] find a link to the paper in the
+[30:56] description so will just take this as a
+[30:59] given all you should take away from this
+[31:00] for now is that we have a stochastic
+[31:03] continuous process to noise our data and
+[31:05] one that can reverse it and you might
+[31:07] have already seen something very
+[31:09] familiar in this formula this year is
+[31:11] the score function we have been talking
+[31:13] about all the time so in order to
+[31:15] reverse a noising process of our data we
+[31:17] can use the score function and that is
+[31:19] something we already knew right but
+[31:21] still it is nice to see that the
+[31:23] solution to this very general problem of
+[31:26] reversing a forward SD involves the
+[31:28] score function now given that we have a
+[31:30] general form of forward and reverse SD
+[31:33] there are many specifications that we
+[31:35] can do some of which you may already
+[31:37] know remember the way that we noise our
+[31:39] data in ddpm you noise data like this
+[31:43] which includes interpolating between the
+[31:45] original X and a noise drawn from a
+[31:47] standard normal so a stochastic process
+[31:49] that models this noising behavior is
+[31:52] different than in our previous example
+[31:54] because the original X is also modified
+[31:56] whereas here x stays the same and is
+[31:59] dominated by a growing Epsilon so a
+[32:01] drift is not just zero but actually
+[32:03] determined now given the general formula
+[32:06] of the forward and reverse SD from
+[32:08] before we can convert the ddpm noising
+[32:11] into the continuous case which gives us
+[32:13] the following for the forward SD now
+[32:15] getting here involves a bit of maths
+[32:17] again and for the people that are
+[32:19] interested in this I will show you the
+[32:21] derivation here on screen and you can
+[32:23] pause and follow the steps but I won't
+[32:25] actually talk through it it goes a bit
+[32:27] beyond the scope of the this video but
+[32:28] in case someone is really interested I
+[32:30] thought it might be nice to have it here
+[32:32] for completeness and for the reverse SD
+[32:34] you can make use of the general formula
+[32:36] and plug in the different parts and you
+[32:38] get your reverse SD and if you
+[32:40] discretize this you will actually get
+[32:43] the ddpm sampler that they show in the
+[32:45] paper however there it seems to have
+[32:47] come out of nowhere and the paper
+[32:49] doesn't really give an explanation about
+[32:51] it but now you can actually fully
+[32:52] comprehend how we got there to
+[32:54] discretise an SD you can make use of
+[32:57] something called called the OA mariama
+[32:59] method for the sake of completeness I'm
+[33:01] showing this to you here again but won't
+[33:03] go into the details you can pause the
+[33:05] video again if you want to follow this
+[33:08] what matters is that you see that by
+[33:09] following the core ideas of score
+[33:11] matching which to me seem very intuitive
+[33:14] we can arrive at the popular diffusion
+[33:15] framework of ddpm which seems much more
+[33:18] mysterious if you read the original
+[33:20] paper and not only can we dve ddpm this
+[33:23] way we can do the same with DD and EDM
+[33:26] and even more you probably proba have
+[33:28] heard of these fancy Samplers that
+[33:30] people use for generating images with
+[33:31] stable diffusion like DPM Plus+ 2m cars
+[33:35] while all of these can be derived from
+[33:37] the framework of differential equations
+[33:39] and are ultimately just different ways
+[33:42] of solving the general reverse SD so I
+[33:45] hope I can convey how beneficial it can
+[33:47] be to view the fusion models from this
+[33:49] angle and honestly to me it was such a
+[33:51] big relief after learning about this
+[33:54] because I didn't feel I fully understood
+[33:56] where all the diffusion ideas origin at
+[33:58] and I hope you may feel the same about
+[34:00] it but anyways there was a lot of maths
+[34:02] and theory and I think we should do a
+[34:04] summary that captures the essential
+[34:06] ideas that we discussed in this video so
+[34:09] if we have some data then there is some
+[34:11] underlying function that can represent
+[34:13] and generate this data we can call it P
+[34:16] of X now we would like to learn this
+[34:18] function such that we are able to
+[34:20] generate new data that fits our existing
+[34:22] data set we can try to learn and express
+[34:25] this as a probability density function
+[34:27] which which is non- negative and sums up
+[34:29] to one this year is a way to model the
+[34:31] two requirements for the PDF learning P
+[34:34] Theta of X requires learning this
+[34:36] normalization constant which is
+[34:38] extremely expensive to compute because
+[34:40] you need to integrate over the entire
+[34:43] data space to overcome this we can apply
+[34:45] two mathematical operators the logarithm
+[34:48] and the gradient and we call the result
+[34:51] the score this gives you this then this
+[34:54] and then this becomes zero which leaves
+[34:56] us with this so we get rid of the
+[34:58] normalization constant and we can try to
+[35:00] learn as Theta of x to predict the
+[35:03] original scores but then we realized
+[35:05] that we don't have access to the
+[35:07] original scores and try to solve this we
+[35:09] came up with one objective that is
+[35:11] equivalent to this but doesn't require
+[35:13] access to the original scores then we
+[35:16] realized that this is very expensive to
+[35:18] compute because of this gradient
+[35:19] operator here which needs as many
+[35:21] backward passes as input Dimensions that
+[35:23] we have and we realized another issue
+[35:25] being that training this way we limiting
+[35:28] the score model to a small area of the
+[35:30] data space it sees during training which
+[35:32] is mostly only high probability areas
+[35:34] but during sampling we will most likely
+[35:36] start in low probability areas we can
+[35:38] tackle the second Problem by introducing
+[35:40] noise perturbations and add noise to our
+[35:43] data this gives us a trade-off adding a
+[35:45] lot of noise covers more of the data
+[35:46] space but changes our data function a
+[35:48] lot and adding just a bit of noise
+[35:50] doesn't cover much but leaves the
+[35:52] original function intact given this a
+[35:54] connection to D noising auton encoders
+[35:56] was found which allows for something
+[35:58] extremely cool we can reformulate this
+[36:01] objective to this and this small
+[36:03] difference in the formula makes a huge
+[36:05] difference for us because now we can
+[36:07] calculate this term which was not
+[36:09] possible here and by working this out we
+[36:12] get the following objective which
+[36:13] literally says that our score function
+[36:15] should predict the negative of the noise
+[36:18] that we added to X scaled by 1 / Sigma
+[36:21] squ and that intuitively make sense
+[36:23] because it's literally undoing the
+[36:25] noising process it's also easy to imp
+[36:27] imp and cheap to compute all of this
+[36:29] solves this issue but still leaves us
+[36:32] with the suboptimal trade-off to what
+[36:34] extent we noise our data and the
+[36:36] solution for this was to use a varying
+[36:38] range of noise levels during training we
+[36:40] sometimes noise a lot and sometimes
+[36:42] noise only a bit and with that our model
+[36:44] learns to navigate the entire space that
+[36:47] we could sample from and this is very
+[36:49] close to the typical way the fusion
+[36:50] models are explained and used but
+[36:52] arriving at this objective through the
+[36:54] score matching way gives a much clearer
+[36:56] explanation in my opinion then we also
+[36:59] saw that we can take this further and
+[37:01] let the number of noise levels go to
+[37:03] infinity and view the idea through
+[37:05] stochastic processes which showed us
+[37:07] connections to the typical diffusion
+[37:09] Frameworks like ddpm and how to derive
+[37:12] them and this opens a lot of
+[37:13] possibilities for you to dive deeper
+[37:15] into diffusion and score-based models
+[37:18] you should now have a good starting
+[37:19] point to read more recent and
+[37:21] theoretical papers on these topics that
+[37:24] go a lot more into the details and
+[37:26] hopefully the thing I explained in this
+[37:28] video will come in handy for you so yeah
+[37:31] that was a very long video and I really
+[37:33] hope you learned something and might
+[37:35] enjoy this approach to the fusion models
+[37:37] as much as I do and if you're still
+[37:39] watching this video that probably means
+[37:42] you're very interested in this topic so
+[37:44] let me ask you would you like to see
+[37:46] more videos on the fusion models would
+[37:48] you be interested in a whole series on
+[37:50] the field of generative diffusion models
+[37:53] let me know if that sounds interesting
+[37:55] and also if there are other topics that
+[37:57] you would like like to see covered so
+[37:59] yeah share the video to your friends it
+[38:01] was so much work and I'll hopefully see
+[38:04] you in the next video

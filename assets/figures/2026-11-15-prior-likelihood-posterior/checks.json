@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "prior": [
+    "1/100",
+    "99/100"
+  ],
+  "likelihood": [
+    "99/100",
+    "1/100"
+  ],
+  "joint_weights": [
+    "99/10000",
+    "99/10000"
+  ],
+  "evidence": "99/5000",
+  "posterior": [
+    "1/2",
+    "1/2"
+  ],
+  "checks": [
+    "Exact fractions and Bayes normalization",
+    "Prior and posterior each sum to one",
+    "Likelihood bars use separate class-conditional denominators",
+    "Each bar segment width equals its stated probability",
+    "Posterior is distinct from likelihood",
+    "Posterior odds equal prior odds times likelihood ratio",
+    "SVG XML parses; all text lies within figure bounds"
+  ],
+  "sha256": {
+    "draw_update.py": "1cee38f88045c1cef699094047a0d2ad9f21f58d0ddb26872780cafb58ee8e08",
+    "prior-likelihood-posterior.svg": "ca88f1e5e7a4450e4425c44290fb9f3a662f60f6769d07a6583cd19b287bffe9",
+    "prior-likelihood-posterior.png": "da28c5de93f1cb5972f5e9b041e2277b03ed5160ea6262cf3da3d054895ff323"
+  },
+  "scope": "Static teaching model. Visual inspection is separate from live Obsidian rendering."
+}

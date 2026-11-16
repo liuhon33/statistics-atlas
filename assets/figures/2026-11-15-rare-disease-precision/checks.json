@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "population_size": 10000,
+  "counts": {
+    "TP": 99,
+    "FN": 1,
+    "FP": 99,
+    "TN": 9801
+  },
+  "exact_population_masses": {
+    "TP": "99/10000",
+    "FN": "1/10000",
+    "FP": "99/10000",
+    "TN": "9801/10000"
+  },
+  "exact_metrics": {
+    "prevalence": "1/100",
+    "sensitivity": "99/100",
+    "specificity": "99/100",
+    "FPR": "1/100",
+    "FNR": "1/100",
+    "precision": "1/2",
+    "NPV": "9801/9802",
+    "accuracy": "99/100"
+  },
+  "positive_population_mass": "99/5000",
+  "original_factory_precision": "16/25",
+  "original_svg_sha256": "a95f8aa2cf71013da833099b6ec81dc646302230950799bcaace06db9cf34131",
+  "generated_sha256": {
+    "draw_rectangles.py": "03b4ebe248b1562c70581de12eb31a2d1b40b6c47f0446caca9b6e5adb6baf9b",
+    "rare-disease-rectangles.svg": "fc053cbd537a414aa26a31a284b1a699e45402b58c5fb737c240bfc1f7356df6",
+    "rare-disease-rectangles.png": "0f8295e26badf0d6fb93c05646dd19cb1fbddf2db4b15491ce90c795fcb71ec6"
+  },
+  "checks": [
+    "Exact rational count and metric identities",
+    "Four rectangle areas partition the unit population",
+    "Rendered rectangle areas match joint probabilities",
+    "Green and red have equal area; normalized shares sum to one",
+    "Posterior null probability is distinct from Type I error",
+    "Original factory example gives 64 percent precision",
+    "Text remains within figure bounds",
+    "SVG XML parses",
+    "Original ROC-note SVG is byte-unchanged"
+  ],
+  "limits": "Hypothetical population. Expected counts are not sample guarantees. PNG inspection is separate from live Obsidian rendering."
+}

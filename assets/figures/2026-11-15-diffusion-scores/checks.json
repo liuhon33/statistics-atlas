@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "maximum_absolute_errors": {
+    "mixture_score_finite_difference": 2.908266960588435e-10,
+    "DSM_objective_constant_across_predictors": 0.0,
+    "conditional_score_integral": 6.661338147750939e-16,
+    "implicit_score_matching_constant": 0.0,
+    "ELBO_noise_MSE_weight": 8.881784197001252e-16,
+    "DDIM_eta1_adjacent_posterior": 8.881784197001252e-16,
+    "classifier_Bayes_score": 1.0430234453906451e-10,
+    "negative_prompt_tilt_score": 2.504441098949428e-10,
+    "guidance_epsilon_score_sign": 1.7763568394002505e-15,
+    "flow_velocity_score_conversion": 1.1102230246251565e-15,
+    "reverse_SDE_variance_rate": 0,
+    "probability_flow_ODE_variance_rate": 0
+  },
+  "mean_only_deleted_noise_variance_rate": -2,
+  "analytic_assumptions": [
+    "Differentiation under the integral and finite squared scores for DSM",
+    "Vanishing p*s boundary flux for integration by parts",
+    "Exact scores and continuous time for shared SDE/ODE marginals",
+    "Guidance density interpretation at fixed time, when normalizable",
+    "DDIM eta=1 comparison uses adjacent times and posterior variance"
+  ],
+  "gif": {
+    "decoded_frames": 40,
+    "inspected_frame_ids": [
+      0,
+      10,
+      20,
+      30,
+      39
+    ]
+  },
+  "sha256": {
+    "01-loss-routes.png": "ea95b801ffed226f2447e7710994c135a29e0887511599d79d61d315365f43ce",
+    "01-loss-routes.svg": "ac93938ce6b24e3832a83bfea818d60b8c05d53da280ee96888ba093822d842b",
+    "02-score-scales.png": "8b77537f0d8a6295b138c94d3d7679ccf3e5db7b24adb9dc5ad460b0af39f14c",
+    "02-score-scales.svg": "15f4c20145e2b087d9279b01f44e9b7ea01683525121ca76b627459ac2c9c9e7",
+    "03-gif-inspection.png": "0b1eab83b1cace4d1d90b0a40b06e4bbb798261add5b4dea3c909abeade66ef2",
+    "03-score-scales.gif": "d4a5a13c5731a4f8f9a1401bc580df6f81e0fca454038b0a490c52dfb8b67d1c",
+    "04-conditioning-flow.png": "e77e6d9baf2e90a7946b0df8be23d7750ed954bd914d3b3d67099996020a3e71",
+    "04-conditioning-flow.svg": "c37db6574b87167c0b17dfb3f07d1202d9e7ff8c92ed14f82a4a0b688b7ae228",
+    "constructed-data.json": "b19014bd25b49d9e62d29439ff921162d4a11c12ccb17810805ecab82343dd99",
+    "draw_diffusion.py": "e4e811c2ceb2ac28653b6faa5ad11222ea0de9eca7624a01f2a2f74c82a68281"
+  }
+}

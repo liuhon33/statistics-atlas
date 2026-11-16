@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "date": "2026-11-15",
+  "author": "Codex",
+  "figures": "Original analytic illustrations and constructed samples; not recovered source figures or measured EEG.",
+  "dice_counts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "uniform_mass": "1",
+  "uniform_mean": "5/2",
+  "uniform_variance": "13/12",
+  "uniform_quadrature_max_abs_error": 5.551115123125783e-17,
+  "handwriting_sha256": "ff377b91bfd9783cf0352f6288308741cb7f983f72ca82e79af0b1c654d59755",
+  "input_microvolts": [
+    2.0,
+    4.0,
+    8.0,
+    10.0,
+    6.0,
+    2.0,
+    -2.0,
+    -4.0,
+    -1.0,
+    3.0,
+    8.0,
+    7.0,
+    3.0,
+    0.0,
+    -3.0
+  ],
+  "moving_average_full_window_outputs": [
+    4.666666666666666,
+    7.333333333333333,
+    8.0,
+    6.0,
+    2.0,
+    -1.3333333333333333,
+    -2.3333333333333335,
+    -0.6666666666666665,
+    3.333333333333333,
+    6.0,
+    6.0,
+    3.333333333333333,
+    0.0
+  ],
+  "moving_average_anchor": "Newest sample n; n starts at 2 for M=3; no padding.",
+  "asymmetric_patch": {
+    "input": [
+      2,
+      4,
+      8
+    ],
+    "weights": [
+      1,
+      2,
+      3
+    ],
+    "cross_correlation_r0": 34,
+    "convolution_y2": 22
+  },
+  "checks": [
+    "exact dice enumeration",
+    "symbolic normalization/moments/continuity",
+    "independent numerical integration across all support regimes",
+    "moving mean/direct convolution/recurrence",
+    "constant-signal preservation",
+    "asymmetric kernel orientation and index anchors",
+    "SVG XML parsing"
+  ],
+  "animation": {
+    "requested_frames": 106,
+    "decoded_frames": 71,
+    "decoded_contact_indices": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70
+    ],
+    "t_range": [
+      -0.5,
+      5.5
+    ]
+  },
+  "figure_inspection": "See PNG previews and decoded GIF frames; live Obsidian rendering is a separate check.",
+  "sources": [
+    "https://www.probabilitycourse.com/chapter6/6_1_2_sums_random_variables.php (section 6.1.2)",
+    "https://d2l.ai/chapter_convolutional-neural-networks/conv-layer.html (sections 7.2.1, 7.2.5)",
+    "https://docs.pytorch.org/docs/2.15/generated/torch.nn.Conv1d.html (cross-correlation definition)",
+    "https://www.dspguide.com/CH15.PDF (pp. 277–280, moving averages and frequency limitations)"
+  ]
+}

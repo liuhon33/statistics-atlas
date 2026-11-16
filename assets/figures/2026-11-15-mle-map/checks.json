@@ -1,0 +1,60 @@
+{
+  "math": {
+    "assumptions": "Independent Bernoulli tosses conditional on fixed theta in [0,1]; Beta(3,3) prior.",
+    "observation": {
+      "ordered_sequence": "HHTHHHTHHH",
+      "heads": 8,
+      "tails": 2
+    },
+    "exact": {
+      "prior_density": "30*theta^2*(1-theta)^2 = Beta(3,3) density",
+      "likelihood": "theta^8*(1-theta)^2; probability of the exact observed sequence",
+      "evidence": "2/1001",
+      "posterior_density": "15015*theta^10*(1-theta)^4 = Beta(11,5) density",
+      "integrals_over_theta": [
+        "1",
+        "1/495",
+        "1"
+      ],
+      "prior_mode_MLE_MAP": [
+        "1/2",
+        "4/5",
+        "5/7"
+      ],
+      "scores_and_strictly_negative_curvatures": "symbolically verified on 0 < theta < 1",
+      "boundary_values": "all three functions are zero at theta=0 and theta=1",
+      "MAP_weighted_average": "(10/14)*(4/5) + (4/14)*(1/2) = 5/7"
+    },
+    "numerical_absolute_errors": {
+      "prior_vs_scipy_beta_pdf": 1.5543122344752192e-15,
+      "posterior_vs_scipy_beta_pdf": 4.884981308350689e-15,
+      "panel_1_area": 1.1102230246251565e-16,
+      "panel_1_mode": 0.0,
+      "panel_2_area": 0.0,
+      "panel_2_mode": 7.400746682151293e-11,
+      "panel_3_area": 2.220446049250313e-16,
+      "panel_3_mode": 2.9182321004128653e-09
+    }
+  },
+  "figure": {
+    "svg_xml": "PASS",
+    "visible_text_bounds": "PASS",
+    "text_objects_checked": 55,
+    "shared_x_limits": [
+      0,
+      1
+    ],
+    "independent_y_limits": [
+      2.35,
+      0.0085,
+      4.05
+    ],
+    "raw_likelihood_scale_preserved": true,
+    "animation": "Not needed: simultaneous three-function comparison"
+  },
+  "sha256": {
+    "draw_mle_map.py": "c37c7ffee239b00f5bdc85dbff6f8ca9d69b75815ed8ad000231193d20206521",
+    "mle-map-comparison.svg": "5da9fe1a3bf808fa574c04e64af7291b1f6c8548a655b306ac88c8fd65b4bd21",
+    "mle-map-comparison.png": "9cf41f20b958bfef7bfc379f7192b66bc58db85be89ce3afafa2b9ad1a4398dc"
+  }
+}

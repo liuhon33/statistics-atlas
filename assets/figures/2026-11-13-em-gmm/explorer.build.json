@@ -1,0 +1,22 @@
+{
+  "output": "explorer.html",
+  "output_sha256": "b38df5d0e870ac1b5dab780a80f9835224867f657ac47cfc3e45044c52b0cb7b",
+  "inputs": [
+    {
+      "name": "body.html",
+      "sha256": "4fdecf0374807f7fb10b14f6527a5f8cbfc46e62272041ccef6022470d2936ec"
+    },
+    {
+      "name": "explorer.css",
+      "sha256": "06073a88aa978ed11002303c8f0d056f953c2d06189d88c4de8d6a9a3cdf91bf"
+    },
+    {
+      "name": "math.js",
+      "sha256": "67879e9846649b2ac217daa1692e7dd0110292e3e86e8947f2f6d5eb7e930587"
+    },
+    {
+      "name": "explorer.js",
+      "sha256": "ffd42e45393b50d258052c934286fa6bee4bde364349deb225ef8f3429ba139b"
+    }
+  ]
+}

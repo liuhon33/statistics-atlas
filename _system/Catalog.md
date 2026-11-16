@@ -858,3 +858,15 @@ All 763 reference nodes. Paths and links are organizational; they are not study 
 - [[Learning/Probability & mathematical foundations/Stochastic processes/Kernels - feature inner products and Gaussian covariances|Kernels - feature inner products and Gaussian covariances]] — Approved: annotated GP lecture, checked derivations and original figures; home: Covariance kernels.
 
 - [[Learning/Statistical computing & learning/Statistical learning & prediction/Gaussian processes - conditioning by completing the square|Gaussian processes - conditioning by completing the square]] — Approved: annotated GP lecture, checked derivations and original figures; home: Gaussian process regression.
+
+- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Cross-entropy loss - two forms and argument order|Cross-entropy loss - two forms and argument order]] — Approved: full cross-entropy sum, one-hot log loss and PyTorch argument order; home: Cross-entropy.
+
+- [[Learning/Statistical computing & learning/Simulation & approximate inference/General EM and Gaussian mixture EM - a side-by-side dictionary|General EM and Gaussian mixture EM - a side-by-side dictionary]] — Approved: each general EM object/operation instantiated as GMM, with posterior, Q and all three M-step derivations; embedded two-component E/M playground inspired by Lecture 7 slide 13. Home: Expectation–maximization.
+
+
+- [[Learning/Probability & mathematical foundations/Probability foundations/Rare-disease testing - precision is a Bayes posterior|Rare-disease testing - precision is a Bayes posterior]] — Approved: the 99%-accuracy/50%-precision disease example, a denominator-first metric table, and Bayes rectangles; home: Bayes rule. Connects ROC and Testing principles; one new figure and the unchanged original ROC picture.
+
+- [[Learning/Statistical computing & learning/Statistical learning & prediction/EM to K-means - the small-variance limit|EM to K-means - the small-variance limit]] — Approved at K-means: lecture slides 16–17, shared spherical covariance, soft-to-hard responsibility limit with tie exceptions, foldable numerical example and original 1-D graph. Connects the general EM/GMM note and Gaussian mixture models.
+
+
+- [[Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion through scores - noise prediction, sampling, and text guidance|Diffusion through scores - noise prediction, sampling, and text guidance]] — Approved at Selected architectures & latent models: Outlier’s score-to-noise-MSE derivation, compared with the existing ELBO route; Welch’s DDIM, text conditioning, CFG and negative prompts, with a flow-matching bridge. Three original SVG diagrams and a score-field GIF; precise inline pointers to the two requested diffusion notes.

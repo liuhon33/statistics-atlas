@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "errors": {
+    "python_R_coefficient_error": 2.8119728767705965e-12,
+    "python_R_probability_error": 1.602051824534101e-13,
+    "python_R_test_log_loss_error": 1.8818280267396403e-14,
+    "explorer_scipy_max_error": 6.938893903907228e-18
+  },
+  "R_version": "Rscript (R) version 4.4.1 (2024-06-14)",
+  "python_version": "3.12.4",
+  "reference_probabilities": [
+    0.16768724117785214,
+    0.6901998644529113,
+    0.8323127588221481
+  ],
+  "test_log_loss": 0.4418936482060476,
+  "explorer_states": 125,
+  "embedded_scripts": "exact match",
+  "identity_and_relationships": "unchanged"
+}

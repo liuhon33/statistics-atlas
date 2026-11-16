@@ -11,7 +11,7 @@ note_types:
   - derivation
 source_format: conversation
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 status: active
 verification: checked
 aliases:
@@ -154,6 +154,92 @@ This is exact algebra once the criteria are defined—not yet a proof that eithe
 
 Take $X_1,\ldots,X_n$ independent $N(\mu,1)$ measurements, with **known variance 1**. Only the mean is fitted, so $k=1$ and $\hat\mu=\bar X$. The fitted training score is
 
+> [!note]- From the MLE to the fitted training score
+> **The MLE is a parameter value. The fitted score is a number calculated using that parameter value.** The bridge is: write the log-likelihood, find its maximizing mean, then evaluate it at that mean.
+>
+> **1. Write the likelihood before fitting anything.** Let $m$ denote a *candidate* mean, with the variance still fixed at $1$. Its density for observation $X_i$ is
+>
+> $$
+> f_m(X_i)=\frac{1}{\sqrt{2\pi}}\exp\left[-\frac{(X_i-m)^2}{2}\right].
+> $$
+>
+> Independence means we multiply these densities:
+>
+> $$
+> L(m)=\prod_{i=1}^n f_m(X_i)
+> =(2\pi)^{-n/2}\exp\left[-\frac12\sum_{i=1}^n(X_i-m)^2\right].
+> $$
+>
+> Taking the natural logarithm gives
+>
+> $$
+> \ell(m)=-\frac n2\ln(2\pi)-\frac12\sum_{i=1}^n(X_i-m)^2.
+> $$
+>
+> This is the log-likelihood for **any proposed mean $m$**, not yet the fitted one. The observed data stay fixed while $m$ varies.
+>
+> **2. Find the MLE: which mean makes this largest?** The term $-\frac n2\ln(2\pi)$ does not depend on $m$, so
+>
+> $$
+> \underbrace{\arg\max_m\ell(m)}_{\text{maximum likelihood}}
+> =\underbrace{\arg\min_m\sum_i(X_i-m)^2}_{\text{least squared error}}.
+> $$
+>
+> Differentiate, including the minus sign from differentiating $X_i-m$:
+>
+> $$
+> \begin{aligned}
+> \ell'(m)
+> &=-\frac12\sum_i 2(X_i-m)(-1)\\
+> &=\sum_i(X_i-m)\\
+> &=n(\bar X-m).
+> \end{aligned}
+> $$
+>
+> Setting this equal to zero gives $\hat\mu=\bar X$. Since $\ell''(m)=-n<0$, this is the unique maximum.
+>
+> **3. Substitute the MLE back into the log-likelihood.** These are two different objects:
+>
+> $$
+> \underbrace{\hat\mu=\arg\max_m\ell(m)}_{\text{location of the maximum}},
+> \qquad
+> \underbrace{\hat\ell=\ell(\hat\mu)=\max_m\ell(m)}_{\text{height of the maximum}}.
+> $$
+>
+> Substituting $\hat\mu=\bar X$ gives
+>
+> $$
+> \hat\ell=-\frac n2\ln(2\pi)-\frac12\sum_i(X_i-\bar X)^2.
+> $$
+>
+> Finally, multiply by $-2$, cancelling both factors of $1/2$ and reversing both minus signs:
+>
+> $$
+> \begin{aligned}
+> -2\hat\ell
+> &=-2\left[-\frac n2\ln(2\pi)-\frac12\sum_i(X_i-\bar X)^2\right]\\
+> &=n\ln(2\pi)+\sum_i(X_i-\bar X)^2.
+> \end{aligned}
+> $$
+>
+> The appearance of $\bar X$, rather than an arbitrary $m$, is what makes this the **fitted** score.
+>
+> **4. Why a fitted training score?**
+>
+> - **Fitted:** the likelihood is evaluated at the estimated mean $\hat\mu=\bar X$.
+> - **Training:** the same observations $X_i$ both determine $\bar X$ and assess its fit.
+> - **Smaller is better:** maximizing $\ell$ is equivalent to minimizing $-2\ell$.
+>
+> Here the score is a constant plus the sum of squared residuals around the fitted mean. AIC then adds its complexity penalty:
+>
+> $$
+> \mathrm{AIC}
+> =\underbrace{n\ln(2\pi)+\sum_i(X_i-\bar X)^2}_{-2\hat\ell:\ \text{fitted training score}}
+> +\underbrace{2}_{2k,\ k=1}.
+> $$
+>
+> **Terminology:** “score” here is informal. The technical *score function* is $\ell'(m)$, a different object. The exact expression above assumes the variance is known and fixed at $1$; it does not fit an unknown variance.
+
 $$
 -2\hat\ell=n\ln(2\pi)+\sum_i(X_i-\bar X)^2.
 $$
@@ -213,3 +299,5 @@ BIC retains the first two terms and drops the order-one terms. This is a **Lapla
 > Read sources: Geyer §§3–4; MathWorks definitions and AICc paragraph; R `AIC` description/details; Balakrishnan §34.1; Ghahramani PDF pp. 25–26. Inline citations indicate their scope. No claim of reading the original Akaike or Schwarz papers.
 >
 > Reproduction: [[assets/figures/2026-11-11-aic-bic/draw_and_check.py]] and [[assets/figures/2026-11-11-aic-bic/checks.json]]. Coin arithmetic and rankings, normal expectation identities and Gaussian-area calculations checked; simulation and quadrature support, rather than prove, the derivations. Static previews inspected; live Obsidian rendering not verified.
+>
+> Extension (2026-11-12): at the user's request, the current conversation's agent-authored explanation connecting the normal-mean MLE to the fitted training score is saved in a collapsed callout immediately above that score in §7. The density, log-likelihood, derivative, maximum and substitution are shown explicitly, with the known-variance assumption and the informal-versus-technical meaning of “score” distinguished. No new supplied originals or external sources.

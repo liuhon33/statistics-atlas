@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="936pt" height="504pt" viewBox="0 0 936 504" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 504 
+L 936 504 
+L 936 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 93.6 317.52 
+L 97.344 317.52 
+L 97.344 152.8632 
+L 93.6 152.8632 
+z
+" clip-path="url(#p919aafa393)" style="fill: #168575"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 93.6 152.8632 
+L 97.344 152.8632 
+L 97.344 151.2 
+L 93.6 151.2 
+z
+" clip-path="url(#p919aafa393)" style="fill: #c68117"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 97.344 317.52 
+L 468 317.52 
+L 468 315.8568 
+L 97.344 315.8568 
+z
+" clip-path="url(#p919aafa393)" style="fill: #cc4455"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 97.344 315.8568 
+L 468 315.8568 
+L 468 151.2 
+L 97.344 151.2 
+z
+" clip-path="url(#p919aafa393)" style="fill: #376eae"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 93.6 317.52 
+L 468 317.52 
+L 468 151.2 
+L 93.6 151.2 
+L 93.6 317.52 
+z
+" clip-path="url(#p919aafa393)" style="fill: none; stroke: #162b40; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #ffffff; font: 700 19px 'DejaVu Sans'" transform="translate(225.489625 216.024066)">TN = 9,801</text>
+    <text style="fill: #ffffff; font: 700 19px 'DejaVu Sans'" transform="translate(190.587516 243.074722)">correct negatives</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 105.527731 120.792072 
+Q 100.813493 135.047644 96.099256 149.303216 
+" style="fill: none; stroke: #162b40; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <text style="fill: #162b40; font: 11px 'DejaVu Sans'; text-anchor: middle" x="108.576" y="114.6096" transform="rotate(-0 108.576 114.6096)">Disease: 1%</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #162b40; font: 11px 'DejaVu Sans'; text-anchor: middle" x="336.96" y="114.6096" transform="rotate(-0 336.96 114.6096)">No disease: 99%</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 67.491072 231.0336 
+Q 80.482461 231.0336 93.47385 231.0336 
+" style="fill: none; stroke: #168575; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="fill: #168575; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="37.44" y="234.34485" transform="rotate(-0 37.44 234.34485)">TP = 99</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 62.294497 160.001476 
+Q 77.909226 156.250517 93.523956 152.499558 
+" style="fill: none; stroke: #c68117; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="fill: #c68117; font: 10px 'DejaVu Sans'; text-anchor: middle" x="41.184" y="167.832" transform="rotate(-0 41.184 167.832)">FN = 1</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 336.96 332.679058 
+Q 336.96 325.685097 336.96 318.691136 
+" style="fill: none; stroke: #cc4455; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="fill: #cc4455; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="336.96" y="345.7944" transform="rotate(-0 336.96 345.7944)">FP = 99</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_11">
+    <path d="M 552.24 277.2 
+L 720.72 277.2 
+L 720.72 211.68 
+L 552.24 211.68 
+z
+" clip-path="url(#p03cfeebf4c)" style="fill: #168575"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 720.72 277.2 
+L 889.2 277.2 
+L 889.2 211.68 
+L 720.72 211.68 
+z
+" clip-path="url(#p03cfeebf4c)" style="fill: #cc4455"/>
+   </g>
+   <g id="text_7">
+    <text style="fill: #ffffff; font: 700 13px 'DejaVu Sans'" transform="translate(579.119531 238.773016)">99 with disease</text>
+    <text style="fill: #ffffff; font: 700 13px 'DejaVu Sans'" transform="translate(620.921641 257.281359)">50%</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #ffffff; font: 700 13px 'DejaVu Sans'" transform="translate(735.399844 238.773016)">99 without disease</text>
+    <text style="fill: #ffffff; font: 700 13px 'DejaVu Sans'" transform="translate(789.401641 257.281359)">50%</text>
+   </g>
+  </g>
+  <g id="text_9">
+   <text style="fill: #162b40; font: 700 23px 'DejaVu Sans'; text-anchor: start" x="37.44" y="30.24" transform="rotate(-0 37.44 30.24)">99% ACCURACY DOES NOT MEAN 99% PRECISION</text>
+  </g>
+  <g id="text_10">
+   <text style="fill: #566778; font: 13px 'DejaVu Sans'; text-anchor: start" x="37.44" y="55.44" transform="rotate(-0 37.44 55.44)">Hypothetical population: 1% disease  |  Sensitivity 99%  |  Specificity 99%</text>
+  </g>
+  <g id="text_11">
+   <text style="fill: #162b40; font: 700 16px 'DejaVu Sans'; text-anchor: start" x="37.44" y="95.76" transform="rotate(-0 37.44 95.76)">1  Whole population: 10,000 people</text>
+  </g>
+  <g id="text_12">
+   <text style="fill: #162b40; font: 700 16px 'DejaVu Sans'; text-anchor: start" x="552.24" y="95.76" transform="rotate(-0 552.24 95.76)">2  Keep only positive tests</text>
+  </g>
+  <g id="text_13">
+   <text style="fill: #162b40; font: 12px 'DejaVu Sans'; text-anchor: start" x="552.24" y="146.16" transform="rotate(-0 552.24 146.16)">Discard the blue and orange regions.</text>
+  </g>
+  <g id="text_14">
+   <text style="fill: #162b40; font: 12px 'DejaVu Sans'; text-anchor: start" x="552.24" y="171.36" transform="rotate(-0 552.24 171.36)">Green + red = 99 + 99 = 198 positives.</text>
+  </g>
+  <g id="text_15">
+   <text style="fill: #566778; font: 11px 'DejaVu Sans'; text-anchor: start" x="552.24" y="302.4" transform="rotate(-0 552.24 302.4)">New denominator: all 198 positive tests = 100%</text>
+  </g>
+  <g id="text_16">
+   <text style="fill: #168575; font: 700 17px 'DejaVu Sans'; text-anchor: start" x="552.24" y="342.72" transform="rotate(-0 552.24 342.72)">PRECISION = 99 / 198 = 50%</text>
+  </g>
+  <g id="text_17">
+   <text style="fill: #162b40; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="37.44" y="388.08" transform="rotate(-0 37.44 388.08)">Width × retained height = joint probability area</text>
+  </g>
+  <g id="text_18">
+   <text style="fill: #168575; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="37.44" y="418.32" transform="rotate(-0 37.44 418.32)">Green: 0.01 × 0.99 = 0.0099</text>
+  </g>
+  <g id="text_19">
+   <text style="fill: #cc4455; font: 700 13px 'DejaVu Sans'; text-anchor: start" x="496.08" y="418.32" transform="rotate(-0 496.08 418.32)">Red: 0.99 × 0.01 = 0.0099</text>
+  </g>
+  <g id="text_20">
+   <text style="fill: #162b40; font: 700 16px 'DejaVu Sans'; text-anchor: start" x="37.44" y="453.6" transform="rotate(-0 37.44 453.6)">Bayes: posterior = green area / (green area + red area)</text>
+  </g>
+  <g id="text_21">
+   <text style="fill: #566778; font: 11px 'DejaVu Sans'; text-anchor: start" x="37.44" y="481.32" transform="rotate(-0 37.44 481.32)">Left areas are to probability scale. Right bar is renormalized: the retained 1.98% becomes 100%.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p919aafa393">
+   <rect x="93.6" y="151.2" width="374.4" height="166.32"/>
+  </clipPath>
+  <clipPath id="p03cfeebf4c">
+   <rect x="552.24" y="211.68" width="336.96" height="65.52"/>
+  </clipPath>
+ </defs>
+</svg>

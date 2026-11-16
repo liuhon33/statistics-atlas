@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27;; style-src &#x27;unsafe-inline&#x27;; img-src data:; connect-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><title>Logistic regression — probability and sensitivity</title><style>:root{color-scheme:light;font-family:system-ui,sans-serif;color:#203444;background:#f6f8fa}*{box-sizing:border-box}body{margin:0;padding:18px}main{max-width:1100px;margin:auto}h1{font-size:clamp(1.4rem,3vw,2rem);margin:.25em 0}p{line-height:1.55}h2{font-size:1rem;margin:0 0 8px}.eyebrow{font-size:.72rem;letter-spacing:.13em;color:#176b91;font-weight:700}.presets{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}button{font:inherit;font-size:.87rem;background:white;border:1px solid #bdcbd5;border-radius:7px;padding:8px 12px;cursor:pointer}button:hover,button:focus-visible{border-color:#176b91;background:#eaf3f8}button:focus-visible,input:focus-visible{outline:3px solid #81b5d2;outline-offset:3px}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;background:white;padding:18px;border-radius:10px;border:1px solid #dbe4ea}label{font-size:.9rem}output{float:right;font-weight:700}input{display:block;width:100%;margin:16px 0 2px;accent-color:#176b91}.formula{font-family:ui-monospace,monospace;font-size:.95rem;overflow-wrap:anywhere}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.charts section{background:white;border:1px solid #dbe4ea;border-radius:10px;padding:14px}svg{display:block;width:100%;height:auto}.readouts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.readouts div{background:#eaf0f5;border-radius:7px;padding:12px}dt{font-size:.78rem;color:#526776}dd{margin:5px 0 0;font-variant-numeric:tabular-nums;font-size:1.2rem;font-weight:650}.foot{font-size:.8rem;color:#607382;border-top:1px solid #dbe4ea;padding-top:12px}@media(max-width:680px){body{padding:12px}.controls{grid-template-columns:1fr;gap:14px}.charts{grid-template-columns:1fr}.readouts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body><main>
+  <p class="eyebrow">LOGISTIC REGRESSION · A MODEL EXPLORER</p>
+  <h1>Where does one more unit matter most?</h1>
+  <p>Move <b>x</b> along the curve. Then change the intercept or slope. These controls specify a model; they do not fit data.</p>
+  <div class="presets" aria-label="Model presets">
+    <button data-preset="study">Study example / reset</button>
+    <button data-preset="decreasing">Decreasing</button>
+    <button data-preset="flat">Flat</button>
+    <button data-preset="steep">Steep</button>
+  </div>
+  <section class="controls">
+    <label for="b0">Intercept β₀ <output id="b0-value"></output><input id="b0" type="range" min="-10" max="10" step="0.1" value="-4"></label>
+    <label for="b1">Slope β₁ <output id="b1-value"></output><input id="b1" type="range" min="-2" max="2" step="0.05" value="0.8"></label>
+    <label for="x">Inspect x <output id="x-value"></output><input id="x" type="range" min="0" max="10" step="0.1" value="5"></label>
+  </section>
+  <p id="formula" class="formula"></p>
+  <div class="charts">
+    <section><h2>Probability</h2><svg id="probability" viewBox="0 0 500 320" role="img" aria-label="Logistic probability curve with selected point"></svg></section>
+    <section><h2>Local probability change</h2><svg id="derivative" viewBox="0 0 500 320" role="img" aria-label="Derivative of probability with respect to x"></svg></section>
+  </div>
+  <dl class="readouts" aria-live="polite">
+    <div><dt>Probability p</dt><dd id="p-out"></dd></div>
+    <div><dt>Odds p / (1 − p)</dt><dd id="odds-out"></dd></div>
+    <div><dt>Log-odds η</dt><dd id="eta-out"></dd></div>
+    <div><dt>Local slope dp/dx</dt><dd id="slope-out"></dd></div>
+  </dl>
+  <p id="interpretation"></p>
+  <p class="foot">Original analytic illustration. Both x axes stay at 0–10; the derivative axis stays at −0.5–0.5. A local slope is an instantaneous rate, not the exact change over a whole unit. Displayed probabilities near the endpoints are rounded.</p>
+</main>
+<script>const LogisticMath = (() => {
+  const sigmoid = z => z >= 0 ? 1 / (1 + Math.exp(-z)) : Math.exp(z) / (1 + Math.exp(z));
+  const values = (b0, b1, x) => {
+    const eta = b0 + b1 * x, p = sigmoid(eta);
+    return {eta, p, odds: Math.exp(eta), slope: b1*p*(1-p)};
+  };
+  return {sigmoid, values};
+})();
+if(typeof module !== 'undefined') module.exports = LogisticMath;
+
+;
+(() => {
+  const $ = id => document.getElementById(id);
+  const presets = {study:[-4,.8,5],decreasing:[4,-.8,5],flat:[0,0,5],steep:[-10,2,5]};
+  const fmt = n => Math.abs(n) >= 10000 || (Math.abs(n) < .001 && n !== 0) ? n.toExponential(3) : n.toFixed(4);
+  const svgText = (x,y,text,anchor='middle',color='#607382') => `<text x="${x}" y="${y}" text-anchor="${anchor}" fill="${color}" font-size="13">${text}</text>`;
+  function plot(id,b0,b1,selected,isSlope) {
+    const left=58,right=480,top=20,bottom=267;
+    const ymin=isSlope?-.5:0, ymax=isSlope?.5:1;
+    const sx=x=>left+x/10*(right-left),sy=y=>bottom-(y-ymin)/(ymax-ymin)*(bottom-top);
+    let html='';
+    for(const x of [0,2,4,6,8,10]) {
+      html+=`<line x1="${sx(x)}" x2="${sx(x)}" y1="${top}" y2="${bottom}" stroke="#e1e8ed"/>`+svgText(sx(x),bottom+23,x);
+    }
+    for(const y of isSlope?[-.5,-.25,0,.25,.5]:[0,.25,.5,.75,1]) {
+      html+=`<line x1="${left}" x2="${right}" y1="${sy(y)}" y2="${sy(y)}" stroke="${y===0?'#90a1ad':'#e1e8ed'}"/>`+svgText(left-9,sy(y)+4,y,'end');
+    }
+    const points=[];
+    for(let i=0;i<=250;i++) {
+      const x=i/25,v=LogisticMath.values(b0,b1,x);
+      points.push(`${i?'L':'M'}${sx(x).toFixed(3)},${sy(isSlope?v.slope:v.p).toFixed(3)}`);
+    }
+    const color=isSlope?'#7757a6':'#176b91', v=LogisticMath.values(b0,b1,selected);
+    html+=`<path d="${points.join(' ')}" fill="none" stroke="${color}" stroke-width="3"/>`;
+    html+=`<line x1="${sx(selected)}" x2="${sx(selected)}" y1="${top}" y2="${bottom}" stroke="#bc6429" stroke-dasharray="4 4"/>`;
+    html+=`<circle cx="${sx(selected)}" cy="${sy(isSlope?v.slope:v.p)}" r="5" fill="#bc6429"/>`;
+    html+=svgText((left+right)/2,312,'Predictor x');
+    $(id).innerHTML=html;
+  }
+  function render() {
+    const b0=+$('b0').value,b1=+$('b1').value,x=+$('x').value;
+    const v=LogisticMath.values(b0,b1,x);
+    for(const id of ['b0','b1','x']) $(id+'-value').textContent=(+$(id).value).toFixed(2);
+    $('formula').textContent=`η = ${b0.toFixed(2)} ${b1<0?'−':'+'} ${Math.abs(b1).toFixed(2)}x;  p = 1 / (1 + exp(−η))`;
+    $('p-out').textContent=(100*v.p).toFixed(2)+'%';$('odds-out').textContent=fmt(v.odds);
+    $('eta-out').textContent=v.eta.toFixed(3);$('slope-out').textContent=fmt(v.slope);
+    const middle=b1===0?'There is no unique midpoint: the model is flat.':`The p = 0.5 midpoint is x = ${(-b0/b1).toFixed(2)}${(-b0/b1<0||-b0/b1>10)?' (outside this window)':''}.`;
+    $('interpretation').textContent=`At x = ${x.toFixed(1)}, the local probability change is ${(100*v.slope).toFixed(2)} percentage points per unit of x. ${middle}`;
+    plot('probability',b0,b1,x,false);plot('derivative',b0,b1,x,true);
+  }
+  for(const id of ['b0','b1','x']) $(id).addEventListener('input',render);
+  document.querySelectorAll('[data-preset]').forEach(button=>button.addEventListener('click',()=>{
+    presets[button.dataset.preset].forEach((v,i)=>$( ['b0','b1','x'][i]).value=v);render();
+  }));
+  render();
+})();
+
+;
+
+(()=>{
+  let lastHeight=-1;
+  const report=()=>{
+    const height=Math.ceil(document.body.getBoundingClientRect().height);
+    if(height>0 && height!==lastHeight){
+      lastHeight=height;
+      if(window.parent!==window)window.parent.postMessage({type:'atlas-interactive-ready',height},'*');
+    }
+  };
+  // ResizeObserver already batches layout changes. Offscreen iframes may suspend
+  // animation frames, so do not route either startup or later reports through rAF.
+  new ResizeObserver(report).observe(document.body);
+  window.addEventListener('load',report);report();
+})();
+</script></body></html>

@@ -1,0 +1,35 @@
+{
+  "description": "Original analytic examples; numerical checks support the derivations in the note.",
+  "errors": {
+    "inverse_max_error": 1.1102230246251565e-16,
+    "symmetry_max_error": 1.1013412404281553e-13,
+    "slope_finite_difference_max_error": 1.847053066050819e-11,
+    "gradient_max_error": 2.098083200507972e-07,
+    "hessian_max_error": 2.467040758347139e-07
+  },
+  "fit_coefficients": [
+    -4.005269243757061,
+    0.8010538487514118
+  ],
+  "fit_probabilities_3_5_7": [
+    0.16768724118084288,
+    0.49999999999999956,
+    0.8323127588191566
+  ],
+  "illustrative_probabilities_3_5_7": [
+    0.16798161486607557,
+    0.5,
+    0.8320183851339246
+  ],
+  "equal_step_changes": {
+    "1": 0.044006973697158024,
+    "4.5": 0.19737532022490412,
+    "8": 0.044006973697158
+  },
+  "svg_xml": "pass",
+  "sha256": {
+    "01-use-it.svg": "543a349a375776bf6e57f75f088e5654bfb61e0b5d0e70855c86f61af132e614",
+    "02-three-scales.svg": "6b87421c9a7724534b87aae05b53de34f9bcd9edc10ab6f49f3f1bff0189556d",
+    "03-sensitivity.svg": "55debda966c59e64ff204df7f9cd200bd76236c03aaee08cb5f6c6d378f55ee8"
+  }
+}

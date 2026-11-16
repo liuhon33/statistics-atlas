@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-13",
+  "result": "PASS",
+  "surface": "Assistant-profile Chrome; local standalone HTML and temporary allow-scripts srcdoc harness",
+  "e_step": {"data_positions_fixed": true, "likelihood_fixed": true, "points_recolored": true},
+  "m_step": {"data_positions_and_stored_colors_fixed": true, "likelihood_increased": true, "first_Q_gain": 942.187334},
+  "controls": {
+    "e_m_sequencing": true,
+    "one_iteration": true,
+    "reset": true,
+    "play_and_pause": true,
+    "automatic_convergence_stop": true,
+    "all_four_presets": true,
+    "identical_components_stay_identical": true,
+    "point_slider_keyboard_endpoints": [1, 240],
+    "custom_mean_input_resets_to_iteration_zero": true,
+    "invalid_weight_disables_updates_and_reports_error": true,
+    "valid_input_recovers": true
+  },
+  "sandbox": {
+    "attribute": "allow-scripts",
+    "same_origin_not_granted": true,
+    "ready_message_received": true,
+    "e_m_controls_execute": true,
+    "stable_content_heights": {"1041px": 1667, "760px": 2165, "390px": 2386},
+    "narrow_horizontal_overflow": false
+  },
+  "visual_inspection": ["overview.png", "wide iframe preview", "760px iframe preview", "390px iframe preview"],
+  "console_errors_or_warnings_in_final_harness": [],
+  "live_obsidian_component": "NOT CHECKED: Obsidian CLI could not reach the running application",
+  "limits": "Browser and sandbox checks are not a live Obsidian note-rendering check. Reduced-motion and document-hidden pause handlers were inspected in source, not independently emulated; creating another automation tab did not establish a visibility change. Heights are for the tested post-M-step state and vary with content. Screenshots are local temporary previews, not lecture evidence."
+}

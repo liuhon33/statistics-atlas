@@ -1,0 +1,33 @@
+{
+  "model": "X=theta+Exp(1)-1",
+  "alpha": 0.05,
+  "noise_quantiles": [
+    -0.97468219201571,
+    2.6888794541139363
+  ],
+  "coverage": 0.95,
+  "grid_pairs_checked": 160801,
+  "band_ci_pvalue_agreement": true,
+  "swap_symmetry": false,
+  "svg_xml_parsed": true,
+  "examples": [
+    {
+      "x": 2.0,
+      "ci": [
+        -0.6888794541139363,
+        2.97468219201571
+      ],
+      "p_null_zero": 0.0995741367357279,
+      "zero_retained": true
+    },
+    {
+      "x": 3.0,
+      "ci": [
+        0.31112054588606375,
+        3.97468219201571
+      ],
+      "p_null_zero": 0.03663127777746844,
+      "zero_retained": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "grid_checks": 11005,
+  "max_normalization_error": 2.220446049250313e-16,
+  "max_direct_normal_pdf_error": 1.7763568394002505e-15,
+  "max_closed_form_error": 1.3322676295501878e-15,
+  "small_variance_hard_assignment_error": 1.9151695967142234e-174,
+  "weighted_to_hard_mean_error": 0.0,
+  "max_Q_coefficient_check_error": 2.842170943040401e-14,
+  "tie_equal_and_unequal_weights": "passed",
+  "limits": "Fixed centers and positive fixed weights; unique-nearest limit excludes ties. Static generated figure, not live Obsidian.",
+  "svg_xml": "passed",
+  "sha256": {
+    "draw_limit.py": "d667838f63b78f40680c6d0f09b9afce4734f59b5435f38d4171bf3d4d1ae058",
+    "example-values.json": "37c598f44e5ac16947c52f1d12b4322bce4cdad1bfab94e816da68ad4486be29",
+    "responsibility-limit.svg": "1cf95ba56e3bcbcc03fa062c48daae823f8db29a8c5208425df7fbe9b81b2a15",
+    "responsibility-limit.png": "0a06373dbd91eaebbb20ca94158daff73488420ea3cab004c844f9034e7ba3c8"
+  }
+}

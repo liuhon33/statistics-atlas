@@ -5688,6 +5688,46 @@
       "layer": "learning",
       "primary_home": "neighbors-kernels-gaussian-process-regression",
       "status": "active"
+    },
+    {
+      "id": "learning-cross-entropy-forms-order",
+      "title": "Cross-entropy loss - two forms and argument order",
+      "path": "Learning/Statistical computing & learning/Probabilistic models & neural methods/Cross-entropy loss - two forms and argument order.md",
+      "layer": "learning",
+      "primary_home": "information-measures-cross-entropy",
+      "status": "active"
+    },
+    {
+      "id": "learning-general-em-gmm-dictionary",
+      "title": "General EM and Gaussian mixture EM - a side-by-side dictionary",
+      "path": "Learning/Statistical computing & learning/Simulation & approximate inference/General EM and Gaussian mixture EM - a side-by-side dictionary.md",
+      "layer": "learning",
+      "primary_home": "laplace-em-expectationmaximization",
+      "status": "active"
+    },
+    {
+      "id": "learning-rare-disease-precision-bayes",
+      "title": "Rare-disease testing - precision is a Bayes posterior",
+      "path": "Learning/Probability & mathematical foundations/Probability foundations/Rare-disease testing - precision is a Bayes posterior.md",
+      "layer": "learning",
+      "primary_home": "bayesrule",
+      "status": "active"
+    },
+    {
+      "id": "learning-em-kmeans-small-variance-limit",
+      "title": "EM to K-means - the small-variance limit",
+      "path": "Learning/Statistical computing & learning/Statistical learning & prediction/EM to K-means - the small-variance limit.md",
+      "layer": "learning",
+      "primary_home": "clustering-k-means",
+      "status": "active"
+    },
+    {
+      "id": "learning-diffusion-scores-noise-guidance",
+      "title": "Diffusion through scores - noise prediction, sampling, and text guidance",
+      "path": "Learning/Statistical computing & learning/Probabilistic models & neural methods/Diffusion through scores - noise prediction, sampling, and text guidance.md",
+      "layer": "learning",
+      "primary_home": "neural-models",
+      "status": "active"
     }
   ]
 }
